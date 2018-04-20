@@ -9,44 +9,25 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header>
+		<!-- .entry-header -->
 
-	<?php epfl_post_thumbnail(); ?>
+		<?php epfl_post_thumbnail(); ?>
 
-	<div class="entry-content">
+		<div class="entry-content py-5 mb-4">
 		<?php
-		the_content();
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'epfl' ),
-			'after'  => '</div>',
-		) );
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
+				the_content();
+			endwhile;
+			endif;
 		?>
-	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'epfl' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+		</div>
+		<!-- .entry-content -->
+		</footer>
+		<!-- .entry-footer -->
+	</article>
+	<!-- #post-<?php the_ID(); ?> -->
