@@ -10,14 +10,14 @@
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header class="entry-header">
+		<header class="entry-header container">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header>
 		<!-- .entry-header -->
 
 		<?php epfl_post_thumbnail(); ?>
 
-		<div class="entry-content py-5 mb-4">
+		<div class="entry-content py-5 mb-4 container">
 		<?php
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 				the_content();
