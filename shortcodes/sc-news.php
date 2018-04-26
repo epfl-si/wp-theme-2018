@@ -2,7 +2,7 @@
   $data = get_query_var('epfl_shortcode_news_data');
   $title = $data->title ?: 'title';
   $content = $data->body ?: 'content';
-  $date = $data->date ?: '00.00.0000';
+  $date = $data->date ?: date('d.m.Y');
   $user = $data->userId ?: '123';
 ?>
 
@@ -23,8 +23,7 @@
         <?php echo $title ?>
       </p>
       <p>
-        <span>#
-          <?php echo $user ?> |
+        <span>
           <?php echo $date ?>
         </span>
         <span class="text-muted">—
