@@ -2,3 +2,4 @@
 defaults.json
 .idea
 npm-debug.log
+vendor/*
