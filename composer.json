@@ -1,4 +1,13 @@
 {
+    "name": "antistatique/epfl-theme",
+    "description": "a wordpress theme",
+    "type": "theme",
+    "authors": [
+        {
+            "name": "Antistatique",
+            "email": "dev@antistatique.net"
+        }
+    ],
     "require": {
         "symfony/finder": "^4.0"
     },
