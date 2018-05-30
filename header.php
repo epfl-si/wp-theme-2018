@@ -26,10 +26,11 @@
 	<header id="masthead" class="site-header container">
 		<nav id="site-navigation" class="main-navigation">
 			<?php
-		/* 	wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) ); */
+				wp_nav_menu( array(
+					'menu_class'=> 'nav-main',
+					'container' => 'ul',
+					'walker' => new custom_page_walker(),
+				) );
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

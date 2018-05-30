@@ -159,3 +159,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 require_once 'shortcodes/_load.php';
+require_once get_template_directory() . '/walkers/custom-page-walker.php';
+
+function menu_link_ids ($atts, $page) {
+	$atts["data-page-id"] = $page->ID;
+	return $atts;
+}
+add_filter('page_menu_link_attributes', 'menu_link_ids', 10, 2);
