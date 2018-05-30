@@ -1,7 +1,6 @@
-
 <?php
 
-// register 
+// register
 function register_shortcodes() {
 	add_shortcode( 'epfl-shortcode-teaser-page-fullwidth', 'renderTeaserPageFulldwidth' );
 }
