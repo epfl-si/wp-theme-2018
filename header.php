@@ -16,23 +16,58 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
+	<script type="text/javascript">window.svgPath = "<?php bloginfo('template_url'); ?>/assets/icons/icons.svg"</script>
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
-	<header id="masthead" class="site-header container">
-		<nav id="site-navigation" class="main-navigation">
+
+	<header role="banner" class="header header-nav-toggle">
+  	<a class="logo" href="#">
+			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+		</a>
+
+		<div aria-hidden="true">
 			<?php
 				wp_nav_menu( array(
-					'menu_class'=> 'nav-main',
+					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
-					'walker' => new custom_page_walker(),
+					'walker' => new Custom_Nav_Walker(),
+					'depth' => 1,
 				) );
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</div>
 
-	<div id="content" class="site-content">
+		<div class="input-group search">
+			<div class="input-group-prepend">
+				<span class="input-group-text">
+					<svg class="icon"><use xlink:href="#icon-search"></use></svg>
+				</span>
+			</div>
+			<input type="text" class="form-control" placeholder="Rechercher">
+		</div>  
+		<nav class="language-switcher">
+		<ul>
+			<li>
+				<span class="active" aria-label="Français">FR</span>
+			</li>
+			<li>
+				<a href="#" aria-label="English">EN</a>
+			</li>
+		</ul>
+	</nav>
+
+  <div class="btn btn-secondary menu-toggle-mobile d-xl-none">
+		Menu
+		<div class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+</header>
+
+<div class="main-container nav-toggle">

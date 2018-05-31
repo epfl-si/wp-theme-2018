@@ -1,9 +1,0 @@
-title: Pagination
-name: pagination
-variants:
-  - name: load-more
-    title: Load more
-    notes: |
-      The Load more variant.
-    background: ''
-    wrapper: ''
