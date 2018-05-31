@@ -21,11 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site nav-toggle">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
-	<header role="banner" class="header header-nav-toggle">
-  	<a class="logo" href="#">
+	<header role="banner" class="header">
+  	<a class="logo" href="<?php bloginfo('url') ?>">
 			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
 		</a>
 
@@ -34,7 +34,6 @@
 				wp_nav_menu( array(
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
-					'walker' => new Custom_Nav_Walker(),
 					'depth' => 1,
 				) );
 			?>
@@ -48,7 +47,7 @@
 			</div>
 			<input type="text" class="form-control" placeholder="Rechercher">
 		</div>  
-		<nav class="language-switcher">
+		<nav class="language-switcher pr-5">
 		<ul>
 			<li>
 				<span class="active" aria-label="Français">FR</span>
@@ -70,4 +69,4 @@
 
 </header>
 
-<div class="main-container nav-toggle">
+<div class="main-container">

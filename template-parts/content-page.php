@@ -15,7 +15,7 @@
 		</header>
 		<!-- .entry-header -->
 
-		<?php epfl_post_thumbnail(); ?>
+		<?php // epfl_post_thumbnail(); ?>
 
 		<div class="entry-content py-5 mb-4 container">
 			<?php
