@@ -2,7 +2,6 @@
 $page = get_query_var('epfl_shortcode_teaser_page_fullwidth');
   if (!$page) return true;
 ?>
-</div> <!-- Hack for fullwidth -->
 
 <div class="fullwidth-teaser">
   <picture>
@@ -25,5 +24,3 @@ $page = get_query_var('epfl_shortcode_teaser_page_fullwidth');
     </div>
   </div>
 </div>
-
-<div class="container"> <!-- end hack -->
