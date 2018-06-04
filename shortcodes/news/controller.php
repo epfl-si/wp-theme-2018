@@ -1,8 +1,7 @@
 <?php
 
 function renderNews ($news) {
-  
-  echo '<div class="news-listing">';
+  echo '<div class="news-listing my-5">';
   foreach($news as $new) {
     set_query_var('epfl_shortcode_news_data', $new);
     get_template_part('shortcodes/news/view');

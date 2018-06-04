@@ -3,6 +3,12 @@
  * @package epfl
  */
 
+function nav_toggle_body_class($classes) {
+    $classes[] = 'nav-toggle';
+    return $classes;
+}
+
+add_filter('body_class', 'nav_toggle_body_class');
 get_header();
 get_sidebar();
 ?>

@@ -13,7 +13,6 @@
 		<header class="entry-header container">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header>
-		<!-- .entry-header -->
 
 		<?php // epfl_post_thumbnail(); ?>
 
@@ -22,9 +21,7 @@
 					the_content();
 			?>
 
-		</div>
-		<!-- .entry-content -->
-		</footer>
-		<!-- .entry-footer -->
+		</div> <!-- .entry-content -->
+		</footer> <!-- .entry-footer -->
 	</article>
 	<!-- #post-<?php the_ID(); ?> -->

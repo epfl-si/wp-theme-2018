@@ -4,7 +4,7 @@ $page = get_query_var('epfl_shortcode_teaser_page_fullwidth');
 $content = explode('<!--more-->', $page->post_content)[0];
 ?>
 
-<div class="fullwidth-teaser">
+<div class="fullwidth-teaser mb-5">
   <picture>
     <img src="<?php echo get_the_post_thumbnail_url($page) ?>" aria-labelledby="background-label" alt="An image description"/>
   </picture>
