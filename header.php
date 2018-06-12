@@ -9,13 +9,6 @@
  * @package epfl
  */
 
-
-$classes = '';
-
-if(get_page_template_slug(get_queried_object_id()) != 'page-solid-nav.php') {
-	$classes = 'nav-toggle';
-}
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -28,7 +21,7 @@ if(get_page_template_slug(get_queried_object_id()) != 'page-solid-nav.php') {
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site <?php echo $classes ?>">
+<div id="page" class="site">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">
@@ -80,6 +73,8 @@ $classes = '';
 
 if(get_page_template_slug(get_queried_object_id()) == 'page-solid-nav.php') {
 	$classes = 'nav-solid';
+} else {
+	$classes = 'nav-toggle';
 }
 ?>
 <div class="main-container <?php echo $classes ?>">

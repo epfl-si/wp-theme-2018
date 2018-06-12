@@ -5,29 +5,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 	// allows us to store the last item
 	private $currentItem;
 
-	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
-			$t = '';
-			$n = '';
-		} else {
-			$t = "\t";
-			$n = "\n";
-		}
-		if(in_array('menu-item-has-children', $item->classes)) {
-			$output .= '
-						<a href="#" role="button" aria-hidden="true" class="nav-arrow">
-              <div class="icon-container">
-                <svg class="icon">
-									<use xlink:href="#icon-chevron-right"></use>
-								</svg>
-              </div>
-            </a>
-						';
-		}
-		$output .= "</li>{$n}";
-	}
-
-	public function start_lvl( &$output, $depth = 0, $args = array() ) { 
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 			$t = '';
 			$n = '';
@@ -184,6 +162,17 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		$item_output .= $args->link_before . $title . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= $args->after;
+		if(is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
+			$item_output .= '
+						<a href="#" role="button" aria-hidden="true" class="nav-arrow">
+              <div class="icon-container">
+                <svg class="icon">
+									<use xlink:href="#icon-chevron-right"></use>
+								</svg>
+              </div>
+            </a>
+						';
+		}
 
 		/**
 		 * Filters a menu item's starting output.
