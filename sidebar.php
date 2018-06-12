@@ -6,12 +6,19 @@
  *
  * @package epfl
  */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
-
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+<div class="overlay"></div>
+<nav class="nav-main">
+	<span class="nav-close" role="button" aria-description="Close secondary menu"></span>
+	<div class="nav-wrapper">
+		<div class="nav-container current-menu-ancestor">
+			<?php
+				wp_nav_menu( array(
+					'menu_class'=> 'nav-menu',
+					'container' => 'ul',
+					'walker' => new Custom_Nav_Walker()
+				) );
+			?>
+		</div>
+	</div>
+</nav>

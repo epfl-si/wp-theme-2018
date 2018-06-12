@@ -1,26 +1,19 @@
 <?php
 /**
  * @package epfl
+ * Template Name: Barre latérale
+ * Template Post Type: page
  */
-
-function nav_toggle_body_classes($classes) {
-    $classes[] = 'nav-toggle';
-    return $classes;
-}
-
-add_filter('body_class', 'nav_toggle_body_classes');
 
 get_header();
 get_sidebar();
 ?>
-
 		<main id="content" role="main" class="content pt-5">
 
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', get_post_type() );
-				the_posts_navigation();
+				get_template_part( 'template-parts/content', 'page' );
 
 			endwhile; // End of the loop.
 			?>

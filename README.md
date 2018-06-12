@@ -28,8 +28,16 @@ The `_load.php` automatically loads all files named `controller.php` in all subf
 ```
 file|role
 --|--
-`controller.php`| - recover the plugin datas using filters<br/>- Pass data to the view<br>- Render view
+`controller.php`| - recover the plugin datas using (actions)[]<br/>- Pass data to the view<br>- Render view<br>- use (Shortcake)[https://github.com/wp-shortcake/shortcake] API to declare backend UI
 `view.php`|Output shortcode's html using given datas
+
+### Types
+#### EPFL shortcode
+These shortcodes are used to display data coming from EPFL Apis. the EPFL provides a **plugin** responsible for fetching the data, formatting it and declaring a correct backend UI via (Shortcake)[https://github.com/wp-shortcake/shortcake].
+
+To share data between the plugin and the theme, the plugins use wordpress *(actions)[]*.
+
+The role of the theme is only to output correct markup for each given shortcode, using the given data, retrieved with the corresponding *action*.
 
 ### Add a shortcode
 1. Create a new folder in  `shortcodes/`

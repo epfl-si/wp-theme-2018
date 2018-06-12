@@ -124,10 +124,11 @@ function epfl_scripts() {
 
 	wp_enqueue_style( 'epfl-vendors', get_stylesheet_directory_uri().'/assets/css/vendors.min.css' );
 	wp_enqueue_style( 'epfl-base', get_stylesheet_directory_uri().'/assets/css/base.css' );
-
+	
+	wp_enqueue_script( 'epfl-js-jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), false, true );
 	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'epfl-js-vendors-bundle', get_template_directory_uri() . '/assets/js/vendors.bundle.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/app.bundle.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/app.bundle.js', array('epfl-js-vendors-bundle'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'epfl_scripts' );
 
@@ -159,3 +160,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 require_once 'shortcodes/_load.php';
+require_once get_template_directory() . '/walkers/custom-nav-walker.php';
+
+function menu_link_ids ($atts, $page) {
+	$atts["data-page-id"] = $page->ID;
+	return $atts;
+}
+add_filter('page_menu_link_attributes', 'menu_link_ids', 10, 2);

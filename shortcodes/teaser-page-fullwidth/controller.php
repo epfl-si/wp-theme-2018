@@ -1,7 +1,6 @@
-
 <?php
 
-// register 
+// register
 function register_shortcodes() {
 	add_shortcode( 'epfl-shortcode-teaser-page-fullwidth', 'renderTeaserPageFulldwidth' );
 }
@@ -11,7 +10,10 @@ function renderTeaserPageFulldwidth ($args) {
   $pageId = $args['page'];
   $page = get_post($pageId);
   set_query_var('epfl_shortcode_teaser_page_fullwidth', $page);
-  get_template_part('shortcodes/teaser-page-fullwidth/view');
+
+  ob_start();
+    get_template_part('shortcodes/teaser-page-fullwidth/view');
+  return ob_get_clean();
 }
 
 // register shortcake UI

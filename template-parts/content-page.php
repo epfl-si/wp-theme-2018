@@ -13,21 +13,15 @@
 		<header class="entry-header container">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header>
-		<!-- .entry-header -->
 
-		<?php epfl_post_thumbnail(); ?>
+		<?php // epfl_post_thumbnail(); ?>
 
 		<div class="entry-content py-5 mb-4 container">
 			<?php
-				if ( have_posts() ) : while ( have_posts() ) : the_post();
 					the_content();
-				endwhile;
-				endif;
 			?>
 
-		</div>
-		<!-- .entry-content -->
-		</footer>
-		<!-- .entry-footer -->
+		</div> <!-- .entry-content -->
+		</footer> <!-- .entry-footer -->
 	</article>
 	<!-- #post-<?php the_ID(); ?> -->
