@@ -3,7 +3,7 @@
 function renderMemento ($events) {
   $results = $events->results;
   foreach($results as $event) {
-    set_query_var('epfl_shortcode_memento_data', $event);
+    set_query_var('epfl_memento_data', $event);
     get_template_part('shortcodes/memento/view');
   }
 }

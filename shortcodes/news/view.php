@@ -1,5 +1,5 @@
 <?php
-  $data = get_query_var('epfl_shortcode_news_data');
+  $data = get_query_var('epfl_news_data');
   $title = $data->title ?: 'title';
   $content = $data->subtitle ?: 'content';
   $date = $data->publish_date ?: date('d.m.Y');

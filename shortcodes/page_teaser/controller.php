@@ -2,23 +2,23 @@
 
 // register
 function register_shortcodes() {
-	add_shortcode( 'epfl-shortcode-teaser-page-fullwidth', 'renderTeaserPageFulldwidth' );
+	add_shortcode( 'epfl_page_teaser', 'renderPageTeaser' );
 }
 
 // render
-function renderTeaserPageFulldwidth ($args) {
+function renderPageTeaser ($args) {
   $pageId = $args['page'];
   $page = get_post($pageId);
-  set_query_var('epfl_shortcode_teaser_page_fullwidth', $page);
+  set_query_var('epfl_page_teaser_data', $page);
 
   ob_start();
-    get_template_part('shortcodes/teaser-page-fullwidth/view');
+    get_template_part('shortcodes/page_teaser/view');
   return ob_get_clean();
 }
 
 // register shortcake UI
-add_action( 'register_shortcode_ui', 'teaser_page_fullwidth' );
-function teaser_page_fullwidth() {
+add_action( 'register_shortcode_ui', 'page_teaser' );
+function page_teaser() {
   $fields = [
     array(
       'label'    => 'Select page',
@@ -28,9 +28,10 @@ function teaser_page_fullwidth() {
 		)
   ];
 	shortcode_ui_register_for_shortcode(
-		'epfl-shortcode-teaser-page-fullwidth',
+		'epfl-page-teaser',
 		array(
-      'label' => 'Page teaser fullwidth',
+      'label' => 'Page teaser',
+      'listItemImage' => 'dashicons-format-aside',
       'attrs' => $fields
     )
 	);

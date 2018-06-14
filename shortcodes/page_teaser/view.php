@@ -1,5 +1,5 @@
 <?php 
-$page = get_query_var('epfl_shortcode_teaser_page_fullwidth');
+$page = get_query_var('epfl_page_teaser');
   if (!$page) return true;
 $content = explode('<!--more-->', $page->post_content)[0];
 ?>
