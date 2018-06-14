@@ -11,7 +11,7 @@
 <nav class="nav-main">
 	<span class="nav-close" role="button" aria-description="Close secondary menu"></span>
 	<div class="nav-wrapper">
-		<div class="nav-container current-menu-ancestor">
+		<div class="nav-container">
 			<?php
 				wp_nav_menu( array(
 					'menu_class'=> 'nav-menu',
