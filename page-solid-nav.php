@@ -1,7 +1,7 @@
 <?php
 /**
  * @package epfl
- * Template Name: Barre latérale
+ * Template Name: Menu fixe
  * Template Post Type: page
  */
 
