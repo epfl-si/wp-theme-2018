@@ -17,8 +17,12 @@ function custom_breadcrumbs()
     // Get the query & post information
     global $post, $wp_query;
     
-    // Do not display on the homepage
-    if (!is_front_page()) {
+    // Do not display on the homepage or when no parent
+    if (
+        !is_front_page()
+        && !is_home()
+        && sizeof(get_post_ancestors($post->ID)) > 0
+        ) {
         echo '<div class="container nav-toggle-container">';
 
         echo '<button id="nav-burger" class="nav-burger">

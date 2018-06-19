@@ -165,7 +165,7 @@ require_once 'breadcrumbs/breadcrumbs.php';
 require_once get_template_directory() . '/walkers/custom-nav-walker.php';
 
 add_filter('default_page_template_title', function() {
-    return __('Menu animé', 'your_text_domain');
+    return __('Menu fixe', 'your_text_domain');
 });
 
 function menu_link_ids ($atts, $page) {
@@ -173,3 +173,28 @@ function menu_link_ids ($atts, $page) {
 	return $atts;
 }
 add_filter('page_menu_link_attributes', 'menu_link_ids', 10, 2);
+
+// handle the two navigation templates, forcing homepage to be with toggle navigation
+function init_nav() {
+	global $mainContainerClasses;
+	if (
+		is_front_page() 
+		|| is_home() 
+		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php'
+		|| sizeof(get_post_ancestors($post->ID)) == 0) {
+
+		// ad class to body to bind JS listeners
+		function nav_toggle_body_class($classes) {
+			$classes[] = 'nav-toggle';
+			return $classes;
+		}
+		add_filter('body_class', 'nav_toggle_body_class');
+
+		//update main container class 
+		$mainContainerClasses = 'nav-toggle';
+	} else {
+		//update main container class
+		$mainContainerClasses = 'nav-solid';
+	}
+}
+

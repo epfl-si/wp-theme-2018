@@ -9,6 +9,8 @@
  * @package epfl
  */
 
+global $mainContainerClasses;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -68,13 +70,5 @@
 	</div>
 
 </header>
-<?php
-$classes = '';
 
-if(get_page_template_slug(get_queried_object_id()) == 'page-solid-nav.php') {
-	$classes = 'nav-solid';
-} else {
-	$classes = 'nav-toggle';
-}
-?>
-<div class="main-container <?php echo $classes ?>">
+<div class="main-container <?php echo $mainContainerClasses ?>">

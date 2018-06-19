@@ -1,15 +1,16 @@
 <?php
 /**
  * @package epfl
- * Template Name: Menu fixe
+ * Template Name: Menu caché
  * Template Post Type: page
  */
 
+init_nav();
 get_header();
 get_sidebar();
 ?>
 		<main id="content" role="main" class="content pt-5">
-
+			<?php custom_breadcrumbs(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
