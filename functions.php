@@ -161,6 +161,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 require_once 'shortcodes/_load.php';
 require_once 'disable_comments.php';
+require_once 'breadcrumbs/breadcrumbs.php';
 require_once get_template_directory() . '/walkers/custom-nav-walker.php';
 
 add_filter('default_page_template_title', function() {
