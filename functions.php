@@ -179,7 +179,6 @@ function init_nav() {
 	global $mainContainerClasses;
 	if (
 		is_front_page() 
-		|| is_home() 
 		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php'
 		|| sizeof(get_post_ancestors($post->ID)) == 0) {
 

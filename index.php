@@ -8,16 +8,22 @@ get_sidebar();
 ?>
 
 		<main id="content" role="main" class="content pt-5">
+			<div class="container">
+			
+			<h1 class="mb-5">
+			<?php echo(apply_filters( 'the_title', get_the_title( get_option( 'page_for_posts' )))); ?>
+				</h1>
+				<div class="news-listing">
+							<?php
+							while ( have_posts() ) : the_post();
 
-			<?php
-			while ( have_posts() ) : the_post();
+								get_template_part( 'template-parts/content', get_post_type() );
+								the_posts_navigation();
 
-				get_template_part( 'template-parts/content', get_post_type() );
-				the_posts_navigation();
-
-			endwhile; // End of the loop.
-			?>
-
+							endwhile; // End of the loop.
+							?>
+				</div>
+			</div>
 		</main><!-- #main -->
 
 <?php

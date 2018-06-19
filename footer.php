@@ -13,14 +13,10 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer container">
-		<div class="site-info">
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				// printf( esc_html__( 'Theme: %1$s', 'epfl' ), '<b>Epfl</b>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+
+	<?php include(__DIR__.'/footer_mock.php'); ?>
+
+	
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
