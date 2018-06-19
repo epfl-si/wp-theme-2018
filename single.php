@@ -7,25 +7,23 @@
  * @package epfl
  */
 
+init_nav();
 get_header();
+get_sidebar();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
+<main id="content" role="main" class="content pt-5">
+	<div class="container">
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation();
-
 		endwhile; // End of the loop.
 		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div>
+</main>
 
 <?php
 get_sidebar();

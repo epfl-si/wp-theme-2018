@@ -17,7 +17,7 @@ get_sidebar();
 							<?php
 							while ( have_posts() ) : the_post();
 
-								get_template_part( 'template-parts/content', get_post_type() );
+								get_template_part( 'template-parts/content', 'post-teaser' );
 								the_posts_navigation();
 
 							endwhile; // End of the loop.

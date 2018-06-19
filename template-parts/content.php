@@ -9,23 +9,51 @@
 
 ?>
 
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php
+		if ( is_singular() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
 
-	<a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" class="news link-trapeze-vertical">
-		<div class="news-container">
-			<div class="news-thumbnail">
-				<?php if(has_post_thumbnail( get_the_ID() )): ?>
-					<?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']); ?>
-				<?php endif; ?>
-			</div>
+		if ( 'post' === get_post_type() ) :
+			?>
+			<div class="entry-meta">
+				<?php
+				epfl_posted_on();
+				epfl_posted_by();
+				?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
+	</header><!-- .entry-header -->
 
-			<div class="news-content">
-					<p class="h5"><?php the_title(); ?></p>
-					<p>
-						<time datetime="<?php echo get_the_date('Y-m-d'); ?>"><span class="sr-only">Published:</span><?php the_date('d.m.Y'); ?></time>
-						<span class="text-muted">— <?php the_author() ?></span>
-						<?php the_excerpt(); ?>
-					</p>
-			</div>
-		</div>
-	</a>
+	<?php epfl_post_thumbnail(); ?>
 
+	<div class="entry-content">
+		<?php
+		the_content( sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'epfl' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		) );
+
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'epfl' ),
+			'after'  => '</div>',
+		) );
+		?>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<?php epfl_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-<?php the_ID(); ?> -->

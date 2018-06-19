@@ -16,11 +16,12 @@ Epfl theme (Wordpress)
 ## Shortcodes
 Each shortcode has its own subfoler in the `shortcodes/` directory, placed at the root of the template.
 
-The `_load.php` automatically loads all files named `controller.php` in all subfolders.
+The `index.php` automatically loads all files named `controller.php` in all subfolders.
 
   ```
   ├── shortcodes/
-  |   ├── _load.php
+  |   ├── index.php
+  |   ├── placeholder.php
   |   ├── [shortcode-slug]/
   |       ├── controller.php
   |       └── view.php
@@ -30,6 +31,8 @@ file|role
 --|--
 `controller.php`| - recover the plugin datas using (actions)[]<br/>- Pass data to the view<br>- Render view<br>- use (Shortcake)[https://github.com/wp-shortcake/shortcake] API to declare backend UI
 `view.php`|Output shortcode's html using given datas
+`shortcake.php`|Defines shortcake admin interface
+`placeholder.php`|a custom component to display in admin editor
 
 ### Types
 #### EPFL shortcode

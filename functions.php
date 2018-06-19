@@ -159,7 +159,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-require_once 'shortcodes/_load.php';
+require_once 'shortcodes/index.php';
 require_once 'disable_comments.php';
 require_once 'breadcrumbs/breadcrumbs.php';
 require_once get_template_directory() . '/walkers/custom-nav-walker.php';
@@ -174,14 +174,15 @@ function menu_link_ids ($atts, $page) {
 }
 add_filter('page_menu_link_attributes', 'menu_link_ids', 10, 2);
 
-// handle the two navigation templates, forcing homepage to be with toggle navigation
+/**
+ * handle the two navigation templates, forcing homepage to be with toggle navigation
+ */
 function init_nav() {
 	global $mainContainerClasses;
 	if (
-		is_front_page() 
+		is_front_page()
 		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php'
 		|| sizeof(get_post_ancestors($post->ID)) == 0) {
-
 		// ad class to body to bind JS listeners
 		function nav_toggle_body_class($classes) {
 			$classes[] = 'nav-toggle';
@@ -197,6 +198,19 @@ function init_nav() {
 	}
 }
 
-// add a 16/9 thumbnail size with cropping 
-// used in card headers
+/**
+ * add a 16/9 thumbnail size with cropping 
+ * used in card headers
+ */
 add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
+
+/**
+ * update CSS within admin
+ */
+add_action( 'admin_init', 'epfl_add_editor_styles' );
+function epfl_add_editor_styles() {
+
+	add_theme_support( 'editor-style' );
+	add_editor_style('assets/css/vendors.min.css');
+	add_editor_style('assets/css/base.css');
+}
