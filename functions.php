@@ -197,3 +197,6 @@ function init_nav() {
 	}
 }
 
+// add a 16/9 thumbnail size with cropping 
+// used in card headers
+add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
