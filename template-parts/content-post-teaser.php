@@ -9,7 +9,6 @@
 
 ?>
 
-
 	<a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" class="news link-trapeze-vertical">
 		<div class="news-container">
 			<div class="news-thumbnail">
