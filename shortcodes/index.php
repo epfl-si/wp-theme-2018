@@ -4,7 +4,7 @@
 
 // use Symfony\Component\Finder\Finder;
 
-add_action( 'init', 'register_shortcodes' );
+// add_action( 'init', 'register_shortcodes' );
 
 // load all files named "controller.php" in all sub-folders
 //$finder = new Finder();
@@ -15,7 +15,6 @@ add_action( 'init', 'register_shortcodes' );
  */
 
 require_once(get_template_directory().'/shortcodes/collapsable/controller.php');
-require_once(get_template_directory().'/shortcodes/memento/controller.php');
 require_once(get_template_directory().'/shortcodes/news/controller.php');
 require_once(get_template_directory().'/shortcodes/page_teaser/controller.php');
 require_once(get_template_directory().'/shortcodes/custom_teasers/controller.php');
