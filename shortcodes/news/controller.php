@@ -1,5 +1,7 @@
 <?php
 
+add_action('epfl_news_action', 'renderNews');
+
 function renderNews ($news) {
   ob_start();
   if (is_admin()) {

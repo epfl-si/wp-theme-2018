@@ -3,9 +3,7 @@
 require_once(__DIR__.'/shortcake.php');
 
 // add shortcode
-add_action( 'init', function() {
-  add_shortcode( 'epfl_page_teaser', 'renderPageTeaser' );
-});
+add_shortcode( 'epfl_page_teaser', 'renderPageTeaser' );
 
 // render
 function renderPageTeaser ($args) {
