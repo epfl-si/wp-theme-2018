@@ -12,7 +12,12 @@ function custom_teasers() {
 					'label'    => '<hr><h2>Section title '.$i.'</h2> '.$i,
 					'attr'     => 'titlesection',
 					'type'     => 'text'
-				)
+				),
+		array(
+			'label'    => 'Grey background',
+			'attr'     => 'graybackground',
+			'type'     => 'checkbox'
+		)
 	];
 
 	for ($i = 1; $i < 4; $i++) {
