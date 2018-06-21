@@ -54,39 +54,7 @@ global $navClasses;
 			</div>  
 		</form>
 
-<?php 
-
-/*
-	language switcher
- */
-if (function_exists('pll_the_languages')):
-$translations = pll_the_languages(array('raw'=>1));
-if (sizeof($translations) > 0) :
-?>
-<!-- language switcher -->
-		<nav class="language-switcher pr-5">
-		<ul>
-		<?php foreach($translations as $lang): ?>
-			<?php if ($lang['current_lang']): ?>
-				<li>
-					<span class="active" aria-label="<?php echo $lang['name'] ?>'"><?php echo strtoupper($lang['slug']) ?></span>
-				</li>
-			<?php else: ?>
-				<li>
-					<a href="<?php $lang['name'] ?>" aria-label="English"><?php echo strtoupper($lang['slug']) ?></a>
-				</li>
-			<?php endif; // current lang ?>
-		<?php endforeach; ?>
-		</ul>
-	</nav>
-<?php else: ?>
-<!-- language switcher placeholder -->
-<div></div> 
-<?php endif; // sizeof ?>
-<?php else: ?>
-<!-- language switcher placeholder -->
-<div></div>
-<?php endif; // function_exists ?>
+	<?php get_template_part( 'template-parts/language-switcher' ) ?>
 
   <div class="btn btn-secondary menu-toggle-mobile d-xl-none">
 		Menu

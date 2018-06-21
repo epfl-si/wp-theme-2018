@@ -10,7 +10,7 @@ add_filter( 'post_gallery', 'epflGallery', 10, 3 );
 function epflGallery($output = '', $attr, $instance){
     $posts = get_posts(array('include' => $attr['ids'],'post_type' => 'attachment'));
 
-    $output = '<div id="my-gallery-'.$instance.'" class="gallery gallery-main mt-3>';
+    $output = '<div id="my-gallery-'.$instance.'" class="gallery gallery-main mt-4">';
 
     foreach($posts as $imagePost){
       $image_src = wp_get_attachment_image_src($imagePost->ID, 'large')[0];

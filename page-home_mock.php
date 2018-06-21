@@ -21,7 +21,7 @@ get_sidebar();
 			</style>
 
 			<div class="vimeo-wrapper d-none d-xl-block">
-				<iframe src="https://player.vimeo.com/video/276045972?background=1" style="border: none;" frameborder"0" allowfullscreen></iframe>
+				<iframe src="https://player.vimeo.com/video/276045972?background=1" class="bg-gray-100" style="border: none;" frameborder"0" allowfullscreen></iframe>
 			</div>
 
 			<picture class="d-block d-xl-none">
@@ -248,7 +248,7 @@ get_sidebar();
 
 
 
-		<div class="bg-gray-100 py-5 mb-3">
+		<div class="bg-gray-100 py-5">
 			<div class="datepicker-wrapper">
 
 			</div>
