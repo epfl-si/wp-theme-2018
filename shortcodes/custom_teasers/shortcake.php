@@ -4,12 +4,20 @@
 add_action( 'register_shortcode_ui', 'custom_teasers' );
 function custom_teasers() {
 
+	// see documentation:
+	// https://github.com/wp-shortcake/shortcake/blob/master/dev.php
+
   $fields = [
 		array(
 					'label'    => '<hr><h2>Section title '.$i.'</h2> '.$i,
 					'attr'     => 'titlesection',
 					'type'     => 'text'
-				)
+				),
+		array(
+			'label'    => 'Grey background',
+			'attr'     => 'graybackground',
+			'type'     => 'checkbox'
+		)
 	];
 
 	for ($i = 1; $i < 4; $i++) {
@@ -17,7 +25,7 @@ function custom_teasers() {
 			$fields,
 			[
 				array(
-					'label'    => '<hr><h2>Teaser '.$i.'</h2> Title '.$i,
+					'label'    => '<div class="col-6"><hr><h2>Teaser '.$i.'</h2> Title '.$i,
 					'attr'     => 'title'.$i,
 					'type'     => 'text'
 				),
