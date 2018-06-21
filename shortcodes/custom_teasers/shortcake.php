@@ -53,7 +53,7 @@ function custom_teasers() {
 					'frameTitle'  => esc_html__( 'Select Image', 'shortcode-ui-example', 'shortcode-ui' ),
 				)
 			]
-			);
+		);
 	}
 
 	global $iconDirectory;
