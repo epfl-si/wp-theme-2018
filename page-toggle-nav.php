@@ -14,8 +14,8 @@ global $navClasses;
 	<?php get_sidebar(); ?>
 
 	<div class="w-100">
+		<?php custom_breadcrumbs(); ?>
 		<main id="content" role="main" class="content pt-5">
-			<?php custom_breadcrumbs(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
