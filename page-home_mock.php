@@ -578,6 +578,7 @@ get_sidebar();
 				</div>
 
 				<div class="question-content">
+				<h2 class="mb-4">Science question</h2>
 					<p class="h3">A spider’s silk thread is proportionally:</p>
 
 					<div class="question-answers">
