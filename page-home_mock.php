@@ -255,164 +255,117 @@ get_sidebar();
 
 			<div class="overflow-hidden">
 				<div class="container">
-					<div class="card-slider-wrapper">
-						<div class="card-slider flickity-enabled is-draggable" tabindex="0">
-							<div class="flickity-viewport" style="height: 421.844px; touch-action: pan-y;">
-								<div class="flickity-slider" style="left: 0px; transform: translateX(0%);">
-									<div class="card-slider-cell is-selected" aria-selected="true" style="position: absolute; left: 0%; height: 100%;">
-										<a href="#" class="card card-gray link-trapeze-horizontal">
-											<div class="card-body">
-												<picture class="card-img-top">
-													<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-1.png" class="img-fluid" title="Image title" alt="Image alt description">
-												</picture>
+		<?php 
+		$data = [];
+		array_push(
+			$data,
+			[
+				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-1.png',
+				'title' => 'EPFL Drone Days 2018 dates have been announced!',
+				'date' => '10.06.2018',
+				'time_from' => '13:00',
+				'time_to' => '17:30',
+				'location' => 'ArtLab EPFL',
+				'category' => 'Cultural event',
+				'link' => '#',
+			],
+			[
+				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-2.png',
+				'title' => 'International Symposium on Chemical Biology 2018',
+				'date' => '17.06.2018',
+				'time_from' => '08:00',
+				'time_to' => '18:00',
+				'location' => 'Rolex Learning Center',
+				'category' => 'Symposium',
+				'link' => '#',
+			],
+			[
+				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-3.png',
+				'title' => 'New neurons for old brains : adult neurogenesis in Alzheimer’s disease',
+				'date' => '24.06.2018',
+				'time_from' => '18:00',
+				'time_to' => '20:00',
+				'location' => 'SwissTech Convention Center',
+				'category' => 'Conference',
+				'link' => '#',
+			],
+			[
+				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-4.png',
+				'title' => 'EuroTechPostdoc Programme: application platform is now open!',
+				'date' => '07.07.2018',
+				'time_from' => '09:00',
+				'time_to' => '17:00',
+				'location' => 'EPFL',
+				'category' => 'Application',
+				'link' => '#',
+			],
+			[
+				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-5.png',
+				'title' => 'Startup Acceleration Workshops',
+				'date' => '21.07.2018',
+				'time_from' => '09:00',
+				'time_to' => '15:30',
+				'location' => 'Rolex Learning Center',
+				'category' => 'Workshop',
+				'link' => '#',
+			],
+			[
+				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-6.png',
+				'title' => 'Movie-mercredi “Shaw of the Dead” - original version',
+				'date' => '02.08.2018',
+				'time_from' => '19:00',
+				'time_to' => '21:00',
+				'location' => 'ArtLab EPFL',
+				'category' => 'Movie',
+				'link' => '#',
+			]
+		);
 
-												<h3 class="card-title">EPFL Drone Days 2018 dates have been announced!</h3>
-												<div class="card-info">
-													<span class="card-info-date">10.06.2018</span>
-													<span>13:00</span>
-													<span>17:30</span>
-													<p>
-														Location:
-														<b>ArtLab EPFL</b>
-														<br>Category:
-														<b>Cultural event</b>
-														<br> </p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="card-slider-cell" aria-selected="false" style="position: absolute; left: 32.03%; height: 100%;">
-										<a href="#" class="card card-gray link-trapeze-horizontal">
-											<div class="card-body">
-												<picture class="card-img-top">
-													<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-2.png" class="img-fluid" title="Image title" alt="Image alt description">
-												</picture>
+?>
 
-												<h3 class="card-title">International Symposium on Chemical Biology 2018</h3>
-												<div class="card-info">
-													<span class="card-info-date">10.06.2018</span>
-													<span>13:00</span>
-													<span>17:30</span>
-													<p>
-														Location:
-														<b>ArtLab EPFL</b>
-														<br>Category:
-														<b>Cultural event</b>
-														<br> </p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="card-slider-cell" aria-selected="false" style="position: absolute; left: 64.06%; height: 100%;">
-										<a href="#" class="card card-gray link-trapeze-horizontal">
-											<div class="card-body">
-												<picture class="card-img-top">
-													<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-3.png" class="img-fluid" title="Image title" alt="Image alt description">
-												</picture>
+<div class="card-slider-wrapper mb-4">
+<div class="card-slider">
+  <?php foreach ($data as $d): ?>
 
-												<h3 class="card-title">New neurons for old brains : adult neurogenesis in Alzheimer’s disease</h3>
-												<div class="card-info">
-													<span class="card-info-date">10.06.2018</span>
-													<span>13:00</span>
-													<span>17:30</span>
-													<p>
-														Location:
-														<b>ArtLab EPFL</b>
-														<br>Category:
-														<b>Cultural event</b>
-														<br> </p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="card-slider-cell" aria-selected="false" style="position: absolute; left: 96.09%; height: 100%;">
-										<a href="#" class="card card-gray link-trapeze-horizontal">
-											<div class="card-body">
-												<picture class="card-img-top">
-													<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-4.png" class="img-fluid" title="Image title" alt="Image alt description">
-												</picture>
+  <div class="card-slider-cell">
+    <a href="<?php echo $d['link'] ?>" class="card card-gray link-trapeze-horizontal">
+      <div class="card-body">
+        <picture class="card-img-top">
+          <img src="<?php echo $d['img'] ?>" class="img-fluid" title="Image title" alt="Image alt description" />
+        </picture>
 
-												<h3 class="card-title">EuroTechPostdoc Programme: application platform is now open!</h3>
-												<div class="card-info">
-													<span class="card-info-date">10.06.2018</span>
-													<span>13:00</span>
-													<span>17:30</span>
-													<p>
-														Location:
-														<b>ArtLab EPFL</b>
-														<br>Category:
-														<b>Cultural event</b>
-														<br> </p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="card-slider-cell" aria-selected="false" style="position: absolute; left: 128.11%; height: 100%;">
-										<a href="#" class="card card-gray link-trapeze-horizontal">
-											<div class="card-body">
-												<picture class="card-img-top">
-													<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-5.png" class="img-fluid" title="Image title" alt="Image alt description">
-												</picture>
+        <h3 class="card-title"><?php echo $d['title'] ?></h3>
+        <div class="card-info">
+          <span class="card-info-date"><?php echo $d['date'] ?></span>
+          <span><?php echo $d['time_from'] ?></span>
+          <span><?php echo $d['time_to'] ?></span>
+          <p>
+            Lieu :
+            <b><?php echo $d['location'] ?></b>
+            <br> Catégorie :
+            <b><?php echo $d['category'] ?></b>
+            <br> </p>
+        </div>
+      </div>
+    </a>
+  </div>
 
-												<h3 class="card-title">Startup Acceleration Workshops</h3>
-												<div class="card-info">
-													<span class="card-info-date">10.06.2018</span>
-													<span>13:00</span>
-													<span>17:30</span>
-													<p>
-														Location:
-														<b>ArtLab EPFL</b>
-														<br>Category:
-														<b>Cultural event</b>
-														<br> </p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="card-slider-cell" aria-selected="false" style="position: absolute; left: 160.14%; height: 100%;">
-										<a href="#" class="card card-gray link-trapeze-horizontal">
-											<div class="card-body">
-												<picture class="card-img-top">
-													<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-6.png" class="img-fluid" title="Image title" alt="Image alt description">
-												</picture>
+  <?php endforeach; ?>
 
-												<h3 class="card-title">Movie-mercredi “Shaw of the Dead” - original version</h3>
-												<div class="card-info">
-													<span class="card-info-date">10.06.2018</span>
-													<span>13:00</span>
-													<span>17:30</span>
-													<p>
-														Location:
-														<b>ArtLab EPFL</b>
-														<br>Category:
-														<b>Cultural event</b>
-														<br> </p>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="card-slider-footer">
-							<div>
-								<button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
-									<svg class="icon" aria-hidden="true">
-										<use xlink:href="#icon-chevron-left"></use>
-									</svg>
-								</button>
-								<button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
-									<svg class="icon" aria-hidden="true">
-										<use xlink:href="#icon-chevron-right"></use>
-									</svg>
-								</button>
-							</div>
-							<div>
-								<a href="https://memento.epfl.ch/" target="_blank">See events complete list</a>
-							</div>
-						</div>
-					</div>
+				</div>
+				<div class="card-slider-footer">
+    <div>
+      <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-left"></use></svg>
+      </button>
+      <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
+      </button>
+    </div>
+    <div>
+      <a href="#">Voir l’agenda complet des événements</a>
+    </div>
+  </div>
 				</div>
 			</div>
 		</div>
