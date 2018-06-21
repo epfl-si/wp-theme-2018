@@ -186,8 +186,8 @@ function init_nav() {
 	global $navClasses;
 	if (
 		is_front_page()
-		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php'
-		|| sizeof(get_post_ancestors($post->ID)) == 0) {
+		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php') {
+
 		// ad class to body to bind JS listeners
 		function nav_toggle_body_class($classes) {
 			$classes[] = 'nav-toggle';
