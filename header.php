@@ -9,8 +9,6 @@
  * @package epfl
  */
 
-global $navClasses;
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -23,7 +21,7 @@ global $navClasses;
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site <?php echo $navClasses ?>">
+<div id="page" class="site">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">

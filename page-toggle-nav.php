@@ -7,8 +7,13 @@
 
 init_nav();
 get_header();
-get_sidebar();
+
+global $navClasses;
 ?>
+<div class="<?php echo $navClasses ?>">
+	<?php get_sidebar(); ?>
+
+	<div class="w-100">
 		<main id="content" role="main" class="content pt-5">
 			<?php custom_breadcrumbs(); ?>
 			<?php
@@ -20,6 +25,10 @@ get_sidebar();
 			?>
 
 		</main><!-- #main -->
+
+	</div>
+
+	</div> <!-- main-container -->
 
 <?php
 get_footer();
