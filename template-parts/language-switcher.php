@@ -18,6 +18,7 @@ if ( sizeof($translations) == 0) {
 	return;
 }
 
+$translations = reorderTranslations($translations);
 ?>
 <!-- language switcher -->
 		<nav class="language-switcher pr-5">
@@ -35,3 +36,37 @@ if ( sizeof($translations) == 0) {
 		<?php endforeach; ?>
 		</ul>
 	</nav>
+
+<?php 
+
+/**
+ * reorderTranslations
+ *
+ * Orders given translation according to the lang sequence.
+ * Traductions out of the language sequence will be put at the end
+ * of the list in arrival order
+ * 
+ * @param [array] $trads
+ * @return array
+ */
+function reorderTranslations($trads) {
+	$temp = [];
+	$langSequence = ['fr', 'en', 'de', 'it'];
+	foreach ($langSequence as $lang) {
+		foreach ($trads as $key => $value) {
+			if($key === $lang) {
+				array_push($temp, $value);
+				break;
+			}
+		}
+	}
+
+	foreach ($trads as $key => $value) {
+		if(!in_array($key, $langSequence)) {
+			array_push($temp, $value);
+		}
+	}
+
+	return $temp;
+}
+?>
