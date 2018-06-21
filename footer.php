@@ -9,9 +9,22 @@
  * @package epfl
  */
 
-?>
+if (!function_exists('pll_the_languages')) {
+	include(__DIR__.'/footer_mock.php');
+	return;
+}
 
-	<?php include(__DIR__.'/footer_mock.php'); ?>
+/**
+ * TODO: get actual language
+ */
+$lang = 'fr';
+
+if ( $lang == 'fr' ) {
+	include(__DIR__.'/footer_mock_fr.php');
+} else {
+	include(__DIR__.'/footer_mock.php');
+}
+?>
 
 	
 </div><!-- #page -->
