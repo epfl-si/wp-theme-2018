@@ -11,7 +11,7 @@ get_sidebar();
 ?>
 	<main id="main" role="main" class="content">
 
-		<div class="fullwidth-teaser fullwidth-teaser-horizontal mb-lg-5 mb-xl-0">
+		<div class="fullwidth-teaser fullwidth-teaser-horizontal mb-lg-5 mb-xl-0 mt-5 mt-lg-0">
 			<style>
 				.vimeo-wrapper iframe {
 					width: 100%;
@@ -281,9 +281,7 @@ get_sidebar();
 				<div class="container">
 					<?php 
 					$data = [];
-					array_push(
-						$data,
-						[
+					$highlight = [
 							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-1.png',
 							'title' => 'EPFL Drone Days 2018 dates have been announced!',
 							'date' => '10.06.2018',
@@ -292,7 +290,9 @@ get_sidebar();
 							'location' => 'ArtLab EPFL',
 							'category' => 'Cultural event',
 							'link' => '#',
-						],
+						];
+					array_push(
+						$data,
 						[
 							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-2.png',
 							'title' => 'International Symposium on Chemical Biology 2018',
@@ -350,6 +350,34 @@ get_sidebar();
 
 					<div class="card-slider-wrapper mb-4">
 						<div class="card-slider">
+
+							<div class="card-slider-cell card-slider-cell-lg">
+								<a href="#" class="card card-gray link-trapeze-horizontal">
+									<div class="card-body">
+										<picture class="card-img-top">
+											<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-1.png" class="img-fluid" title="Image title" alt="Image alt description" />
+										</picture>
+
+										<h3 class="card-title">EPFL Drone Days 2018 dates have been announced!</h3>
+										<p>From 1 to 3 September 2018, more than 5,000 people will be treated to drone races, a robotics showcase, a conference
+											and demonstrations on the EPFL's campus. Attendees will enjoy 3 days of thrilling races over the middle of campus,
+											including a night race lit by LEDs and the finals of the Swiss Rotor Sports Association (SRSA).</p>
+										<div class="card-info">
+											<span class="card-info-date">10.01.2018</span>
+											<span>13:00</span>
+											<span>17:30</span>
+											<p>
+												Lieu :
+												<b>Laboratoire ALICE</b>
+												<br>Organisé par
+												<b>Campus Farmers (Unipoly)</b>
+												<br>
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
+
 							<?php foreach ($data as $d): ?>
 
 							<div class="card-slider-cell">
@@ -578,7 +606,7 @@ get_sidebar();
 				</div>
 
 				<div class="question-content">
-				<h2 class="mb-4">Science question</h2>
+					<h2 class="mb-4">Science question</h2>
 					<p class="h3">A spider’s silk thread is proportionally:</p>
 
 					<div class="question-answers">
@@ -621,10 +649,6 @@ get_sidebar();
 					<div class="fullwidth-teaser-title">
 						<h3>
 							Organoïds duplicates our organs in laboratory</h3>
-						<ul class="list-inline mt-2">
-							<li class="list-inline-item">News</li>
-							<li class="list-inline-item">Biology</li>
-						</ul>
 					</div>
 					<a href="#" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
 						Read the study
