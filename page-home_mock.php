@@ -611,7 +611,7 @@ get_sidebar();
 
 		<div class="fullwidth-teaser fullwidth-teaser-horizontal">
 			<picture>
-				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/1024x1024.jpg" aria-labelledby="background-label" alt="An image description">
+				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/1024x1024-e1529575766143.jpg" aria-labelledby="background-label" alt="An image description">
 			</picture>
 
 			<div class="fullwidth-teaser-text">
