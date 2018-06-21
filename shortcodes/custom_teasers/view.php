@@ -2,7 +2,7 @@
 $data = get_query_var('epfl_custom_teasers_data');
 if (!$data) return true;
 ?>
-<div class="container-full p-5">
+<div class="container-full p-lg-5">
   <div class="container">
     <h3 class="h6 mb-3"><?php echo $data['titlesection'] ?: 'Section title'; ?></h3>
 

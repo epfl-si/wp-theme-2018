@@ -11,9 +11,6 @@
 
 ?>
 
-	</div><!-- #content -->
-
-
 	<?php include(__DIR__.'/footer_mock.php'); ?>
 
 	
