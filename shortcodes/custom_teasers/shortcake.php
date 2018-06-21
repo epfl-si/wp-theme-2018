@@ -61,7 +61,7 @@ function custom_teasers() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_custom_teasers',
 		array(
-      'label' => 'Custom teasers',
+      'label' =>  esc_html__( 'Custom teasers' ),
       'listItemImage' => '<img src="'.$iconDirectory.'custom_teasers.png'.'">',
       'attrs' => $fields
     )

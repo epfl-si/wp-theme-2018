@@ -17,7 +17,7 @@ global $iconDirectory;
 	shortcode_ui_register_for_shortcode(
 		'epfl_page_teaser',
 		array(
-      'label' => 'Page teaser',
+      'label' =>  esc_html__( 'Page teaser' ),
       'listItemImage' => '<img src="'.$iconDirectory.'page_teaser.png'.'">',
       'attrs' => $fields
     )

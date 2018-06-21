@@ -21,7 +21,7 @@ function epfl_collapsable() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_collapsable',
 		array(
-      'label' => 'Add collapsable shortcode',
+      'label' => esc_html__( 'Collapsable' ),
       'attrs' => $fields,
       'listItemImage' => '<img src="'.$iconDirectory.'toggle.png'.'">',
     )

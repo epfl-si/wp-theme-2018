@@ -34,7 +34,7 @@ function hero() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_hero',
 		array(
-      'label' => 'Hero',
+      'label' =>  esc_html__( 'Hero' ),
       'listItemImage' => '<img src="'.$iconDirectory.'hero.png'.'">',
       'attrs' => $fields
     )
