@@ -25,6 +25,5 @@ get_sidebar();
 				</div>
 			</div>
 		</main><!-- #main -->
-
 <?php
 get_footer();

@@ -183,7 +183,7 @@ add_filter('page_menu_link_attributes', 'menu_link_ids', 10, 2);
  * handle the two navigation templates, forcing homepage to be with toggle navigation
  */
 function init_nav() {
-	global $mainContainerClasses;
+	global $navClasses;
 	if (
 		is_front_page()
 		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php'
@@ -195,11 +195,11 @@ function init_nav() {
 		}
 		add_filter('body_class', 'nav_toggle_body_class');
 
-		//update main container class
-		$mainContainerClasses = 'nav-toggle';
+		//update main container class 
+		$navClasses = 'nav-toggle';
 	} else {
 		//update main container class
-		$mainContainerClasses = 'nav-solid';
+		$navClasses = 'nav-solid';
 	}
 }
 

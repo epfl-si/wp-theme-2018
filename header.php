@@ -9,7 +9,7 @@
  * @package epfl
  */
 
-global $mainContainerClasses;
+global $navClasses;
 
 ?>
 <!doctype html>
@@ -23,7 +23,7 @@ global $mainContainerClasses;
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site <?php echo $navClasses ?>">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">
@@ -34,31 +34,59 @@ global $mainContainerClasses;
 		<div aria-hidden="true">
 			<?php
 				wp_nav_menu( array(
-					'menu_class'=> 'nav-header d-none d-xl-flex',
+					'menu_class'=> 'nav-header d-none d-xl-flex m-0',
 					'container' => 'ul',
 					'depth' => 1,
 				) );
+
 			?>
+
 		</div>
 
-		<div class="input-group search">
-			<div class="input-group-prepend">
-				<span class="input-group-text">
-					<svg class="icon"><use xlink:href="#icon-search"></use></svg>
-				</span>
-			</div>
-			<input type="text" class="form-control" placeholder="Rechercher">
-		</div>  
+		<form action="https://preview.liip.ch/epfl-search/api/" class="d-xl-none">
+			<div class="input-group search w-100">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<svg class="icon"><use xlink:href="#icon-search"></use></svg>
+					</span>
+				</div>
+				<input type="text" class="form-control" placeholder="Rechercher">
+			</div>  
+		</form>
+
+<?php 
+
+/*
+	language switcher
+ */
+if (function_exists('pll_the_languages')):
+$translations = pll_the_languages(array('raw'=>1));
+if (sizeof($translations) > 0) :
+?>
+<!-- language switcher -->
 		<nav class="language-switcher pr-5">
 		<ul>
-			<li>
-				<span class="active" aria-label="Français">FR</span>
-			</li>
-			<li>
-				<a href="#" aria-label="English">EN</a>
-			</li>
+		<?php foreach($translations as $lang): ?>
+			<?php if ($lang['current_lang']): ?>
+				<li>
+					<span class="active" aria-label="<?php echo $lang['name'] ?>'"><?php echo strtoupper($lang['slug']) ?></span>
+				</li>
+			<?php else: ?>
+				<li>
+					<a href="<?php $lang['name'] ?>" aria-label="English"><?php echo strtoupper($lang['slug']) ?></a>
+				</li>
+			<?php endif; // current lang ?>
+		<?php endforeach; ?>
 		</ul>
 	</nav>
+<?php else: ?>
+<!-- language switcher placeholder -->
+<div></div> 
+<?php endif; // sizeof ?>
+<?php else: ?>
+<!-- language switcher placeholder -->
+<div></div>
+<?php endif; // function_exists ?>
 
   <div class="btn btn-secondary menu-toggle-mobile d-xl-none">
 		Menu
@@ -71,4 +99,4 @@ global $mainContainerClasses;
 
 </header>
 
-<div class="main-container <?php echo $mainContainerClasses ?>">
+<div class="main-container">
