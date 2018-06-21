@@ -23,6 +23,5 @@ get_sidebar();
 				<?php get_template_part( 'template-parts/pagination'); ?>
 			</div>
 		</main><!-- #main -->
-
 <?php
 get_footer();

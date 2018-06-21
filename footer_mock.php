@@ -6,33 +6,48 @@
 				<div class="footer-sitemap-col">
 					<button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false"
 					  aria-controls="collapse-1">
-						<strong>A propos de l’EPFL</strong>
+						<strong>About EPFL</strong>
 					</button>
 					<div class="collapse collapse-item" id="collapse-1">
 						<ul class="footer-links">
 							<li>
-								<a href="#">Vue d’ensemble</a>
+								<a href="#">Overview</a>
 							</li>
 							<li>
-								<a href="#">Histoire de l’EPFL</a>
+								<a href="#">President</a>
 							</li>
 							<li>
-								<a href="#">Actualités</a>
+								<a href="#">Direction</a>
 							</li>
 							<li>
-								<a href="#">Organisation administrative</a>
+								<a href="#">Vice-presidencies</a>
 							</li>
 							<li>
-								<a href="#">Actions pour le public extérieur</a>
+								<a href="#">EPFL locations</a>
 							</li>
 							<li>
-								<a href="#">Emplois</a>
+								<a href="#">Working at EPFL</a>
 							</li>
 							<li>
-								<a href="#">Mécénats et dons</a>
+								<a href="#">Recruiting EPFL talents</a>
 							</li>
 							<li>
-								<a href="#">Presse et média</a>
+								<a href="#">News & Media</a>
+							</li>
+							<li>
+								<a href="#">Scientific activities</a>
+							</li>
+							<li>
+								<a href="#">Philanthropy</a>
+							</li>
+							<li>
+								<a href="#">Cooperation</a>
+							</li>
+							<li>
+								<a href="#">Alumni</a>
+							</li>
+							<li>
+								<a href="#">Laws & regulations</a>
 							</li>
 						</ul>
 					</div>
@@ -45,22 +60,25 @@
 					<div class="collapse collapse-item" id="collapse-1">
 						<ul class="footer-links">
 							<li>
-								<a href="#">Bachelors</a>
+								<a href="#">Bachelor</a>
 							</li>
 							<li>
-								<a href="#">Masters</a>
+								<a href="#">Master</a>
 							</li>
 							<li>
-								<a href="#">Doctorats</a>
+								<a href="#">PhD</a>
 							</li>
 							<li>
-								<a href="#">MBA</a>
+								<a href="#">Continuing education</a>
 							</li>
 							<li>
-								<a href="#">Calendrier académique</a>
+								<a href="#">Mobility</a>
 							</li>
 							<li>
-								<a href="#">MOOCS et autoformation</a>
+								<a href="#">Admissions</a>
+							</li>
+							<li>
+								<a href="#">Stuying at EPFL</a>
 							</li>
 						</ul>
 					</div>
@@ -68,24 +86,33 @@
 				<div class="footer-sitemap-col">
 					<button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false"
 					  aria-controls="collapse-1">
-						<strong>Recherche</strong>
+						<strong>Research</strong>
 					</button>
 					<div class="collapse collapse-item" id="collapse-1">
 						<ul class="footer-links">
 							<li>
-								<a href="#">Domaines de recherche par facultés</a>
+								<a href="#">Research at EPFL</a>
 							</li>
 							<li>
-								<a href="#">Événements scientifiques</a>
+								<a href="#">Research domains</a>
 							</li>
 							<li>
-								<a href="#">Publications scientifiques</a>
+								<a href="#">Laboratories</a>
 							</li>
 							<li>
-								<a href="#">Organisation administrative</a>
+								<a href="#">Meet our faculty members</a>
 							</li>
 							<li>
-								<a href="#">Annuaire des facultés</a>
+								<a href="#">Use our facilities</a>
+							</li>
+							<li>
+								<a href="#">Collaborate & partner</a>
+							</li>
+							<li>
+								<a href="#">Services to our researchers</a>
+							</li>
+							<li>
+								<a href="#">Events, news & deadlines</a>
 							</li>
 						</ul>
 					</div>
@@ -98,16 +125,28 @@
 					<div class="collapse collapse-item" id="collapse-1">
 						<ul class="footer-links">
 							<li>
-								<a href="#">Partenariat avec l’industrie</a>
+								<a href="#">About</a>
 							</li>
 							<li>
-								<a href="#">Accompagnement de start-ups</a>
+								<a href="#">Collaboration & partnership</a>
 							</li>
 							<li>
-								<a href="#">Soutien aux innovateurs</a>
+								<a href="#">Entrepreneurship</a>
 							</li>
 							<li>
-								<a href="#">Innovation park</a>
+								<a href="#">Startups</a>
+							</li>
+							<li>
+								<a href="#">Learn & develop</a>
+							</li>
+							<li>
+								<a href="#">Join & engage</a>
+							</li>
+							<li>
+								<a href="#">Contacts</a>
+							</li>
+							<li>
+								<a href="#">News & Events</a>
 							</li>
 						</ul>
 					</div>
@@ -120,25 +159,43 @@
 					<div class="collapse collapse-item" id="collapse-1">
 						<ul class="footer-links">
 							<li>
-								<a href="#">Accéder au campus</a>
+								<a href="#">Access</a>
 							</li>
 							<li>
-								<a href="#">Bâtiments et services</a>
+								<a href="#">Library</a>
 							</li>
 							<li>
-								<a href="#">Recevoir de l’aide</a>
+								<a href="#">Restaurants. shops, hotels</a>
 							</li>
 							<li>
-								<a href="#">Bons plans</a>
+								<a href="#">Daycare</a>
 							</li>
 							<li>
-								<a href="#">Associations sur le campus</a>
+								<a href="#">Sports</a>
 							</li>
 							<li>
-								<a href="#">S’installer à Lausanne</a>
+								<a href="#">Sustainability</a>
 							</li>
 							<li>
-								<a href="#">Anciens étudiants</a>
+								<a href="#">Art, culture, exhibitions</a>
+							</li>
+							<li>
+								<a href="#">Help, security, health</a>
+							</li>
+							<li>
+								<a href="#">Associations</a>
+							</li>
+							<li>
+								<a href="#">Events</a>
+							</li>
+							<li>
+								<a href="#">Living in Switzerland</a>
+							</li>
+							<li>
+								<a href="#">EPFL services</a>
+							</li>
+							<li>
+								<a href="#">Students services</a>
 							</li>
 						</ul>
 					</div>
@@ -154,37 +211,37 @@
 					<div class="collapse collapse-item" id="collapse-fac">
 						<ul class="footer-links">
 							<li>
-								<a href="#">Environnement Naturel, Architectural et Construit
+								<a href="#">Architecture, Civil and Environmental Engineering
 									<strong>ENAC</strong>
 								</a>
 							</li>
 							<li>
-								<a href="#">Sciences de Base
+								<a href="#">Basic Sciences
 									<strong>SB</strong>
 								</a>
 							</li>
 							<li>
-								<a href="#">Sciences et Techniques de l'Ingénieur
+								<a href="#">Engineering
 									<strong>STI</strong>
 								</a>
 							</li>
 							<li>
-								<a href="#">Informatique et Communications
+								<a href="#">Computer and Communication Sciences
 									<strong>IC</strong>
 								</a>
 							</li>
 							<li>
-								<a href="#">Sciences de la Vie
+								<a href="#">Life Sciences
 									<strong>SV</strong>
 								</a>
 							</li>
 							<li>
-								<a href="#">Collège du Management de la Technologie
+								<a href="#">Management of Technology
 									<strong>CDM</strong>
 								</a>
 							</li>
 							<li>
-								<a href="#">Collège des Humanités
+								<a href="#">College of Humanities
 									<strong>CDH</strong>
 								</a>
 							</li>
@@ -194,14 +251,14 @@
 			</div>
 
 			<div class="footer-group footer-buttons">
-				<p class="footer-title footer-title-no-underline">Portail interne de l’EPFL</p>
-				<a href="#" class="btn btn-secondary btn-sm">Enseignants et chercheurs</a>
-				<a href="#" class="btn btn-secondary btn-sm">Étudiants</a>
-				<a href="#" class="btn btn-secondary btn-sm">Collaborateurs</a>
+				<p class="footer-title footer-title-no-underline">EPFL reserved access</p>
+				<a href="#" class="btn btn-secondary btn-sm">Teachers and researchers</a>
+				<a href="#" class="btn btn-secondary btn-sm">Students</a>
+				<a href="#" class="btn btn-secondary btn-sm">Co-workers</a>
 			</div>
 
 			<div class="footer-group footer-socials">
-				<p class="footer-title footer-title-no-underline">Suivre les pulsations de l’EPFL sur les réseaux sociaux</p>
+				<p class="footer-title footer-title-no-underline">Get the pulse of the campuses through social channels</p>
 				<div class="footer-social">
 					<a href="#" class="social-icon social-icon-facebook social-icon-negative">
 						<svg class="icon" aria-hidden="true">
@@ -244,11 +301,11 @@
 
 			<div class="footer-legal">
 				<div class="footer-legal-links">
-					<a href="">Accessibilité</a>
-					<a href="">Mentions légales</a>
+					<a href="#">Accessibility</a>
+					<a href="#">Legals</a>
 				</div>
 				<div>
-					<p>&copy; 2018 EPFL, tous droits réservés</p>
+					<p>&copy; 2018 EPFL, all rights reserved</p>
 				</div>
 			</div>
 		</footer>
