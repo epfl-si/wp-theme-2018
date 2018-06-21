@@ -499,7 +499,7 @@ get_sidebar();
 						<div class="col-6 col-lg-4">
 							<a href="http://www.epfl.ae/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-middle-east.jpg" class="img-fluid" title="Middle-East" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-middle-east.jpg" class="img-fluid" title="Middle East" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
@@ -615,7 +615,7 @@ get_sidebar();
 							<div class="social-feed-item-content">
 								<div>
 									<p class="social-feed-header">
-										<strong>@epflENAC</strong>
+										<strong>@epfl</strong>
 										<span class="text-small">il y a 8 heures</span>
 									</p>
 									<p>A Berlin, les étudiantes et étudiants de Dominique Perrault exposent leurs travaux à la galerie Aedes Architecture
@@ -650,7 +650,7 @@ get_sidebar();
 							<div class="social-feed-item-content">
 								<div>
 									<p class="social-feed-header">
-										<strong>@epflENAC</strong>
+										<strong>@epfcampus</strong>
 										<span class="text-small">il y a 8 heures</span>
 									</p>
 									<p>A Berlin, les étudiantes et étudiants de Dominique Perrault exposent leurs travaux à la galerie Aedes Architecture
@@ -684,7 +684,7 @@ get_sidebar();
 							<div class="social-feed-item-content">
 								<div>
 									<p class="social-feed-header">
-										<strong>@epflENAC</strong>
+										<strong>@epfcampus</strong>
 										<span class="text-small">il y a 8 heures</span>
 									</p>
 									<p>A Berlin, les étudiantes et étudiants de Dominique Perrault exposent leurs travaux à la galerie Aedes Architecture

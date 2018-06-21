@@ -278,18 +278,6 @@
 						</svg>
 						<span class="sr-only">Follow us on icon-instagram.</span>
 					</a>
-					<a href="#" class="social-icon social-icon-mail-plane social-icon-negative">
-						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-mail-plane"></use>
-						</svg>
-						<span class="sr-only">Follow us on icon-mail-plane.</span>
-					</a>
-					<a href="#" class="social-icon social-icon-whatsapp social-icon-negative">
-						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-whatsapp"></use>
-						</svg>
-						<span class="sr-only">Follow us on icon-whatsapp.</span>
-					</a>
 					<a href="#" class="social-icon social-icon-googleplus social-icon-negative">
 						<svg class="icon" aria-hidden="true">
 							<use xlink:href="#icon-googleplus"></use>
