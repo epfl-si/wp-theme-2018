@@ -195,7 +195,7 @@ function init_nav() {
 		}
 		add_filter('body_class', 'nav_toggle_body_class');
 
-		//update main container class 
+		//update main container class
 		$navClasses = 'nav-toggle';
 	} else {
 		//update main container class
@@ -208,6 +208,7 @@ function init_nav() {
  * used in card headers
  */
 add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
+add_image_size( 'thumbnail_16_9_large', 1920, 1080, ['center', 'center'] );
 
 /**
  * update CSS within admin
