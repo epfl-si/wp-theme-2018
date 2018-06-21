@@ -15,13 +15,14 @@ get_sidebar();
 			<style>
 				.vimeo-wrapper iframe {
 					width: 100%;
-					height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+					height: 56.25vw;
+					/* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
 				}
-			
 			</style>
 
 			<div class="vimeo-wrapper d-none d-xl-block">
-				<iframe src="https://player.vimeo.com/video/276045972?background=1" class="bg-gray-100" style="border: none;" frameborder"0" allowfullscreen></iframe>
+				<iframe src="https://player.vimeo.com/video/276045972?background=1" class="bg-gray-100" style="border: none;" frameborder
+				  "0" allowfullscreen></iframe>
 			</div>
 
 			<picture class="d-block d-xl-none">
@@ -34,12 +35,15 @@ get_sidebar();
 					<div class="fullwidth-teaser-title">
 						<h3>
 							The neurons that rewrite traumatic memories</h3>
-						<ul class="list-inline mt-2">
-							<li class="list-inline-item">Biology</li>
-							<li class="list-inline-item">Brain</li>
-						</ul>
+						<!--	
+								<ul class="list-inline mt-2">
+									<li class="list-inline-item">Biology</li>
+									<li class="list-inline-item">Brain</li>
+								</ul>
+							-->
 					</div>
-					<a href="https://actu.epfl.ch/news/the-neurons-that-rewrite-traumatic-memories/" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
+					<a href="https://actu.epfl.ch/news/the-neurons-that-rewrite-traumatic-memories/" aria-label="Link to read more of that page"
+					  class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
 						Read the article
 						<span class="sr-only">sur Tech Transfer.</span>
 						<svg class="icon" aria-hidden="true">
@@ -50,7 +54,8 @@ get_sidebar();
 
 				<div class="fullwidth-teaser-content">
 					<p>
-						Neuroscientists at EPFL have located the cells that help reprogram long-lasting memories of traumatic experiences towards safety, a first in neuroscience. The study is published in Science.</p>
+						Neuroscientists at EPFL have located the cells that help reprogram long-lasting memories of traumatic experiences towards
+						safety, a first in neuroscience. The study is published in Science.</p>
 				</div>
 
 				<div class="fullwidth-teaser-footer">
@@ -69,10 +74,14 @@ get_sidebar();
 								<div class="card-body">
 									<h3 class="card-title">Palm oil: the carbon cost of deforestation</h3>
 									<div class="card-info">
+										<span class="card-info-date">
+											<time datetime="DATETIME HERE">24.06.18</time>
+										</span>
 										<span>Environment</span>
-										<span>Palm oil</span>
 									</div>
-									<p>Palm oil has become part of our daily lives, but a recent study by EPFL and the Swiss Federal Institute for Forest, Snow and Landscape Research (WSL) serves as a reminder that intensive farming of this crop has a major impact on the environment. Both short- and long-term solutions exist, however.</p>
+									<p>Palm oil has become part of our daily lives, but a recent study by EPFL and the Swiss Federal Institute for Forest,
+										Snow and Landscape Research (WSL) serves as a reminder that intensive farming of this crop has a major impact on
+										the environment. Both short- and long-term solutions exist, however.</p>
 								</div>
 							</a>
 
@@ -83,11 +92,13 @@ get_sidebar();
 									<h3 class="card-title">“In research, you need a sense of daring”</h3>
 									<div class="card-info">
 										<span class="card-info-date">
-											<time datetime="DATETIME HERE">25.06.18</time>
+											<time datetime="DATETIME HERE">21.06.18</time>
 										</span>
 										<span>Campus</span>
 									</div>
-									<p>Palm oil has become part of our daily lives, but a recent study by EPFL and the Swiss Federal Institute for Forest, Snow and Landscape Research (WSL) serves as a reminder that intensive farming of this crop has a major impact on the environment. Both short- and long-term solutions exist, however.</p>
+									<p>Palm oil has become part of our daily lives, but a recent study by EPFL and the Swiss Federal Institute for Forest,
+										Snow and Landscape Research (WSL) serves as a reminder that intensive farming of this crop has a major impact on
+										the environment. Both short- and long-term solutions exist, however.</p>
 								</div>
 							</a>
 
@@ -113,7 +124,8 @@ get_sidebar();
 								<h3 class="card-title">
 									<a href="#">Education</a>
 								</h3>
-								<p>The excellency of education of EPFL’ students and teachers makes it one of the most prestigious science and technology schools in the world.</p>
+								<p>The excellency of education of EPFL’ students and teachers makes it one of the most prestigious science and technology
+									schools in the world.</p>
 							</div>
 							<div class="card-footer mt-auto">
 								<a href="#" class="btn btn-secondary btn-sm">Visit the education portal</a>
@@ -127,7 +139,10 @@ get_sidebar();
 								<h3 class="card-title">
 									<a href="#">Research</a>
 								</h3>
-								<p>Our unique organisation allows us to systematically be ranked in the upper part of the world	 organisation unique nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de recherche.</p>
+								<p>Our unique organisation allows us to systematically be ranked in the upper part of the world organisation unique
+									nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de
+									recherche.
+								</p>
 							</div>
 							<div class="card-footer mt-auto">
 								<a href="#" class="btn btn-secondary btn-sm">Explore the research portal</a>
@@ -141,7 +156,8 @@ get_sidebar();
 								<h3 class="card-title">
 									<a href="#">Innovation</a>
 								</h3>
-								<p>Tech transfer is our second nature. We are experts to turn scientific excellency into business values for companies and economical tissues.</p>
+								<p>Tech transfer is our second nature. We are experts to turn scientific excellency into business values for companies
+									and economical tissues.</p>
 							</div>
 							<div class="card-footer mt-auto">
 								<a href="#" class="btn btn-secondary btn-sm">Open the Innovation portal</a>
@@ -157,7 +173,8 @@ get_sidebar();
 						<div class="card">
 							<a href="#" class="card-img-top">
 								<picture>
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column1.jpg" class="img-fluid" title="Artlab" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column1.jpg" class="img-fluid"
+									  title="Artlab" alt="ALT OF IMAGE HERE">
 								</picture>
 							</a>
 							<div class="card-body">
@@ -176,14 +193,16 @@ get_sidebar();
 						<div class="card">
 							<a href="#" class="card-img-top">
 								<picture>
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column2.jpg" class="img-fluid" title="Rolex Center" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column2.jpg" class="img-fluid"
+									  title="Rolex Center" alt="ALT OF IMAGE HERE">
 								</picture>
 							</a>
 							<div class="card-body">
 								<h3 class="card-title">
 									<a href="#">Rolex Learning Center</a>
 								</h3>
-								<p>The Rolex Learning Center is both a living learning laboratory and a library sheltering more than 500’000 volumes in the heart of an international cultural center.</p>
+								<p>The Rolex Learning Center is both a living learning laboratory and a library sheltering more than 500’000 volumes
+									in the heart of an international cultural center.</p>
 							</div>
 							<div class="card-footer mt-auto">
 								<a href="https://rolexlearningcenter.epfl.ch/" target="_" class="btn btn-secondary btn-sm">Discover the center</a>
@@ -195,14 +214,17 @@ get_sidebar();
 						<div class="card">
 							<a href="#" class="card-img-top">
 								<picture>
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column3.jpg" class="img-fluid" title="SwissTech CC" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column3.jpg" class="img-fluid"
+									  title="SwissTech CC" alt="ALT OF IMAGE HERE">
 								</picture>
 							</a>
 							<div class="card-body">
 								<h3 class="card-title">
 									<a href="#">SwissTech Convention Center</a>
 								</h3>
-								<p>The SwissTech Convention Center is one of the biggest convention venue around Lake Geneva. It hosts renown international events.</p>
+								<p>The SwissTech Convention Center is one of the biggest convention venue around Lake Geneva. It hosts renown international
+									events.
+								</p>
 							</div>
 							<div class="card-footer mt-auto">
 								<a href="http://stcc.ch/" target="_blank" class="btn btn-secondary btn-sm">Enter the convention center</a>
@@ -214,10 +236,10 @@ get_sidebar();
 			</div>
 		</div>
 
-
 		<div class="fullwidth-teaser">
 			<picture>
-				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/3-teaser-basic-page-highlight.jpg" aria-labelledby="background-label" alt="An image description">
+				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/3-teaser-basic-page-highlight.jpg" aria-labelledby="background-label"
+				  alt="An image description">
 			</picture>
 
 			<div class="fullwidth-teaser-text">
@@ -237,7 +259,9 @@ get_sidebar();
 
 				<div class="fullwidth-teaser-content">
 					<p>
-						Thirteen engineering science programs, customised PhD programs, cutting-edge laboratories directed by internationally renowned professors, a modern, fast-developing campus, close ties to industry: EPFL offers an exceptional student experience for higher education in science and technology.</p>
+						Thirteen engineering science programs, customised PhD programs, cutting-edge laboratories directed by internationally renowned
+						professors, a modern, fast-developing campus, close ties to industry: EPFL offers an exceptional student experience
+						for higher education in science and technology.</p>
 				</div>
 
 				<div class="fullwidth-teaser-footer">
@@ -255,125 +279,143 @@ get_sidebar();
 
 			<div class="overflow-hidden">
 				<div class="container">
-		<?php 
-		$data = [];
-		array_push(
-			$data,
-			[
-				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-1.png',
-				'title' => 'EPFL Drone Days 2018 dates have been announced!',
-				'date' => '10.06.2018',
-				'time_from' => '13:00',
-				'time_to' => '17:30',
-				'location' => 'ArtLab EPFL',
-				'category' => 'Cultural event',
-				'link' => '#',
-			],
-			[
-				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-2.png',
-				'title' => 'International Symposium on Chemical Biology 2018',
-				'date' => '17.06.2018',
-				'time_from' => '08:00',
-				'time_to' => '18:00',
-				'location' => 'Rolex Learning Center',
-				'category' => 'Symposium',
-				'link' => '#',
-			],
-			[
-				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-3.png',
-				'title' => 'New neurons for old brains : adult neurogenesis in Alzheimer’s disease',
-				'date' => '24.06.2018',
-				'time_from' => '18:00',
-				'time_to' => '20:00',
-				'location' => 'SwissTech Convention Center',
-				'category' => 'Conference',
-				'link' => '#',
-			],
-			[
-				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-4.png',
-				'title' => 'EuroTechPostdoc Programme: application platform is now open!',
-				'date' => '07.07.2018',
-				'time_from' => '09:00',
-				'time_to' => '17:00',
-				'location' => 'EPFL',
-				'category' => 'Application',
-				'link' => '#',
-			],
-			[
-				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-5.png',
-				'title' => 'Startup Acceleration Workshops',
-				'date' => '21.07.2018',
-				'time_from' => '09:00',
-				'time_to' => '15:30',
-				'location' => 'Rolex Learning Center',
-				'category' => 'Workshop',
-				'link' => '#',
-			],
-			[
-				'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-6.png',
-				'title' => 'Movie-mercredi “Shaw of the Dead” - original version',
-				'date' => '02.08.2018',
-				'time_from' => '19:00',
-				'time_to' => '21:00',
-				'location' => 'ArtLab EPFL',
-				'category' => 'Movie',
-				'link' => '#',
-			]
-		);
+					<?php 
+					$data = [];
+					array_push(
+						$data,
+						[
+							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-1.png',
+							'title' => 'EPFL Drone Days 2018 dates have been announced!',
+							'date' => '10.06.2018',
+							'time_from' => '13:00',
+							'time_to' => '17:30',
+							'location' => 'ArtLab EPFL',
+							'category' => 'Cultural event',
+							'link' => '#',
+						],
+						[
+							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-2.png',
+							'title' => 'International Symposium on Chemical Biology 2018',
+							'date' => '17.06.2018',
+							'time_from' => '08:00',
+							'time_to' => '18:00',
+							'location' => 'Rolex Learning Center',
+							'category' => 'Symposium',
+							'link' => '#',
+						],
+						[
+							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-3.png',
+							'title' => 'New neurons for old brains : adult neurogenesis in Alzheimer’s disease',
+							'date' => '24.06.2018',
+							'time_from' => '18:00',
+							'time_to' => '20:00',
+							'location' => 'SwissTech Convention Center',
+							'category' => 'Conference',
+							'link' => '#',
+						],
+						[
+							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-4.png',
+							'title' => 'EuroTechPostdoc Programme: application platform is now open!',
+							'date' => '07.07.2018',
+							'time_from' => '09:00',
+							'time_to' => '17:00',
+							'location' => 'EPFL',
+							'category' => 'Application',
+							'link' => '#',
+						],
+						[
+							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-5.png',
+							'title' => 'Startup Acceleration Workshops',
+							'date' => '21.07.2018',
+							'time_from' => '09:00',
+							'time_to' => '15:30',
+							'location' => 'Rolex Learning Center',
+							'category' => 'Workshop',
+							'link' => '#',
+						],
+						[
+							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-6.png',
+							'title' => 'Movie-mercredi “Shaw of the Dead”
+			- original version',
+							'date' => '02.08.2018',
+							'time_from' => '19:00',
+							'time_to' => '21:00',
+							'location' => 'ArtLab EPFL',
+							'category' => 'Movie',
+							'link' => '#',
+						]
+					);
 
-?>
+			?>
 
-<div class="card-slider-wrapper mb-4">
-<div class="card-slider">
-  <?php foreach ($data as $d): ?>
+					<div class="card-slider-wrapper mb-4">
+						<div class="card-slider">
+							<?php foreach ($data as $d): ?>
 
-  <div class="card-slider-cell">
-    <a href="<?php echo $d['link'] ?>" class="card card-gray link-trapeze-horizontal">
-      <div class="card-body">
-        <picture class="card-img-top">
-          <img src="<?php echo $d['img'] ?>" class="img-fluid" title="Image title" alt="Image alt description" />
-        </picture>
+							<div class="card-slider-cell">
+								<a href="<?php echo $d['link'] ?>" class="card card-gray link-trapeze-horizontal">
+									<div class="card-body">
+										<picture class="card-img-top">
+											<img src="<?php echo $d['img'] ?>" class="img-fluid" title="Image title" alt="Image alt description" />
+										</picture>
 
-        <h3 class="card-title"><?php echo $d['title'] ?></h3>
-        <div class="card-info">
-          <span class="card-info-date"><?php echo $d['date'] ?></span>
-          <span><?php echo $d['time_from'] ?></span>
-          <span><?php echo $d['time_to'] ?></span>
-          <p>
-            Lieu :
-            <b><?php echo $d['location'] ?></b>
-            <br> Catégorie :
-            <b><?php echo $d['category'] ?></b>
-            <br> </p>
-        </div>
-      </div>
-    </a>
-  </div>
+										<h3 class="card-title">
+											<?php echo $d['title'] ?>
+										</h3>
+										<div class="card-info">
+											<span class="card-info-date">
+												<?php echo $d['date'] ?>
+											</span>
+											<span>
+												<?php echo $d['time_from'] ?>
+											</span>
+											<span>
+												<?php echo $d['time_to'] ?>
+											</span>
+											<p>
+												Lieu :
+												<b>
+													<?php echo $d['location'] ?>
+												</b>
+												<br> Catégorie :
+												<b>
+													<?php echo $d['category'] ?>
+												</b>
+												<br> </p>
+										</div>
+									</div>
+								</a>
+							</div>
 
-  <?php endforeach; ?>
+							<?php endforeach; ?>
 
-				</div>
-				<div class="card-slider-footer">
-    <div>
-      <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
-        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-left"></use></svg>
-      </button>
-      <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
-        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
-      </button>
-    </div>
-    <div>
-      <a href="#">Voir l’agenda complet des événements</a>
-    </div>
-  </div>
+						</div>
+						<div class="card-slider-footer">
+							<div>
+								<button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#icon-chevron-left"></use>
+									</svg>
+								</button>
+								<button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#icon-chevron-right"></use>
+									</svg>
+								</button>
+							</div>
+							<div>
+								<a href="#">Voir l’agenda complet des événements</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
-
 		<div class="fullwidth-teaser fullwidth-teaser-horizontal">
 			<picture>
-				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/Andrea_Rinaldo-1600px.jpg" aria-labelledby="background-label" alt="An image description">
+				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/Andrea_Rinaldo-1600px.jpg" aria-labelledby="background-label"
+				  alt="An image description">
 			</picture>
 
 			<div class="fullwidth-teaser-text">
@@ -382,10 +424,6 @@ get_sidebar();
 					<div class="fullwidth-teaser-title">
 						<h3>
 							Andrea Rinaldo elected to the American Academy of Arts and Sciences</h3>
-						<ul class="list-inline mt-2">
-							<li class="list-inline-item">News</li>
-							<li class="list-inline-item">Distinction</li>
-						</ul>
 					</div>
 					<a href="#" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
 						Read article
@@ -398,7 +436,9 @@ get_sidebar();
 
 				<div class="fullwidth-teaser-content">
 					<p>
-						Professor Andrea Rinaldo, the director of the Laboratory of Ecohydrology in EPFL's School of Architecture, Civil and Environmental Engineering, has been elected to the American Academy of Arts and Sciences, one of the leading scientific societies in the world.</p>
+						Professor Andrea Rinaldo, the director of the Laboratory of Ecohydrology in EPFL's School of Architecture, Civil and Environmental
+						Engineering, has been elected to the American Academy of Arts and Sciences, one of the leading scientific societies
+						in the world.</p>
 				</div>
 
 				<div class="fullwidth-teaser-footer">
@@ -419,7 +459,8 @@ get_sidebar();
 						<div class="col-6 col-lg-4">
 							<a href="https://migration-wp.epfl.ch/www.epfl.ch/campus/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-lausanne.jpg" class="img-fluid" title="Lausanne" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-lausanne.jpg" class="img-fluid"
+									  title="Lausanne" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
@@ -435,7 +476,8 @@ get_sidebar();
 						<div class="col-6 col-lg-4">
 							<a href="https://geneva.epfl.ch/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-geneva.jpg" class="img-fluid" title="Genève" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-geneva.jpg" class="img-fluid"
+									  title="Genève" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
@@ -451,7 +493,8 @@ get_sidebar();
 						<div class="col-6 col-lg-4">
 							<a href="https://neuchatel.epfl.ch/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-neuchatel.jpg" class="img-fluid" title="Neuchâtel" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-neuchatel.jpg" class="img-fluid"
+									  title="Neuchâtel" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
@@ -467,7 +510,8 @@ get_sidebar();
 						<div class="col-6 col-lg-4">
 							<a href="https://fribourg.epfl.ch/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-fribourg.jpg" class="img-fluid" title="Fribourg" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-fribourg.jpg" class="img-fluid"
+									  title="Fribourg" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
@@ -481,9 +525,10 @@ get_sidebar();
 
 						</div>
 						<div class="col-6 col-lg-4">
-							<a href="https://valais.epfl.ch/"  target="_blank" class="card card-sm link-trapeze-horizontal">
+							<a href="https://valais.epfl.ch/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-valais.jpg" class="img-fluid" title="Valais" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-valais.jpg" class="img-fluid"
+									  title="Valais" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
@@ -499,7 +544,8 @@ get_sidebar();
 						<div class="col-6 col-lg-4">
 							<a href="http://www.epfl.ae/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-middle-east.jpg" class="img-fluid" title="Middle East" alt="ALT OF IMAGE HERE">
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-middle-east.jpg"
+									  class="img-fluid" title="Middle East" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
@@ -517,7 +563,7 @@ get_sidebar();
 			</div>
 		</div>
 
-		<div class="container-fluid p-0">
+		<div class="container-fluid p-0 my-3">
 			<div class="question">
 
 				<div class="question-img">
@@ -564,7 +610,8 @@ get_sidebar();
 
 		<div class="fullwidth-teaser fullwidth-teaser-horizontal">
 			<picture>
-				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/1024x1024-e1529575766143.jpg" aria-labelledby="background-label" alt="An image description">
+				<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/1024x1024-e1529575766143.jpg" aria-labelledby="background-label"
+				  alt="An image description">
 			</picture>
 
 			<div class="fullwidth-teaser-text">
@@ -589,12 +636,14 @@ get_sidebar();
 
 				<div class="fullwidth-teaser-content">
 					<p>
-						Tiny organs, no bigger than peppercorns, have been transforming stem cells research for the past 10 years and are bringing in vitro and in vivo closer together. 
-						</p>
+						Tiny organs, no bigger than peppercorns, have been transforming stem cells research for the past 10 years and are bringing
+						in vitro and in vivo closer together.
+					</p>
 				</div>
 
 				<div class="fullwidth-teaser-footer">
-					<a href="https://actu.epfl.ch/news/les-organoides-repliquent-nos-organes-en-laborat-2/" target="_blank" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none">Read the study</a>
+					<a href="https://actu.epfl.ch/news/les-organoides-repliquent-nos-organes-en-laborat-2/" target="_blank" aria-label="Link to read more of that page"
+					  class="btn btn-primary btn-block d-xl-none">Read the study</a>
 				</div>
 			</div>
 		</div>
@@ -712,7 +761,6 @@ get_sidebar();
 					<a href="#">Complete list of our social accounts</a>
 				</p>
 			</div>
-		</div>
 
 	</main>
 	<?php
