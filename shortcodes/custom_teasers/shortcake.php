@@ -56,11 +56,13 @@ function custom_teasers() {
 			);
 	}
 
+	global $iconDirectory;
+
 	shortcode_ui_register_for_shortcode(
 		'epfl_custom_teasers',
 		array(
       'label' => 'Custom teasers',
-      'listItemImage' => 'dashicons-images-alt',
+      'listItemImage' => '<img src="'.$iconDirectory.'custom_teasers.png'.'">',
       'attrs' => $fields
     )
 	);

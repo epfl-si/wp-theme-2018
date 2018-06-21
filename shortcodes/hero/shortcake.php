@@ -29,11 +29,13 @@ function hero() {
 		)
 	];
 
+	global $iconDirectory;
+
 	shortcode_ui_register_for_shortcode(
 		'epfl_hero',
 		array(
       'label' => 'Hero',
-      'listItemImage' => 'dashicons-images-alt',
+      'listItemImage' => '<img src="'.$iconDirectory.'hero.png'.'">',
       'attrs' => $fields
     )
 	);

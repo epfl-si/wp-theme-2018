@@ -17,12 +17,13 @@ function epfl_collapsable() {
     ]);
   }
 
+  global $iconDirectory;
 	shortcode_ui_register_for_shortcode(
 		'epfl_collapsable',
 		array(
       'label' => 'Add collapsable shortcode',
       'attrs' => $fields,
-      'listItemImage' => 'dashicons-editor-justify',
+      'listItemImage' => '<img src="'.$iconDirectory.'toggle.png'.'">',
     )
 	);
 }

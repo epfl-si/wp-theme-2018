@@ -218,3 +218,6 @@ function epfl_add_editor_styles() {
 	add_theme_support( 'editor-style' );
 	add_editor_style('editor-styles.css');
 }
+
+global $iconDirectory;
+$iconDirectory = get_template_directory_uri().'/assets/images/shortcode-icons/';

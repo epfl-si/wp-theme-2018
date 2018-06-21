@@ -11,11 +11,14 @@ function page_teaser() {
 			'query'    => array( 'post_type' => 'page' )
 		)
   ];
+
+global $iconDirectory;
+
 	shortcode_ui_register_for_shortcode(
 		'epfl_page_teaser',
 		array(
       'label' => 'Page teaser',
-      'listItemImage' => 'dashicons-format-aside',
+      'listItemImage' => '<img src="'.$iconDirectory.'page_teaser.png'.'">',
       'attrs' => $fields
     )
 	);
