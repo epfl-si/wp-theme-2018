@@ -124,7 +124,7 @@ function epfl_scripts() {
 
 	wp_enqueue_style( 'epfl-vendors', get_stylesheet_directory_uri().'/assets/css/vendors.min.css' );
 	wp_enqueue_style( 'epfl-base', get_stylesheet_directory_uri().'/assets/css/base.css' );
-	
+
 	wp_enqueue_script( 'epfl-js-jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), false, true );
 	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'epfl-js-vendors-bundle', get_template_directory_uri() . '/assets/js/vendors.bundle.js', array(), '1.0.0', true );
@@ -190,7 +190,7 @@ function init_nav() {
 		}
 		add_filter('body_class', 'nav_toggle_body_class');
 
-		//update main container class 
+		//update main container class
 		$mainContainerClasses = 'nav-toggle';
 	} else {
 		//update main container class
@@ -199,7 +199,7 @@ function init_nav() {
 }
 
 /**
- * add a 16/9 thumbnail size with cropping 
+ * add a 16/9 thumbnail size with cropping
  * used in card headers
  */
 add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
@@ -209,8 +209,6 @@ add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
  */
 add_action( 'admin_init', 'epfl_add_editor_styles' );
 function epfl_add_editor_styles() {
-
 	add_theme_support( 'editor-style' );
-	add_editor_style('assets/css/vendors.min.css');
-	add_editor_style('assets/css/base.css');
+	add_editor_style('editor-styles.css');
 }

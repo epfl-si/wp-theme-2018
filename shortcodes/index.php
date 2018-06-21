@@ -4,7 +4,7 @@
 
 // use Symfony\Component\Finder\Finder;
 
-add_action( 'init', 'register_shortcodes' );
+// add_action( 'init', 'register_shortcodes' );
 
 // load all files named "controller.php" in all sub-folders
 //$finder = new Finder();
