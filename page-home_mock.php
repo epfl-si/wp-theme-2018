@@ -134,7 +134,7 @@ get_sidebar();
 						<div class="card">
 							<div class="card-body">
 								<h3 class="card-title">
-									<a href="#">Research</a>
+									<a href="https://migration-wp.epfl.ch/www.epfl.ch/research/">Research</a>
 								</h3>
 								<p>With over 350 laboratories and research groups on campus, EPFL is one of Europe’s most innovative and productive scientific institutions. Ranked top 3 in Europe and top 20 worldwide in many scientific rankings, EPFL attracts the best researchers in their fields.</p>
 							</div>
