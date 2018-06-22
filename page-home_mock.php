@@ -177,7 +177,7 @@ get_sidebar();
 							</a>
 							<div class="card-body">
 								<h3 class="card-title">
-									<a href="#">The Artlab</a>
+									<a href="#">Artlab</a>
 								</h3>
 								<p>The Artlab hosts a wide range of events that draw bridges between the local cultural scene organisations.</p>
 							</div>
@@ -191,7 +191,7 @@ get_sidebar();
 						<div class="card">
 							<a href="#" class="card-img-top">
 								<picture>
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column2.jpg" class="img-fluid"
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/2-teaser-basic-page-column2-1.jpg" class="img-fluid"
 									  title="Rolex Center" alt="ALT OF IMAGE HERE">
 								</picture>
 							</a>
@@ -485,7 +485,7 @@ get_sidebar();
 						<div class="col-6 col-lg-4">
 							<a href="https://migration-wp.epfl.ch/www.epfl.ch/campus/" target="_blank" class="card card-sm link-trapeze-horizontal">
 								<picture class="card-img-top">
-									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-lausanne.jpg" class="img-fluid"
+									<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/5-teaser-mission-research-lausanne-1.jpg" class="img-fluid"
 									  title="Lausanne" alt="ALT OF IMAGE HERE">
 								</picture>
 								<div class="card-body">
@@ -575,7 +575,7 @@ get_sidebar();
 								</picture>
 								<div class="card-body">
 									<h3 class="card-title link-icon mb-0 h5">
-										Middle-East
+										Middle East
 										<svg class="icon" aria-hidden="true">
 											<use xlink:href="#icon-arrow-right"></use>
 										</svg>
@@ -594,42 +594,39 @@ get_sidebar();
 
 				<div class="question-img">
 					<picture>
-						<source media="(min-width: 1140px)" srcset="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/spider.jpg 1x, https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/spider.jpg 2x">
-						<source media="(min-width: 960px)" srcset="https://via.placeholder.com/475x267.jpg 1x,https://via.placeholder.com/950x534.jpg 2x">
-						<source media="(min-width: 720px)" srcset="https://via.placeholder.com/400x225.jpg 1x,https://via.placeholder.com/800x450.jpg 2x">
-						<source media="(min-width: 541px)" srcset="https://via.placeholder.com/720x405.jpg 1x,https://via.placeholder.com/1440x810.jpg 2x">
-						<source media="(max-width: 540px)" srcset="https://via.placeholder.com/540x304.jpg 1x,https://via.placeholder.com/1080x608.jpg 2x">
-						<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/spider.jpg" class="img-fluid" alt="ALT">
+						<img src="https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/science-questions-children.jpg" class="img-fluid" alt="ALT">
 					</picture>
 				</div>
 
 				<div class="question-content">
-					<h2 class="mb-4">Science question</h2>
-					<p class="h3">A spider’s silk thread is proportionally:</p>
+					<h4 class="mb-4">Science question</h4>
+					<p class="h3">Children’s muscles tire less quickly than adults’ because:</p>
 
 					<div class="question-answers">
-						<input type="radio" id="custom-radio1" name="customRadio" class="custom-control-input" data-com.agilebits.onepassword.user-edited="yes">
+						<input type="radio" id="custom-radio1" name="customRadio" class="custom-control-input">
 						<label class="custom-control-label" for="custom-radio1">
 							<span class="custom-control-label-content">
-								More resistant than steel</span>
+								Children’s muscles generate less of an effort</span>
 							<span class="trapeze-horizontal d-none d-lg-block"></span>
 							<span class="trapeze-vertical d-lg-none"></span>
 						</label>
-						<input type="radio" id="custom-radio2" name="customRadio" class="custom-control-input" data-com.agilebits.onepassword.user-edited="yes">
+						<input type="radio" id="custom-radio2" name="customRadio" class="custom-control-input">
 						<label class="custom-control-label" for="custom-radio2">
 							<span class="custom-control-label-content">
-								Heavier than lead</span>
+								Children have a lower body mass</span>
 							<span class="trapeze-horizontal d-none d-lg-block"></span>
 							<span class="trapeze-vertical d-lg-none"></span>
 						</label>
-						<input type="radio" id="custom-radio3" name="customRadio" class="custom-control-input" data-com.agilebits.onepassword.user-edited="yes">
+						<input type="radio" id="custom-radio3" name="customRadio" class="custom-control-input">
 						<label class="custom-control-label" for="custom-radio3">
 							<span class="custom-control-label-content">
-								More radioactive than radon</span>
+								Children’s muscle fibers show greater endurance</span>
 							<span class="trapeze-horizontal d-none d-lg-block"></span>
 							<span class="trapeze-vertical d-lg-none"></span>
 						</label>
 					</div>
+					<br>
+					<button class="btn btn-primary">Vote</button>
 				</div>
 			</div>
 		</div>
@@ -694,15 +691,8 @@ get_sidebar();
 										Forum du 27 janvier au 8 mars. @dpa_official http://www.aedes..</p>
 
 									<picture>
-										<source media="(min-width: 1140px)" srcset="https://via.placeholder.com/380x214.jpg 1x,https://via.placeholder.com/760x428.jpg 2x">
-										<source media="(min-width: 960px)" srcset="https://via.placeholder.com/380x214.jpg 1x,https://via.placeholder.com/760x428.jpg 2x">
-										<source media="(min-width: 720px)" srcset="https://via.placeholder.com/320x180.jpg 1x,https://via.placeholder.com/640x360.jpg 2x">
-										<source media="(min-width: 541px)" srcset="https://via.placeholder.com/720x405.jpg 1x,https://via.placeholder.com/1440x810.jpg 2x">
-										<source media="(max-width: 540px)" srcset="https://via.placeholder.com/540x304.jpg 1x,https://via.placeholder.com/1080x608.jpg 2x">
-										<img src="https://via.placeholder.com/380x214.jpg" class="img-fluid" alt="ALT">
+										<img src="https://pbs.twimg.com/card_img/1009103614688792576/gwCLZx0F?format=jpg&name=600x314" class="img-fluid" alt="ALT">
 									</picture>
-
-									<p>What's your fave spot for sunset on campus? 😎</p>
 								</div>
 								<div>
 									<a class="btn btn-secondary mt-4">Follow us on Twitter</a>
@@ -722,21 +712,14 @@ get_sidebar();
 							<div class="social-feed-item-content">
 								<div>
 									<p class="social-feed-header">
-										<strong>@epfcampus</strong>
-										<span class="text-small">il y a 8 heures</span>
+										<strong>@epflcampus</strong>
+										<span class="text-small">8 hours ago</span>
 									</p>
-									<p>A Berlin, les étudiantes et étudiants de Dominique Perrault exposent leurs travaux à la galerie Aedes Architecture
-										Forum du 27 janvier au 8 mars. @dpa_official http://www.aedes..</p>
+									<p>Where is the skate emoji? #epfl #epflskate #rolexlearningcenter #vivapoly2018 #Vivapoly #epflshapes #epflstudents #epflcampus #skateboard</p>
 
 									<picture>
-										<source media="(min-width: 1140px)" srcset="https://via.placeholder.com/1140x1140.jpg 1x,https://via.placeholder.com/2280x2280.jpg 2x">
-										<source media="(min-width: 960px)" srcset="https://via.placeholder.com/1140x1140.jpg 1x,https://via.placeholder.com/2280x2280.jpg 2x">
-										<source media="(min-width: 720px)" srcset="https://via.placeholder.com/960x960.jpg 1x,https://via.placeholder.com/1920x1920.jpg 2x">
-										<source media="(min-width: 541px)" srcset="https://via.placeholder.com/240x240.jpg 1x,https://via.placeholder.com/480x480.jpg 2x">
-										<source media="(max-width: 540px)" srcset="https://via.placeholder.com/180x180.jpg 1x,https://via.placeholder.com/360x360.jpg 2x">
-										<img src="https://via.placeholder.com/1140x1140.jpg" class="img-fluid" alt="ALT">
+										<img src="https://shft.cl/img/i/instagram.flhr5-1.fna.fbcdn.net-732522343920240.jpg" class="img-fluid" alt="ALT">
 									</picture>
-									<p>What's your fave spot for sunset on campus? 😎</p>
 								</div>
 								<div>
 									<a class="btn btn-secondary mt-4">Join us on Instagram</a>
@@ -756,22 +739,14 @@ get_sidebar();
 							<div class="social-feed-item-content">
 								<div>
 									<p class="social-feed-header">
-										<strong>@epfcampus</strong>
+										<strong>@epflcampus</strong>
 										<span class="text-small">il y a 8 heures</span>
 									</p>
-									<p>A Berlin, les étudiantes et étudiants de Dominique Perrault exposent leurs travaux à la galerie Aedes Architecture
-										Forum du 27 janvier au 8 mars. @dpa_official http://www.aedes..</p>
+									<p>Tall Amazonian trees are more resistant to precipitation variations than shorter ones. This information is key to more accurately predicting how the rainforest will react to climate change. #epflENAC</p>
 
 									<picture>
-										<source media="(min-width: 1140px)" srcset="https://via.placeholder.com/380x214.jpg 1x,https://via.placeholder.com/760x428.jpg 2x">
-										<source media="(min-width: 960px)" srcset="https://via.placeholder.com/380x214.jpg 1x,https://via.placeholder.com/760x428.jpg 2x">
-										<source media="(min-width: 720px)" srcset="https://via.placeholder.com/320x180.jpg 1x,https://via.placeholder.com/640x360.jpg 2x">
-										<source media="(min-width: 541px)" srcset="https://via.placeholder.com/720x405.jpg 1x,https://via.placeholder.com/1440x810.jpg 2x">
-										<source media="(max-width: 540px)" srcset="https://via.placeholder.com/540x304.jpg 1x,https://via.placeholder.com/1080x608.jpg 2x">
-										<img src="https://via.placeholder.com/380x214.jpg" class="img-fluid" alt="ALT">
+										<img src="https://actu.epfl.ch/image/66588/652x367.jpg" class="img-fluid" alt="ALT">
 									</picture>
-
-									<p>What's your fave spot for sunset on campus? 😎</p>
 								</div>
 								<div>
 									<a class="btn btn-secondary mt-4">Like us on Facebook</a>
