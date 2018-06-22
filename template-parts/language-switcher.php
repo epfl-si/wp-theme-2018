@@ -21,7 +21,7 @@ if ( sizeof($translations) == 0) {
 $translations = reorderTranslations($translations);
 ?>
 <!-- language switcher -->
-		<nav class="language-switcher pr-5">
+		<nav class="language-switcher pr-lg-5">
 		<ul>
 		<?php foreach($translations as $lang): ?>
 			<?php if ($lang['current_lang']): ?>
