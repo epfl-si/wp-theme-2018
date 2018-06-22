@@ -114,7 +114,7 @@ get_sidebar();
 			<div class="container">
 				<h2 class="text-center mb-5">EPFL in a nutshell</h2>
 
-				<h3 class="h6 mb-3 text-spread">School missions</h3>
+				<h3 class="h6 mb-3 text-spread">Missions</h3>
 				<div class="row mb-4">
 					<div class="col-md-4 d-flex">
 						<div class="card">
@@ -122,11 +122,10 @@ get_sidebar();
 								<h3 class="card-title">
 									<a href="#">Education</a>
 								</h3>
-								<p>The excellency of education of EPFL’ students and teachers makes it one of the most prestigious science and technology
-									schools in the world.</p>
+								<p>Tomorrow's engineers, scientists and architects will require more than just the skills they learn in the classroom. EPFL brings together all teaching levels and provides an innovative education to its 10'000 students.</p>
 							</div>
 							<div class="card-footer mt-auto">
-								<a href="#" class="btn btn-secondary btn-sm">Visit the education portal</a>
+								<a href="https://migration-wp.epfl.ch/www.epfl.ch/education/" class="btn btn-secondary btn-sm">Visit the education portal</a>
 							</div>
 						</div>
 
@@ -137,13 +136,10 @@ get_sidebar();
 								<h3 class="card-title">
 									<a href="#">Research</a>
 								</h3>
-								<p>Our unique organisation allows us to systematically be ranked in the upper part of the world organisation unique
-									nous permet de figurer systématiquement dans le haut du classement mondial des universités pour les programmes de
-									recherche.
-								</p>
+								<p>With over 350 laboratories and research groups on campus, EPFL is one of Europe’s most innovative and productive scientific institutions. Ranked top 3 in Europe and top 20 worldwide in many scientific rankings, EPFL attracts the best researchers in their fields.</p>
 							</div>
 							<div class="card-footer mt-auto">
-								<a href="#" class="btn btn-secondary btn-sm">Explore the research portal</a>
+								<a href="https://migration-wp.epfl.ch/www.epfl.ch/research/" class="btn btn-secondary btn-sm">Explore the research portal</a>
 							</div>
 						</div>
 
@@ -154,11 +150,10 @@ get_sidebar();
 								<h3 class="card-title">
 									<a href="#">Innovation</a>
 								</h3>
-								<p>Tech transfer is our second nature. We are experts to turn scientific excellency into business values for companies
-									and economical tissues.</p>
+								<p>Tech transfer is our second nature. We are experts at turning scientific excellency into value for companies and society at large. Our Innovation Park, which hosts 170 companies, creates a unique ecosystem that fosters innovation and entrepreneurship on campus.</p>
 							</div>
 							<div class="card-footer mt-auto">
-								<a href="#" class="btn btn-secondary btn-sm">Open the Innovation portal</a>
+								<a href="https://migration-wp.epfl.ch/www.epfl.ch/innovation/" class="btn btn-secondary btn-sm">Open the Innovation portal</a>
 							</div>
 						</div>
 
@@ -179,7 +174,7 @@ get_sidebar();
 								<h3 class="card-title">
 									<a href="#">Artlab</a>
 								</h3>
-								<p>The Artlab hosts a wide range of events that draw bridges between the local cultural scene organisations.</p>
+								<p>ArtLab represents a bridge between hard sciences and the humanities. Three separate spaces highlight the intersection of science, the public and the arts.</p>
 							</div>
 							<div class="card-footer mt-auto">
 								<a href="https://artlab.epfl.ch/" target="_blank" class="btn btn-secondary btn-sm">Try out the Artlab</a>
@@ -245,7 +240,7 @@ get_sidebar();
 				<div class="fullwidth-teaser-header">
 					<div class="fullwidth-teaser-title">
 						<h3>
-							Studying at EPFL: 13 programs</h3>
+							From Bachelor studies to continuing education</h3>
 					</div>
 					<a href="#" aria-label="En savoir plus sur Tech Transfer" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block">
 						Learn more
@@ -256,10 +251,7 @@ get_sidebar();
 				</div>
 
 				<div class="fullwidth-teaser-content">
-					<p>
-						Thirteen engineering science programs, customised PhD programs, cutting-edge laboratories directed by internationally renowned
-						professors, a modern, fast-developing campus, close ties to industry: EPFL offers an exceptional student experience
-						for higher education in science and technology.</p>
+					<p>Thirteen different engineering science programs, customised PhD programs, cutting-edge laboratories directed by internationally renowned professors, close ties to industry: EPFL offers an exceptional student experience to young people planning a higher education in science and technology.</p>
 				</div>
 
 				<div class="fullwidth-teaser-footer">
