@@ -10,7 +10,7 @@ Epfl theme (Wordpress)
   * composer
 
 ## Setup
-  1. `$ composer install`
+  1. Copy (or symlink) the theme in the `/wp-content/themes` directory of your project
   2. Nothing more, you're ready to go! 🚀
 
 ## Shortcodes
