@@ -96,9 +96,7 @@ get_sidebar();
 										</span>
 										<span>Campus</span>
 									</div>
-									<p>Palm oil has become part of our daily lives, but a recent study by EPFL and the Swiss Federal Institute for Forest,
-										Snow and Landscape Research (WSL) serves as a reminder that intensive farming of this crop has a major impact on
-										the environment. Both short- and long-term solutions exist, however.</p>
+									<p>Doris Leuthard, head of Switzerland’s Federal Department of the Environment, Transport, Energy and Communications, takes a hands-on approach. We spoke with her about the latest challenges in transport, energy and communication – three core areas of research at our school.</p>
 								</div>
 							</a>
 
