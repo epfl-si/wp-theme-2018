@@ -277,11 +277,12 @@ get_sidebar();
 
 			<div class="overflow-hidden">
 				<div class="container">
+					<h2 class="text-center mb-5">EPFL events</h2>
 					<?php 
 					$data = [];
 					$highlight = [
 							'img' => 'https://migration-wp.epfl.ch/www.epfl.ch/wp-content/uploads/2018/06/event-teaser-1.png',
-							'title' => 'EPFL Drone Days 2018 dates have been announced!',
+							'title' => 'Drone Days 18 dates announced!',
 							'date' => '10.06.2018',
 							'time_from' => '13:00',
 							'time_to' => '17:30',
@@ -357,9 +358,7 @@ get_sidebar();
 										</picture>
 
 										<h3 class="card-title">EPFL Drone Days 2018 dates have been announced!</h3>
-										<p>From 1 to 3 September 2018, more than 5,000 people will be treated to drone races, a robotics showcase, a conference
-											and demonstrations on the EPFL's campus. Attendees will enjoy 3 days of thrilling races over the middle of campus,
-											including a night race lit by LEDs and the finals of the Swiss Rotor Sports Association (SRSA).</p>
+										<p>1—3 September 2018, more than 5,000 people will be treated to drone races, showcases, conferences and demos on the EPFL's campus.</p>
 										<div class="card-info">
 											<span class="card-info-date">10.01.2018</span>
 											<span>13:00</span>
@@ -430,7 +429,7 @@ get_sidebar();
 								</button>
 							</div>
 							<div>
-								<a href="#">Voir l’agenda complet des événements</a>
+								<a href="#">See events complete list</a>
 							</div>
 						</div>
 					</div>
@@ -685,7 +684,7 @@ get_sidebar();
 								<div>
 									<p class="social-feed-header">
 										<strong>@epfl</strong>
-										<span class="text-small">il y a 8 heures</span>
+										<span class="text-small">42 minutes ago</span>
 									</p>
 									<p>A Berlin, les étudiantes et étudiants de Dominique Perrault exposent leurs travaux à la galerie Aedes Architecture
 										Forum du 27 janvier au 8 mars. @dpa_official http://www.aedes..</p>
@@ -740,7 +739,7 @@ get_sidebar();
 								<div>
 									<p class="social-feed-header">
 										<strong>@epflcampus</strong>
-										<span class="text-small">il y a 8 heures</span>
+										<span class="text-small">2 days ago</span>
 									</p>
 									<p>Tall Amazonian trees are more resistant to precipitation variations than shorter ones. This information is key to more accurately predicting how the rainforest will react to climate change. #epflENAC</p>
 
