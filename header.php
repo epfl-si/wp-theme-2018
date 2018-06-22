@@ -36,9 +36,7 @@
 					'container' => 'ul',
 					'depth' => 1,
 				) );
-
 			?>
-
 		</div>
 
 		<form action="https://preview.liip.ch/epfl-search/api/" class="d-xl-none">
