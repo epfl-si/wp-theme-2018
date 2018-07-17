@@ -6,12 +6,12 @@ function epfl_collapsable() {
   $fields = [];
   for ( $i = 0; $i < 10; $i++) {
     array_push($fields, [ 
-      'label' => '<h3>' . esc_html__('Title', 'epfl-collapsable') . '</h3>',
+      'label' => '<h3>' . esc_html__('Title', 'epfl-shortcodes') . '</h3>',
       'attr' => 'label'.$i,
       'type' => 'text',
     ]);
     array_push($fields, [
-      'label' => esc_html__('Description', 'epfl-collapsable') ,
+      'label' => esc_html__('Description', 'epfl-shortcodes') ,
       'attr' => 'desc'.$i,
       'type' => 'textarea',
     ]);
@@ -21,7 +21,7 @@ function epfl_collapsable() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_collapsable',
 		array(
-      'label' => esc_html__( 'Collapsable' ),
+      'label' => esc_html__( 'Collapsable', 'epfl-shortcodes'),
       'attrs' => $fields,
       'listItemImage' => '<img src="'.$iconDirectory.'toggle.png'.'">',
     )

@@ -24,8 +24,8 @@ function hero() {
 			'attr'     => 'image',
 			'type'        => 'attachment',
 			'libraryType' => array( 'image' ),
-			'addButton'   => esc_html__( 'Select Image', 'shortcode-ui-example', 'shortcode-ui' ),
-			'frameTitle'  => esc_html__( 'Select Image', 'shortcode-ui-example', 'shortcode-ui' ),
+			'addButton'   => esc_html__( 'Select Image', 'epfl-shortcodes' ),
+			'frameTitle'  => esc_html__( 'Select Image', 'epfl-shortcodes' ),
 		)
 	];
 
@@ -34,7 +34,7 @@ function hero() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_hero',
 		array(
-      'label' =>  esc_html__( 'Hero' ),
+      'label' =>  esc_html__( 'Hero' , 'epfl-shortcodes'),
       'listItemImage' => '<img src="'.$iconDirectory.'hero.png'.'">',
       'attrs' => $fields
     )
