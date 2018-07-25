@@ -27,29 +27,16 @@ function renderMemento($events, $template) {
     echo '      <div class="card-slider">';
 
     foreach($results as $event) {
-
-      if ($count==1) {
-        set_query_var('epfl_memento_first_event', $event);
-        get_template_part('shortcodes/memento/first_event');  
-      } else {
-        set_query_var('epfl_memento_data', $event);
-        get_template_part('shortcodes/memento/view');  
-      }
+      set_query_var('epfl_memento_is_first_event', $count==1);
+      set_query_var('epfl_memento_data', $event);
+      get_template_part('shortcodes/memento/view');  
       $count++;
 
     }
     echo '      </div>';
-    echo '      <div class="card-slider-footer">';
-    echo '        <div>';
-    echo '          <button role="button" id="card-slider-prev" class="card-slider-btn link-trapeze-horizontal disabled">';
-    echo '            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-left"></use></svg>';
-    echo '          </button>';
-    echo '          <button role="button" id="card-slider-next" class="card-slider-btn link-trapeze-horizontal">';
-    echo '            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>';
-    echo '          </button>';
-    echo '        </div>';
-    echo '      <div>';
-    echo '      <a href="#">Voir l’agenda complet des événements</a>';
+    
+    get_template_part('shortcodes/memento/templates/card-slider-footer');
+    
     echo '    </div>';
     echo '  </div>';
     echo '</div>';    
