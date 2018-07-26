@@ -7,7 +7,7 @@ get_header();
 
 ?>
 
-<div class="nav-toggle">
+<div class="nav-layout-toggle">
 	<?php get_sidebar(); ?>
 
 	<div class="w-100">

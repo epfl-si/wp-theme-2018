@@ -197,16 +197,16 @@ function init_nav() {
 
 		// ad class to body to bind JS listeners
 		function nav_toggle_body_class($classes) {
-			$classes[] = 'nav-toggle';
+			$classes[] = 'nav-layout-toggle';
 			return $classes;
 		}
 		add_filter('body_class', 'nav_toggle_body_class');
 
 		//update main container class
-		$navClasses = 'nav-toggle';
+		$navClasses = 'nav-layout-toggle';
 	} else {
 		//update main container class
-		$navClasses = 'nav-solid';
+		$navClasses = 'nav-layout-solid';
 	}
 }
 

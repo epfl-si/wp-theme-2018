@@ -52,7 +52,7 @@
 
 	<?php get_template_part( 'template-parts/language-switcher' ) ?>
 
-  <div class="btn btn-secondary menu-toggle-mobile d-xl-none">
+  <div class="btn btn-secondary nav-toggle-mobile d-xl-none">
 		Menu
 		<div class="hamburger">
 			<span></span>
