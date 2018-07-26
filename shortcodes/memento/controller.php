@@ -4,13 +4,10 @@
  * 1 is the priority, higher means executed first
  * 2 is number of arguments the function can accept
  **/
-add_action('epfl_event_action', 'renderMemento', 1, 2);
+add_action('epfl_event_action', 'renderMemento', 1, 3);
 
-function renderMemento($events, $template) {
+function renderMemento($events, $template, $memento) {
   ob_start();
-
-  /*print "<pre>"; var_dump($events->results); print "</pre>";
-  print "<pre>"; var_dump($template); print "</pre>";*/
 
   if (is_admin()) {
 
@@ -31,10 +28,10 @@ function renderMemento($events, $template) {
       set_query_var('epfl_memento_data', $event);
       get_template_part('shortcodes/memento/view');  
       $count++;
-
     }
     echo '      </div>';
     
+    set_query_var('epfl_memento_name', $memento);
     get_template_part('shortcodes/memento/templates/card-slider-footer');
     
     echo '    </div>';
