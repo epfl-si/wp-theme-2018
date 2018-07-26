@@ -13,6 +13,15 @@ Epfl theme (Wordpress)
   1. Copy (or symlink) the theme in the `/wp-content/themes` directory of your project
   2. Nothing more, you're ready to go! 🚀
 
+## Recovering the last version of the styleguide
+  1. head towards [https://github.com/epfl-idevelop/elements](https://github.com/epfl-idevelop/elements)
+  2. clone the repo locally
+  3. install the project locally (see elements documentation)
+  4. launch `$ yarn && yarn build` or `$ docker-compose up builder`
+  5. after build finished, move the content of the `elements/build/` folder to `epfl-theme/assets`
+  6. commit the builds
+  7. here you go, you just updated the styleguide version container in this theme !
+
 ## Shortcodes
 Each shortcode has its own subfoler in the `shortcodes/` directory, placed at the root of the template.
 

@@ -9,7 +9,7 @@
   $is_inscription_required = is_inscription_required($data->invitation);
 ?>
 
-<?php if (true === $is_first_event && true === $display_fisrt_event): ?>
+<?php if (true === $is_first_event && true === $display_first_event): ?>
 
 <div class="card-slider-cell card-slider-cell-lg">
   <a href="<?php echo $data->event_url ?>" class="card card-gray link-trapeze-horizontal">
@@ -24,9 +24,10 @@
 
 <?php else: ?>
 
-<!-- JUST FINISHED -->
+
 
   <?php if (true === $is_just_finished): ?>
+  <!-- JUST FINISHED -->
     <div class="card-slider-cell">
       <a href="<?php echo $data->event_url ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
         <div class="card-body">
@@ -72,9 +73,7 @@
     <div class="card-slider-cell">
       <a href="<?php echo $data->event_url ?>" class="card card-gray link-trapeze-horizontal">
         <div class="card-body">
-          <picture class="card-img-top">
-            <img src="<?php echo $data->visual_url ?>" class="img-fluid" title="<?php echo $data->image_description ?>" alt="<?php echo $data->image_description ?>" />
-          </picture>
+          <?php get_template_part('shortcodes/memento/templates/card-img-top');?>
           <h3 class="card-title"><?php echo $data->title ?></h3>
           <?php get_template_part('shortcodes/memento/templates/card-info');?>
         </div>

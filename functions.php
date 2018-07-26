@@ -179,6 +179,13 @@ function menu_link_ids ($atts, $page) {
 }
 add_filter('page_menu_link_attributes', 'menu_link_ids', 10, 2);
 
+// custom body class to identify wordpress
+function epfl_wp_class($classes) {
+	$classes[] = 'epfl-wp';
+	return $classes;
+}
+add_filter('body_class', 'epfl_wp_class');
+
 /**
  * handle the two navigation templates, forcing homepage to be with toggle navigation
  */

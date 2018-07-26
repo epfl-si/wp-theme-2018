@@ -13,7 +13,6 @@ get_sidebar();
 ?>
 
 <main id="content" role="main" class="content pt-5">
-	<div class="container">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -22,7 +21,6 @@ get_sidebar();
 
 		endwhile; // End of the loop.
 		?>
-	</div>
 </main>
 
 <?php
