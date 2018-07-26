@@ -72,9 +72,7 @@
     <div class="card-slider-cell">
       <a href="<?php echo $data->event_url ?>" class="card card-gray link-trapeze-horizontal">
         <div class="card-body">
-          <picture class="card-img-top">
-            <img src="<?php echo $data->visual_url ?>" class="img-fluid" title="<?php echo $data->image_description ?>" alt="<?php echo $data->image_description ?>" />
-          </picture>
+          <?php get_template_part('shortcodes/memento/templates/card-img-top');?>
           <h3 class="card-title"><?php echo $data->title ?></h3>
           <?php get_template_part('shortcodes/memento/templates/card-info');?>
         </div>
