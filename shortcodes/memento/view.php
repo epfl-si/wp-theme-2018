@@ -3,10 +3,12 @@
   require_once(get_template_directory().'/shortcodes/memento/data.php');
   $data = get_data();
   
-  $display_first_event = false;
+  $template = get_query_var('epfl_memento_template');
+  $display_first_event = ('1' === $template);
   $is_first_event = get_query_var('epfl_memento_is_first_event');
   $is_just_finished = is_just_finished($data->end_date, $data->end_time);
   $is_inscription_required = is_inscription_required($data->invitation);
+
 ?>
 
 <?php if (true === $is_first_event && true === $display_first_event): ?>
@@ -24,10 +26,9 @@
 
 <?php else: ?>
 
-
+<!-- JUST FINISHED -->
 
   <?php if (true === $is_just_finished): ?>
-  <!-- JUST FINISHED -->
     <div class="card-slider-cell">
       <a href="<?php echo $data->event_url ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
         <div class="card-body">

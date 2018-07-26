@@ -24,13 +24,14 @@ function renderMemento($events, $template, $memento) {
     echo '      <div class="card-slider">';
 
     foreach($results as $event) {
+      set_query_var('epfl_memento_template', $template);
       set_query_var('epfl_memento_is_first_event', $count==1);
       set_query_var('epfl_memento_data', $event);
       get_template_part('shortcodes/memento/view');  
       $count++;
     }
     echo '      </div>';
-    
+
     set_query_var('epfl_memento_name', $memento);
     get_template_part('shortcodes/memento/templates/card-slider-footer');
     
