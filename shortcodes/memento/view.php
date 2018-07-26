@@ -24,9 +24,10 @@
 
 <?php else: ?>
 
-<!-- JUST FINISHED -->
+
 
   <?php if (true === $is_just_finished): ?>
+  <!-- JUST FINISHED -->
     <div class="card-slider-cell">
       <a href="<?php echo $data->event_url ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
         <div class="card-body">
