@@ -19,18 +19,22 @@ $data = get_data();
     <?php endif ?>
     
     <p>
-        <?php if (get_locale() == 'fr_FR'): ?> 
-            Lieu :
-        <?php else: ?> 
-            Place : 
+        <?php if ($data->place_and_room !== ''): ?>
+            <?php if (get_locale() == 'fr_FR'): ?> 
+                Lieu :
+            <?php else: ?> 
+                Place : 
+            <?php endif ?> 
         <?php endif ?> 
         <b><?php echo $data->place_and_room ?></b>
         <br>
-        <?php if (get_locale() == 'fr_FR'): ?>
-        Organisé par 
-        <?php else: ?>
-        Organized by 
+        
+        <?php if (get_locale() == 'fr_FR' && $data->category->fr_label !== ''): ?>
+            Catégorie <?php echo $data->category->fr_label ?>
+        <?php else : ?>
+            <?php if ($data->category->en_label !== ''): ?>
+            Category <b><?php echo $data->category->en_label ?></b>
+            <?php endif ?> 
         <?php endif ?> 
-        <b><?php echo $data->organizer ?></b><br>
     </p>
 </div>
