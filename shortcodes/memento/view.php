@@ -9,7 +9,7 @@
   $is_inscription_required = is_inscription_required($data->invitation);
 ?>
 
-<?php if (true === $is_first_event && true === $display_fisrt_event): ?>
+<?php if (true === $is_first_event && true === $display_first_event): ?>
 
 <div class="card-slider-cell card-slider-cell-lg">
   <a href="<?php echo $data->event_url ?>" class="card card-gray link-trapeze-horizontal">
