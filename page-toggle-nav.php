@@ -1,15 +1,21 @@
 <?php
 /**
  * @package epfl
- * Template Name: Barre latérale
+ * Template Name: Menu caché
  * Template Post Type: page
  */
 
+init_nav();
 get_header();
-get_sidebar();
-?>
-		<main id="content" role="main" class="content pt-5">
 
+global $navClasses;
+?>
+<div class="<?php echo $navClasses ?>">
+	<?php get_sidebar(); ?>
+
+	<div class="w-100">
+		<?php custom_breadcrumbs(); ?>
+		<main id="content" role="main" class="content pt-5">
 			<?php
 			while ( have_posts() ) : the_post();
 
@@ -19,6 +25,10 @@ get_sidebar();
 			?>
 
 		</main><!-- #main -->
+
+	</div>
+
+	</div> <!-- main-container -->
 
 <?php
 get_footer();

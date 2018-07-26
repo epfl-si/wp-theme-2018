@@ -10,17 +10,27 @@ Epfl theme (Wordpress)
   * composer
 
 ## Setup
-  1. `$ composer install`
+  1. Copy (or symlink) the theme in the `/wp-content/themes` directory of your project
   2. Nothing more, you're ready to go! 🚀
+
+## Recovering the last version of the styleguide
+  1. head towards [https://github.com/epfl-idevelop/elements](https://github.com/epfl-idevelop/elements)
+  2. clone the repo locally
+  3. install the project locally (see elements documentation)
+  4. launch `$ yarn && yarn build` or `$ docker-compose up builder`
+  5. after build finished, move the content of the `elements/build/` folder to `epfl-theme/assets`
+  6. commit the builds
+  7. here you go, you just updated the styleguide version container in this theme !
 
 ## Shortcodes
 Each shortcode has its own subfoler in the `shortcodes/` directory, placed at the root of the template.
 
-The `_load.php` automatically loads all files named `controller.php` in all subfolders.
+The `index.php` automatically loads all files named `controller.php` in all subfolders.
 
   ```
   ├── shortcodes/
-  |   ├── _load.php
+  |   ├── index.php
+  |   ├── placeholder.php
   |   ├── [shortcode-slug]/
   |       ├── controller.php
   |       └── view.php
@@ -30,6 +40,8 @@ file|role
 --|--
 `controller.php`| - recover the plugin datas using (actions)[]<br/>- Pass data to the view<br>- Render view<br>- use (Shortcake)[https://github.com/wp-shortcake/shortcake] API to declare backend UI
 `view.php`|Output shortcode's html using given datas
+`shortcake.php`|Defines shortcake admin interface
+`placeholder.php`|a custom component to display in admin editor
 
 ### Types
 #### EPFL shortcode

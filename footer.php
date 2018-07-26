@@ -9,21 +9,13 @@
  * @package epfl
  */
 
+	// TODO: Generate footer based on future webservice?
+	require_once(__DIR__.'/footer_mock.php'); 
+
 ?>
-
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer container">
-		<div class="site-info">
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				// printf( esc_html__( 'Theme: %1$s', 'epfl' ), '<b>Epfl</b>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
+</div><!-- #page -->
 </body>
 </html>

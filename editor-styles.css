@@ -1,0 +1,35 @@
+body {
+  background: white;
+  color: #212121;
+  font-size: 18px;
+  font-family: Open Sans, Helvetica Neue, Arial, sans-serif;
+  max-width: 600px;
+  margin: auto;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+body > p {
+  padding: 0 15px;
+}
+
+.placeholder {
+  background: #fafafa;
+  border: 2px dotted #ccc;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.placeholder .content h5 {
+  margin-bottom: 0;
+}
+
+.placeholder .content h3 {
+  margin-top: 0;
+}
+
+.wpview.wpview-wrap {
+  box-sizing: border-box;
+}

@@ -32,33 +32,27 @@
 		<div aria-hidden="true">
 			<?php
 				wp_nav_menu( array(
-					'menu_class'=> 'nav-header d-none d-xl-flex',
+					'menu_class'=> 'nav-header d-none d-xl-flex m-0',
 					'container' => 'ul',
 					'depth' => 1,
 				) );
 			?>
 		</div>
 
-		<div class="input-group search">
-			<div class="input-group-prepend">
-				<span class="input-group-text">
-					<svg class="icon"><use xlink:href="#icon-search"></use></svg>
-				</span>
-			</div>
-			<input type="text" class="form-control" placeholder="Rechercher">
-		</div>  
-		<nav class="language-switcher pr-5">
-		<ul>
-			<li>
-				<span class="active" aria-label="Français">FR</span>
-			</li>
-			<li>
-				<a href="#" aria-label="English">EN</a>
-			</li>
-		</ul>
-	</nav>
+		<form action="https://preview.liip.ch/epfl-search/api/" class="d-xl-none">
+			<div class="input-group search w-100">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<svg class="icon"><use xlink:href="#icon-search"></use></svg>
+					</span>
+				</div>
+				<input type="text" class="form-control" placeholder="Rechercher">
+			</div>  
+		</form>
 
-  <div class="btn btn-secondary menu-toggle-mobile d-xl-none">
+	<?php get_template_part( 'template-parts/language-switcher' ) ?>
+
+  <div class="btn btn-secondary nav-toggle-mobile d-xl-none">
 		Menu
 		<div class="hamburger">
 			<span></span>
@@ -68,13 +62,5 @@
 	</div>
 
 </header>
-<?php
-$classes = '';
 
-if(get_page_template_slug(get_queried_object_id()) == 'page-solid-nav.php') {
-	$classes = 'nav-solid';
-} else {
-	$classes = 'nav-toggle';
-}
-?>
-<div class="main-container <?php echo $classes ?>">
+<div class="main-container">
