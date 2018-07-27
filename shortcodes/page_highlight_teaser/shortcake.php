@@ -1,7 +1,7 @@
 <?php
 
 // register shortcake UI
-add_action( 'register_shortcode_ui', 'page_teaser' );
+add_action( 'register_shortcode_ui', 'page_highlight_teaser' );
 function page_teaser() {
   $fields = [
     array(

@@ -1,5 +1,5 @@
 <?php 
-$page = get_query_var('epfl_page_teaser_data');
+$page = get_query_var('epfl_page_highlight_teaser_data');
   if (!$page) return true;
 $content = explode('<!--more-->', $page->post_content)[0];
 ?>
