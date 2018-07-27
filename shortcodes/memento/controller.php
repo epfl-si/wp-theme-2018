@@ -16,13 +16,22 @@ function renderMemento($events, $template, $memento) {
     get_template_part('shortcodes/placeholder');
 
   } else {
-    $count=1;
+
     $results = $events->results;
     echo '<div class="container-full">';
     echo '  <div class="container">';
     echo '    <div class="card-slider-wrapper">';
     echo '      <div class="card-slider">';
-
+    
+    if (!(bool) $results) {
+      if (get_locale() == 'fr_FR') {
+        echo '<div><h3>aucun événement programmé</h3></div>';
+      } else {
+        echo '<div><h3>no scheduled events</h3></div>';
+      }
+    }
+    
+    $count=1;
     foreach($results as $event) {
       set_query_var('epfl_memento_template', $template);
       set_query_var('epfl_memento_is_first_event', $count==1);
