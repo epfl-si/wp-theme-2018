@@ -1,8 +1,8 @@
 <?php
 
 // register shortcake UI
-add_action( 'register_shortcode_ui', 'page_highlight_teaser' );
-function page_teaser() {
+add_action( 'register_shortcode_ui', 'page_highlight' );
+function page_highlight() {
   $fields = [
     array(
       'label'    => esc_html__( 'Select page' , 'epfl-shortcodes'),
@@ -15,10 +15,10 @@ function page_teaser() {
 global $iconDirectory;
 
 	shortcode_ui_register_for_shortcode(
-		'epfl_page_teaser',
+		'epfl_page_highlight',
 		array(
-      'label' =>  esc_html__( 'Page teaser' , 'epfl-shortcodes'),
-      'listItemImage' => '<img src="'.$iconDirectory.'page_teaser.png'.'">',
+      'label' =>  esc_html__( 'Page Highlight' , 'epfl-shortcodes'),
+      'listItemImage' => '<img src="'.$iconDirectory.'page_highlight.png'.'">',
       'attrs' => $fields
     )
 	);

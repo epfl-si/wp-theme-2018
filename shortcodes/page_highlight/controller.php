@@ -3,13 +3,13 @@
 require_once(__DIR__.'/shortcake.php');
 
 // add shortcode
-add_shortcode( 'epfl_page_highlight_teaser', 'renderPageHighlightTeaser' );
+add_shortcode( 'epfl_page_highlight', 'renderPageHighlightTeaser' );
 
 // render
 function renderPageHighlightTeaser ($args) {
   $pageId = $args['page'];
   $page = get_post($pageId);
-  set_query_var('epfl_page_highlight_teaser_data', $page);
+  set_query_var('epfl_page_highlight_data', $page);
 
   ob_start();
   if (is_admin()) {
@@ -18,7 +18,7 @@ function renderPageHighlightTeaser ($args) {
     get_template_part('shortcodes/placeholder');
   } else {
     // render shortcode
-    get_template_part('shortcodes/page_teaser/view');
+    get_template_part('shortcodes/page_highlight/view');
   }
   return ob_get_clean();
 }
