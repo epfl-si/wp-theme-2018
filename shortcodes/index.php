@@ -15,6 +15,7 @@
  */
 
 require_once(get_template_directory().'/shortcodes/faculties/controller.php');
+require_once(get_template_directory().'/shortcodes/definition_list/controller.php');
 require_once(get_template_directory().'/shortcodes/introduction/controller.php');
 require_once(get_template_directory().'/shortcodes/hero/controller.php');
 require_once(get_template_directory().'/shortcodes/collapsable/controller.php');
