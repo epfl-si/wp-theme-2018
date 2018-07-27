@@ -1,7 +1,8 @@
 <?php
 
 require_once(get_template_directory().'/shortcodes/memento/data.php');
-$memento = get_query_var('epfl_memento_name'); 
+$memento = get_query_var('epfl_memento_name');
+
 ?>
 
 <div class="card-slider-footer">
@@ -14,7 +15,7 @@ $memento = get_query_var('epfl_memento_name');
         </button>
     </div>
 <div>
-<a href="<?php echo "https://memento.epfl.ch/" . $memento ?>">
+<a href="<?php echo "https://memento.epfl.ch/" . $memento . "/?period=30" ?>">
     <?php if (get_locale() == 'fr_FR'): ?> 
         Voir l’agenda complet des événements
     <?php else: ?> 
