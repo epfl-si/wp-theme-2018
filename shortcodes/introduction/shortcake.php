@@ -13,6 +13,12 @@ function epfl_introduction() {
       'label' => '<h2>' .esc_html__('Content', 'epfl-shortcodes') . '</h2>' ,
       'attr' => 'content',
       'type' => 'textarea',
+    ],
+    [
+      'label' => esc_html__('Gray background', 'epfl-shortcodes') ,
+      'attr' => 'gray',
+      'type' => 'checkbox',
+      'description' => esc_html__('Change the background to gray', 'epfl-shortcodes')
     ]
   ];
 
