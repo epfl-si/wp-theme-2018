@@ -1,7 +1,6 @@
 <?php 
 $page = get_query_var('epfl_page_teaser_data');
   if (!$page) return true;
-$content = explode('<!--more-->', $page->post_content)[0];
 ?>
 <div class="container-full">
   <div class="fullwidth-teaser mb-5">
@@ -26,7 +25,7 @@ $content = explode('<!--more-->', $page->post_content)[0];
       <?php if (!empty($content)): ?>
         <div class="fullwidth-teaser-content">
           <p>
-            <?php echo $content ?>
+            <?php the_excerpt(); ?>
           </p>
         </div>
       <?php endif; ?>
