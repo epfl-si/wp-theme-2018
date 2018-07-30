@@ -227,5 +227,21 @@ function epfl_add_editor_styles() {
 	add_editor_style('editor-styles.css');
 }
 
+/**
+ * change excerpt length
+ */
+function custom_excerpt_length( $length ) {
+    return 50;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length' );
+
+function excerpt_more( $more ) {
+    return ' (...)';
+}
+add_filter( 'excerpt_more', 'excerpt_more' );
+
+/**
+ * Share icons directory with templates
+ */
 global $iconDirectory;
 $iconDirectory = get_template_directory_uri().'/assets/images/shortcode-icons/';
