@@ -3,11 +3,11 @@ require_once(__DIR__.'/templates/card-img-top.php');
 
 $data = get_query_var('epfl_page_teaser_data');
 if (!$data) return true;
-//$content = explode('<!--more-->', $page->post_content)[0];
+$pagesCount = count($data);
 ?>
   <div class="container-full bg-gray-100 py-5 my-5">
     <div class="container">
-      <div class="card-deck">
+      <div class="card-deck<?php echo ($pagesCount < 3) ? ' card-deck-line' : '' ?>">
         <?php foreach($data as $page):?>
         <div class="card">
           <?php
