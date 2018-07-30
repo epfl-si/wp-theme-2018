@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once(__DIR__.'/templates/card-img-top.php');
 
 $data = get_query_var('epfl_page_teaser_data');
@@ -21,16 +21,19 @@ if (!$data) return true;
             <div class="card-title">
               <a href="<?php echo $page_url; ?>" class="h3"><?php echo $page->post_title; ?></a>
             </div>
+          
 
-            <p>The EPFL favors closer ties to industry leading research in order to best meet the scientific, technological and
-              societal</p>
+            <?php 
+              $excerpt = get_the_excerpt();
+              if (!empty($excerpt)): 
+            ?>
+              <p>
+                <?php echo $excerpt; ?>
+              </p>
+            <?php endif; ?>
           </div>
-          <!-- <div class="card-footer mt-auto">
-            <a href="<?php echo $page_url; ?>" class="btn btn-secondary btn-sm">Voir</a>
-          </div> -->
         </div>
-
-        <?php endforeach ?>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
