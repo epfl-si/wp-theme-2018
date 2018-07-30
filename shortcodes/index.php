@@ -21,3 +21,4 @@ require_once(get_template_directory().'/shortcodes/collapsable/controller.php');
 require_once(get_template_directory().'/shortcodes/news/controller.php');
 require_once(get_template_directory().'/shortcodes/page_teaser/controller.php');
 require_once(get_template_directory().'/shortcodes/custom_teasers/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_scienceqa/controller.php');
