@@ -12,7 +12,7 @@
 		<div class="news-container">
 			<div class="news-thumbnail">
 				<?php if(has_post_thumbnail( get_the_ID() )): ?>
-					<?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']); ?>
+					<?php the_post_thumbnail('thumbnail_square_crop', ['class' => 'img-fluid']); ?>
 				<?php endif; ?>
 			</div>
 

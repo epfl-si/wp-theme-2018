@@ -216,6 +216,7 @@ function init_nav() {
  */
 add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
 add_image_size( 'thumbnail_16_9_large', 1920, 1080, ['center', 'center'] );
+add_image_size( 'thumbnail_square_crop', 300, 300, ['center', 'center'] );
 
 /**
  * update CSS within admin
