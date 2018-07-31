@@ -3,14 +3,15 @@
 // register shortcake UI
 add_action( 'register_shortcode_ui', 'page_teaser' );
 function page_teaser() {
-  $fields = [
-    array(
+  $fields = array();
+  for($i; $i < 3; $i++) {
+    array_push($fields, array(
       'label'    => esc_html__( 'Select page' , 'epfl-shortcodes'),
-			'attr'     => 'page',
+			'attr'     => 'page'.$i,
 			'type'     => 'post_select',
 			'query'    => array( 'post_type' => 'page' )
-		)
-  ];
+		));
+  }
 
 global $iconDirectory;
 
