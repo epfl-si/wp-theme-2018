@@ -7,11 +7,11 @@ add_shortcode( 'epfl_page_teaser', 'renderPageTeaser' );
 
 // render
 function renderPageTeaser ($args) {
-  $pages = array();
-  foreach($args as $arg) {
-    array_push($pages, get_post($arg));
+  foreach($args as $key => $arg) {
+    if (strpos($key, 'page') !== 0) continue;
+    $args[$key] = get_post($arg);
   }
-  set_query_var('epfl_page_teaser_data', $pages);
+  set_query_var('epfl_page_teaser_data', $args);
 
   ob_start();
   if (is_admin()) {
