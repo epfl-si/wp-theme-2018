@@ -1,6 +1,6 @@
 <?php
 
-require_once(get_template_directory().'/shortcodes/memento/data.php');
+require_once(get_template_directory().'/shortcodes/epfl_memento/data.php');
 $data = get_data();
 
 //display nothing if no image available

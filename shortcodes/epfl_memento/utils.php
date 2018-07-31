@@ -32,7 +32,7 @@ function trim_text($input, $length, $ellipses = true, $strip_html = true) {
 }
 
 /**
- * Return true is the event is just finished.
+ * return true is the event is just finished.
  * The period during which an event is "just finished" begins at the end of the event 
  * and ends at midnight on the last day of the event.
  * @param string $end_date the end date of the event
@@ -54,10 +54,10 @@ function is_just_finished($end_date, $end_time) {
 }
 
 /**
- * Return true is the registration is required
- * @param string $invitation the invitation type
- * @return boolean
+ * 
  */
 function is_inscription_required($invitation) {
     return ($invitation === "Registration required");
 }
+
+
