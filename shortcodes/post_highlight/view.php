@@ -22,10 +22,13 @@ $post = get_query_var('epfl_post_highlight_data');
         <a href="<?php echo get_permalink($post); ?>" aria-label="Link to read more of that post" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block">Lire l'article</a>
       </div>
 
-      <?php if (!empty($content)): ?>
+      <?php
+        $excerpt = get_the_excerpt();
+        if (!empty($excerpt)):
+      ?>
         <div class="fullwidth-teaser-content">
           <p>
-            <?php the_excerpt(); ?>
+            <?php echo $excerpt; ?>
           </p>
         </div>
       <?php endif; ?>
