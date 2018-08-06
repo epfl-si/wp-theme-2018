@@ -216,6 +216,7 @@ function init_nav() {
  */
 add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
 add_image_size( 'thumbnail_16_9_large', 1920, 1080, ['center', 'center'] );
+add_image_size( 'thumbnail_square_crop', 300, 300, ['center', 'center'] );
 
 /**
  * update CSS within admin
@@ -226,5 +227,21 @@ function epfl_add_editor_styles() {
 	add_editor_style('editor-styles.css');
 }
 
+/**
+ * change excerpt length
+ */
+function custom_excerpt_length( $length ) {
+    return 50;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length' );
+
+function excerpt_more( $more ) {
+    return ' (...)';
+}
+add_filter( 'excerpt_more', 'excerpt_more' );
+
+/**
+ * Share icons directory with templates
+ */
 global $iconDirectory;
 $iconDirectory = get_template_directory_uri().'/assets/images/shortcode-icons/';

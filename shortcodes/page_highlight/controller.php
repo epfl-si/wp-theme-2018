@@ -3,15 +3,13 @@
 require_once(__DIR__.'/shortcake.php');
 
 // add shortcode
-add_shortcode( 'epfl_page_teaser', 'renderPageTeaser' );
+add_shortcode( 'epfl_page_highlight', 'renderPageHighlightTeaser' );
 
 // render
-function renderPageTeaser ($args) {
-  foreach($args as $key => $arg) {
-    if (strpos($key, 'page') !== 0) continue;
-    $args[$key] = get_post($arg);
-  }
-  set_query_var('epfl_page_teaser_data', $args);
+function renderPageHighlightTeaser ($args) {
+  $pageId = $args['page'];
+  $page = get_post($pageId);
+  set_query_var('epfl_page_highlight_data', $page);
 
   ob_start();
   if (is_admin()) {
@@ -20,7 +18,7 @@ function renderPageTeaser ($args) {
     get_template_part('shortcodes/placeholder');
   } else {
     // render shortcode
-    get_template_part('shortcodes/page_teaser/view');
+    get_template_part('shortcodes/page_highlight/view');
   }
   return ob_get_clean();
 }
