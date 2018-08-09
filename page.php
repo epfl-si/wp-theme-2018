@@ -2,19 +2,17 @@
 /**
  * @package epfl
  */
-init_nav();
+init_globals();
 get_header();
 
-global $navClasses;
+global $containerClasses;
 
 if (!is_front_page()) {
 	get_template_part( 'template-parts/breadcrumb');
 }
 ?>
 
-<div class="<?php echo $navClasses ?>">
-	<?php get_sidebar(); ?>
-
+<div class="<?php echo $containerClasses ?>">
 	<div class="w-100">
 		<main id="content" role="main" class="content pt-5">
 			<?php
@@ -25,8 +23,8 @@ if (!is_front_page()) {
 			endwhile; // End of the loop.
 			?>
 		</main><!-- #main -->
-
 	</div>
+	<?php get_sidebar(); ?>
 </div>
 
 </div> <!-- main-container -->

@@ -164,13 +164,33 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * load shortcodes
+ */
 require_once 'shortcodes/index.php';
+
+/**
+ * disable comments
+ */
 require_once 'disable_comments.php';
+
+/**
+ * load breadcrumbs function
+ */
 require_once 'breadcrumb/breadcrumb.php';
-require_once get_template_directory() . '/walkers/custom-nav-walker.php';
+
+/**
+ * load custom menu walker
+ */
+require_once get_template_directory() . '/menus/custom-nav-walker.php';
+
+/**
+ * load submenu filter
+ */
+require_once get_template_directory() . '/menus/submenu.php';
 
 add_filter('default_page_template_title', function() {
-    return __('Menu fixe', 'your_text_domain');
+    return __('Par défaut', 'your_text_domain');
 });
 
 function menu_link_ids ($atts, $page) {
@@ -187,11 +207,17 @@ function epfl_wp_class($classes) {
 add_filter('body_class', 'epfl_wp_class');
 
 /**
- * declare nav classes
+ * declare globals
  */
-function init_nav() {
-	global $navClasses;
-	$navClasses = 'nav-toggle-layout';
+function init_globals() {
+	global $containerClasses;
+	$containerClasses = 'nav-toggle-layout';
+
+	$actualTemplate = get_page_template_slug();
+	if ($actualTemplate == 'page-aside-siblings.php'
+	|| $actualTemplate == 'page-aside-children.php') {
+		$containerClasses .= ' nav-aside-layout';
+	}
 }
 
 /**
@@ -229,3 +255,4 @@ add_filter( 'excerpt_more', 'excerpt_more' );
  */
 global $iconDirectory;
 $iconDirectory = get_template_directory_uri().'/assets/images/shortcode-icons/';
+

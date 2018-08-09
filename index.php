@@ -2,7 +2,7 @@
 /**
  * @package epfl
  */
-init_nav();
+init_globals();
 get_header();
 
 ?>
