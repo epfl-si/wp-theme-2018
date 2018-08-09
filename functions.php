@@ -166,7 +166,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 require_once 'shortcodes/index.php';
 require_once 'disable_comments.php';
-require_once 'breadcrumbs/breadcrumbs.php';
+require_once 'breadcrumb/breadcrumb.php';
 require_once get_template_directory() . '/walkers/custom-nav-walker.php';
 
 add_filter('default_page_template_title', function() {
@@ -187,27 +187,11 @@ function epfl_wp_class($classes) {
 add_filter('body_class', 'epfl_wp_class');
 
 /**
- * handle the two navigation templates, forcing homepage to be with toggle navigation
+ * declare nav classes
  */
 function init_nav() {
 	global $navClasses;
-	if (
-		is_front_page()
-		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php') {
-
-		// ad class to body to bind JS listeners
-		function nav_toggle_body_class($classes) {
-			$classes[] = 'nav-layout-toggle';
-			return $classes;
-		}
-		add_filter('body_class', 'nav_toggle_body_class');
-
-		//update main container class
-		$navClasses = 'nav-layout-toggle';
-	} else {
-		//update main container class
-		$navClasses = 'nav-layout-solid';
-	}
+	$navClasses = 'nav-toggle-layout';
 }
 
 /**

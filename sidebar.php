@@ -29,25 +29,3 @@ if ( $post->post_parent === 0 ) $classes = 'current-menu-ancestor';
 		</div>
 	</div>
 </nav>
-
-<script type="text/javascript">
-// this is a dirty hack for the copil.
-	window.onload = function() {
-		if (false) {
-			var element = $('.nav-main ul.nav-menu>li.current-menu-item.menu-item-has-children');
-		if (element) {
-			// the element is at level 0 and has children. we move the menu 
-			element.removeClass('current-menu-item').addClass('current-menu-parent');
-			var parents = element.parents();
-			$(parents[1]).removeClass('current-menu-parent').addClass('current-menu-ancestor')
-		} else {
-			$('.nav-main').removeClass('current-menu-ancestor').addClass('current-menu-parent')
-		}
-
-		// add search icon
-		$('.nav-header').append('<li id="menu-item-search"><a class="nav-item" href="https://preview.liip.ch/epfl-search/api/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg></a></li>');
-		}
-	}
-
-				
-</script>

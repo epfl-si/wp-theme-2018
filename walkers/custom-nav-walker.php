@@ -32,20 +32,29 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 
 		$parent = $this->currentItem;
 
-		if ($depth == 0) {
-			$output .= "{$n}{$indent}<ul$class_names>".'<li class="nav-back d-xl-none"><a href="#">
+			if ($depth == 0) {
+			/**
+			 * we keep this code commented, if it can come in handy later
+			 * it allows you to hide first-level menu on desktop.
+			 */
+			/* $output .= "{$n}{$indent}<ul$class_names>".'<li class="nav-back d-xl-none"><a href="#">
+						<svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>
+						Retour: '.$parent->title.'
+					</a>
+			</li>'.'
+			<li class="nav-home d-none d-xl-block">
+				<a href="'.$parent->url.'">
+					<svg class="icon"><use xlink:href="#icon-home"></use></svg>
+					<span class="text-muted">›</span>
+					'.$parent->title.'
+				</a>
+			</li>
+				'."{$n}";*/
+				$output .= "{$n}{$indent}<ul$class_names>".'<li class="nav-back"><a href="#">
                   <svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>
                   Retour: '.$parent->title.'
                 </a>
-						</li>'.'
-						<li class="nav-home d-none d-xl-block">
-							<a href="'.$parent->url.'">
-								<svg class="icon"><use xlink:href="#icon-home"></use></svg>
-								<span class="text-muted">›</span>
-								'.$parent->title.'
-							</a>
-						</li>
-							'."{$n}";
+						</li>'."{$n}";
 		} else if ($depth >= 1) {
 			$output .= "{$n}{$indent}<ul$class_names>".'<li class="nav-back"><a href="#"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>Retour: '.$parent->title.'</a></li>'."{$n}";
 		} else {

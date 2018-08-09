@@ -6,12 +6,16 @@ init_nav();
 get_header();
 
 global $navClasses;
+
+if (!is_front_page()) {
+	get_template_part( 'template-parts/breadcrumb');
+}
 ?>
+
 <div class="<?php echo $navClasses ?>">
 	<?php get_sidebar(); ?>
 
 	<div class="w-100">
-		<?php custom_breadcrumbs(); ?>
 		<main id="content" role="main" class="content pt-5">
 			<?php
 			while ( have_posts() ) : the_post();

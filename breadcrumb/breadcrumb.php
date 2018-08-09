@@ -2,41 +2,47 @@
 
 require_once(__DIR__.'/breadcrumb_item.php');
 
-// Breadcrumbs
-function custom_breadcrumbs()
+// Breadcrumb
+function generate_breadcrumb()
 {
 
     // Settings
     $breadcrums_id    = '';
     $breadcrums_class = 'breadcrumb';
-    $home_title       = 'Home';
+    $home_title       = '';
     
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy = '';
     
     // Get the query & post information
     global $post, $wp_query;
-    
-    // Do not display on the homepage or when no parent
+
+    // always display container to display grey bar
+    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">';
+
+    // Do not display breadcrumbs on the homepage or when no parent
     if (
         !is_front_page()
         && !is_home()
         && sizeof(get_post_ancestors($post->ID)) > 0
         ) {
-        echo '<div class="container nav-toggle-container">';
-
-        echo '<button id="nav-burger" class="nav-burger">
-            <span class="sr-only">Toggle the navigation</span>
-            <span class="line" aria-hidden="true"></span>
-            <span class="line" aria-hidden="true"></span>
-            <span class="line" aria-hidden="true"></span>
-            </button>';
 
         // Build the breadcrums
         echo '<ol id="' . $breadcrums_id . '" class="' . $breadcrums_class . '">';
         
         // Home page
-        echo '<li class="breadcrumb-item d-xl-none"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '"><svg class="icon"><use xlink:href="#icon-home"></use></svg>' . $home_title . '</a></li>';
+        echo '
+        <li class="breadcrumb-item">
+            <a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '"><svg class="icon"><use xlink:href="#icon-home"></use></svg>' . $home_title . '</a>
+        </li>
+        ';
+
+        // Handle tags
+        $tag = '
+            <li class="breadcrumb-item breadcrumb-tags-wrapper">
+                <a href="#" class="tag tag-primary">Tag</a>
+            </li>
+        ';
         
         if (is_archive() && !is_tax() && !is_category() && !is_tag()) {
             
@@ -176,10 +182,7 @@ function custom_breadcrumbs()
             // 404 page
             echo '<li>' . 'Error 404' . '</li>';
         }
-        
         echo '</ol>';
-        echo '</div>';
-        
     }
-    
+    echo '</nav>';
 }
