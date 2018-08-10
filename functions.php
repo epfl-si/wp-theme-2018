@@ -255,3 +255,12 @@ add_filter( 'excerpt_more', 'excerpt_more' );
  */
 global $iconDirectory;
 $iconDirectory = get_template_directory_uri().'/assets/images/shortcode-icons/';
+
+/**
+ * modify archive link markup
+ */
+function get_archives_link_mod ( $link_html ) {
+    $string = str_replace("<a", '<small><a', $link_html).'</small>';
+		return $string;
+}
+add_filter("get_archives_link", "get_archives_link_mod");
