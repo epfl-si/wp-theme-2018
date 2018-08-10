@@ -1,6 +1,21 @@
 
 # CHANGELOG
 
+*1.1.0* (2018-08-10)
+  - implement styleguide version (1.1.0)
+  - implement new verison of the main nav
+  - implement nav aside logic
+  - implement nav aside with children only
+  - implement nav aside with siblings only
+  - implement archive listing for posts
+  - implement category listing for posts
+  - base the breadcrumbs on the menu structure
+  - implement new nav lang markup
+  - implement list group markup
+  - implement custom highlight shortcode
+  - implement post teaser shortcode
+  - change faculties shortcode image
+
 *1.0.1* (2018-08-07)
   - remove backend editor container
   - implement page teaser shortode
