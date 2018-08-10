@@ -1,9 +1,15 @@
 <?php 
 $data = get_query_var('epfl_custom_highlight_data');
-if (!$data) return true;
+
+// manage layout
+$classes = '';
+if ($data['layout'] == 'bottom') $classes = 'fullwidth-teaser-horizontal';
+if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
+
 ?>
+
 <div class="container-full">
-  <div class="fullwidth-teaser mb-5">
+  <div class="fullwidth-teaser mb-5  <?php echo $classes; ?>">
     <picture>
       <?php echo wp_get_attachment_image(
         $data['image'],
