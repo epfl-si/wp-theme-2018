@@ -7,21 +7,21 @@
   $visual = $data->visual_url ?: 'https://via.placeholder.com/570x321.jpg';
 ?>
 
-<a href="#" class="news trapeze-vertical-container">
-  <div class="news-container">
-    <div class="news-thumbnail">
+<a href="#" class="list-group-item list-group-teaser link-trapeze-vertical">
+  <div class="list-group-teaser-container">
+    <div class="list-group-teaser-thumbnail">
       <picture>
         <img src="<?php echo $visual ?>" class="img-fluid" alt="image description">
       </picture>
     </div>
-    <div class="news-content">
+    <div class="list-group-teaser-content">
       <p class="h5">
         <?php echo $title ?>
       </p>
       <p>
-        <span>
+        <time>
           <?php echo $date ?>
-        </span>
+        </time>
         <span class="text-muted">—
           <?php echo $content ?>
         </span>

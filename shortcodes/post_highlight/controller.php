@@ -7,9 +7,7 @@ add_shortcode( 'epfl_post_highlight', 'renderPostHighlight' );
 
 // render
 function renderPostHighlight ($args) {
-  $postId = $args['post'];
-  $post = get_post($postId);
-  set_query_var('epfl_post_highlight_data', $post);
+  set_query_var('epfl_post_highlight_data', $args);
 
   ob_start();
   if (is_admin()) {

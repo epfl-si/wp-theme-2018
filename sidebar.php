@@ -7,12 +7,16 @@
  * @package epfl
  */
 
-global $post;
+global $wp_query;
 
-// to display correctly the menu ov level 1 pages, we need to add '.current-menu-parent' to the wrapper
+// recover current post and menu item
+$post = get_post($wp_query->queried_object->ID);
+$items = wp_get_nav_menu_items('menu-1');
+$item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
+
+// to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
 $classes = '';
-if ( $post->post_parent === 0 ) $classes = 'current-menu-ancestor';
-
+if ( $item->post_parent === 0 ) $classes = 'current-menu-parent';
 ?>
 <div class="overlay"></div>
 <nav class="nav-main">
@@ -30,24 +34,29 @@ if ( $post->post_parent === 0 ) $classes = 'current-menu-ancestor';
 	</div>
 </nav>
 
-<script type="text/javascript">
-// this is a dirty hack for the copil.
-	window.onload = function() {
-		if (false) {
-			var element = $('.nav-main ul.nav-menu>li.current-menu-item.menu-item-has-children');
-		if (element) {
-			// the element is at level 0 and has children. we move the menu 
-			element.removeClass('current-menu-item').addClass('current-menu-parent');
-			var parents = element.parents();
-			$(parents[1]).removeClass('current-menu-parent').addClass('current-menu-ancestor')
-		} else {
-			$('.nav-main').removeClass('current-menu-ancestor').addClass('current-menu-parent')
-		}
+<?php 
+	$aside = true;
+	$asideContent = 'all';
+	$currentTemplate = get_page_template_slug();
+	if ($currentTemplate == 'page-aside-none.php' || is_home() || is_front_page()) $aside = false;
+	if ($currentTemplate == 'page-aside-siblings-only.php') $asideContent = 'siblings';
+	if ($currentTemplate == 'page-aside-children-only.php') $asideContent = 'children';
 
-		// add search icon
-		$('.nav-header').append('<li id="menu-item-search"><a class="nav-item" href="https://preview.liip.ch/epfl-search/api/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg></a></li>');
-		}
-	}
+	if ($aside) :
+?>
 
-				
-</script>
+<aside class="nav-aside-wrapper">
+	<nav id="nav-aside" class="nav-aside" role="navigation" aria-describedby="nav-aside-title">
+  	<h2 class="h5 sr-only-xl"><?php esc_html__("Dans la même section", 'epfl-shortcodes') ?></h2>
+				<?php
+				wp_nav_menu( array(
+					'menu_class'=> 'nav-menu',
+					'container' => 'ul',
+					'submenu' => get_the_ID(),
+					'submenu_type' => $asideContent
+				) );
+			?>
+	</nav>
+</aside>
+
+<?php endif;

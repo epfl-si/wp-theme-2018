@@ -29,15 +29,13 @@
 			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
 		</a>
 
-		<div aria-hidden="true">
 			<?php
 				wp_nav_menu( array(
-					'menu_class'=> 'nav-header d-none d-xl-flex m-0',
+					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1,
 				) );
 			?>
-		</div>
 
 		<form action="https://preview.liip.ch/epfl-search/api/" class="d-xl-none">
 			<div class="input-group search w-100">

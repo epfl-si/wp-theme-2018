@@ -164,13 +164,28 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * load shortcodes
+ */
 require_once 'shortcodes/index.php';
+
+/**
+ * disable comments
+ */
 require_once 'disable_comments.php';
-require_once 'breadcrumbs/breadcrumbs.php';
-require_once get_template_directory() . '/walkers/custom-nav-walker.php';
+
+/**
+ * load custom menu walker
+ */
+require_once get_template_directory() . '/menus/custom-nav-walker.php';
+
+/**
+ * load submenu filter
+ */
+require_once get_template_directory() . '/menus/submenu.php';
 
 add_filter('default_page_template_title', function() {
-    return __('Menu fixe', 'your_text_domain');
+    return __('Par défaut', 'your_text_domain');
 });
 
 function menu_link_ids ($atts, $page) {
@@ -187,26 +202,17 @@ function epfl_wp_class($classes) {
 add_filter('body_class', 'epfl_wp_class');
 
 /**
- * handle the two navigation templates, forcing homepage to be with toggle navigation
+ * declare globals
  */
-function init_nav() {
-	global $navClasses;
+function init_globals() {
+	global $containerClasses;
+	$containerClasses = 'nav-toggle-layout nav-aside-layout';
+
+	$actualTemplate = get_page_template_slug();
 	if (
-		is_front_page()
-		|| get_page_template_slug(get_queried_object_id()) == 'page-toggle-nav.php') {
-
-		// ad class to body to bind JS listeners
-		function nav_toggle_body_class($classes) {
-			$classes[] = 'nav-layout-toggle';
-			return $classes;
-		}
-		add_filter('body_class', 'nav_toggle_body_class');
-
-		//update main container class
-		$navClasses = 'nav-layout-toggle';
-	} else {
-		//update main container class
-		$navClasses = 'nav-layout-solid';
+		$actualTemplate == 'page-aside-none.php'
+		|| is_home()) {
+		$containerClasses = 'nav-toggle-layout';
 	}
 }
 
@@ -231,7 +237,7 @@ function epfl_add_editor_styles() {
  * change excerpt length
  */
 function custom_excerpt_length( $length ) {
-    return 50;
+    return 40;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length' );
 
@@ -245,3 +251,12 @@ add_filter( 'excerpt_more', 'excerpt_more' );
  */
 global $iconDirectory;
 $iconDirectory = get_template_directory_uri().'/assets/images/shortcode-icons/';
+
+/**
+ * modify archive link markup
+ */
+function get_archives_link_mod ( $link_html ) {
+    $string = str_replace("<a", '<small><a', $link_html).'</small>';
+		return $string;
+}
+add_filter("get_archives_link", "get_archives_link_mod");

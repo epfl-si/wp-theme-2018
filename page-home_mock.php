@@ -5,7 +5,7 @@
  * Template Post Type: page
  */
 
-init_nav();
+init_globals();
 get_header();
 get_sidebar();
 ?>

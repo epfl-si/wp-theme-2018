@@ -11,7 +11,7 @@ function renderNews ($title, $actus, $template, $stickers) {
     $results = $actus->results;
     echo '<div class="container-full">';
     echo '<div class="container">';
-    echo '<div class="news-listing my-5">';
+    echo '<div class="list-group my-5">';
 
     foreach($results as $new) {
       set_query_var('epfl_news_data', $new);

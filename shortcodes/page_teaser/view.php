@@ -1,5 +1,4 @@
 <?php
-require_once(__DIR__.'/templates/card-img-top.php');
 
 $data = get_query_var('epfl_page_teaser_data');
 if (!$data) return true;
