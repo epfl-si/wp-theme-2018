@@ -7,8 +7,6 @@
  */
 if (
   is_front_page()
-  || is_home()
-  || sizeof(get_post_ancestors($post->ID)) == 0
 ) {
     return;
   }
@@ -29,6 +27,37 @@ if (
   <!-- end Browse -->
 
   <!-- Breadcrumb -->
-  <?php generate_breadcrumb(); ?>
+  <?php
+  // Breadcrumb
+    $items = wp_get_nav_menu_items('menu-1');
+    _wp_menu_item_classes_by_context( $items ); // Set up the class variables, including current-classes
+    $crumbs = array();
+
+    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">';
+    $crumbs[] = '
+        <li class="breadcrumb-item">
+            <a class="bread-link bread-home" href="' . get_home_url() . '" title="home">
+                <svg class="icon"><use xlink:href="#icon-home"></use></svg>
+            </a>
+        </li>';
+
+    foreach($items as $item) {
+        if ($item->current_item_ancestor) {
+            $crumbs[] = "
+                <li class=\"breadcrumb-item\">
+                    <a class=\"bread-link bread-home\" href=\"{$item->url}\" title=\"{$item->title}\">
+                        {$item->title}
+                    </a>
+                </li>";
+        } else if ($item->current) {
+          $crumbs[] = "
+                <li class=\"breadcrumb-item active\">
+                    {$item->title}
+                </li>";
+        }
+    }
+    echo implode('', $crumbs);
+    echo '</nav>';
+  ?>
   <!-- end Breadcrumb -->
 </div>

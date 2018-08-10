@@ -7,12 +7,16 @@
  * @package epfl
  */
 
-global $post;
+global $wp_query;
+
+// recover current post and menu item
+$post = get_post($wp_query->queried_object->ID);
+$items = wp_get_nav_menu_items('menu-1');
+$item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
 
 // to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
 $classes = '';
-if ( $post->post_parent === 0 ) $classes = 'current-menu-ancestor';
-
+if ( $item->post_parent === 0 ) $classes = 'current-menu-parent';
 ?>
 <div class="overlay"></div>
 <nav class="nav-main">
@@ -31,12 +35,12 @@ if ( $post->post_parent === 0 ) $classes = 'current-menu-ancestor';
 </nav>
 
 <?php 
-	$aside = false;
-	$asideContent = 'children';
+	$aside = true;
+	$asideContent = 'all';
 	$currentTemplate = get_page_template_slug();
-	if ( $currentTemplate == 'page-aside-siblings.php'
-	  || $currentTemplate == 'page-aside-children.php') $aside = true;
-	if ($currentTemplate == 'page-aside-siblings.php') $asideContent = 'siblings';
+	if ( $currentTemplate == 'page-aside-none.php') $aside = false;
+	if ($currentTemplate == 'page-aside-siblings-only.php') $asideContent = 'siblings';
+	if ($currentTemplate == 'page-aside-children-only.php') $asideContent = 'children';
 
 	if ($aside) :
 ?>

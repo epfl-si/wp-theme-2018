@@ -175,11 +175,6 @@ require_once 'shortcodes/index.php';
 require_once 'disable_comments.php';
 
 /**
- * load breadcrumbs function
- */
-require_once 'breadcrumb/breadcrumb.php';
-
-/**
  * load custom menu walker
  */
 require_once get_template_directory() . '/menus/custom-nav-walker.php';
@@ -211,12 +206,11 @@ add_filter('body_class', 'epfl_wp_class');
  */
 function init_globals() {
 	global $containerClasses;
-	$containerClasses = 'nav-toggle-layout';
+	$containerClasses = 'nav-aside-layout';
 
 	$actualTemplate = get_page_template_slug();
-	if ($actualTemplate == 'page-aside-siblings.php'
-	|| $actualTemplate == 'page-aside-children.php') {
-		$containerClasses .= ' nav-aside-layout';
+	if ($actualTemplate == 'page-aside-none.php') {
+		$containerClasses .= ' nav-toggle-layout';
 	}
 }
 

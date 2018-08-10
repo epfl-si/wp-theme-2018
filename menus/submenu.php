@@ -7,7 +7,8 @@ add_filter( 'wp_nav_menu_objects', 'submenu_limit', 10, 2 );
  * This function will filter any menu which has $args->submenu set.
  * Then it will check for $args->submenu_type:
  * 'siblings' -> display only actual menu item siblings
- * 'children' -> display current menu item and it's direct children
+ * 'children' -> display only current menu item and it's direct children
+ * 'all' -> display all siblings AND direct children
  * @param array $items all the menu items
  * @param $args all menu arguments
  * @return void
@@ -18,7 +19,7 @@ function submenu_limit( $items, $args ) {
         return $items;
     }
 
-    $submenu_type = $args->submenu_type ?: 'children';
+    $submenu_type = $args->submenu_type ?: 'all';
 
     $current_menu_item = reset(wp_filter_object_list( $items, array( 'current' => true ) ));
     array_push($current_menu_item->classes, 'active');
@@ -36,6 +37,11 @@ function submenu_limit( $items, $args ) {
       $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
       $selectedIds = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
       
+    } else if ($submenu_type == 'all') {
+      $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
+      $siblings = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
+      $children = submenu_get_direct_children_ids( $current_menu_item->ID ?: 0 , $items );
+      $selectedIds = array_merge($siblings, $children);
     }
 
     foreach ( $items as $key => $item ) {
