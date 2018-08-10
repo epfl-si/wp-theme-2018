@@ -22,7 +22,7 @@ function submenu_limit( $items, $args ) {
     $submenu_type = $args->submenu_type ?: 'all';
 
     $current_menu_item = reset(wp_filter_object_list( $items, array( 'current' => true ) ));
-    array_push($current_menu_item->classes, 'active');
+    if ($current_menu_item) array_push($current_menu_item->classes, 'active');
 
     $selectedIds = [];
 

@@ -38,7 +38,7 @@ if ( $item->post_parent === 0 ) $classes = 'current-menu-parent';
 	$aside = true;
 	$asideContent = 'all';
 	$currentTemplate = get_page_template_slug();
-	if ( $currentTemplate == 'page-aside-none.php') $aside = false;
+	if ($currentTemplate == 'page-aside-none.php' || is_home() || is_front_page()) $aside = false;
 	if ($currentTemplate == 'page-aside-siblings-only.php') $asideContent = 'siblings';
 	if ($currentTemplate == 'page-aside-children-only.php') $asideContent = 'children';
 
