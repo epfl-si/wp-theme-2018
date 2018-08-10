@@ -25,8 +25,8 @@
 
 ?>
 
-<nav aria-label="Page navigation">
-  <ul class="pagination">
+<nav aria-label="Page navigation" class="py-2">
+  <ul class="pagination justify-content-end">
 
   <?php if ( get_previous_posts_link() ): ?>
     <li class="page-item">

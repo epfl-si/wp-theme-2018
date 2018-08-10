@@ -1,53 +1,65 @@
 <?php
 /**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package epfl
  */
-
+init_globals();
 get_header();
+
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div class="nav-layout-toggle">
+	<?php get_sidebar(); ?>
 
-		<?php if ( have_posts() ) : ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+			<?php the_archive_title( '<h1 class="mb-5">', '</h1>' ); ?>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+			</div>
+			<aside class="col-md-4">
+			<!-- categories -->
+				<h3 class="h5 font-weight-normal"><?php echo esc_html__( 'Catégories', 'epfl-shortcodes' ) ?></h3>
+				<?php 
+				$categories = get_categories();
+					foreach($categories as $category) {
+						echo '<a class="tag tag-sm tag-light mr-1" href="' . get_category_link($category->term_id) . '">' . $category->name . ' ('.$category->count.')</a>';
+					}
 				?>
-			</header><!-- .page-header -->
+				<!-- end categories -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				<!-- archives -->
+				<h3 class="h5 font-weight-normal mt-4"><?php echo esc_html__( 'Archives', 'epfl-shortcodes' ) ?></h3>
+				<?php 
+				$archives = wp_get_archives([
+					'type' => 'yearly',
+					'show_post_count' => true,
+					'format' => 'html',
+					'echo' => true
+				]);  
+				?>
+				<!-- end archives -->
+			</aside>
+			<main id="content" role="main" class="content col-md-8">
+				<div class="list-group">
+					<?php
+					if (have_posts()) :
+						while ( have_posts() ) : the_post();
+							get_template_part( 'template-parts/content', 'post-teaser' );
+						endwhile; // End of the loop.
+					else : ?>
+						<h2>
+							<?php echo esc_html__( 'Aucun article trouvé', 'epfl-shortcodes' ) ?>
+						</h2>
+						<?php endif; ?>
+				</div>
+				<?php get_template_part( 'template-parts/pagination'); ?>
+			</main>
+		</div>
+		<!-- container -->
+	</div>
+	<!-- row -->
+</div>
+<!-- nav-toggle -->
 
 <?php
-get_sidebar();
 get_footer();

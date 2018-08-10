@@ -241,7 +241,7 @@ function epfl_add_editor_styles() {
  * change excerpt length
  */
 function custom_excerpt_length( $length ) {
-    return 50;
+    return 40;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length' );
 
@@ -255,4 +255,3 @@ add_filter( 'excerpt_more', 'excerpt_more' );
  */
 global $iconDirectory;
 $iconDirectory = get_template_directory_uri().'/assets/images/shortcode-icons/';
-
