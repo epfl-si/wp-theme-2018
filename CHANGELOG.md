@@ -1,6 +1,12 @@
 
 # CHANGELOG
 
+*1.1.1* (2018-08-13)
+  - implement styleguide version (1.1.1)
+  - fix main nav on post detail page
+  - put breadcrumb inside a ul tag for semantics
+  - hotfix php 7.2 error with sozeof and strings
+
 *1.1.0* (2018-08-10)
   - implement styleguide version (1.1.0)
   - implement new verison of the main nav
