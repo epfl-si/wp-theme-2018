@@ -23,9 +23,9 @@ if (!is_front_page()) {
 			endwhile; // End of the loop.
 			?>
 		</main><!-- #main -->
-	</div>
+	</div> <!-- w-100 -->
 	<?php get_sidebar(); ?>
-</div>
+</div> <!-- nav-toggle-layout -->
 
 </div> <!-- main-container -->
 
