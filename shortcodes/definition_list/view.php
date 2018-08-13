@@ -17,7 +17,7 @@
       continue;
     }
 
-    if (sizeof($value) === 0) {
+    if (strlen($value) === 0) {
       $skipNext = true;
       continue;
     }
