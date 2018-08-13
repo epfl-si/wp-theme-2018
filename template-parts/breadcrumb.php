@@ -33,7 +33,7 @@ if (
     _wp_menu_item_classes_by_context( $items ); // Set up the class variables, including current-classes
     $crumbs = array();
 
-    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">';
+    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ul class="p-0 m-0">';
     $crumbs[] = '
         <li class="breadcrumb-item">
             <a class="bread-link bread-home" href="' . get_home_url() . '" title="home">
@@ -57,7 +57,7 @@ if (
         }
     }
     echo implode('', $crumbs);
-    echo '</nav>';
+    echo '</ul></nav>';
   ?>
   <!-- end Breadcrumb -->
 </div>
