@@ -38,11 +38,12 @@ function faculties() {
 		);
 	}
 
+	global $iconDirectory;
 	shortcode_ui_register_for_shortcode(
 		'epfl_faculties',
 		array(
       'label' => 'Faculties',
-      'listItemImage' => 'dashicons-images-alt',
+      'listItemImage' => '<img src="'.$iconDirectory.'faculty.png'.'">',
       'attrs' => $fields
     )
 	);

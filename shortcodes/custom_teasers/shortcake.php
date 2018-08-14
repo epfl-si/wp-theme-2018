@@ -30,22 +30,22 @@ function custom_teasers() {
 					'type'     => 'text'
 				),
 				array(
-					'label'    => 'Excerpt '.$i,
+					'label'    => esc_html__('Excerpt', 'epfl-shortcodes').' '.$i,
 					'attr'     => 'excerpt'.$i,
 					'type'     => 'text'
 				),
 				array(
-					'label'    => 'Url '.$i,
+					'label'    => esc_html__('Url', 'epfl-shortcodes').' '.$i,
 					'attr'     => 'url'.$i,
 					'type'     => 'text'
 				),
 				array(
-					'label'    => 'Button label '.$i,
+					'label'    => esc_html__('Button label', 'epfl-shortcodes').' '.$i,
 					'attr'     => 'buttonlabel'.$i,
 					'type'     => 'text'
 				),
 				array(
-					'label'    => 'Image '.$i,
+					'label'    => esc_html__('Image', 'epfl-shortcodes').' '.$i,
 					'attr'     => 'image'.$i,
 					'type'        => 'attachment',
 					'libraryType' => array( 'image' ),
