@@ -19,7 +19,7 @@
             $count = 1; 
             foreach($data->answers as $answerId => $answer) { 
           ?>
-            <input type="radio" id="custom-radio<?php echo $count ?>" value="<?php echo $answerId ?>" name="customRadio" class="custom-control-input">
+            <input type="radio" id="custom-radio<?php echo $count ?>" value="<?php echo $answerId ?>" name="customRadio" class="custom-control-input" onchange="this.form.submit()">
             <label class="custom-control-label" for="custom-radio<?php echo $count ?>">
               <span class="custom-control-label-content">
                 <?php echo $answer ?></span>
@@ -32,13 +32,6 @@
           ?>
   
         </div>
-        <button type="submit">
-            <?php if (get_locale() == 'fr_FR'): ?>
-              Votez
-            <?php else: ?> 
-              Vote
-            <?php endif ?> 
-          </button>
         </form>
       </div>
     </div>
