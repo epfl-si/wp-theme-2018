@@ -3,10 +3,6 @@ body {
   color: #212121;
   font-size: 18px;
   font-family: Open Sans, Helvetica Neue, Arial, sans-serif;
-  max-width: 600px;
-  margin: auto;
-  border-left: 1px solid #eee;
-  border-right: 1px solid #eee;
   box-sizing: border-box;
 }
 
