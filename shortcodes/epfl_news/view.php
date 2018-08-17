@@ -10,6 +10,7 @@
   
   $publish_date = new DateTime($data->publish_date);
   $publish_date = $publish_date->format('d.m.y');
+  $subtitle = str_ireplace('<p>', '', $data->subtitle);
 ?>
 
 <a href="<?php echo $data->news_url ?>" class="list-group-item list-group-teaser link-trapeze-vertical">
@@ -22,8 +23,8 @@
     <div class="list-group-teaser-content">
       <p class="h5"><?php echo $data->title ?></p>
       <p>
-        <time datetime="<?php echo $data->publish_date ?>"><span class="sr-only">Published:</span><?php echo $data->publish_date ?></time>
-        <span class="text-muted">— <?php echo $data->subtitle ?></span>
+        <time datetime="<?php echo $publish_date ?>"><span class="sr-only">Published:</span><?php echo $publish_date ?></time>
+        <span class="text-muted">— <?php echo $subtitle ?></span>
       </p>
     </div>
   </div>
