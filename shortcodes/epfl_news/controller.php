@@ -17,14 +17,41 @@ function renderNews ($title, $actus, $template, $stickers) {
     echo '<div class="container">';
     echo '<div class="list-group">';
 
+    $count=1;
+    $header = false;
+    $last = count($results);
+
     foreach($results as $new) {
+      
+      if ($count != 1 and $header == false) {
+
+        $header = true;
+        echo '<div class="container pb-5 offset-xl-top pt-5 pt-xl-0">';
+        echo '<div class="row">';
+        echo '<div class="col-lg-10 offset-lg-1">';
+        echo '<div class="row mb-4">';
+      }
+
+      set_query_var('epfl_news_is_first_news', $count==1);
       set_query_var('epfl_news_template', $template);
       set_query_var('epfl_news_data', $new);
       get_template_part('shortcodes/epfl_news/view');
+      
+      if ($last == $count) {
+        echo '</div>';
+        echo '<p class="text-center">';
+        echo '<a class="link-pretty" href="#">Toutes les actualités</a>';
+        echo '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+      }
+
+      $count++;
+
     }
     echo '</div>';
     echo '</div>';
     echo '</div>';
-
   }
 }
