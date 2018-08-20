@@ -8,10 +8,17 @@
   } else {
     $image_description = $data->en_description;
   }
+
+  if (get_locale() == 'fr_FR') {
+    $category = $data->category->fr_label;
+  } else {
+    $category = $data->category->en_label;
+  }
   
   $publish_date = new DateTime($data->publish_date);
   $publish_date = $publish_date->format('d.m.y');
   $subtitle = str_ireplace('<p>', '', $data->subtitle);
+
 ?>
 
 <?php 
@@ -50,12 +57,12 @@
         <div class="fullwidth-teaser-title">
           <h3><?php echo $data->title ?></h3>
           <ul class="list-inline mt-2">
-            <li class="list-inline-item">Actualités</li>
-            <li class="list-inline-item">Biologie</li>
+            <li class="list-inline-item"><?php if (get_locale() == 'fr_FR'): ?>Actualités<?php else: ?>News<?php endif; ?></li>
+            <li class="list-inline-item"><?php echo $category ?></li>
           </ul>
         </div>
-        <a href="#" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
-          Lire l'article
+        <a href="<?php echo $data->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
+          <?php if (get_locale() == 'fr_FR'): ?> En savoir plus <?php else: ?> Read more <?php endif; ?>
           <span class="sr-only">sur Tech Transfer.</span>
           <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
         </a>
@@ -64,7 +71,7 @@
         <p><?php echo $subtitle ?></p>
       </div>
       <div class="fullwidth-teaser-footer">
-        <a href="#" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none">En savoir plus</a>
+        <a href="<?php echo $data->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php if (get_locale() == 'fr_FR'): ?> En savoir plus <?php else: ?> Read more <?php endif; ?></a>
       </div>
     </div>
   </div>
@@ -72,15 +79,15 @@
   <?php else: ?>
 
   <div class="col-md-6 d-flex">
-    <a href="#" class="card link-trapeze-horizontal">
+    <a href="<?php echo $data->news_url ?>" class="card link-trapeze-horizontal">
       <div class="card-body">
         <h3 class="card-title"><?php echo $data->title ?></h3>
         <div class="card-info">
           <span class="card-info-date">
             <time datetime="DATETIME HERE"><?php echo $publish_date ?></time>
           </span>
-          <span>Actualité</span>
-          <span>Nanotechnologies</span>
+          <span><?php if (get_locale() == 'fr_FR'): ?>Actualités<?php else: ?>News<?php endif; ?></span>
+          <span><?php echo $category ?></span>
         </div>
         <p><?php echo $subtitle ?></p>
       </div>

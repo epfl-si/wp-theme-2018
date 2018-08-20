@@ -40,7 +40,13 @@ function renderNews ($title, $actus, $template, $stickers) {
       if ($last == $count) {
         echo '</div>';
         echo '<p class="text-center">';
-        echo '<a class="link-pretty" href="#">Toutes les actualités</a>';
+        echo '<a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">';
+        if (get_locale() == 'fr_FR') {
+          echo 'Toutes les actualités';
+        } else {
+          echo 'All news';
+        }
+        echo '</a>';
         echo '</p>';
         echo '</div>';
         echo '</div>';
