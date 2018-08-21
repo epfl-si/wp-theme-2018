@@ -20,7 +20,6 @@ if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-
 ?>
 <div class="overlay"></div>
 <nav class="nav-main">
-	<span class="nav-close" role="button" aria-description="Close secondary menu"></span>
 	<div class="nav-wrapper">
 		<div class="nav-container <?php echo $classes ?>">
 			<?php
