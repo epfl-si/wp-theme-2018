@@ -16,12 +16,10 @@ $item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
 
 // to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
 $classes = '';
-if ( $item->post_parent === 0 || $item === false ) $classes = 'current-menu-parent';
-
+if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-parent';
 ?>
 <div class="overlay"></div>
 <nav class="nav-main">
-	<span class="nav-close" role="button" aria-description="Close secondary menu"></span>
 	<div class="nav-wrapper">
 		<div class="nav-container <?php echo $classes ?>">
 			<?php

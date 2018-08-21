@@ -9,7 +9,7 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
 ?>
 
 <div class="container-full">
-  <div class="fullwidth-teaser mb-5  <?php echo $classes; ?>">
+  <div class="fullwidth-teaser mt-5  <?php echo $classes; ?>">
     <picture>
       <?php echo wp_get_attachment_image(
         $data['image'],

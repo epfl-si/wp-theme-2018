@@ -14,7 +14,7 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
 ?>
 
 <div class="container-full">
-  <div class="fullwidth-teaser mb-5 <?php echo $classes; ?>">
+  <div class="fullwidth-teaser mt-5 <?php echo $classes; ?>">
   <?php if (has_post_thumbnail( $page )) : ?>
     <picture>
       <img src="<?php echo get_the_post_thumbnail_url($page) ?>" aria-labelledby="background-label" alt="An image description"

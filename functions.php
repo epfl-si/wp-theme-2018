@@ -260,3 +260,8 @@ function get_archives_link_mod ( $link_html ) {
 		return $string;
 }
 add_filter("get_archives_link", "get_archives_link_mod");
+
+/**
+ * enable excerpts for pages
+ */
+add_post_type_support( 'page', 'excerpt' );
