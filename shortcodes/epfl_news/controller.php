@@ -23,7 +23,7 @@ function renderNews ($title, $actus, $template, $stickers) {
 
     foreach($results as $new) {
       
-      if ($count != 1 and $header == false) {
+      if ($template == 2 and $count != 1 and $header == false) {
 
         $header = true;
         echo '<div class="container pb-5 offset-xl-top pt-5 pt-xl-0">';
@@ -37,7 +37,7 @@ function renderNews ($title, $actus, $template, $stickers) {
       set_query_var('epfl_news_data', $new);
       get_template_part('shortcodes/epfl_news/view');
       
-      if ($last == $count) {
+      if ($template == 2 and $last == $count) {
         echo '</div>';
         echo '<p class="text-center">';
         echo '<a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">';
