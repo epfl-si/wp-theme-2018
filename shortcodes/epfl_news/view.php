@@ -74,12 +74,12 @@
               <div class="fullwidth-teaser-title">
                 <h3><?php echo $news->title ?></h3>
                 <ul class="list-inline mt-2">
-                  <li class="list-inline-item"><?php if (get_locale() == 'fr_FR'): ?>Actualités<?php else: ?>News<?php endif; ?></li>
+                  <li class="list-inline-item"><?php esc_html__('News', 'epfl_shortcodes');?></li>
                   <li class="list-inline-item"><?php echo $category ?></li>
                 </ul>
               </div>
               <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
-                <?php if (get_locale() == 'fr_FR'): ?> En savoir plus <?php else: ?> Read more <?php endif; ?>
+                <?php esc_html__('Read more', 'epfl_shortcodes');?>
                 <span class="sr-only">sur Tech Transfer.</span>
                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
               </a>
@@ -88,7 +88,7 @@
               <p><?php echo $subtitle ?></p>
             </div>
             <div class="fullwidth-teaser-footer">
-              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php if (get_locale() == 'fr_FR'): ?> En savoir plus <?php else: ?> Read more <?php endif; ?></a>
+              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php esc_html__('Read more', 'epfl_shortcodes');?></a>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
                 <span class="card-info-date">
                   <time datetime="DATETIME HERE"><?php echo $publish_date ?></time>
                 </span>
-                <span><?php if (get_locale() == 'fr_FR'): ?>Actualités<?php else: ?>News<?php endif; ?></span>
+                <span><?php esc_html__('News', 'epfl_shortcodes');?></span>
                 <span><?php echo $category ?></span>
               </div>
               <p><?php echo $subtitle ?></p>
@@ -118,13 +118,7 @@
       </div>
       <p class="text-center">
         <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
-          <?php
-          if (get_locale() == 'fr_FR') {
-            echo 'Toutes les actualités';
-          } else {
-            echo 'All news';
-          }
-          ?>
+          <?php esc_html__('All news', 'epfl_shortcodes' );?>
         </a>
       </p>
     </div>
