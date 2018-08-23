@@ -44,7 +44,7 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'epfl' ),
+			'primary' => esc_html__( 'Primary', 'epfl' ),
 		) );
 
 		/*
@@ -265,3 +265,17 @@ add_filter("get_archives_link", "get_archives_link_mod");
  * enable excerpts for pages
  */
 add_post_type_support( 'page', 'excerpt' );
+
+/**
+ * get_current_menu_slug
+ * returns the slug of the current menu occupying the primary theme_location
+ * also works when using polylang
+ *
+ * @return string
+ */
+function get_current_menu_slug() {
+	$theme_location = 'primary';
+  $menu_locations = get_nav_menu_locations();
+  $menu_term = get_term($menu_locations[$theme_location], 'nav_menu');
+	return $menu_term;
+}

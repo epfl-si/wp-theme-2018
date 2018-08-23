@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * hide breadcrumbs on:
  *  - homepage
@@ -28,8 +28,10 @@ if (
 
   <!-- Breadcrumb -->
   <?php
-  // Breadcrumb
-    $items = wp_get_nav_menu_items('menu-1');
+    // Breadcrumb
+    $items = wp_get_nav_menu_items(get_current_menu_slug());
+    $item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
+
     _wp_menu_item_classes_by_context( $items ); // Set up the class variables, including current-classes
     $crumbs = array();
 
