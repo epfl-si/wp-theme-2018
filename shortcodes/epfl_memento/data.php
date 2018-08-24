@@ -1,7 +1,7 @@
 <?php
-  function get_data() {
-    $data = get_query_var('epfl_memento_data');    
-    return $data;
+  function get_event() {
+    $event = get_query_var('epfl_event');    
+    return $event;
   }
   
 

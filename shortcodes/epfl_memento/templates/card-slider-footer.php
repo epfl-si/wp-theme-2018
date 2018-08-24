@@ -1,6 +1,4 @@
 <?php
-
-require_once(get_template_directory().'/shortcodes/epfl_memento/data.php');
 $memento = get_query_var('epfl_memento_name'); 
 ?>
 

@@ -1,7 +1,7 @@
 <?php
 
 require_once(get_template_directory().'/shortcodes/epfl_memento/data.php');
-$data = get_data();
+$data = get_event();
 
 ?>
 <div class="card-info">
