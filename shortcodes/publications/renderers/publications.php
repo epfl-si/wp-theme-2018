@@ -1,0 +1,490 @@
+<?php
+require_once(__DIR__.'/fields.php');
+
+# mainly used to sanitize external values when we convert to class name
+define('DOCTYPE_TO_CLASS_NAME_MAP', [
+    'BOOK CHAPTERS' => 'BookChapters',
+    'BOOKS' => 'Books',
+    'CONFERENCE PAPERS' => 'ConferencePapers',
+    'CONFERENCE PROCEEDINGS' => 'ConferenceProceedings',
+    'JOURNAL ARTICLES' => 'JournalArticles',
+    'PATENTS' => 'Patents',
+    'POSTERS' => 'Posters',
+    'REPORTS' => 'Reports',
+    'STUDENT PROJECTS' => 'StudentProjects',
+    'TALKS' => 'Talks',
+    'THESES' => 'Theses',
+    'WORKING PAPERS' => 'WorkingPapers',
+]);
+
+function get_render_class_for_publication_2018($publication, $format) {
+    # by default, use one of this
+    if ($format === "detailed") {
+        $record_renderer_class_base = 'DetailedInfosciencePublication2018Render';
+    } else {
+        $record_renderer_class_base = 'ShortInfosciencePublication2018Render';
+    }
+
+    if (InfoscienceFieldRender::field_exists($publication['doctype'])) {
+        # doctype determine the render, find it in the map
+        $doctype_to_find = strtoupper($publication['doctype'][0]);
+        
+        if (array_key_exists($doctype_to_find, DOCTYPE_TO_CLASS_NAME_MAP)) {
+            
+            $record_renderer_class = DOCTYPE_TO_CLASS_NAME_MAP[$doctype_to_find] . $record_renderer_class_base;
+            
+            if (class_exists($record_renderer_class)) {
+                return $record_renderer_class;
+            }                
+        }
+    }
+
+    return $record_renderer_class_base;
+}
+
+/* 
+* Publication
+*/ 
+abstract Class InfosciencePublication2018Render {
+    
+    protected static function render($publication, $format, $summary) {
+        return "";
+    }
+
+    public static function render_publication($publication, $format, $summary, $thumbnail) {
+        $html_rendered = '<div class="list-group-item list-group-item-publication">';
+        $html_rendered .= '  <div class="row">';
+        $html_rendered .= '    <div class="col-md-10">';
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, $format);
+        $html_rendered .= static::render($publication, $format, $summary);
+        $html_rendered .= "    </div>";
+        $html_rendered .= self::render_links($publication);
+        $html_rendered .= "  </div>";
+        $html_rendered .= "</div>";
+
+        return $html_rendered;
+    }
+
+    protected static function render_links($publication) {
+        $links_html = '<div class="col-md-2 text-right mt-4 mt-md-0">';
+        $links_html .= '  <p>';
+        $links_html .= '    <a href="//infoscience.epfl.ch/record/' . $publication['record_id'][0] . '" class="btn btn-secondary btn-sm" target="_blank">Detailed record</a>';
+        $links_html .= '  </p>';
+
+        $fulltext = '';
+        if (isset($publication['url']['fulltext']) && $publication['url']['fulltext'][0]) {
+            $fulltext = $publication['url']['fulltext'][0];
+        }
+
+        $doi = '';
+        if (isset($publication['doi']) && $publication['doi']) {
+            $doi = $publication['doi'];
+        }
+
+        if ($fulltext || $doi) {
+            $links_html .= '  <p class="text-muted small mb-0">';
+
+            if ($fulltext) {
+                $links_html .= '    <a class="text-muted" href="' . $fulltext . '" target="_blank">Full text</a>';
+            }
+
+            if ($doi) {
+                $links_html .= '    <a class="text-muted" href="' . $doi . '" target="_blank">View at publisher</a>';                
+            }
+            
+            $links_html .= '  </p>';
+        }
+
+        $links_html .= '</div>';
+        return $links_html;
+    }
+}
+
+Class DetailedInfosciencePublication2018Render extends InfosciencePublication2018Render {
+    protected static $format="detailed";
+
+    public static function render($publication, $format, $summary) {
+        if ($summary) {
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+        }
+        
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        return $html_rendered;
+    }
+}
+
+
+Class ShortInfosciencePublication2018Render extends InfosciencePublication2018Render {
+    protected static $format="short";
+
+    public static function render($publication, $format, $summary) {
+        if ($summary) {
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+        }
+        
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        return $html_rendered;
+    }
+}
+
+
+/* 
+* Doctypes specific render 
+*/
+/*
+Class BookChaptersDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= '<p class="infoscience_host">';
+
+        $has_next = InfoscienceField2018Render::field_exists($publication['publication_location']) || 
+            InfoscienceField2018Render::field_exists($publication['publication_institution']) ||
+            InfoscienceField2018Render::field_exists($publication['publication_date']);
+        $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, self::$format, $has_next);
+
+        $html_rendered .= BooksChaptersPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= JournalPageInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= ISBNInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= '</p>';
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class BookChaptersShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        
+        $has_next = InfoscienceField2018Render::field_exists($publication['journal'], 'publisher') ||
+            InfoscienceField2018Render::field_exists($publication['publication_location']) || 
+            InfoscienceField2018Render::field_exists($publication['publication_institution']) ||
+            InfoscienceField2018Render::field_exists($publication['publication_date']);
+
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format, $has_next);
+
+        $has_next = InfoscienceField2018Render::field_exists($publication['publication_location']) || 
+            InfoscienceField2018Render::field_exists($publication['publication_institution']) ||
+            InfoscienceField2018Render::field_exists($publication['publication_date']);
+        $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, self::$format, $has_next);
+
+        $html_rendered .= BooksChaptersPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= JournalPageInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class BooksDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= '<p class="infoscience_host">';
+
+        $html_rendered .= BooksPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= ISBNInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= '</p>';
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class BooksShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+
+        $has_next = InfoscienceField2018Render::field_exists($publication['publication_location']) || 
+                    InfoscienceField2018Render::field_exists($publication['publication_institution']);
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= BooksPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class ConferencePapersDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= '<p class="infoscience_host">';
+
+        $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= ConferenceDataInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= JournalPageInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= '</p>';
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class ConferencePapersShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);        
+        $html_rendered .= ConferenceDataInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= JournalPageInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class ConferenceProceedingsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        
+        if (InfoscienceField2018Render::field_exists($publication['author_1'])) {
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author_1'], self::$format);
+        } elseif (InfoscienceField2018Render::field_exists($publication['author_3'])) {
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author_3'], self::$format);
+        }
+
+        $html_rendered .= '<p>' . PublicationDateInfoscienceField2018Render::render($publication, self::$format) . '</p>';
+        
+        $html_rendered .= '<p class="infoscience_host">';
+        $html_rendered .= ConferenceDataInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= '</p>';
+
+        return $html_rendered;
+    }
+}
+
+Class ConferenceProceedingsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        if (InfoscienceField2018Render::field_exists($publication['author_1'])) {
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author_1'], self::$format);
+        } elseif (InfoscienceField2018Render::field_exists($publication['author_3'])) {
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author_3'], self::$format);
+        }
+
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, 'detailed');
+
+        $html_rendered .= ConferenceProceedingsDataInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class JournalArticlesDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format, InfoscienceField2018Render::field_exists('journal', 'publisher'));
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= '<p class="infoscience_host">';
+        $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= JournalDetailsInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= '</p>';
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class JournalArticlesShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format, InfoscienceField2018Render::field_exists('journal', 'publisher'));
+        $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+        
+        return $html_rendered;
+    }
+}
+*/
+
+Class PatentsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        if ($summary) {
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+        }
+
+        $html_rendered .= PatentsInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        
+        return $html_rendered;
+    }
+}
+
+Class PatentsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    /*public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+
+        $has_next = InfoscienceField2018Render::field_exists($publication['company_name']);
+        $html_rendered .= CorporateNameInfoscienceField2018Render::render($publication, self::$format, $has_next);
+
+        $html_rendered .= CompanyNameInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format, InfoscienceField2018Render::field_exists('patent'));
+
+        $html_rendered .= PatentsInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        
+        return $html_rendered;
+    }*/
+    public static function render($publication, $format, $summary) {
+        if ($summary) {
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+        }
+
+        $html_rendered .= PatentsInfoscienceField2018Render::render($publication, self::$format);
+        
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        return $html_rendered;
+    }    
+}
+/*
+Class PostersDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        
+        $html_rendered .= '<p class="infoscience_host">';
+        $html_rendered .= ConferenceDataInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= '</p>';
+
+        return $html_rendered;
+    }
+}
+
+Class PostersShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+
+        $has_next = InfoscienceField2018Render::field_exists($publication['conference'], 'name') || 
+            InfoscienceField2018Render::field_exists($publication['conference'], 'location') ||
+            InfoscienceField2018Render::field_exists($publication['conference'], 'date');
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format, $has_next);
+
+        $html_rendered .= ConferenceDataInfoscienceField2018Render::render($publication, self::$format);
+        
+        return $html_rendered;
+    }
+}
+
+Class ReportsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        
+        $html_rendered .= '<p class="infoscience_host">';
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationPageInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= '</p>';
+
+        $html_rendered .= ReportUrlInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class ReportsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, 'detailed');
+        $html_rendered .= ReportUrlInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class StudentProjectsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        
+        $html_rendered .= '<p class="infoscience_host">';
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= '</p>';
+
+        return $html_rendered;
+    }
+}
+
+Class StudentProjectsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format, InfoscienceField2018Render::field_exists('publication_date'));
+        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class TalksDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        return PostersDetailedInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+    }
+}
+
+Class TalksShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        return PostersShortInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+    }
+}
+
+Class ThesesDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+
+        $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format);
+        
+        $host_rendered = "";
+        $host_rendered .= BooksChaptersPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
+        $host_rendered .= PublicationPageInfoscienceField2018Render::render($publication, self::$format);
+
+        if ($host_rendered && !empty($host_rendered)) {
+            $html_rendered .= '<p class="infoscience_host">';
+            $html_rendered .= $host_rendered;
+            $html_rendered .= '</p>';
+        }
+
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class ThesesShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= TitleInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= BooksChaptersPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered .= PublicationPageInfoscienceField2018Render::render($publication, self::$format);
+        
+        $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
+
+        return $html_rendered;
+    }
+}
+
+Class WorkingPapersDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        return ReportsDetailedInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+    }
+}
+
+Class WorkingPapersShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
+    public static function render($publication, $format, $summary) {
+        return ReportsShortInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+    }
+}*/
+?>
