@@ -1,8 +1,8 @@
 <?php
 
 /** 
- * 1 is the priority, higher means executed first
- * 2 is number of arguments the function can accept
+ * 1 (3rd argument) is the priority, higher means executed first
+ * 3 (4rth argument) is number of arguments the function can accept
  **/
 add_action('epfl_event_action', 'renderMemento', 1, 3);
 
