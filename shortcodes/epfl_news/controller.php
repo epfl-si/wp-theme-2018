@@ -1,5 +1,9 @@
 <?php
 
+/** 
+ * 10 (3rd argument) is the priority, higher means executed first
+ * 4 (4rth argument) is number of arguments the function can accept
+ **/
 add_action('epfl_news_action', 'renderNews', 10, 4);
 
 function renderNews ($title, $actus, $template, $stickers) {
