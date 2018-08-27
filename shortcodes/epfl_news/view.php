@@ -1,10 +1,18 @@
 <?php
   $template = get_query_var('epfl_news_template');
+  $display_all_news_link = get_query_var('epfl_news_all_news_link');
+  
   $data = get_query_var('epfl_news_data');
 
   $count = 1;
   $header = false;
   $last = count($data);
+
+  $url_channel = "";
+  if (count($data) > 0) {
+    $channel = $data[0]->channel->name;
+    $url_channel = "https://actu.epfl.ch/search/" . $channel;
+  }
 ?>
 
 <div class="container-full">
@@ -29,7 +37,7 @@
 
           $publish_date = new DateTime($news->publish_date);
           $publish_date = $publish_date->format('d.m.y');
-          $subtitle = str_ireplace('<p>', '', $news->subtitle);
+          $subtitle = strip_tags($news->subtitle);
 
           if ($template == 2 and $count != 1 and $header == false) {
 
@@ -61,6 +69,37 @@
           </div>
         </a>
 <?php
+  elseif ("3" == $template): // TEMPLATE WWW WITH 1 NEWS
+?>
+
+        <div class="fullwidth-teaser fullwidth-teaser-horizontal">
+          <picture>
+            <img src="<?php echo $news->visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
+          </picture>
+          <div class="fullwidth-teaser-text">
+            <div class="fullwidth-teaser-header">
+              <div class="fullwidth-teaser-title">
+                <h3><?php echo $news->title ?></h3>
+                <ul class="list-inline mt-2">
+                  <li class="list-inline-item"><?php esc_html_e('News', 'epfl');?></li>
+                  <li class="list-inline-item"><?php echo $category ?></li>
+                </ul>
+              </div>
+              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
+                <?php esc_html_e('Read more', 'epfl');?>
+                <span class="sr-only">sur Tech Transfer.</span>
+                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
+              </a>
+            </div>
+            <div class="fullwidth-teaser-content">
+              <p><?php echo $subtitle ?></p>
+            </div>
+            <div class="fullwidth-teaser-footer">
+              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php esc_html_e('Read more', 'epfl');?></a>
+            </div>
+          </div>
+        </div>
+<?php 
   elseif ("2" == $template): // TEMPLATE WWW WITH 3 NEWS
 ?>
 <?php if (true === $is_first_event): ?>
@@ -114,7 +153,7 @@
   <?php endif; ?>
 <?php endif; ?>
 
-<?php if ($template == 2 and $last == $count): ?>
+<?php if ("true" == $display_all_news_link and $template == 2 and $last == $count): ?>
       </div>
       <p class="text-center">
         <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
@@ -130,6 +169,13 @@
       $count++;
     } // end foreach
 ?>
+
+<?php if ("true" == $display_all_news_link and $template != 2 and "" != $channel): ?>
+<p class="text-center">
+  <a class="link-pretty" href="<?php echo $url_channel; ?>"><?php esc_html_e('All news', 'epfl' );?></a>
+</p>
+<?php endif; ?>
+
 </div>
 </div>
 </div>
