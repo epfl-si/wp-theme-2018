@@ -13,11 +13,9 @@
     
     <?php
     if (!(bool) $data) {
-      if (get_locale() == 'fr_FR') {
-        echo '<div><h3>aucun événement programmé</h3></div>';
-      } else {
-        echo '<div><h3>no scheduled events</h3></div>';
-      }
+      echo '<div><h3>';
+      esc_html_e('Complete agenda of events', 'epfl');
+      echo '</h3></div>';
     }
     
     $count=1;
@@ -75,11 +73,7 @@
         </div>
         <div class="card-footer mt-auto">
           <a href="<?php echo $event->event_url ?>" class="btn btn-primary btn-sm">
-            <?php if (get_locale() == 'fr_FR'): ?>
-              Information & inscription
-            <?php else: ?> 
-              Learn more & apply
-            <?php endif ?>
+            <?php esc_html_e('Learn more & apply', 'epfl');?>
           </a>
         </div>
       </div>

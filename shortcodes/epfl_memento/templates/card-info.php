@@ -20,11 +20,7 @@ $data = get_event();
     
     <p>
         <?php if ($data->place_and_room !== ''): ?>
-            <?php if (get_locale() == 'fr_FR'): ?> 
-            Lieu et salle:
-            <?php else: ?> 
-            Place and room: 
-            <?php endif ?> 
+            <?php esc_html_e('Place and room', 'epfl');?>:
         <?php endif ?> 
         <b><?php echo $data->place_and_room ?></b>
         <br>
