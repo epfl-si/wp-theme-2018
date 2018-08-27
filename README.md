@@ -14,13 +14,30 @@ Epfl theme (Wordpress)
   2. Nothing more, you're ready to go! 🚀
 
 ## Recovering the last version of the styleguide
-  1. head towards [https://github.com/epfl-idevelop/elements](https://github.com/epfl-idevelop/elements)
-  2. clone the repo locally
-  3. install the project locally (see elements documentation)
-  4. launch `$ yarn && yarn build` or `$ docker-compose up builder`
-  5. after build finished, move the content of the `elements/build/` folder to `epfl-theme/assets`
-  6. commit the builds
-  7. here you go, you just updated the styleguide version container in this theme !
+  1. head towards [https://github.com/epfl-idevelop/elements/tree/dist/frontend](https://github.com/epfl-idevelop/elements/tree/dist/frontend)
+  2. use git clone / download zip to recover the files of this branch
+  3. put all these recovered files into `wp-theme-2018/assets`
+  4. commit the builds
+  5. here you go, you just updated the styleguide version contained in this theme !
+
+## deploying a release
+  Requirements:
+  - understand the gitflow logic ([gitflow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/))
+  - install `git flow` locally [How to install gitflow](https://github.com/nvie/gitflow/wiki/Installation)
+  - make sure your local branches `master` and `dev` are up-to-date
+  - initialise git flow in your repo `git flow init`
+  - start a release: `git flow release start x.x.x`
+  - update the following files:
+    - `VERSION` with the version number
+    - `CHANGELOG.md` with a description of all the changes since last release
+  - commit them in a "bump version" commit
+  - finish the release: `git flow release finish x.x.x`
+  - head over this repo on github, on the **release** tab
+  - go to **Draft a new release**
+  - choose the release number you just created, insert the changelog informations into the release description
+  - Publish the release
+  - congratulation, the repo has been released ! 🎉
+
 
 ## Shortcodes
 Each shortcode has its own subfoler in the `shortcodes/` directory, placed at the root of the template.
