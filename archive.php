@@ -7,21 +7,21 @@ get_header();
 
 ?>
 
-	<div class="nav-layout-toggle">
+	<div class="nav-toggle-layout">
 		<?php get_sidebar(); ?>
 
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<?php the_archive_title( '<h1 class="mb-5">', '</h1>' ); ?>
+					<?php the_archive_title( '<h1>', '</h1>' ); ?>
 				</div>
 
-				<aside class="col-md-3">
+				<aside class="col-md-3  mt-5">
 					<?php get_template_part( 'template-parts/categories', 'list' ) ?>
 					<?php get_template_part( 'template-parts/archives', 'list' ) ?>
 				</aside>
 
-				<main id="content" role="main" class="content col-md-9">
+				<main id="content" role="main" class="content col-md-9  mt-5">
 					<div class="list-group">
 						<?php
 					if (have_posts()) :

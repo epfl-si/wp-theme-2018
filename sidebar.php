@@ -10,22 +10,20 @@
 global $wp_query;
 
 // recover current post and menu item
-$post = get_post($wp_query->queried_object->ID);
-$items = wp_get_nav_menu_items('menu-1');
+$items = wp_get_nav_menu_items(get_current_menu_slug());
 $item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
 
 // to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
 $classes = '';
-if ( $item->post_parent === 0 || $item === false ) $classes = 'current-menu-parent';
-
+if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-parent';
 ?>
 <div class="overlay"></div>
 <nav class="nav-main">
-	<span class="nav-close" role="button" aria-description="Close secondary menu"></span>
 	<div class="nav-wrapper">
 		<div class="nav-container <?php echo $classes ?>">
 			<?php
 				wp_nav_menu( array(
+					'theme_location' => 'primary',
 					'menu_class'=> 'nav-menu',
 					'container' => 'ul',
 					'walker' => new Custom_Nav_Walker()
@@ -35,7 +33,7 @@ if ( $item->post_parent === 0 || $item === false ) $classes = 'current-menu-pare
 	</div>
 </nav>
 
-<?php 
+<?php
 	$aside = true;
 	$asideContent = 'all';
 	$currentTemplate = get_page_template_slug();

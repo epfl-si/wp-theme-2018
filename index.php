@@ -18,17 +18,17 @@ if (!is_front_page()) {
 		<div class="row">
 
 			<div class="col-12">
-				<h1 class="mb-5">
+				<h1>
 					<?php echo(apply_filters( 'the_title', get_the_title( get_option( 'page_for_posts' )))); ?>
 				</h1>
 			</div>
 
-			<aside class="col-md-3">
+			<aside class="col-md-3 mt-5">
 				<?php get_template_part( 'template-parts/categories', 'list' ) ?>
 				<?php get_template_part( 'template-parts/archives', 'list' ) ?>
 			</aside>
 
-			<main id="content" role="main" class="content col-md-9">
+			<main id="content" role="main" class="content col-md-9 mt-5">
 				<div class="list-group">
 					<?php
 				if (have_posts()) :

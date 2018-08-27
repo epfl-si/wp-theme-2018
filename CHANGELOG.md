@@ -1,6 +1,14 @@
 
 # CHANGELOG
 
+*1.1.2* (2018-08-21)
+  - merge QA science shortcode
+  - implement styleguide version (1.1.2)
+  - fix breadcrumbs on level 0 pages
+  - fix main nav classes
+  - remove close cross in menu
+  - enable excerpt for pages
+
 *1.1.1* (2018-08-13)
   - implement styleguide version (1.1.1)
   - fix main nav on post detail page
