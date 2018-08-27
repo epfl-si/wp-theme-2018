@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: epfl_shortcodes\n"
-"POT-Creation-Date: 2018-08-22 08:16+0200\n"
-"PO-Revision-Date: 2018-08-22 08:18+0200\n"
+"Project-Id-Version: epfl\n"
+"POT-Creation-Date: 2018-08-27 13:30+0200\n"
+"PO-Revision-Date: 2018-08-27 13:31+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ../shortcodes\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: __;esc_html__\n"
+"X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: collapsable/shortcake.php:9 custom_highlight/shortcake.php:8
@@ -149,17 +149,26 @@ msgstr ""
 msgid "Definition list"
 msgstr ""
 
-#: epfl_news/view.php:77 epfl_news/view.php:106
+#: epfl_news/view.php:84 epfl_news/view.php:116 epfl_news/view.php:145
 msgid "News"
 msgstr "Actualités"
 
-#: epfl_news/view.php:82 epfl_news/view.php:91
+#: epfl_news/view.php:89 epfl_news/view.php:98 epfl_news/view.php:121
+#: epfl_news/view.php:130 page_highlight/view.php:33 page_highlight/view.php:45
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: epfl_news/view.php:121
+#: epfl_news/view.php:160
 msgid "All news"
 msgstr "Toutes les actualités"
+
+#: epfl_scienceqa/view.php:13
+msgid "Question de science"
+msgstr ""
+
+#: epfl_scienceqa/view.php:35
+msgid "Voter"
+msgstr ""
 
 #: faculties/shortcake.php:15
 #, fuzzy
@@ -197,10 +206,6 @@ msgstr ""
 msgid "Page Highlight"
 msgstr ""
 
-#: page_highlight/view.php:33 page_highlight/view.php:45
-msgid "En savoir plus"
-msgstr ""
-
 #: page_teaser/shortcake.php:30
 msgid "Page teaser"
 msgstr ""
@@ -214,7 +219,7 @@ msgid "Post highlight"
 msgstr ""
 
 #: post_highlight/view.php:29 post_highlight/view.php:44
-msgid "Lire l'article"
+msgid "Read the article"
 msgstr ""
 
 #: post_teaser/shortcake.php:30
