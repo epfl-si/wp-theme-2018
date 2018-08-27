@@ -81,12 +81,12 @@
               <div class="fullwidth-teaser-title">
                 <h3><?php echo $news->title ?></h3>
                 <ul class="list-inline mt-2">
-                  <li class="list-inline-item"><?php esc_html__('News', 'epfl');?></li>
+                  <li class="list-inline-item"><?php esc_html_e('News', 'epfl');?></li>
                   <li class="list-inline-item"><?php echo $category ?></li>
                 </ul>
               </div>
               <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
-                <?php esc_html__('Read more', 'epfl');?>
+                <?php esc_html_e('Read more', 'epfl');?>
                 <span class="sr-only">sur Tech Transfer.</span>
                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
               </a>
@@ -95,7 +95,7 @@
               <p><?php echo $subtitle ?></p>
             </div>
             <div class="fullwidth-teaser-footer">
-              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php esc_html__('Read more', 'epfl');?></a>
+              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php esc_html_e('Read more', 'epfl');?></a>
             </div>
           </div>
         </div>
