@@ -19,11 +19,10 @@
 			<div class="list-group-teaser-content">
 					<p class="h5"><?php the_title(); ?></p>
 					<p>
-						<time datetime="<?php echo get_the_date('Y-m-d'); ?>"><span class="sr-only"><?php esc_html__('Published:', 'epfl-shortcodes') ?></span><?php the_date('d.m.Y'); ?></time>
+						<time datetime="<?php echo get_the_date('Y-m-d'); ?>"><span class="sr-only"><?php esc_html__('Published:', 'epfl') ?></span><?php the_date('d.m.Y'); ?></time>
 						<span class="text-muted">— <?php the_author() ?></span>
 						<div class="text-muted"><?php echo get_the_excerpt(); ?></div>
 					</p>
 			</div>
 		</div>
 	</a>
-

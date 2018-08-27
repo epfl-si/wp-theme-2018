@@ -25,32 +25,32 @@ function custom_teasers() {
 			$fields,
 			[
 				array(
-					'label'    => '<div class="col-6"><hr><h2>'.esc_html__('Teaser', 'epfl-shortcodes').' '.$i.'</h2> '.esc_html__('Title', 'epfl-shortcodes').' '.$i,
+					'label'    => '<div class="col-6"><hr><h2>'.esc_html__('Teaser', 'epfl').' '.$i.'</h2> '.esc_html__('Title', 'epfl').' '.$i,
 					'attr'     => 'title'.$i,
 					'type'     => 'text'
 				),
 				array(
-					'label'    => esc_html__('Excerpt', 'epfl-shortcodes').' '.$i,
+					'label'    => esc_html__('Excerpt', 'epfl').' '.$i,
 					'attr'     => 'excerpt'.$i,
 					'type'     => 'text'
 				),
 				array(
-					'label'    => esc_html__('Url', 'epfl-shortcodes').' '.$i,
+					'label'    => esc_html__('Url', 'epfl').' '.$i,
 					'attr'     => 'url'.$i,
 					'type'     => 'text'
 				),
 				array(
-					'label'    => esc_html__('Button label', 'epfl-shortcodes').' '.$i,
+					'label'    => esc_html__('Button label', 'epfl').' '.$i,
 					'attr'     => 'buttonlabel'.$i,
 					'type'     => 'text'
 				),
 				array(
-					'label'    => esc_html__('Image', 'epfl-shortcodes').' '.$i,
+					'label'    => esc_html__('Image', 'epfl').' '.$i,
 					'attr'     => 'image'.$i,
 					'type'        => 'attachment',
 					'libraryType' => array( 'image' ),
-					'addButton'   => esc_html__( 'Select Image', 'epfl-shortcodes', 'shortcode-ui' ),
-					'frameTitle'  => esc_html__( 'Select Image', 'epfl-shortcodes', 'shortcode-ui' ),
+					'addButton'   => esc_html__( 'Select Image', 'epfl', 'shortcode-ui' ),
+					'frameTitle'  => esc_html__( 'Select Image', 'epfl', 'shortcode-ui' ),
 				)
 			]
 		);
@@ -61,7 +61,7 @@ function custom_teasers() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_custom_teasers',
 		array(
-      'label' =>  esc_html__('Custom teasers', 'epfl-shortcodes'),
+      'label' =>  esc_html__('Custom teasers', 'epfl'),
       'listItemImage' => '<img src="'.$iconDirectory.'custom_teasers.png'.'">',
       'attrs' => $fields
     )
