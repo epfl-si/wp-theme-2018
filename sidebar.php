@@ -46,7 +46,7 @@ if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-
 
 <aside class="nav-aside-wrapper">
 	<nav id="nav-aside" class="nav-aside" role="navigation" aria-describedby="nav-aside-title">
-  	<h2 class="h5 sr-only-xl"><?php esc_html__("Dans la même section", 'epfl-shortcodes') ?></h2>
+  	<h2 class="h5 sr-only-xl"><?php esc_html_e("In the same section", 'epfl') ?></h2>
 				<?php
 				wp_nav_menu( array(
 					'menu_class'=> 'nav-menu',

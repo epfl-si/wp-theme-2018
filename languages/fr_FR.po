@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: epfl_shortcodes\n"
+"POT-Creation-Date: 2018-08-22 08:16+0200\n"
+"PO-Revision-Date: 2018-08-22 08:18+0200\n"
+"Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ../shortcodes\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: collapsable/shortcake.php:9 custom_highlight/shortcake.php:8
+#: custom_teasers/shortcake.php:28 faculties/shortcake.php:15
+#: introduction/shortcake.php:8
+#, fuzzy
+msgid "Title"
+msgstr "Titre"
+
+#: collapsable/shortcake.php:11
+msgid "The title of the collapsable"
+msgstr ""
+
+#: collapsable/shortcake.php:15
+msgid "Description"
+msgstr ""
+
+#: collapsable/shortcake.php:17
+msgid "Content shown when collapsable is opened"
+msgstr ""
+
+#: collapsable/shortcake.php:26
+msgid "Collapsable"
+msgstr ""
+
+#: custom_highlight/shortcake.php:13
+msgid "description"
+msgstr ""
+
+#: custom_highlight/shortcake.php:18
+#, fuzzy
+msgid "Link"
+msgstr "Lien"
+
+#: custom_highlight/shortcake.php:23 custom_teasers/shortcake.php:43
+msgid "Button label"
+msgstr ""
+
+#: custom_highlight/shortcake.php:28 custom_teasers/shortcake.php:48
+#, fuzzy
+msgid "Image"
+msgstr "Image"
+
+#: custom_highlight/shortcake.php:32 custom_highlight/shortcake.php:33
+#: custom_teasers/shortcake.php:52 custom_teasers/shortcake.php:53
+#: faculties/shortcake.php:34 faculties/shortcake.php:35 hero/shortcake.php:27
+#: hero/shortcake.php:28
+#, fuzzy
+msgid "Select Image"
+msgstr "Sélectionner une image"
+
+#: custom_highlight/shortcake.php:36 page_highlight/shortcake.php:14
+#: post_highlight/shortcake.php:14
+msgid "Layout"
+msgstr ""
+
+#: custom_highlight/shortcake.php:38 page_highlight/shortcake.php:16
+#: post_highlight/shortcake.php:16
+msgid ""
+"Decides where the text will be aligned, to allow the subject of the picture "
+"to be visible"
+msgstr ""
+
+#: custom_highlight/shortcake.php:41 page_highlight/shortcake.php:19
+#: post_highlight/shortcake.php:19
+msgid "Right"
+msgstr ""
+
+#: custom_highlight/shortcake.php:42 page_highlight/shortcake.php:20
+#: post_highlight/shortcake.php:20
+msgid "Bottom"
+msgstr ""
+
+#: custom_highlight/shortcake.php:43 page_highlight/shortcake.php:21
+#: post_highlight/shortcake.php:21
+#, fuzzy
+msgid "Left"
+msgstr "Template pour un portail (avec l'image sur la gauche)"
+
+#: custom_highlight/shortcake.php:53
+msgid "Custom Highlight"
+msgstr ""
+
+#: custom_teasers/shortcake.php:28
+msgid "Teaser"
+msgstr ""
+
+#: custom_teasers/shortcake.php:33
+msgid "Excerpt"
+msgstr ""
+
+#: custom_teasers/shortcake.php:38
+#, fuzzy
+msgid "Url"
+msgstr "URL FR"
+
+#: custom_teasers/shortcake.php:64
+msgid "Custom teasers"
+msgstr ""
+
+#: definition_list/shortcake.php:9
+msgid "Display as a table"
+msgstr ""
+
+#: definition_list/shortcake.php:11
+msgid "Display the definition list as a table-like component"
+msgstr ""
+
+#: definition_list/shortcake.php:16
+msgid "Large display"
+msgstr ""
+
+#: definition_list/shortcake.php:18
+msgid "Makes the dl design wider"
+msgstr ""
+
+#: definition_list/shortcake.php:24
+msgid "Term"
+msgstr ""
+
+#: definition_list/shortcake.php:26
+msgid "Term to define"
+msgstr ""
+
+#: definition_list/shortcake.php:30
+msgid "Definition"
+msgstr ""
+
+#: definition_list/shortcake.php:32
+msgid "Definition of the term"
+msgstr ""
+
+#: definition_list/shortcake.php:41
+msgid "Definition list"
+msgstr ""
+
+#: epfl_news/view.php:77 epfl_news/view.php:106
+msgid "News"
+msgstr "Actualités"
+
+#: epfl_news/view.php:82 epfl_news/view.php:91
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: epfl_news/view.php:121
+msgid "All news"
+msgstr "Toutes les actualités"
+
+#: faculties/shortcake.php:15
+#, fuzzy
+msgid "Faculty"
+msgstr "Template pour les sites de facultés (avec 4 actualités)"
+
+#: hero/shortcake.php:37
+msgid "Hero"
+msgstr ""
+
+#: introduction/shortcake.php:13
+#, fuzzy
+msgid "Content"
+msgstr "Contenu"
+
+#: introduction/shortcake.php:18 page_teaser/shortcake.php:10
+#: post_teaser/shortcake.php:10
+msgid "Gray background"
+msgstr ""
+
+#: introduction/shortcake.php:21 page_teaser/shortcake.php:13
+#: post_teaser/shortcake.php:13
+msgid "Change the background to gray"
+msgstr ""
+
+#: introduction/shortcake.php:29
+msgid "Introduction"
+msgstr ""
+
+#: page_highlight/shortcake.php:8 page_teaser/shortcake.php:18
+msgid "Select page"
+msgstr ""
+
+#: page_highlight/shortcake.php:31
+msgid "Page Highlight"
+msgstr ""
+
+#: page_highlight/view.php:33 page_highlight/view.php:45
+msgid "En savoir plus"
+msgstr ""
+
+#: page_teaser/shortcake.php:30
+msgid "Page teaser"
+msgstr ""
+
+#: post_highlight/shortcake.php:8 post_teaser/shortcake.php:18
+msgid "Select post"
+msgstr ""
+
+#: post_highlight/shortcake.php:31
+msgid "Post highlight"
+msgstr ""
+
+#: post_highlight/view.php:29 post_highlight/view.php:44
+msgid "Lire l'article"
+msgstr ""
+
+#: post_teaser/shortcake.php:30
+msgid "Post teaser"
+msgstr ""
