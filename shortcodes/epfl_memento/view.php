@@ -14,7 +14,7 @@
     <?php
     if (!(bool) $data) {
       echo '<div><h3>';
-      esc_html_e('Complete agenda of events', 'epfl');
+      esc_html_e('No scheduled events', 'epfl');
       echo '</h3></div>';
     }
     

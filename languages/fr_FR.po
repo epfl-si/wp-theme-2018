@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-08-27 13:38+0200\n"
-"PO-Revision-Date: 2018-08-27 13:39+0200\n"
+"POT-Creation-Date: 2018-08-27 14:01+0200\n"
+"PO-Revision-Date: 2018-08-27 14:01+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -148,6 +148,22 @@ msgstr ""
 #: definition_list/shortcake.php:41
 msgid "Definition list"
 msgstr ""
+
+#: epfl_memento/templates/card-info.php:23
+msgid "Place and room"
+msgstr "Lieu et salle"
+
+#: epfl_memento/templates/card-slider-footer.php:16
+msgid "Complete agenda of events"
+msgstr "Voir l’agenda complet des événements"
+
+#: epfl_memento/view.php:17
+msgid "No scheduled events"
+msgstr "Aucun événement programmé"
+
+#: epfl_memento/view.php:76
+msgid "Learn more & apply"
+msgstr "Information & inscription"
 
 #: epfl_news/view.php:84 epfl_news/view.php:116 epfl_news/view.php:145
 msgid "News"
