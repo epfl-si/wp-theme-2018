@@ -153,7 +153,7 @@
   <?php endif; ?>
 <?php endif; ?>
 
-<?php if ($template == 2 and $last == $count): ?>
+<?php if ("true" == $display_all_news_link and $template == 2 and $last == $count): ?>
       </div>
       <p class="text-center">
         <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
@@ -170,9 +170,9 @@
     } // end foreach
 ?>
 
-<?php if ("true" == $display_all_news_link and "" != $channel): ?>
+<?php if ("true" == $display_all_news_link and $template != 2 and "" != $channel): ?>
 <p class="text-center">
-  <a class="link-pretty" href="<?php echo $url_channel; ?>">See all news</a>
+  <a class="link-pretty" href="<?php echo $url_channel; ?>"><?php esc_html_e('All news', 'epfl' );?></a>
 </p>
 <?php endif; ?>
 
