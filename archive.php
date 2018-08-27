@@ -30,7 +30,7 @@ get_header();
 						endwhile; // End of the loop.
 					else : ?>
 							<h2>
-								<?php echo esc_html__( 'Aucun article trouvé', 'epfl-shortcodes' ) ?>
+								<?php esc_html_e( 'No article found', 'epfl' ) ?>
 							</h2>
 							<?php endif; ?>
 					</div>

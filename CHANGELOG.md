@@ -1,6 +1,14 @@
 
 # CHANGELOG
 
+*1.2.0* (2018-08-27)
+  - MVC structure improvements for shortcodes
+  - Theme translation setup
+  - debug breadcrumbs to work with polylang and all languages
+  - memento shortcode implementation
+  - epfl-news: finish first implementation, and implement second template
+  - improve repository doc concerning release management
+
 *1.1.2* (2018-08-21)
   - merge QA science shortcode
   - implement styleguide version (1.1.2)
@@ -38,5 +46,5 @@
   - recover dev build of styleguide for release (commit 9877c9b666029200d2dc2edcc8f8cd489473c57a on branch feature/pages)
 
 *1.0.0* (2018-07-26)
-  - First release 
+  - First release
   - current state of the styleguide (1.0.0)

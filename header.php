@@ -33,7 +33,7 @@
 				wp_nav_menu( array(
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
-					'depth' => 1,
+					'depth' => 1
 				) );
 			?>
 
@@ -45,7 +45,7 @@
 					</span>
 				</div>
 				<input type="text" class="form-control" placeholder="Rechercher">
-			</div>  
+			</div>
 		</form>
 
 	<?php get_template_part( 'template-parts/language-switcher' ) ?>

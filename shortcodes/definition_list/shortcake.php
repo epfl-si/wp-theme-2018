@@ -6,30 +6,30 @@ function epfl_definition_list() {
   $fields = [];
 
   array_push($fields, [
-    'label' => esc_html__('Display as a table', 'epfl-shortcodes'),
+    'label' => esc_html__('Display as a table', 'epfl'),
       'attr' => 'tabledisplay',
-      'description' => esc_html__('Display the definition list as a table-like component', 'epfl-shortcodes'),
+      'description' => esc_html__('Display the definition list as a table-like component', 'epfl'),
       'type' => 'checkbox',
   ]);
 
     array_push($fields, [
-    'label' => esc_html__('Large display', 'epfl-shortcodes'),
+    'label' => esc_html__('Large display', 'epfl'),
       'attr' => 'largedisplay',
-      'description' => esc_html__('Makes the dl design wider', 'epfl-shortcodes'),
+      'description' => esc_html__('Makes the dl design wider', 'epfl'),
       'type' => 'checkbox',
   ]);
 
   for ( $i = 0; $i < 10; $i++) {
-    array_push($fields, [ 
-      'label' => '<hr>' . '<h2>' . esc_html__('Term', 'epfl-shortcodes') . '</h2>',
+    array_push($fields, [
+      'label' => '<hr>' . '<h2>' . esc_html__('Term', 'epfl') . '</h2>',
       'attr' => 'label'.$i,
-      'description' => esc_html__('Term to define', 'epfl-shortcodes'),
+      'description' => esc_html__('Term to define', 'epfl'),
       'type' => 'text',
     ]);
     array_push($fields, [
-      'label' => esc_html__('Definition', 'epfl-shortcodes') ,
+      'label' => esc_html__('Definition', 'epfl') ,
       'attr' => 'desc'.$i,
-      'description' => esc_html__('Definition of the term', 'epfl-shortcodes'),
+      'description' => esc_html__('Definition of the term', 'epfl'),
       'type' => 'textarea',
     ]);
   }
@@ -38,7 +38,7 @@ function epfl_definition_list() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_definition_list',
 		array(
-      'label' => esc_html__( 'Definition list', 'epfl-shortcodes'),
+      'label' => esc_html__( 'Definition list', 'epfl'),
       'attrs' => $fields,
       'listItemImage' => '<img src="'.$iconDirectory.'definition_list.png'.'">',
     )

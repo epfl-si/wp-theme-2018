@@ -10,8 +10,7 @@
 global $wp_query;
 
 // recover current post and menu item
-$post = get_post($wp_query->queried_object->ID);
-$items = wp_get_nav_menu_items('menu-1');
+$items = wp_get_nav_menu_items(get_current_menu_slug());
 $item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
 
 // to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
@@ -24,6 +23,7 @@ if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-
 		<div class="nav-container <?php echo $classes ?>">
 			<?php
 				wp_nav_menu( array(
+					'theme_location' => 'primary',
 					'menu_class'=> 'nav-menu',
 					'container' => 'ul',
 					'walker' => new Custom_Nav_Walker()
@@ -33,7 +33,7 @@ if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-
 	</div>
 </nav>
 
-<?php 
+<?php
 	$aside = true;
 	$asideContent = 'all';
 	$currentTemplate = get_page_template_slug();
@@ -46,7 +46,7 @@ if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-
 
 <aside class="nav-aside-wrapper">
 	<nav id="nav-aside" class="nav-aside" role="navigation" aria-describedby="nav-aside-title">
-  	<h2 class="h5 sr-only-xl"><?php esc_html__("Dans la même section", 'epfl-shortcodes') ?></h2>
+  	<h2 class="h5 sr-only-xl"><?php esc_html_e("In the same section", 'epfl') ?></h2>
 				<?php
 				wp_nav_menu( array(
 					'menu_class'=> 'nav-menu',
