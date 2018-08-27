@@ -10,7 +10,7 @@
 <div class="container-full">
   <div class="container">
     <div class="list-group">
-      <?php 
+      <?php
         foreach($data as $news) {
 
           $is_first_event = ($count==1);
@@ -26,11 +26,11 @@
           } else {
             $category = $news->category->en_label;
           }
-    
+
           $publish_date = new DateTime($news->publish_date);
           $publish_date = $publish_date->format('d.m.y');
           $subtitle = str_ireplace('<p>', '', $news->subtitle);
-        
+
           if ($template == 2 and $count != 1 and $header == false) {
 
             $header = true;
@@ -41,7 +41,7 @@
           }
       ?>
 
-<?php 
+<?php
   if ("1" == $template): // TEMPLATE LISTING
 ?>
         <a href="<?php echo $news->news_url ?>" class="list-group-item list-group-teaser link-trapeze-vertical">
@@ -60,7 +60,7 @@
             </div>
           </div>
         </a>
-<?php 
+<?php
   elseif ("2" == $template): // TEMPLATE WWW WITH 3 NEWS
 ?>
 <?php if (true === $is_first_event): ?>
@@ -74,12 +74,12 @@
               <div class="fullwidth-teaser-title">
                 <h3><?php echo $news->title ?></h3>
                 <ul class="list-inline mt-2">
-                  <li class="list-inline-item"><?php esc_html__('News', 'epfl_shortcodes');?></li>
+                  <li class="list-inline-item"><?php esc_html_e('News', 'epfl');?></li>
                   <li class="list-inline-item"><?php echo $category ?></li>
                 </ul>
               </div>
               <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-top-right d-none d-xl-block">
-                <?php esc_html__('Read more', 'epfl_shortcodes');?>
+                <?php esc_html_e('Read more', 'epfl');?>
                 <span class="sr-only">sur Tech Transfer.</span>
                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
               </a>
@@ -88,7 +88,7 @@
               <p><?php echo $subtitle ?></p>
             </div>
             <div class="fullwidth-teaser-footer">
-              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php esc_html__('Read more', 'epfl_shortcodes');?></a>
+              <a href="<?php echo $news->news_url ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php esc_html_e('Read more', 'epfl');?></a>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
                 <span class="card-info-date">
                   <time datetime="DATETIME HERE"><?php echo $publish_date ?></time>
                 </span>
-                <span><?php esc_html__('News', 'epfl_shortcodes');?></span>
+                <span><?php esc_html_e('News', 'epfl');?></span>
                 <span><?php echo $category ?></span>
               </div>
               <p><?php echo $subtitle ?></p>
@@ -118,7 +118,7 @@
       </div>
       <p class="text-center">
         <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
-          <?php esc_html__('All news', 'epfl_shortcodes' );?>
+          <?php esc_html_e('All news', 'epfl' );?>
         </a>
       </p>
     </div>
