@@ -5,7 +5,7 @@
 <?php if (true): ?>
   <div class="container-full p-lg-5 <?php echo $greyClasses ?>">
     <div class="row">
-      <?php for($i = 1; $i <= 7; $i++): ?>
+      <?php for($i = 1; $i <= 10; $i++): ?>
         <?php if ($data['title'.$i]) : ?>
           <?php $image = get_post($data['image'.$i]); ?>
           <div class="col-sm-4">
