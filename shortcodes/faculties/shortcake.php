@@ -7,7 +7,7 @@ function faculties() {
 
 	$fields = [];
 
-	for ($i = 1; $i <= 7; $i++) {
+	for ($i = 1; $i <= 10; $i++) {
 		$fields = array_merge(
 		$fields,
 		[
