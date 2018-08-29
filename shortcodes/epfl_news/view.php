@@ -42,6 +42,8 @@
           $publish_date = $publish_date->format('d.m.y');
           $subtitle = strip_tags($news->subtitle);
 
+          $visual_url = substr($news->visual_url, 0, -11) . '1296x728.jpg';
+
           if ($template == 2 and $count != 1 and $header == false) {
 
             $header = true;
