@@ -8,15 +8,19 @@
  */
 
 ?>
-
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header class="entry-header container-grid">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</header>
+		<?php
+		$currentTemplate = get_page_template_slug();
+		if ($currentTemplate != 'page-homepage.php'):
+		?>
+			<header class="entry-header container-grid">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header>
+		<?php endif ?>
 
 		<?php // epfl_post_thumbnail(); ?>
 
-		<div class="entry-content py-5 mb-4 container-grid">
+		<div class="entry-content mb-4 container-grid">
 			<?php
 					the_content();
 			?>

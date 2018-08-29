@@ -206,13 +206,17 @@ add_filter('body_class', 'epfl_wp_class');
  */
 function init_globals() {
 	global $containerClasses;
+	global $mainClasses;
 	$containerClasses = 'nav-toggle-layout nav-aside-layout';
+	$mainClasses = 'pt-5';
 
 	$actualTemplate = get_page_template_slug();
 	if (
 		$actualTemplate == 'page-aside-none.php'
+		|| $actualTemplate == 'page-homepage.php'
 		|| is_home()) {
 		$containerClasses = 'nav-toggle-layout';
+		$mainClasses = '';
 	}
 }
 
