@@ -17,7 +17,7 @@ if (isset($data['gray'])) $postCount = $postCount - 1;
               get_the_post_thumbnail($post, 'thumbnail_16_9_crop', ['class' => 'img-fluid']),
               $post_url,
               false
-            ); 
+            );
           ?>
             <div class="card-body">
               <h3 class="card-title">
@@ -27,8 +27,8 @@ if (isset($data['gray'])) $postCount = $postCount - 1;
                 <span class="card-info-date"><?php echo get_the_date('d-m-Y', $post->ID); ?></span>
               </div>
 
-              <?php 
-              $excerpt = get_the_excerpt();
+              <?php
+              $excerpt = epfl_excerpt($post);
               if (!empty($excerpt)): ?>
               <p>
                 <?php echo $excerpt; ?>

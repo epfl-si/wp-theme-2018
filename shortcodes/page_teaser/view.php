@@ -23,10 +23,8 @@ $gray = $data['gray'];
             <div class="card-title">
               <a href="<?php echo $page_url; ?>" class="h3"><?php echo $page->post_title; ?></a>
             </div>
-
-
             <?php
-              $excerpt = get_the_excerpt();
+              $excerpt = epfl_excerpt($page);
               if (!empty($excerpt)):
             ?>
               <p>

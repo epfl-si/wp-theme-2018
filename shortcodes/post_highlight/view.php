@@ -29,7 +29,7 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
       </div>
 
       <?php
-        $excerpt = get_the_excerpt();
+        $excerpt = epfl_excerpt($post);
         if (!empty($excerpt)):
       ?>
         <div class="fullwidth-teaser-content">
