@@ -1,9 +1,9 @@
-<?php 
+<?php
 $data = get_query_var('epfl_custom_teasers_data');
 if (!$data) return true;
 
 $greyClasses = '';
-if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 my-4';
+if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 mt-4';
 ?>
 <div class="container-full p-lg-5 <?php echo $greyClasses ?>">
   <div class="container">
@@ -11,7 +11,7 @@ if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 my-4';
 
     <div class="row">
 
-      <?php 
+      <?php
       for($i = 1; $i < 4; $i++):
         if ($data['title'.$i]) :
         $image = get_post($data['image'.$i]);
