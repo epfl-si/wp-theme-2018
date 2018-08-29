@@ -36,7 +36,7 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
       <?php if (!empty($content)): ?>
         <div class="fullwidth-teaser-content">
           <p>
-            <?php echo $content ?>
+            <?php echo epfl_excerpt($page); ?>
           </p>
         </div>
       <?php endif; ?>
