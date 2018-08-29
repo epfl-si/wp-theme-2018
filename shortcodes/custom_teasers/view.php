@@ -14,7 +14,7 @@ if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 my-4';
 ?>
 <div class="container-full p-lg-5 <?php echo $greyClasses ?>">
   <div class="container">
-    <h3 class="h6 mb-3"><?php echo $data['titlesection'] ?: 'Section title'; ?></h3>
+    <h3 class="h6 mb-3<?php echo ($elementCount < 3) ? ' text-center' : '' ?>"><?php echo $data['titlesection'] ?: 'Section title'; ?></h3>
 
     <div class="card-deck <?php echo ($elementCount < 3) ? ' card-deck-line' : '' ?>">
 
