@@ -7,16 +7,22 @@
  * @package epfl
  */
 
+$content = $post->post_content;
+$regex = '/\[epfl_hero/';
+$has_hero = preg_match($regex, $content) > 0;
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if(!$has_hero): ?>
 		<header class="entry-header container-grid">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header>
+		<?php endif; ?>
 
-		<?php // epfl_post_thumbnail(); ?>
+		<?php
+		$content_spacing_classes = $has_hero ? 'pb-5 mb-4 ' : 'py-5 mb-4 '; ?>
 
-		<div class="entry-content py-5 mb-4 container-grid">
+		<div class="entry-content container-grid <?php echo $content_spacing_classes; ?>">
 			<?php
 					the_content();
 			?>
