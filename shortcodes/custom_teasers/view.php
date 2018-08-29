@@ -10,7 +10,7 @@ for($i = 1; $i < 4; $i++){
 }
 
 $greyClasses = '';
-if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 my-4';
+if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 mt-4';
 ?>
 <div class="container-full p-lg-5 <?php echo $greyClasses ?>">
   <div class="container">
