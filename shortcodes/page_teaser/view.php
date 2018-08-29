@@ -5,7 +5,7 @@ if (!$data) return true;
 $pagesCount = count($data) - 1;
 $gray = $data['gray'];
 ?>
-  <div class="container-full py-5 my-5<?php echo $gray ? ' bg-gray-100' : '' ?>">
+  <div class="container-full py-5 mt-5<?php echo $gray ? ' bg-gray-100' : '' ?>">
     <div class="container">
       <div class="card-deck<?php echo ($pagesCount < 3) ? ' card-deck-line' : '' ?>">
         <?php foreach($data as $key => $page) : ?>
