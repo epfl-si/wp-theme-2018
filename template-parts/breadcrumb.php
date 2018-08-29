@@ -2,11 +2,12 @@
 /**
  * hide breadcrumbs on:
  *  - homepage
- *  - post listing page
- *  - page with no parent
+ *  - homepage template
  */
+	$currentTemplate = get_page_template_slug();
 if (
   is_front_page()
+  || $currentTemplate == 'page-homepage.php'
 ) {
     return;
   }
