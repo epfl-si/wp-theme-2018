@@ -15,8 +15,11 @@
   }
 ?>
 
-<div class="container-full">
+<?php if ("1" == $template): ?>
   <div class="container">
+<?php else: ?>
+  <div class="container-full">
+<?php endif ?>
     <div class="list-group">
       <?php
         foreach($data as $news) {
@@ -176,6 +179,5 @@
 </p>
 <?php endif; ?>
 
-</div>
 </div>
 </div>
