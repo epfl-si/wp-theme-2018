@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+*1.2.1* (2018-08-29)
+  - epfl-news: fix the width of highlighted template (fullscreen)
+  - faculties: increase faculty number to 10 fix
+  - implement styleguide version (1.2.0)
+
 *1.2.0* (2018-08-27)
   - MVC structure improvements for shortcodes
   - Theme translation setup
