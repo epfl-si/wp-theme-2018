@@ -1,4 +1,4 @@
-<?php 
+<?php
 $data = get_query_var('epfl_custom_highlight_data');
 
 // manage layout
@@ -16,13 +16,11 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
         'thumbnail_16_9_large', // see functions.php
         '',
         [
-          'class' => 'img-fluid'
+          'class' => '',
+          'title' => $data['title']
         ]
       ) ?>
-      <img src="<?php echo $data['image'] ?>" aria-labelledby="background-label" alt="An image description"
-      />
     </picture>
-
     <div class="fullwidth-teaser-text">
 
       <div class="fullwidth-teaser-header">
