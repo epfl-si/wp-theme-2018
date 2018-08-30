@@ -1,6 +1,9 @@
 
 # CHANGELOG
 
+*1.2.3* (2018-08-30)
+  - epfl-news: fix big image for news shortcode
+
 *1.2.2* (2018-08-30)
   - fix: Don't display homepage title on homepage
   - Change behavior of teaser: activate excerpts
