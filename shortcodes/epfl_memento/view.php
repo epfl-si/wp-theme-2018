@@ -6,8 +6,8 @@
   $display_first_event = ('1' === $template);
 ?>
 
-<div class="container-full">
-  <div class="container overflow-hidden">
+<div class="container-full overflow-hidden">
+  <div class="container">
     <div class="card-slider-wrapper">
       <div class="card-slider">
 
