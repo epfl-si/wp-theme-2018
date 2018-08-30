@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+*1.2.4* (2018-08-30)
+  - remove top padding on homepage
+  - hotfix overflow hidden events 
+
 *1.2.3* (2018-08-30)
   - epfl-news: fix big image for news shortcode
 
