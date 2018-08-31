@@ -1,41 +1,44 @@
 <?php  
+
   $data = get_query_var('epfl_toggle_data');
-  $id = uniqid();
-  $skipNext = false;
+  $fields = array();
+
+  foreach ($data as $key => $value) {
+      
+    $toggle_key = substr($key, -1);
+    $field_name = substr($key, 0, -1);
+
+    $fields[$toggle_key][$field_name] = $value;
+
+  }
 ?>
 
-<?php foreach ($data as $key => $value) : ?>
+<?php foreach ($fields as $key => $value) : ?>
 
   <?php 
-  // if value is empty, skip this entry
-  if ($skipNext) {
-    $skipNext = false;
-    continue;
-  }
 
-  if (strlen($value) === 0) {
-    $skipNext = true;
+  if (strlen($value['desc']) === 0 and strlen($value['label']) === 0) {  
     continue;
   }
+  
   ?>
 
-  <?php if (strpos($key, 'label') === 0) : ?>
     <button
       class="collapse-title collapse-title-desktop collapsed"
       type="button"
       data-toggle="collapse"
-      data-target="#<?php echo $id . '-' . substr($key, 5, 1) ?>"
+      data-target="<?php echo '#collapse-' . $key ?>"
       aria-expanded="false"
-      aria-controls="<?php echo $id . '-' . substr($key, 5, 1) ?>"
+      aria-controls="<?php echo '#collapse-' . $key ?>"
     >
-    <?php echo $value; ?>
+    <?php echo $value['label']; ?>
   </button>
-  <?php else: ?>
-    <div class="collapse collapse-item collapse-item-desktop" id="<?php echo $id . '-' . substr($key,4,1) ?>">
+
+    <div class="collapse collapse-item collapse-item-desktop <?php if ($value['state'] === 'open'): ?> show <?php endif; ?> " id="<?php echo 'collapse' . '-' . $key ?>">
     <p>
-    <?php echo $value; ?>
+    <?php echo urldecode($value['desc'])  ; ?>
     </p>
   </div>
-  <?php endif; ?>
+
 
 <?php endforeach; ?>
