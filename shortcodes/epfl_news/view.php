@@ -158,13 +158,15 @@
   <?php endif; ?>
 <?php endif; ?>
 
-<?php if ("true" == $display_all_news_link and $template == 2 and $last == $count): ?>
+<?php if ($template == 2 and $last == $count): ?>
       </div>
+      <?php if ("true" == $display_all_news_link): ?>
       <p class="text-center">
         <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
           <?php esc_html_e('All news', 'epfl' );?>
         </a>
       </p>
+      <?php endif; ?>
     </div>
   </div>
 </div>
