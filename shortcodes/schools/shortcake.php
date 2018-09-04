@@ -12,7 +12,7 @@ function faculties() {
 		$fields,
 		[
 			array(
-				'label'    => '<div class="col-6"><hr><h2>'.esc_html__('Faculty', 'epfl').' '.$i.'</h2>'.esc_html__('Title', 'epfl').' '.$i,
+				'label'    => '<div class="col-6"><hr><h2>'.esc_html__('School', 'epfl').' '.$i.'</h2>'.esc_html__('Title', 'epfl').' '.$i,
 				'attr'     => 'title'.$i,
 				'type'     => 'text'
 			),
@@ -42,8 +42,8 @@ function faculties() {
 	shortcode_ui_register_for_shortcode(
 		'epfl_faculties',
 		array(
-      'label' => 'Faculties',
-      'listItemImage' => '<img src="'.$iconDirectory.'faculty.png'.'">',
+      'label' => 'Schools',
+      'listItemImage' => '<img src="'.$iconDirectory.'school.png'.'">',
       'attrs' => $fields
     )
 	);
