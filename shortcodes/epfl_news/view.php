@@ -15,8 +15,11 @@
   }
 ?>
 
-<div class="container-full">
+<?php if ("1" == $template): ?>
   <div class="container">
+<?php else: ?>
+  <div class="container-full">
+<?php endif ?>
     <div class="list-group">
       <?php
         foreach($data as $news) {
@@ -39,6 +42,8 @@
           $publish_date = $publish_date->format('d.m.y');
           $subtitle = strip_tags($news->subtitle);
 
+          $visual_url = substr($news->visual_url, 0, -11) . '1296x728.jpg';
+
           if ($template == 2 and $count != 1 and $header == false) {
 
             $header = true;
@@ -56,7 +61,7 @@
           <div class="list-group-teaser-container">
             <div class="list-group-teaser-thumbnail">
               <picture>
-                <img src="<?php echo $news->visual_url ?>" class="img-fluid" alt="<?php echo $image_description ?>" >
+                <img src="<?php echo $visual_url ?>" class="img-fluid" alt="<?php echo $image_description ?>" >
               </picture>
             </div>
             <div class="list-group-teaser-content">
@@ -74,7 +79,7 @@
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
           <picture>
-            <img src="<?php echo $news->visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
+            <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
           </picture>
           <div class="fullwidth-teaser-text">
             <div class="fullwidth-teaser-header">
@@ -106,7 +111,7 @@
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
           <picture>
-            <img src="<?php echo $news->visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
+            <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
           </picture>
           <div class="fullwidth-teaser-text">
             <div class="fullwidth-teaser-header">
@@ -176,6 +181,5 @@
 </p>
 <?php endif; ?>
 
-</div>
 </div>
 </div>

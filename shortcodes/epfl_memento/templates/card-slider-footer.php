@@ -11,7 +11,7 @@ $memento = get_query_var('epfl_memento_name');
             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
         </button>
     </div>
-<div>
+</div>
 <a href="<?php echo "https://memento.epfl.ch/" . $memento . "/?period=30" ?>">
     <?php esc_html_e('Complete agenda of events', 'epfl');?>
 </a>

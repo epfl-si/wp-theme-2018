@@ -1,19 +1,18 @@
 <?php
 $data = get_query_var('epfl_post_highlight_data');
-$page = get_post($data['post']);
+$post = get_post($data['post']);
   if (!$post) return true;
 
 // manage layout
 $classes = '';
 if ($data['layout'] == 'bottom') $classes = 'fullwidth-teaser-horizontal';
 if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
-
 ?>
 <div class="container-full">
   <div class="fullwidth-teaser mt-5 <?php echo $classes; ?>">
   <?php if (has_post_thumbnail( $post )) : ?>
     <picture>
-      <img src="<?php echo get_the_post_thumbnail_url($post) ?>" aria-labelledby="background-label" alt="An image description"
+      <img src="<?php echo get_the_post_thumbnail_url($post, 'thumbnail_16_9_large') ?>" aria-labelledby="background-label" alt="An image description"
       />
     </picture>
     <?php endif; ?>
@@ -30,7 +29,7 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
       </div>
 
       <?php
-        $excerpt = get_the_excerpt();
+        $excerpt = epfl_excerpt($post);
         if (!empty($excerpt)):
       ?>
         <div class="fullwidth-teaser-content">

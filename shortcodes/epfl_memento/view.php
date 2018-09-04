@@ -6,18 +6,18 @@
   $display_first_event = ('1' === $template);
 ?>
 
-<div class="container-full">
+<div class="container-full overflow-hidden">
   <div class="container">
     <div class="card-slider-wrapper">
       <div class="card-slider">
-    
+
     <?php
     if (!(bool) $data) {
       echo '<div><h3>';
       esc_html_e('No scheduled events', 'epfl');
       echo '</h3></div>';
     }
-    
+
     $count=1;
     foreach($data as $event) {
       set_query_var('epfl_event', $event);
@@ -81,7 +81,7 @@
   <!-- END LEARN MORE & APPLY -->
 
   <?php else: ?>
-  
+
     <div class="card-slider-cell">
       <a href="<?php echo $event->event_url ?>" class="card card-gray link-trapeze-horizontal">
         <div class="card-body">
@@ -91,11 +91,11 @@
         </div>
       </a>
     </div>
-    
+
   <?php endif ?>
 <?php endif ?>
 
-<?php 
+<?php
 $count++;
 
 }
