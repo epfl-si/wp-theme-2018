@@ -78,9 +78,15 @@
 ?>
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
-          <picture>
-            <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
-          </picture>
+          <?php if ($news->video): ?>
+            <div class="embed-responsive embed-responsive-16by9">
+              <?php echo $news->video; ?>
+            </div>
+          <?php else: ?>
+            <picture>
+              <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
+            </picture>
+          <?php endif ?>
           <div class="fullwidth-teaser-text">
             <div class="fullwidth-teaser-header">
               <div class="fullwidth-teaser-title">
