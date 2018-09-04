@@ -3,11 +3,11 @@
 require_once(__DIR__.'/shortcake.php');
 
 // register
-add_shortcode( 'epfl_faculties', 'renderFaculties' );
+add_shortcode( 'epfl_faculties', 'renderSchools' );
 
 // render
-function renderFaculties ($args) {
-  set_query_var('epfl_faculties_data', $args);
+function renderSchools ($args) {
+  set_query_var('epfl_schools_data', $args);
 
   ob_start();
   if (is_admin()) {

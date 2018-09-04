@@ -1,9 +1,9 @@
 <?php
 
 // register shortcake UI
-add_action( 'register_shortcode_ui', 'faculties' );
+add_action( 'register_shortcode_ui', 'schools' );
 
-function faculties() {
+function schools() {
 
 	$fields = [];
 
