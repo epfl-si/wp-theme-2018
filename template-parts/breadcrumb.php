@@ -4,11 +4,9 @@
  *  - homepage
  *  - homepage template
  */
-	$currentTemplate = get_page_template_slug();
-if (
-  is_front_page()
-  || $currentTemplate == 'page-homepage.php'
-) {
+$currentTemplate = get_page_template_slug();
+
+if ($currentTemplate == 'page-homepage.php') {
     return;
   }
 ?>
