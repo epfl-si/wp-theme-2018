@@ -1,4 +1,6 @@
 <?php
+  require_once 'utils.php';
+
   $template = get_query_var('epfl_news_template');
   $display_all_news_link = get_query_var('epfl_news_all_news_link');
   
@@ -80,7 +82,13 @@
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
           <?php if ($news->video): ?>
             <div class="embed-responsive embed-responsive-16by9">
-              <?php echo $news->video; ?>
+              <iframe
+                class="embed-responsive-item"
+                src="<?php echo build_video_url($news->video); ?>"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+              </iframe>      
             </div>
           <?php else: ?>
             <picture>
