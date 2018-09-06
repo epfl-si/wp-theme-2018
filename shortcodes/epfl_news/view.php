@@ -124,9 +124,21 @@
 <?php if (true === $is_first_event): ?>
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
-          <picture>
-            <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
-          </picture>
+          <?php if ($news->video): ?>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src="<?php echo build_video_url($news->video); ?>"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+              </iframe>      
+            </div>
+          <?php else: ?>
+            <picture>
+              <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
+            </picture>
+          <?php endif ?>
           <div class="fullwidth-teaser-text">
             <div class="fullwidth-teaser-header">
               <div class="fullwidth-teaser-title">
