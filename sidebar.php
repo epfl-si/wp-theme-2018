@@ -9,6 +9,8 @@
 
 global $wp_query;
 
+global $EPFL_MENU_LOCATION;
+
 // recover current post and menu item
 $items = wp_get_nav_menu_items(get_current_menu_slug());
 $item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
@@ -23,7 +25,7 @@ if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-
 		<div class="nav-container <?php echo $classes ?>">
 			<?php
 				wp_nav_menu( array(
-					'theme_location' => 'primary',
+					'theme_location' => $EPFL_MENU_LOCATION,
 					'menu_class'=> 'nav-menu',
 					'container' => 'ul',
 					'walker' => new Custom_Nav_Walker()
@@ -49,7 +51,8 @@ if ( $item->menu_item_parent == 0 || $item === false ) $classes = 'current-menu-
   	<h2 class="h5 sr-only-xl"><?php esc_html_e("In the same section", 'epfl') ?></h2>
 				<?php
 				wp_nav_menu( array(
-					'menu_class'=> 'nav-menu',
+				    'theme_location' => $EPFL_MENU_LOCATION,
+        		    'menu_class'=> 'nav-menu',
 					'container' => 'ul',
 					'submenu' => get_the_ID(),
 					'submenu_type' => $asideContent
