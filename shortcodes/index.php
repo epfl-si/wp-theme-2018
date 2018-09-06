@@ -16,3 +16,4 @@ require_once(get_template_directory().'/shortcodes/epfl_memento/controller.php')
 require_once(get_template_directory().'/shortcodes/epfl_toggle/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_scienceqa/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_card/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_links_group/controller.php');
