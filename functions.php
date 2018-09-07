@@ -7,6 +7,12 @@
  * @package epfl
  */
 
+global $EPFL_MENU_LOCATION;
+$EPFL_MENU_LOCATION = 'top';
+
+global $EPFL_FOOTER_MENU_LOCATION;
+$EPFL_FOOTER_MENU_LOCATION = 'footer_nav';
+
 if ( ! function_exists( 'epfl_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -43,9 +49,12 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'epfl' ),
-		) );
+		global $EPFL_MENU_LOCATION;
+		global $EPFL_FOOTER_MENU_LOCATION;
+		$nav_menus_args = [];
+		$nav_menus_args[$EPFL_MENU_LOCATION] = esc_html__( 'Primary', 'epfl' );
+		$nav_menus_args[$EPFL_FOOTER_MENU_LOCATION] = esc_html__( 'Footer', 'epfl' );
+		register_nav_menus($nav_menus_args);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -298,8 +307,8 @@ add_post_type_support( 'page', 'excerpt' );
  * @return string
  */
 function get_current_menu_slug() {
-	$theme_location = 'primary';
+    global $EPFL_MENU_LOCATION;
   $menu_locations = get_nav_menu_locations();
-  $menu_term = get_term($menu_locations[$theme_location], 'nav_menu');
+  $menu_term = get_term($menu_locations[$EPFL_MENU_LOCATION], 'nav_menu');
 	return $menu_term;
 }

@@ -30,7 +30,10 @@
 		</a>
 
 			<?php
+			    global $EPFL_MENU_LOCATION;
 				wp_nav_menu( array(
+				    'theme_location' => $EPFL_MENU_LOCATION,
+        		    'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1

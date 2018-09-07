@@ -1,6 +1,16 @@
 
 # CHANGELOG
 
+*1.2.5* (2018-09-07)
+  - epfl-video: render HTML
+  - epfl-links-group: render HTML
+  - epfl-cover: render HTML
+  - epfl-toggle: render HTML
+  - epfl-memento: fix resolution image 448x448
+  - epfl-news: fix div tag badly closed PR#74
+  - Custom highlight handle image with caption, legend, alt etc..
+  - Name menu location, change default name from 'primary' to 'top' to match 2010 theme, prepare for footer
+
 *1.2.4* (2018-08-30)
   - remove top padding on homepage
   - hotfix overflow hidden events 
