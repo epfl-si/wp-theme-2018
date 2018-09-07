@@ -16,13 +16,10 @@ function renderVideo ($url, $width, $height) {
     get_template_part('shortcodes/placeholder');
 
   } else {
-
-
-
+    
     set_query_var('epfl_video_url', $url);
     set_query_var('epfl_video_width', $width);
     set_query_var('epfl_video_height', $height);
     get_template_part('shortcodes/epfl_video/view');
-
   }
 }
