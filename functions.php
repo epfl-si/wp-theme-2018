@@ -7,6 +7,9 @@
  * @package epfl
  */
 
+global $EPFL_MENU_LOCATION;
+$EPFL_MENU_LOCATION = 'primary';
+
 if ( ! function_exists( 'epfl_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -43,9 +46,10 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'epfl' ),
-		) );
+		global $EPFL_MENU_LOCATION;
+		$nav_menus_args = [];
+		$nav_menus_args[$EPFL_MENU_LOCATION] = esc_html__( 'Primary', 'epfl' );
+		register_nav_menus($nav_menus_args);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -303,3 +307,29 @@ function get_current_menu_slug() {
   $menu_term = get_term($menu_locations[$theme_location], 'nav_menu');
 	return $menu_term;
 }
+
+/**
+ * reassign_menus()
+ *
+ * looks if the current installation has menus set for the nav menu.
+ * If that is not the case, it looks for a menu named "fr" or "en"
+ * and assigns it to the corresponding language
+ *
+ * @return void
+ */
+function reassign_menus() {
+	global $EPFL_MENU_LOCATION;
+	if(!has_nav_menu($EPFL_MENU_LOCATION)) {
+		$theme_slug = get_option('stylesheet');
+		$polylang_options = get_option( 'polylang' );
+
+		$menus = wp_get_nav_menus();
+		foreach($menus as $menu) {
+			if ($menu->name == 'fr' || $menu->name == 'en'){
+				$polylang_options["nav_menus"][$theme_slug][$EPFL_MENU_LOCATION][$menu->name] = $menu->term_id;
+			}
+		}
+		update_option( 'polylang', $polylang_options );
+	}
+}
+add_action('init', 'reassign_menus');

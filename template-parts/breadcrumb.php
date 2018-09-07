@@ -31,9 +31,9 @@ if (
   <?php
     // Breadcrumb
     $items = wp_get_nav_menu_items(get_current_menu_slug());
-    $item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
 
-    _wp_menu_item_classes_by_context( $items ); // Set up the class variables, including current-classes
+    $item = $items ? reset(wp_filter_object_list( $items, ['object_id' => $post->ID])) : false;
+
     $crumbs = array();
 
     echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ul class="p-0 m-0">';
@@ -44,20 +44,23 @@ if (
             </a>
         </li>';
 
-    foreach($items as $item) {
-        if ($item->current_item_ancestor) {
+    if ($items) {
+      _wp_menu_item_classes_by_context( $items ); // Set up the class variables, including current-classes
+      foreach($items as $item) {
+          if ($item->current_item_ancestor) {
+              $crumbs[] = "
+                  <li class=\"breadcrumb-item\">
+                      <a class=\"bread-link bread-home\" href=\"{$item->url}\" title=\"{$item->title}\">
+                          {$item->title}
+                      </a>
+                  </li>";
+          } else if ($item->current) {
             $crumbs[] = "
-                <li class=\"breadcrumb-item\">
-                    <a class=\"bread-link bread-home\" href=\"{$item->url}\" title=\"{$item->title}\">
-                        {$item->title}
-                    </a>
-                </li>";
-        } else if ($item->current) {
-          $crumbs[] = "
-                <li class=\"breadcrumb-item active\">
-                    {$item->title}
-                </li>";
-        }
+                  <li class=\"breadcrumb-item active\">
+                      {$item->title}
+                  </li>";
+          }
+      }
     }
     echo implode('', $crumbs);
     echo '</ul></nav>';
