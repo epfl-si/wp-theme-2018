@@ -73,7 +73,7 @@ Class ClassesInfoscience2018Render extends Infoscience2018Render {
                     $record_renderer_class = get_render_class_for_publication_2018($publication, $format);
 
                     if ($debug) {
-                        $html_rendered .= '<h3>'. $record_renderer_class .'</h3>';
+                        $html_rendered .= '<h3>'. $record_renderer_class .' - ' . $publication['doctype'][0] . '</h3>';
                     }
 
                     $html_rendered .= $record_renderer_class::render_publication($publication, $format, $summary, $thumbnail);
