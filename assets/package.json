@@ -1,0 +1,92 @@
+{
+  "name": "epfl-elements",
+  "version": "1.3.0",
+  "license": "MIT",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:epfl-idevelop/elements.git"
+  },
+  "scripts": {
+    "start": "toolbox serve",
+    "build": "toolbox build",
+    "deploy": "toolbox build styleguide && toolbox deploy",
+    "test": "backstop test",
+    "test:reference": "backstop reference",
+    "test:approve": "backstop approve",
+    "test:report": "backstop openReport",
+    "test:update_config": "node scripts/backstop_config_updater.js",
+    "test:info": "node scripts/backstop_status.js"
+  },
+  "browserslist": [
+    "> 1% in CH",
+    "last 2 versions"
+  ],
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "eslint-config-airbnb",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "arrow-body-style": 0,
+      "camelcase": 0,
+      "global-require": 0,
+      "import/extensions": 0,
+      "import/no-unresolved": 0
+    }
+  },
+  "stylelint": {
+    "ignoreFiles": [
+      "assets/components/base.scss",
+      "assets/config/bootstrap.scss",
+      "assets/config/bootstrap-variables.scss"
+    ],
+    "plugins": [
+      "stylelint-order"
+    ],
+    "extends": "stylelint-config-recommended-scss",
+    "rules": {
+      "at-rule-no-vendor-prefix": true,
+      "media-feature-name-no-vendor-prefix": true,
+      "property-no-vendor-prefix": true,
+      "selector-no-vendor-prefix": true,
+      "value-no-vendor-prefix": true,
+      "no-descending-specificity": null,
+      "selector-pseudo-element-colon-notation": "single",
+      "order/order": [
+        "custom-properties",
+        "dollar-variables",
+        "declarations",
+        "rules"
+      ],
+      "order/properties-order": [
+        "content",
+        "display",
+        "flex",
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "float",
+        "width",
+        "height",
+        "margin",
+        "padding",
+        "background",
+        "border",
+        "font-familly",
+        "font-size",
+        "line-height",
+        "font-weight",
+        "font-style",
+        "color",
+        "transform",
+        "transition"
+      ]
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
