@@ -40,16 +40,30 @@
 				) );
 			?>
 
-		<form action="https://preview.liip.ch/epfl-search/api/" class="d-xl-none">
-			<div class="input-group search w-100">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<svg class="icon"><use xlink:href="#icon-search"></use></svg>
-					</span>
-				</div>
-				<input type="text" class="form-control" placeholder="Rechercher">
+	<div class="dropdown dropright search d-none d-xl-block">
+		<a class="dropdown-toggle" href="#" data-toggle="dropdown">
+			<svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
+		</a>
+		<form action="https://preview.liip.ch/epfl-search/api/" class="dropdown-menu border-0 p-0">
+			<div class="search-form mt-1 input-group">
+				<label for="search" class="sr-only">Rechercher sur le site</label>
+				<input type="text" class="form-control" name="search" placeholder="Rechercher" >
+				<button type="submit" class="d-none d-xl-block btn btn-primary input-group-append" type="button">Valider</button>
 			</div>
 		</form>
+	</div>
+
+	<form action="https://preview.liip.ch/epfl-search/api/" class="d-lg-none">
+		<div class="input-group search-mobile" role="search">
+			<div class="input-group-prepend">
+				<span class="input-group-text">
+					<svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
+				</span>
+			</div>
+				<label for="search" class="sr-only">Rechercher sur le site</label>
+				<input type="text" class="form-control" name="search" placeholder="Rechercher">
+		</div>
+	</form>
 
 	<?php get_template_part( 'template-parts/language-switcher' ) ?>
 
