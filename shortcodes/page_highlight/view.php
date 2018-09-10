@@ -1,4 +1,4 @@
-<?php 
+<?php
 $data = get_query_var('epfl_page_highlight_data');
 $page = get_post($data['page']);
   if (!$page) return true;
@@ -30,19 +30,19 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
             <?php echo $page->post_title; ?>
           </h3>
         </div>
-        <a href="<?php echo get_permalink($page); ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block"><?php echo esc_html__( "En savoir plus", 'epfl-shortcodes' ) ?></a>
+        <a href="<?php echo get_permalink($page); ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block"><?php esc_html_e( "Read more", 'epfl' ) ?></a>
       </div>
 
       <?php if (!empty($content)): ?>
         <div class="fullwidth-teaser-content">
           <p>
-            <?php echo $content ?>
+            <?php echo epfl_excerpt($page); ?>
           </p>
         </div>
       <?php endif; ?>
 
       <div class="fullwidth-teaser-footer">
-        <a href="<?php echo get_permalink($page); ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php echo esc_html__( "En savoir plus", 'epfl-shortcodes' ) ?></a>
+        <a href="<?php echo get_permalink($page); ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php esc_html_e( "Read more", 'epfl' ) ?></a>
       </div>
     </div>
   </div>

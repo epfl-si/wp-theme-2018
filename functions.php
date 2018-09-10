@@ -7,6 +7,12 @@
  * @package epfl
  */
 
+global $EPFL_MENU_LOCATION;
+$EPFL_MENU_LOCATION = 'top';
+
+global $EPFL_FOOTER_MENU_LOCATION;
+$EPFL_FOOTER_MENU_LOCATION = 'footer_nav';
+
 if ( ! function_exists( 'epfl_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -43,9 +49,12 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'epfl' ),
-		) );
+		global $EPFL_MENU_LOCATION;
+		global $EPFL_FOOTER_MENU_LOCATION;
+		$nav_menus_args = [];
+		$nav_menus_args[$EPFL_MENU_LOCATION] = esc_html__( 'Primary', 'epfl' );
+		$nav_menus_args[$EPFL_FOOTER_MENU_LOCATION] = esc_html__( 'Footer', 'epfl' );
+		register_nav_menus($nav_menus_args);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -206,13 +215,17 @@ add_filter('body_class', 'epfl_wp_class');
  */
 function init_globals() {
 	global $containerClasses;
+	global $mainClasses;
 	$containerClasses = 'nav-toggle-layout nav-aside-layout';
+	$mainClasses = 'pt-5';
 
 	$actualTemplate = get_page_template_slug();
 	if (
 		$actualTemplate == 'page-aside-none.php'
+		|| $actualTemplate == 'page-homepage.php'
 		|| is_home()) {
 		$containerClasses = 'nav-toggle-layout';
+		$mainClasses = '';
 	}
 }
 
@@ -236,15 +249,35 @@ function epfl_add_editor_styles() {
 /**
  * change excerpt length
  */
-function custom_excerpt_length( $length ) {
-    return 40;
+function custom_excerpt_length( $length = 0 ) {
+	return 55;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length' );
+add_filter( 'excerpt_length', 'custom_excerpt_length', 9999 );
 
-function excerpt_more( $more ) {
+function excerpt_more( $more = '') {
     return ' (...)';
 }
 add_filter( 'excerpt_more', 'excerpt_more' );
+
+/**
+ * custom function for epfl excerpts. With a given post, returns a formatted excerpt.
+ * it will have the same behaviour whether it takes a user-defined excerpt or generates one from the content
+ * @arg $post a WP_Post object
+ */
+function epfl_excerpt($post = null) {
+	if(!$post) return '';
+	$excerpt = $post->post_excerpt;
+	if (strlen($excerpt) == 0) {
+		// custom excerpt is empty, let's generate one
+		$excerpt = strip_shortcodes($post->post_content);
+		$excerpt = str_replace(array("\r\n", "\r", "\n", "&nbsp;"), "", $excerpt);
+		$excerpt = wp_trim_words($excerpt, custom_excerpt_length(), excerpt_more());
+	} else {
+		// custom excerpt is set, let's trim it
+		$excerpt = wp_trim_words($excerpt, custom_excerpt_length(), excerpt_more());
+	}
+	return $excerpt;
+}
 
 /**
  * Share icons directory with templates
@@ -274,8 +307,8 @@ add_post_type_support( 'page', 'excerpt' );
  * @return string
  */
 function get_current_menu_slug() {
-	$theme_location = 'primary';
+    global $EPFL_MENU_LOCATION;
   $menu_locations = get_nav_menu_locations();
-  $menu_term = get_term($menu_locations[$theme_location], 'nav_menu');
+  $menu_term = get_term($menu_locations[$EPFL_MENU_LOCATION], 'nav_menu');
 	return $menu_term;
 }

@@ -7,12 +7,12 @@ function faculties() {
 
 	$fields = [];
 
-	for ($i = 1; $i <= 7; $i++) {
+	for ($i = 1; $i <= 10; $i++) {
 		$fields = array_merge(
 		$fields,
 		[
 			array(
-				'label'    => '<div class="col-6"><hr><h2>'.esc_html__('Faculty', 'epfl-shortcodes').' '.$i.'</h2>'.esc_html__('Title', 'epfl-shortcodes').' '.$i,
+				'label'    => '<div class="col-6"><hr><h2>'.esc_html__('Faculty', 'epfl').' '.$i.'</h2>'.esc_html__('Title', 'epfl').' '.$i,
 				'attr'     => 'title'.$i,
 				'type'     => 'text'
 			),
@@ -31,8 +31,8 @@ function faculties() {
 				'attr'     => 'image'.$i,
 				'type'        => 'attachment',
 				'libraryType' => array( 'image' ),
-				'addButton'   => esc_html__( 'Select Image', 'epfl-shortcodes' ),
-				'frameTitle'  => esc_html__( 'Select Image', 'epfl-shortcodes' ),
+				'addButton'   => esc_html__( 'Select Image', 'epfl' ),
+				'frameTitle'  => esc_html__( 'Select Image', 'epfl' ),
 			)
 			]
 		);
