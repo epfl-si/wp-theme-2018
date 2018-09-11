@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+*1.2.6* (2018-09-11)
+  - Styleguide 1.3.0 + Header search
+  - Refactor faculty to schools for all visible parts
+  - Fix homepage behaviour
+
 *1.2.5* (2018-09-07)
   - epfl-video: render HTML
   - epfl-links-group: render HTML
