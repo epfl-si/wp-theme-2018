@@ -53,7 +53,6 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
 
 
     function render_author($author_name, $author_url) {
-
         $html_rendered = '<a class="text-muted infoscience_author" href="' . $author_url . '" target="_blank">';
         $html_rendered .= $author_name;
         $html_rendered .= '</a>';
@@ -67,7 +66,7 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
 
         foreach($authors as $index => $author) {
             if ($index == 5) {
-                $html_rendered .= " et al.";
+                $html_rendered .= ' <span class="infoscience_more_authors_element">et al.</span>';
                 break;
             } else {
                 if ($index != 0) {
@@ -122,7 +121,7 @@ Class DirectorAuthorInfoscienceField2018Render extends AuthorInfoscienceField201
 
 Class TitleInfoscienceField2018Render extends InfoscienceField2018Render {
     public static function render($publication, $format, $has_next=false) {
-        return '<h4 class="h5" tex2jax_process>' . $publication['title'][0] .'</h4>';
+        return '<h4 class="h5 tex2jax_process infoscience_title">' . $publication['title'][0] .'</h4>';
     }
 }
 
@@ -358,21 +357,19 @@ Class JournalDetailsInfoscienceField2018Render extends InfoscienceField2018Rende
 
                 if (self::field_exists($publication['journal'], 'number') || 
                     self::field_exists($publication['journal'], 'page')) {
-                    $html_rendered .= ', ';
+                    $html_rendered .= '</span>, ';
                 } else {
-                    $html_rendered .= '. ';
+                    $html_rendered .= '</span>. ';
                 }
-                $html_rendered .= '</span>';
             }
 
             if (self::field_exists($publication['journal'], 'number')) {
                 $html_rendered .= '<span class="text-muted small mb-0 infoscience_journal_number">' . __('num.', 'epfl-infoscience-search') . ' ' . $publication['journal'][0]['number'] .'';
                 if (self::field_exists($publication['journal'], 'page')) {
-                    $html_rendered .= ', ';
+                    $html_rendered .= '</span>, ';
                 } else {
-                    $html_rendered .= '. ';
+                    $html_rendered .= '</span>. ';
                 }
-                $html_rendered .= '</span>';
             }
 
             $html_rendered .= JournalPageInfoscienceField2018Render::render($publication, 'short', $has_next);

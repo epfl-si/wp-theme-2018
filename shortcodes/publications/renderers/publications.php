@@ -89,7 +89,7 @@ abstract Class InfosciencePublication2018Render {
         if (isset($publication['url']) &&
             isset($publication['url']['icon']) &&
             $publication['url']['icon'][0]) {
-            return '      <a href="'. $publication['url']['icon'][0] .'"  target="_blank"><img style="max-width:80px;" src="' . $publication['url']['icon'][0] . '" class="float-left mr-3 infoscience_publication_illustration" alt="publication image"></a>';
+            return '      <a href="'. $publication['url']['icon'][0] .'"  target="_blank"><img src="' . $publication['url']['icon'][0] . '" class="float-left mr-3 infoscience_publication_illustration" alt="publication thumbnail"></a>';
         } else {
             return '';
         }
@@ -115,11 +115,15 @@ abstract Class InfosciencePublication2018Render {
             $links_html .= '  <p class="text-muted small mb-0">';
 
             if ($fulltext) {
-                $links_html .= '    <a class="text-muted" href="' . $fulltext . '" target="_blank">Full text</a>';
+                $links_html .= '<a class="text-muted" href="' . $fulltext . '" target="_blank">Full text</a>';
+
+                if ($doi) {
+                    $links_html .= ' - ';
+                }
             }
 
             if ($doi) {
-                $links_html .= '    <a class="text-muted" href="https://dx.doi.org/' . $doi[0] . '" target="_blank">View at publisher</a>';
+                $links_html .= '<a class="text-muted" href="https://dx.doi.org/' . $doi[0] . '" target="_blank">View at publisher</a>';
             }
             
             $links_html .= '  </p>';
