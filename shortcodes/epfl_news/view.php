@@ -66,7 +66,7 @@
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
         <?php if ($media_url): ?>
-          <video style=" right: 0; bottom: 0; min-width: 100%; min-height: 100%;" autoplay muted loop id="myVideo">
+          <video style="right: 0; bottom: 0; min-width: 100%; min-height: 100%;" autoplay muted loop>
             <source src="<?php echo $media_url; ?>" type="video/mp4">
               Your browser does not support HTML5 video.
           </video>
@@ -104,9 +104,16 @@
 <?php if (true === $is_first_event): ?>
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
+        <?php if ($media_url): ?>
+          <video style="right: 0; bottom: 0; min-width: 100%; min-height: 100%;" autoplay muted loop>
+            <source src="<?php echo $media_url; ?>" type="video/mp4">
+              Your browser does not support HTML5 video.
+          </video>
+        <?php else: ?>
           <picture>
             <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
           </picture>
+        <?php endif ?>
           <div class="fullwidth-teaser-text">
             <div class="fullwidth-teaser-header">
               <div class="fullwidth-teaser-title">
