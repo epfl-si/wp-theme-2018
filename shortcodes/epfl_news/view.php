@@ -1,18 +1,17 @@
 <?php
-  $template = get_query_var('epfl_news_template');
+
+  require_once('utils.php');
+
+  $template              = get_query_var('epfl_news_template');
   $display_all_news_link = get_query_var('epfl_news_all_news_link');
-  
-  $data = get_query_var('epfl_news_data');
+  $data                  = get_query_var('epfl_news_data');
 
-  $count = 1;
+  $count  = 1;
   $header = false;
-  $last = count($data);
+  $last   = count($data);
 
-  $url_channel = "";
-  if (count($data) > 0) {
-    $channel = $data[0]->channel->name;
-    $url_channel = "https://actu.epfl.ch/search/" . $channel;
-  }
+  $url_channel = get_url_channel($data);
+ 
 ?>
 
 <?php if ("1" == $template): ?>
@@ -24,26 +23,14 @@
       <?php
         foreach($data as $news) {
 
-          $is_first_event = ($count==1);
-
-          if (get_locale() == 'fr_FR') {
-            $image_description = $news->fr_description;
-          } else {
-            $image_description = $news->en_description;
-          }
-
-          if (get_locale() == 'fr_FR') {
-            $category = $news->category->fr_label;
-          } else {
-            $category = $news->category->en_label;
-          }
-
-          $publish_date = new DateTime($news->publish_date);
-          $publish_date = $publish_date->format('d.m.y');
-          $subtitle = strip_tags($news->subtitle);
-
-          $visual_url = substr($news->visual_url, 0, -11) . '1296x728.jpg';
-
+          $is_first_event    = ($count==1);
+          $image_description = get_image_description($news);
+          $category          = get_label_category($news);
+          $publish_date      = get_publish_date($news);
+          $subtitle          = get_subtitle($news);
+          $visual_url        = get_visual_url($news);
+          $media_url         = get_media_url($news);
+          
           if ($template == 2 and $count != 1 and $header == false) {
 
             $header = true;
@@ -78,9 +65,16 @@
 ?>
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
+        <?php if ($media_url): ?>
+          <video style=" right: 0; bottom: 0; min-width: 100%; min-height: 100%;" autoplay muted loop id="myVideo">
+            <source src="<?php echo $media_url; ?>" type="video/mp4">
+              Your browser does not support HTML5 video.
+          </video>
+        <?php else: ?>
           <picture>
             <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
           </picture>
+        <?php endif ?>
           <div class="fullwidth-teaser-text">
             <div class="fullwidth-teaser-header">
               <div class="fullwidth-teaser-title">
