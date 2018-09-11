@@ -10,11 +10,9 @@ function renderPublicationsSearchResult($grouped_by_publications,
                                  $thumbnail,
                                  $debug_template) {
   if (is_admin()) {
-    ob_start();                                     
     // render placeholder for backend editor
     set_query_var('epfl_placeholder_title', 'Infoscience search');
     get_template_part('shortcodes/placeholder');
-    return ob_end_flush();
   } else {
     $page = ClassesInfoscience2018Render::render($grouped_by_publications,
                                                  $url,
@@ -26,4 +24,3 @@ function renderPublicationsSearchResult($grouped_by_publications,
     return $page;
   }
 }
-
