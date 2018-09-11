@@ -70,6 +70,11 @@ abstract Class InfosciencePublication2018Render {
         $html_rendered = '<div class="list-group-item list-group-item-publication">';
         $html_rendered .= '  <div class="row">';
         $html_rendered .= '    <div class="col-md-10">';
+
+        if ($thumbnail) {
+            $html_rendered .= self::render_thumbnail($publication);
+        }
+
         $html_rendered .= TitleInfoscienceField2018Render::render($publication, $format);
         $html_rendered .= static::render($publication, $format, $summary);
         $html_rendered .= "    </div>";
@@ -78,6 +83,16 @@ abstract Class InfosciencePublication2018Render {
         $html_rendered .= "</div>";
 
         return $html_rendered;
+    }
+
+    protected static function render_thumbnail($publication) {
+        if (isset($publication['url']) &&
+            isset($publication['url']['icon']) &&
+            $publication['url']['icon'][0]) {
+            return '      <a href="'. $publication['url']['icon'][0] .'"  target="_blank"><img style="max-width:80px;" src="' . $publication['url']['icon'][0] . '" class="float-left mr-3 infoscience_publication_illustration" alt="publication image"></a>';
+        } else {
+            return '';
+        }
     }
 
     protected static function render_links($publication) {
