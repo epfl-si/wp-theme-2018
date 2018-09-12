@@ -89,7 +89,7 @@ abstract Class InfosciencePublication2018Render {
         if (isset($publication['url']) &&
             isset($publication['url']['icon']) &&
             $publication['url']['icon'][0]) {
-            return '      <a href="'. $publication['url']['icon'][0] .'"  target="_blank"><img src="' . $publication['url']['icon'][0] . '" class="float-left mr-3 infoscience_publication_illustration" alt="publication thumbnail"></a>';
+            return '      <a href="'. $publication['url']['icon'][0] .'"  target="_blank"><img style="max-width:80px;" src="' . $publication['url']['icon'][0] . '" class="float-left mr-3 infoscience_publication_illustration" alt="publication thumbnail"></a>';
         } else {
             return '';
         }
