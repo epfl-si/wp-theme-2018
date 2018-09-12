@@ -16,7 +16,9 @@ Epfl theme (Wordpress)
 ## Recovering the last version of the styleguide
   1. head towards [https://github.com/epfl-idevelop/elements/tree/dist/frontend](https://github.com/epfl-idevelop/elements/tree/dist/frontend)
   2. use git clone / download zip to recover the files of this branch
-  3. put all these recovered files into `wp-theme-2018/assets`
+  3. put all these recovered files into `wp-theme-2018/assets` 
+    a. delete the branch: git branch -D dist/frontend
+    b. git fetch and git checkout dist/frontend
   4. commit the builds
   5. here you go, you just updated the styleguide version contained in this theme !
 
@@ -31,9 +33,10 @@ Epfl theme (Wordpress)
   - start a release: `git flow release start x.x.x`
   - update the following files:
     - `VERSION` with the version number
+    - `style.css` with the version number
     - `CHANGELOG.md` with a description of **all the changes since last release**
   - commit them in a "bump version" commit
-  - finish the release: `git flow release finish x.x.x`
+  - finish the release: `git flow release finish x.x.x -p -m "x.x.x"` 
   - head over this repo on github, on the **release** tab
   - go to **Draft a new release**
   - choose the release number you just created, insert the changelog informations into the release description
