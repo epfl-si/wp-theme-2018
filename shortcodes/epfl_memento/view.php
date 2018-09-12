@@ -1,7 +1,7 @@
 <?php
   require_once(get_template_directory().'/shortcodes/epfl_memento/utils.php');
   require_once(get_template_directory().'/shortcodes/epfl_memento/data.php');
-  $data = get_query_var('epfl_memento_data');
+  $data     = get_query_var('epfl_memento_data');
   $template = get_query_var('epfl_memento_template');
   $display_first_event = ('1' === $template);
 ?>
@@ -29,11 +29,11 @@
 <?php if (true === $is_first_event && true === $display_first_event): ?>
 
 <div class="card-slider-cell card-slider-cell-lg">
-  <a href="<?php echo $event->event_url ?>" class="card card-gray link-trapeze-horizontal">
+  <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
     <div class="card-body">
       <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');  ?>
-      <h3 class="card-title"><?php echo $event->title ?></h3>
-      <p><?php echo trim_text(strip_tags($event->description), 225) ?></p>
+      <h3 class="card-title"><?php echo esc_html($event->title) ?></h3>
+      <p><?php echo esc_html(trim_text(strip_tags($event->description), 225)) ?></p>
       <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
     </div>
   </a>
@@ -45,11 +45,11 @@
 
   <?php if (true === $is_just_finished): ?>
     <div class="card-slider-cell">
-      <a href="<?php echo $event->event_url ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
+      <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
         <div class="card-body">
           <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');  ?>
           <h3 class="card-title"><span class="badge badge-dark badge-sm">Just finished</span>
-            <?php echo $event->title ?>
+            <?php echo esc_html($event->title) ?>
           </h3>
           <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
         </div>
@@ -63,16 +63,16 @@
     <div class="card-slider-cell">
       <div class="card card-gray">
         <div class="card-body">
-          <a href="<?php echo $event->event_url ?>" class="card-img-top">
+          <a href="<?php echo esc_url($event->event_url) ?>" class="card-img-top">
             <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');  ?>
           </a>
           <h3 class="card-title">
-            <a href="<?php echo $event->event_url ?>"><?php echo $event->title ?></a>
+            <a href="<?php echo esc_url($event->event_url) ?>"><?php echo esc_html($event->title) ?></a>
           </h3>
           <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
         </div>
         <div class="card-footer mt-auto">
-          <a href="<?php echo $event->event_url ?>" class="btn btn-primary btn-sm">
+          <a href="<?php echo esc_url($event->event_url) ?>" class="btn btn-primary btn-sm">
             <?php esc_html_e('Learn more & apply', 'epfl');?>
           </a>
         </div>
@@ -83,10 +83,10 @@
   <?php else: ?>
 
     <div class="card-slider-cell">
-      <a href="<?php echo $event->event_url ?>" class="card card-gray link-trapeze-horizontal">
+      <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
         <div class="card-body">
           <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');?>
-          <h3 class="card-title"><?php echo $event->title ?></h3>
+          <h3 class="card-title"><?php echo esc_html($event->title) ?></h3>
           <?php get_template_part('shortcodes/epfl_memento/templates/card-info');?>
         </div>
       </a>
