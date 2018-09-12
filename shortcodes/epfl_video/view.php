@@ -6,6 +6,6 @@
 
 <div class="container">
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe src="<?php echo $url ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; encrypted-media" frameborder="0" class="embed-responsive-item"></iframe>
+    <iframe src="<?php echo esc_url($url); ?>" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; encrypted-media" frameborder="0" class="embed-responsive-item"></iframe>
   </div>
 </div>
