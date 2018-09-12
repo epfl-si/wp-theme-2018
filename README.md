@@ -14,13 +14,13 @@ Epfl theme (Wordpress)
   2. Nothing more, you're ready to go! 🚀
 
 ## Recovering the last version of the styleguide
-  1. head towards [https://github.com/epfl-idevelop/elements/tree/dist/frontend](https://github.com/epfl-idevelop/elements/tree/dist/frontend)
-  2. use git clone / download zip to recover the files of this branch
-  3. put all these recovered files into `wp-theme-2018/assets` 
-    1. delete the branch: git branch -D dist/frontend
-    2. git fetch and git checkout dist/frontend
-  4. commit the builds
-  5. here you go, you just updated the styleguide version contained in this theme !
+  - head towards [https://github.com/epfl-idevelop/elements/tree/dist/frontend](https://github.com/epfl-idevelop/elements/tree/dist/frontend)
+  - use git clone / download zip to recover the files of this branch
+  - put all these recovered files into `wp-theme-2018/assets` 
+    - delete the branch: git branch -D dist/frontend
+    - git fetch and git checkout dist/frontend
+  - commit the builds
+  - here you go, you just updated the styleguide version contained in this theme !
 
 ## Create a new release
   ### Requirements:
