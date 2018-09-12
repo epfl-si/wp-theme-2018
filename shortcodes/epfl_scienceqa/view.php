@@ -21,7 +21,7 @@
             <input type="radio" id="custom-radio<?php echo esc_attr($count) ?>" value="<?php echo esc_attr($answerId) ?>" name="customRadio" class="custom-control-input">
             <label class="custom-control-label" for="custom-radio<?php echo esc_attr($count) ?>">
               <span class="custom-control-label-content">
-                <?php echo esc_html($answer); ?></span>
+                <?php echo esc_html($answer) ?></span>
               <span class="trapeze-horizontal d-none d-lg-block"></span>
               <span class="trapeze-vertical d-lg-none"></span>
             </label>
