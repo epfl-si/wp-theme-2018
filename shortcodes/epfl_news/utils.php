@@ -59,8 +59,7 @@ function epfl_news_get_publish_date($news) {
  * $news: news to display
  */
 function epfl_news_get_subtitle($news) {
-    $subtitle = strip_tags($news->subtitle);
-    return $subtitle;
+    return strip_tags($news->subtitle);
 }
 
 /**
@@ -69,28 +68,25 @@ function epfl_news_get_subtitle($news) {
  * $news: news to display
  */
 function epfl_news_get_visual_url($news) {
-    $visual_url = substr($news->visual_url, 0, -11) . '1296x728.jpg';
-    return $visual_url;
+    return substr($news->visual_url, 0, -11) . '1296x728.jpg';
 }
 
 /**
- * Get media url
- * 
- * $news: news to display
+ * Get attachment url by slug
  */
-function epfl_news_get_media_url($news) {
-    $slug = str_replace("https://actu.epfl.ch/news/", "", $news->news_url);
-    $video_name = "teaser_" . $slug;
-          
-    global $wpdb;
-    $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_name='%s';", esc_attr($video_name)));
+function get_attachment_url_by_slug( $slug ) {
+    
+    $args = array(
+      'post_type'      => 'attachment',
+      'name'           => sanitize_title($slug),
+      'posts_per_page' => 1,
+      'post_status'    => 'inherit',
+    );
 
-    $media_url = "";
-    if ( !is_null( $attachment ) ) {
-        $media_id = $attachment[0];
-        $media_url = wp_get_attachment_url( $media_id );  
-    }
-    return $media_url;
-}
+    $_header = get_posts( $args );
+    $header  = $_header ? array_pop($_header) : null;
+
+    return $header ? wp_get_attachment_url($header->ID) : '';
+  }
 
 ?>

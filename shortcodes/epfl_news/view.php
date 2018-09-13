@@ -29,7 +29,8 @@
           $publish_date      = epfl_news_get_publish_date($news);
           $subtitle          = epfl_news_get_subtitle($news);
           $visual_url        = epfl_news_get_visual_url($news);
-          $media_url         = epfl_news_get_media_url($news);
+          $video_name        = "teaser_" . str_replace("https://actu.epfl.ch/news/", "", $news->news_url);
+          $media_url         = get_attachment_url_by_slug($video_name);
           
           if ($template == 2 and $count != 1 and $header == false) {
 
@@ -103,7 +104,7 @@
 <?php 
   elseif ("2" == $template): // TEMPLATE WWW WITH 3 NEWS
 ?>
-<?php if (true === $is_first_event): ?>
+<?php if ($is_first_event): ?>
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
         <?php if ($media_url): ?>
