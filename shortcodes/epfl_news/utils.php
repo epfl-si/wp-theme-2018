@@ -80,10 +80,10 @@ function get_visual_url($news) {
  */
 function get_media_url($news) {
     $slug = str_replace("https://actu.epfl.ch/news/", "", $news->news_url);
-    $video_url = "teaser_" . $slug;
+    $video_name = "teaser_" . $slug;
           
     global $wpdb;
-    $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_name='%s';", $video_url ));
+    $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_name='%s';", esc_attr($video_name)));
 
     $media_url = "";
     if ( !is_null( $attachment ) ) {
