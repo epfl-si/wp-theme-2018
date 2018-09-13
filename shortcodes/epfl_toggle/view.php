@@ -18,7 +18,7 @@
   </button>
   <div 
     class="collapse collapse-item collapse-item-desktop <?php if ($value['state'] === 'open'): ?> show <?php endif ?> " 
-    id="<?php echo esc_attr('collapse' . '-' . $key) ?>"
+    id="<?php echo esc_attr('collapse-' . $key) ?>"
   >
     <p><?php echo wp_kses_post(urldecode($value['desc'])) ?></p>
   </div>
