@@ -64,12 +64,14 @@
   elseif ("3" == $template): // TEMPLATE WWW WITH 1 NEWS
 ?>
 
-        <div class="fullwidth-teaser fullwidth-teaser-horizontal">
+      <div class="fullwidth-teaser fullwidth-teaser-horizontal">
         <?php if ($media_url): ?>
-          <video style="right: 0; bottom: 0; min-width: 100%; min-height: 100%;" autoplay muted loop>
-            <source src="<?php echo $media_url; ?>" type="video/mp4">
-              Your browser does not support HTML5 video.
-          </video>
+          <div class="embed-responsive embed-responsive-16by9">
+            <video autoplay muted loop>
+              <source class="embed-responsive-item" src="<?php echo $media_url; ?>" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+          </div>
         <?php else: ?>
           <picture>
             <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
@@ -105,10 +107,12 @@
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
         <?php if ($media_url): ?>
-          <video style="right: 0; bottom: 0; min-width: 100%; min-height: 100%;" autoplay muted loop>
-            <source src="<?php echo $media_url; ?>" type="video/mp4">
-              Your browser does not support HTML5 video.
-          </video>
+          <div class="embed-responsive embed-responsive-16by9">
+            <video autoplay muted loop>
+              <source class="embed-responsive-item" src="<?php echo $media_url; ?>" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+          </div>
         <?php else: ?>
           <picture>
             <img src="<?php echo $visual_url ?>" aria-labelledby="background-label" alt="<?php echo $image_description ?>"/>
