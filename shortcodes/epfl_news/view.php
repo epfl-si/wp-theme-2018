@@ -10,7 +10,7 @@
   $header = false;
   $last   = count($data);
 
-  $url_channel = get_url_channel($data);
+  $url_channel = epfl_news_get_url_channel($data);
  
 ?>
 
@@ -24,12 +24,12 @@
         foreach($data as $news) {
 
           $is_first_event    = ($count==1);
-          $image_description = get_image_description($news);
-          $category          = get_label_category($news);
-          $publish_date      = get_publish_date($news);
-          $subtitle          = get_subtitle($news);
-          $visual_url        = get_visual_url($news);
-          $media_url         = get_media_url($news);
+          $image_description = epfl_news_get_image_description($news);
+          $category          = epfl_news_get_label_category($news);
+          $publish_date      = epfl_news_get_publish_date($news);
+          $subtitle          = epfl_news_get_subtitle($news);
+          $visual_url        = epfl_news_get_visual_url($news);
+          $media_url         = epfl_news_get_media_url($news);
           
           if ($template == 2 and $count != 1 and $header == false) {
 

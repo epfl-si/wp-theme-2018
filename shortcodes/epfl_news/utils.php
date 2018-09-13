@@ -5,7 +5,7 @@
  * 
  * $data: all data from back-end
  */
-function get_url_channel($data) {
+function epfl_news_get_url_channel($data) {
     $url_channel = "";
     if (count($data) > 0) {
         $channel = $data[0]->channel->name;
@@ -19,7 +19,7 @@ function get_url_channel($data) {
  * 
  * $news: news to display
  */
-function get_image_description($news) {
+function epfl_news_get_image_description($news) {
     if (get_locale() == 'fr_FR') {
         $image_description = $news->fr_description;
     } else {
@@ -33,7 +33,7 @@ function get_image_description($news) {
  * 
  * $news: news to display
  */
-function get_label_category($news) {
+function epfl_news_get_label_category($news) {
     if (get_locale() == 'fr_FR') {
         $label_category = $news->category->fr_label;
     } else {
@@ -47,7 +47,7 @@ function get_label_category($news) {
  * 
  * $news: news to display
  */
-function get_publish_date($news) {
+function epfl_news_get_publish_date($news) {
     $publish_date = new DateTime($news->publish_date);
     $publish_date = $publish_date->format('d.m.y');
     return $publish_date;
@@ -58,7 +58,7 @@ function get_publish_date($news) {
  * 
  * $news: news to display
  */
-function get_subtitle($news) {
+function epfl_news_get_subtitle($news) {
     $subtitle = strip_tags($news->subtitle);
     return $subtitle;
 }
@@ -68,7 +68,7 @@ function get_subtitle($news) {
  * 
  * $news: news to display
  */
-function get_visual_url($news) {
+function epfl_news_get_visual_url($news) {
     $visual_url = substr($news->visual_url, 0, -11) . '1296x728.jpg';
     return $visual_url;
 }
@@ -78,7 +78,7 @@ function get_visual_url($news) {
  * 
  * $news: news to display
  */
-function get_media_url($news) {
+function epfl_news_get_media_url($news) {
     $slug = str_replace("https://actu.epfl.ch/news/", "", $news->news_url);
     $video_name = "teaser_" . $slug;
           
