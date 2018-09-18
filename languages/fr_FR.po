@@ -232,3 +232,108 @@ msgstr ""
 #, fuzzy
 #~ msgid "Faculty"
 #~ msgstr "Template pour les sites de facultés (avec 4 actualités)"
+
+#: Infoscience Search
+#: templates/book_chapters_detailed.php:49 templates/book_chapters_short.php:59
+#: templates/conference_papers_detailed.php:47
+#: templates/conference_papers_short.php:44
+#: templates/journal_articles_detailed.php:45 templates/reports_detailed.php:19
+#: templates/theses_detailed.php:54 templates/theses_short.php:44
+msgid "p."
+msgstr "p."
+
+#: templates/common/links-bar.php:10
+msgid "Detailed record"
+msgstr "Notice détaillée"
+
+#: templates/common/links-bar.php:14
+msgid "Full text"
+msgstr "Texte intégral"
+
+#: templates/common/links-bar.php:19
+msgid "View at publisher"
+msgstr "Consulter chez l'éditeur"
+
+#: templates/journal_articles_detailed.php:27
+msgid "Vol."
+msgstr "Vol."
+
+#: templates/journal_articles_detailed.php:36
+msgid "num."
+msgstr "num."
+
+#: templates/patents_detailed.php:42
+msgid "Patent number(s)"
+msgstr "Numéro de brevet"
+
+#: templates/theses_detailed.php:19 templates/theses_short.php:11
+msgid "Dir."
+msgstr "Dir."
+
+#: 17
+msgid "Journal Articles"
+msgstr "Articles de journaux"
+
+#: 18
+msgid "Conference Papers"
+msgstr "Papiers de conférences"
+
+#: 19
+msgid "Reviews"
+msgstr "Reviews"
+
+#: 20
+msgid "Books"
+msgstr "Livres"
+
+#: 21
+msgid "Theses"
+msgstr "Thèses"
+
+#: 22
+msgid "Book Chapters"
+msgstr "Chapitres de livres"
+
+#: 23
+msgid "Conference Proceedings"
+msgstr "Actes de congrès"
+
+#: 24
+msgid "Working Papers"
+msgstr "Documents de travail"
+
+#: 25
+msgid "Reports"
+msgstr "Rapports techniques"
+
+#: 26
+msgid "Posters"
+msgstr "Posters"
+
+#: 27
+msgid "Talks"
+msgstr "Présentations"
+
+#: 28
+msgid "Standards"
+msgstr "Normes"
+
+#: 29
+msgid "Patents"
+msgstr "Brevets"
+
+#: 30
+msgid "Student Projects"
+msgstr "Projets d'étudiants"
+
+#: 31
+msgid "Teaching Resources"
+msgstr "Documents d'enseignement"
+
+#: 32
+msgid "Media"
+msgstr "Média"
+
+#: 33
+msgid "Datasets"
+msgstr "Echantillons de données"
