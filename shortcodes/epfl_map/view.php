@@ -10,7 +10,7 @@
     <iframe 
       frameborder="0" 
       scrolling="no" 
-      src="<?php echo $video_url ?>" 
+      src="<?php echo esc_url($video_url) ?>" 
       class="embed-responsive-item"
       ></iframe>
   </div>
