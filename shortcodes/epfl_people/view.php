@@ -6,15 +6,12 @@
 
 <?php 
   foreach($data as $person):
-      
-      $photo_url = epfl_people_get_photo($person);
-      $phones    = epfl_people_get_phones($person);
-      $function  = epfl_people_get_function($person, $unit);
-      $room      = epfl_people_get_room($person, $unit);
-      $room_url  = "https://plan.epfl.ch/?room=" . $room; 
-      
-      // Tentative de fabriquer l'url mais attention ne marche à cause des caractères spéciaux
-      $people_url = "https://people.epfl.ch/" . strtolower($person->prenom) . '.' . strtolower($person->nom);
+      $photo_url  = epfl_people_get_photo($person);
+      $phones     = epfl_people_get_phones($person);
+      $function   = epfl_people_get_function($person, $unit);
+      $room       = epfl_people_get_room($person, $unit);
+      $room_url   = epfl_people_get_room_url($room);
+      $people_url = epfl_people_get_people_url($person);
 ?>
 <div class="card">
   <div class="card-body">

@@ -54,4 +54,27 @@ function epfl_people_get_room($person, $unit) {
     }
     return $room;
 }
+
+/**
+ * Get URL room function
+ */
+function epfl_people_get_room_url($room) {
+
+    return "https://plan.epfl.ch/?room=" . $room; 
+}
+
+/**
+ * Get URL people
+ */
+function epfl_people_get_people_url($person) {
+
+    $slug = "";
+    if ($person->mail_id) {
+        $slug = $person->mail_id;
+    } else {
+        $slug = $person->sciper;
+    }
+    return "https://people.epfl.ch/" . $slug;
+}
+
 ?>
