@@ -41,7 +41,7 @@
               echo '<div class="row mb-4">';
           }
 
-          if ($template == "5" and $is_first_event) {
+          if (($template == "5" or $template == "6" or $template == "4") and $is_first_event) {
             echo '<h2 class="mt-5 mb-4">'; esc_html_e('The last news', 'epfl'); echo '</h2>';
             echo '<div class="row">';
           }
@@ -68,10 +68,13 @@
         </a>
 
 <?php
-  elseif ("5" == $template): // TEMPLATE CARD WITH 2 NEWS
+  elseif ("6" == $template or "5" == $template or "4" == $template): // TEMPLATE CARD WITH 1, 2 or 3 NEWS
 ?>
-
+    <?php if ("6" == $template): ?>
+    <div class="col-md-4">
+    <?php elseif ("5" == $template or "4" == $template): ?>
     <div class="col-md-6">
+    <?php endif ?>
       <a href="<?php echo esc_url($news->news_url) ?>" class="card link-trapeze-horizontal" itemscope itemtype="https://schema.org/NewsArticle">
         <picture class="card-img-top">
           <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($image_description) ?>" alt="<?php echo esc_attr($image_description) ?>" />
@@ -86,7 +89,6 @@
         </div>
       </a>
     </div>
-
 <?php
   elseif ("3" == $template): // TEMPLATE WWW WITH 1 NEWS
 ?>
@@ -204,13 +206,8 @@
 </div>
 <?php endif; ?>
 
-<?php if ($template == 5 and $last == $count): ?>
+<?php if (($template == 5 or $template == 4 or $template == 6) and $last == $count): ?>
   </div>
-  <p class="text-center">
-    <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
-      <?php esc_html_e('All news', 'epfl' );?>
-    </a>
-  </p>
 <?php endif; ?>
 
 <?php
@@ -218,7 +215,7 @@
     } // end foreach
 ?>
 
-<?php if ("true" == $display_all_news_link and $template != 2 and "" != $channel): ?>
+<?php if ("true" == $display_all_news_link and ($template != 2 and $template != 4) and "" != $url_channel): ?>
 <p class="text-center">
   <a class="link-pretty" href="<?php echo $url_channel; ?>"><?php esc_html_e('All news', 'epfl' );?></a>
 </p>
