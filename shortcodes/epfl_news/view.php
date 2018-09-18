@@ -40,6 +40,11 @@
               echo '<div class="col-lg-10 offset-lg-1">';
               echo '<div class="row mb-4">';
           }
+
+          if ($template == "5" and $is_first_event) {
+            echo '<h2 class="mt-5 mb-4">'; esc_html_e('The last news', 'epfl'); echo '</h2>';
+            echo '<div class="row">';
+          }
       ?>
 
 <?php
@@ -61,6 +66,27 @@
             </div>
           </div>
         </a>
+
+<?php
+  elseif ("5" == $template): // TEMPLATE CARD WITH 2 NEWS
+?>
+
+    <div class="col-md-6">
+      <a href="<?php echo esc_url($news->news_url) ?>" class="card link-trapeze-horizontal" itemscope itemtype="https://schema.org/NewsArticle">
+        <picture class="card-img-top">
+          <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($image_description) ?>" alt="<?php echo esc_attr($image_description) ?>" />
+        </picture>
+        <div class="card-body">
+          <h3 class="card-title" itemprop="name"><?php echo esc_html($news->title) ?></h3>
+          <div class="card-info">
+            <span class="card-info-date" itemprop="datePublished" content="<?php echo esc_attr($publish_date) ?>"><?php echo esc_html($publish_date) ?></span>
+            <span itemprop="about"><?php echo esc_html($category) ?></span>
+          </div>
+          <p itemprop="description"><?php echo esc_html($subtitle) ?></p>
+        </div>
+      </a>
+    </div>
+
 <?php
   elseif ("3" == $template): // TEMPLATE WWW WITH 1 NEWS
 ?>
@@ -176,6 +202,15 @@
     </div>
   </div>
 </div>
+<?php endif; ?>
+
+<?php if ($template == 5 and $last == $count): ?>
+  </div>
+  <p class="text-center">
+    <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
+      <?php esc_html_e('All news', 'epfl' );?>
+    </a>
+  </p>
 <?php endif; ?>
 
 <?php
