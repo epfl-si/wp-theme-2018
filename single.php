@@ -12,9 +12,8 @@ get_header();
 
 global $containerClasses;
 
-if (!is_front_page()) {
-	get_template_part( 'template-parts/breadcrumb');
-}
+get_template_part( 'template-parts/breadcrumb');
+
 ?>
 
 	<div class="<?php echo $containerClasses ?>">
