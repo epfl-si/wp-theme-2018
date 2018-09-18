@@ -32,7 +32,7 @@
           $video_name        = "teaser_" . str_replace("https://actu.epfl.ch/news/", "", $news->news_url);
           $media_url         = get_attachment_url_by_slug($video_name);
           
-          if ($template == 2 and $count != 1 and $header == false) {
+          if (2 == $template and 1 != $count and false == $header) {
 
             $header = true;
               echo '<div class="container pb-5 offset-xl-top pt-5 pt-xl-0">';
@@ -41,7 +41,7 @@
               echo '<div class="row mb-4">';
           }
 
-          if (($template == "5" or $template == "6" or $template == "4") and $is_first_event) {
+          if (("5" == $template  or "6" == $template or "4" == $template) and $is_first_event) {
             echo '<h2 class="mt-5 mb-4">';
             esc_html_e('The last news', 'epfl');
             echo '</h2>';
@@ -208,7 +208,7 @@
 </div>
 <?php endif; ?>
 
-<?php if (($template == 5 or $template == 4 or $template == 6) and $last == $count): ?>
+<?php if ((5 == $template or 4 == $template or 6 == $template) and $last == $count): ?>
   </div>
 <?php endif; ?>
 
@@ -217,7 +217,7 @@
     } // end foreach
 ?>
 
-<?php if ("true" == $display_all_news_link and ($template != 2 and $template != 4) and "" != $url_channel): ?>
+<?php if ("true" == $display_all_news_link and 2 != $template and 4 != $template and "" != $url_channel): ?>
 <p class="text-center">
   <a class="link-pretty" href="<?php echo $url_channel; ?>"><?php esc_html_e('All news', 'epfl' );?></a>
 </p>
