@@ -32,13 +32,20 @@
           $video_name        = "teaser_" . str_replace("https://actu.epfl.ch/news/", "", $news->news_url);
           $media_url         = get_attachment_url_by_slug($video_name);
           
-          if ($template == 2 and $count != 1 and $header == false) {
+          if (2 == $template and 1 != $count and false == $header) {
 
             $header = true;
               echo '<div class="container pb-5 offset-xl-top pt-5 pt-xl-0">';
               echo '<div class="row">';
               echo '<div class="col-lg-10 offset-lg-1">';
               echo '<div class="row mb-4">';
+          }
+
+          if (("5" == $template  or "6" == $template or "4" == $template) and $is_first_event) {
+            echo '<h2 class="mt-5 mb-4">';
+            esc_html_e('The last news', 'epfl');
+            echo '</h2>';
+            echo '<div class="row">';
           }
       ?>
 
@@ -61,6 +68,29 @@
             </div>
           </div>
         </a>
+
+<?php
+  elseif ("6" == $template or "5" == $template or "4" == $template): // TEMPLATE CARD WITH 1, 2 or 3 NEWS
+?>
+    <?php if ("6" == $template): ?>
+    <div class="col-md-4">
+    <?php elseif ("5" == $template or "4" == $template): ?>
+    <div class="col-md-6">
+    <?php endif ?>
+      <a href="<?php echo esc_url($news->news_url) ?>" class="card link-trapeze-horizontal" itemscope itemtype="https://schema.org/NewsArticle">
+        <picture class="card-img-top">
+          <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($image_description) ?>" alt="<?php echo esc_attr($image_description) ?>" />
+        </picture>
+        <div class="card-body">
+          <h3 class="card-title" itemprop="name"><?php echo esc_html($news->title) ?></h3>
+          <div class="card-info">
+            <span class="card-info-date" itemprop="datePublished" content="<?php echo esc_attr($publish_date) ?>"><?php echo esc_html($publish_date) ?></span>
+            <span itemprop="about"><?php echo esc_html($category) ?></span>
+          </div>
+          <p itemprop="description"><?php echo esc_html($subtitle) ?></p>
+        </div>
+      </a>
+    </div>
 <?php
   elseif ("3" == $template): // TEMPLATE WWW WITH 1 NEWS
 ?>
@@ -178,12 +208,16 @@
 </div>
 <?php endif; ?>
 
+<?php if ((5 == $template or 4 == $template or 6 == $template) and $last == $count): ?>
+  </div>
+<?php endif; ?>
+
 <?php
       $count++;
     } // end foreach
 ?>
 
-<?php if ("true" == $display_all_news_link and $template != 2 and "" != $channel): ?>
+<?php if ("true" == $display_all_news_link and 2 != $template and 4 != $template and "" != $url_channel): ?>
 <p class="text-center">
   <a class="link-pretty" href="<?php echo $url_channel; ?>"><?php esc_html_e('All news', 'epfl' );?></a>
 </p>

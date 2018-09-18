@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-08-27 14:01+0200\n"
-"PO-Revision-Date: 2018-08-27 14:01+0200\n"
+"POT-Creation-Date: 2018-09-18 11:14+0200\n"
+"PO-Revision-Date: 2018-09-18 11:16+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,32 +15,16 @@ msgstr ""
 "X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: collapsable/shortcake.php:9 custom_highlight/shortcake.php:8
-#: custom_teasers/shortcake.php:28 faculties/shortcake.php:15
-#: introduction/shortcake.php:8
+#: custom_highlight/shortcake.php:8 custom_teasers/shortcake.php:28
+#: introduction/shortcake.php:8 schools/shortcake.php:15
 #, fuzzy
 msgid "Title"
 msgstr "Titre"
 
-#: collapsable/shortcake.php:11
-msgid "The title of the collapsable"
-msgstr ""
-
-#: collapsable/shortcake.php:15
-msgid "Description"
-msgstr ""
-
-#: collapsable/shortcake.php:17
-msgid "Content shown when collapsable is opened"
-msgstr ""
-
-#: collapsable/shortcake.php:26
-msgid "Collapsable"
-msgstr ""
-
 #: custom_highlight/shortcake.php:13
+#, fuzzy
 msgid "description"
-msgstr ""
+msgstr "Description"
 
 #: custom_highlight/shortcake.php:18
 #, fuzzy
@@ -58,8 +42,8 @@ msgstr "Image"
 
 #: custom_highlight/shortcake.php:32 custom_highlight/shortcake.php:33
 #: custom_teasers/shortcake.php:52 custom_teasers/shortcake.php:53
-#: faculties/shortcake.php:34 faculties/shortcake.php:35 hero/shortcake.php:27
-#: hero/shortcake.php:28
+#: hero/shortcake.php:27 hero/shortcake.php:28 schools/shortcake.php:34
+#: schools/shortcake.php:35
 #, fuzzy
 msgid "Select Image"
 msgstr "Sélectionner une image"
@@ -107,7 +91,7 @@ msgstr ""
 #: custom_teasers/shortcake.php:38
 #, fuzzy
 msgid "Url"
-msgstr "URL FR"
+msgstr "URL"
 
 #: custom_teasers/shortcake.php:64
 msgid "Custom teasers"
@@ -165,16 +149,20 @@ msgstr "Aucun événement programmé"
 msgid "Learn more & apply"
 msgstr "Information & inscription"
 
-#: epfl_news/view.php:84 epfl_news/view.php:116 epfl_news/view.php:145
+#: epfl_news/view.php:45
+msgid "The last news"
+msgstr "Les dernières actualités"
+
+#: epfl_news/view.php:114 epfl_news/view.php:155 epfl_news/view.php:184
 msgid "News"
 msgstr "Actualités"
 
-#: epfl_news/view.php:89 epfl_news/view.php:98 epfl_news/view.php:121
-#: epfl_news/view.php:130 page_highlight/view.php:33 page_highlight/view.php:45
+#: epfl_news/view.php:119 epfl_news/view.php:128 epfl_news/view.php:160
+#: epfl_news/view.php:169 page_highlight/view.php:33 page_highlight/view.php:45
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: epfl_news/view.php:160
+#: epfl_news/view.php:200 epfl_news/view.php:220
 msgid "All news"
 msgstr "Toutes les actualités"
 
@@ -182,14 +170,9 @@ msgstr "Toutes les actualités"
 msgid "Question de science"
 msgstr ""
 
-#: epfl_scienceqa/view.php:35
+#: epfl_scienceqa/view.php:33
 msgid "Voter"
 msgstr ""
-
-#: faculties/shortcake.php:15
-#, fuzzy
-msgid "Faculty"
-msgstr "Template pour les sites de facultés (avec 4 actualités)"
 
 #: hero/shortcake.php:37
 msgid "Hero"
@@ -234,10 +217,18 @@ msgstr ""
 msgid "Post highlight"
 msgstr ""
 
-#: post_highlight/view.php:29 post_highlight/view.php:44
+#: post_highlight/view.php:28 post_highlight/view.php:43
 msgid "Read the article"
 msgstr ""
 
 #: post_teaser/shortcake.php:30
 msgid "Post teaser"
 msgstr ""
+
+#: schools/shortcake.php:15
+msgid "School"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Faculty"
+#~ msgstr "Template pour les sites de facultés (avec 4 actualités)"
