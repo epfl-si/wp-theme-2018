@@ -98,7 +98,7 @@ abstract Class InfosciencePublication2018Render {
     protected static function render_links($publication) {
         $links_html = '<div class="col-md-2 text-right mt-4 mt-md-0">';
         $links_html .= '  <p>';
-        $links_html .= '    <a href="//infoscience.epfl.ch/record/' . $publication['record_id'][0] . '" class="btn btn-secondary btn-sm" target="_blank">Detailed record</a>';
+        $links_html .= '    <a href="//infoscience.epfl.ch/record/' . $publication['record_id'][0] . '" class="btn btn-secondary btn-sm" target="_blank">' . esc_html__('Detailed record', 'epfl') . '</a>';
         $links_html .= '  </p>';
 
         $fulltext = '';
@@ -115,7 +115,7 @@ abstract Class InfosciencePublication2018Render {
             $links_html .= '  <p class="text-muted small mb-0">';
 
             if ($fulltext) {
-                $links_html .= '<a class="text-muted" href="' . $fulltext . '" target="_blank">Full text</a>';
+                $links_html .= '<a class="text-muted" href="' . $fulltext . '" target="_blank">' .  esc_html__('Full text', 'epfl') . '</a>';
 
                 if ($doi) {
                     $links_html .= ' - ';
@@ -123,7 +123,7 @@ abstract Class InfosciencePublication2018Render {
             }
 
             if ($doi) {
-                $links_html .= '<a class="text-muted" href="https://dx.doi.org/' . $doi[0] . '" target="_blank">View at publisher</a>';
+                $links_html .= '<a class="text-muted" href="https://dx.doi.org/' . $doi[0] . '" target="_blank">' .  esc_html__('View at publisher', 'epfl') . '</a>';
             }
             
             $links_html .= '  </p>';
