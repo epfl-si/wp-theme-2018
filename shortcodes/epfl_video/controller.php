@@ -5,9 +5,9 @@
  * 4rth argument is number of arguments the function can accept
  **/
 
-add_action('epfl_video_action', 'renderVideo', 10, 3);
+add_action('epfl_video_action', 'renderVideo', 10, 1);
 
-function renderVideo ($url, $width, $height) {
+function renderVideo ($url) {
 
   if (is_admin()) {
 
@@ -18,8 +18,6 @@ function renderVideo ($url, $width, $height) {
   } else {
     
     set_query_var('epfl_video_url', $url);
-    set_query_var('epfl_video_width', $width);
-    set_query_var('epfl_video_height', $height);
     get_template_part('shortcodes/epfl_video/view');
   }
 }
