@@ -1,6 +1,9 @@
 
 # CHANGELOG
 
+*1.2.8* (2018-09-20)
+  - bump version to fix missing commits
+
 *1.2.7* (2018-09-20)
   - epfl-news: add video mp4 feature
   - fix for all plugins : fix html escaping
