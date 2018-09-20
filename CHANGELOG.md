@@ -1,6 +1,14 @@
 
 # CHANGELOG
 
+*1.2.7* (2018-09-20)
+  - epfl-news: add video mp4 feature
+  - fix for all plugins : fix html escaping
+  - epfl-news: add template card for 1,2 or 3 news
+  - epfl-infoscience-search: add render html
+  - epfl-video: clean width and heigt parameters
+  - epfl-map: add render html
+
 *1.2.6* (2018-09-11)
   - Styleguide 1.3.0 + Header search
   - Refactor faculty to schools for all visible parts
