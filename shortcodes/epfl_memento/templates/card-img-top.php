@@ -10,5 +10,5 @@ if (!$data->visual_url) return '';
 ?>
 
 <picture class="card-img-top">
-    <img src="<?php echo $visual_url ?>" class="img-fluid" title="<?php echo $data->image_description ?>" alt="<?php echo $data->image_description ?>" />
+    <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($data->image_description) ?>" alt="<?php echo esc_attr($data->image_description) ?>" />
 </picture>

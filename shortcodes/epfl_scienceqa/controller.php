@@ -7,8 +7,6 @@
 add_action('epfl_scienceqa_action', 'renderEpflScienceQA', 1, 1);
 
 function renderEpflScienceQA($item) {
-  ob_start();
-
   if (is_admin()) {
 
     // render placeholder for backend editor
@@ -21,5 +19,4 @@ function renderEpflScienceQA($item) {
     get_template_part('shortcodes/epfl_scienceqa/view');  
   
   }
-  return ob_end_flush();
 }
