@@ -1,6 +1,9 @@
 
 # CHANGELOG
 
+*1.2.9* (2018-09-22)
+  - epfl-news: delete stickers parameter
+
 *1.2.8* (2018-09-20)
   - bump version to fix missing commits
 
