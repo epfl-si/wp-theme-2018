@@ -1,5 +1,5 @@
 <?php
-  $data = get_query_var('epfl_faculties_data');
+  $data = get_query_var('epfl_schools_data');
   if (!$data) return true;
 ?>
 <?php if (true): ?>
