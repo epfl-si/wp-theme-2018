@@ -1,17 +1,16 @@
 <?php
   require_once('utils.php');
-  $data = get_query_var('epfl_people_data');
-  $unit = get_query_var('epfl_people_unit');
+  $persons = get_query_var('epfl_people_persons');
 ?>
 
 <?php 
-  foreach($data as $person):
-      $photo_url  = epfl_people_get_photo($person);
-      $phones     = epfl_people_get_phones($person);
-      $function   = epfl_people_get_function($person, $unit);
-      $room       = epfl_people_get_room($person, $unit);
-      $room_url   = epfl_people_get_room_url($room);
-      $people_url = epfl_people_get_people_url($person);
+  foreach($persons as $person):
+    $photo_url  = epfl_people_get_photo($person);
+    $phones     = epfl_people_get_phones($person);
+    $function   = epfl_people_get_function($person);
+    $room       = epfl_people_get_room($person);
+    $room_url   = epfl_people_get_room_url($room);
+    $people_url = epfl_people_get_people_url($person);
 ?>
 <div class="card">
   <div class="card-body">

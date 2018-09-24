@@ -28,38 +28,31 @@ function epfl_people_get_phones($person) {
 /**
  * Get person function
  */
-function epfl_people_get_function($person, $unit) {
+function epfl_people_get_function($person) {
 
-    $function = "";
+    $functions = [];
     foreach($person->unites as $current_unit) {
-        if ($current_unit->sigle === strtoupper($unit)) {
-            $function = $current_unit->fonction;
-            break;
-        }
+        $functions[] = $current_unit->fonction;
     }
-    return $function;
+    return $functions[0];
 }
 
 /**
  * Get room function
  */
-function epfl_people_get_room($person, $unit) {
-
-    $room = "";
+function epfl_people_get_room($person) {
+    
+    $rooms = [];
     foreach($person->unites as $current_unit) {
-        if ($current_unit->sigle === strtoupper($unit)) {
-            $room = $current_unit->rooms[0];
-            break;
-        }
+        $rooms[] = $current_unit->rooms;
     }
-    return $room;
+    return $rooms[0];
 }
 
 /**
  * Get URL room function
  */
 function epfl_people_get_room_url($room) {
-
     return "https://plan.epfl.ch/?room=" . $room; 
 }
 
@@ -69,8 +62,8 @@ function epfl_people_get_room_url($room) {
 function epfl_people_get_people_url($person) {
 
     $slug = "";
-    if ($person->mail_id) {
-        $slug = $person->mail_id;
+    if ($person->email) {
+        $slug = str_replace("@epfl.ch", "", $person->email);
     } else {
         $slug = $person->sciper;
     }

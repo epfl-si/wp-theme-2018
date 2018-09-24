@@ -5,9 +5,9 @@
  * 4rth argument is number of arguments the function can accept
  **/
 
-add_action('epfl_people_action', 'renderPeople', 10, 2);
+add_action('epfl_people_action', 'renderPeople', 10, 1);
 
-function renderPeople ($items, $unit) {
+function renderPeople ($persons) {
 
   if (is_admin()) {
 
@@ -17,8 +17,7 @@ function renderPeople ($items, $unit) {
 
   } else {
 
-    set_query_var('epfl_people_unit', $unit);
-    set_query_var('epfl_people_data', $items);
+    set_query_var('epfl_people_persons', $persons);
     get_template_part('shortcodes/epfl_people/view');
 
   }
