@@ -34,7 +34,7 @@
       $is_inscription_required = is_inscription_required($event->invitation);
 ?>
 
-<?php if (true === $is_first_event && true === $display_first_event): ?> 
+<?php if ($is_first_event and $display_first_event): ?>
 
 <div class="card-slider-cell card-slider-cell-lg">
   <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
@@ -53,7 +53,7 @@
 
 <!-- JUST FINISHED -->
 
-  <?php if (true === $is_just_finished): ?>
+  <?php if ($is_just_finished): ?>
     <div class="card-slider-cell">
       <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
         <div class="card-body">
@@ -62,8 +62,7 @@
             <?php echo esc_html($event->title) ?>
           </h3>
           <div class="card-info">
-          <?php get_template_part('shortcodes/epfl_memento/templates/card-info');?>
-          </div>  
+          <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
         </div>
       </a>
     </div>
@@ -71,7 +70,7 @@
   <!-- END JUST FINISHED -->
 
   <!-- LEARN MORE & APPLY -->
-  <?php elseif (true === $is_inscription_required): ?>
+  <?php elseif ($is_inscription_required): ?>
     <div class="card-slider-cell">
       <div class="card card-gray">
         <div class="card-body">
@@ -128,7 +127,7 @@ $count++;
 <div class="container">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <h2><?php echo esc_html_e('The next events') ?></h2>
+      <h2><?php echo esc_html_e('Next events') ?></h2>
     </div>
     <div class="col-md-6 text-right">
       <a href="<?php echo esc_url($memento_url); ?>"><?php echo esc_html_e('See all events') ?></a>
@@ -151,7 +150,7 @@ $count++;
 
 ?>
 
-<?php if (true === $is_first_event && true === $display_first_event): ?> 
+<?php if ($is_first_event and $display_first_event): ?> 
   <div class="col-md-6">
     <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal" itemscope itemtype="http://schema.org/Event">
       <div class="card-body">
@@ -189,7 +188,7 @@ $count++;
 
   <?php endif ?>  
 
-  <?php if ($count === $nb_events && true === $display_first_event): ?>
+  <?php if ($count === $nb_events and $display_first_event): ?>
     </div>
   </div>
   <?php endif ?>  

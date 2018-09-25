@@ -20,15 +20,13 @@ $data = get_event();
 <p>
     <?php if ($data->place_and_room !== ''): ?>
         <?php esc_html_e('Place and room', 'epfl');?>:
-    <?php endif ?> 
     <b><?php echo esc_html($data->place_and_room) ?></b>
     <br>
+    <?php endif ?>
     
-    <?php if (get_locale() == 'fr_FR' && $data->category->fr_label !== ''): ?>
-        Catégorie: <b><?php echo esc_html($data->category->fr_label) ?></b>
-    <?php else : ?>
-        <?php if ($data->category->en_label !== ''): ?>
-        Category: <b><?php echo esc_html($data->category->en_label) ?></b>
-        <?php endif ?> 
+    <?php if (get_locale() == 'fr_FR' and $data->category->fr_label !== ''): ?>
+        <?php echo esc_html_e('Category') ?>: <b><?php echo esc_html($data->category->fr_label) ?></b>
+    <?php elseif ($data->category->en_label !== ''): ?>
+        <?php echo esc_html_e('Category') ?>: <b><?php echo esc_html($data->category->en_label) ?></b>
     <?php endif ?> 
 </p>
