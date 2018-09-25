@@ -34,7 +34,7 @@
       $is_inscription_required = is_inscription_required($event->invitation);
 ?>
 
-<?php if (true === $is_first_event && true === $display_first_event): ?> <!-- IF LEVEL2 -->
+<?php if (true === $is_first_event && true === $display_first_event): ?> 
 
 <div class="card-slider-cell card-slider-cell-lg">
   <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
@@ -197,7 +197,7 @@ $count++;
     $count++;
   }
   ?>
-  
+
 </div>
 </div>
 <?php endif ?>
