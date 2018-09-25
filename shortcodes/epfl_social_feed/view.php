@@ -1,10 +1,11 @@
+
 <?php
     $twitter_url      = get_query_var('epfl_social_feed_twitter_url');
     $instagram_url    = get_query_var('epfl_social_feed_instagram_url');
     $facebook_url    = get_query_var('epfl_social_feed_facebook_url');
 ?>
 
-<div class="social-feed-group">
+<div class="social-feed-group container">
   <?php if ($twitter_url): ?>
   <div class="social-feed-container">
     <?php get_template_part('shortcodes/epfl_social_feed/twitter_view'); ?>
