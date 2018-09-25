@@ -63,6 +63,7 @@
           </h3>
           <div class="card-info">
           <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
+          </div>
         </div>
       </a>
     </div>
@@ -122,7 +123,7 @@ $count++;
   </div>
 </div>
 
-<?php else: // TEMPLATE LISTING ?> 
+<?php elseif ("3" === $template): // TEMPLATE LISTING ?> 
 
 <div class="container">
   <div class="row align-items-center">
@@ -199,5 +200,43 @@ $count++;
   ?>
 
 </div>
+</div>
+<?php elseif ("4" === $template): // TEMPLATE LISTING WITHOUT HIGHLIGHT ?>
+
+<div class="list-group">
+<?php
+    if (!(bool) $data) {
+      echo '<div><h3>';
+      esc_html_e('No scheduled events', 'epfl');
+      echo '</h3></div>';
+    }
+
+    $count=1;
+    foreach($data as $event) {
+      set_query_var('epfl_event', $event);
+      $is_first_event = ($count==1);
+      $visual_url = substr($event->visual_url, 0, -11) . '448x448.jpg';
+
+?>
+
+  <a href="<?php echo esc_url($event->event_url) ?>" class="list-group-item list-group-item-gray list-group-teaser link-trapeze-vertical" itemscope itemtype="http://schema.org/Event">
+    <div class="list-group-teaser-container">
+      <div class="list-group-teaser-thumbnail">
+        <picture>
+          <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" alt="<?php echo esc_attr($event->image_description) ?>" title="<?php echo esc_attr($event->image_description) ?>">
+        </picture>
+      </div>
+      <div class="list-group-teaser-content">
+        <p class="h5 card-title" itemprop="name"><?php echo esc_html($event->title) ?></p>
+        <div class="card-info mt-0">
+        <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
+        </div>
+      </div>
+    </div>
+  </a>
+  <?php
+    $count++;
+  }
+  ?>
 </div>
 <?php endif ?>
