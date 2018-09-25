@@ -5,7 +5,7 @@
 ?>
 
 <button
-      class="collapse-title collapse-title-desktop collapsed"
+      class="collapse-title collapse-title-desktop <?php if ($state === 'close'): ?> collapsed <?php endif ?>"
       type="button"
       data-toggle="collapse"
       data-target="<?php echo esc_attr('#collapse-' . $title) ?>"
