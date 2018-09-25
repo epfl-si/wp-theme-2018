@@ -62,7 +62,8 @@
             <?php echo esc_html($event->title) ?>
           </h3>
           <div class="card-info">
-          <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
+          <?php get_template_part('shortcodes/epfl_memento/templates/card-info');?>
+          </div>  
         </div>
       </a>
     </div>
