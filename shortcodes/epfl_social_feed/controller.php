@@ -28,9 +28,8 @@ function renderSocialFeed ($args) {
     if (array_key_exists('height', $args) && !empty($args['height'])) {
       set_query_var('epfl_social_feed_height', $args['height']);
     } else {
-      set_query_var('epfl_social_feed_height', '788');
+      set_query_var('epfl_social_feed_height', '347');
     }
-
 
     get_template_part('shortcodes/epfl_social_feed/view');
   }
