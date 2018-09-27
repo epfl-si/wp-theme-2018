@@ -22,7 +22,7 @@
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>      
     </div>
     <div>
-      <a class="btn btn-secondary mt-4" href="<?php echo $twitter_url ?>" target="_blank">Nous rejoindre sur Twitter</a>
+      <a class="btn btn-secondary mt-4" href="<?php echo $twitter_url ?>" target="_blank"><?php esc_html_e('Follow us on Twitter', 'epfl-shortcodes'); ?></a>
     </div>
   </div>
 </div>

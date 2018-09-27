@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-09-18 11:14+0200\n"
-"PO-Revision-Date: 2018-09-18 11:16+0200\n"
+"POT-Creation-Date: 2018-09-27 11:22+0200\n"
+"PO-Revision-Date: 2018-09-27 11:23+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ../shortcodes\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
@@ -149,22 +149,56 @@ msgstr "Aucun événement programmé"
 msgid "Learn more & apply"
 msgstr "Information & inscription"
 
-#: epfl_news/view.php:45
+#: epfl_news/view.php:46
 msgid "The last news"
 msgstr "Les dernières actualités"
 
-#: epfl_news/view.php:114 epfl_news/view.php:155 epfl_news/view.php:184
+#: epfl_news/view.php:116 epfl_news/view.php:157 epfl_news/view.php:186
 msgid "News"
 msgstr "Actualités"
 
-#: epfl_news/view.php:119 epfl_news/view.php:128 epfl_news/view.php:160
-#: epfl_news/view.php:169 page_highlight/view.php:33 page_highlight/view.php:45
+#: epfl_news/view.php:121 epfl_news/view.php:130 epfl_news/view.php:162
+#: epfl_news/view.php:171 page_highlight/view.php:33 page_highlight/view.php:45
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: epfl_news/view.php:200 epfl_news/view.php:220
+#: epfl_news/view.php:202 epfl_news/view.php:222
 msgid "All news"
 msgstr "Toutes les actualités"
+
+#: epfl_publication/renderers/fields.php:113
+msgid "Dir."
+msgstr "Dir."
+
+#: epfl_publication/renderers/fields.php:339
+#: epfl_publication/renderers/fields.php:341
+#: epfl_publication/renderers/fields.php:526
+msgid "p."
+msgstr "p."
+
+#: epfl_publication/renderers/fields.php:356
+msgid "Vol."
+msgstr "Vol."
+
+#: epfl_publication/renderers/fields.php:367
+msgid "num."
+msgstr "num."
+
+#: epfl_publication/renderers/fields.php:480
+msgid "Patent number(s)"
+msgstr "Numéro de brevet"
+
+#: epfl_publication/renderers/publications.php:101
+msgid "Detailed record"
+msgstr "Notice détaillée"
+
+#: epfl_publication/renderers/publications.php:118
+msgid "Full text"
+msgstr "Texte intégral"
+
+#: epfl_publication/renderers/publications.php:126
+msgid "View at publisher"
+msgstr "Consulter chez l'éditeur"
 
 #: epfl_scienceqa/view.php:13
 msgid "Question de science"
@@ -173,6 +207,18 @@ msgstr ""
 #: epfl_scienceqa/view.php:33
 msgid "Voter"
 msgstr ""
+
+#: epfl_social_feed/facebook_view.php:32
+msgid "Like our page on Facebook"
+msgstr "Likez notre page Facebook"
+
+#: epfl_social_feed/instagram_view.php:57
+msgid "Follow us on Instagram"
+msgstr "Suivez-nous sur Instagram"
+
+#: epfl_social_feed/twitter_view.php:25
+msgid "Follow us on Twitter"
+msgstr "Nous rejoindre sur Twitter"
 
 #: hero/shortcake.php:37
 msgid "Hero"
@@ -229,114 +275,60 @@ msgstr ""
 msgid "School"
 msgstr ""
 
+#~ msgid "Journal Articles"
+#~ msgstr "Articles de journaux"
+
+#~ msgid "Conference Papers"
+#~ msgstr "Papiers de conférences"
+
+#~ msgid "Reviews"
+#~ msgstr "Reviews"
+
+#~ msgid "Books"
+#~ msgstr "Livres"
+
+#~ msgid "Theses"
+#~ msgstr "Thèses"
+
+#~ msgid "Book Chapters"
+#~ msgstr "Chapitres de livres"
+
+#~ msgid "Conference Proceedings"
+#~ msgstr "Actes de congrès"
+
+#~ msgid "Working Papers"
+#~ msgstr "Documents de travail"
+
+#~ msgid "Reports"
+#~ msgstr "Rapports techniques"
+
+#~ msgid "Posters"
+#~ msgstr "Posters"
+
+#~ msgid "Talks"
+#~ msgstr "Présentations"
+
+#~ msgid "Standards"
+#~ msgstr "Normes"
+
+#~ msgid "Patents"
+#~ msgstr "Brevets"
+
+#~ msgid "Student Projects"
+#~ msgstr "Projets d'étudiants"
+
+#~ msgid "Teaching Resources"
+#~ msgstr "Documents d'enseignement"
+
+#~ msgid "Media"
+#~ msgstr "Média"
+
+#~ msgid "Datasets"
+#~ msgstr "Echantillons de données"
+
+#~ msgid "Social feed"
+#~ msgstr "Réseaux sociaux"
+
 #, fuzzy
 #~ msgid "Faculty"
 #~ msgstr "Template pour les sites de facultés (avec 4 actualités)"
-
-#: Infoscience Search
-#: templates/book_chapters_detailed.php:49 templates/book_chapters_short.php:59
-#: templates/conference_papers_detailed.php:47
-#: templates/conference_papers_short.php:44
-#: templates/journal_articles_detailed.php:45 templates/reports_detailed.php:19
-#: templates/theses_detailed.php:54 templates/theses_short.php:44
-msgid "p."
-msgstr "p."
-
-#: templates/common/links-bar.php:10
-msgid "Detailed record"
-msgstr "Notice détaillée"
-
-#: templates/common/links-bar.php:14
-msgid "Full text"
-msgstr "Texte intégral"
-
-#: templates/common/links-bar.php:19
-msgid "View at publisher"
-msgstr "Consulter chez l'éditeur"
-
-#: templates/journal_articles_detailed.php:27
-msgid "Vol."
-msgstr "Vol."
-
-#: templates/journal_articles_detailed.php:36
-msgid "num."
-msgstr "num."
-
-#: templates/patents_detailed.php:42
-msgid "Patent number(s)"
-msgstr "Numéro de brevet"
-
-#: templates/theses_detailed.php:19 templates/theses_short.php:11
-msgid "Dir."
-msgstr "Dir."
-
-#: 17
-msgid "Journal Articles"
-msgstr "Articles de journaux"
-
-#: 18
-msgid "Conference Papers"
-msgstr "Papiers de conférences"
-
-#: 19
-msgid "Reviews"
-msgstr "Reviews"
-
-#: 20
-msgid "Books"
-msgstr "Livres"
-
-#: 21
-msgid "Theses"
-msgstr "Thèses"
-
-#: 22
-msgid "Book Chapters"
-msgstr "Chapitres de livres"
-
-#: 23
-msgid "Conference Proceedings"
-msgstr "Actes de congrès"
-
-#: 24
-msgid "Working Papers"
-msgstr "Documents de travail"
-
-#: 25
-msgid "Reports"
-msgstr "Rapports techniques"
-
-#: 26
-msgid "Posters"
-msgstr "Posters"
-
-#: 27
-msgid "Talks"
-msgstr "Présentations"
-
-#: 28
-msgid "Standards"
-msgstr "Normes"
-
-#: 29
-msgid "Patents"
-msgstr "Brevets"
-
-#: 30
-msgid "Student Projects"
-msgstr "Projets d'étudiants"
-
-#: 31
-msgid "Teaching Resources"
-msgstr "Documents d'enseignement"
-
-#: 32
-msgid "Media"
-msgstr "Média"
-
-#: 33
-msgid "Datasets"
-msgstr "Echantillons de données"
-
-msgid "Social feed"
-msgstr "Réseaux sociaux"

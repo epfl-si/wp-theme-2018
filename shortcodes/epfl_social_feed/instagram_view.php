@@ -54,6 +54,6 @@
       <script async defer src="//www.instagram.com/embed.js"></script>
     </div>
     <div>
-      <a class="btn btn-secondary mt-4" href="<?php echo $instagram_url ?>" target="_blank">Suivez-nous sur Instagram</a>
+      <a class="btn btn-secondary mt-4" href="<?php echo $instagram_url ?>" target="_blank"><?php esc_html_e('Follow us on Instagram', 'epfl-shortcodes'); ?></a>
     </div>
 </div>
