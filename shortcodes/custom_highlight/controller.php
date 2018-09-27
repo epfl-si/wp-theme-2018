@@ -12,7 +12,7 @@ function renderCustomHighlightTeaser ($args) {
   ob_start();
   if (is_admin()) {
     // render placeholder for backend editor
-    set_query_var('epfl_placeholder_title', 'Custom teaser');
+    set_query_var('epfl_placeholder_title', 'Custom highlight');
     get_template_part('shortcodes/placeholder');
   } else {
     // render shortcode
