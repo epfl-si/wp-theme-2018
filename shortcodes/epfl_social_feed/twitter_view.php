@@ -1,5 +1,6 @@
 <?php
     $twitter_url = get_query_var('epfl_social_feed_twitter_url');
+    $twitter_limit = get_query_var('epfl_social_feed_twitter_limit');
     $height = get_query_var('epfl_social_feed_height');
 
     # set a min height that match the one for facebook
@@ -11,7 +12,9 @@
   <div class="social-feed-content">
     <div>
       <a class="twitter-timeline"
-        data-tweet-limit=""
+        <?php if (!empty($twitter_limit) || $twitter_limit != 0): ?>
+        data-tweet-limit="<?php echo $twitter_limit ?>"
+        <?php endif ?>
         data-chrome="nofooter"
         data-height="<?php echo $height ?>"
         href="<?php echo $twitter_url ?>">

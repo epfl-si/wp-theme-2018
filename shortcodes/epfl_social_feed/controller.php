@@ -10,12 +10,16 @@ add_action('epfl_social_feed_action', 'renderSocialFeed', 10, 1);
 function renderSocialFeed ($args) {
   if (is_admin()) {
     // render placeholder for backend editor
-    set_query_var('epfl_placeholder_title', 'Social Feed');
+    set_query_var('epfl_placeholder_title', 'Social feed');
     get_template_part('shortcodes/placeholder');
   } else {
     if (array_key_exists('twitter_url', $args) && !empty($args['twitter_url'])) {
       set_query_var('epfl_social_feed_twitter_url', $args['twitter_url']);
     }
+
+    if (array_key_exists('twitter_limit', $args) && !empty($args['twitter_limit'])) {
+      set_query_var('epfl_social_feed_twitter_limit', $args['twitter_limit']);
+    }    
 
     if (array_key_exists('instagram_url', $args) && !empty($args['instagram_url'])) {
       set_query_var('epfl_social_feed_instagram_url', $args['instagram_url']);
