@@ -337,3 +337,6 @@ msgstr "Média"
 #: 33
 msgid "Datasets"
 msgstr "Echantillons de données"
+
+msgid "Social feed"
+msgstr "Réseaux sociaux"
