@@ -16,7 +16,7 @@
 ?>
 
 <?php if ($number_urls > 1): ?>
-<div class="social-feed-group container">
+<div class="social-feed-group">
   <?php foreach ($social_feed_data as $social_feed): ?>
     <?php if (!empty($social_feed[0])): ?>
   <div class="social-feed-container">
