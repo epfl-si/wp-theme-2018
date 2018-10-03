@@ -23,3 +23,4 @@ require_once(get_template_directory().'/shortcodes/epfl_video/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_people/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_publication/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_map/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_share/controller.php');
