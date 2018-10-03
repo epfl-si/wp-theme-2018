@@ -5,9 +5,9 @@
  * 4rth argument is number of arguments the function can accept
  **/
 
-add_action('epfl_news_action', 'renderNews', 10, 5);
+add_action('epfl_news_action', 'renderNews', 10, 3);
 
-function renderNews ($title, $actus, $template, $stickers, $all_news_link) {
+function renderNews ($actus, $template, $all_news_link) {
 
   if (is_admin()) {
 
