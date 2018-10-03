@@ -9,7 +9,7 @@
     $phones     = epfl_people_get_phones($person);
     $functions  = epfl_people_get_functions($person);
     $rooms      = epfl_people_get_rooms($person);
-    $room_url   = epfl_people_get_room_url($room[0]);
+    $room_url   = epfl_people_get_room_url($rooms[0]);
     $people_url = epfl_people_get_people_url($person);
 ?>
 <div class="card">
