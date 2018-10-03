@@ -15,42 +15,40 @@ function epfl_people_get_photo($person) {
  * Get person phones number
  */
 function epfl_people_get_phones($person) {
- 
+
     $phones = [];
     foreach($person->unites as $current_unit) {
-        foreach($current_unit->phones as $phone) {
-            $phones[] = $phone;      
-        }
+        $phones = array_merge($phones, $current_unit->phones);
     }
     return $phones;
 }
 
 /**
- * Get person function
+ * Get person functions
  */
-function epfl_people_get_function($person) {
+function epfl_people_get_functions($person) {
 
     $functions = [];
     foreach($person->unites as $current_unit) {
         $functions[] = $current_unit->fonction;
     }
-    return $functions[0];
+    return $functions;
 }
 
 /**
- * Get room function
+ * Get person rooms
  */
-function epfl_people_get_room($person) {
+function epfl_people_get_rooms($person) {
     
     $rooms = [];
     foreach($person->unites as $current_unit) {
         $rooms[] = $current_unit->rooms;
     }
-    return $rooms[0];
+    return $rooms;
 }
 
 /**
- * Get URL room function
+ * Get URL room
  */
 function epfl_people_get_room_url($room) {
     return "https://plan.epfl.ch/?room=" . $room; 
