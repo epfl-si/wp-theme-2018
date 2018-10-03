@@ -1,7 +1,7 @@
 <?php
-  $post_title         = get_query_var('epfl_share_post_title');
-  $target_url     = get_query_var('epfl_share_target_url');
-  $target_url_encoded = get_query_var('epfl_share_target_url_encoded');
+  $post_title         = esc_attr(get_query_var('epfl_share_post_title'));
+  $target_url         = esc_attr(get_query_var('epfl_share_target_url'));
+  $target_url_encoded = esc_attr(get_query_var('epfl_share_target_url_encoded'));
 ?>
 
 <div class="bg-gray-100 py-5">
