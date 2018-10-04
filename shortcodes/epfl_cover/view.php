@@ -8,7 +8,7 @@
     <picture>
       <img src="<?php echo esc_url($image) ?>" class="img-fluid" alt="<?php echo esc_attr($description) ?>">
     </picture>
-    <?php if ("" !== $description): ?>
+    <?php if (!empty($description)): ?>
     <figcaption>
       <button
         aria-hidden="true"
