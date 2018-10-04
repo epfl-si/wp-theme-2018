@@ -8,6 +8,7 @@
     <picture>
       <img src="<?php echo esc_url($image) ?>" class="img-fluid" alt="<?php echo esc_attr($description) ?>">
     </picture>
+    <?php if ("" === $description): ?>
     <figcaption>
       <button
         aria-hidden="true"
@@ -21,5 +22,6 @@
       </button>
       <p class="sr-only"><?php echo esc_html($description) ?></p>
       </figcaption>
+      <?php endif ?>
   </figure>
 </div>
