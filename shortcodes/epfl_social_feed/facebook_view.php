@@ -1,5 +1,5 @@
 <?php
-    $facebook_url = get_query_var('epfl_social_feed_facebook_url');
+    $facebook_url = esc_url(get_query_var('epfl_social_feed_facebook_url'));
     $height = get_query_var('epfl_social_feed_height') + 11; # add 11px to match the twitter height
 ?>
 

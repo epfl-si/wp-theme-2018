@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-10-03 12:24+0200\n"
-"PO-Revision-Date: 2018-10-03 12:25+0200\n"
+"POT-Creation-Date: 2018-10-04 13:01+0200\n"
+"PO-Revision-Date: 2018-10-04 13:02+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ../shortcodes\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
@@ -133,34 +133,21 @@ msgstr ""
 msgid "Definition list"
 msgstr ""
 
-#: epfl_memento/templates/card-info.php:22
+#: epfl_memento/templates/card-info.php:23
 msgid "Place and room"
 msgstr "Lieu et salle"
-
-#: epfl_memento/templates/card-info.php:28
-#: epfl_memento/templates/card-info.php:30
-msgid "Category"
-msgstr "Catégorie"
 
 #: epfl_memento/templates/card-slider-footer.php:16
 msgid "Complete agenda of events"
 msgstr "Voir l’agenda complet des événements"
 
-#: epfl_memento/view.php:25 epfl_memento/view.php:142 epfl_memento/view.php:210
+#: epfl_memento/view.php:17
 msgid "No scheduled events"
 msgstr "Aucun événement programmé"
 
-#: epfl_memento/view.php:90
+#: epfl_memento/view.php:76
 msgid "Learn more & apply"
 msgstr "Information & inscription"
-
-#: epfl_memento/view.php:131
-msgid "Next events"
-msgstr "Les prochains événements"
-
-#: epfl_memento/view.php:134
-msgid "See all events"
-msgstr "Voir tous les événements"
 
 #: epfl_news/view.php:46
 msgid "The last news"
@@ -211,7 +198,7 @@ msgstr "Texte intégral"
 
 #: epfl_publication/renderers/publications.php:126
 msgid "View at publisher"
-msgstr "Consulter chez l'éditeur"
+msgstr ""
 
 #: epfl_scienceqa/view.php:13
 msgid "Question de science"
@@ -225,22 +212,13 @@ msgstr ""
 msgid "Like our page on Facebook"
 msgstr "Likez notre page Facebook"
 
-#: epfl_social_feed/instagram_view.php:57
-msgid "Follow us on Instagram"
-msgstr "Suivez-nous sur Instagram"
+#: epfl_social_feed/instagram_view.php:22
+msgid "View this post on Instagram"
+msgstr "Voir ce post sur Instagram"
 
 #: epfl_social_feed/twitter_view.php:25
 msgid "Follow us on Twitter"
 msgstr "Nous rejoindre sur Twitter"
-
-#: epfl_share/view.php:12
-msgid "Share on"
-msgstr "Partager sur"
-
-#: epfl_share/view.php:16 epfl_share/view.php:20 epfl_share/view.php:42
-#: epfl_share/view.php:46
-msgid "Follow us on"
-msgstr "Nous suivre sur"
 
 #: hero/shortcake.php:37
 msgid "Hero"
@@ -297,6 +275,9 @@ msgstr ""
 msgid "School"
 msgstr ""
 
+#~ msgid "at publisher"
+#~ msgstr "Consulter chez l'éditeur"
+
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"
 
@@ -347,6 +328,9 @@ msgstr ""
 
 #~ msgid "Datasets"
 #~ msgstr "Echantillons de données"
+
+#~ msgid "Social feed"
+#~ msgstr "Réseaux sociaux"
 
 #, fuzzy
 #~ msgid "Faculty"

@@ -1,5 +1,5 @@
 <?php
-    $twitter_url = get_query_var('epfl_social_feed_twitter_url');
+    $twitter_url = esc_url(get_query_var('epfl_social_feed_twitter_url'));
     $twitter_limit = get_query_var('epfl_social_feed_twitter_limit');
     $height = get_query_var('epfl_social_feed_height');
 
