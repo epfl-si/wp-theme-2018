@@ -3,7 +3,7 @@
     $instagram_url    = get_query_var('epfl_social_feed_instagram_url');
     $facebook_url    = get_query_var('epfl_social_feed_facebook_url');
 
-    # build a [url, template path] arry
+    # build a [url, template path] array
     $social_feed_data = [
       [$twitter_url, 'shortcodes/epfl_social_feed/twitter_view'],
       [$instagram_url, 'shortcodes/epfl_social_feed/instagram_view'],
