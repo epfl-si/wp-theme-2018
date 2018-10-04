@@ -20,5 +20,8 @@ require_once(get_template_directory().'/shortcodes/epfl_cover/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_card/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_links_group/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_video/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_people/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_publication/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_map/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_social_feed/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_share/controller.php');
