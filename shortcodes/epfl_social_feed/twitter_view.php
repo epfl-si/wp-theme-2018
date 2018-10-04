@@ -3,9 +3,6 @@
     $twitter_limit = get_query_var('epfl_social_feed_twitter_limit');
     $height = get_query_var('epfl_social_feed_height');
     $width = get_query_var('epfl_social_feed_width');
-
-    # set a min height that match the one for facebook
-    #$height = intval($height) == 38 ? 366 : $height;
 ?>
 
 <div class="social-feed">
@@ -27,3 +24,4 @@
     </div>
   </div>
 </div>
+
