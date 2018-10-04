@@ -23,7 +23,8 @@ function renderSocialFeed ($args) {
     setQueryVars($args, 'twitter_limit');
     setQueryVars($args, 'instagram_url');
     setQueryVars($args, 'facebook_url');
-    setQueryVars($args, 'height', '347');
+    setQueryVars($args, 'height');
+    setQueryVars($args, 'width');
 
     get_template_part('shortcodes/epfl_social_feed/view');
   }

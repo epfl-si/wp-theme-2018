@@ -1,6 +1,7 @@
 <?php
-    $facebook_url = esc_url(get_query_var('epfl_social_feed_facebook_url'));
+    $facebook_url = get_query_var('epfl_social_feed_facebook_url');
     $height = get_query_var('epfl_social_feed_height') + 11; # add 11px to match the twitter height
+    $width = get_query_var('epfl_social_feed_width');
 ?>
 
 <div class="social-feed">
@@ -17,19 +18,20 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
       </script>
-      <div class="fb-page" style="height:auto;"
-          data-href="<?php echo $facebook_url ?>"
+      <div class="fb-page" style="height:auto;width:<?php esc_html_e($width) ?>px;"
+          data-href="<?php echo esc_url($facebook_url) ?>"
           data-tabs="timeline"
           data-small-header="true"
           data-adapt-container-width="false"
-          data-height="<?php echo $height?>"
+          data-height="<?php esc_html_e($height)?>"
+          data-width="<?php esc_html_e($width)?>"
           data-hide-cover="true"
           data-hide-cta="true"
           data-show-facepile="false">
           <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
       </div>
     <div>
-      <a class="btn btn-secondary mt-4" href="<?php echo $facebook_url ?>" target="_blank"><?php esc_html_e('Like our page on Facebook', 'epfl-shortcodes'); ?></a>
+      <a class="btn btn-secondary mt-4" href="<?php echo esc_url($facebook_url) ?>" target="_blank"><?php esc_html_e('Like our page on Facebook', 'epfl-shortcodes'); ?></a>
     </div>
   </div>
 </div>
