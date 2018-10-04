@@ -1,6 +1,15 @@
 
 # CHANGELOG
 
+*1.2.10* (2018-10-04)
+  - fix epfl-cover: check if description exists
+  - epfl-social: render HTML
+  - epfl-share: render HTML
+  - epfl-people: render HTML
+  - fix custom_hightlight admin label 
+  - epfl-memento: render HTML for listing templates
+  - epfl-toggle: render v2
+
 *1.2.9* (2018-09-22)
   - epfl-news: delete stickers parameter
 
