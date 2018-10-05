@@ -14,7 +14,7 @@
 
 <?php if ("1" === $template or "2" === $template): // TEMPLATE SLIDER ?> 
 
-<div class="container-full overflow-hidden">
+<div class="container-full overflow-hidden my-3">
   <div class="container">
     <div class="card-slider-wrapper">
       <div class="card-slider">
@@ -125,7 +125,7 @@ $count++;
 
 <?php elseif ("3" === $template): // TEMPLATE LISTING ?> 
 
-<div class="container">
+<div class="container my-3">
   <div class="row align-items-center">
     <div class="col-md-6">
       <h2><?php echo esc_html_e('Next events') ?></h2>

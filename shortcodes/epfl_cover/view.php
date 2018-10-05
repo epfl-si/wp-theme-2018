@@ -3,7 +3,7 @@
     $image = get_query_var('epfl_cover_image');
 ?>
 
-<div class="container">
+<div class="container my-3">
   <figure class="cover">
     <picture>
       <img src="<?php echo esc_url($image) ?>" class="img-fluid" alt="<?php echo esc_attr($description) ?>">

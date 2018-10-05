@@ -8,8 +8,8 @@ $classes = '';
 if ($data['layout'] == 'bottom') $classes = 'fullwidth-teaser-horizontal';
 if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
 ?>
-<div class="container-full">
-  <div class="fullwidth-teaser mt-5 <?php echo $classes; ?>">
+<div class="container-full my-3">
+  <div class="fullwidth-teaser <?php echo $classes; ?>">
   <?php if (has_post_thumbnail( $post )) : ?>
     <picture>
       <img src="<?php echo get_the_post_thumbnail_url($post, 'thumbnail_16_9_large') ?>" aria-labelledby="background-label" alt="An image description"
