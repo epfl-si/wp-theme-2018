@@ -5,7 +5,7 @@
   $map_url = 'https://plan.epfl.ch/iframe/?q=' . $query . '&amp;lang=' . $lang . '&amp;map_zoom=10';
 
 ?>
-<div class="container">
+<div class="container my-3">
   <div class="embed-responsive embed-responsive-16by9">
     <iframe 
       frameborder="0" 

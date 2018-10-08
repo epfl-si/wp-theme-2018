@@ -19,7 +19,7 @@ Class Infoscience2018Render {
     }
 
     protected static function pre_render() {
-        return '<div class="list-group mb-5">';
+        return '<div class="list-group my-3">';
     }
 
     public static function render($publications, $url='', $format="", $summary=false, $thumbnail=false, $debug=false) {

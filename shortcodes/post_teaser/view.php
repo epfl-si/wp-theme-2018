@@ -6,7 +6,7 @@ $postCount = count($data);
 $gray = $data['gray'];
 if (isset($data['gray'])) $postCount = $postCount - 1;
 ?>
-  <div class="container-full mt-5<?php echo $gray ? ' bg-gray-100' : '' ?>">
+  <div class="container-full my-3<?php echo $gray ? ' bg-gray-100' : '' ?>">
     <div class="container">
       <div class="card-deck<?php echo ($postCount < 3) ? ' card-deck-line' : '' ?>">
         <?php foreach($data as $key => $post) : ?>
