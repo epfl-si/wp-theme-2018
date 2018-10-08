@@ -10,8 +10,10 @@
     }
   }
 ?>
+<?php if ($elementCount > 1): ?>
 <div class="container my-3">
-  <div class="card-deck <?php echo ($elementCount < 3) ? ' card-deck-line' : '' ?>">
+  <div class="card-deck <?php echo ($elementCount < 3) && ($elementCount > 1) ? ' card-deck-line' : '' ?>">
+<?php endif ?>
     <?php
     for($i = 1; $i < 4; $i++):
       if ($data['title'.$i]) :
@@ -40,22 +42,7 @@
       endif;
       endfor;
     ?>
+<?php if ($elementCount > 1): ?>
   </div>
 </div>
-
-
-<?php /*
-<div class="card-deck<?php echo ($elementCount < 3) ? ' card-deck-line' : '' ?>">
-  <a href="<?php echo esc_url($link) ?>" class="card link-trapeze-horizontal">
-    <?php if ($image): ?> 
-    <picture class="card-img-top">
-      <img src="<?php echo esc_url($image) ?>" class="img-fluid" title="<?php echo esc_attr($title) ?>" alt="<?php echo esc_attr($title) ?>" />
-    </picture>
-    <?php endif ?>
-    <div class="card-body">
-      <h3 class="card-title"><?php echo esc_html($title) ?></h3>
-      <p><?php echo esc_html($text) ?></p>
-    </div>
-  </a>
-</div>
-*/?>
+<?php endif ?>
