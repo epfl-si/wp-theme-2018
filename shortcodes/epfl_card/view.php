@@ -5,7 +5,7 @@
 
   $elementCount = 0;
   for($i = 1; $i < 4; $i++){
-    if (strlen($data['title'.$i]) > 0) {
+    if (strlen(sanitize_text_field($data['title'.$i])) > 0) {
       $elementCount++;
     }
   }
@@ -34,7 +34,7 @@
       </picture>
     <?php endif; ?>
       <div class="card-body">
-        <h3 class="card-title"><?php echo $data['title'.$i] ?: 'Title' ?></h3>
+        <h3 class="card-title"><?php echo sanitize_text_field($data['title'.$i]) ?: 'Title' ?></h3>
         <p><?php echo wp_kses_post(urldecode($data['content'.$i])) ?: '' ?></p>
       </div>
     </a>
@@ -46,3 +46,4 @@
   </div>
 </div>
 <?php endif ?>
+
