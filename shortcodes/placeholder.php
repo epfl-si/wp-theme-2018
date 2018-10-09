@@ -5,6 +5,6 @@
 <div class="placeholder">
   <div class="content">
     <h5>&#60;Shortcode&#62;</h5>
-    <h3><?php echo $title ?></h3>
+    <h3><?php echo __($title, 'epfl') ?></h3>
   </div>
 </div>
