@@ -1,8 +1,7 @@
 <?php
     $data = get_query_var('epfl_contact-data');
 ?>
-<div class="container-full bg-gray-100 py-3 my-3">
-  <div class="bg-white p-2 p-md-3">
+<div class="container-full p-4 p-md-5 my-3">
     <div class="row">
       <div class="col-md-6">
         <h3>Contact</h3>
@@ -30,8 +29,7 @@
       </div>
       <?php if ($data['map_query']): ?>
       <div class="col-md-6 d-flex flex-column">
-        <?php echo do_shortcode( '[epfl_map lang="en" query="'. $data['map_query'] .'"]' ); ?>
+        <?php echo do_shortcode( '[epfl_map lang="' .pll_current_language(). '" query="'. $data['map_query'] .'"]' ); ?>
       <?php endif; ?>
     </div>
-  </div>
 </div>
