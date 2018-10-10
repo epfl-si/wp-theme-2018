@@ -1,7 +1,12 @@
 <?php
     $data = get_query_var('epfl_contact-data');
+    $gray_wrapper = $data['gray_wrapper'];
 ?>
-<div class="container-full p-4 p-md-5 my-3">
+
+<div class="container-full <?php echo ($gray_wrapper) ? 'bg-gray-100 py-2 my-5' : 'my-3'; ?>">
+  <?php if ($gray_wrapper): ?>
+  <div class="bg-white p-4 p-md-5">
+  <?php endif; ?>
     <div class="row">
       <div class="col-md-6">
         <h3>Contact</h3>
@@ -32,4 +37,5 @@
         <?php echo do_shortcode( '[epfl_map lang="' .pll_current_language(). '" query="'. $data['map_query'] .'"]' ); ?>
       <?php endif; ?>
     </div>
+    <?php if ($gray_wrapper): ?></div><?php endif; ?>
 </div>
