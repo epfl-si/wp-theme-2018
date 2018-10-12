@@ -18,7 +18,7 @@
 <?php if ($index != 0 && $index % $nb_column == 0): ?></div><div class="row"><?php endif; ?>
   <div class="card">
     <div class="card-body">
-      <div class="my-3 d-md-flex align-items-center">
+      <div class="my-3 align-items-center">
         <?php if ($photo_url): ?>
           <img style="width:100px;" class="img-fluid rounded-circle mr-4" src="<?php echo esc_url($photo_url) ?>" alt="<?php echo esc_attr($person->prenom) ?> <?php echo esc_attr($person->nom) ?>">
         <?php endif; ?>
