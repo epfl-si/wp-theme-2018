@@ -80,7 +80,7 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
     }
 
 
-    public static function render($publication, $field_name='author') {
+    public static function render($publication, $format, $has_next=false, $field_name='author') {
         $html_rendered = self::pre_render();
 
         $html_rendered .= self::render_authors($publication[$field_name]);
@@ -92,7 +92,7 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
 }
 
 Class DirectorAuthorInfoscienceField2018Render extends AuthorInfoscienceField2018Render {
-    public static function render($publication) {
+    public static function render($publication, $format, $has_next=false, $field_name='author') {
         if (!self::field_exists($publication['author']) && !self::field_exists($publication['director'])) {
             return '';
         }
