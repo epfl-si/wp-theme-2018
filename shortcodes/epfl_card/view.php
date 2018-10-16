@@ -19,25 +19,27 @@
       if ($data['title'.$i]) :
       $image = get_post($data['image'.$i]);
     ?>
-    <a href="<?php echo $data['url'.$i] ?: '#' ?>" class="card link-trapeze-horizontal">
-    <?php if ($data['image'.$i]): ?>
-      <picture class="card-img-top">
-      <?php echo wp_get_attachment_image(
-        $data['image'.$i],
-        'thumbnail_16_9_crop', // see functions.php
-        '',
-        [
-          'class' => 'img-fluid',
-          'title' => $image->post_excerpt
-        ]
-        ) ?>
-      </picture>
-    <?php endif; ?>
-      <div class="card-body">
-        <h3 class="card-title"><?php echo sanitize_text_field($data['title'.$i]) ?: 'Title' ?></h3>
-        <p><?php echo wp_kses_post(urldecode($data['content'.$i])) ?: '' ?></p>
+    <div class="card">
+      <?php if ($data['image'.$i]): ?>
+      <a href="<?php echo esc_url($data['url'.$i]) ?: '#' ?>" class="card-img-top">
+        <picture class="card-img-top">
+        <?php echo wp_get_attachment_image(
+          $data['image'.$i],
+          'thumbnail_16_9_crop', // see functions.php
+          '',
+          [
+            'class' => 'img-fluid',
+            'title' => $image->post_excerpt
+          ]
+          ) ?>
+        </picture>
+      </a>
+      <?php endif; ?>
+        <div class="card-body">
+          <div class="card-title"><a href="<?php echo esc_url($data['url'.$i]) ?: '#' ?>" class="h3"><?php echo esc_html($data['title'.$i]) ?: '' ?></a></div>
+          <p><?php echo wp_kses_post(urldecode($data['content'.$i])) ?: '' ?></p>
+        </div>
       </div>
-    </a>
     <?php
       endif;
       endfor;
@@ -46,4 +48,3 @@
   </div>
 </div>
 <?php endif ?>
-
