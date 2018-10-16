@@ -51,8 +51,7 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
         return '&nbsp;</p>';
     }
 
-
-    function render_author($author_name, $author_url) {
+    protected static function  render_author($author_name, $author_url) {
         $html_rendered = '<a class="text-muted infoscience_author" href="' . $author_url . '" target="_blank">';
         $html_rendered .= $author_name;
         $html_rendered .= '</a>';
