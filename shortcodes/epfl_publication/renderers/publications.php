@@ -56,10 +56,10 @@ abstract Class InfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
         $html_rendered = '';
 
-        $html_rendered .= AuthorInfoscienceField2018Render::render($publication);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author');
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= static::get_content($publication, $format, $summary);
@@ -150,7 +150,7 @@ Class BookChaptersDetailedInfosciencePublication2018Render extends DetailedInfos
     public static function render($publication, $format, $summary) {
         $html_rendered = '<span class="text-muted small mb-0 infoscience_host">';
 
-        $html_rendered .= AuthorInfoscienceField2018Render::render($publication);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author');
 
 
         $has_next = InfoscienceField2018Render::field_exists($publication['journal'], 'publisher') ||
@@ -163,7 +163,7 @@ Class BookChaptersDetailedInfosciencePublication2018Render extends DetailedInfos
             InfoscienceField2018Render::field_exists($publication['publication_date']);
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, 'short', $has_next);
@@ -188,6 +188,7 @@ Class BookChaptersShortInfosciencePublication2018Render extends ShortInfoscience
             InfoscienceField2018Render::field_exists($publication['publication_institution']) ||
             InfoscienceField2018Render::field_exists($publication['publication_date']);
 
+        $html_rendered = '';
         $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, self::$format, $has_next);
 
         $html_rendered .= BooksChaptersPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
@@ -213,7 +214,7 @@ Class BooksShortInfosciencePublication2018Render extends ShortInfosciencePublica
     public static function get_content($publication, $format, $summary) {
         $has_next = InfoscienceField2018Render::field_exists($publication['publication_location']) || 
                     InfoscienceField2018Render::field_exists($publication['publication_institution']);
-
+        $html_rendered = '';
         $html_rendered .= BooksPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
 
         return $html_rendered;
@@ -241,6 +242,7 @@ Class ConferencePapersDetailedInfosciencePublication2018Render extends DetailedI
 
 Class ConferencePapersShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
+        $html_rendered = '';
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
         if (InfoscienceField2018Render::field_exists($publication['publication_date'])) {
             $html_rendered .= '&nbsp;';
@@ -255,15 +257,17 @@ Class ConferencePapersShortInfosciencePublication2018Render extends ShortInfosci
 
 Class ConferenceProceedingsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
+        $html_rendered = '';
+
         if (InfoscienceField2018Render::field_exists($publication['author_1'])) {
-            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, 'author_1');
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author_1');
         } elseif (InfoscienceField2018Render::field_exists($publication['author_3'])) {
-            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, 'author_3');
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author_3');
         }
 
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
@@ -278,14 +282,15 @@ Class ConferenceProceedingsDetailedInfosciencePublication2018Render extends Deta
 
 Class ConferenceProceedingsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
+        $html_rendered = '';
         if (InfoscienceField2018Render::field_exists($publication['author_1'])) {
-            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, 'author_1');
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author_1');
         } elseif (InfoscienceField2018Render::field_exists($publication['author_3'])) {
-            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, 'author_3');
+            $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author_3');
         }
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
@@ -316,6 +321,7 @@ Class JournalArticlesDetailedInfosciencePublication2018Render extends DetailedIn
 
 Class JournalArticlesShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
+        $html_rendered = '';
         $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, self::$format);
 
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
@@ -332,6 +338,7 @@ Class JournalArticlesShortInfosciencePublication2018Render extends ShortInfoscie
 
 Class PatentsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
+        $html_rendered = '';
         $html_rendered .= PatentsInfoscienceField2018Render::render($publication, self::$format);
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
 
@@ -341,10 +348,11 @@ Class PatentsDetailedInfosciencePublication2018Render extends DetailedInfoscienc
 
 Class PatentsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
+        $html_rendered = '';
         $html_rendered .= PatentsInfoscienceField2018Render::render($publication, self::$format);
         
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
-        $html_rendered .= AuthorInfoscienceField2018Render::render($publication['author'], self::$format);
+        $html_rendered .= AuthorInfoscienceField2018Render::render($publication, self::$format, NULL, 'author');
         return $html_rendered;
     }    
 }
@@ -361,6 +369,7 @@ Class PostersDetailedInfosciencePublication2018Render extends DetailedInfoscienc
 
 Class PostersShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
+        $html_rendered = '';
         $html_rendered .= ConferenceDataInfoscienceField2018Render::render($publication, self::$format);
         return $html_rendered;
     }
@@ -368,7 +377,7 @@ Class PostersShortInfosciencePublication2018Render extends ShortInfosciencePubli
 
 Class ReportsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
-        $html_rendered .= '<span class="text-muted small mb-0 infoscience_host">';
+        $html_rendered = '<span class="text-muted small mb-0 infoscience_host">';
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
         $html_rendered .= PublicationPageInfoscienceField2018Render::render($publication, self::$format);
         $html_rendered .= '</span>';
@@ -381,6 +390,7 @@ Class ReportsDetailedInfosciencePublication2018Render extends DetailedInfoscienc
 
 Class ReportsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
+        $html_rendered = '';
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, 'detailed');
         $html_rendered .= ReportUrlInfoscienceField2018Render::render($publication, self::$format);
 
@@ -390,7 +400,7 @@ Class ReportsShortInfosciencePublication2018Render extends ShortInfosciencePubli
 
 Class StudentProjectsDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
-        $html_rendered .= '<span class="text-muted small mb-0 infoscience_host">';
+        $html_rendered = '<span class="text-muted small mb-0 infoscience_host">';
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
         $html_rendered .= '</span>';
 
@@ -400,6 +410,7 @@ Class StudentProjectsDetailedInfosciencePublication2018Render extends DetailedIn
 
 Class StudentProjectsShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function get_content($publication, $format, $summary) {
+        $html_rendered = '';
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
 
         return $html_rendered;
@@ -408,24 +419,26 @@ Class StudentProjectsShortInfosciencePublication2018Render extends ShortInfoscie
 
 Class TalksDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
-        return PostersDetailedInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+        return PostersDetailedInfosciencePublication2018Render::render($publication, $format, $summary);
     }
 }
 
 Class TalksShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
-        return PostersShortInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+        return PostersShortInfosciencePublication2018Render::render($publication, $format, $summary);
     }
 }
 
 Class ThesesDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
-        $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered = '';
+        $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format, NULL, NULL);
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
+        $host_rendered = '';
         $host_rendered .= BooksChaptersPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
 
         # not sure about the need of this one
@@ -445,10 +458,11 @@ Class ThesesDetailedInfosciencePublication2018Render extends DetailedInfoscience
 
 Class ThesesShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
-        $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format);
+        $html_rendered = '';
+        $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format, NULL, NULL);
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
         
         $html_rendered .= '<span class="text-muted small mb-0 infoscience_host">';

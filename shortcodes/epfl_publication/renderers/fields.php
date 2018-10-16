@@ -51,8 +51,7 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
         return '&nbsp;</p>';
     }
 
-
-    function render_author($author_name, $author_url) {
+    protected static function  render_author($author_name, $author_url) {
         $html_rendered = '<a class="text-muted infoscience_author" href="' . $author_url . '" target="_blank">';
         $html_rendered .= $author_name;
         $html_rendered .= '</a>';
@@ -81,7 +80,7 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
     }
 
 
-    public static function render($publication, $field_name='author') {
+    public static function render($publication, $format, $has_next=false, $field_name='author') {
         $html_rendered = self::pre_render();
 
         $html_rendered .= self::render_authors($publication[$field_name]);
@@ -93,7 +92,7 @@ Class AuthorInfoscienceField2018Render extends InfoscienceField2018Render {
 }
 
 Class DirectorAuthorInfoscienceField2018Render extends AuthorInfoscienceField2018Render {
-    public static function render($publication) {
+    public static function render($publication, $format, $has_next=false, $field_name='author') {
         if (!self::field_exists($publication['author']) && !self::field_exists($publication['director'])) {
             return '';
         }
@@ -291,7 +290,7 @@ Class ISBNInfoscienceField2018Render extends InfoscienceField2018Render {
 
 
 Class SummaryInfoscienceField2018Render extends InfoscienceField2018Render {
-    public static function render($publication, $has_next=false) {
+    public static function render($publication, $format, $has_next=false) {
         if (self::field_exists($publication['summary'])) {
             return '<p class="text-muted small mb-1 infoscience_abstract tex2jax_process">' . $publication['summary'][0] . '</p>';
         } else {

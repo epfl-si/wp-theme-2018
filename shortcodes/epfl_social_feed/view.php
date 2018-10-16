@@ -14,21 +14,22 @@
     $number_urls = count(array_filter($social_feed_data, function($x) {
       return !empty($x[0]); }));
 ?>
-
-<?php if ($number_urls > 1): ?>
-<div class="social-feed-group">
-  <?php foreach ($social_feed_data as $social_feed): ?>
-    <?php if (!empty($social_feed[0])): ?>
-  <div class="social-feed-container">
-    <?php get_template_part($social_feed[1]); ?>
-  </div>
-    <?php endif; ?>
-  <?php endforeach ?>
-</div>
-<?php else: ?>
-  <?php foreach ($social_feed_data as $social_feed): ?>
-    <?php if (!empty($social_feed[0])): ?>
+<div class="container my-3">
+  <?php if ($number_urls > 1): ?>
+  <div class="social-feed-group">
+    <?php foreach ($social_feed_data as $social_feed): ?>
+      <?php if (!empty($social_feed[0])): ?>
+    <div class="social-feed-container">
       <?php get_template_part($social_feed[1]); ?>
-    <?php endif; ?>
-  <?php endforeach ?>
-<?php endif; ?>
+    </div>
+      <?php endif; ?>
+    <?php endforeach ?>
+  </div>
+  <?php else: ?>
+    <?php foreach ($social_feed_data as $social_feed): ?>
+      <?php if (!empty($social_feed[0])): ?>
+        <?php get_template_part($social_feed[1]); ?>
+      <?php endif; ?>
+    <?php endforeach ?>
+  <?php endif; ?>
+</div>

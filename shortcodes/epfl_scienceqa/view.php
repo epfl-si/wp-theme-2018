@@ -2,7 +2,7 @@
   $data = get_query_var('epfl_scienceqa_data');
   $url_form = '//qi.epfl.ch/' . $data->locale . '/question/show/' . esc_attr( $data->id ). '/';
 ?>
-<div class="container-full">
+<div class="container-full my-3">
   <div class="question">
     <div class="question-img">
       <picture>

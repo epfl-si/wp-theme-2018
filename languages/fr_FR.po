@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
 "POT-Creation-Date: 2018-10-04 13:01+0200\n"
-"PO-Revision-Date: 2018-10-04 13:02+0200\n"
+"PO-Revision-Date: 2018-10-09 17:53+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -275,6 +275,15 @@ msgstr ""
 msgid "School"
 msgstr ""
 
+msgid "Map"
+msgstr "Plan"
+
+msgid "Social feed"
+msgstr "Réseaux sociaux"
+
+msgid "Infoscience search"
+msgstr "Recherche Infoscience"
+
 #~ msgid "at publisher"
 #~ msgstr "Consulter chez l'éditeur"
 
@@ -328,9 +337,6 @@ msgstr ""
 
 #~ msgid "Datasets"
 #~ msgstr "Echantillons de données"
-
-#~ msgid "Social feed"
-#~ msgstr "Réseaux sociaux"
 
 #, fuzzy
 #~ msgid "Faculty"

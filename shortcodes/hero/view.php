@@ -2,7 +2,7 @@
   $data = get_query_var('epfl_hero_data');
   if (!$data) return true;
 ?>
-<div class="container-full <?php echo $greyClasses ?>">
+<div class="container-full <?php echo $greyClasses ?> my-3">
   <div class="hero">
     <div class="hero-content-container">
       <h1 class="hero-title"><?php echo $data['title'] ?></h1>
