@@ -290,7 +290,7 @@ Class ISBNInfoscienceField2018Render extends InfoscienceField2018Render {
 
 
 Class SummaryInfoscienceField2018Render extends InfoscienceField2018Render {
-    public static function render($publication, $has_next=false) {
+    public static function render($publication, $format, $has_next=false) {
         if (self::field_exists($publication['summary'])) {
             return '<p class="text-muted small mb-1 infoscience_abstract tex2jax_process">' . $publication['summary'][0] . '</p>';
         } else {

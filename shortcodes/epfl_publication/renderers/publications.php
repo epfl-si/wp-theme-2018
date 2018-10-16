@@ -59,7 +59,7 @@ abstract Class InfosciencePublication2018Render {
         $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author');
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= static::get_content($publication, $format, $summary);
@@ -163,7 +163,7 @@ Class BookChaptersDetailedInfosciencePublication2018Render extends DetailedInfos
             InfoscienceField2018Render::field_exists($publication['publication_date']);
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= JournalPublisherInfoscienceField2018Render::render($publication, 'short', $has_next);
@@ -267,7 +267,7 @@ Class ConferenceProceedingsDetailedInfosciencePublication2018Render extends Deta
 
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
@@ -290,7 +290,7 @@ Class ConferenceProceedingsShortInfosciencePublication2018Render extends ShortIn
         }
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, self::$format);
@@ -435,7 +435,7 @@ Class ThesesDetailedInfosciencePublication2018Render extends DetailedInfoscience
         $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format, NULL, NULL);
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
 
         $host_rendered = '';
@@ -462,7 +462,7 @@ Class ThesesShortInfosciencePublication2018Render extends ShortInfosciencePublic
         $html_rendered .= DirectorAuthorInfoscienceField2018Render::render($publication, self::$format, NULL, NULL);
 
         if ($summary) {
-            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
+            $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
         }
         
         $html_rendered .= '<span class="text-muted small mb-0 infoscience_host">';
