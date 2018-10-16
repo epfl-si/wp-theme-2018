@@ -419,13 +419,13 @@ Class StudentProjectsShortInfosciencePublication2018Render extends ShortInfoscie
 
 Class TalksDetailedInfosciencePublication2018Render extends DetailedInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
-        return PostersDetailedInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+        return PostersDetailedInfosciencePublication2018Render::render($publication, $format, $summary);
     }
 }
 
 Class TalksShortInfosciencePublication2018Render extends ShortInfosciencePublication2018Render {
     public static function render($publication, $format, $summary) {
-        return PostersShortInfosciencePublication2018Render::render($publication, $summary, $thumbnail);
+        return PostersShortInfosciencePublication2018Render::render($publication, $format, $summary);
     }
 }
 
@@ -438,6 +438,7 @@ Class ThesesDetailedInfosciencePublication2018Render extends DetailedInfoscience
             $html_rendered .= SummaryInfoscienceField2018Render::render($publication, false);
         }
 
+        $host_rendered = '';
         $host_rendered .= BooksChaptersPublicationLocationInsitutionDateInfoscienceField2018Render::render($publication, self::$format);
 
         # not sure about the need of this one
