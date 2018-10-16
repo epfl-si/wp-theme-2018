@@ -1,6 +1,17 @@
 
 # CHANGELOG
 
+*1.2.11* (2018-10-16)
+  - Fix infoscience search warnings (#116)
+  - Allow to set multiple columns on people render (#110)
+  - Move from a clickable card to a static card with links (#115)
+  - Simplify the 404 page (#113)
+  - Add shortcode preview translations (#112)
+  - Add contact render (#108)
+  - Print image from id, not form an url (#107)
+  - Add and change containers margin to my-3 (#106)
+  - Allow to print multiple cards (#105)
+
 *1.2.10* (2018-10-04)
   - fix epfl-cover: check if description exists
   - epfl-social: render HTML
