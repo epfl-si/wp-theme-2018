@@ -1,291 +1,445 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-10-04 13:01+0200\n"
-"PO-Revision-Date: 2018-10-09 17:53+0200\n"
+"POT-Creation-Date: 2018-10-18 17:05+0200\n"
+"PO-Revision-Date: 2018-10-18 17:07+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
-"X-Poedit-Basepath: ../shortcodes\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-0: shortcodes\n"
+"X-Poedit-SearchPath-1: .\n"
 
-#: custom_highlight/shortcake.php:8 custom_teasers/shortcake.php:28
-#: introduction/shortcake.php:8 schools/shortcake.php:15
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Cette page est introuvable."
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+"On dirait que cette adresse n'existe pas sur le site. Peut-être en essayant "
+"une recherche?"
+
+#: archive.php:33 index.php:38
+msgid "No article found"
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:55
+msgid "Primary"
+msgstr ""
+
+#: functions.php:56
+msgid "Footer"
+msgstr ""
+
+#: functions.php:197
+msgid "Par défaut"
+msgstr ""
+
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: inc/template-tags.php:62
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:65
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:72
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:82
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/template-tags.php:99
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Rechercher des résultats pour : %s"
+
+#: searchform.php:4 searchform.php:18
+msgid "Search in the EPFL web"
+msgstr "Rerchercher sur le web de l'EPFL"
+
+#: searchform.php:6
+msgid "Validate"
+msgstr "Valider"
+
+#: shortcodes/custom_highlight/shortcake.php:8
+#: shortcodes/custom_teasers/shortcake.php:28
+#: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
 #, fuzzy
 msgid "Title"
 msgstr "Titre"
 
-#: custom_highlight/shortcake.php:13
-#, fuzzy
+#: shortcodes/custom_highlight/shortcake.php:13
 msgid "description"
-msgstr "Description"
+msgstr "description"
 
-#: custom_highlight/shortcake.php:18
+#: shortcodes/custom_highlight/shortcake.php:18
 #, fuzzy
 msgid "Link"
 msgstr "Lien"
 
-#: custom_highlight/shortcake.php:23 custom_teasers/shortcake.php:43
+#: shortcodes/custom_highlight/shortcake.php:23
+#: shortcodes/custom_teasers/shortcake.php:43
 msgid "Button label"
 msgstr ""
 
-#: custom_highlight/shortcake.php:28 custom_teasers/shortcake.php:48
+#: shortcodes/custom_highlight/shortcake.php:28
+#: shortcodes/custom_teasers/shortcake.php:48
 #, fuzzy
 msgid "Image"
 msgstr "Image"
 
-#: custom_highlight/shortcake.php:32 custom_highlight/shortcake.php:33
-#: custom_teasers/shortcake.php:52 custom_teasers/shortcake.php:53
-#: hero/shortcake.php:27 hero/shortcake.php:28 schools/shortcake.php:34
-#: schools/shortcake.php:35
+#: shortcodes/custom_highlight/shortcake.php:32
+#: shortcodes/custom_highlight/shortcake.php:33
+#: shortcodes/custom_teasers/shortcake.php:52
+#: shortcodes/custom_teasers/shortcake.php:53 shortcodes/hero/shortcake.php:27
+#: shortcodes/hero/shortcake.php:28 shortcodes/schools/shortcake.php:34
+#: shortcodes/schools/shortcake.php:35
 #, fuzzy
 msgid "Select Image"
 msgstr "Sélectionner une image"
 
-#: custom_highlight/shortcake.php:36 page_highlight/shortcake.php:14
-#: post_highlight/shortcake.php:14
+#: shortcodes/custom_highlight/shortcake.php:36
+#: shortcodes/page_highlight/shortcake.php:14
+#: shortcodes/post_highlight/shortcake.php:14
 msgid "Layout"
 msgstr ""
 
-#: custom_highlight/shortcake.php:38 page_highlight/shortcake.php:16
-#: post_highlight/shortcake.php:16
+#: shortcodes/custom_highlight/shortcake.php:38
+#: shortcodes/page_highlight/shortcake.php:16
+#: shortcodes/post_highlight/shortcake.php:16
 msgid ""
 "Decides where the text will be aligned, to allow the subject of the picture "
 "to be visible"
 msgstr ""
 
-#: custom_highlight/shortcake.php:41 page_highlight/shortcake.php:19
-#: post_highlight/shortcake.php:19
+#: shortcodes/custom_highlight/shortcake.php:41
+#: shortcodes/page_highlight/shortcake.php:19
+#: shortcodes/post_highlight/shortcake.php:19
 msgid "Right"
 msgstr ""
 
-#: custom_highlight/shortcake.php:42 page_highlight/shortcake.php:20
-#: post_highlight/shortcake.php:20
+#: shortcodes/custom_highlight/shortcake.php:42
+#: shortcodes/page_highlight/shortcake.php:20
+#: shortcodes/post_highlight/shortcake.php:20
 msgid "Bottom"
 msgstr ""
 
-#: custom_highlight/shortcake.php:43 page_highlight/shortcake.php:21
-#: post_highlight/shortcake.php:21
+#: shortcodes/custom_highlight/shortcake.php:43
+#: shortcodes/page_highlight/shortcake.php:21
+#: shortcodes/post_highlight/shortcake.php:21
 #, fuzzy
 msgid "Left"
 msgstr "Template pour un portail (avec l'image sur la gauche)"
 
-#: custom_highlight/shortcake.php:53
+#: shortcodes/custom_highlight/shortcake.php:53
 msgid "Custom Highlight"
 msgstr ""
 
-#: custom_teasers/shortcake.php:28
+#: shortcodes/custom_teasers/shortcake.php:28
 msgid "Teaser"
 msgstr ""
 
-#: custom_teasers/shortcake.php:33
+#: shortcodes/custom_teasers/shortcake.php:33
 msgid "Excerpt"
 msgstr ""
 
-#: custom_teasers/shortcake.php:38
+#: shortcodes/custom_teasers/shortcake.php:38
 #, fuzzy
 msgid "Url"
 msgstr "URL"
 
-#: custom_teasers/shortcake.php:64
+#: shortcodes/custom_teasers/shortcake.php:64
 msgid "Custom teasers"
 msgstr ""
 
-#: definition_list/shortcake.php:9
+#: shortcodes/definition_list/shortcake.php:9
 msgid "Display as a table"
 msgstr ""
 
-#: definition_list/shortcake.php:11
+#: shortcodes/definition_list/shortcake.php:11
 msgid "Display the definition list as a table-like component"
 msgstr ""
 
-#: definition_list/shortcake.php:16
+#: shortcodes/definition_list/shortcake.php:16
 msgid "Large display"
 msgstr ""
 
-#: definition_list/shortcake.php:18
+#: shortcodes/definition_list/shortcake.php:18
 msgid "Makes the dl design wider"
 msgstr ""
 
-#: definition_list/shortcake.php:24
+#: shortcodes/definition_list/shortcake.php:24
 msgid "Term"
 msgstr ""
 
-#: definition_list/shortcake.php:26
+#: shortcodes/definition_list/shortcake.php:26
 msgid "Term to define"
 msgstr ""
 
-#: definition_list/shortcake.php:30
+#: shortcodes/definition_list/shortcake.php:30
 msgid "Definition"
 msgstr ""
 
-#: definition_list/shortcake.php:32
+#: shortcodes/definition_list/shortcake.php:32
 msgid "Definition of the term"
 msgstr ""
 
-#: definition_list/shortcake.php:41
+#: shortcodes/definition_list/shortcake.php:41
 msgid "Definition list"
 msgstr ""
 
-#: epfl_memento/templates/card-info.php:23
+#: shortcodes/epfl_memento/templates/card-info.php:22
 msgid "Place and room"
 msgstr "Lieu et salle"
 
-#: epfl_memento/templates/card-slider-footer.php:16
+#: shortcodes/epfl_memento/templates/card-info.php:28
+#: shortcodes/epfl_memento/templates/card-info.php:30
+msgid "Category"
+msgstr ""
+
+#: shortcodes/epfl_memento/templates/card-slider-footer.php:16
 msgid "Complete agenda of events"
 msgstr "Voir l’agenda complet des événements"
 
-#: epfl_memento/view.php:17
+#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:142
+#: shortcodes/epfl_memento/view.php:210
 msgid "No scheduled events"
 msgstr "Aucun événement programmé"
 
-#: epfl_memento/view.php:76
+#: shortcodes/epfl_memento/view.php:90
 msgid "Learn more & apply"
 msgstr "Information & inscription"
 
-#: epfl_news/view.php:46
+#: shortcodes/epfl_memento/view.php:131
+#, fuzzy
+#| msgid "No scheduled events"
+msgid "Next events"
+msgstr "Aucun événement programmé"
+
+#: shortcodes/epfl_memento/view.php:134
+msgid "See all events"
+msgstr ""
+
+#: shortcodes/epfl_news/view.php:46
 msgid "The last news"
 msgstr "Les dernières actualités"
 
-#: epfl_news/view.php:116 epfl_news/view.php:157 epfl_news/view.php:186
+#: shortcodes/epfl_news/view.php:116 shortcodes/epfl_news/view.php:157
+#: shortcodes/epfl_news/view.php:186
 msgid "News"
 msgstr "Actualités"
 
-#: epfl_news/view.php:121 epfl_news/view.php:130 epfl_news/view.php:162
-#: epfl_news/view.php:171 page_highlight/view.php:33 page_highlight/view.php:45
+#: shortcodes/epfl_news/view.php:121 shortcodes/epfl_news/view.php:130
+#: shortcodes/epfl_news/view.php:162 shortcodes/epfl_news/view.php:171
+#: shortcodes/page_highlight/view.php:33 shortcodes/page_highlight/view.php:45
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: epfl_news/view.php:202 epfl_news/view.php:222
+#: shortcodes/epfl_news/view.php:202 shortcodes/epfl_news/view.php:222
 msgid "All news"
 msgstr "Toutes les actualités"
 
-#: epfl_publication/renderers/fields.php:113
+#: shortcodes/epfl_publication/renderers/fields.php:112
 msgid "Dir."
 msgstr "Dir."
 
-#: epfl_publication/renderers/fields.php:339
-#: epfl_publication/renderers/fields.php:341
-#: epfl_publication/renderers/fields.php:526
+#: shortcodes/epfl_publication/renderers/fields.php:338
+#: shortcodes/epfl_publication/renderers/fields.php:340
+#: shortcodes/epfl_publication/renderers/fields.php:525
 msgid "p."
 msgstr "p."
 
-#: epfl_publication/renderers/fields.php:356
+#: shortcodes/epfl_publication/renderers/fields.php:355
 msgid "Vol."
 msgstr "Vol."
 
-#: epfl_publication/renderers/fields.php:367
+#: shortcodes/epfl_publication/renderers/fields.php:366
 msgid "num."
 msgstr "num."
 
-#: epfl_publication/renderers/fields.php:480
+#: shortcodes/epfl_publication/renderers/fields.php:479
 msgid "Patent number(s)"
 msgstr "Numéro de brevet"
 
-#: epfl_publication/renderers/publications.php:101
+#: shortcodes/epfl_publication/renderers/publications.php:101
 msgid "Detailed record"
 msgstr "Notice détaillée"
 
-#: epfl_publication/renderers/publications.php:118
+#: shortcodes/epfl_publication/renderers/publications.php:118
 msgid "Full text"
 msgstr "Texte intégral"
 
-#: epfl_publication/renderers/publications.php:126
+#: shortcodes/epfl_publication/renderers/publications.php:126
 msgid "View at publisher"
 msgstr ""
 
-#: epfl_scienceqa/view.php:13
+#: shortcodes/epfl_scienceqa/view.php:13
 msgid "Question de science"
 msgstr ""
 
-#: epfl_scienceqa/view.php:33
+#: shortcodes/epfl_scienceqa/view.php:33
 msgid "Voter"
 msgstr ""
 
-#: epfl_social_feed/facebook_view.php:32
+#: shortcodes/epfl_share/view.php:12
+msgid "Share on"
+msgstr ""
+
+#: shortcodes/epfl_share/view.php:16 shortcodes/epfl_share/view.php:20
+#: shortcodes/epfl_share/view.php:42 shortcodes/epfl_share/view.php:46
+#, fuzzy
+#| msgid "Follow us on Twitter"
+msgid "Follow us on"
+msgstr "Nous rejoindre sur Twitter"
+
+#: shortcodes/epfl_social_feed/facebook_view.php:34
 msgid "Like our page on Facebook"
 msgstr "Likez notre page Facebook"
 
-#: epfl_social_feed/instagram_view.php:22
+#: shortcodes/epfl_social_feed/instagram_view.php:23
 msgid "View this post on Instagram"
 msgstr "Voir ce post sur Instagram"
 
-#: epfl_social_feed/twitter_view.php:25
+#: shortcodes/epfl_social_feed/twitter_view.php:23
 msgid "Follow us on Twitter"
 msgstr "Nous rejoindre sur Twitter"
 
-#: hero/shortcake.php:37
+#: shortcodes/hero/shortcake.php:37
 msgid "Hero"
 msgstr ""
 
-#: introduction/shortcake.php:13
+#: shortcodes/introduction/shortcake.php:13
 #, fuzzy
 msgid "Content"
 msgstr "Contenu"
 
-#: introduction/shortcake.php:18 page_teaser/shortcake.php:10
-#: post_teaser/shortcake.php:10
+#: shortcodes/introduction/shortcake.php:18
+#: shortcodes/page_teaser/shortcake.php:10
+#: shortcodes/post_teaser/shortcake.php:10
 msgid "Gray background"
 msgstr ""
 
-#: introduction/shortcake.php:21 page_teaser/shortcake.php:13
-#: post_teaser/shortcake.php:13
+#: shortcodes/introduction/shortcake.php:21
+#: shortcodes/page_teaser/shortcake.php:13
+#: shortcodes/post_teaser/shortcake.php:13
 msgid "Change the background to gray"
 msgstr ""
 
-#: introduction/shortcake.php:29
+#: shortcodes/introduction/shortcake.php:29
 msgid "Introduction"
 msgstr ""
 
-#: page_highlight/shortcake.php:8 page_teaser/shortcake.php:18
+#: shortcodes/page_highlight/shortcake.php:8
+#: shortcodes/page_teaser/shortcake.php:18
 msgid "Select page"
 msgstr ""
 
-#: page_highlight/shortcake.php:31
+#: shortcodes/page_highlight/shortcake.php:31
 msgid "Page Highlight"
 msgstr ""
 
-#: page_teaser/shortcake.php:30
+#: shortcodes/page_teaser/shortcake.php:30
 msgid "Page teaser"
 msgstr ""
 
-#: post_highlight/shortcake.php:8 post_teaser/shortcake.php:18
+#: shortcodes/post_highlight/shortcake.php:8
+#: shortcodes/post_teaser/shortcake.php:18
 msgid "Select post"
 msgstr ""
 
-#: post_highlight/shortcake.php:31
+#: shortcodes/post_highlight/shortcake.php:31
 msgid "Post highlight"
 msgstr ""
 
-#: post_highlight/view.php:28 post_highlight/view.php:43
+#: shortcodes/post_highlight/view.php:28 shortcodes/post_highlight/view.php:43
 msgid "Read the article"
 msgstr ""
 
-#: post_teaser/shortcake.php:30
+#: shortcodes/post_teaser/shortcake.php:30
 msgid "Post teaser"
 msgstr ""
 
-#: schools/shortcake.php:15
+#: shortcodes/schools/shortcake.php:15
 msgid "School"
 msgstr ""
 
-msgid "Map"
-msgstr "Plan"
+#: sidebar.php:50
+msgid "In the same section"
+msgstr ""
 
-msgid "Social feed"
-msgstr "Réseaux sociaux"
+#: template-parts/archives-list.php:2
+msgid "Archives"
+msgstr ""
 
-msgid "Infoscience search"
-msgstr "Recherche Infoscience"
+#: template-parts/categories-list.php:2
+msgid "Categories"
+msgstr ""
 
-#~ msgid "at publisher"
-#~ msgstr "Consulter chez l'éditeur"
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:45
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-post-teaser.php:22
+msgid "Published:"
+msgstr "Publier le :"
+
+#: template-parts/content-post.php:39 template-parts/content.php:39
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-post.php:50 template-parts/content.php:50
+msgid "Pages:"
+msgstr ""
 
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"
@@ -337,6 +491,9 @@ msgstr "Recherche Infoscience"
 
 #~ msgid "Datasets"
 #~ msgstr "Echantillons de données"
+
+#~ msgid "Social feed"
+#~ msgstr "Réseaux sociaux"
 
 #, fuzzy
 #~ msgid "Faculty"
