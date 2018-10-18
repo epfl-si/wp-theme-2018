@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
 "POT-Creation-Date: 2018-10-18 17:05+0200\n"
-"PO-Revision-Date: 2018-10-18 17:07+0200\n"
+"PO-Revision-Date: 2018-10-18 17:12+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -430,7 +430,7 @@ msgstr ""
 
 #: template-parts/content-post-teaser.php:22
 msgid "Published:"
-msgstr "Publier le :"
+msgstr "Publié le :"
 
 #: template-parts/content-post.php:39 template-parts/content.php:39
 #, php-format
