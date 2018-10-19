@@ -312,3 +312,11 @@ function get_current_menu_slug() {
   $menu_term = get_term($menu_locations[$EPFL_MENU_LOCATION], 'nav_menu');
 	return $menu_term;
 }
+
+/**
+ * Remove <p></p> tags around <img src="" alt=""> inputed in the wysiwyg
+ */
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
