@@ -28,7 +28,10 @@ if ($currentTemplate == 'page-homepage.php') {
   <!-- Breadcrumb -->
   <?php
     // Breadcrumb
-    $items = wp_get_nav_menu_items(get_current_menu_slug());
+    $items = array();
+    foreach (wp_get_nav_menu_items(get_current_menu_slug()) as $item) {
+        $items[(int) $item->db_id] = $item;
+    }
 
     $item = $items ? reset(wp_filter_object_list( $items, ['object_id' => $post->ID])) : false;
 
@@ -42,20 +45,26 @@ if ($currentTemplate == 'page-homepage.php') {
             </a>
         </li>';
 
-    if ($items) {
-      _wp_menu_item_classes_by_context( $items ); // Set up the class variables, including current-classes
-      foreach($items as $item) {
-          if ($item->current_item_ancestor) {
-              $crumbs[] = "
-                  <li class=\"breadcrumb-item\">
-                      <a class=\"bread-link bread-home\" href=\"{$item->url}\" title=\"{$item->title}\">
-                          {$item->title}
-                      </a>
-                  </li>";
-          } else if ($item->current) {
+    $crumb_items = array();
+    for($crumb_item = $item;
+        $crumb_item;
+        $crumb_item = $items[(int) $crumb_item->menu_item_parent])
+    {
+        array_unshift($crumb_items, $crumb_item);
+    }
+    if ($crumb_items) {
+      foreach($crumb_items as $crumb_item) {
+          if ((int) $item->db_id === (int) $crumb_item->db_id) {
             $crumbs[] = "
                   <li class=\"breadcrumb-item active\">
                       {$item->title}
+                  </li>";
+          } else {
+              $crumbs[] = "
+                  <li class=\"breadcrumb-item\">
+                      <a class=\"bread-link bread-home\" href=\"{$item->url}\" title=\"{$item->title}\">
+                          {$crumb_item->title}
+                      </a>
                   </li>";
           }
       }
