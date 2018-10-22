@@ -1,6 +1,9 @@
 
 # CHANGELOG
 
+*1.2.12* (2018-10-22)
+  - Quick menu-related fixes (#122)
+
 *1.2.11* (2018-10-16)
   - Fix infoscience search warnings (#116)
   - Allow to set multiple columns on people render (#110)
