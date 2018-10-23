@@ -24,8 +24,10 @@
       <?php if ($data['image'.$i]): ?>
         <?php if ($url): ?>
       <a href="<?php echo $url ?: '#' ?>" class="card-img-top">
+        <?php else: ?>
+      <div class="card-img-top">
         <?php endif; ?>
-        <picture class="card-img-top">
+        <picture>
         <?php echo wp_get_attachment_image(
           $data['image'.$i],
           'thumbnail_16_9_crop', // see functions.php
@@ -38,6 +40,8 @@
         </picture>
         <?php if ($url): ?>
       </a>
+        <?php else: ?>
+      </div>
         <?php endif; ?>
       <?php endif; ?>
         <div class="card-body">
