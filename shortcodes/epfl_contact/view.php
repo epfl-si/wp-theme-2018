@@ -23,7 +23,7 @@
         ?>
         <?php for ($i=1; $i < 4; $i++): ?>
           <?php if ($data['information'.$i]): ?>
-        <p><?php echo wp_kses_post(urldecode($data['information'.$i])) ?: '' ?></p>
+        <p><?php echo urldecode($data['information'.$i]) ?: '' ?></p>
         <?php if ($data['information'.($i+1)]): ?>
         <hr>
         <?php endif; ?>
