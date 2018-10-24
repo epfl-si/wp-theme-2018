@@ -37,7 +37,7 @@
       <?php endif; ?>
         <div class="card-body">
           <div class="card-title"><a href="<?php echo esc_url($data['url'.$i]) ?: '#' ?>" class="h3"><?php echo esc_html($data['title'.$i]) ?: '' ?></a></div>
-          <p><?php echo wp_kses_post(urldecode($data['content'.$i])) ?: '' ?></p>
+          <p><?php echo urldecode($data['content'.$i]) ?: '' ?></p>
         </div>
       </div>
     <?php
