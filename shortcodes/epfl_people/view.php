@@ -1,7 +1,7 @@
 <?php
   require_once('utils.php');
   $persons = get_query_var('epfl_people_persons');
-  # $nb_column can be 1, 2, 3 or 'list'
+  # $nb_column can be 1, 3 or 'list'
   $nb_column = get_query_var('epfl_people_nb_columns');
 ?>
 
@@ -33,8 +33,10 @@
   <?php endforeach; ?>
 </div>
 <?php else: ?>
+  <?php if ($nb_column === '3'): ?>
   <div class="container">
-  <div class="row">
+  <div class="card-deck">
+  <?php endif; ?>
   <?php
     foreach($persons as $index => $person):
       $photo_url  = epfl_people_get_photo($person);
@@ -44,7 +46,6 @@
       $room_url   = epfl_people_get_room_url($rooms[0]);
       $people_url = epfl_people_get_people_url($person);
   ?>
-  <?php if ($index != 0 && $index % $nb_column == 0): ?></div><div class="row"><?php endif; ?>
     <div class="card">
       <div class="card-body">
         <div class="my-3 align-items-center">
@@ -72,9 +73,11 @@
       <?php if($index % $nb_column == 0): ?></div"><?php endif; ?>
     <?php endforeach; ?>
     <?php for($i=$index+1; $i % $nb_column != 0; $i++): ?>
-    <div class="card">
+    <div class="">
     </div>
     <?php endfor; ?>
+  <?php if ($nb_column === '3'): ?>
   </div>
 </div>
+<?php endif; ?>
 <?php endif; ?>
