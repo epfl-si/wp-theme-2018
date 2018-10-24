@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-10-18 17:05+0200\n"
-"PO-Revision-Date: 2018-10-18 17:12+0200\n"
+"POT-Creation-Date: 2018-10-24 16:15+0200\n"
+"PO-Revision-Date: 2018-10-24 16:15+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -18,13 +18,15 @@ msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oops! Cette page est introuvable."
+msgstr "Oops ! Cette page est introuvable."
 
 #: 404.php:19
-msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgid ""
+"It looks like nothing was found at this location. You might try with a "
+"search:"
 msgstr ""
-"On dirait que cette adresse n'existe pas sur le site. Peut-être en essayant "
-"une recherche?"
+"On dirait que cette adresse n'existe pas sur le site.  Essayez avec une "
+"recherche :"
 
 #: archive.php:33 index.php:38
 msgid "No article found"
@@ -85,8 +87,12 @@ msgid "Search Results for: %s"
 msgstr "Rechercher des résultats pour : %s"
 
 #: searchform.php:4 searchform.php:18
-msgid "Search in the EPFL web"
-msgstr "Rerchercher sur le web de l'EPFL"
+msgid "Search"
+msgstr "Recherche"
+
+#: searchform.php:5 searchform.php:19
+msgid "Search in the EPFL Web"
+msgstr "Rerchercher sur le Web de l'EPFL"
 
 #: searchform.php:6
 msgid "Validate"

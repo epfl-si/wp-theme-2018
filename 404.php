@@ -16,7 +16,7 @@ get_header();
 				<div class="page-content container">
 					<h1 class="h3 text-center"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'epfl' ); ?></h1>
 					<div class="page-content mt-5">
-						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'epfl' ); ?></p>
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. You might try with a search:', 'epfl' ); ?></p>
 						<?php
 						get_search_form();
 						?>
