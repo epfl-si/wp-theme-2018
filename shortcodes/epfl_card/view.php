@@ -22,12 +22,12 @@
         $image_id = $data['image'.$i];
         $image_post = get_post($image_id);
         $url = esc_url($data['link'.$i]);
-        $content =  urldecode($data['content'.$i]);
+        $content = urldecode($data['content'.$i]);
     ?>
     <div class="card">
       <?php if ($image_id): ?>
         <?php if ($url): ?>
-      <a href="<?php echo $url ?: '#' ?>" class="card-img-top">
+      <a href="<?php echo $url ?>" class="card-img-top">
         <?php else: ?>
       <div class="card-img-top">
         <?php endif; ?>
