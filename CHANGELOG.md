@@ -5,7 +5,7 @@
   - Styleguide 1.3.3
   - Add a search to the 404 page (#119)
   - Add a way to render people in list (#126)
-  - Fix toggle id to beunique (#121)
+  - Fix toggle id to be unique (#121)
   - Add some translations (#118)
   - Fix richtext render for epfl-card and epfl-contact (#123) 
 
