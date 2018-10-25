@@ -1,6 +1,14 @@
 
 # CHANGELOG
 
+*1.2.13* (2018-10-25)
+  - Styleguide 1.3.1
+  - Add a search to the 404 page (#119)
+  - Add a way to render people in list (#126)
+  - Fix toggle id to beunique (#121)
+  - Add some translations (#118)
+  - Fix richtext render for epfl-card and epfl-contact (#123) 
+
 *1.2.12* (2018-10-22)
   - Quick menu-related fixes (#122)
 
