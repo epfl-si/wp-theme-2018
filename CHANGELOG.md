@@ -2,7 +2,7 @@
 # CHANGELOG
 
 *1.2.13* (2018-10-25)
-  - Styleguide 1.3.1
+  - Styleguide 1.3.3
   - Add a search to the 404 page (#119)
   - Add a way to render people in list (#126)
   - Fix toggle id to beunique (#121)
