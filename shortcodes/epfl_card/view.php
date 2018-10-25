@@ -18,7 +18,7 @@
     for($i = 1; $i < 4; $i++):
       $title = esc_html($data['title'.$i]);
 
-      if ($title) :  # show the card only if the title is set
+      if (strlen($title) > 0) :  # show the card only if the title is set
         $image_id = $data['image'.$i];
         $image_post = get_post($image_id);
         $url = esc_url($data['link'.$i]);
