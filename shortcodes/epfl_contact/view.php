@@ -3,7 +3,7 @@
     $gray_wrapper = $data['gray_wrapper'];
 ?>
 
-<div class="container-full <?php echo ($gray_wrapper) ? 'bg-gray-100 py-2 my-5' : 'my-3'; ?>">
+<div class="container <?php echo ($gray_wrapper) ? 'bg-gray-100 py-2 my-5' : 'my-3'; ?>">
   <?php if ($gray_wrapper): ?>
   <div class="bg-white p-4 p-md-5">
   <?php endif; ?>
@@ -15,7 +15,7 @@
         <?php for ($i=1; $i < 5; $i++): ?>
           <?php if ($data['timetable'.$i]): ?>
         <div class="card card-body card-sm mb-2 flex-row flex-wrap justify-content-between justify-content-sm-start">
-          <div class="mr-3 w-sm-50"><?php echo $data['timetable'.$i] ?: '' ?></div>
+          <div class="mr-3 w-sm-50"><?php echo $data['timetable'.$i] ?></div>
         </div>
         <?php
         endif;
