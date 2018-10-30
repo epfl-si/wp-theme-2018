@@ -62,9 +62,9 @@
           </div>
           <h3><a class="link-pretty" href="<?php echo esc_url($people_url) ?>"><?php echo esc_html($person->prenom) ?> <?php echo esc_html($person->nom) ?></a></h3>
           <dl class="definition-list definition-list-grid mb-0">
-            <dt>Fonction</dt>
+            <dt><?php esc_html_e('Position', 'epfl') ?></dt>
             <dd><?php echo esc_html($functions[0]) ?></dd>
-            <dt>Bureau</dt>
+            <dt><?php esc_html_e('Office', 'epfl') ?></dt>
             <dd><a class="link-pretty" href="<?php echo esc_url($room_url) ?>"><?php echo esc_html($rooms[0]) ?></a></dd>
           </dl>
         </div>
@@ -80,3 +80,4 @@
     <?php endif; ?>
   <?php endif; ?>
 </div>
+
