@@ -13,9 +13,9 @@ function renderTableau($url, $width, $height) {
     set_query_var('epfl_placeholder_title', 'Tableau');
     get_template_part('shortcodes/placeholder');
   } else {
-    set_query_var('epfl_tableau-url', $args);
-    set_query_var('epfl_tableau-width', $args);
-    set_query_var('epfl_tableau-height', $args);
+    set_query_var('epfl_tableau-url', $url);
+    set_query_var('epfl_tableau-width', $width);
+    set_query_var('epfl_tableau-height', $height);
     get_template_part('shortcodes/epfl_tableau/view');
   }
 }
