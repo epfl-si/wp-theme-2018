@@ -17,7 +17,7 @@
 <?php if ("1" == $template): ?>
   <div class="container my-3">
 <?php else: ?>
-  <div class="container-full my-3">
+  <div class="container-full my-3 pl-5">
 <?php endif ?>
     <div class="list-group">
       <?php
