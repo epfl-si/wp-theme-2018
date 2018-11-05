@@ -9,7 +9,7 @@ if ($data['layout'] == '') $classes = 'fullwidth-teaser-right';
 ?>
 
 <div class="container-full">
-  <div class="fullwidth-teaser mt-5  <?php echo $classes; ?>">
+  <div class="fullwidth-teaser my-3  <?php echo $classes; ?>">
     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="cover">
       <!-- <picture> -->
         <?php // get/slice image informations

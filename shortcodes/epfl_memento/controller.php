@@ -7,7 +7,6 @@
 add_action('epfl_event_action', 'renderMemento', 1, 3);
 
 function renderMemento($events, $template, $memento) {
-  ob_start();
 
   if (is_admin()) {
 
@@ -24,5 +23,4 @@ function renderMemento($events, $template, $memento) {
     get_template_part('shortcodes/epfl_memento/view');  
     
   }
-  return ob_end_flush();
 }

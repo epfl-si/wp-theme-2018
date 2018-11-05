@@ -2,7 +2,7 @@
   $data = get_query_var('epfl_introduction_data');
   $gray = $data['gray'];
 ?>
-  <div class="container-full">
+  <div class="container-full my-3">
     <div class="introduction<?php echo $gray ? ' bg-gray-100' : '' ?>">
       <div class="container">
         <div class="row">

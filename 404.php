@@ -13,6 +13,19 @@ get_header();
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
+				<div class="page-content container">
+					<h1 class="h3 text-center"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'epfl' ); ?></h1>
+					<div class="page-content mt-5">
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. You might try with a search:', 'epfl' ); ?></p>
+						<?php
+						get_search_form();
+						?>
+					</div>
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+			<?php /* keep it as a reference of the default theme design
+			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'epfl' ); ?></h1>
 				</header><!-- .page-header -->
@@ -42,7 +55,7 @@ get_header();
 					</div><!-- .widget -->
 
 					<?php
-					/* translators: %1$s: smiley */
+					// translators: %1$s: smiley
 					$epfl_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'epfl' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$epfl_archive_content" );
 
@@ -51,6 +64,7 @@ get_header();
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
+			*/?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

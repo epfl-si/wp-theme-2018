@@ -1,5 +1,5 @@
 <?php
-add_filter( 'wp_nav_menu_objects', 'submenu_limit', 10, 2 );
+add_filter( 'wp_nav_menu_objects', 'submenu_limit', 30, 2 );
 
 /**
  * function submenu_limit

@@ -11,6 +11,7 @@ require_once(get_template_directory().'/shortcodes/custom_teasers/controller.php
 require_once(get_template_directory().'/shortcodes/page_highlight/controller.php');
 require_once(get_template_directory().'/shortcodes/post_highlight/controller.php');
 require_once(get_template_directory().'/shortcodes/custom_highlight/controller.php');
+require_once(get_template_directory().'/shortcodes/custom_highlight/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_news/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_memento/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_toggle/controller.php');
@@ -20,3 +21,9 @@ require_once(get_template_directory().'/shortcodes/epfl_card/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_links_group/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_video/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_quote/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_people/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_publication/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_map/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_social_feed/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_share/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_contact/controller.php');

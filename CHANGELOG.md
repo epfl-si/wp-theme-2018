@@ -1,6 +1,57 @@
 
 # CHANGELOG
 
+*1.2.14* (2018-10-26)
+  - Styleguide 1.3.3 with temporary fixes
+    - Language switcher fix
+    - Javascript crashing fix
+  - Fix People list not in a container
+
+*1.2.13* (2018-10-25)
+  - Styleguide 1.3.3
+  - Add a search to the 404 page (#119)
+  - Add a way to render people in list (#126)
+  - Fix toggle id to be unique (#121)
+  - Add some translations (#118)
+  - Fix richtext render for epfl-card and epfl-contact (#123) 
+
+*1.2.12* (2018-10-22)
+  - Quick menu-related fixes (#122)
+
+*1.2.11* (2018-10-16)
+  - Fix infoscience search warnings (#116)
+  - Allow to set multiple columns on people render (#110)
+  - Move from a clickable card to a static card with links (#115)
+  - Simplify the 404 page (#113)
+  - Add shortcode preview translations (#112)
+  - Add contact render (#108)
+  - Print image from id, not form an url (#107)
+  - Add and change containers margin to my-3 (#106)
+  - Allow to print multiple cards (#105)
+
+*1.2.10* (2018-10-04)
+  - fix epfl-cover: check if description exists
+  - epfl-social: render HTML
+  - epfl-share: render HTML
+  - epfl-people: render HTML
+  - fix custom_hightlight admin label 
+  - epfl-memento: render HTML for listing templates
+  - epfl-toggle: render v2
+
+*1.2.9* (2018-09-22)
+  - epfl-news: delete stickers parameter
+
+*1.2.8* (2018-09-20)
+  - bump version to fix missing commits
+
+*1.2.7* (2018-09-20)
+  - epfl-news: add video mp4 feature
+  - fix for all plugins : fix html escaping
+  - epfl-news: add template card for 1,2 or 3 news
+  - epfl-infoscience-search: add render html
+  - epfl-video: clean width and heigt parameters
+  - epfl-map: add render html
+
 *1.2.6* (2018-09-11)
   - Styleguide 1.3.0 + Header search
   - Refactor faculty to schools for all visible parts
