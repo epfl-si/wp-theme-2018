@@ -56,16 +56,20 @@
               <a class="btn btn-block btn-primary mb-2" href="mailto:<?php echo esc_attr($person->email) ?>"><?php echo esc_html($person->email) ?></a>
               <?php endif ?>
               <?php if ($phones[0]): ?>
-              <a class="btn btn-block btn-secondary" href="tel:<?php echo esc_html($phones[0]) ?>"><?php echo esc_html($phones[0]) ?></a>
+              <a class="btn btn-block btn-secondary" href="tel:+412169<?php echo esc_html($phones[0]) ?>">+41 21 69 <?php echo esc_html($phones[0]) ?></a>
               <?php endif ?>
             </div>
           </div>
           <h3><a class="link-pretty" href="<?php echo esc_url($people_url) ?>"><?php echo esc_html($person->prenom) ?> <?php echo esc_html($person->nom) ?></a></h3>
           <dl class="definition-list definition-list-grid mb-0">
+            <?php if ($functions[0]): ?>
             <dt><?php esc_html_e('Position', 'epfl') ?></dt>
             <dd><?php echo esc_html($functions[0]) ?></dd>
+            <?php endif; ?>
+            <?php if ($rooms[0]): ?>
             <dt><?php esc_html_e('Office', 'epfl') ?></dt>
             <dd><a class="link-pretty" href="<?php echo esc_url($room_url) ?>"><?php echo esc_html($rooms[0]) ?></a></dd>
+            <?php endif; ?>
           </dl>
         </div>
       </div>
@@ -80,4 +84,3 @@
     <?php endif; ?>
   <?php endif; ?>
 </div>
-
