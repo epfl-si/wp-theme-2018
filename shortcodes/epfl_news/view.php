@@ -16,8 +16,10 @@
 
 <?php if ("1" == $template): ?>
   <div class="container my-3">
+<?php elseif("4" == $template || "5" == $template || "6" == $template): ?>
+    <div class="container-full my-3 pl-5">
 <?php else: ?>
-  <div class="container-full my-3 pl-5">
+    <div class="container-full my-3">
 <?php endif ?>
     <div class="list-group">
       <?php
