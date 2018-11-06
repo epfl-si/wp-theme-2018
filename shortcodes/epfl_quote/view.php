@@ -4,7 +4,7 @@ $cite   = get_query_var('epfl_quote_cite');
 $footer = get_query_var('epfl_quote_footer');
 $image  = get_query_var('epfl_quote_image');
 ?>
-<div class="row">
+<div class="row my-3">
   <div class="col-6 offset-3 col-sm-4 offset-sm-4 col-md-2 offset-md-0 text-center text-md-right">
     <picture>
       <img src="<?php echo esc_url($image); ?>" class="img-fluid rounded-circle" alt="<?php echo esc_attr($cite); ?>">
