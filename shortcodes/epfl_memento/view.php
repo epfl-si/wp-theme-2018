@@ -14,7 +14,7 @@
 
 <?php if ("1" === $template or "2" === $template): // TEMPLATE SLIDER ?> 
 
-<div class="container-full overflow-hidden my-3">
+<div class="container-full overflow-hidden my-3 pl-5">
   <div class="container">
     <div class="card-slider-wrapper">
       <div class="card-slider">

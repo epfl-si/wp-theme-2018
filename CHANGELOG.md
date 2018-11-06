@@ -1,5 +1,12 @@
-
 # CHANGELOG
+
+*1.2.15* (2018-11-06)
+  - Set padding only for cards view (#134)
+  - Fix missing padding for shortcodes on the full container (#133)
+  - Add full tel number; don't show empty office or position (#131)
+  - Add epfl tableau shortcode (#132)
+  - Render epfl-quote (#91)
+  - Add french translations for people shortcode render (#129)
 
 *1.2.14* (2018-10-26)
   - Styleguide 1.3.3 with temporary fixes

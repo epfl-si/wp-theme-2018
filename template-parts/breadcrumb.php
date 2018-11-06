@@ -57,12 +57,12 @@ if ($currentTemplate == 'page-homepage.php') {
           if ((int) $item->db_id === (int) $crumb_item->db_id) {
             $crumbs[] = "
                   <li class=\"breadcrumb-item active\">
-                      {$item->title}
+                      {$crumb_item->title}
                   </li>";
           } else {
               $crumbs[] = "
                   <li class=\"breadcrumb-item\">
-                      <a class=\"bread-link bread-home\" href=\"{$item->url}\" title=\"{$item->title}\">
+                      <a class=\"bread-link bread-home\" href=\"{$crumb_item->url}\" title=\"{$crumb_item->title}\">
                           {$crumb_item->title}
                       </a>
                   </li>";
