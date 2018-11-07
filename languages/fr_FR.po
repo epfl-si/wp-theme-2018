@@ -1,18 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-10-24 16:15+0200\n"
-"PO-Revision-Date: 2018-10-30 11:21+0100\n"
+"POT-Creation-Date: 2018-11-07 09:21+0100\n"
+"PO-Revision-Date: 2018-11-07 09:22+0100\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: shortcodes\n"
 "X-Poedit-SearchPath-1: .\n"
 
@@ -225,6 +226,10 @@ msgstr ""
 msgid "Definition list"
 msgstr ""
 
+#: shortcodes/epfl_google_forms/view.php:9
+msgid "Loading..."
+msgstr "Chargement..."
+
 #: shortcodes/epfl_memento/templates/card-info.php:22
 msgid "Place and room"
 msgstr "Lieu et salle"
@@ -249,7 +254,6 @@ msgstr "Information & inscription"
 
 #: shortcodes/epfl_memento/view.php:131
 #, fuzzy
-#| msgid "No scheduled events"
 msgid "Next events"
 msgstr "Aucun événement programmé"
 
@@ -257,24 +261,32 @@ msgstr "Aucun événement programmé"
 msgid "See all events"
 msgstr ""
 
-#: shortcodes/epfl_news/view.php:46
+#: shortcodes/epfl_news/view.php:48
 msgid "The last news"
 msgstr "Les dernières actualités"
 
-#: shortcodes/epfl_news/view.php:116 shortcodes/epfl_news/view.php:157
-#: shortcodes/epfl_news/view.php:186
+#: shortcodes/epfl_news/view.php:118 shortcodes/epfl_news/view.php:159
+#: shortcodes/epfl_news/view.php:188
 msgid "News"
 msgstr "Actualités"
 
-#: shortcodes/epfl_news/view.php:121 shortcodes/epfl_news/view.php:130
-#: shortcodes/epfl_news/view.php:162 shortcodes/epfl_news/view.php:171
+#: shortcodes/epfl_news/view.php:123 shortcodes/epfl_news/view.php:132
+#: shortcodes/epfl_news/view.php:164 shortcodes/epfl_news/view.php:173
 #: shortcodes/page_highlight/view.php:33 shortcodes/page_highlight/view.php:45
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: shortcodes/epfl_news/view.php:202 shortcodes/epfl_news/view.php:222
+#: shortcodes/epfl_news/view.php:204 shortcodes/epfl_news/view.php:224
 msgid "All news"
 msgstr "Toutes les actualités"
+
+#: shortcodes/epfl_people/view.php:66
+msgid "Position"
+msgstr "Fonction"
+
+#: shortcodes/epfl_people/view.php:70
+msgid "Office"
+msgstr "Bureau"
 
 #: shortcodes/epfl_publication/renderers/fields.php:112
 msgid "Dir."
@@ -325,7 +337,6 @@ msgstr ""
 #: shortcodes/epfl_share/view.php:16 shortcodes/epfl_share/view.php:20
 #: shortcodes/epfl_share/view.php:42 shortcodes/epfl_share/view.php:46
 #, fuzzy
-#| msgid "Follow us on Twitter"
 msgid "Follow us on"
 msgstr "Nous rejoindre sur Twitter"
 
@@ -446,12 +457,6 @@ msgstr ""
 #: template-parts/content-post.php:50 template-parts/content.php:50
 msgid "Pages:"
 msgstr ""
-
-msgid "Position"
-msgstr "Fonction"
-
-msgid "Office"
-msgstr "Bureau"
 
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"
