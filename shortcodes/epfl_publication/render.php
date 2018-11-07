@@ -39,12 +39,12 @@ Class Infoscience2018Render {
 
 Class ClassesInfoscience2018Render extends Infoscience2018Render {
     protected static function render_header_1($value) {
-        $translated_value = esc_html__($value, 'epfl');
+        $translated_value = esc_html__($value, 'epfl-infoscience-search');
         return '<h1 class="h2 mt-3">'. $translated_value . '</h1>';
     }
 
     protected static function render_header_2($value) {
-        $translated_value = esc_html__($value, 'epfl');
+        $translated_value = esc_html__($value, 'epfl-infoscience-search');
         return '<h2 class="h3 mt-1 mb-2">'. $translated_value . '</h2>';
     }
 
