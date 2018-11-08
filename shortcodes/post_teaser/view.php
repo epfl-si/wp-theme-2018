@@ -14,7 +14,7 @@ if (isset($data['gray'])) $postCount = $postCount - 1;
         <a href="<?php echo $post_url ?>" class="card link-trapeze-horizontal">
           <?php
             card_img_top(
-              get_the_post_thumbnail($post, 'thumbnail_16_9_crop', ['class' => 'img-fluid']),
+              get_the_post_thumbnail($post, 'thumbnail_16_9_large', ['class' => 'img-fluid']),
               $post_url,
               false
             );
