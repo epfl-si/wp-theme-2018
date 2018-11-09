@@ -48,9 +48,7 @@
       <div class="card">
         <div class="card-body">
           <div class="my-3 align-items-center">
-            <?php if ($photo_url): ?>
-              <img style="width:100px;" class="img-fluid rounded-circle mr-4 mb-1" src="<?php echo esc_url($photo_url) ?>" alt="<?php echo esc_attr($person->prenom) ?> <?php echo esc_attr($person->nom) ?>">
-            <?php endif; ?>
+            <img style="height:8rem;" class="img-fluid rounded-circle mr-4 mb-1" src="<?php echo ($photo_url ? esc_url($photo_url) : bloginfo('template_url').'/images/person-avatar-small.png') ?>" alt="<?php echo esc_attr($person->prenom) ?> <?php echo esc_attr($person->nom) ?>">
             <div class="w-100 mt-2 mt-md-0">
               <?php if ($person->email): ?>
               <a class="btn btn-block btn-primary mb-2" href="mailto:<?php echo esc_attr($person->email) ?>"><?php echo esc_html($person->email) ?></a>
