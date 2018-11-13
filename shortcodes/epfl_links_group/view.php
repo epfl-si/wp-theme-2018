@@ -6,7 +6,6 @@
 ?>
 <div class="container-grid my-3">
   <div class="links-group <?php if ($is_links_teaser):?>links-group-teaser<?php endif; ?>">
-
     <h5 id="links-group-title">
       <?php if($is_links_teaser): ?>
       <a class="link-pretty" href="<?php echo esc_url($main_url) ?>"><?php echo esc_html($title) ?></a>
