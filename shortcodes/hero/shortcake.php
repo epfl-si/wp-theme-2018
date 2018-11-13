@@ -26,6 +26,7 @@ function hero() {
 			'libraryType' => array( 'image' ),
 			'addButton'   => esc_html__( 'Select Image', 'epfl' ),
 			'frameTitle'  => esc_html__( 'Select Image', 'epfl' ),
+			'description' => esc_html__('Recommended image size: 1920x1080', 'epfl')
 		)
 	];
 

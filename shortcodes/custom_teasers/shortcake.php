@@ -51,6 +51,7 @@ function custom_teasers() {
 					'libraryType' => array( 'image' ),
 					'addButton'   => esc_html__( 'Select Image', 'epfl', 'shortcode-ui' ),
 					'frameTitle'  => esc_html__( 'Select Image', 'epfl', 'shortcode-ui' ),
+					'description' => esc_html__('Recommended image size: 1920x1080', 'epfl')
 				)
 			]
 		);
