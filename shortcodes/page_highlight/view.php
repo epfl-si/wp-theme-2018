@@ -22,7 +22,6 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
         srcset="<?php echo get_the_post_thumbnail_url($page, 'large') ?>"
       >
       <img src="<?php echo get_the_post_thumbnail_url($page) ?>" aria-labelledby="background-label" alt="An image description" />
-
     </picture>   
     <?php endif; ?>
 
