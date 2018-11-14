@@ -10,7 +10,7 @@ if (isset($data['gray'])) $postCount = $postCount - 1;
     <div class="container">
       <div class="card-deck<?php echo ($postCount < 3) ? ' card-deck-line' : '' ?>">
         <?php foreach($data as $key => $post) :
-            if ($key == 'gray') continue;
+            if ($key === 'gray') continue;
         ?>
         <?php  $post_url = get_permalink($post); ?>
         <a href="<?php echo $post_url ?>" class="card link-trapeze-horizontal">
