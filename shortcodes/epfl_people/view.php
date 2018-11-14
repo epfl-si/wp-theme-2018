@@ -61,6 +61,7 @@
             <dt><?php esc_html_e('Office', 'epfl') ?></dt>
             <dd><a class="link-pretty" href="<?php echo esc_url($room_url) ?>"><?php echo esc_html($rooms[0]) ?></a></dd>
             <?php else: ?>
+            <?php /* Quickfix until fixed in Styleguide */ ?>
             <dt></dt>
             <dd>&nbsp;</dd>
             <?php endif; ?>
