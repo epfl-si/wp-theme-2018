@@ -1,5 +1,21 @@
 # CHANGELOG
 
+*1.2.16* (2018-11-14)
+  - epfl_social_feed: simplify renderer to align the feed in center (#144)
+  - epfl_card: set full container in all case; allow to add a gray wrapper (#143)
+  - custom_teaser, custom_highlight, schools, hero: add recommended size (#142)
+  - epfl_links_group: Add margin (#141)
+  - Fix people html (#138)
+  - highlight page: improve image width (#140)
+  - epfl_quote: crop quote image with square crop (#139)
+  - epfl_publication: fix wrong context for translation (#136)
+  - use crop_large instead crop (too short) (#137)
+  - Merge pull request #135 from epfl-idevelop/epfl-google-forms
+  - Update shortcodes/epfl_google_forms/view.php
+  - Move 'loading' parameter from shortcode to theme and use of internal
+  - Put everything in a <div class='container'>
+  - Add render for 'epfl-google-forms' plugin
+
 *1.2.15* (2018-11-06)
   - Set padding only for cards view (#134)
   - Fix missing padding for shortcodes on the full container (#133)
