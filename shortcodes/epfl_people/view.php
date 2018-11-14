@@ -60,6 +60,9 @@
             <?php if ($rooms[0]): ?>
             <dt><?php esc_html_e('Office', 'epfl') ?></dt>
             <dd><a class="link-pretty" href="<?php echo esc_url($room_url) ?>"><?php echo esc_html($rooms[0]) ?></a></dd>
+            <?php else: ?>
+            <dt></dt>
+            <dd>&nbsp;</dd>
             <?php endif; ?>
           </dl>
           <div class="w-100 mt-2 mt-md-0">
