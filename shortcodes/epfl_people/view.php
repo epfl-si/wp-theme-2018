@@ -56,6 +56,10 @@
             <?php if ($functions[0]): ?>
             <dt><?php esc_html_e('Position', 'epfl') ?></dt>
             <dd><?php echo esc_html($functions[0]) ?></dd>
+            <?php else: ?>
+            <?php /* Quickfix until fixed in Styleguide */ ?>
+            <dt></dt>
+            <dd>&nbsp;</dd>
             <?php endif; ?>
             <?php if ($rooms[0]): ?>
             <dt><?php esc_html_e('Office', 'epfl') ?></dt>
