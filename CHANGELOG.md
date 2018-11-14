@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.2.17* (2018-11-14)
+  - Fix post teaser gray background (#146)
+  - Fix epfl people design (#145) 
+
 *1.2.16* (2018-11-14)
   - epfl_social_feed: simplify renderer to align the feed in center (#144)
   - epfl_card: set full container in all case; allow to add a gray wrapper (#143)
