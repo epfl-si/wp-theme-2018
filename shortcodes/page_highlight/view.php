@@ -17,9 +17,12 @@ if ($data['layout'] == 'left') $classes = 'fullwidth-teaser-left';
   <div class="fullwidth-teaser <?php echo $classes; ?>">
   <?php if (has_post_thumbnail( $page )) : ?>
     <picture>
-      <img src="<?php echo get_the_post_thumbnail_url($page) ?>" aria-labelledby="background-label" alt="An image description"
-      />
-    </picture>
+      <source
+        media="(min-width: 1140px)"
+        srcset="<?php echo get_the_post_thumbnail_url($page, 'large') ?>"
+      >
+      <img src="<?php echo get_the_post_thumbnail_url($page) ?>" aria-labelledby="background-label" alt="An image description" />
+    </picture>   
     <?php endif; ?>
 
     <div class="fullwidth-teaser-text">

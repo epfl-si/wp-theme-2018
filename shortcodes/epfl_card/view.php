@@ -1,5 +1,6 @@
 <?php
   $data = get_query_var('epfl_cards');
+  $gray_wrapper = $data['gray_wrapper'];
 
   if (!$data) return true;
 
@@ -10,10 +11,9 @@
     }
   }
 ?>
-<?php if ($elementCount > 1): ?>
-<div class="container my-3">
+
+<div class="container-full py-3<?php echo ($gray_wrapper) ? ' bg-gray-100' : '' ?>">
   <div class="card-deck <?php echo ($elementCount < 3) && ($elementCount > 1) ? ' card-deck-line' : '' ?>">
-<?php endif ?>
     <?php
     for($i = 1; $i < 4; $i++):
       $title = esc_html($data['title'.$i]);
@@ -34,7 +34,7 @@
         <picture>
         <?php echo wp_get_attachment_image(
           $image_id,
-          'thumbnail_16_9_crop', // see functions.php
+          'thumbnail_16_9_large', // see functions.php
           '',
           [
             'class' => 'img-fluid',
@@ -61,7 +61,5 @@
       endif;
       endfor;
     ?>
-<?php if ($elementCount > 1): ?>
   </div>
 </div>
-<?php endif ?>

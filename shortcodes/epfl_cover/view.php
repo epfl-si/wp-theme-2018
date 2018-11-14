@@ -8,7 +8,7 @@
     <picture>
       <?php echo wp_get_attachment_image(
         $image,
-        'thumbnail_16_9_crop', // see functions.php
+        'thumbnail_16_9_large', // see functions.php
         '',
         [
           'class' => 'img-fluid',

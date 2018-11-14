@@ -48,17 +48,8 @@
       <div class="card">
         <div class="card-body">
           <div class="my-3 align-items-center">
-            <?php if ($photo_url): ?>
-              <img style="width:100px;" class="img-fluid rounded-circle mr-4 mb-1" src="<?php echo esc_url($photo_url) ?>" alt="<?php echo esc_attr($person->prenom) ?> <?php echo esc_attr($person->nom) ?>">
-            <?php endif; ?>
-            <div class="w-100 mt-2 mt-md-0">
-              <?php if ($person->email): ?>
-              <a class="btn btn-block btn-primary mb-2" href="mailto:<?php echo esc_attr($person->email) ?>"><?php echo esc_html($person->email) ?></a>
-              <?php endif ?>
-              <?php if ($phones[0]): ?>
-              <a class="btn btn-block btn-secondary" href="tel:+412169<?php echo esc_html($phones[0]) ?>">+41 21 69 <?php echo esc_html($phones[0]) ?></a>
-              <?php endif ?>
-            </div>
+            <?php /* this inline style can be removed next time we apply a new Styleguide version */ ?>
+            <img style="height:8rem;" class="img-fluid rounded-circle mb-2 person-card-avatar" src="<?php echo ($photo_url ? esc_url($photo_url) : bloginfo('template_url').'/images/defaults/person-default-avatar-small.png') ?>" alt="<?php echo esc_attr($person->prenom) ?> <?php echo esc_attr($person->nom) ?>">
           </div>
           <h3><a class="link-pretty" href="<?php echo esc_url($people_url) ?>"><?php echo esc_html($person->prenom) ?> <?php echo esc_html($person->nom) ?></a></h3>
           <dl class="definition-list definition-list-grid mb-0">
@@ -71,6 +62,14 @@
             <dd><a class="link-pretty" href="<?php echo esc_url($room_url) ?>"><?php echo esc_html($rooms[0]) ?></a></dd>
             <?php endif; ?>
           </dl>
+          <div class="w-100 mt-2 mt-md-0">
+              <?php if ($person->email): ?>
+              <a class="btn btn-block btn-primary mb-2" href="mailto:<?php echo esc_attr($person->email) ?>"><?php echo esc_html($person->email) ?></a>
+              <?php endif ?>
+              <?php if ($phones[0]): ?>
+              <a class="btn btn-block btn-secondary" href="tel:+412169<?php echo esc_html($phones[0]) ?>">+41 21 69 <?php echo esc_html($phones[0]) ?></a>
+              <?php endif ?>
+            </div>
         </div>
       </div>
         <?php if($index % $nb_column == 0): ?></div"><?php endif; ?>

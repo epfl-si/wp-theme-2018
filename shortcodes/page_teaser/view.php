@@ -15,7 +15,7 @@ $gray = $data['gray'];
           <?php
           $page_url = get_permalink($page);
             card_img_top(
-              get_the_post_thumbnail($page, 'thumbnail_16_9_crop', ['class' => 'img-fluid']),
+              get_the_post_thumbnail($page, 'thumbnail_16_9_large', ['class' => 'img-fluid']),
               $page_url
             );
           ?>
