@@ -4,48 +4,45 @@
       
   <div class="footer-sitemap-col">
     <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-1" aria-expanded="false" aria-controls="collapse-footer-1">
-                  <strong>About EPFL</strong>
+                  <strong>About</strong>
           </button>
     <div class="collapse collapse-item" id="collapse-footer-1">
       <ul class="footer-links">
                   <li>
-                                    <a href="https://www.epfl.ch">Overview</a>
+                                    <a href="https://www2018.epfl.ch/about/overview">Overview</a>
                       </li>
                   <li>
-                                    <a href="#">President</a>
+                                    <a href="https://www2018.epfl.ch/about/presidency">President</a>
                       </li>
                   <li>
-                                    <a href="#">Direction</a>
+                                    <a href="https://www2018.epfl.ch/about/vice-presidencies">Vice-presidencies</a>
                       </li>
                   <li>
-                                    <a href="#">Vice-presidencies</a>
+                                    <a href="https://www2018.epfl.ch/about/campus">Extended campus</a>
                       </li>
                   <li>
-                                    <a href="#">EPFL locations</a>
+                                    <a href="https://www2018.epfl.ch/about/working">Working at EPFL</a>
                       </li>
                   <li>
-                                    <a href="#">Working at EPFL</a>
+                                    <a href="https://carriere.epfl.ch">Recruiting EPFL talents</a>
                       </li>
                   <li>
-                                    <a href="#">Recruiting EPFL talents</a>
+                                    <a href="https://www2018.epfl.ch/about/news-and-media">News and media</a>
                       </li>
                   <li>
-                                    <a href="#">News & Media</a>
+                                    <a href="https://www2018.epfl.ch/about/sustainability">Sustainable campus</a>
                       </li>
                   <li>
-                                    <a href="#">Scientific activities</a>
+                                    <a href="https://equality.epfl.ch">Equal opportunities</a>
                       </li>
                   <li>
-                                    <a href="#">Philanthropy</a>
+                                    <a href="https://www2018.epfl.ch/about/philanthropy">Philanthropy</a>
                       </li>
                   <li>
-                                    <a href="#">Cooperation</a>
+                                    <a href="https://cooperation.epfl.ch">Cooperation</a>
                       </li>
                   <li>
-                                    <a href="#">Alumni</a>
-                      </li>
-                  <li>
-                                    <a href="#">Laws & regulations</a>
+                                    <a href="https://www.epflalumni.epfl.ch">Alumni</a>
                       </li>
               </ul>
     </div>
@@ -57,25 +54,31 @@
     <div class="collapse collapse-item" id="collapse-footer-2">
       <ul class="footer-links">
                   <li>
-                                    <a href="#">Bachelor</a>
+                                    <a href="https://www2018.epfl.ch/education/about">Educational initiatives</a>
                       </li>
                   <li>
-                                    <a href="#">Master</a>
+                                    <a href="https://www2018.epfl.ch/education/bachelor">Bachelor</a>
                       </li>
                   <li>
-                                    <a href="#">PhD</a>
+                                    <a href="https://www2018.epfl.ch/education/master">Master</a>
                       </li>
                   <li>
-                                    <a href="#">Continuing education</a>
+                                    <a href="https://www2018.epfl.ch/education/phd">PhD</a>
                       </li>
                   <li>
-                                    <a href="#">Mobility</a>
+                                    <a href="https://www2018.epfl.ch/education/continuing-education">Continuing education</a>
                       </li>
                   <li>
-                                    <a href="#">Admissions</a>
+                                    <a href="https://www2018.epfl.ch/education/mobility">Mobility</a>
                       </li>
                   <li>
-                                    <a href="#">Studying at EPFL</a>
+                                    <a href="https://www2018.epfl.ch/education/admission">Admission</a>
+                      </li>
+                  <li>
+                                    <a href="https://www2018.epfl.ch/education/science-and-education-outreach">Studying at EPFL</a>
+                      </li>
+                  <li>
+                                    <a href="https://www2018.epfl.ch/education/studies">Sciences and education outreach</a>
                       </li>
               </ul>
     </div>
@@ -87,28 +90,28 @@
     <div class="collapse collapse-item" id="collapse-footer-3">
       <ul class="footer-links">
                   <li>
-                                    <a href="#">Research at EPFL</a>
+                                    <a href="https://www2018.epfl.ch/research/domains">Research domains</a>
                       </li>
                   <li>
-                                    <a href="#">Research domains</a>
+                                    <a href="https://www2018.epfl.ch/research/faculty-members">Faculty members</a>
                       </li>
                   <li>
-                                    <a href="#">Laboratories</a>
+                                    <a href="https://www2018.epfl.ch/research/collaborate">Collaborate with our researchers</a>
                       </li>
                   <li>
-                                    <a href="#">Meet our faculty members</a>
+                                    <a href="https://www2018.epfl.ch/research/facilities">Research facilities</a>
                       </li>
                   <li>
-                                    <a href="#">Use our facilities</a>
+                                    <a href="https:/www2018.epfl.ch/research/access-technology">Access our technologies</a>
                       </li>
                   <li>
-                                    <a href="#">Collaborate & partner</a>
+                                    <a href="https://www2018.epfl.ch/research/services">Services for researchers</a>
                       </li>
                   <li>
-                                    <a href="#">Services to our researchers</a>
+                                    <a href="https://www2018.epfl.ch/research/ethic-statement">Ethical statement</a>
                       </li>
                   <li>
-                                    <a href="#">Events, news & deadlines</a>
+                                    <a href="https://www2018.epfl.ch/research/awards">Research awards</a>
                       </li>
               </ul>
     </div>
@@ -120,28 +123,25 @@
     <div class="collapse collapse-item" id="collapse-footer-4">
       <ul class="footer-links">
                   <li>
-                                    <a href="#">About</a>
+                                    <a href="https://www2018.epfl.ch/innovation/about">About innovation</a>
                       </li>
                   <li>
-                                    <a href="#">Collaboration & partnership</a>
+                                    <a href="https://www2018.epfl.ch/innovation/domains">Innovation domains</a>
                       </li>
                   <li>
-                                    <a href="#">Entrepreneurship</a>
+                                    <a href="https://www2018.epfl.ch/innovation/industry">Collaborate with industries</a>
                       </li>
                   <li>
-                                    <a href="#">Startups</a>
+                                    <a href="https://www2018.epfl.ch/innovation/entrepreneurship">Entrepreneurship and startups</a>
                       </li>
                   <li>
-                                    <a href="#">Learn & develop</a>
+                                    <a href="https://www2018.epfl.ch/innovation/learn-develop">Learn and develop</a>
                       </li>
                   <li>
-                                    <a href="#">Join & engage</a>
+                                    <a href="https://www2018.epfl.ch/innovation/join">Contacts</a>
                       </li>
                   <li>
-                                    <a href="#">Contacts</a>
-                      </li>
-                  <li>
-                                    <a href="#">News & Events</a>
+                                    <a href="https://www2018.epfl.ch/innovation/events">Events</a>
                       </li>
               </ul>
     </div>
@@ -153,43 +153,37 @@
     <div class="collapse collapse-item" id="collapse-footer-5">
       <ul class="footer-links">
                   <li>
-                                    <a href="#">Access</a>
+                                    <a href="https://www2018.epfl.ch/campus/visitors">Coming to EPFL</a>
                       </li>
                   <li>
-                                    <a href="#">Library</a>
+                                    <a href="https://www2018.epfl.ch/campus/services">Services and ressources</a>
                       </li>
                   <li>
-                                    <a href="#">Restaurants. shops, hotels</a>
+                                    <a href="https://www2018.epfl.ch/campus/library">Library</a>
                       </li>
                   <li>
-                                    <a href="#">Daycare</a>
+                                    <a href="https://www2018.epfl.ch/campus/restaurants-shops-hotels">Restaurants, shops and hotels</a>
                       </li>
                   <li>
-                                    <a href="#">Sports</a>
+                                    <a href="https://www2018.epfl.ch/campus/events">Events</a>
                       </li>
                   <li>
-                                    <a href="#">Sustainability</a>
+                                    <a href="https://equality.epfl.ch/fr/famille_vieprivee_prof/garderies/">Childcare</a>
                       </li>
                   <li>
-                                    <a href="#">Art, culture, exhibitions</a>
+                                    <a href="https://sport.unil.ch">Sport</a>
                       </li>
                   <li>
-                                    <a href="#">Help, security, health</a>
+                                    <a href="https://www2018.epfl.ch/campus/art-culture">Art and culture</a>
                       </li>
                   <li>
-                                    <a href="#">Associations</a>
+                                    <a href="https://securite.epfl.ch">Health, security and safety</a>
                       </li>
                   <li>
-                                    <a href="#">Events</a>
+                                    <a href="https://www2018.epfl.ch/campus/spiritual-care">Chaplaincy</a>
                       </li>
                   <li>
-                                    <a href="#">Living in Switzerland</a>
-                      </li>
-                  <li>
-                                    <a href="#">EPFL services</a>
-                      </li>
-                  <li>
-                                    <a href="#">Students services</a>
+                                    <a href="https://www2018.epfl.ch/campus/associations">Associations</a>
                       </li>
               </ul>
     </div>
@@ -205,25 +199,28 @@
   <div class="collapse collapse-item" id="collapse-fac">
     <ul class="footer-links">
           <li>
-                        <a href="">Environnement Naturel, Architectural et Construit <strong>ENAC</strong></a>
+                        <a href="https://www2018.epfl.ch/schools/enac">School of architecture, civil and environmental engineering <strong>ENAC</strong></a>
               </li>
           <li>
-                        <a href="">Sciences de Base <strong>SB</strong></a>
+                        <a href="https://www2018.epfl.ch/schools/sb">School of basic sciences <strong>SB</strong></a>
               </li>
           <li>
-                        <a href="">Sciences et Techniques de l'Ingénieur <strong>STI</strong></a>
+                        <a href="https://sti.epfl.ch/">School of Engineering <strong>STI</strong></a>
               </li>
           <li>
-                        <a href="">Informatique et Communications <strong>IC</strong></a>
+                        <a href="https://www2018.epfl.ch/schools/ic">School of computer and communication sciences <strong>IC</strong></a>
               </li>
           <li>
-                        <a href="">Sciences de la Vie <strong>SV</strong></a>
+                        <a href="https://www2018.epfl.ch/schools/sv">School of life sciences <strong>SV</strong></a>
               </li>
           <li>
-                        <a href="">Collège du Management de la Technologie <strong>CDM</strong></a>
+                        <a href="https://www2018.epfl.ch/schools/cdm">College of management of technology <strong>CDM</strong></a>
               </li>
           <li>
-                        <a href="">Collège des Humanités <strong>CDH</strong></a>
+                        <a href="https://www2018.epfl.ch/schools/cdh">College of humanities <strong>CDH</strong></a>
+              </li>
+          <li>
+                        <a href="https://www2018.epfl.ch/schools/middle-east">Middle East <strong>ME</strong></a>
               </li>
         </ul>
   </div>
@@ -233,40 +230,31 @@
   <div class="footer-group footer-buttons">
     
 
-<p class="footer-title footer-title-no-underline">Portail interne de l’EPFL</p>
-<a href="#" class="btn btn-secondary btn-sm">Enseignants et chercheurs</a>
-<a href="#" class="btn btn-secondary btn-sm">Étudiants</a>
-<a href="#" class="btn btn-secondary btn-sm">Collaborateurs</a>
+<p class="footer-title footer-title-no-underline">Practical</p>
+<a href="https://www2018.epfl.ch/campus/services" class="btn btn-secondary btn-sm">Services and ressources</a>
+<a href="tel:+41216933000" class="btn btn-secondary btn-sm">Emergencies: +41 21 693 3000</a>
   </div>
 
   <div class="footer-group footer-socials">
-    <p class="footer-title footer-title-no-underline">Suivre les pulsations de l’EPFL sur les réseaux sociaux</p>
+    <p class="footer-title footer-title-no-underline">Follow EPFL on social media</p>
 <div class="footer-social">
-  <a href="#" class="social-icon social-icon-facebook social-icon-negative">
+  <a href="https://www.facebook.com/epflcampus" class="social-icon social-icon-facebook social-icon-negative">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook"></use></svg>
   <span class="sr-only">Follow us on Facebook.</span>
 </a>
-<a href="#" class="social-icon social-icon-twitter social-icon-negative">
+<a href="https://twitter.com/epfl" class="social-icon social-icon-twitter social-icon-negative">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter"></use></svg>
   <span class="sr-only">Follow us on Twitter.</span>
 </a>
-<a href="#" class="social-icon social-icon-instagram social-icon-negative">
+<a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg>
   <span class="sr-only">Follow us on Instagram.</span>
 </a>
-<a href="#" class="social-icon social-icon-mail-plane social-icon-negative">
-  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-plane"></use></svg>
-  <span class="sr-only">Follow us on Mailplane.</span>
+<a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-chevron-right social-icon-negative">
+  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
+  <span class="sr-only">Follow us on Youtube.</span>
 </a>
-<a href="#" class="social-icon social-icon-whatsapp social-icon-negative">
-  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-whatsapp"></use></svg>
-  <span class="sr-only">Follow us on WhatsApp.</span>
-</a>
-<a href="#" class="social-icon social-icon-googleplus social-icon-negative">
-  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-googleplus"></use></svg>
-  <span class="sr-only">Follow us on GooglePlus.</span>
-</a>
-<a href="#" class="social-icon social-icon-linkedin social-icon-negative">
+<a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkedin"></use></svg>
   <span class="sr-only">Follow us on LinkedIn.</span>
 </a>
@@ -276,8 +264,8 @@
   
 <div class="footer-legal">
   <div class="footer-legal-links">
-    <a href="">Accessibility</a>
-    <a href="">Disclaimer</a>
+    <a href="https://epfl-idevelop.github.io/elements/#/doc/accessibility.html">Accessibility</a>
+    <a href="https://mediacom.epfl.ch/disclaimer">Legals</a>
   </div>
   <div>
     <p>&copy; 2018 EPFL, all rights reserved</p>
