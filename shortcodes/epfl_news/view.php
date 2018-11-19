@@ -45,7 +45,7 @@
 
           if (("5" == $template  or "6" == $template or "4" == $template) and $is_first_event) {
             echo '<h2 class="mt-5 mb-4">';
-            esc_html_e('The last news', 'epfl');
+            esc_html_e('The latest news', 'epfl');
             echo '</h2>';
             echo '<div class="row">';
           }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-11-13 16:06+0100\n"
-"PO-Revision-Date: 2018-11-13 16:07+0100\n"
+"POT-Creation-Date: 2018-11-19 15:50+0100\n"
+"PO-Revision-Date: 2018-11-19 15:51+0100\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -251,27 +251,27 @@ msgstr "Catégorie"
 msgid "Complete agenda of events"
 msgstr "Voir l’agenda complet des événements"
 
-#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:142
-#: shortcodes/epfl_memento/view.php:210
+#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:148
+#: shortcodes/epfl_memento/view.php:216
 msgid "No scheduled events"
 msgstr "Aucun événement programmé"
 
-#: shortcodes/epfl_memento/view.php:90
+#: shortcodes/epfl_memento/view.php:96
 msgid "Learn more & apply"
 msgstr "Information & inscription"
 
-#: shortcodes/epfl_memento/view.php:131
+#: shortcodes/epfl_memento/view.php:137
 #, fuzzy
 msgid "Next events"
 msgstr "Les prochains événements"
 
-#: shortcodes/epfl_memento/view.php:134
+#: shortcodes/epfl_memento/view.php:140
 #, fuzzy
 msgid "See all events"
 msgstr "Voir tous les événements"
 
 #: shortcodes/epfl_news/view.php:48
-msgid "The last news"
+msgid "The latest news"
 msgstr "Les dernières actualités"
 
 #: shortcodes/epfl_news/view.php:118 shortcodes/epfl_news/view.php:159
@@ -293,7 +293,7 @@ msgstr "Toutes les actualités"
 msgid "Position"
 msgstr "Fonction"
 
-#: shortcodes/epfl_people/view.php:61
+#: shortcodes/epfl_people/view.php:65
 msgid "Office"
 msgstr "Bureau"
 
