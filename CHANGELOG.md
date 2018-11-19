@@ -1,5 +1,12 @@
 # CHANGELOG
 
+*1.2.18* (2018-11-19)
+  - Fix epfl-news: wrong label replace by lastest news (#149)
+  - Fix epfl-memento: not display event if even hasn't date (#148)
+  - Set a fixed url until we go a better solution (#150)
+  - Add translations for the footer (#147) 
+  - Use the theme's wwp-get_multisite_home_url to calculate home links (#151)
+
 *1.2.17* (2018-11-14)
   - Fix post teaser gray background (#146)
   - Fix epfl people design (#145) 
