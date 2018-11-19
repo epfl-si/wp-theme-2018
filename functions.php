@@ -312,3 +312,11 @@ function get_current_menu_slug() {
   $menu_term = get_term($menu_locations[$EPFL_MENU_LOCATION], 'nav_menu');
 	return $menu_term;
 }
+
+function get_nav_home_url () {
+    if (function_exists('get_multisite_home_url')) {
+        return get_multisite_home_url();
+    } else {
+        return get_home_url();
+    }
+}
