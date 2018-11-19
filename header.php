@@ -25,7 +25,7 @@
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">
-	<a class="logo" href="https://www2018.epfl.ch">
+	<a class="logo" href="<?php echo get_nav_home_url(); ?>">
 			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
 		</a>
 

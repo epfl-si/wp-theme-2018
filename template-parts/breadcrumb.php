@@ -9,6 +9,7 @@ $currentTemplate = get_page_template_slug();
 if ($currentTemplate == 'page-homepage.php') {
     return;
   }
+
 ?>
 <div class="breadcrumb-container">
   <!-- Browse  -->
@@ -40,7 +41,7 @@ if ($currentTemplate == 'page-homepage.php') {
     echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ul class="p-0 m-0">';
     $crumbs[] = '
         <li class="breadcrumb-item">
-            <a class="bread-link bread-home" href="' . get_home_url() . '" title="home">
+            <a class="bread-link bread-home" href="' . get_nav_home_url() . '" title="home">
                 <svg class="icon"><use xlink:href="#icon-home"></use></svg>
             </a>
         </li>';
