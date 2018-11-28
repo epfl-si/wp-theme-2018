@@ -1,22 +1,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2018-11-27 16:30+0100\n"
-"PO-Revision-Date: 2018-11-27 16:30+0100\n"
+"POT-Creation-Date: 2018-11-19 15:50+0100\n"
+"PO-Revision-Date: 2018-11-28 12:57+0100\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: shortcodes\n"
 "X-Poedit-SearchPath-1: .\n"
-"X-Poedit-SearchPath-2: template-parts\n"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -48,8 +47,9 @@ msgid "Primary"
 msgstr ""
 
 #: functions.php:56
+#, fuzzy
 msgid "Footer"
-msgstr ""
+msgstr "Pied de page"
 
 #: functions.php:197
 msgid "Par défaut"
@@ -137,13 +137,19 @@ msgstr "Image"
 msgid "Select Image"
 msgstr "Sélectionner une image"
 
-#: shortcodes/custom_highlight/shortcake.php:36
+#: shortcodes/custom_highlight/shortcake.php:34
+#: shortcodes/custom_teasers/shortcake.php:54 shortcodes/hero/shortcake.php:29
+#: shortcodes/schools/shortcake.php:36
+msgid "Recommended image size: 1920x1080"
+msgstr "Taille recommandée de l'image: 1920x1080"
+
+#: shortcodes/custom_highlight/shortcake.php:37
 #: shortcodes/page_highlight/shortcake.php:14
 #: shortcodes/post_highlight/shortcake.php:14
 msgid "Layout"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:38
+#: shortcodes/custom_highlight/shortcake.php:39
 #: shortcodes/page_highlight/shortcake.php:16
 #: shortcodes/post_highlight/shortcake.php:16
 msgid ""
@@ -151,26 +157,26 @@ msgid ""
 "to be visible"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:41
+#: shortcodes/custom_highlight/shortcake.php:42
 #: shortcodes/page_highlight/shortcake.php:19
 #: shortcodes/post_highlight/shortcake.php:19
 msgid "Right"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:42
+#: shortcodes/custom_highlight/shortcake.php:43
 #: shortcodes/page_highlight/shortcake.php:20
 #: shortcodes/post_highlight/shortcake.php:20
 msgid "Bottom"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:43
+#: shortcodes/custom_highlight/shortcake.php:44
 #: shortcodes/page_highlight/shortcake.php:21
 #: shortcodes/post_highlight/shortcake.php:21
 #, fuzzy
 msgid "Left"
 msgstr "Template pour un portail (avec l'image sur la gauche)"
 
-#: shortcodes/custom_highlight/shortcake.php:53
+#: shortcodes/custom_highlight/shortcake.php:54
 msgid "Custom Highlight"
 msgstr ""
 
@@ -187,7 +193,7 @@ msgstr ""
 msgid "Url"
 msgstr "URL"
 
-#: shortcodes/custom_teasers/shortcake.php:64
+#: shortcodes/custom_teasers/shortcake.php:65
 msgid "Custom teasers"
 msgstr ""
 
@@ -237,33 +243,35 @@ msgstr "Lieu et salle"
 
 #: shortcodes/epfl_memento/templates/card-info.php:28
 #: shortcodes/epfl_memento/templates/card-info.php:30
+#, fuzzy
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
 #: shortcodes/epfl_memento/templates/card-slider-footer.php:16
 msgid "Complete agenda of events"
 msgstr "Voir l’agenda complet des événements"
 
-#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:142
-#: shortcodes/epfl_memento/view.php:210
+#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:148
+#: shortcodes/epfl_memento/view.php:216
 msgid "No scheduled events"
 msgstr "Aucun événement programmé"
 
-#: shortcodes/epfl_memento/view.php:90
+#: shortcodes/epfl_memento/view.php:96
 msgid "Learn more & apply"
 msgstr "Information & inscription"
 
-#: shortcodes/epfl_memento/view.php:131
+#: shortcodes/epfl_memento/view.php:137
 #, fuzzy
 msgid "Next events"
-msgstr "Aucun événement programmé"
+msgstr "Les prochains événements"
 
-#: shortcodes/epfl_memento/view.php:134
+#: shortcodes/epfl_memento/view.php:140
+#, fuzzy
 msgid "See all events"
-msgstr ""
+msgstr "Voir tous les événements"
 
 #: shortcodes/epfl_news/view.php:48
-msgid "The last news"
+msgid "The latest news"
 msgstr "Les dernières actualités"
 
 #: shortcodes/epfl_news/view.php:118 shortcodes/epfl_news/view.php:159
@@ -273,7 +281,7 @@ msgstr "Actualités"
 
 #: shortcodes/epfl_news/view.php:123 shortcodes/epfl_news/view.php:132
 #: shortcodes/epfl_news/view.php:164 shortcodes/epfl_news/view.php:173
-#: shortcodes/page_highlight/view.php:33 shortcodes/page_highlight/view.php:45
+#: shortcodes/page_highlight/view.php:36 shortcodes/page_highlight/view.php:48
 msgid "Read more"
 msgstr "En savoir plus"
 
@@ -281,11 +289,11 @@ msgstr "En savoir plus"
 msgid "All news"
 msgstr "Toutes les actualités"
 
-#: shortcodes/epfl_people/view.php:56
+#: shortcodes/epfl_people/view.php:57
 msgid "Position"
 msgstr "Fonction"
 
-#: shortcodes/epfl_people/view.php:60
+#: shortcodes/epfl_people/view.php:65
 msgid "Office"
 msgstr "Bureau"
 
@@ -320,8 +328,9 @@ msgid "Full text"
 msgstr "Texte intégral"
 
 #: shortcodes/epfl_publication/renderers/publications.php:126
+#, fuzzy
 msgid "View at publisher"
-msgstr ""
+msgstr "Consulter chez l'éditeur"
 
 #: shortcodes/epfl_scienceqa/view.php:13
 msgid "Question de science"
@@ -353,7 +362,7 @@ msgstr "Voir ce post sur Instagram"
 msgid "Follow us on Twitter"
 msgstr "Nous rejoindre sur Twitter"
 
-#: shortcodes/hero/shortcake.php:37
+#: shortcodes/hero/shortcake.php:38
 msgid "Hero"
 msgstr ""
 
@@ -420,10 +429,6 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: template-parts/breadcrumb.php:23
-msgid "Browse"
-msgstr "Parcourir"
-
 #: template-parts/categories-list.php:2
 msgid "Categories"
 msgstr ""
@@ -462,6 +467,9 @@ msgstr ""
 #: template-parts/content-post.php:50 template-parts/content.php:50
 msgid "Pages:"
 msgstr ""
+
+msgid "Browse"
+msgstr "Parcourir"
 
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"
