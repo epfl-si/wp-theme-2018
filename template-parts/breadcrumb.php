@@ -9,7 +9,6 @@ $currentTemplate = get_page_template_slug();
 if ($currentTemplate == 'page-homepage.php') {
     return;
   }
-
 ?>
 <div class="breadcrumb-container">
   <!-- Browse  -->
@@ -21,7 +20,7 @@ if ($currentTemplate == 'page-homepage.php') {
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-close"></use>
       </svg>
-      Browse
+      <?php echo __("Browse", 'epfl') ?>
     </button>
   </div>
   <!-- end Browse -->
