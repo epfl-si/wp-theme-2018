@@ -250,8 +250,8 @@
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg>
   <span class="sr-only">Follow us on Instagram.</span>
 </a>
-<a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-chevron-right social-icon-negative">
-  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
+<a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative">
+  <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
   <span class="sr-only">Follow us on Youtube.</span>
 </a>
 <a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative">
