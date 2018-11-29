@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.2.20* (2018-11-29)
+  - Set version for css and js based on the mtime of VERSION file
+  
 *1.2.19* (2018-11-29)
   - Update Styleguide to 1.3.5, including the footer
   - Add multi language navigation design (#152) 
