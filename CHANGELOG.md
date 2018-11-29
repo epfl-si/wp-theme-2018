@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*1.2.19* (2018-11-29)
+  - Update Styleguide to 1.3.5, including the footer
+  - Add multi language navigation design (#152) 
+  - Add translation for browse button (#153)
+
 *1.2.18* (2018-11-19)
   - Fix epfl-news: wrong label replace by lastest news (#149)
   - Fix epfl-memento: not display event if even hasn't date (#148)
