@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.2.21* (2018-12-03)
+  - Update urls to www
+
 *1.2.20* (2018-11-29)
   - Set version for css and js based on the mtime of VERSION file
   
