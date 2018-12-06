@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*To be released* (2018-12-06)
+  - Fix the cookie consent SEO problem (#156)
+
 *1.2.21* (2018-12-03)
   - Update urls to www
 
