@@ -29,8 +29,11 @@ if ($currentTemplate == 'page-homepage.php') {
   <?php
     // Breadcrumb
     $items = array();
-    foreach (wp_get_nav_menu_items(get_current_menu_slug()) as $item) {
-        $items[(int) $item->db_id] = $item;
+    if(($menu_items = wp_get_nav_menu_items(get_current_menu_slug()))!==false)
+    {
+        foreach ($menu_items as $item) {
+            $items[(int) $item->db_id] = $item;
+        }
     }
 
     $item = $items ? reset(wp_filter_object_list( $items, ['object_id' => $post->ID])) : false;
