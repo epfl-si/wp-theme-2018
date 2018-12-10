@@ -33,7 +33,7 @@
                         <a href="https://www.epfl.ch/about/sustainability">Campus durable</a>
                                   </li>
                   <li>
-                        <a href="https://equality.epfl.ch">Egalité des chances</a>
+                        <a href="https://equality.epfl.ch">Égalité des chances</a>
                                   </li>
                   <li>
                         <a href="https://www.epfl.ch/about/philanthropy">Philanthropie</a>
@@ -49,7 +49,7 @@
   </div>
   <div class="footer-sitemap-col">
     <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-2" aria-expanded="false" aria-controls="collapse-footer-2">
-            <strong>Education</strong>
+            <strong>Éducation</strong>
                 </button>
     <div class="collapse collapse-item" id="collapse-footer-2">
       <ul class="footer-links">
@@ -75,7 +75,7 @@
                         <a href="https://www.epfl.ch/education/admission">Admission</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/education/science-and-education-outreach">Etudier à l'EPFL</a>
+                        <a href="https://www.epfl.ch/education/science-and-education-outreach">Étudier à l'EPFL</a>
                                   </li>
                   <li>
                         <a href="https://www.epfl.ch/education/studies">Promotion sciences et éducation</a>
@@ -141,7 +141,7 @@
                         <a href="https://www.epfl.ch/innovation/join">Contacts</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/innovation/events">Evénements</a>
+                        <a href="https://www.epfl.ch/innovation/events">Événements</a>
                                   </li>
               </ul>
     </div>
@@ -165,7 +165,7 @@
                         <a href="https://www.epfl.ch/campus/restaurants-shops-hotels">Restaurants, commerces et hôtels</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/campus/events">Evénements</a>
+                        <a href="https://www.epfl.ch/campus/events">Événements</a>
                                   </li>
                   <li>
                         <a href="https://equality.epfl.ch/fr/famille_vieprivee_prof/garderies/">Crèches et garderies</a>

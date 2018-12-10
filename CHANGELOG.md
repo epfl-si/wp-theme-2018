@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.2.22* (2018-12-10)
+  - Update to styleguide 1.3.6
+
 *1.2.21* (2018-12-03)
   - Update urls to www
 
