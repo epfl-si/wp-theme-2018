@@ -69,7 +69,7 @@
                                     <a href="https://www.epfl.ch/education/continuing-education">Continuing education</a>
                       </li>
                   <li>
-                                    <a href="https://sac.epfl.ch/mobilite">Mobility</a>
+                                    <a href="https://sac.epfl.ch/student-exchanges">Mobility</a>
                       </li>
                   <li>
                                     <a href="https://www.epfl.ch/education/admission">Admission</a>
