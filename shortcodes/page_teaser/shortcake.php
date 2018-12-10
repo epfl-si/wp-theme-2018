@@ -13,7 +13,7 @@ function page_teaser() {
       'description' => esc_html__('Change the background to gray', 'epfl')
     ]);
 
-  for($i; $i < 3; $i++) {
+  for($i=0; $i < 3; $i++) {
     array_push($fields, array(
       'label'    => esc_html__( 'Select page' , 'epfl'),
 			'attr'     => 'page'.$i,
