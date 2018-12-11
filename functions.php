@@ -315,10 +315,33 @@ function get_current_menu_slug() {
 	return $menu_term;
 }
 
-function get_nav_home_url () {
-    if (function_exists('get_multisite_home_url')) {
-        return get_multisite_home_url();
+/**
+ * get_nav_home_url
+ * returns to the home, with the good language
+ * @return string
+ */
+function get_nav_home_url() {
+	$site_root_fr = 'https://www.epfl.ch';
+	$site_root_en = 'https://www.epfl.ch/en/home/';
+
+    /* If Polylang installed */
+    if(function_exists('pll_current_language'))
+    {
+        $current_lang = pll_current_language('slug');
+        // Check if current lang is supported. If not, use default lang
+		if ($current_lang === 'fr')
+		{
+			return $site_root_fr;
+		} else {
+			return $site_root_en;
+		}
     } else {
-        return get_home_url();
-    }
+        $lang = get_bloginfo("language");
+
+        if ($lang === 'fr-FR') {
+            return $site_root_fr;
+        } else {
+			return $site_root_en;
+		}
+	}
 }
