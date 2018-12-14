@@ -317,16 +317,23 @@ function get_current_menu_slug() {
 
 /**
  * get_nav_home_url
- * returns to the home, with the good language
+ * returns to the home, with the good langage
+ * good langage = default value is english, or if possible, french
  * @return string
  */
 function get_nav_home_url() {
-	$site_root_fr = 'https://www.epfl.ch';
-	$site_root_en = 'https://www.epfl.ch/en/home/';
+	if (class_exists('EPFL\Pod\Site')) {
+		$site_root = \EPFL\Pod\Site::root()->get_url();
+	} else {
+		$site_root = 'https://www.epfl.ch/';
+    }
+
+    $site_root_fr = $site_root;
+    $site_root_en = $site_root . 'en/';
 
     /* If Polylang installed */
-    if(function_exists('pll_current_language'))
-    {
+	if(function_exists('pll_current_language'))
+	{
         $current_lang = pll_current_language('slug');
         // Check if current lang is supported. If not, use default lang
 		if ($current_lang === 'fr')
