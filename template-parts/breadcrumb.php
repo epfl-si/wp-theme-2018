@@ -40,7 +40,7 @@ if ($currentTemplate == 'page-homepage.php') {
 
     $crumbs = array();
 
-    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ul class="p-0 m-0">';
+    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ol class="breadcrumb">';
     $crumbs[] = '
         <li class="breadcrumb-item">
             <a class="bread-link bread-home" href="' . get_nav_home_url() . '" title="home">
@@ -73,7 +73,7 @@ if ($currentTemplate == 'page-homepage.php') {
       }
     }
     echo implode('', $crumbs);
-    echo '</ul></nav>';
+    echo '</ol></nav>';
   ?>
   <!-- end Breadcrumb -->
 </div>
