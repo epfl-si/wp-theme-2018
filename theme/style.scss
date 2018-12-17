@@ -1,0 +1,24 @@
+
+/**
+  * Custom styles used only for the WordPress theme (not included in the styleguide)
+  *
+  */
+  
+
+/* Logo '50 years' */
+
+.site-branding {
+  
+  a {
+    display: inline-block;
+    
+    &.logo-50 {
+      margin-left: 10px;
+      
+      img {
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+}

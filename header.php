@@ -25,9 +25,15 @@
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">
-	<a class="logo" href="<?php echo get_nav_home_url(); ?>">
-			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
-		</a>
+  	
+  	<div class="site-branding">
+  	  <a class="logo" href="<?php echo get_nav_home_url(); ?>">
+  			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+  		</a>
+  		<a class="logo-50" href="https://celebration.epfl.ch/">
+    		<img src="<?php bloginfo('template_url'); ?>/theme/img/logo50.gif" alt="Logo EPFL 50e anniversaire" width="101" height="91">
+  		</a>
+  	</div>
 
 			<?php
 			    global $EPFL_MENU_LOCATION;
