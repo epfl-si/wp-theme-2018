@@ -9,7 +9,7 @@ function custom_teasers() {
 
   $fields = [
 		array(
-					'label'    => '<hr><h2>Section title '.$i.'</h2> '.$i,
+					'label'    => '<hr><h2>Section title</h2>',
 					'attr'     => 'titlesection',
 					'type'     => 'text'
 				),

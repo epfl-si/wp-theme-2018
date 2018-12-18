@@ -166,11 +166,13 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		 */
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		$item_output = $args->before;
+		$item_output = property_exists($args, 'before')?$args->before:'';
 		$item_output .= '<a'. $attributes .'>';
-		$item_output .= $args->link_before . $title . $args->link_after;
+		$item_output .= (property_exists($args, 'link_before')?$args->link_before:'') .
+		                $title .
+		                (property_exists($args, 'link_after')?$args->link_after:'');
 		$item_output .= '</a>';
-		$item_output .= $args->after;
+		$item_output .= property_exists($args, 'after')?$args->after:'';
 		if(is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
 			$item_output .= '
 						<a href="#" role="button" aria-hidden="true" class="nav-arrow">
