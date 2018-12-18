@@ -10,6 +10,9 @@
 global $EPFL_MENU_LOCATION;
 $EPFL_MENU_LOCATION = 'top';
 
+global $EPFL_MENU_OVERRIDE_LOCATION;
+$EPFL_MENU_OVERRIDE_LOCATION = '_top_override';
+
 global $EPFL_FOOTER_MENU_LOCATION;
 $EPFL_FOOTER_MENU_LOCATION = 'footer_nav';
 
@@ -50,9 +53,11 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		global $EPFL_MENU_LOCATION;
+		global $EPFL_MENU_OVERRIDE_LOCATION;
 		global $EPFL_FOOTER_MENU_LOCATION;
 		$nav_menus_args = [];
 		$nav_menus_args[$EPFL_MENU_LOCATION] = esc_html__( 'Primary', 'epfl' );
+        $nav_menus_args[$EPFL_MENU_OVERRIDE_LOCATION] = esc_html__( 'Top Menu Override', 'epfl' );
 		$nav_menus_args[$EPFL_FOOTER_MENU_LOCATION] = esc_html__( 'Footer', 'epfl' );
 		register_nav_menus($nav_menus_args);
 
