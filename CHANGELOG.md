@@ -1,5 +1,13 @@
 # CHANGELOG
 
+*1.2.23* (2018-12-18)
+  - Update to styleguide 1.3.7
+  - Active the don't track option for Twitter widget (#160)
+  - Fix breadcrumbs for mobile (#161)
+  - Set language on homepage links (#159)
+  - Fix php notices (#158)
+  - Some code cleaning
+
 *1.2.22* (2018-12-10)
   - Update to styleguide 1.3.6
 
