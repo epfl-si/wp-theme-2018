@@ -57,7 +57,9 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 		global $EPFL_FOOTER_MENU_LOCATION;
 		$nav_menus_args = [];
 		$nav_menus_args[$EPFL_MENU_LOCATION] = esc_html__( 'Primary', 'epfl' );
-        $nav_menus_args[$EPFL_MENU_OVERRIDE_LOCATION] = esc_html__( 'Top Menu Override', 'epfl' );
+        if (root_menu_overrides_enabled()) {
+            $nav_menus_args[$EPFL_MENU_OVERRIDE_LOCATION] = esc_html__( 'Top Menu Override', 'epfl' );
+        }
 		$nav_menus_args[$EPFL_FOOTER_MENU_LOCATION] = esc_html__( 'Footer', 'epfl' );
 		register_nav_menus($nav_menus_args);
 
@@ -318,6 +320,15 @@ function get_current_menu_slug() {
   $menu_locations = get_nav_menu_locations();
   $menu_term = get_term($menu_locations[$EPFL_MENU_LOCATION], 'nav_menu');
 	return $menu_term;
+}
+
+/**
+ * @return boolean True iff the site editors and administrator may
+ *                 override the entries in the root menu with their
+ *                 own pages, posts or links
+ */
+function root_menu_overrides_enabled () {
+    return (bool) get_site_option('epfl2018-root-menu-overrides-enabled');
 }
 
 /**
