@@ -9,6 +9,37 @@
  * @package epfl
  */
 
+
+/**
+ * A subclass of @link Walker_Nav_Menu to customize the root menu
+ *
+ *
+ */
+class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
+    function start_el (&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        if ($surrogate_menu = $this->_get_surrogate_menu()) {
+            foreach ($surrogate_menu as $surrogate_item) {
+                if ($item->title === $surrogate_item->title) {
+                    $item = $surrogate_item;
+                    break;
+                }
+            }
+        }
+        return parent::start_el($output, $item, $depth, $args, $id);
+    }
+
+    private function _get_surrogate_menu () {
+        require_once(__DIR__ . '/functions.php');
+        if (! root_menu_overrides_enabled()) return false;
+
+        if (! property_exists($this, '_surrogate_menu')) {
+            global $EPFL_MENU_OVERRIDE_LOCATION;
+            $this->_surrogate_menu = wp_get_nav_menu_items(get_current_menu_slug($EPFL_MENU_OVERRIDE_LOCATION));
+        }
+        return $this->_surrogate_menu;
+    }
+}
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -36,7 +67,8 @@
         		    'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
-					'depth' => 1
+					'depth' => 1,
+					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
 			?>
 
