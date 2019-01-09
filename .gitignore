@@ -4,3 +4,4 @@ defaults.json
 npm-debug.log
 vendor/*
 *.scssc
+*.map
