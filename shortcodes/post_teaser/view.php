@@ -4,7 +4,6 @@ $data = get_query_var('epfl_post_teaser_data');
 if (!$data) return true;
 $postCount = count($data);
 $gray = $data['gray'];
-if (isset($data['gray'])) $postCount = $postCount - 1;
 ?>
   <div class="container-full my-3<?php echo $gray ? ' bg-gray-100' : '' ?>">
     <div class="container">
