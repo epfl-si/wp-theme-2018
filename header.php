@@ -41,6 +41,26 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 }
 
 ?>
+<?php
+	// TODO: Generate footer based on future webservice?
+	# fetch language
+	$default_lang = 'en';
+	$allowed_langs = array('en', 'fr');
+	$language = $default_lang;
+	/* If Polylang installed */
+	if(function_exists('pll_current_language'))
+	{
+		$current_lang = pll_current_language('slug');
+		// Check if current lang is supported. If not, use default lang
+		$language = (in_array($current_lang, $allowed_langs)) ? $current_lang : $default_lang;
+	}
+
+	if ($language === 'fr') {
+		$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
+	} else {
+		$celebration_url = 'https://www.epfl.ch/campus/events/celebration-3/';
+	}
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -56,9 +76,15 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">
-	<a class="logo" href="<?php echo get_nav_home_url(); ?>">
-			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
-		</a>
+  	
+  	<div class="site-branding">
+  	  <a class="logo" href="<?php echo get_nav_home_url(); ?>">
+  			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+  		</a>
+  		<a class="logo-50" href="<?php echo $celebration_url ?>">
+    		<img src="<?php bloginfo('template_url'); ?>/theme/img/logo50.gif" alt="Logo EPFL 50e anniversaire" width="101" height="91">
+  		</a>
+  	</div>
 
 			<?php
 			    global $EPFL_MENU_LOCATION;

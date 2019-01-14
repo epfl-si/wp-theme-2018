@@ -142,6 +142,7 @@ function epfl_scripts() {
 
 	wp_enqueue_style( 'epfl-vendors', get_stylesheet_directory_uri().'/assets/css/vendors.min.css', array(), $vsn );
 	wp_enqueue_style( 'epfl-base', get_stylesheet_directory_uri().'/assets/css/base.css', array(), $vsn );
+	wp_enqueue_style( 'epfl-theme', get_stylesheet_directory_uri().'/theme/style.min.css', array(), $vsn );
 
 	wp_enqueue_script( 'epfl-js-jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), $vsn, true );
 	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', array(), $vsn, true );
