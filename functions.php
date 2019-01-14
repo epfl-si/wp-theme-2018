@@ -10,6 +10,9 @@
 global $EPFL_MENU_LOCATION;
 $EPFL_MENU_LOCATION = 'top';
 
+global $EPFL_MENU_OVERRIDE_LOCATION;
+$EPFL_MENU_OVERRIDE_LOCATION = '_top_override';
+
 global $EPFL_FOOTER_MENU_LOCATION;
 $EPFL_FOOTER_MENU_LOCATION = 'footer_nav';
 
@@ -50,9 +53,13 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		global $EPFL_MENU_LOCATION;
+		global $EPFL_MENU_OVERRIDE_LOCATION;
 		global $EPFL_FOOTER_MENU_LOCATION;
 		$nav_menus_args = [];
 		$nav_menus_args[$EPFL_MENU_LOCATION] = esc_html__( 'Primary', 'epfl' );
+        if (root_menu_overrides_enabled()) {
+            $nav_menus_args[$EPFL_MENU_OVERRIDE_LOCATION] = esc_html__( 'Top Menu Override', 'epfl' );
+        }
 		$nav_menus_args[$EPFL_FOOTER_MENU_LOCATION] = esc_html__( 'Footer', 'epfl' );
 		register_nav_menus($nav_menus_args);
 
@@ -135,6 +142,7 @@ function epfl_scripts() {
 
 	wp_enqueue_style( 'epfl-vendors', get_stylesheet_directory_uri().'/assets/css/vendors.min.css', array(), $vsn );
 	wp_enqueue_style( 'epfl-base', get_stylesheet_directory_uri().'/assets/css/base.css', array(), $vsn );
+	wp_enqueue_style( 'epfl-theme', get_stylesheet_directory_uri().'/theme/style.min.css', array(), $vsn );
 
 	wp_enqueue_script( 'epfl-js-jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), $vsn, true );
 	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', array(), $vsn, true );
@@ -302,17 +310,28 @@ add_filter("get_archives_link", "get_archives_link_mod");
 add_post_type_support( 'page', 'excerpt' );
 
 /**
- * get_current_menu_slug
- * returns the slug of the current menu occupying the primary theme_location
- * also works when using polylang
+ * Returns the WP_Term object to use for the menu (Polylang-compatible)
  *
- * @return string
+ * @param $slug    The (language-neutral form of the) slug to retrieve;
+ *                 by default, use the main menu (i.e. "top")
+ * @return WP_Term The WP_Term for that menu in the current language
  */
-function get_current_menu_slug() {
+function get_current_menu_slug ($slug = NULL) {
+  if (! $slug) {
     global $EPFL_MENU_LOCATION;
+    $slug = $EPFL_MENU_LOCATION;
+  }
   $menu_locations = get_nav_menu_locations();
-  $menu_term = get_term($menu_locations[$EPFL_MENU_LOCATION], 'nav_menu');
-	return $menu_term;
+  return get_term($menu_locations[$slug], 'nav_menu');
+}
+
+/**
+ * @return boolean True iff the site editors and administrator may
+ *                 override the entries in the root menu with their
+ *                 own pages, posts or links
+ */
+function root_menu_overrides_enabled () {
+    return (bool) get_site_option('epfl2018-root-menu-overrides-enabled');
 }
 
 /**
@@ -352,3 +371,11 @@ function get_nav_home_url() {
 		}
 	}
 }
+
+/**
+ * Remove <p></p> tags around <img src="" alt=""> inputed in the wysiwyg
+ */
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
