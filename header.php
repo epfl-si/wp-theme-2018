@@ -58,7 +58,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	if ($language === 'fr') {
 		$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
 	} else {
-		$celebration_url = 'https://www.epfl.ch/campus/events/celebration-3/';
+		$celebration_url = 'https://www.epfl.ch/campus/events/celebration-en/';
 	}
 ?>
 <!doctype html>
