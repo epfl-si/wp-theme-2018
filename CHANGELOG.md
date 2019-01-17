@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.2.25* (2019-01-17)
+  - Update the english celebration link
+
 *1.2.24* (2019-01-14)
   - Add new logo for the 50 years (#164)
   - Fix scienceqa form problem (#166)
