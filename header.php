@@ -51,7 +51,7 @@
   			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
   		</a>
   		<a class="logo-50" href="<?php echo $celebration_url ?>">
-    		<img src="<?php bloginfo('template_url'); ?>/theme/img/logo50.gif" alt="Logo EPFL 50e anniversaire" width="101" height="91">
+    		<img src="<?php bloginfo('template_url'); ?>/theme/img/epfl-logo-50-150x111.gif" alt="Logo EPFL 50e anniversaire" width="101" height="91">
   		</a>
   	</div>
 
