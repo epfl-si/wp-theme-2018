@@ -14,16 +14,7 @@
 	<?php
 		// TODO: Generate footer based on future webservice?
 		# fetch language
-		$default_lang = 'en';
-		$allowed_langs = array('en', 'fr');
-		$language = $default_lang;
-		/* If Polylang installed */
-		if(function_exists('pll_current_language'))
-		{
-			$current_lang = pll_current_language('slug');
-			// Check if current lang is supported. If not, use default lang
-			$language = (in_array($current_lang, $allowed_langs)) ? $current_lang : $default_lang;
-		}
+		$language = get_current_language();
 
 		if ($language === 'fr') {
 			require_once(__DIR__.'/footer_fr.php');
