@@ -18,7 +18,7 @@
             $count = 1; 
             foreach($data->answers as $answerId => $answer) { 
           ?>
-            <input type="radio" id="custom-radio<?php echo esc_attr($count) ?>" value="<?php echo esc_attr($answerId) ?>" name="customRadio" class="custom-control-input">
+            <input type="radio" id="custom-radio<?php echo esc_attr($count) ?>" value="<?php echo esc_attr($answerId) ?>" name="poll[choice]" class="custom-control-input">
             <label class="custom-control-label" for="custom-radio<?php echo esc_attr($count) ?>">
               <span class="custom-control-label-content">
                 <?php echo esc_html($answer) ?></span>

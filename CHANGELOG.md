@@ -1,5 +1,23 @@
 # CHANGELOG
 
+*1.2.25* (2019-01-17)
+  - Update the english celebration link
+
+*1.2.24* (2019-01-14)
+  - Add new logo for the 50 years (#164)
+  - Fix scienceqa form problem (#166)
+  - Fix breadcrumbs mobile behaviour
+  - Fix creation date for Posts (#117)
+  - Fix Post Teaser empty element when grey mode enabled (#111)
+
+*1.2.23* (2018-12-18)
+  - Update to styleguide 1.3.7
+  - Active the don't track option for Twitter widget (#160)
+  - Fix breadcrumbs for mobile (#161)
+  - Set language on homepage links (#159)
+  - Fix php notices (#158)
+  - Some code cleaning
+
 *1.2.22* (2018-12-10)
   - Update to styleguide 1.3.6
 

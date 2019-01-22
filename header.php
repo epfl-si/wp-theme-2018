@@ -9,6 +9,47 @@
  * @package epfl
  */
 
+
+/**
+ * A subclass of @link Walker_Nav_Menu to customize the root menu
+ *
+ *
+ */
+class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
+    function start_el (&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        if ($surrogate_menu = $this->_get_surrogate_menu()) {
+            foreach ($surrogate_menu as $surrogate_item) {
+                if ($item->title === $surrogate_item->title) {
+                    $item = $surrogate_item;
+                    break;
+                }
+            }
+        }
+        return parent::start_el($output, $item, $depth, $args, $id);
+    }
+
+    private function _get_surrogate_menu () {
+        require_once(__DIR__ . '/functions.php');
+        if (! root_menu_overrides_enabled()) return false;
+
+        if (! property_exists($this, '_surrogate_menu')) {
+            global $EPFL_MENU_OVERRIDE_LOCATION;
+            $this->_surrogate_menu = wp_get_nav_menu_items(get_current_menu_slug($EPFL_MENU_OVERRIDE_LOCATION));
+        }
+        return $this->_surrogate_menu;
+    }
+}
+
+?>
+<?php
+	// celebration link builder
+	$language = get_current_language();
+
+	if ($language === 'fr') {
+		$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
+	} else {
+		$celebration_url = 'https://www.epfl.ch/campus/events/celebration-en/';
+	}
 ?>
 <?php
 	// TODO: Generate footer based on future webservice?
@@ -55,16 +96,22 @@
   		</a>
   	</div>
 
-			<?php
-			    global $EPFL_MENU_LOCATION;
+	<?php
+		if (!function_exists("epfl_menus_in_good_shape") ||
+			epfl_menus_in_good_shape()) {
+				global $EPFL_MENU_LOCATION;
 				wp_nav_menu( array(
-				    'theme_location' => $EPFL_MENU_LOCATION,
-        		    'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
+					'theme_location' => $EPFL_MENU_LOCATION,
+					'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
-					'depth' => 1
+					'depth' => 1,
+					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
-			?>
+			} else {
+				require_once(__DIR__ . "/header-top-menu-fallback.php");
+			}
+	?>
 
 	<div class="dropdown dropright search d-none d-xl-block">
 		<a class="dropdown-toggle" href="#" data-toggle="dropdown">
