@@ -194,6 +194,11 @@ require_once 'shortcodes/index.php';
 require_once 'disable_comments.php';
 
 /**
+ * load language helper
+ */
+require get_template_directory() . '/inc/language.php';
+
+/**
  * load custom menu walker
  */
 require_once get_template_directory() . '/menus/custom-nav-walker.php';

@@ -42,18 +42,8 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 
 ?>
 <?php
-	// TODO: Generate footer based on future webservice?
-	# fetch language
-	$default_lang = 'en';
-	$allowed_langs = array('en', 'fr');
-	$language = $default_lang;
-	/* If Polylang installed */
-	if(function_exists('pll_current_language'))
-	{
-		$current_lang = pll_current_language('slug');
-		// Check if current lang is supported. If not, use default lang
-		$language = (in_array($current_lang, $allowed_langs)) ? $current_lang : $default_lang;
-	}
+	// celebration link builder
+	$language = get_current_language();
 
 	if ($language === 'fr') {
 		$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
@@ -86,17 +76,22 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
   		</a>
   	</div>
 
-			<?php
-			    global $EPFL_MENU_LOCATION;
+	<?php
+		if (!function_exists("epfl_menus_in_good_shape") ||
+			epfl_menus_in_good_shape()) {
+				global $EPFL_MENU_LOCATION;
 				wp_nav_menu( array(
-				    'theme_location' => $EPFL_MENU_LOCATION,
-        		    'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
+					'theme_location' => $EPFL_MENU_LOCATION,
+					'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1,
 					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
-			?>
+			} else {
+				require_once(__DIR__ . "/header-top-menu-fallback.php");
+			}
+	?>
 
 	<div class="dropdown dropright search d-none d-xl-block">
 		<a class="dropdown-toggle" href="#" data-toggle="dropdown">
