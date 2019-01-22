@@ -42,7 +42,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 
 ?>
 <?php
-	// TODO: Generate footer based on future webservice?
+	// celebration link builder
 	$language = get_current_language();
 
 	if ($language === 'fr') {
@@ -76,17 +76,22 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
   		</a>
   	</div>
 
-			<?php
-			    global $EPFL_MENU_LOCATION;
+	<?php
+		if (!function_exists("epfl_menus_in_good_shape") ||
+			epfl_menus_in_good_shape()) {
+				global $EPFL_MENU_LOCATION;
 				wp_nav_menu( array(
-				    'theme_location' => $EPFL_MENU_LOCATION,
-        		    'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
+					'theme_location' => $EPFL_MENU_LOCATION,
+					'menu_id'        => $EPFL_MENU_LOCATION.'-menu',
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1,
 					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
-			?>
+			} else {
+				require_once(__DIR__ . "/header-top-menu-fallback.php");
+			}
+	?>
 
 	<div class="dropdown dropright search d-none d-xl-block">
 		<a class="dropdown-toggle" href="#" data-toggle="dropdown">
