@@ -25,7 +25,7 @@ if ($translations_count < 3) {
 
 ?>
 <!-- language switcher, two elements -->
-<nav class="nav-lang nav-lang-short ml-auto pr-lg-5">
+<nav class="nav-lang nav-lang-short ml-auto">
 	<ul>
 	<?php foreach($translations as $lang): ?>
 		<?php if ($lang['current_lang']): ?>
@@ -44,7 +44,7 @@ if ($translations_count < 3) {
 } else {
 ?>
 <!-- language switcher, 3 or more elements -->
-<nav class="nav-lang ml-auto dropdown pr-lg-5" aria-label="Change language">
+<nav class="nav-lang ml-auto dropdown" aria-label="Change language">
 <?php foreach($translations as $lang): ?>
 	<?php if ($lang['current_lang']): ?>
   <a href="#" class="dropdown-toggle btn btn-secondary" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
