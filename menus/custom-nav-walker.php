@@ -206,7 +206,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 function epfl_menus_in_good_shape () {
 	# FIXME: there is better way to check this,
 	# like the shape of the top menu
-	if (defined(ABSPATH) && strpos('/srv/www/www.epfl.ch/htdocs', ABSPATH))  // look like an epfl instance
+	if (defined('ABSPATH') && strpos('/srv/www/www.epfl.ch/htdocs', ABSPATH))  // look like an epfl instance
 	{
 		return True;
 	}
