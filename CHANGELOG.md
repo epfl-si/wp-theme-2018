@@ -1,4 +1,6 @@
 # CHANGELOG
+*1.2.28* (2019-01-24)
+  - Fix search input on mobile
 
 *1.2.27* (2019-01-24)
   - Fix langage switcher on mobile
