@@ -1,6 +1,6 @@
 # CHANGELOG
 
-*1.2.26* (2019-01-24)
+*1.2.27* (2019-01-24)
   - Fix langage switcher on mobile
   - Fix url for the 50y logo (#169)
   - Add a default top menu as fallback (#170)
