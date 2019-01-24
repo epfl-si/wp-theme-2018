@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*1.2.26* (2019-01-24)
+  - Fix langage switcher on mobile
+  - Fix url for the 50y logo (#169)
+  - Add a default top menu as fallback (#170)
+
 *1.2.25* (2019-01-17)
   - Update the english celebration link
 
