@@ -106,7 +106,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 		</form>
 	</div>
 
-	<form action="https://search.epfl.ch/" class="d-lg-none">
+	<form action="https://search.epfl.ch/" class="d-xl-none">
 		<div class="input-group search-mobile" role="search">
 			<div class="input-group-prepend">
 				<span class="input-group-text">
