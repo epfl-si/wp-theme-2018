@@ -1,6 +1,8 @@
+<!-- Top menu is in fallback mode -->
 <?php
 /**
- * The template for displaying the top header
+ * The template for displaying the top header when the "stitching" logic
+ * is out of order
  *
  * @package epfl
  */
@@ -10,7 +12,7 @@
 $language = get_current_language();
 
 if ($language === 'fr') {
-    require_once(__DIR__.'/header-top-menu-fr.php');
+    require_once(__DIR__.'/header-top-menu-fallback-fr.php');
 } else {
-    require_once(__DIR__.'/header-top-menu-en.php');
+    require_once(__DIR__.'/header-top-menu-fallback-en.php');
 }

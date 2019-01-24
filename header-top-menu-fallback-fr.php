@@ -1,6 +1,6 @@
 <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
     <li id="menu-item-1">
-        <a class="nav-item" href="https://www.epfl.ch/about/fr/a-propos/">A propos</a>
+        <a class="nav-item" href="https://www.epfl.ch/about/fr/a-propos/">À propos</a>
     </li>
     <li id="menu-item-2">
         <a class="nav-item" href="https://www.epfl.ch/education/fr/education/">Éducation</a>
