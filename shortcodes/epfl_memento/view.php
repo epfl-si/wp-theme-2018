@@ -153,7 +153,7 @@ $count++;
     foreach($data as $event) {
       set_query_var('epfl_event', $event);
       $is_first_event = ($count==1);
-      $visual_url = substr($event->visual_url, 0, -11) . '448x448.jpg';
+      $visual_url = $event->visual_url;
 
 ?>
 
