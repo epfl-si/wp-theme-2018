@@ -43,7 +43,7 @@ if ($currentTemplate == 'page-homepage.php') {
     echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ol class="breadcrumb">';
     $crumbs[] = '
         <li class="breadcrumb-item">
-            <a class="bread-link bread-home" href="' . get_nav_home_url() . '" title="home">
+            <a class="bread-link bread-home" href="' . get_epfl_home_url() . '" title="home">
                 <svg class="icon"><use xlink:href="#icon-home"></use></svg>
             </a>
         </li>';

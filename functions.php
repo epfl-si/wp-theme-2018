@@ -340,6 +340,22 @@ function root_menu_overrides_enabled () {
 }
 
 /**
+ * get_epfl_home_url
+ * returns to the epfl home, with the good langage
+ * @return string
+ */
+function get_epfl_home_url () {
+	$current_language = get_current_language();
+	$epfl_root = 'https://www.epfl.ch/';
+
+	if ($current_language === 'fr') {
+		return $epfl_root;
+	} else {
+		return $epfl_root . 'en/';
+	}
+}
+
+/**
  * get_nav_home_url
  * returns to the home, with the good langage
  * good langage = default value is english, or if possible, french
