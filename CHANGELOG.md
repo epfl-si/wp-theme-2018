@@ -1,4 +1,9 @@
 # CHANGELOG
+*1.2.29* (2019-01-31)
+  - Fix the fallback menu being used by default (#173)
+  - Fix the missing À on "À propos" (#172)
+  - Set epfl root url to a static value, mainly for logo and breadcrumb (#175)
+
 *1.2.28* (2019-01-24)
   - Fix search input on mobile
 
