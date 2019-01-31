@@ -27,9 +27,9 @@ Epfl theme (Wordpress)
   - understand the gitflow logic ([gitflow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/))
   - install `git flow` locally [How to install gitflow](https://github.com/nvie/gitflow/wiki/Installation)
   - initialise git flow in your repo by typing `git flow init`
-  - make sure your local branches `master` and `dev` are up-to-date
 
 ### process
+  - make sure your local branches `master` and `dev` are up-to-date
   - start a release: `git flow release start x.x.x`
   - update the following files:
     - `VERSION` with the version number
