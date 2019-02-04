@@ -37,15 +37,17 @@ function epfl_people_get_function($person) {
 }
 
 /**
- * Get person rooms
+ * Get person room
  */
-function epfl_people_get_rooms($person) {
+function epfl_people_get_room($person) {
     
-    $rooms = [];
+    $room = '';
     foreach($person->unites as $current_unit) {
-        $rooms[] = $current_unit->rooms;
+        if ($current_unit->ordre  == 1) {
+            $room = $current_unit->room;
+        }
     }
-    return $rooms;
+    return $room;
 }
 
 /**
