@@ -44,7 +44,7 @@ function epfl_people_get_room($person) {
     $room = '';
     foreach($person->unites as $current_unit) {
         if ($current_unit->ordre  == 1) {
-            $room = $current_unit->room;
+            $room = $current_unit->rooms;
         }
     }
     return $room;
