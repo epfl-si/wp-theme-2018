@@ -24,15 +24,16 @@ function epfl_people_get_phones($person) {
 }
 
 /**
- * Get person functions
+ * Get person function
  */
-function epfl_people_get_functions($person) {
-
-    $functions = [];
+function epfl_people_get_function($person) {
+    $function = '';
     foreach($person->unites as $current_unit) {
-        $functions[] = $current_unit->fonction;
+        if ($current_unit->ordre  == 1) {
+            $function = $current_unit->fonction;
+        }
     }
-    return $functions;
+    return $function;
 }
 
 /**
