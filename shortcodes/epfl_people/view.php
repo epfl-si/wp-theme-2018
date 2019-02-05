@@ -11,9 +11,9 @@
       foreach($persons as $index => $person):
         $photo_url  = epfl_people_get_photo($person);
         $phones     = epfl_people_get_phones($person);
-        $function  = epfl_people_get_function($person);
-        $rooms      = epfl_people_get_rooms($person);
-        $room_url   = epfl_people_get_room_url($rooms[0]);
+        $function   = epfl_people_get_function($person);
+        $room       = epfl_people_get_room($person);
+        $room_url   = epfl_people_get_room_url($room);
         $people_url = epfl_people_get_people_url($person);
     ?>
     <div class="contact-list-row" itemscope itemtype="http://schema.org/Person">
@@ -28,7 +28,7 @@
         <p class="contact-list-item m-0 text-muted" itemprop="jobTitle"><?php echo esc_html($function) ?></p>
         <a class="contact-list-item text-muted" href="mailto:<?php echo esc_attr($person->email) ?>" itemprop="email"><?php echo esc_attr($person->email) ?></a>
         <a class="contact-list-item text-muted" href="tel:<?php echo esc_html($phones[0]) ?>" itemprop="telephone"><?php if ($phones[0]): ?>+41 21 69 <b><?php echo esc_html($phones[0]) ?></b><?php endif ?></a>
-        <a class="contact-list-item text-muted" href="<?php echo esc_url($room_url) ?>" itemprop="workLocation"><?php echo esc_html($rooms[0]) ?></a>
+        <a class="contact-list-item text-muted" href="<?php echo esc_url($room_url) ?>" itemprop="workLocation"><?php echo esc_html($room) ?></a>
     </div>
     <?php endforeach; ?>
   </div>
@@ -40,9 +40,9 @@
       foreach($persons as $index => $person):
         $photo_url  = epfl_people_get_photo($person);
         $phones     = epfl_people_get_phones($person);
-        $function  = epfl_people_get_function($person);
-        $rooms      = epfl_people_get_rooms($person);
-        $room_url   = epfl_people_get_room_url($rooms[0]);
+        $function   = epfl_people_get_function($person);
+        $room       = epfl_people_get_room($person);
+        $room_url   = epfl_people_get_room_url($room);
         $people_url = epfl_people_get_people_url($person);
     ?>
       <div class="card">
@@ -61,9 +61,9 @@
             <dt></dt>
             <dd>&nbsp;</dd>
             <?php endif; ?>
-            <?php if ($rooms[0]): ?>
+            <?php if ($room): ?>
             <dt><?php esc_html_e('Office', 'epfl') ?></dt>
-            <dd><a class="link-pretty" href="<?php echo esc_url($room_url) ?>"><?php echo esc_html($rooms[0]) ?></a></dd>
+            <dd><a class="link-pretty" href="<?php echo esc_url($room_url) ?>"><?php echo esc_html($room) ?></a></dd>
             <?php else: ?>
             <?php /* Quickfix until fixed in Styleguide */ ?>
             <dt></dt>
