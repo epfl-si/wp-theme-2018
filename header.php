@@ -77,8 +77,17 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
   	</div>
 
 	<?php
-		if (!function_exists("epfl_menus_in_good_shape") ||
-			epfl_menus_in_good_shape()) {
+		global $EPFL_MENU_LOCATION;
+
+		/**
+		 * Filters whether the EPFL plugin provides a properly "stitched-up" version of the root (top) menu.
+		 *
+		 * By default (i.e. EPFL plugin is not installed), or in case of a configuration error, should
+		 * return false so that a default root menu is substituted in the top navigation banner.
+		 */
+		$root_menu_functional_in_plugin = apply_filters('epfl_root_menu_ready', false, $EPFL_MENU_LOCATION);
+
+		if ($root_menu_functional_in_plugin) {
 				global $EPFL_MENU_LOCATION;
 				wp_nav_menu( array(
 					'theme_location' => $EPFL_MENU_LOCATION,
