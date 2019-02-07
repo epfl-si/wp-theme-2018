@@ -202,12 +202,3 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
-
-function epfl_menus_in_good_shape () {
-	# FIXME: there is better way to check this,
-	# like the shape of the top menu
-	if (defined('ABSPATH') && strpos(ABSPATH, '/srv/www/www.epfl.ch/htdocs') !== false)  // look like an epfl instance
-	{
-		return True;
-	}
-}

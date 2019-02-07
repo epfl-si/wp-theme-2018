@@ -1,4 +1,9 @@
 # CHANGELOG
+*1.2.30* (2019-02-07)
+- Get a fallback menu if the root menu is not correctly set as expected (#178)
+- Fix order function people problem (#176)
+- fix people room (#177)
+
 *1.2.29* (2019-01-31)
   - Fix the fallback menu being used by default (#173)
   - Fix the missing À on "À propos" (#172)
