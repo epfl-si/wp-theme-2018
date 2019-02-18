@@ -47,7 +47,6 @@ msgid "Primary"
 msgstr ""
 
 #: functions.php:56
-#, fuzzy
 msgid "Footer"
 msgstr "Pied de page"
 
@@ -103,7 +102,6 @@ msgstr "Valider"
 #: shortcodes/custom_highlight/shortcake.php:8
 #: shortcodes/custom_teasers/shortcake.php:28
 #: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
-#, fuzzy
 msgid "Title"
 msgstr "Titre"
 
@@ -112,7 +110,6 @@ msgid "description"
 msgstr "description"
 
 #: shortcodes/custom_highlight/shortcake.php:18
-#, fuzzy
 msgid "Link"
 msgstr "Lien"
 
@@ -123,7 +120,6 @@ msgstr ""
 
 #: shortcodes/custom_highlight/shortcake.php:28
 #: shortcodes/custom_teasers/shortcake.php:48
-#, fuzzy
 msgid "Image"
 msgstr "Image"
 
@@ -133,7 +129,6 @@ msgstr "Image"
 #: shortcodes/custom_teasers/shortcake.php:53 shortcodes/hero/shortcake.php:27
 #: shortcodes/hero/shortcake.php:28 shortcodes/schools/shortcake.php:34
 #: shortcodes/schools/shortcake.php:35
-#, fuzzy
 msgid "Select Image"
 msgstr "Sélectionner une image"
 
@@ -189,9 +184,8 @@ msgid "Excerpt"
 msgstr ""
 
 #: shortcodes/custom_teasers/shortcake.php:38
-#, fuzzy
 msgid "Url"
-msgstr "URL"
+msgstr "Url"
 
 #: shortcodes/custom_teasers/shortcake.php:65
 msgid "Custom teasers"
@@ -243,7 +237,6 @@ msgstr "Lieu et salle"
 
 #: shortcodes/epfl_memento/templates/card-info.php:28
 #: shortcodes/epfl_memento/templates/card-info.php:30
-#, fuzzy
 msgid "Category"
 msgstr "Catégorie"
 
@@ -261,12 +254,10 @@ msgid "Learn more & apply"
 msgstr "Information & inscription"
 
 #: shortcodes/epfl_memento/view.php:137
-#, fuzzy
 msgid "Next events"
 msgstr "Les prochains événements"
 
 #: shortcodes/epfl_memento/view.php:140
-#, fuzzy
 msgid "See all events"
 msgstr "Voir tous les événements"
 
@@ -328,7 +319,6 @@ msgid "Full text"
 msgstr "Texte intégral"
 
 #: shortcodes/epfl_publication/renderers/publications.php:126
-#, fuzzy
 msgid "View at publisher"
 msgstr "Consulter chez l'éditeur"
 
@@ -346,7 +336,6 @@ msgstr ""
 
 #: shortcodes/epfl_share/view.php:16 shortcodes/epfl_share/view.php:20
 #: shortcodes/epfl_share/view.php:42 shortcodes/epfl_share/view.php:46
-#, fuzzy
 msgid "Follow us on"
 msgstr "Nous rejoindre sur Twitter"
 
@@ -367,7 +356,6 @@ msgid "Hero"
 msgstr ""
 
 #: shortcodes/introduction/shortcake.php:13
-#, fuzzy
 msgid "Content"
 msgstr "Contenu"
 
@@ -525,6 +513,5 @@ msgstr "Parcourir"
 #~ msgid "Social feed"
 #~ msgstr "Réseaux sociaux"
 
-#, fuzzy
 #~ msgid "Faculty"
 #~ msgstr "Template pour les sites de facultés (avec 4 actualités)"
