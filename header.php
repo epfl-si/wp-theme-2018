@@ -11,9 +11,10 @@
 
 
 /**
- * A subclass of @link Walker_Nav_Menu to customize the root menu
+ * Substitute locally-defined nav menu items with the same set_title
  *
- *
+ * This lets e.g. school-level sites redirect their "Education", "Research" etc.
+ * pages
  */
 class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
     function start_el (&$output, $item, $depth = 0, $args = array(), $id = 0) {
@@ -66,7 +67,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">
-  	
+
   	<div class="site-branding">
   	    <a class="logo" href="<?php echo get_epfl_home_url(); ?>">
   			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
