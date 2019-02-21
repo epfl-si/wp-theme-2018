@@ -1,4 +1,8 @@
 # CHANGELOG
+*1.2.31* (2019-02-21)
+- Add missing translations (#179)
+- Handle image order in WP gallery (#180)
+
 *1.2.30* (2019-02-07)
 - Get a fallback menu if the root menu is not correctly set as expected (#178)
 - Fix order function people problem (#176)
