@@ -134,10 +134,10 @@ $count++;
 <div class="container my-3">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <h2><?php echo esc_html_e('Next events') ?></h2>
+      <h2><?php echo esc_html_e('Next events', 'epfl') ?></h2>
     </div>
     <div class="col-md-6 text-right">
-      <a href="<?php echo esc_url($memento_url); ?>"><?php echo esc_html_e('See all events') ?></a>
+      <a href="<?php echo esc_url($memento_url); ?>"><?php echo esc_html_e('See all events', 'epfl') ?></a>
     </div>
   </div>
   <div class="row mt-2">
