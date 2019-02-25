@@ -39,6 +39,19 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
         }
         return $this->_surrogate_menu;
     }
+
+	public function walk( $elements, $max_depth ) {
+		# filter custom link with an epfl_has_external_menu_child,
+		# as we don't want it to show in top
+		$filtered_elements = array_filter($elements,
+			function ($element) {
+				return (!property_exists($element, 'epfl_has_external_menu_child') ||
+						(property_exists($element, 'epfl_has_external_menu_child') && !$element->epfl_has_external_menu_child)
+					);
+				});
+
+		return parent::walk($filtered_elements, $max_depth);
+	}
 }
 
 ?>
