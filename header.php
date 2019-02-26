@@ -11,10 +11,14 @@
 
 
 /**
- * Substitute locally-defined nav menu items with the same set_title
+ * Custom nav menu walker for the top bar
  *
- * This lets e.g. school-level sites redirect their "Education", "Research" etc.
- * pages
+ * + Remove so-called "phantom" top-level navigation entries such as "Labs",
+ *   that only exist as placeholders
+ *
+ * + Substitute locally-defined nav menu items with the same set_title.
+ *   This lets e.g. school-level sites redirect their "Education", "Research" etc.
+ *   pages
  */
 class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
     function start_el (&$output, $item, $depth = 0, $args = array(), $id = 0) {
