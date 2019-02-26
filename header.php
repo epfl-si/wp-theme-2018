@@ -45,9 +45,8 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 		# as we don't want it to show in top
 		$filtered_elements = array_filter($elements,
 			function ($element) {
-				return (!property_exists($element, 'epfl_has_external_menu_child') ||
-						(property_exists($element, 'epfl_has_external_menu_child') && !$element->epfl_has_external_menu_child)
-					);
+				return (! (property_exists($element, 'epfl_external_menu_children_count') &&
+						$element->epfl_external_menu_children_count));
 				});
 
 		return parent::walk($filtered_elements, $max_depth);
