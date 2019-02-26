@@ -52,21 +52,21 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
           $site_url .= '/';
         }
 
-		$filtered_elements = array_filter($elements,
+        $filtered_elements = array_filter($elements,
       		function ($element) use ($elements, $site_url) {
-            if (property_exists($element, 'epfl_external_menu_children_count') &&
-      				$element->epfl_external_menu_children_count == 1) {
-                $other_children_count = count(array_filter($elements,
-                  function($child) use ($element, $site_url) {
-                    return ($child->menu_item_parent == $element->ID &&
-                            $child->epfl_soa != $site_url);
-                  }));
-                  if ($other_children_count === 0) return false;
-            }
-            return true;
-			});
+				if (property_exists($element, 'epfl_external_menu_children_count') &&
+						$element->epfl_external_menu_children_count == 1) {
+					$other_children_count = count(array_filter($elements,
+					function($child) use ($element, $site_url) {
+						return ($child->menu_item_parent == $element->ID &&
+								$child->epfl_soa != $site_url);
+					}));
+					if ($other_children_count === 0) return false;
+				}
+				return true;
+            });
 
-		return parent::walk($filtered_elements, $max_depth);
+      	return parent::walk($filtered_elements, $max_depth);
 	}
 }
 
