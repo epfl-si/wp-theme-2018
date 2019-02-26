@@ -46,8 +46,8 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 		$filtered_elements = array_filter($elements,
 			function ($element) {
 				return (! (property_exists($element, 'epfl_external_menu_children_count') &&
-						$element->epfl_external_menu_children_count));
-				});
+						$element->epfl_external_menu_children_count == 1));
+			});
 
 		return parent::walk($filtered_elements, $max_depth);
 	}
