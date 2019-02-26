@@ -40,13 +40,30 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
         return $this->_surrogate_menu;
     }
 
+  /**
+   * Overridden to discard "phantom" root menu entries; that is,
+   * entries whose only child is an ExternalMenuItem (as determined
+   * by the EPFL plug-in setting a ->epfl_external_menu_children_count
+   * annotation for us).
+   */
 	public function walk( $elements, $max_depth ) {
-		# filter custom link with an epfl_has_external_menu_child,
-		# as we don't want it to show in top
+        $site_url = site_url();
+        if (! preg_match('#/$#', $site_url)) {
+          $site_url .= '/';
+        }
+
 		$filtered_elements = array_filter($elements,
-			function ($element) {
-				return (! (property_exists($element, 'epfl_external_menu_children_count') &&
-						$element->epfl_external_menu_children_count == 1));
+      		function ($element) use ($elements, $site_url) {
+            if (property_exists($element, 'epfl_external_menu_children_count') &&
+      				$element->epfl_external_menu_children_count == 1) {
+                $other_children_count = count(array_filter($elements,
+                  function($child) use ($element, $site_url) {
+                    return ($child->menu_item_parent == $element->ID &&
+                            $child->epfl_soa != $site_url);
+                  }));
+                  if ($other_children_count === 0) return false;
+            }
+            return true;
 			});
 
 		return parent::walk($filtered_elements, $max_depth);
