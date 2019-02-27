@@ -44,7 +44,7 @@ if ($currentTemplate == 'page-homepage.php') {
     $crumbs[] = '
         <li class="breadcrumb-item">
             <a class="bread-link bread-home" href="' . get_epfl_home_url() . '" title="home">
-                <svg class="icon"><use xlink:href="#icon-home"></use></svg>
+                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
             </a>
         </li>';
 
@@ -59,7 +59,7 @@ if ($currentTemplate == 'page-homepage.php') {
       foreach($crumb_items as $crumb_item) {
           if ((int) $item->db_id === (int) $crumb_item->db_id) {
             $crumbs[] = "
-                  <li class=\"breadcrumb-item active\">
+                  <li class=\"breadcrumb-item active\" aria-current=\"page\">
                       {$crumb_item->title}
                   </li>";
           } else {
