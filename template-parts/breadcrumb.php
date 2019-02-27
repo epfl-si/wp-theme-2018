@@ -48,6 +48,23 @@ if ($currentTemplate == 'page-homepage.php') {
             </a>
         </li>';
 
+    $tag_items[] = array();
+    $custom_tags = get_settings('epfl:custom_tags');
+
+    if ($custom_tags) {
+        $tag_items = explode(";", $custom_tags);
+        if ($tag_items) {
+            $crumbs[] = "
+                        <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
+            foreach($tag_items as $tag_item) {
+                $crumbs[] = "
+                    <a href=\"#\" class=\"tag tag-primary\">{$tag_item}</a>
+                ";
+            }
+            $crumbs[] = "</li>";
+        }
+    }
+
     $crumb_items = array();
     for($crumb_item = $item;
         $crumb_item;
