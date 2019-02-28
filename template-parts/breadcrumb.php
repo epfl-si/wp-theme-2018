@@ -50,8 +50,8 @@ if ($currentTemplate == 'page-homepage.php') {
 
     $tag_items[] = array();
     $custom_tags_provider_url = '';
-    $custom_tags = get_settings('epfl:custom_tags');
-    $custom_tags_provider_url = get_settings('epfl:custom_tags_provider_url');
+    $custom_tags = get_option('epfl:custom_tags');
+    $custom_tags_provider_url = get_option('epfl:custom_tags_provider_url');
 
     if ($custom_tags) {
         $tag_items = explode(";", $custom_tags);
