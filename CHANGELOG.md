@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.2.32* (2019-02-28)
+- Allow "Phantom" menu entry at the root (#182)
+
 *1.2.31* (2019-02-21)
 - Add missing translations (#179)
 - Handle image order in WP gallery (#180)
