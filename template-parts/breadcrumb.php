@@ -49,7 +49,9 @@ if ($currentTemplate == 'page-homepage.php') {
         </li>';
 
     $tag_items[] = array();
+    $custom_tags_provider_url = '';
     $custom_tags = get_settings('epfl:custom_tags');
+    $custom_tags_provider_url = get_settings('epfl:custom_tags_provider_url');
 
     if ($custom_tags) {
         $tag_items = explode(";", $custom_tags);
@@ -57,8 +59,15 @@ if ($currentTemplate == 'page-homepage.php') {
             $crumbs[] = "
                         <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
             foreach($tag_items as $tag_item) {
+                $tags_url = '';
+                if (empty($custom_tags_provider_url)) {
+                    $tags_url = '#';
+                } else {
+                    $tags_url = $custom_tags_provider_url . '/' . rawurlencode($tag_item);
+                }
+
                 $crumbs[] = "
-                    <a href=\"#\" class=\"tag tag-primary\">{$tag_item}</a>
+                    <a href=\"{$tags_url}\" class=\"tag tag-primary\">{$tag_item}</a>
                 ";
             }
             $crumbs[] = "</li>";
