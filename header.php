@@ -11,9 +11,14 @@
 
 
 /**
- * A subclass of @link Walker_Nav_Menu to customize the root menu
+ * Custom nav menu walker for the top bar
  *
+ * + Remove so-called "phantom" top-level navigation entries such as "Labs",
+ *   that only exist as placeholders
  *
+ * + Substitute locally-defined nav menu items with the same set_title.
+ *   This lets e.g. school-level sites redirect their "Education", "Research" etc.
+ *   pages
  */
 class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
     function start_el (&$output, $item, $depth = 0, $args = array(), $id = 0) {
@@ -37,6 +42,44 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
             $this->_surrogate_menu = wp_get_nav_menu_items(get_current_menu_slug($EPFL_MENU_OVERRIDE_LOCATION));
         }
         return $this->_surrogate_menu;
+    }
+
+    /**
+    * Overridden to discard "phantom" root menu entries; that is,
+    * entries whose only child is an ExternalMenuItem (as determined
+    * by the EPFL plug-in setting a ->epfl_external_menu_children_count
+    * annotation for us).
+    */
+    public function walk( $elements, $max_depth ) {
+        $self = $this;
+        $filtered_elements = array_filter($elements,
+        function($element) use ($self, $elements) {
+            return ! $this->_is_phantom_node($elements, $element);
+        });
+        return parent::walk($filtered_elements, $max_depth);
+    }
+
+    function _is_phantom_node ($elements, $element) {
+        $self = $this;
+        if (property_exists($element, 'epfl_external_menu_children_count') &&
+        $element->epfl_external_menu_children_count == 1) {
+            $other_children_count = count(array_filter($elements,
+            function($child) use ($self, $element) {
+                return ($child->menu_item_parent == $element->ID &&
+                $child->epfl_soa !== $self->_get_our_soa());
+            }));
+            if ($other_children_count === 0) return true;
+        }
+    }
+
+    function _get_our_soa () {
+        if (! $this->_our_soa) {
+            $this->_our_soa = site_url();
+            if (! preg_match('#/$#', $this->_our_soa)) {
+                $this->_our_soa .= '/';
+            }
+        }
+        return $this->_our_soa;
     }
 }
 
@@ -66,7 +109,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
 
 	<header role="banner" class="header">
-  	
+
   	<div class="site-branding">
   	    <a class="logo" href="<?php echo get_epfl_home_url(); ?>">
   			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
