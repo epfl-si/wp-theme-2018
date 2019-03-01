@@ -48,13 +48,22 @@ if ($currentTemplate == 'page-homepage.php') {
             </a>
         </li>';
 
-    $tag_items[] = array();
     $custom_tags_provider_url = '';
     $custom_tags = get_option('epfl:custom_tags');
     $custom_tags_provider_url = get_option('epfl:custom_tags_provider_url');
 
+    if(function_exists('epfl_fetch_site_tags')) {
+        $custom_tags = epfl_fetch_site_tags();
+    }
+
+    # priority to our tags repository, but if it can do nothing,
+    # get the tags from the site settings
+    if (empty($custom_tags)) {
+        $custom_tags = get_option('epfl:custom_tags');
+    }
+
     if ($custom_tags) {
-        $tag_items = explode(";", $custom_tags);
+        $tag_items = explode(",", $custom_tags);
         if ($tag_items) {
             $crumbs[] = "
                         <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
