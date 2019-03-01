@@ -67,7 +67,7 @@ if ($currentTemplate == 'page-homepage.php') {
                 }
 
                 $crumbs[] = "
-                    <a href=\"{$tags_url}\" class=\"tag tag-primary\">{$tag_item}</a>
+                    <a href=\"{$tags_url}\" class=\"tag tag-primary\">". esc_html($tag_item) . "</a>
                 ";
             }
             $crumbs[] = "</li>";
