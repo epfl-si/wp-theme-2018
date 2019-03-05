@@ -56,31 +56,18 @@ if ($currentTemplate == 'page-homepage.php') {
         $custom_tags = epfl_fetch_site_tags();
     }
 
-    # priority to our tags repository, but if it can do nothing,
-    # get the tags from the site settings
-    if (empty($custom_tags)) {
-        $custom_tags = get_option('epfl:custom_tags');
-    }
-
+    # custom_tags should be [[tag, url], [tag, url], ...]
     if ($custom_tags) {
-        $tag_items = explode(",", $custom_tags);
-        if ($tag_items) {
+        $crumbs[] = "
+                    <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
+        foreach($custom_tags as $tag_item) {
+            $tag_name = $tag_item[0];
+            $tag_url = $tag_item[1];
             $crumbs[] = "
-                        <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
-            foreach($tag_items as $tag_item) {
-                $tags_url = '';
-                if (empty($custom_tags_provider_url)) {
-                    $tags_url = '#';
-                } else {
-                    $tags_url = $custom_tags_provider_url . '/' . rawurlencode($tag_item);
-                }
-
-                $crumbs[] = "
-                    <a href=\"{$tags_url}\" class=\"tag tag-primary\">". esc_html($tag_item) . "</a>
-                ";
-            }
-            $crumbs[] = "</li>";
+                <a href=\"{$tag_url}\" class=\"tag tag-primary\">". esc_html($tag_name) . "</a>
+            ";
         }
+        $crumbs[] = "</li>";
     }
 
     $crumb_items = array();
