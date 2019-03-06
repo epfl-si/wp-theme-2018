@@ -31,7 +31,7 @@ function epfl_people_get_function($person) {
     foreach($person->unites as $current_unit) {
         if ($current_unit->ordre == 1) {
             $language = get_current_language();
-		    if ($language === 'fr') {
+            if ($language === 'fr') {
                 $function = $current_unit->fonction_fr;
             } else {
                 $function = $current_unit->fonction_en;
