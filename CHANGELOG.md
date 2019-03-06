@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.2.33* (2019-03-06)
+- Update fonction_fr or fonction_en after change into people app (#181)
+
 *1.2.32* (2019-02-28)
 - Allow "Phantom" menu entry at the root (#182)
 
