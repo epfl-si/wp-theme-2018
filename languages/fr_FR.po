@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
 "POT-Creation-Date: 2018-11-19 15:50+0100\n"
-"PO-Revision-Date: 2019-02-21 13:44+0100\n"
+"PO-Revision-Date: 2019-03-08 12:38+0100\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -95,8 +95,9 @@ msgstr "Rerchercher sur le Web de l'EPFL"
 msgid "Validate"
 msgstr "Valider"
 
-#: shortcodes/custom_highlight/shortcake.php:8 shortcodes/custom_teasers/shortcake.php:28 shortcodes/introduction/shortcake.php:8
-#: shortcodes/schools/shortcake.php:15
+#: shortcodes/custom_highlight/shortcake.php:8
+#: shortcodes/custom_teasers/shortcake.php:28
+#: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
 msgid "Title"
 msgstr "Titre"
 
@@ -108,42 +109,58 @@ msgstr "description"
 msgid "Link"
 msgstr "Lien"
 
-#: shortcodes/custom_highlight/shortcake.php:23 shortcodes/custom_teasers/shortcake.php:43
+#: shortcodes/custom_highlight/shortcake.php:23
+#: shortcodes/custom_teasers/shortcake.php:43
 msgid "Button label"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:28 shortcodes/custom_teasers/shortcake.php:48
+#: shortcodes/custom_highlight/shortcake.php:28
+#: shortcodes/custom_teasers/shortcake.php:48
 msgid "Image"
 msgstr "Image"
 
-#: shortcodes/custom_highlight/shortcake.php:32 shortcodes/custom_highlight/shortcake.php:33 shortcodes/custom_teasers/shortcake.php:52
-#: shortcodes/custom_teasers/shortcake.php:53 shortcodes/hero/shortcake.php:27 shortcodes/hero/shortcake.php:28
-#: shortcodes/schools/shortcake.php:34 shortcodes/schools/shortcake.php:35
+#: shortcodes/custom_highlight/shortcake.php:32
+#: shortcodes/custom_highlight/shortcake.php:33
+#: shortcodes/custom_teasers/shortcake.php:52
+#: shortcodes/custom_teasers/shortcake.php:53 shortcodes/hero/shortcake.php:27
+#: shortcodes/hero/shortcake.php:28 shortcodes/schools/shortcake.php:34
+#: shortcodes/schools/shortcake.php:35
 msgid "Select Image"
 msgstr "Sélectionner une image"
 
-#: shortcodes/custom_highlight/shortcake.php:34 shortcodes/custom_teasers/shortcake.php:54 shortcodes/hero/shortcake.php:29
+#: shortcodes/custom_highlight/shortcake.php:34
+#: shortcodes/custom_teasers/shortcake.php:54 shortcodes/hero/shortcake.php:29
 #: shortcodes/schools/shortcake.php:36
 msgid "Recommended image size: 1920x1080"
 msgstr "Taille recommandée de l'image: 1920x1080"
 
-#: shortcodes/custom_highlight/shortcake.php:37 shortcodes/page_highlight/shortcake.php:14 shortcodes/post_highlight/shortcake.php:14
+#: shortcodes/custom_highlight/shortcake.php:37
+#: shortcodes/page_highlight/shortcake.php:14
+#: shortcodes/post_highlight/shortcake.php:14
 msgid "Layout"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:39 shortcodes/page_highlight/shortcake.php:16 shortcodes/post_highlight/shortcake.php:16
+#: shortcodes/custom_highlight/shortcake.php:39
+#: shortcodes/page_highlight/shortcake.php:16
+#: shortcodes/post_highlight/shortcake.php:16
 msgid "Decides where the text will be aligned, to allow the subject of the picture to be visible"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:42 shortcodes/page_highlight/shortcake.php:19 shortcodes/post_highlight/shortcake.php:19
+#: shortcodes/custom_highlight/shortcake.php:42
+#: shortcodes/page_highlight/shortcake.php:19
+#: shortcodes/post_highlight/shortcake.php:19
 msgid "Right"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:43 shortcodes/page_highlight/shortcake.php:20 shortcodes/post_highlight/shortcake.php:20
+#: shortcodes/custom_highlight/shortcake.php:43
+#: shortcodes/page_highlight/shortcake.php:20
+#: shortcodes/post_highlight/shortcake.php:20
 msgid "Bottom"
 msgstr ""
 
-#: shortcodes/custom_highlight/shortcake.php:44 shortcodes/page_highlight/shortcake.php:21 shortcodes/post_highlight/shortcake.php:21
+#: shortcodes/custom_highlight/shortcake.php:44
+#: shortcodes/page_highlight/shortcake.php:21
+#: shortcodes/post_highlight/shortcake.php:21
 #, fuzzy
 msgid "Left"
 msgstr "Template pour un portail (avec l'image sur la gauche)"
@@ -212,7 +229,8 @@ msgstr "Chargement..."
 msgid "Place and room"
 msgstr "Lieu et salle"
 
-#: shortcodes/epfl_memento/templates/card-info.php:28 shortcodes/epfl_memento/templates/card-info.php:30
+#: shortcodes/epfl_memento/templates/card-info.php:28
+#: shortcodes/epfl_memento/templates/card-info.php:30
 msgid "Category"
 msgstr "Catégorie"
 
@@ -220,7 +238,8 @@ msgstr "Catégorie"
 msgid "Complete agenda of events"
 msgstr "Voir l’agenda complet des événements"
 
-#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:148 shortcodes/epfl_memento/view.php:216
+#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:148
+#: shortcodes/epfl_memento/view.php:216
 msgid "No scheduled events"
 msgstr "Aucun événement programmé"
 
@@ -240,11 +259,13 @@ msgstr "Voir tous les événements"
 msgid "The latest news"
 msgstr "Les dernières actualités"
 
-#: shortcodes/epfl_news/view.php:118 shortcodes/epfl_news/view.php:159 shortcodes/epfl_news/view.php:188
+#: shortcodes/epfl_news/view.php:118 shortcodes/epfl_news/view.php:159
+#: shortcodes/epfl_news/view.php:188
 msgid "News"
 msgstr "Actualités"
 
-#: shortcodes/epfl_news/view.php:123 shortcodes/epfl_news/view.php:132 shortcodes/epfl_news/view.php:164 shortcodes/epfl_news/view.php:173
+#: shortcodes/epfl_news/view.php:123 shortcodes/epfl_news/view.php:132
+#: shortcodes/epfl_news/view.php:164 shortcodes/epfl_news/view.php:173
 #: shortcodes/page_highlight/view.php:36 shortcodes/page_highlight/view.php:48
 msgid "Read more"
 msgstr "En savoir plus"
@@ -265,7 +286,8 @@ msgstr "Bureau"
 msgid "Dir."
 msgstr "Dir."
 
-#: shortcodes/epfl_publication/renderers/fields.php:338 shortcodes/epfl_publication/renderers/fields.php:340
+#: shortcodes/epfl_publication/renderers/fields.php:338
+#: shortcodes/epfl_publication/renderers/fields.php:340
 #: shortcodes/epfl_publication/renderers/fields.php:525
 msgid "p."
 msgstr "p."
@@ -306,7 +328,8 @@ msgstr ""
 msgid "Share on"
 msgstr ""
 
-#: shortcodes/epfl_share/view.php:16 shortcodes/epfl_share/view.php:20 shortcodes/epfl_share/view.php:42 shortcodes/epfl_share/view.php:46
+#: shortcodes/epfl_share/view.php:16 shortcodes/epfl_share/view.php:20
+#: shortcodes/epfl_share/view.php:42 shortcodes/epfl_share/view.php:46
 msgid "Follow us on"
 msgstr "Nous rejoindre sur Twitter"
 
@@ -330,11 +353,15 @@ msgstr ""
 msgid "Content"
 msgstr "Contenu"
 
-#: shortcodes/introduction/shortcake.php:18 shortcodes/page_teaser/shortcake.php:10 shortcodes/post_teaser/shortcake.php:10
+#: shortcodes/introduction/shortcake.php:18
+#: shortcodes/page_teaser/shortcake.php:10
+#: shortcodes/post_teaser/shortcake.php:10
 msgid "Gray background"
 msgstr ""
 
-#: shortcodes/introduction/shortcake.php:21 shortcodes/page_teaser/shortcake.php:13 shortcodes/post_teaser/shortcake.php:13
+#: shortcodes/introduction/shortcake.php:21
+#: shortcodes/page_teaser/shortcake.php:13
+#: shortcodes/post_teaser/shortcake.php:13
 msgid "Change the background to gray"
 msgstr ""
 
@@ -342,7 +369,8 @@ msgstr ""
 msgid "Introduction"
 msgstr ""
 
-#: shortcodes/page_highlight/shortcake.php:8 shortcodes/page_teaser/shortcake.php:18
+#: shortcodes/page_highlight/shortcake.php:8
+#: shortcodes/page_teaser/shortcake.php:18
 msgid "Select page"
 msgstr ""
 
@@ -354,7 +382,8 @@ msgstr ""
 msgid "Page teaser"
 msgstr ""
 
-#: shortcodes/post_highlight/shortcake.php:8 shortcodes/post_teaser/shortcake.php:18
+#: shortcodes/post_highlight/shortcake.php:8
+#: shortcodes/post_teaser/shortcake.php:18
 msgid "Select post"
 msgstr ""
 
@@ -418,6 +447,9 @@ msgstr ""
 
 msgid "Browse"
 msgstr "Parcourir"
+
+msgid "Back"
+msgstr "Retour"
 
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"

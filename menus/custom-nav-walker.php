@@ -52,7 +52,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 				'."{$n}";*/
 				$output .= "{$n}{$indent}<ul$class_names>".'<li class="nav-back"><a href="#">
                   <svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>
-                  Retour: '.$parent->title.'
+                  ' . __('Back', 'epfl') . ': '.$parent->title.'
                 </a>
 						</li>'."{$n}";
 		} else if ($depth >= 1) {
