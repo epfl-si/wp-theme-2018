@@ -123,16 +123,16 @@
     <div class="collapse collapse-item" id="collapse-footer-4">
       <ul class="footer-links">
                   <li>
-                                    <a href="https://vpi.epfl.ch/innovationprojects/">Innovation domains</a>
+                                    <a href="https://www.epfl.ch/innovation/about/domains/">Innovation domains</a>
                       </li>
                   <li>
-                                    <a href="https://vpi.epfl.ch/industrycollaboration/">Collaborate with industries</a>
+                                    <a href="https://www.epfl.ch/innovation/industry/"> Collaborate with industry</a>
                       </li>
                   <li>
-                                    <a href="https://www.epfl.ch/innovation/entrepreneurship/">Entrepreneurship and startups</a>
+                                    <a href="https://www.epfl.ch/innovation/entrepreneurship/start-up/">Entrepreneurship and start-ups</a>
                       </li>
                   <li>
-                                    <a href="https://www.epfl.ch/innovation/">Learn and develop</a>
+                                    <a href="https://www.epfl.ch/innovation/industry/industry/learn-and-develop/">Learn and develop</a>
                       </li>
               </ul>
     </div>
@@ -211,7 +211,7 @@
                         <a href="https://www.epfl.ch/schools/cdh/">College of humanities <strong>CDH</strong></a>
               </li>
           <li>
-                        <a href="https://www.epfl.ae">Middle East <strong>ME</strong></a>
+                        <a href="http://www.epfl.ae">Middle East <strong>ME</strong></a>
               </li>
         </ul>
   </div>
