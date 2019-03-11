@@ -1,4 +1,49 @@
 # CHANGELOG
+*1.2.33* (2019-03-06)
+- Update fonction_fr or fonction_en after change into people app (#181)
+
+*1.2.32* (2019-02-28)
+- Allow "Phantom" menu entry at the root (#182)
+
+*1.2.31* (2019-02-21)
+- Add missing translations (#179)
+- Handle image order in WP gallery (#180)
+
+*1.2.30* (2019-02-07)
+- Get a fallback menu if the root menu is not correctly set as expected (#178)
+- Fix order function people problem (#176)
+- fix people room (#177)
+
+*1.2.29* (2019-01-31)
+  - Fix the fallback menu being used by default (#173)
+  - Fix the missing À on "À propos" (#172)
+  - Set epfl root url to a static value, mainly for logo and breadcrumb (#175)
+
+*1.2.28* (2019-01-24)
+  - Fix search input on mobile
+
+*1.2.27* (2019-01-24)
+  - Fix langage switcher on mobile
+  - Fix url for the 50y logo (#169)
+  - Add a default top menu as fallback (#170)
+
+*1.2.25* (2019-01-17)
+  - Update the english celebration link
+
+*1.2.24* (2019-01-14)
+  - Add new logo for the 50 years (#164)
+  - Fix scienceqa form problem (#166)
+  - Fix breadcrumbs mobile behaviour
+  - Fix creation date for Posts (#117)
+  - Fix Post Teaser empty element when grey mode enabled (#111)
+
+*1.2.23* (2018-12-18)
+  - Update to styleguide 1.3.7
+  - Active the don't track option for Twitter widget (#160)
+  - Fix breadcrumbs for mobile (#161)
+  - Set language on homepage links (#159)
+  - Fix php notices (#158)
+  - Some code cleaning
 
 *1.2.22* (2018-12-10)
   - Update to styleguide 1.3.6

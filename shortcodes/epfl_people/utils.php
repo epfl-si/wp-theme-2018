@@ -24,27 +24,35 @@ function epfl_people_get_phones($person) {
 }
 
 /**
- * Get person functions
+ * Get person function
  */
-function epfl_people_get_functions($person) {
-
-    $functions = [];
+function epfl_people_get_function($person) {
+    $function = '';
     foreach($person->unites as $current_unit) {
-        $functions[] = $current_unit->fonction;
+        if ($current_unit->ordre == 1) {
+            $language = get_current_language();
+            if ($language === 'fr') {
+                $function = $current_unit->fonction_fr;
+            } else {
+                $function = $current_unit->fonction_en;
+            }
+        }
     }
-    return $functions;
+    return $function;
 }
 
 /**
- * Get person rooms
+ * Get person room
  */
-function epfl_people_get_rooms($person) {
+function epfl_people_get_room($person) {
     
-    $rooms = [];
+    $room = '';
     foreach($person->unites as $current_unit) {
-        $rooms[] = $current_unit->rooms;
+        if ($current_unit->ordre  == 1) {
+            $room = $current_unit->rooms;
+        }
     }
-    return $rooms;
+    return $room;
 }
 
 /**

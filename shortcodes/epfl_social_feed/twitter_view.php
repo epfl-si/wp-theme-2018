@@ -15,6 +15,7 @@
         <?php endif ?>
         data-chrome="nofooter"
         data-height="<?php esc_html_e($height) ?>"
+        data-dnt="true"
         href="<?php echo esc_url($twitter_url) ?>">
       </a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>      

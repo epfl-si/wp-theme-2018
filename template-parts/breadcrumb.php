@@ -29,18 +29,21 @@ if ($currentTemplate == 'page-homepage.php') {
   <?php
     // Breadcrumb
     $items = array();
-    foreach (wp_get_nav_menu_items(get_current_menu_slug()) as $item) {
-        $items[(int) $item->db_id] = $item;
+    if(($menu_items = wp_get_nav_menu_items(get_current_menu_slug()))!==false)
+    {
+        foreach ($menu_items as $item) {
+            $items[(int) $item->db_id] = $item;
+        }
     }
 
     $item = $items ? reset(wp_filter_object_list( $items, ['object_id' => $post->ID])) : false;
 
     $crumbs = array();
 
-    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ul class="p-0 m-0">';
+    echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ol class="breadcrumb">';
     $crumbs[] = '
         <li class="breadcrumb-item">
-            <a class="bread-link bread-home" href="' . get_nav_home_url() . '" title="home">
+            <a class="bread-link bread-home" href="' . get_epfl_home_url() . '" title="home">
                 <svg class="icon"><use xlink:href="#icon-home"></use></svg>
             </a>
         </li>';
@@ -70,7 +73,7 @@ if ($currentTemplate == 'page-homepage.php') {
       }
     }
     echo implode('', $crumbs);
-    echo '</ul></nav>';
+    echo '</ol></nav>';
   ?>
   <!-- end Breadcrumb -->
 </div>

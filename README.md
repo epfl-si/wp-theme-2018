@@ -27,15 +27,15 @@ Epfl theme (Wordpress)
   - understand the gitflow logic ([gitflow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/))
   - install `git flow` locally [How to install gitflow](https://github.com/nvie/gitflow/wiki/Installation)
   - initialise git flow in your repo by typing `git flow init`
-  - make sure your local branches `master` and `dev` are up-to-date
 
 ### process
+  - make sure your local branches `master` and `dev` are up-to-date
   - start a release: `git flow release start x.x.x`
   - update the following files:
     - `VERSION` with the version number
     - `style.css` with the version number
     - `CHANGELOG.md` with a description of **all the changes since last release**
-  - commit them in a "bump version" commit
+  - commit them in a "Bump version" commit
   - finish the release: `git flow release finish x.x.x -p -m "x.x.x"` 
   - head over this repo on github, on the **release** tab
   - go to **Draft a new release**

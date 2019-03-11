@@ -49,14 +49,11 @@ abstract Class InfosciencePublication2018Render {
     protected static $format="short";
 
     protected static function get_content($publication, $format, $summary) {
-        $html_rendered .= PublicationDateInfoscienceField2018Render::render($publication, static::$format);
-        return $html_rendered;
+        return PublicationDateInfoscienceField2018Render::render($publication, static::$format);
     }
     
     public static function render($publication, $format, $summary) {
-        $html_rendered = '';
-
-        $html_rendered .= AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author');
+        $html_rendered = AuthorInfoscienceField2018Render::render($publication, $format, NULL, 'author');
 
         if ($summary) {
             $html_rendered .= SummaryInfoscienceField2018Render::render($publication, self::$format, false);
