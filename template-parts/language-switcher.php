@@ -11,6 +11,11 @@ if (!function_exists('pll_the_languages')) {
 }
 
 $translations = pll_the_languages(array('raw'=>1));
+# filter out langages without this page translated
+$translations = array_filter($translations, function($value) {
+	return (!$value['no_translation']);
+});
+
 $translations_count = sizeof($translations);
 
 if ($translations_count == 0) {
@@ -22,7 +27,6 @@ if ($translations_count == 0) {
 $translations = reorderTranslations($translations);
 
 if ($translations_count < 3) {
-
 ?>
 <!-- language switcher, two elements -->
 <nav class="nav-lang nav-lang-short ml-auto">
@@ -107,17 +111,14 @@ function reorderTranslations($trads) {
 	$temp = [];
 	$langSequence = ['fr', 'en', 'de', 'it'];
 	foreach ($langSequence as $lang) {
-		foreach ($trads as $key => $value) {
-			if($key === $lang) {
-				array_push($temp, $value);
-				break;
-			}
-		}
+	    if(array_key_exists($lang, $trads)){
+	        $temp[] = $trads[$lang];
+	    }
 	}
 
 	foreach ($trads as $key => $value) {
 		if(!in_array($key, $langSequence)) {
-			array_push($temp, $value);
+			$temp[] = $value;
 		}
 	}
 
