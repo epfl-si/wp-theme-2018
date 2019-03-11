@@ -111,17 +111,14 @@ function reorderTranslations($trads) {
 	$temp = [];
 	$langSequence = ['fr', 'en', 'de', 'it'];
 	foreach ($langSequence as $lang) {
-		foreach ($trads as $key => $value) {
-			if($key === $lang) {
-				array_push($temp, $value);
-				break;
-			}
-		}
+	    if(array_key_exists($lang, $trads)){
+	        $temp[] = $trads[$lang];
+	    }
 	}
 
 	foreach ($trads as $key => $value) {
 		if(!in_array($key, $langSequence)) {
-			array_push($temp, $value);
+			$temp[] = $value;
 		}
 	}
 
