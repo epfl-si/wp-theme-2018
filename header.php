@@ -90,8 +90,10 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 
 	if ($language === 'fr') {
 		$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
+		$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 ans</a></li>';
 	} else {
 		$celebration_url = 'https://www.epfl.ch/campus/events/celebration-en/';
+		$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 years</a></li>';
 	}
 ?>
 <!doctype html>
@@ -133,6 +135,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1,
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $celebration_item . '</ul>',
 					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
 			} else {
