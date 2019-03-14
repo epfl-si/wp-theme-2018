@@ -11,6 +11,17 @@ global $wp_query;
 
 global $EPFL_MENU_LOCATION;
 
+// celebration link builder
+$language = get_current_language();
+
+if ($language === 'fr') {
+	$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
+	$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 ans</a></li>';
+} else {
+	$celebration_url = 'https://www.epfl.ch/campus/events/celebration-en/';
+	$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 years</a></li>';
+}
+
 // recover current post and menu item
 $items = wp_get_nav_menu_items(get_current_menu_slug());
 $item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
@@ -28,6 +39,7 @@ if ($item === false || $item->menu_item_parent == 0 ) $classes = 'current-menu-p
 					'theme_location' => $EPFL_MENU_LOCATION,
 					'menu_class'=> 'nav-menu',
 					'container' => 'ul',
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $celebration_item . '</ul>',
 					'walker' => new Custom_Nav_Walker()
 				) );
 			?>
