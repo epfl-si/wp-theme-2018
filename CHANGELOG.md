@@ -1,4 +1,11 @@
 # CHANGELOG
+
+*1.2.34* (2019-03-14)
+- Fix showing link when no page exist in the aimed langage (#186)
+- Fix translation for Retour in hamburger (#184)
+- Update footer texts and links
+- Shorcode memento : Add speaker (#187)
+
 *1.2.33* (2019-03-06)
 - Update fonction_fr or fonction_en after change into people app (#181)
 
