@@ -86,6 +86,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 ?>
 <?php
 	// celebration link builder
+	// this is a temp hack until we remove it
 	$language = get_current_language();
 
 	if ($language === 'fr') {
@@ -135,7 +136,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1,
-					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $celebration_item . '</ul>',
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $celebration_item . '</ul>',  // this is a temp hack until we remove it
 					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
 			} else {

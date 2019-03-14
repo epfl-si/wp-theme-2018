@@ -12,6 +12,7 @@ global $wp_query;
 global $EPFL_MENU_LOCATION;
 
 // celebration link builder
+// this is a temp hack until we remove it
 $language = get_current_language();
 
 if ($language === 'fr') {
@@ -39,7 +40,7 @@ if ($item === false || $item->menu_item_parent == 0 ) $classes = 'current-menu-p
 					'theme_location' => $EPFL_MENU_LOCATION,
 					'menu_class'=> 'nav-menu',
 					'container' => 'ul',
-					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $celebration_item . '</ul>',
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $celebration_item . '</ul>',  // this is a temp hack until we remove it
 					'walker' => new Custom_Nav_Walker()
 				) );
 			?>
