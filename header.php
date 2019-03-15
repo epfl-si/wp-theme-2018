@@ -114,7 +114,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	<header role="banner" class="header">
 
 	<a class="logo" href="<?php echo get_epfl_home_url(); ?>">
-		<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo-new.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+		<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
 	</a>
 
 	<?php
