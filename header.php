@@ -103,6 +103,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php require_once(__DIR__.'/favicons.php'); ?>
 	<script type="text/javascript">window.svgPath = "<?php bloginfo('template_url'); ?>/assets/icons/icons.svg"</script>
 	<?php wp_head(); ?>
 </head>
