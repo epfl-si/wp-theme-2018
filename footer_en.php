@@ -199,7 +199,7 @@
                         <a href="https://sti.epfl.ch">School of Engineering <strong>STI</strong></a>
               </li>
           <li>
-                        <a href="https://www.epfl.ch/schools/ic/"> <strong>IC</strong></a>
+                        <a href="https://www.epfl.ch/schools/ic/">School of computer and communication sciences <strong>IC</strong></a>
               </li>
           <li>
                         <a href="https://www.epfl.ch/schools/sv/">School of life sciences <strong>SV</strong></a>
