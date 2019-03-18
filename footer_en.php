@@ -259,7 +259,7 @@
     <a href="https://www.epfl.ch/about/overview/overview/regulations-and-guidelines/">Legals</a>
   </div>
   <div>
-    <p>&copy; 2018 EPFL, all rights reserved</p>
+    <p>&copy; <?php echo date(Y); ?> EPFL, all rights reserved</p>
   </div>
 </div>
 
