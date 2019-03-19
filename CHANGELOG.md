@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*1.3.0* (2019-03-19)
+- Update to styleguide 2.0.0
+- Add favicons links
+- Set the "50 years" label in top and hamburger menus
+
 *1.2.34* (2019-03-14)
 - Fix showing link when no page exist in the aimed langage (#186)
 - Fix translation for Retour in hamburger (#184)
