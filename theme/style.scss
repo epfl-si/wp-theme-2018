@@ -1,0 +1,51 @@
+/* Override font from styleguide, as only the theme has the legal right to get it (same domain policy) */
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 400;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 400;
+    font-style: italic;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 700;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 700;
+    font-style: italic;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.svg#svgFontName') format('svg');
+}
+
+body {
+    font-family: "SuisseIntl", Arial, sans-serif !important;
+}
