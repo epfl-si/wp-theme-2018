@@ -24,8 +24,8 @@ if ($language === 'fr') {
 }
 
 // recover current post and menu item
-$items = wp_get_nav_menu_items(get_current_menu_slug());
-$item = reset(wp_filter_object_list( $items, ['object_id' => $post->ID]));
+$items = wp_filter_object_list( wp_get_nav_menu_items(get_current_menu_slug()), ['object_id' => $post->ID]);
+$item = reset($items);
 
 // to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
 $classes = '';
