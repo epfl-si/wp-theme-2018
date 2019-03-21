@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.3.1* (2019-03-21)
+- Font are fetched from root www
+
 *1.3.0* (2019-03-19)
 - Update to styleguide 2.0.0
 - Add favicons links
