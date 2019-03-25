@@ -86,12 +86,15 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 ?>
 <?php
 	// celebration link builder
+	// this is a temp hack until we remove it
 	$language = get_current_language();
 
 	if ($language === 'fr') {
 		$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
+		$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 ans</a></li>';
 	} else {
 		$celebration_url = 'https://www.epfl.ch/campus/events/celebration-en/';
+		$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 years</a></li>';
 	}
 ?>
 <!doctype html>
@@ -100,6 +103,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php require_once(__DIR__.'/favicons.php'); ?>
 	<script type="text/javascript">window.svgPath = "<?php bloginfo('template_url'); ?>/assets/icons/icons.svg"</script>
 	<?php wp_head(); ?>
 </head>
@@ -110,14 +114,9 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 
 	<header role="banner" class="header">
 
-  	<div class="site-branding">
-  	    <a class="logo" href="<?php echo get_epfl_home_url(); ?>">
-  			<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
-  		</a>
-  		<a class="logo-50" href="<?php echo $celebration_url; ?>">
-    		<img src="<?php bloginfo('template_url'); ?>/theme/img/epfl-logo-50-150x111.gif" alt="Logo EPFL 50e anniversaire" width="101" height="91">
-  		</a>
-  	</div>
+	<a class="logo" href="<?php echo get_epfl_home_url(); ?>">
+		<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg?refresh=now" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
+	</a>
 
 	<?php
 		global $EPFL_MENU_LOCATION;
@@ -138,6 +137,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1,
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $celebration_item . '</ul>',  // this is a temp hack until we remove it
 					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
 			} else {

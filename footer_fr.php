@@ -123,16 +123,16 @@
     <div class="collapse collapse-item" id="collapse-footer-4">
       <ul class="footer-links">
                   <li>
-                        <a href="https://vpi.epfl.ch/fr/projetsinnovation/">Domaine d'innovation</a>
+                        <a href="https://www.epfl.ch/innovation/about/fr/domaines/">Domaines d'innovation</a>
                                   </li>
                   <li>
-                        <a href="https://vpi.epfl.ch/fr/collaborationindustrielle/">Collaboration avec les entreprises</a>
+                        <a href="https://www.epfl.ch/innovation/industry/fr/industries/">Collaboration avec l'industrie</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/innovation/entrepreneurship/fr/entrepreneuriat/">Entrepreneuriat et start-up</a>
+                        <a href="https://www.epfl.ch/innovation/entrepreneurship/fr/startup/">Entrepreneuriat et start-ups</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/innovation/fr/innovation-2/">Apprendre et se développer</a>
+                        <a href="https://www.epfl.ch/innovation/industry/fr/industries/formation/">Développer son expertise</a>
                                   </li>
               </ul>
     </div>
@@ -211,7 +211,7 @@
                 <a href="https://www.epfl.ch/schools/cdh/fr/index-fr-html/">Collège des humanités <strong>CDH</strong></a>
                       </li>
           <li>
-                <a href="https://www.epfl.ae">Middle East <strong>ME</strong></a>
+                <a href="http://www.epfl.ae">Middle East <strong>ME</strong></a>
                       </li>
         </ul>
   </div>
@@ -259,7 +259,7 @@
     <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/">Mentions légales</a>
   </div>
   <div>
-    <p>&copy; 2018 EPFL, tous droits réservés</p>
+    <p>&copy; <?php echo date("Y"); ?> EPFL, tous droits réservés</p>
   </div>
 </div>
 

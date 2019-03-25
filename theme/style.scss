@@ -1,55 +1,51 @@
+/* Override font from styleguide, as only the theme has the legal right to get it (same domain policy) */
 
-/**
-  * Custom styles used only for the WordPress theme (not included in the styleguide)
-  *
-  */
-
-
-@import "mixins";
-
-/* Logo '50 years' */
-
-.site-branding a.logo-50 img {
-  display: none;
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 400;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.svg#svgFontName') format('svg');
 }
 
-@media screen and ( min-width: 360px ) {
-    
-  .site-branding {
-  
-    a {
-      display: inline-block;
-      
-      &.logo-50 {
-        background: transparent url(img/epfl-logo-50-150x111.gif) no-repeat;
-        background-size: 100% auto;
-        margin-left: 6px;
-        height: 52px;
-        vertical-align: middle;
-        width: 70px;
-        
-        img {
-          @include visuallyhidden;
-          /*display: inline-block;
-          position: relative;
-          top: -1px;
-          height: auto;
-          width: 70px;*/
-        }
-      }
-    }
-  }
-
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 400;
+    font-style: italic;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.svg#svgFontName') format('svg');
 }
 
-@media screen and ( min-width: 420px ) {
-    
-  .site-branding a.logo-50 {
-      margin-left: 10px;
-      height: 75px;
-      position: relative;
-      top: 2px;
-      width: 90px;
-    }
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 700;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.svg#svgFontName') format('svg');
+}
 
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 700;
+    font-style: italic;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.svg#svgFontName') format('svg');
+}
+
+body {
+    font-family: "SuisseIntl", Arial, sans-serif !important;
 }

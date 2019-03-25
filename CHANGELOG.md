@@ -1,4 +1,25 @@
 # CHANGELOG
+
+*1.3.1* (2019-03-21)
+- Font are fetched from root www
+
+*1.3.0* (2019-03-19)
+- Update to styleguide 2.0.0
+- Add favicons links
+- Set the "50 years" label in top and hamburger menus
+
+*1.2.34* (2019-03-14)
+- Fix showing link when no page exist in the aimed langage (#186)
+- Fix translation for Retour in hamburger (#184)
+- Update footer texts and links
+- Shorcode memento : Add speaker (#187)
+
+*1.2.33* (2019-03-06)
+- Update fonction_fr or fonction_en after change into people app (#181)
+
+*1.2.32* (2019-02-28)
+- Allow "Phantom" menu entry at the root (#182)
+
 *1.2.31* (2019-02-21)
 - Add missing translations (#179)
 - Handle image order in WP gallery (#180)

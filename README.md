@@ -35,7 +35,7 @@ Epfl theme (Wordpress)
     - `VERSION` with the version number
     - `style.css` with the version number
     - `CHANGELOG.md` with a description of **all the changes since last release**
-  - commit them in a "bump version" commit
+  - commit them in a "Bump version" commit
   - finish the release: `git flow release finish x.x.x -p -m "x.x.x"` 
   - head over this repo on github, on the **release** tab
   - go to **Draft a new release**
