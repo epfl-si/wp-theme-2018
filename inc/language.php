@@ -1,6 +1,6 @@
 <?php
 /**
- * get_current_langage
+ * get_current_language
  */
 function get_current_language ($default_lang='en') {
 	# fetch language
