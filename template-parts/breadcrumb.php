@@ -48,26 +48,35 @@ if ($currentTemplate == 'page-homepage.php') {
             </a>
         </li>';
 
-    $custom_tags_provider_url = '';
-    $custom_tags = get_option('epfl:custom_tags');
-    $custom_tags_provider_url = get_option('epfl:custom_tags_provider_url');
-
     if(function_exists('epfl_fetch_site_tags')) {
+        $custom_tags = [];
         $custom_tags = epfl_fetch_site_tags();
-    }
 
-    # custom_tags should be [[tag, url], [tag, url], ...]
-    if ($custom_tags) {
+      # custom_tags should be like [["_id", "name_en", "url_en", "name_fr", "url_fr", "type"], ...]
+      if (!empty($custom_tags)) {
+        $ln = get_current_language();
         $crumbs[] = "
                     <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
+
         foreach($custom_tags as $tag_item) {
-            $tag_name = $tag_item[0];
-            $tag_url = $tag_item[1];
-            $crumbs[] = "
-                <a href=\"{$tag_url}\" class=\"tag tag-primary\">". esc_html($tag_name) . "</a>
-            ";
+          if ($ln === 'fr') {
+            $tag_name = $tag_item->name_fr;
+            if(!empty($tag_item->url_fr)) {
+              $tag_url = $tag_item->url_fr;
+            } else {
+              $tag_url = $tag_item->url_en;
+            }
+          } else {
+            $tag_name = $tag_item->name_en;
+            $tag_url = $tag_item->url_en;
+          }
+
+          $crumbs[] = "
+              <a href=\"{$tag_url}\" class=\"tag tag-primary\">". esc_html($tag_name) . "</a>
+          ";
         }
         $crumbs[] = "</li>";
+      }
     }
 
     $crumb_items = array();
