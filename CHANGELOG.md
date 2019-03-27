@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.3.2* (2019-03-28)
+- Fix PHP notice messages
+
 *1.3.1* (2019-03-21)
 - Font are fetched from root www
 
