@@ -21,7 +21,8 @@ function submenu_limit( $items, $args ) {
 
     $submenu_type = $args->submenu_type ?: 'all';
 
-    $current_menu_item = reset(wp_filter_object_list( $items, array( 'current' => true ) ));
+    $current_menu_items = wp_filter_object_list( $items, array( 'current' => true ) );
+    $current_menu_item = reset($current_menu_items);
     if ($current_menu_item) array_push($current_menu_item->classes, 'active');
 
     $selectedIds = [];
@@ -38,9 +39,10 @@ function submenu_limit( $items, $args ) {
       $selectedIds = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
       
     } else if ($submenu_type == 'all') {
-      $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
-      $siblings = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
-      $children = submenu_get_direct_children_ids( $current_menu_item->ID ?: 0 , $items );
+      $parent_menu_items = wp_filter_object_list( $items, array( 'current_item_parent' => true ) );
+      $parent_menu_item = reset($parent_menu_items);
+      $siblings = submenu_get_direct_children_ids( ($parent_menu_item && $parent_menu_item->ID) ?: 0 , $items );
+      $children = submenu_get_direct_children_ids( ($current_menu_item && $current_menu_item->ID) ?: 0 , $items );
       $selectedIds = array_merge($siblings, $children);
     }
 
