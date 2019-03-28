@@ -31,8 +31,9 @@ function epfl_people_get_phones($person) {
  */
 function epfl_people_get_function($person) {
     $function = '';
+    $nb_units = count((array)$person->unites);    
     foreach($person->unites as $current_unit) {
-        if ($current_unit->ordre == 1) {
+        if ($current_unit->ordre == 1 || $nb_units == 1) {
             $language = get_current_language();
             if ($language === 'fr') {
                 $function = $current_unit->fonction_fr;
