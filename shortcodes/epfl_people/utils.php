@@ -15,10 +15,13 @@ function epfl_people_get_photo($person) {
  * Get person phones number
  */
 function epfl_people_get_phones($person) {
-
     $phones = [];
     foreach($person->unites as $current_unit) {
-        $phones = array_merge($phones, $current_unit->phones);
+        foreach($current_unit->phones as $phone) {
+            if ($phone !== "" && !in_array($phone, $phones))  {
+                array_push($phones, $phone);
+            }
+        }
     }
     return $phones;
 }
