@@ -17,13 +17,9 @@ function epfl_people_get_photo($person) {
 function epfl_people_get_phones($person) {
     $phones = [];
     foreach($person->unites as $current_unit) {
-        foreach($current_unit->phones as $phone) {
-            if ($phone !== "" && !in_array($phone, $phones))  {
-                array_push($phones, $phone);
-            }
-        }
+        $phones = array_merge($phones, array_filter($current_unit->phones));
     }
-    return $phones;
+    return array_unique($phones);
 }
 
 /**
