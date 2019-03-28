@@ -15,12 +15,11 @@ function epfl_people_get_photo($person) {
  * Get person phones number
  */
 function epfl_people_get_phones($person) {
-
     $phones = [];
     foreach($person->unites as $current_unit) {
-        $phones = array_merge($phones, $current_unit->phones);
+        $phones = array_merge($phones, array_filter($current_unit->phones));
     }
-    return $phones;
+    return array_unique($phones);
 }
 
 /**
@@ -28,8 +27,9 @@ function epfl_people_get_phones($person) {
  */
 function epfl_people_get_function($person) {
     $function = '';
+    $nb_units = count((array)$person->unites);    
     foreach($person->unites as $current_unit) {
-        if ($current_unit->ordre == 1) {
+        if ($current_unit->ordre == 1 || $nb_units == 1) {
             $language = get_current_language();
             if ($language === 'fr') {
                 $function = $current_unit->fonction_fr;
