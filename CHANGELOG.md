@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.3.4* (2019-03-29)
+- People Fix (#192)
+
 *1.3.3* (2019-03-28)
 - Revert in part Fix PHP notices messages
 
