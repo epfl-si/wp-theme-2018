@@ -5,9 +5,9 @@
  * 4rth argument is number of arguments the function can accept
  **/
 
-add_action('epfl_people_action', 'renderPeople', 10, 2);
+add_action('epfl_people_action', 'renderPeople', 10, 3);
 
-function renderPeople ($persons, $nb_columns) {
+function renderPeople ($persons, $nb_columns, $from) {
 
   if (is_admin()) {
 
@@ -16,10 +16,10 @@ function renderPeople ($persons, $nb_columns) {
     get_template_part('shortcodes/placeholder');
 
   } else {
-
+    
+    set_query_var('epfl_people_from', $from);
     set_query_var('epfl_people_persons', $persons);
     set_query_var('epfl_people_nb_columns', $nb_columns);
     get_template_part('shortcodes/epfl_people/view');
-
   }
 }
