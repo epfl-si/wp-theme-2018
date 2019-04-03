@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*1.3.5* (2019-04-03)
+- People Fix (#193)
+- Add Tags to breadcrumb (#183)
+- Fix php notices (#191)
+
 *1.3.4* (2019-03-29)
 - People Fix (#192)
 
