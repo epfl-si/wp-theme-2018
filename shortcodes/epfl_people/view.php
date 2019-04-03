@@ -1,6 +1,8 @@
 <?php
   require_once('utils.php');
   $persons = get_query_var('epfl_people_persons');
+  $from = get_query_var('epfl_people_from');
+
   # $nb_column can be 1, 3 or 'list'
   $nb_column = get_query_var('epfl_people_nb_columns');
 ?>
@@ -8,11 +10,13 @@
   <?php if ($nb_column === 'list'): ?>
   <div class="contact-list">
     <?php
+    
       foreach($persons as $index => $person):
+        
         $photo_url  = epfl_people_get_photo($person);
         $phones     = epfl_people_get_phones($person);
-        $function   = epfl_people_get_function($person);
-        $room       = epfl_people_get_room($person);
+        $function   = epfl_people_get_function($person, $from);
+        $room       = epfl_people_get_room($person, $from);
         $room_url   = epfl_people_get_room_url($room);
         $people_url = epfl_people_get_people_url($person);
     ?>
@@ -40,8 +44,8 @@
       foreach($persons as $index => $person):
         $photo_url  = epfl_people_get_photo($person);
         $phones     = epfl_people_get_phones($person);
-        $function   = epfl_people_get_function($person);
-        $room       = epfl_people_get_room($person);
+        $function   = epfl_people_get_function($person, $from);
+        $room       = epfl_people_get_room($person, $from);
         $room_url   = epfl_people_get_room_url($room);
         $people_url = epfl_people_get_people_url($person);
     ?>
