@@ -196,20 +196,6 @@
   <?php endif; ?>
 <?php endif; ?>
 
-<?php if ($template == 2 and $last == $count): ?>
-      </div>
-      <?php if ("true" == $display_all_news_link): ?>
-      <p class="text-center">
-        <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
-          <?php esc_html_e('All news', 'epfl' );?>
-        </a>
-      </p>
-      <?php endif; ?>
-    </div>
-  </div>
-</div>
-<?php endif; ?>
-
 <?php if ((5 == $template or 4 == $template or 6 == $template) and $last == $count): ?>
   </div>
 <?php endif; ?>
@@ -219,7 +205,7 @@
     } // end foreach
 ?>
 
-<?php if ("true" == $display_all_news_link and 2 != $template and 4 != $template and "" != $url_channel): ?>
+<?php if ("true" == $display_all_news_link and 4 != $template and "" != $url_channel): ?>
 <p class="text-center">
   <a class="link-pretty" href="<?php echo $url_channel; ?>"><?php esc_html_e('All news', 'epfl' );?></a>
 </p>
