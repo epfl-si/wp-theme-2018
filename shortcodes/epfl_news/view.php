@@ -200,7 +200,7 @@
       </div>
       <?php if ("true" == $display_all_news_link): ?>
       <p class="text-center">
-        <a class="link-pretty" href="https://actu.epfl.ch/search/mediacom/">
+        <a class="link-pretty" href="<?php echo $url_channel; ?>">
           <?php esc_html_e('All news', 'epfl' );?>
         </a>
       </p>
