@@ -138,7 +138,7 @@ add_action( 'widgets_init', 'epfl_widgets_init' );
 function epfl_scripts() {
 	$vsn = filemtime(get_theme_file_path('VERSION'));
 
-	wp_enqueue_style( 'epfl-style', get_template_directory_uri(), array(), $vsn );
+	wp_enqueue_style( 'epfl-style', get_stylesheet_uri(), array(), $vsn );
 
 	wp_enqueue_style( 'epfl-vendors', get_template_directory_uri().'/assets/css/vendors.min.css', array(), $vsn );
 	wp_enqueue_style( 'epfl-base', get_template_directory_uri().'/assets/css/base.css', array(), $vsn );
