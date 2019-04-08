@@ -25,7 +25,7 @@ function labs_search_form_submitted() {
 
   if (has_action("epfl_labs_search_action_callback"))
   {
-    $sites = do_action('epfl_labs_search_action_callback', $search_text);
+    $sites = apply_filters('epfl_labs_search_action_callback', $search_text);
     wp_send_json_success($sites);
   } else {
     wp_send_json_error('The callback is missing for the search action');

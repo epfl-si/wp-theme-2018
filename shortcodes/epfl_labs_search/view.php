@@ -18,7 +18,19 @@
             <small id="labs-search-input-help" class="form-text text-muted">
                 Laboratories are part of faculties and institutes, and have a some named search domains.
             </small>
+            <br />
             <button id="submitButton" type="button" class="btn">Submit</button>
         </form>
     </div>
+    <table class="table" id="labs-search-results-table" style="display: none">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 </div>
