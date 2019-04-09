@@ -15,7 +15,7 @@
         function apply_search_on_tags() {
             $('#labs-search-results-table .labs-search-site-tag-link').each(function(index) {
                 $(this).on("click", function() {
-                    $('#labs-search-input').val($('#labs-search-input').val() + ' ' + $(this).text());
+                    $('#labs-search-input').val($(this).text());
                     $('#submitButton').click();
                 });
             });
