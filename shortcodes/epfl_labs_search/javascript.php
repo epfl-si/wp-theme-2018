@@ -1,4 +1,8 @@
-<script type='text/javascript' >
+<?php
+    $faculty = get_query_var('epfl_labs-faculty');
+?>
+
+<script type='text/javascript'>
     jQuery(document).ready(function( $ ) {
         let ajaxUrl = "<?php echo admin_url('admin-ajax.php'); ?>";
         
@@ -35,6 +39,7 @@
                     data: {
                         _ajax_nonce: '<?php echo wp_create_nonce( 'epfl_labs_search' ); ?>',
                         action: 'labs_search_form',
+                        <?=(!empty($faculty)) ? "labs_search_faculty: '" . $faculty . "',\n" : "" ?>
                         labs_search_text: labs_search_text
                     },
                     success: function(response) {

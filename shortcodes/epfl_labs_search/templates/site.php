@@ -7,9 +7,10 @@
 
 let one_row_template = `
     <tr>
+        <td><a href="${site.url}">${site.url}</a></td>
         <td>${site.title}</td>
-        <td>${site.faculty.toUpperCase()}</td>
         <td><a href="${site.url}">${site.tagline}</a></td>
+        <td>${site.faculty.toUpperCase()}</td>
         <td>
             `;
 

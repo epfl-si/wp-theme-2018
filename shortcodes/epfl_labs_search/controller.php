@@ -5,7 +5,7 @@
  * 4rth argument is number of arguments the function can accept
  **/
 
-add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 0);
+add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 1);
 
 function add_jquery() {
   wp_enqueue_script('jquery');
@@ -18,6 +18,7 @@ add_action('wp_ajax_nopriv_labs_search_form', 'labs_search_form_submitted');
 function labs_search_form_submitted() {
   check_ajax_referer( 'epfl_labs_search' );
   $search_text = $_GET['labs_search_text'];
+  $faculty = $_GET['labs_search_faculty'];
 
   if (empty($search_text)) {
     wp_send_json_success('');
@@ -25,20 +26,20 @@ function labs_search_form_submitted() {
 
   if (has_action("epfl_labs_search_action_callback"))
   {
-    $sites = apply_filters('epfl_labs_search_action_callback', $search_text);
+    $sites = apply_filters('epfl_labs_search_action_callback', $search_text, $faculty);
     wp_send_json_success($sites);
   } else {
     wp_send_json_error('The callback is missing for the search action');
   }
 }
 
-function renderLabsSearch() {
+function renderLabsSearch($faculty) {
   if (is_admin()) {
     // render placeholder for backend editor
     set_query_var('epfl_placeholder_title', 'Laboratories search');
     get_template_part('shortcodes/placeholder');
   } else {
-    set_query_var('epfl_labs-query', $query);
+    set_query_var('epfl_labs-faculty', $faculty);
     get_template_part('shortcodes/epfl_labs_search/view');
   }
 }

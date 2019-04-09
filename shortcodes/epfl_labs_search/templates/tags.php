@@ -8,11 +8,11 @@
 <?php
     $current_language = get_current_language();
     if ($current_language === 'fr') {
-        echo "let name_field = 'name_fr';";
-        echo "let url_field = 'url_fr';";
+        echo "let name_field = 'name_fr';\n";
+        echo "let url_field = 'url_fr';\n";
     } else {
-        echo "let name_field = 'name_en';";
-        echo "let url_field = 'url_en';";
+        echo "let name_field = 'name_en';\n";
+        echo "let url_field = 'url_en';\n";
     }
 ?>
     

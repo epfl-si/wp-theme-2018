@@ -1,5 +1,5 @@
 <?php
-    $query = get_query_var('epfl_labs_search-query');
+    $faculty = get_query_var('epfl_labs-faculty');
 ?>
 
 <?php get_template_part('shortcodes/epfl_labs_search/javascript'); ?>
@@ -7,7 +7,9 @@
 <div class="container my-3">
     <div class="form-group">
         <form id="labs-search-form" action="#">
-            <label for="labs-search-input">Search for a specific laboratory inside the EPFL constellation</label>
+            <label for="labs-search-input">Search for a specific laboratory inside the EPFL constellation
+                <?php echo (!empty($faculty)) ? 'For the specific <b>' . $faculty . '</b> faculty': '' ?>
+            </label>
             <input
                 type="text"
                 id="labs-search-input"
@@ -25,6 +27,7 @@
     <table class="table" id="labs-search-results-table" style="display: none">
     <thead>
         <tr>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
