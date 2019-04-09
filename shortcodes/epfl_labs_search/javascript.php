@@ -24,34 +24,36 @@
         $('#submitButton').click(function(){
             let labs_search_text = $("#labs-search-input").val();
 
-            $('#labs-search-results-table tbody').empty();
-            $('#labs-search-results-table').show();
+            if (labs_search_text && labs_search_text !== "") {
+                $('#labs-search-results-table tbody').empty();
+                $('#labs-search-results-table').show();
 
-            $.ajax({
-                url: ajaxUrl,
-                type: 'get',
-                dataType: 'json',
-                data: {
-                    _ajax_nonce: '<?php echo wp_create_nonce( 'epfl_labs_search' ); ?>',
-                    action: 'labs_search_form',
-                    labs_search_text: labs_search_text
-                },
-                success: function(response) {
-                    console.log("success");
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                        _ajax_nonce: '<?php echo wp_create_nonce( 'epfl_labs_search' ); ?>',
+                        action: 'labs_search_form',
+                        labs_search_text: labs_search_text
+                    },
+                    success: function(response) {
+                        console.log("success");
 
-                    for (index in response["data"]) {
-                        let site = response["data"][index];
-                        <?php get_template_part('shortcodes/epfl_labs_search/templates/site'); ?>;
-                        $('#labs-search-results-table tbody').append(rendered);
+                        for (index in response["data"]) {
+                            let site = response["data"][index];
+                            <?php get_template_part('shortcodes/epfl_labs_search/templates/site'); ?>;
+                            $('#labs-search-results-table tbody').append(rendered);
+                        }
+
+                        apply_search_on_tags();
+                    },
+                    error: function(data) {
+                        console.log("error");
+                        console.log(data);
                     }
-
-                    apply_search_on_tags();
-                },
-                error: function(data) {
-                    console.log("error");
-                    console.log(data);
-                }
-            });
+                });
+            }
         });
     });
 </script>
