@@ -12,6 +12,15 @@
             });
         });
 
+        function apply_search_on_tags() {
+            $('#labs-search-results-table .labs-search-site-tag-link').each(function(index) {
+                $(this).on("click", function() {
+                    $('#labs-search-input').val($('#labs-search-input').val() + ' ' + $(this).text());
+                    $('#submitButton').click();
+                });
+            });
+        }
+
         $('#submitButton').click(function(){
             let labs_search_text = $("#labs-search-input").val();
 
@@ -32,43 +41,11 @@
 
                     for (index in response["data"]) {
                         let site = response["data"][index];
-                        let one_row_template = `
-                            <tr>
-                                <td>${site.title}</td>
-                                <td><a href="${site.url}">${site.tagline}</a></td>
-                                <td>
-                                    `;
-                        let one_row_template_end = `
-                                </td>
-                            </tr>
-                        `;
-
-                        let rendered = one_row_template;
-                        console.log(site);
-
-                        if ('tags' in site) {
-                            <?php
-                                $current_language = get_current_language();
-                                if ($current_language === 'fr') {
-                                    echo "let name_field = 'name_fr';";
-                                    echo "let url_field = 'url_fr';";
-                                } else {
-                                    echo "let name_field = 'name_en';";
-                                    echo "let url_field = 'url_en';";
-                                }
-                            ?>
-                            
-                            rendered += `<div class="row">`;
-                            for (index in site['tags']) {
-                                let tag = site['tags'][index];
-                                rendered += `<a href="${tag[url_field]}">${tag[name_field]}</a>&nbsp;`;
-                            }
-                            rendered += `</div>`;
-                        }
-
-                        rendered += one_row_template_end;
+                        <?php get_template_part('shortcodes/epfl_labs_search/templates/site'); ?>;
                         $('#labs-search-results-table tbody').append(rendered);
                     }
+
+                    apply_search_on_tags();
                 },
                 error: function(data) {
                     console.log("error");
