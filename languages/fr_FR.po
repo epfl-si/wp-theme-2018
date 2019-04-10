@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2019-03-12 10:56+0100\n"
-"PO-Revision-Date: 2019-03-12 10:57+0100\n"
+"POT-Creation-Date: 2019-04-10 08:32+0200\n"
+"PO-Revision-Date: 2019-04-10 08:32+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -40,15 +40,15 @@ msgstr ""
 
 #: comments.php:66
 msgid "Comments are closed."
-msgstr ""
+msgstr "Les commentaires sont fermés."
 
 #: functions.php:59
 msgid "Primary"
-msgstr ""
+msgstr "Principal"
 
 #: functions.php:61
 msgid "Top Menu Override"
-msgstr ""
+msgstr "Surcharger le menu du haut"
 
 #: functions.php:63
 msgid "Footer"
@@ -58,7 +58,7 @@ msgstr "Pied de page"
 msgid "Par défaut"
 msgstr ""
 
-#: header.php:109
+#: header.php:113
 msgid "Skip to content"
 msgstr "Aller directement au contenu"
 
@@ -110,6 +110,7 @@ msgstr "Valider"
 
 #: shortcodes/custom_highlight/shortcake.php:8
 #: shortcodes/custom_teasers/shortcake.php:28
+#: shortcodes/custom_teasers/view.php:44
 #: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
 msgid "Title"
 msgstr "Titre"
@@ -125,7 +126,7 @@ msgstr "Lien"
 #: shortcodes/custom_highlight/shortcake.php:23
 #: shortcodes/custom_teasers/shortcake.php:43
 msgid "Button label"
-msgstr ""
+msgstr "Label du bouton"
 
 #: shortcodes/custom_highlight/shortcake.php:28
 #: shortcodes/custom_teasers/shortcake.php:48
@@ -151,7 +152,7 @@ msgstr "Taille recommandée de l'image: 1920x1080"
 #: shortcodes/page_highlight/shortcake.php:14
 #: shortcodes/post_highlight/shortcake.php:14
 msgid "Layout"
-msgstr ""
+msgstr "Disposition"
 
 #: shortcodes/custom_highlight/shortcake.php:39
 #: shortcodes/page_highlight/shortcake.php:16
@@ -160,29 +161,36 @@ msgid ""
 "Decides where the text will be aligned, to allow the subject of the picture "
 "to be visible"
 msgstr ""
+"Décider où le texte sera aligné, pour permettre au sujet de l'image d'être "
+"visible"
 
 #: shortcodes/custom_highlight/shortcake.php:42
 #: shortcodes/page_highlight/shortcake.php:19
 #: shortcodes/post_highlight/shortcake.php:19
 msgid "Right"
-msgstr ""
+msgstr "Droite"
 
 #: shortcodes/custom_highlight/shortcake.php:43
 #: shortcodes/page_highlight/shortcake.php:20
 #: shortcodes/post_highlight/shortcake.php:20
 msgid "Bottom"
-msgstr ""
+msgstr "Bas"
 
 #: shortcodes/custom_highlight/shortcake.php:44
 #: shortcodes/page_highlight/shortcake.php:21
 #: shortcodes/post_highlight/shortcake.php:21
-#, fuzzy
 msgid "Left"
-msgstr "Template pour un portail (avec l'image sur la gauche)"
+msgstr "Gauche"
 
 #: shortcodes/custom_highlight/shortcake.php:54
 msgid "Custom Highlight"
 msgstr ""
+
+#: shortcodes/custom_highlight/view.php:40
+#: shortcodes/custom_highlight/view.php:52
+#: shortcodes/custom_teasers/view.php:49
+msgid "See more"
+msgstr "En savoir plus"
 
 #: shortcodes/custom_teasers/shortcake.php:28
 msgid "Teaser"
@@ -200,41 +208,45 @@ msgstr "Url"
 msgid "Custom teasers"
 msgstr ""
 
+#: shortcodes/custom_teasers/view.php:17
+msgid "Section title"
+msgstr "Titre de section"
+
 #: shortcodes/definition_list/shortcake.php:9
 msgid "Display as a table"
-msgstr ""
+msgstr "Afficher comme un tableau"
 
 #: shortcodes/definition_list/shortcake.php:11
 msgid "Display the definition list as a table-like component"
-msgstr ""
+msgstr "Afficher la liste de définitions comme un composant tableau"
 
 #: shortcodes/definition_list/shortcake.php:16
 msgid "Large display"
-msgstr ""
+msgstr "Affichage large"
 
 #: shortcodes/definition_list/shortcake.php:18
-msgid "Makes the dl design wider"
-msgstr ""
+msgid "Makes the definition list design wider"
+msgstr "Rendre la liste de définition plus large"
 
 #: shortcodes/definition_list/shortcake.php:24
 msgid "Term"
-msgstr ""
+msgstr "Terme"
 
 #: shortcodes/definition_list/shortcake.php:26
 msgid "Term to define"
-msgstr ""
+msgstr "Terme à définir"
 
 #: shortcodes/definition_list/shortcake.php:30
 msgid "Definition"
-msgstr ""
+msgstr "Définition"
 
 #: shortcodes/definition_list/shortcake.php:32
 msgid "Definition of the term"
-msgstr ""
+msgstr "Définition du terme"
 
 #: shortcodes/definition_list/shortcake.php:41
 msgid "Definition list"
-msgstr ""
+msgstr "Liste de définitions"
 
 #: shortcodes/epfl_google_forms/view.php:9
 msgid "Loading..."
@@ -293,11 +305,11 @@ msgstr "En savoir plus"
 msgid "All news"
 msgstr "Toutes les actualités"
 
-#: shortcodes/epfl_people/view.php:57
+#: shortcodes/epfl_people/view.php:61
 msgid "Position"
 msgstr "Fonction"
 
-#: shortcodes/epfl_people/view.php:65
+#: shortcodes/epfl_people/view.php:69
 msgid "Office"
 msgstr "Bureau"
 
@@ -340,12 +352,12 @@ msgid "Question de science"
 msgstr ""
 
 #: shortcodes/epfl_scienceqa/view.php:33
-msgid "Voter"
-msgstr ""
+msgid "Vote"
+msgstr "Voter"
 
 #: shortcodes/epfl_share/view.php:12
 msgid "Share on"
-msgstr ""
+msgstr "Partager sur"
 
 #: shortcodes/epfl_share/view.php:16 shortcodes/epfl_share/view.php:20
 #: shortcodes/epfl_share/view.php:42 shortcodes/epfl_share/view.php:46
@@ -376,22 +388,22 @@ msgstr "Contenu"
 #: shortcodes/page_teaser/shortcake.php:10
 #: shortcodes/post_teaser/shortcake.php:10
 msgid "Gray background"
-msgstr ""
+msgstr "Fond gris"
 
 #: shortcodes/introduction/shortcake.php:21
 #: shortcodes/page_teaser/shortcake.php:13
 #: shortcodes/post_teaser/shortcake.php:13
 msgid "Change the background to gray"
-msgstr ""
+msgstr "Changer le fond en gris"
 
 #: shortcodes/introduction/shortcake.php:29
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 #: shortcodes/page_highlight/shortcake.php:8
 #: shortcodes/page_teaser/shortcake.php:18
 msgid "Select page"
-msgstr ""
+msgstr "Sélectionnez une page"
 
 #: shortcodes/page_highlight/shortcake.php:31
 msgid "Page Highlight"
@@ -404,7 +416,7 @@ msgstr ""
 #: shortcodes/post_highlight/shortcake.php:8
 #: shortcodes/post_teaser/shortcake.php:18
 msgid "Select post"
-msgstr ""
+msgstr "Sélectionnez un post"
 
 #: shortcodes/post_highlight/shortcake.php:31
 msgid "Post highlight"
@@ -412,7 +424,7 @@ msgstr ""
 
 #: shortcodes/post_highlight/view.php:28 shortcodes/post_highlight/view.php:43
 msgid "Read the article"
-msgstr ""
+msgstr "Lire l'article"
 
 #: shortcodes/post_teaser/shortcake.php:30
 msgid "Post teaser"
@@ -420,15 +432,15 @@ msgstr ""
 
 #: shortcodes/schools/shortcake.php:15
 msgid "School"
-msgstr ""
+msgstr "École"
 
-#: sidebar.php:50
+#: sidebar.php:63
 msgid "In the same section"
 msgstr "Dans la même section"
 
 #: template-parts/archives-list.php:2
 msgid "Archives"
-msgstr ""
+msgstr "Archives"
 
 #: template-parts/breadcrumb.php:23
 msgid "Browse"
@@ -476,7 +488,7 @@ msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: template-parts/content-post.php:50 template-parts/content.php:50
 msgid "Pages:"
-msgstr ""
+msgstr "Pages :"
 
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"

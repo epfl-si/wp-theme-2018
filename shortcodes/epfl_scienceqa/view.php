@@ -30,7 +30,7 @@
             } 
           ?>
         </div>
-        <input type="submit" class="btn btn-primary mt-4" value="<?php esc_html_e('Voter', 'epfl-shortcodes') ?>">
+        <input type="submit" class="btn btn-primary mt-4" value="<?php esc_html_e('Vote', 'epfl') ?>">
       </form>
     </div>
   </div>

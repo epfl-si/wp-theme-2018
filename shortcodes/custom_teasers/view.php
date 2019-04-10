@@ -14,7 +14,7 @@ if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 mt-4';
 ?>
 <div class="container-full p-lg-5 <?php echo $greyClasses ?>">
   <div class="container">
-    <h3 class="h6 mb-3<?php echo ($elementCount < 3) ? ' text-center' : '' ?>"><?php echo $data['titlesection'] ?: 'Section title'; ?></h3>
+    <h3 class="h6 mb-3<?php echo ($elementCount < 3) ? ' text-center' : '' ?>"><?php echo $data['titlesection'] ?: __('Section title', 'epfl'); ?></h3>
 
     <div class="card-deck <?php echo ($elementCount < 3) ? ' card-deck-line' : '' ?>">
 
@@ -41,12 +41,12 @@ if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 mt-4';
         <?php endif; ?>
         <div class="card-body">
           <h3 class="card-title">
-            <a href="<?php echo $data['url'.$i] ?: '#' ?>"><?php echo $data['title'.$i] ?: 'Title' ?></a>
+            <a href="<?php echo $data['url'.$i] ?: '#' ?>"><?php echo $data['title'.$i] ?: __('Title', 'epfl') ?></a>
           </h3>
           <p><?php echo $data['excerpt'.$i] ?: '' ?></p>
         </div>
         <div class="card-footer mt-auto">
-          <a href="<?php echo $data['url'.$i] ?: '#' ?>" class="btn btn-secondary btn-sm"><?php echo $data['buttonlabel'.$i] ?: 'See more' ?></a>
+          <a href="<?php echo $data['url'.$i] ?: '#' ?>" class="btn btn-secondary btn-sm"><?php echo $data['buttonlabel'.$i] ?: __('See more', 'epfl') ?></a>
         </div>
       </div>
       <?php
