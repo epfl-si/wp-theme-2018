@@ -17,6 +17,7 @@
         });
 
         $('#submitButton').click(function(){
+            $("#labs-search-loader").show();
             let labs_search_text = $("#labs-search-input").val();
 
             $('#labs-search-results-table tbody').empty();
@@ -39,7 +40,7 @@
                     labs_search_text: labs_search_text
                 },
                 success: function(response) {
-                    console.log("success");
+                    $("#labs-search-loader").hide();
                     if ('data' in response && response["data"].length > 0)
                     {
                         for (index in response["data"]) {
@@ -54,6 +55,7 @@
                     }
                 },
                 error: function(data) {
+                    $("#labs-search-loader").hide();
                     console.log("error");
                     console.log(data);
                 }

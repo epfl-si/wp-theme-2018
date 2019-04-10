@@ -28,6 +28,7 @@
             </small>
             <br />
             <button id="submitButton" type="button" class="btn"><?php _e('Search', 'epfl') ?></button>
+            <span id="labs-search-loader" class="loader" style="display: none"></span>
         </form>
     </div>
     <table class="table" id="labs-search-results-table" style="display: none">
