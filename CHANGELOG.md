@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.3.6* (2019-04-11)
+- Add/Update/Complete some translations (#197)
+- Shortcode News Fix (#196)
+
 *1.3.5* (2019-04-03)
 - People Fix (#193)
 - Add Tags to breadcrumb (#183)
