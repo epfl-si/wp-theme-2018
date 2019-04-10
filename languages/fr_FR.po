@@ -432,7 +432,7 @@ msgstr ""
 
 #: shortcodes/schools/shortcake.php:15
 msgid "School"
-msgstr "Ecole"
+msgstr "École"
 
 #: sidebar.php:63
 msgid "In the same section"
