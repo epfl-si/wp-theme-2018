@@ -16,15 +16,6 @@
             });
         });
 
-        function apply_search_on_tags() {
-            $('#labs-search-results-table .labs-search-site-tag-link').each(function(index) {
-                $(this).on("click", function() {
-                    $('#labs-search-input').val($(this).text());
-                    $('#submitButton').click();
-                });
-            });
-        }
-
         $('#submitButton').click(function(){
             let labs_search_text = $("#labs-search-input").val();
 
@@ -57,7 +48,6 @@
                             $('#labs-search-results-table tbody').append(rendered);
                         }
 
-                        apply_search_on_tags();
                         $('#labs-search-results-table').show();
                     } else {
                         $('#labs-search-results-table').hide();
