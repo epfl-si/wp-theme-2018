@@ -15,7 +15,7 @@ function epfl_definition_list() {
     array_push($fields, [
     'label' => esc_html__('Large display', 'epfl'),
       'attr' => 'largedisplay',
-      'description' => esc_html__('Makes the dl design wider', 'epfl'),
+      'description' => esc_html__('Makes the definition list design wider', 'epfl'),
       'type' => 'checkbox',
   ]);
 

@@ -20,7 +20,7 @@
     <?php echo $wp_embed->run_shortcode($instagram_shortcode); ?>
     </div>
     <div>
-      <a class="btn btn-secondary mt-4" href="<?php echo esc_url($instagram_url) ?>" target="_blank"><?php esc_html_e('View this post on Instagram', 'epfl-shortcodes'); ?></a>
+      <a class="btn btn-secondary mt-4" href="<?php echo esc_url($instagram_url) ?>" target="_blank"><?php esc_html_e('View this post on Instagram', 'epfl'); ?></a>
     </div>
   </div>
 </div>
