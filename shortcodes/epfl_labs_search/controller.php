@@ -34,8 +34,17 @@ function renderLabsSearch($predefined_tags) {
  */
 function labs_search_form_submitted() {
   check_ajax_referer( 'epfl_labs_search' );
-  $search_text = $_GET['labs_search_text'];
-  $predefined_tags = $_GET['labs_search_predefined_tags'];
+
+  $search_text = null;
+  $predefined_tags = null;
+
+  if (array_key_exists('labs_search_text', $_GET)) {
+    $search_text = $_GET['labs_search_text'];
+  }
+
+  if (array_key_exists('predefined_tags', $_GET)) {
+    $predefined_tags = $_GET['labs_search_predefined_tags'];
+  }
 
   if (empty($search_text) && empty($predefined_tags)) {
     wp_send_json_success('');

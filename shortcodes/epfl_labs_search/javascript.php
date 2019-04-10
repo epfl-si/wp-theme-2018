@@ -30,7 +30,6 @@
                     _ajax_nonce: '<?php echo wp_create_nonce( 'epfl_labs_search' ); ?>',
                     action: 'labs_search_form',
                     <?php
-                    error_log(var_export($predefined_tags, true));
                     if (!empty($predefined_tags)) {
                         echo "labs_search_predefined_tags: ";
                         echo json_encode($predefined_tags);
