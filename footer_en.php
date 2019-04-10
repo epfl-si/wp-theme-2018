@@ -147,7 +147,7 @@
                                     <a href="https://www.epfl.ch/campus/visitors/">Visitors information</a>
                       </li>
                   <li>
-                                    <a href="https://www.epfl.ch/campus/services/en/homepage/">Services and ressources</a>
+                                    <a href="https://www.epfl.ch/campus/services/en/homepage/">Services and resources</a>
                       </li>
                   <li>
                                     <a href="https://www.epfl.ch/campus/library/">Library</a>
@@ -222,7 +222,7 @@
     
 
 <p class="footer-title footer-title-no-underline">Practical</p>
-<a href="https://www.epfl.ch/campus/services/en/homepage/" class="btn btn-secondary btn-sm">Services and ressources</a>
+<a href="https://www.epfl.ch/campus/services/en/homepage/" class="btn btn-secondary btn-sm">Services and resources</a>
 <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Emergencies: +41 21 693 3000</a>
   </div>
 
