@@ -61,10 +61,6 @@
             });
         });
 
-        <?php if (!empty($predefined_tags)) {
-            // run a search if we have predefined tags
-            echo "$('#submitButton').click();";
-        }
-        ?>
+        $('#submitButton').click();
     });
 </script>
