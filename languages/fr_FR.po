@@ -488,7 +488,7 @@ msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: template-parts/content-post.php:50 template-parts/content.php:50
 msgid "Pages:"
-msgstr "Pages:"
+msgstr "Pages :"
 
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"
