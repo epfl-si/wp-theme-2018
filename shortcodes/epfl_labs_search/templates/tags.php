@@ -16,9 +16,7 @@
     }
 ?>
     
-rendered += `<div class="row">`;
 for (index in site['tags']) {
     let tag = site['tags'][index];
     rendered += `<a href="#" class="labs-search-site-tag-link">${tag[name_field]}</a>&nbsp;`;
 }
-rendered += `</div>`;
