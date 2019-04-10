@@ -12,7 +12,7 @@
             if (empty($predefined_tags)) {
                 _e('Search for a laboratory inside the EPFL constellation', 'epfl');
             } else {
-                printf(__('Search laboratory with the specific <b>%s</b> tags', 'epfl'), implode(', ', $predefined_tags));
+                printf(__('Search laboratory inside <b>%s</b>', 'epfl'), implode(', ', $predefined_tags));
             }
             ?>
             </label>
