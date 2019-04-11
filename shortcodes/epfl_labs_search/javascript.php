@@ -42,9 +42,9 @@
                     $("#labs-search-loader").hide();
                     if ('data' in response && response["data"].length > 0)
                     {
-                        for (index in response["data"]) {
-                            let site = response["data"][index];
-                            <?php get_template_part('shortcodes/epfl_labs_search/templates/site'); ?>;
+                        for (i = 0; i < response["data"].length; i++) {
+                            let site = response["data"][i];
+                            <?php get_template_part('shortcodes/epfl_labs_search/templates/site'); ?>
                             $('#labs-search-results-table tbody').append(rendered);
                         }
 

@@ -16,7 +16,7 @@
     }
 ?>
     
-for (index in site['tags']) {
-    let tag = site['tags'][index];
+for (j = 0; j < site['tags'].length; j++) {
+    let tag = site['tags'][j];
     rendered += `<a href="${tag[url_field]}" class="labs-search-site-tag-link">${tag[name_field]}</a>&nbsp;`;
 }

@@ -27,7 +27,7 @@
                 <?php _e('Laboratories are part of faculties and institutes, and have search domains.', 'epfl') ?>
             </small>
             <br />
-            <button id="submitButton" type="button" class="btn"><?php _e('Search', 'epfl') ?></button>
+            <button id="submitButton" type="button" class="btn"><?php _e('Search', 'epfl') ?></button>&nbsp;
             <span id="labs-search-loader" class="loader" style="display: none"></span>
         </form>
     </div>
