@@ -8,7 +8,6 @@
     <div id="sites-list" class="d-flex flex-column">
     <?php if (!(empty($sites))): ?>
         <div class="form-group">
-
             <label for="labs-search-input">
             <?php
             if (empty($predefined_tags)) {
@@ -29,7 +28,7 @@
                 <?php _e('Laboratories are part of faculties and institutes, and have search domains.', 'epfl') ?>
             </small>
         </div>
-        <div class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center">
+        <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center mb-1">
                 <div class="sort col-1" data-sort="site-title"><a href="#">Acronym</a></div>
                 <div class="sort col-4" data-sort="site-tagline"><a href="#">Title</a></div>
                 <div class="sort col-3" data-sort="site-url"><a href="#">Url</a></div>
@@ -44,9 +43,9 @@
                 <div class="site-tags col-2 pt-1">
                     <?php foreach($site->tags as $tag): ?>
                         <?php if ($current_language === 'fr'): ?>
-                    <a href="<?php echo esc_html($tag->url_fr); ?>" class="tag tag-primary"><?php echo esc_html($tag->name_fr); ?></a>
+                    <a href="<?php echo esc_html($tag->url_fr); ?>" class="tag tag-primary site-tags-<?php echo esc_html($tag->type); ?>"><?php echo esc_html($tag->name_fr); ?></a>
                         <?php else: ?>
-                    <a href="<?php echo esc_html($tag->url_en); ?>" class="tag tag-primary"><?php echo esc_html($tag->name_en); ?></a>
+                    <a href="<?php echo esc_html($tag->url_en); ?>" class="tag tag-primary site-tags-<?php echo esc_html($tag->type); ?>"><?php echo esc_html($tag->name_en); ?></a>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
