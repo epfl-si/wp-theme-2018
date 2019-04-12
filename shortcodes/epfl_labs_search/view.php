@@ -21,7 +21,7 @@
                 type="text"
                 id="labs-search-input"
                 class="form-control search"
-                placeholder="<?php _e('Type here a name, an url, a keyword', 'epfl') ?>"
+                placeholder="<?php _e('Type here a name, a keyword, ...', 'epfl') ?>"
                 aria-describedby="labs-search-input-help"
             >
             <small id="labs-search-input-help" class="form-text text-muted">
