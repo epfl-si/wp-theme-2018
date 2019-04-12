@@ -5,34 +5,6 @@
 ?>
 
 <div class="container my-3">
-   <!--
-    <div class="form-group">
-        <form id="labs-search-form" action="#">
-            <label for="labs-search-input">
-            <?php
-            if (empty($predefined_tags)) {
-                _e('Search for a laboratory inside the EPFL constellation', 'epfl');
-            } else {
-                printf(__('Search laboratory inside <b>%s</b>', 'epfl'), implode(', ', $predefined_tags));
-            }
-            ?>
-            </label>
-            <input
-                type="text"
-                id="labs-search-input"
-                class="form-control"
-                placeholder="<?php _e('Type here a name, an url, a keyword', 'epfl') ?>"
-                aria-describedby="labs-search-input-help"
-            >
-            <small id="labs-search-input-help" class="form-text text-muted">
-                <?php _e('Laboratories are part of faculties and institutes, and have search domains.', 'epfl') ?>
-            </small>
-            <br />
-            <button id="submitButton" type="button" class="btn"><?php _e('Search', 'epfl') ?></button>&nbsp;
-            <span id="labs-search-loader" class="loader" style="display: none"></span>
-        </form>
-    </div>
-    -->
     <div id="sites-list" class="d-flex flex-column">
     <?php if (!(empty($sites))): ?>
         <div class="form-group">
