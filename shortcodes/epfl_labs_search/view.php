@@ -28,17 +28,15 @@
                 <?php _e('Laboratories are part of faculties and institutes, and have search domains.', 'epfl') ?>
             </small>
         </div>
-        <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center mb-1">
-                <div class="sort col-1" data-sort="site-title"><a href="#">Acronym</a></div>
-                <div class="sort col-4" data-sort="site-tagline"><a href="#">Title</a></div>
-                <div class="sort col-3" data-sort="site-url"><a href="#">Url</a></div>
+        <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center mb-2">
+                <div class="sort col-2" data-sort="site-title"><a href="#">Acronym</a></div>
+                <div class="sort col-7" data-sort="site-tagline"><a href="#">Title</a></div>
         </div>
         <div class="list">
             <?php foreach($sites as $key => $site): ?>
             <div class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center">
-                <div class="site-title col-1"><?php echo esc_html($site->title); ?></div>
-                <div class="site-tagline col-4"><?php echo esc_html($site->tagline); ?></div>
-                <div class="site-url col-3"><a href="<?php echo esc_html($site->url); ?>"><?php echo esc_html($site->url); ?></a></div>
+                <div class="site-title col-2"><?php echo esc_html($site->title); ?></div>
+                <div class="site-tagline col-7"><a href="<?php echo esc_html($site->url); ?>"><?php echo esc_html($site->tagline); ?></a></div>
                 <?php if (!(empty($site->tags))): ?>
                 <div class="site-tags col-2 pt-1">
                     <?php foreach($site->tags as $tag): ?>
