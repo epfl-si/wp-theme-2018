@@ -7,10 +7,7 @@
 
 add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 2);
 
-function add_jquery() {
-  wp_enqueue_script('jquery');
-}
-
+wp_enqueue_script( 'epfl-listjs', __DIR__. '/lib/list.js', ['jquery'], 1.5, true);
 
 /**
  * render the shortcode, mainly a form and his table
