@@ -32,11 +32,12 @@
             <span id="labs-search-loader" class="loader" style="display: none"></span>
         </form>
     </div>
+    <div class="d-flex flex-column">
     <?php if (!(empty($sites))): ?>
         <?php foreach($sites as $site): ?>
-        <div class="row d-sm-flex pt-1 pb-1 border-bottom align-items-center">
-            <div class="col-2"><?php echo esc_html($site->title); ?></div>
-            <div class="col-5"><?php echo esc_html($site->tagline); ?></div>
+        <div class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center">
+            <div class="col-1"><?php echo esc_html($site->title); ?></div>
+            <div class="col-4"><?php echo esc_html($site->tagline); ?></div>
             <div class="col-3"><a href="<?php echo esc_html($site->url); ?>"><?php echo esc_html($site->url); ?></a></div>
             <?php if (!(empty($site->tags))): ?>
             <div class="col-2 pt-1">
@@ -52,4 +53,5 @@
         </div>
         <?php endforeach; ?>
     <?php endif; ?>
+    </div>
 </div>
