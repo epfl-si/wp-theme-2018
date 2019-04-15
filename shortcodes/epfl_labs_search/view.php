@@ -1,45 +1,58 @@
 <?php
     $sites = get_query_var('epfl_labs-sites');
-    $predefined_tags = get_query_var('epfl_labs-predefined_tags');
+    $predefined_faculty = get_query_var('epfl_labs-predefined_faculty');
     $combo_list_content = get_query_var('eplf_labs-combo_list_content');
 ?>
 
 <div class="container my-3">
     <div id="sites-list" class="d-flex flex-column">
         <div class="form-group">
-            <label for="labs-search-input">
-            <?php
-            if (empty($predefined_tags)) {
-                _e('Search for a laboratory inside the EPFL constellation', 'epfl');
-            } else {
-                printf(__('Search laboratory inside <b>%s</b>', 'epfl'), implode(', ', $predefined_tags));
-            }
-            ?>
-            </label>
-            <input
-                type="text"
-                id="labs-search-input"
-                class="form-control search"
-                placeholder="<?php _e('Type here a name, an url, a keyword, ...', 'epfl') ?>"
-                aria-describedby="labs-search-input-help"
-            >
-            <big>overwrite search to not search on tags</big>
-            <small id="labs-search-input-help" class="form-text text-muted">
-                <?php _e('Laboratories are part of faculties and institutes, and have search domains.', 'epfl') ?>
-            </small>
-
-            <label>Filters</label>
-            <?php foreach($combo_list_content as $type => $names): ?>
-                <select
-                    id="select-<?php echo esc_html($type); ?>"
-                    class="epfl-labs-select custom-select"
-                >
-                    <option selected><?php echo esc_html($type); ?></option>
-                <?php foreach($names as $name): ?>
-                    <option value="<?php echo esc_html($name); ?>"><?php echo esc_html($name); ?></option>
+            <div class="">
+                <label><?php _e('Search on', 'epfl'); ?></label>
+                <?php foreach($combo_list_content as $type => $names): ?>
+                    <select
+                        id="select-<?php echo esc_html($type); ?>"
+                        class="epfl-labs-select custom-select"
+                    >
+                        <option <?php echo (empty($predefined_faculty))?"selected":"";?> value="all">
+                        <?php
+                            switch ($type) {
+                                case "faculty":
+                                    _e('All faculties', 'epfl');
+                                    break;
+                                case "institute":
+                                    _e('All institutes', 'epfl');
+                                    break;
+                                case "field-of-research":
+                                    _e('All field of research', 'epfl');
+                                    break;
+                                default:
+                                _e("All", 'epfl');
+                            }
+                        ?>
+                        </option>
+                    <?php foreach($names as $name): ?>
+                        <option
+                            <?php echo (!empty($predefined_faculty) && strtoupper($name) === strtoupper($predefined_faculty))?"selected":"";?>
+                             value="<?php echo esc_html($name); ?>"><?php echo esc_html($name); ?>
+                        </option>
+                    <?php endforeach; ?>
+                    </select>
                 <?php endforeach; ?>
-                </select>
-            <?php endforeach; ?>
+
+                <label for="labs-search-input"><?php _e('Search for', 'epfl'); ?></label>
+                <input
+                    type="text"
+                    id="labs-search-input"
+                    class="form-control search"
+                    placeholder="<?php _e('Type here a name, an url, a keyword, ...', 'epfl') ?>"
+                    aria-describedby="labs-search-input-help"
+                >
+                <small id="labs-search-input-help" class="form-text text-muted">
+                    <?php _e('Laboratories are part of faculties and institutes, and have search domains.', 'epfl') ?>
+                </small>
+            </div>
+
         </div>
         <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center mb-2">
                 <div class="sort col-2" data-sort="site-title"><a href="#">Acronym</a></div>

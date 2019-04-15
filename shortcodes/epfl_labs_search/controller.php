@@ -13,7 +13,7 @@ wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/short
 /**
  * render the shortcode, mainly a form and his table
  */
-function renderLabsSearch($sites, $predefined_tags) {
+function renderLabsSearch($sites, $faculty) {
   filter_out_unused_language($sites);
 
   if (is_admin()) {
@@ -22,7 +22,7 @@ function renderLabsSearch($sites, $predefined_tags) {
     get_template_part('shortcodes/placeholder');
   } else {
     set_query_var('epfl_labs-sites', $sites);
-    set_query_var('epfl_labs-predefined_tags', $predefined_tags);
+    set_query_var('epfl_labs-predefined_faculty', $faculty);
     set_query_var('eplf_labs-combo_list_content', separate_tags_by_type($sites));
     get_template_part('shortcodes/epfl_labs_search/view');
   }
@@ -49,7 +49,6 @@ function filter_out_unused_language($sites) {
       }
     }
   }
-
 }
 
 

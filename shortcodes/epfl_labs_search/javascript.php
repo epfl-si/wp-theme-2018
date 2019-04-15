@@ -1,3 +1,7 @@
+<?php
+    $predefined_faculty = get_query_var('epfl_labs-predefined_faculty');
+?>
+
 <script type='text/javascript'>
     jQuery(document).ready(function( $ ) {
         var options = {
@@ -16,13 +20,19 @@
         $('.epfl-labs-select').each(function (index, element) {
             $(element).change(function (e) {
                 let filter_on = $(this).val();
-                siteList.filter(function(item) {
-                    console.log(item.values());
-                    tags = item.values()['site-tags'].split(";");
-                    return (tags.includes(filter_on));
+                if ($(this).val() === 'all') {
+                    siteList.filter();
+                } else {
+                    siteList.filter(function(item) {
+                        tags = item.values()['site-tags'].split(";");
+                        return (tags.includes(filter_on));
+                    });
                 }
-            );
             });
         });
+
+        <?php if (!empty($predefined_faculty)): ?>
+        $('#select-faculty').change();
+        <?php endif;?>
     });
 </script>
