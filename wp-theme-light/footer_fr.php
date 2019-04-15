@@ -44,7 +44,7 @@
     <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/">Mentions légales</a>
   </div>
   <div>
-    <p>&copy; 2018 EPFL, tous droits réservés</p>
+    <p>&copy; <?php echo date("Y"); ?> EPFL, tous droits réservés</p>
   </div>
 </div>
       </div>
