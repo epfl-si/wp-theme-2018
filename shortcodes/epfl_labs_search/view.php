@@ -64,7 +64,7 @@
             <?php foreach($sites as $key => $site): ?>
             <div class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center">
                 <div class="site-title col-2"><?php echo esc_html($site->title); ?></div>
-                <div class="site-tagline col-7"><a class="site-url" href="<?php echo esc_html($site->url); ?>"><?php echo esc_html($site->tagline); ?></a></div>
+                <div class="col-7"><a class="site-url" href="<?php echo esc_html($site->url); ?>"><span class="site-tagline"><?php echo esc_html($site->tagline); ?></span></a></div>
                 <?php if (!(empty($site->tags))): ?>
                 <div class="site-tags col-2 pt-1"
                     data-tags="<?php
