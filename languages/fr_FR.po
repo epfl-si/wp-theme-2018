@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2019-04-10 08:32+0200\n"
-"PO-Revision-Date: 2019-04-10 08:32+0200\n"
+"POT-Creation-Date: 2019-04-15 12:31+0200\n"
+"PO-Revision-Date: 2019-04-16 13:06+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: __;esc_html__;esc_html_e\n"
+"X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: shortcodes\n"
 "X-Poedit-SearchPath-1: .\n"
@@ -111,6 +111,7 @@ msgstr "Valider"
 #: shortcodes/custom_highlight/shortcake.php:8
 #: shortcodes/custom_teasers/shortcake.php:28
 #: shortcodes/custom_teasers/view.php:44
+#: shortcodes/epfl_labs_search/view.php:58
 #: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
 msgid "Title"
 msgstr "Titre"
@@ -251,6 +252,42 @@ msgstr "Liste de définitions"
 #: shortcodes/epfl_google_forms/view.php:9
 msgid "Loading..."
 msgstr "Chargement..."
+
+#: shortcodes/epfl_labs_search/view.php:11
+msgid "Search inside"
+msgstr "Rechercher dans"
+
+#: shortcodes/epfl_labs_search/view.php:21
+msgid "All faculties"
+msgstr "Toutes les facultés"
+
+#: shortcodes/epfl_labs_search/view.php:24
+msgid "All institutes"
+msgstr "Tous les instituts"
+
+#: shortcodes/epfl_labs_search/view.php:27
+msgid "All field of research"
+msgstr "Tous les domaines de recherche"
+
+#: shortcodes/epfl_labs_search/view.php:30
+msgid "All"
+msgstr "Tout"
+
+#: shortcodes/epfl_labs_search/view.php:43
+msgid "Search for"
+msgstr "Rechercher"
+
+#: shortcodes/epfl_labs_search/view.php:48
+msgid "Type here a name, an url, a keyword, ..."
+msgstr "Entrer un nom, une url, un mot-clé, ..."
+
+#: shortcodes/epfl_labs_search/view.php:52
+msgid "Laboratories are part of faculties and institutes."
+msgstr "Les laboratoires font partie de facultés et d'instituts."
+
+#: shortcodes/epfl_labs_search/view.php:57
+msgid "Acronym"
+msgstr "Acronyme"
 
 #: shortcodes/epfl_memento/templates/card-info.php:22
 msgid "With"
