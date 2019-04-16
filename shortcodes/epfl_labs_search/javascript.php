@@ -1,5 +1,6 @@
 <?php
     $predefined_faculty = get_query_var('epfl_labs-predefined_faculty');
+    $predefined_institute = get_query_var('epfl_labs-predefined_institute');
 ?>
 
 <script type='text/javascript'>
@@ -10,9 +11,7 @@
                 'site-tagline',
                 {name: 'site-url', attr: 'href'},
                 {name: 'site-tags', attr: 'data-tags'}
-            ],
-            page: 500,
-            indexAsync: true
+            ]
         };
 
         var siteList = new List('sites-list', options);
@@ -20,6 +19,12 @@
         $('.epfl-labs-select').each(function (index, element) {
             $(element).change(function (e) {
                 let filter_on = $(this).val();
+
+                // reset other elements
+                $('.epfl-labs-select').not(this).each(function (index, element) {
+                    $(element).val('all');
+                });
+
                 if ($(this).val() === 'all') {
                     siteList.filter();
                 } else {
@@ -31,8 +36,11 @@
             });
         });
 
-        <?php if (!empty($predefined_faculty)): ?>
+        <?php if (!empty($predefined_faculty) && empty($predefined_institute)): ?>
         $('#select-faculty').change();
+        <?php endif;?>
+        <?php if (!empty($predefined_institute)): ?>
+        $('#select-institute').change();
         <?php endif;?>
     });
 </script>

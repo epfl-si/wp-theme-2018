@@ -5,7 +5,7 @@
  * 4rth argument is number of arguments the function can accept
  **/
 
-add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 2);
+add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 3);
 
 wp_enqueue_script( 'epfl-labs-search-listjs', get_template_directory_uri() . '/shortcodes/epfl_labs_search/lib/list.min.js', ['jquery'], 1.5, true);
 wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/shortcodes/epfl_labs_search/epfl-labs-search.css',false,'1.0','all');
@@ -13,7 +13,7 @@ wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/short
 /**
  * render the shortcode, mainly a form and his table
  */
-function renderLabsSearch($sites, $faculty) {
+function renderLabsSearch($sites, $faculty, $institute) {
   filter_out_unused_language($sites);
 
   if (is_admin()) {
@@ -23,6 +23,7 @@ function renderLabsSearch($sites, $faculty) {
   } else {
     set_query_var('epfl_labs-sites', $sites);
     set_query_var('epfl_labs-predefined_faculty', $faculty);
+    set_query_var('epfl_labs-predefined_institute', $institute);
     set_query_var('eplf_labs-combo_list_content', separate_tags_by_type($sites));
     get_template_part('shortcodes/epfl_labs_search/view');
   }
@@ -58,10 +59,9 @@ function filter_out_unused_language($sites) {
 */
 function separate_tags_by_type($sites) {
   $tags_typped = [
-    'faculty' => []
-    /* soon
+    'faculty' => [],
     'institute' => []
-    'field-of-research' => []
+    /*'field-of-research' => []
     */
   ];
 
