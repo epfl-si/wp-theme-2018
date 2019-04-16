@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.3.7* (2019-04-16)
+- Shortcode people: doctoral program (#198)
+- Search for labs UI (#194)
+
 *1.3.6* (2019-04-11)
 - Add/Update/Complete some translations (#197)
 - Shortcode News Fix (#196)
