@@ -25,11 +25,11 @@ function epfl_people_get_phones($person) {
 /**
  * Get person function
  */
-function epfl_people_get_function($person) {
+function epfl_people_get_function($person, $from) {
     $function = '';
     $nb_units = count((array)$person->unites);    
     foreach($person->unites as $current_unit) {
-        if ($current_unit->ordre == 1 || $nb_units == 1) {
+        if ($from == 'units' || ($from == 'scipers' && $current_unit->ordre  == 1)) {
             $language = get_current_language();
             if ($language === 'fr') {
                 $function = $current_unit->fonction_fr;
@@ -44,11 +44,11 @@ function epfl_people_get_function($person) {
 /**
  * Get person room
  */
-function epfl_people_get_room($person) {
+function epfl_people_get_room($person, $from) {
     
     $room = '';
     foreach($person->unites as $current_unit) {
-        if ($current_unit->ordre  == 1) {
+        if ($from == 'units' || ($from == 'scipers' && $current_unit->ordre  == 1)) {
             $room = $current_unit->rooms;
         }
     }

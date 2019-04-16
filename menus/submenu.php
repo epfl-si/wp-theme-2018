@@ -39,8 +39,8 @@ function submenu_limit( $items, $args ) {
       
     } else if ($submenu_type == 'all') {
       $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
-      $siblings = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
-      $children = submenu_get_direct_children_ids( $current_menu_item->ID ?: 0 , $items );
+      $siblings = submenu_get_direct_children_ids( $parent_menu_item && $parent_menu_item->ID ? $parent_menu_item->ID : 0 , $items );
+      $children = submenu_get_direct_children_ids( $current_menu_item && $current_menu_item->ID ? $current_menu_item->ID : 0 , $items );
       $selectedIds = array_merge($siblings, $children);
     }
 

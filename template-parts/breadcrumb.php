@@ -44,9 +44,40 @@ if ($currentTemplate == 'page-homepage.php') {
     $crumbs[] = '
         <li class="breadcrumb-item">
             <a class="bread-link bread-home" href="' . get_epfl_home_url() . '" title="home">
-                <svg class="icon"><use xlink:href="#icon-home"></use></svg>
+                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
             </a>
         </li>';
+
+    if(function_exists('epfl_fetch_site_tags')) {
+        $custom_tags = [];
+        $custom_tags = epfl_fetch_site_tags();
+
+      # custom_tags should be like [["_id", "name_en", "url_en", "name_fr", "url_fr", "type"], ...]
+      if (!empty($custom_tags)) {
+        $ln = get_current_language();
+        $crumbs[] = "
+                    <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
+
+        foreach($custom_tags as $tag_item) {
+          if ($ln === 'fr') {
+            $tag_name = $tag_item->name_fr;
+            if(!empty($tag_item->url_fr)) {
+              $tag_url = $tag_item->url_fr;
+            } else {
+              $tag_url = $tag_item->url_en;
+            }
+          } else {
+            $tag_name = $tag_item->name_en;
+            $tag_url = $tag_item->url_en;
+          }
+
+          $crumbs[] = "
+              <a href=\"{$tag_url}\" class=\"tag tag-primary\">". esc_html($tag_name) . "</a>
+          ";
+        }
+        $crumbs[] = "</li>";
+      }
+    }
 
     $crumb_items = array();
     for($crumb_item = $item;
@@ -59,7 +90,7 @@ if ($currentTemplate == 'page-homepage.php') {
       foreach($crumb_items as $crumb_item) {
           if ((int) $item->db_id === (int) $crumb_item->db_id) {
             $crumbs[] = "
-                  <li class=\"breadcrumb-item active\">
+                  <li class=\"breadcrumb-item active\" aria-current=\"page\">
                       {$crumb_item->title}
                   </li>";
           } else {
