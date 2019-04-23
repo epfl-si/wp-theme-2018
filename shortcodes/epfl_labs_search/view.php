@@ -52,9 +52,9 @@
             </div>
         </div>
         <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center mb-2">
-                <div class="sort col-2" data-sort="site-title"><a href="#"><?php _e('Acronym') ?></a></div>
-                <div class="sort col-7" data-sort="site-tagline"><a href="#"><?php _e('Title') ?></a></div>
-                <div class="sort col-2" data-sort="site-tags"><a href="#"><?php _e('Tags') ?></a></div>
+                <div class="sort col-2" data-sort="site-title"><a href="#" onclick="return false;"><?php _e('Acronym', 'epfl') ?></a></div>
+                <div class="sort col-7" data-sort="site-tagline"><a href="#" onclick="return false;"><?php _e('Title', 'epfl') ?></a></div>
+                <div class="sort col-2" data-sort="site-tags"><a href="#" onclick="return false;"><?php _e('Tags', 'epfl') ?></a></div>
         </div>
         <div class="list">
 
