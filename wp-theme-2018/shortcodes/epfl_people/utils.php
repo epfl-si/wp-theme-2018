@@ -29,7 +29,7 @@ function epfl_people_get_function($person, $from) {
     $function = '';
     $nb_units = count((array)$person->unites);    
     foreach($person->unites as $current_unit) {
-        if ($from == 'units' || ($from == 'scipers' && $current_unit->ordre  == 1)) {
+        if ($from == 'units' || $from == 'doctoral_program' || ($from == 'scipers' && $current_unit->ordre  == 1)) {
             $language = get_current_language();
             if ($language === 'fr') {
                 $function = $current_unit->fonction_fr;
@@ -48,7 +48,7 @@ function epfl_people_get_room($person, $from) {
     
     $room = '';
     foreach($person->unites as $current_unit) {
-        if ($from == 'units' || ($from == 'scipers' && $current_unit->ordre  == 1)) {
+        if ($from == 'units' || $from == 'doctoral_program' || ($from == 'scipers' && $current_unit->ordre  == 1)) {
             $room = $current_unit->rooms;
         }
     }

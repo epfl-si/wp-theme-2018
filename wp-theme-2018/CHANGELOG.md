@@ -1,5 +1,18 @@
 # CHANGELOG
 
+*1.3.7* (2019-04-16)
+- Shortcode people: doctoral program (#198)
+- Search for labs UI (#194)
+
+*1.3.6* (2019-04-11)
+- Add/Update/Complete some translations (#197)
+- Shortcode News Fix (#196)
+
+*1.3.5* (2019-04-03)
+- People Fix (#193)
+- Add Tags to breadcrumb (#183)
+- Fix php notices (#191)
+
 *1.3.4* (2019-03-29)
 - People Fix (#192)
 

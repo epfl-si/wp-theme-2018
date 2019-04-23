@@ -37,7 +37,7 @@ if ($data['layout'] == '') $classes = 'fullwidth-teaser-right';
             <?php echo $data['title'] ?>
           </h3>
         </div>
-        <a href="<?php echo $data['link'] ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block"><?php echo $data['buttonlabel'] ?: 'En savoir plus' ?></a>
+        <a href="<?php echo $data['link'] ?>" aria-label="Link to read more of that page" class="btn btn-primary triangle-outer-bottom-right d-none d-xl-block"><?php echo $data['buttonlabel'] ?: __('See more', 'epfl') ?></a>
       </div>
 
       <?php if (!empty($data['description'])): ?>
@@ -49,7 +49,7 @@ if ($data['layout'] == '') $classes = 'fullwidth-teaser-right';
       <?php endif; ?>
 
       <div class="fullwidth-teaser-footer">
-        <a href="<?php echo $data['link'] ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php echo $data['buttonlabel'] ?: 'En savoir plus' ?></a>
+        <a href="<?php echo $data['link'] ?>" aria-label="Link to read more of that page" class="btn btn-primary btn-block d-xl-none"><?php echo $data['buttonlabel'] ?: __('See more', 'epfl') ?></a>
       </div>
     </div>
   </div>

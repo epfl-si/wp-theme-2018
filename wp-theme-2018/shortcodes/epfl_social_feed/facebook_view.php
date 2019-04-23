@@ -31,7 +31,7 @@
           <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
       </div>
     <div>
-      <a class="btn btn-secondary mt-4" href="<?php echo esc_url($facebook_url) ?>" target="_blank"><?php esc_html_e('Like our page on Facebook', 'epfl-shortcodes'); ?></a>
+      <a class="btn btn-secondary mt-4" href="<?php echo esc_url($facebook_url) ?>" target="_blank"><?php esc_html_e('Like our page on Facebook', 'epfl'); ?></a>
     </div>
   </div>
 </div>
