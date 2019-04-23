@@ -111,12 +111,41 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
-
-	<header role="banner" class="header">
+  
+  <?php
+    // Get the directory name of the active theme
+    $themeSlug = get_option('stylesheet');
+  
+    if ( $themeSlug == 'wp-theme-light' ) {
+      $headerLightClass = ' header-light';
+    };
+  ?>
+	<header role="banner" class="header<?php echo $headerLightClass; ?>">
+    
+  <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
+    
+    <div class="drawer mr-3 mr-xl-0">
+    <button class="drawer-toggle">
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
+    </button>
+    <a href="https://www.epfl.ch/" class="drawer-link">
+      <span class="text">
+        Retour au site principal
+      </span>
+    </a>
+  </div>
+    
+  <div class="header-light-content">
+    
+  <?php endif; ?>
 
 	<a class="logo" href="<?php echo get_epfl_home_url(); ?>">
 		<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg?refresh=now" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
 	</a>
+  
+  <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
+  <h1><?php bloginfo( 'name' ); ?></h1>
+  <?php endif; ?>
 
 	<?php
 		global $EPFL_MENU_LOCATION;
@@ -180,7 +209,11 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 			<span></span>
 		</div>
 	</div>
-
+    
+  <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
+  </div>
+  <?php endif; ?>
+    
 </header>
 
 <div class="main-container">
