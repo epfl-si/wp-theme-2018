@@ -128,7 +128,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
     <button class="drawer-toggle">
       <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
     </button>
-    <a href="https://www.epfl.ch/" class="drawer-link">
+    <a href="<?php echo get_epfl_home_url(); ?>" class="drawer-link">
       <span class="text">
         Retour au site principal
       </span>
@@ -139,10 +139,18 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
     
   <?php endif; ?>
 
-	<a class="logo" href="<?php echo get_epfl_home_url(); ?>">
+  <?php
+  if ( $themeSlug == 'wp-theme-light' ) {
+    $main_logo_url = get_site_url();
+  } else {
+    $main_logo_url = get_epfl_home_url();
+  }
+  ?>
+
+	<a class="logo" href="<?php echo $main_logo_url; ?>">
 		<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg?refresh=now" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
 	</a>
-  
+
   <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
   <h1><?php bloginfo( 'name' ); ?></h1>
   <?php endif; ?>
@@ -155,10 +163,11 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 		 *
 		 * By default (i.e. EPFL plugin is not installed), or in case of a configuration error, should
 		 * return false so that a default root menu is substituted in the top navigation banner.
+         * The theme light show the list of the first level pages.
 		 */
 		$root_menu_functional_in_plugin = apply_filters('epfl_root_menu_ready', false, $EPFL_MENU_LOCATION);
 
-		if ($root_menu_functional_in_plugin) {
+		if ($themeSlug === 'wp-theme-light' || $root_menu_functional_in_plugin) {
 				global $EPFL_MENU_LOCATION;
 				wp_nav_menu( array(
 					'theme_location' => $EPFL_MENU_LOCATION,
