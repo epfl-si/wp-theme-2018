@@ -111,12 +111,49 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
+  
+  <?php
+    // Get the directory name of the active theme
+    $themeSlug = get_option('stylesheet');
+  
+    if ( $themeSlug == 'wp-theme-light' ) {
+      $headerLightClass = ' header-light';
+    };
+  ?>
+	<header role="banner" class="header<?php echo $headerLightClass; ?>">
+    
+  <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
+    
+    <div class="drawer mr-3 mr-xl-0">
+    <button class="drawer-toggle">
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
+    </button>
+    <a href="<?php echo get_epfl_home_url(); ?>" class="drawer-link">
+      <span class="text">
+        Retour au site principal
+      </span>
+    </a>
+  </div>
+    
+  <div class="header-light-content">
+    
+  <?php endif; ?>
 
-	<header role="banner" class="header">
+  <?php
+  if ( $themeSlug == 'wp-theme-light' ) {
+    $main_logo_url = get_site_url();
+  } else {
+    $main_logo_url = get_epfl_home_url();
+  }
+  ?>
 
-	<a class="logo" href="<?php echo get_epfl_home_url(); ?>">
+	<a class="logo" href="<?php echo $main_logo_url; ?>">
 		<img src="<?php bloginfo('template_url'); ?>/assets/svg/epfl-logo.svg?refresh=now" alt="Logo EPFL, École polytechnique fédérale de Lausanne" class="img-fluid">
 	</a>
+
+  <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
+  <h1><?php bloginfo( 'name' ); ?></h1>
+  <?php endif; ?>
 
 	<?php
 		global $EPFL_MENU_LOCATION;
@@ -126,10 +163,11 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 		 *
 		 * By default (i.e. EPFL plugin is not installed), or in case of a configuration error, should
 		 * return false so that a default root menu is substituted in the top navigation banner.
+         * The theme light show the list of the first level pages.
 		 */
 		$root_menu_functional_in_plugin = apply_filters('epfl_root_menu_ready', false, $EPFL_MENU_LOCATION);
 
-		if ($root_menu_functional_in_plugin) {
+		if ($themeSlug === 'wp-theme-light' || $root_menu_functional_in_plugin) {
 				global $EPFL_MENU_LOCATION;
 				wp_nav_menu( array(
 					'theme_location' => $EPFL_MENU_LOCATION,
@@ -180,7 +218,11 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 			<span></span>
 		</div>
 	</div>
-
+    
+  <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
+  </div>
+  <?php endif; ?>
+    
 </header>
 
 <div class="main-container">

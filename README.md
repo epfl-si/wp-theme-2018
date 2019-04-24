@@ -32,8 +32,8 @@ Epfl theme (Wordpress)
   - make sure your local branches `master` and `dev` are up-to-date
   - start a release: `git flow release start x.x.x`
   - update the following files:
-    - `VERSION` with the version number
-    - `style.css` with the version number
+    - `wp-theme-2018/VERSION` with the version number
+    - `wp-theme-2018/style.css` with the version number
     - `CHANGELOG.md` with a description of **all the changes since last release**
   - commit them in a "Bump version" commit
   - finish the release: `git flow release finish x.x.x -p -m "x.x.x"` 
