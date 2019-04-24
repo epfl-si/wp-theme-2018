@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.4.0* (2019-04-24)
+- Add theme light, setting a new folder structure
+- Fix combo box responsivity on search for labs UI
+
 *1.3.7* (2019-04-16)
 - Shortcode people: doctoral program (#198)
 - Search for labs UI (#194)
