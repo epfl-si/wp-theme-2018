@@ -69,7 +69,7 @@
                         <a href="https://www.epfl.ch/education/continuing-education/fr/formation-continue/">Formation continue</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/education/mobility/fr/mobilite/">Mobilité</a>
+                        <a href="https://www.epfl.ch/education/international/fr/mobilite/">International</a>
                                   </li>
                   <li>
                         <a href="https://www.epfl.ch/education/admission/fr/admission/">Admission</a>
