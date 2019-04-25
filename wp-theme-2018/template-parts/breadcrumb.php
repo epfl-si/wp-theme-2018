@@ -28,6 +28,14 @@ if ($currentTemplate == 'page-homepage.php') {
   <!-- Breadcrumb -->
   <?php
     // Breadcrumb
+
+    // little home url (first element of the breadcrumb)
+    if ( get_option('stylesheet') === 'wp-theme-light' ) {
+      $little_home_url = get_site_url();
+    } else {
+      $little_home_url = get_epfl_home_url();
+    }
+
     $items = array();
     if(($menu_items = wp_get_nav_menu_items(get_current_menu_slug()))!==false)
     {
@@ -43,7 +51,7 @@ if ($currentTemplate == 'page-homepage.php') {
     echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ol class="breadcrumb">';
     $crumbs[] = '
         <li class="breadcrumb-item">
-            <a class="bread-link bread-home" href="' . get_epfl_home_url() . '" title="home">
+            <a class="bread-link bread-home" href="' . $little_home_url . '" title="home">
                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
             </a>
         </li>';
