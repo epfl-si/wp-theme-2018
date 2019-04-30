@@ -29,7 +29,7 @@ if ($data['graybackground'] === 'true') $greyClasses = 'bg-gray-100 py-4 mt-4';
           <picture>
           <?php echo wp_get_attachment_image(
             $data['image'.$i],
-            'thumbnail_16_9_large', // see functions.php
+            'thumbnail_16_9_crop', // see functions.php
             '',
             [
               'class' => 'img-fluid',
