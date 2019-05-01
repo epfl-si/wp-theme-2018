@@ -1,5 +1,11 @@
 # CHANGELOG
 
+*1.4.1* (2019-05-01)
+- Show infoscience search result in preview mode (#204)
+- Optimize used image size (#203)
+- Update footer links
+- Fix little home icon url for theme light
+
 *1.4.0* (2019-04-24)
 - Add theme light, setting a new folder structure
 - Fix combo box responsivity on search for labs UI
