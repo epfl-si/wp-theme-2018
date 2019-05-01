@@ -248,8 +248,11 @@ function init_globals() {
  * add a 16/9 thumbnail size with cropping
  * used in card headers
  */
-add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] );
+add_image_size( 'thumbnail_16_9_crop', 384, 216, ['center', 'center'] ); // 20% of full (1920x1080) size
 add_image_size( 'thumbnail_16_9_large', 1920, 1080, ['center', 'center'] );
+add_image_size( 'thumbnail_16_9_large_80p', 1536, 864, ['center', 'center'] ); // 80% of full size
+add_image_size( 'thumbnail_16_9_large_60p', 1152, 648, ['center', 'center'] ); // 60% of full size
+add_image_size( 'thumbnail_16_9_large_40p', 768, 432, ['center', 'center'] ); // 40% of full size
 add_image_size( 'thumbnail_square_crop', 300, 300, ['center', 'center'] );
 
 /**

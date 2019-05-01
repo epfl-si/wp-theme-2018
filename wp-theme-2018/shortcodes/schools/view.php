@@ -11,7 +11,7 @@
           <div class="col-sm-4">
             <a href="<?php echo $data['link'.$i]; ?>" class="card card-overlay link-trapeze-horizontal">
               <picture class="card-img">
-                <?php echo wp_get_attachment_image($data['image'.$i], 'thumbnail_16_9_large', '', ['class' => 'img-fluid']) ?>
+                <?php echo wp_get_attachment_image($data['image'.$i], 'thumbnail_16_9_large_40p', '', ['class' => 'img-fluid']) ?>
               </picture>
               <div class="card-img-overlay">
                 <h3 class="h4 card-title">

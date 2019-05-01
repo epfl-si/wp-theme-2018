@@ -37,7 +37,7 @@ Epfl theme (Wordpress)
     - `CHANGELOG.md` with a description of **all the changes since last release**
   - commit them in a "Bump version" commit
   - finish the release: `git flow release finish x.x.x -p -m "x.x.x"` 
-  - head over this repo on github, on the **release** tab
+  - head over this repo on github, on the **release** tab (or go directly using https://github.com/epfl-idevelop/wp-theme-2018/releases/edit/x.x.x)
   - go to **Draft a new release**
   - choose the release number you just created, insert the changelog informations into the release description
   - Publish the release

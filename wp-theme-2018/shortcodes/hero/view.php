@@ -14,7 +14,7 @@
       <picture>
         <?php echo wp_get_attachment_image(
           $data['image'],
-          'thumbnail_16_9_large', // see functions.php
+          'thumbnail_16_9_large_80p', // see functions.php
           '',
           [
             'class' => 'img-fluid'
