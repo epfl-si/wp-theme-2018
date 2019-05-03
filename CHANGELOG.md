@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.4.2* (2019-05-03)
+- fix people image url
+
 *1.4.1* (2019-05-01)
 - Show infoscience search result in preview mode (#204)
 - Optimize used image size (#203)
