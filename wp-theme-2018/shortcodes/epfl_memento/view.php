@@ -34,10 +34,12 @@
       if (is_null($event->start_date) and is_null($event->end_date)) {
         continue;
       }
-
+      
       $is_first_event = ($count==1);
       $is_just_finished = is_just_finished($event->end_date, $event->end_time);
       $is_inscription_required = is_inscription_required($event->invitation);
+
+      $visual_url = get_visual_url($event, $memento_name);
 ?>
 
 <?php if ($is_first_event and $display_first_event): ?>
@@ -45,11 +47,25 @@
 <div class="card-slider-cell card-slider-cell-lg">
   <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
     <div class="card-body">
-      <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');  ?>
+      <picture class="card-img-top">
+        <?php if ($event->academic_calendar_category != null): ?>
+          <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;'>
+            <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
+            <?php if ($event->lang == 'fr'): ?>
+              <?php echo $event->academic_calendar_category->fr_label ?>
+            <?php else: ?>
+              <?php echo $event->academic_calendar_category->en_label ?>
+            <?php endif ?>
+          </span>
+        <?php endif ?>
+        <?php if ($visual_url): ?>
+            <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
+        <?php endif ?>
+      </picture>
       <h3 class="card-title"><?php echo esc_html($event->title) ?></h3>
       <p><?php echo esc_html(trim_text(strip_tags($event->description), 225)) ?></p>
       <div class="card-info">
-      <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
+        <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
       </div>
     </div>
   </a>
@@ -63,7 +79,21 @@
     <div class="card-slider-cell">
       <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
         <div class="card-body">
-          <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');  ?>
+          <picture class="card-img-top">
+            <?php if ($event->academic_calendar_category != null): ?>
+              <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;'>
+                <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
+                <?php if ($event->lang == 'fr'): ?>
+                  <?php echo $event->academic_calendar_category->fr_label ?>
+                <?php else: ?>
+                  <?php echo $event->academic_calendar_category->en_label ?>
+                <?php endif ?>
+              </span>
+            <?php endif ?>
+            <?php if ($visual_url): ?>
+                <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
+            <?php endif ?>
+          </picture>
           <h3 class="card-title"><span class="badge badge-dark badge-sm">Just finished</span>
             <?php echo esc_html($event->title) ?>
           </h3>
@@ -73,7 +103,6 @@
         </div>
       </a>
     </div>
-
   <!-- END JUST FINISHED -->
 
   <!-- LEARN MORE & APPLY -->
@@ -82,13 +111,27 @@
       <div class="card card-gray">
         <div class="card-body">
           <a href="<?php echo esc_url($event->event_url) ?>" class="card-img-top">
-            <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');  ?>
+            <picture class="card-img-top">
+              <?php if ($event->academic_calendar_category != null): ?>
+                <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;'>
+                  <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
+                  <?php if ($event->lang == 'fr'): ?>
+                      <?php echo $event->academic_calendar_category->fr_label ?>
+                  <?php else: ?>
+                      <?php echo $event->academic_calendar_category->en_label ?>
+                  <?php endif ?>
+                </span>
+              <?php endif ?>
+              <?php if ($visual_url): ?>
+                <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
+              <?php endif ?>
+            </picture>
           </a>
           <h3 class="card-title">
             <a href="<?php echo esc_url($event->event_url) ?>"><?php echo esc_html($event->title) ?></a>
           </h3>
           <div class="card-info">
-          <?php get_template_part('shortcodes/epfl_memento/templates/card-info'); ?>
+            <?php get_template_part('shortcodes/epfl_memento/templates/card-info'); ?>
           </div>
         </div>
         <div class="card-footer mt-auto">
@@ -105,10 +148,24 @@
     <div class="card-slider-cell">
       <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
         <div class="card-body">
-          <?php get_template_part('shortcodes/epfl_memento/templates/card-img-top');?>
+          <picture class="card-img-top">
+            <?php if ($event->academic_calendar_category != null): ?>
+              <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:2em'>
+                <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
+                <?php if ($event->lang == 'fr'): ?>
+                  <?php echo $event->academic_calendar_category->fr_label ?>
+                <?php else: ?>
+                  <?php echo $event->academic_calendar_category->en_label ?>
+                <?php endif ?>
+              </span>
+            <?php endif ?>
+            <?php if ($visual_url): ?>
+              <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
+            <?php endif ?>
+          </picture>
           <h3 class="card-title"><?php echo esc_html($event->title) ?></h3>
           <div class="card-info">
-          <?php get_template_part('shortcodes/epfl_memento/templates/card-info');?>
+            <?php get_template_part('shortcodes/epfl_memento/templates/card-info');?>
           </div>
         </div>
       </a>
@@ -153,7 +210,7 @@ $count++;
     foreach($data as $event) {
       set_query_var('epfl_event', $event);
       $is_first_event = ($count==1);
-      $visual_url = substr($event->visual_url, 0, -11) . '448x448.jpg';
+      $visual_url = get_visual_url($event, $memento_name);
 
 ?>
 
@@ -162,6 +219,14 @@ $count++;
     <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal" itemscope itemtype="http://schema.org/Event">
       <div class="card-body">
         <picture class="card-img-top">
+          <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:2em'>
+            <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
+            <?php if ($event->lang == 'fr'): ?>
+                <?php echo $event->academic_calendar_category->fr_label ?>
+            <?php else: ?>
+                <?php echo $event->academic_calendar_category->en_label ?>
+            <?php endif ?>
+          </span>
           <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
         </picture>
         <h3 class="card-title" itemprop="name"><?php echo esc_html($event->title) ?></h3>
@@ -181,13 +246,25 @@ $count++;
       <div class="list-group-teaser-container">
         <div class="list-group-teaser-thumbnail">
           <picture>
-            <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" alt="<?php echo esc_attr($event->image_description) ?>" title="<?php echo esc_attr($event->image_description) ?>">
+            <?php if ($event->academic_calendar_category != null): ?>
+              <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em'>
+                <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
+                <?php if ($event->lang == 'fr'): ?>
+                    <?php echo $event->academic_calendar_category->fr_label ?>
+                <?php else: ?>
+                    <?php echo $event->academic_calendar_category->en_label ?>
+                <?php endif ?>
+              </span>
+            <?php endif ?>
+            <?php if ($visual_url): ?>
+                <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" alt="<?php echo esc_attr($event->image_description) ?>" title="<?php echo esc_attr($event->image_description) ?>">
+            <?php endif ?>
           </picture>
         </div>
         <div class="list-group-teaser-content">
           <p class="h5 card-title" itemprop="name"><?php echo esc_html($event->title) ?></p>
           <div class="card-info mt-0">
-          <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
+            <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
           </div>
         </div>
       </div>
@@ -221,7 +298,7 @@ $count++;
     foreach($data as $event) {
       set_query_var('epfl_event', $event);
       $is_first_event = ($count==1);
-      $visual_url = substr($event->visual_url, 0, -11) . '448x448.jpg';
+      $visual_url = get_visual_url($event, $memento_name);
 
 ?>
 
@@ -229,13 +306,25 @@ $count++;
     <div class="list-group-teaser-container">
       <div class="list-group-teaser-thumbnail">
         <picture>
-          <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" alt="<?php echo esc_attr($event->image_description) ?>" title="<?php echo esc_attr($event->image_description) ?>">
+          <?php if ($event->academic_calendar_category != null): ?>
+            <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em'>
+              <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
+              <?php if ($event->lang == 'fr'): ?>
+                  <?php echo $event->academic_calendar_category->fr_label ?>
+              <?php else: ?>
+                  <?php echo $event->academic_calendar_category->en_label ?>
+              <?php endif ?>
+            </span>
+          <?php endif ?>
+          <?php if ($visual_url): ?>
+            <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" alt="<?php echo esc_attr($event->image_description) ?>" title="<?php echo esc_attr($event->image_description) ?>">
+          <?php endif ?>
         </picture>
       </div>
       <div class="list-group-teaser-content">
         <p class="h5 card-title" itemprop="name"><?php echo esc_html($event->title) ?></p>
         <div class="card-info mt-0">
-        <?php get_template_part('shortcodes/epfl_memento/templates/card-info');  ?>
+          <?php get_template_part('shortcodes/epfl_memento/templates/card-info'); ?>
         </div>
       </div>
     </div>
