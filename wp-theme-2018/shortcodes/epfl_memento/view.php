@@ -112,7 +112,7 @@
         <div class="card-body">
           <a href="<?php echo esc_url($event->event_url) ?>" class="card-img-top">
             <picture class="card-img-top">
-              <?php if ($event->academic_calendar_category != null): ?>
+              <?php if (!empty($event->academic_calendar_category)): ?>
                 <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;'>
                   <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
                   <?php if ($event->lang == 'fr'): ?>
@@ -149,7 +149,7 @@
       <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
         <div class="card-body">
           <picture class="card-img-top">
-            <?php if ($event->academic_calendar_category != null): ?>
+            <?php if (!empty($event->academic_calendar_category)): ?>
               <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:2em;'>
                 <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
                 <?php if ($event->lang == 'fr'): ?>
@@ -246,7 +246,7 @@ $count++;
       <div class="list-group-teaser-container">
         <div class="list-group-teaser-thumbnail">
           <picture>
-            <?php if ($event->academic_calendar_category != null): ?>
+            <?php if (!empty($event->academic_calendar_category)): ?>
               <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em;'>
                 <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
                 <?php if ($event->lang == 'fr'): ?>
@@ -306,7 +306,7 @@ $count++;
     <div class="list-group-teaser-container">
       <div class="list-group-teaser-thumbnail">
         <picture>
-          <?php if ($event->academic_calendar_category != null): ?>
+          <?php if (!empty($event->academic_calendar_category)): ?>
             <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em;'>
               <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
               <?php if ($event->lang == 'fr'): ?>
