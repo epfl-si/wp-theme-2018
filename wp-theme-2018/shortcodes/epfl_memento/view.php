@@ -34,7 +34,7 @@
       if (is_null($event->start_date) and is_null($event->end_date)) {
         continue;
       }
-      
+
       $is_first_event = ($count==1);
       $is_just_finished = is_just_finished($event->end_date, $event->end_time);
       $is_inscription_required = is_inscription_required($event->invitation);
