@@ -67,7 +67,7 @@ function get_visual_url($event, $memento_name) {
 
     $visual_url = "";
 
-    if ($event->academic_calendar_category == null) {
+    if (empty($event->academic_calendar_category)) {
         if ($event->visual_url) {
             $visual_url = substr($event->visual_url, 0, -11) . '509x286.jpg';
         } else {

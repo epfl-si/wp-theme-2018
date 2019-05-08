@@ -48,19 +48,19 @@
   <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal">
     <div class="card-body">
       <picture class="card-img-top">
-        <?php if ($event->academic_calendar_category != null): ?>
+        <?php if (!empty($event->academic_calendar_category)): ?>
           <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;'>
             <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
             <?php if ($event->lang == 'fr'): ?>
-              <?php echo $event->academic_calendar_category->fr_label ?>
+              <?php echo esc_html($event->academic_calendar_category->fr_label) ?>
             <?php else: ?>
-              <?php echo $event->academic_calendar_category->en_label ?>
-            <?php endif ?>
+              <?php echo esc_html($event->academic_calendar_category->en_label) ?>
+            <?php endif; ?>
           </span>
-        <?php endif ?>
+        <?php endif; ?>
         <?php if ($visual_url): ?>
             <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
-        <?php endif ?>
+        <?php endif; ?>
       </picture>
       <h3 class="card-title"><?php echo esc_html($event->title) ?></h3>
       <p><?php echo esc_html(trim_text(strip_tags($event->description), 225)) ?></p>
@@ -80,19 +80,19 @@
       <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray card-grayscale link-trapeze-horizontal bg-gray-100">
         <div class="card-body">
           <picture class="card-img-top">
-            <?php if ($event->academic_calendar_category != null): ?>
+            <?php if (!empty($event->academic_calendar_category)): ?>
               <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;'>
                 <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
                 <?php if ($event->lang == 'fr'): ?>
-                  <?php echo $event->academic_calendar_category->fr_label ?>
+                  <?php echo esc_html($event->academic_calendar_category->fr_label) ?>
                 <?php else: ?>
-                  <?php echo $event->academic_calendar_category->en_label ?>
-                <?php endif ?>
+                  <?php echo esc_html($event->academic_calendar_category->en_label) ?>
+                <?php endif; ?>
               </span>
-            <?php endif ?>
+            <?php endif; ?>
             <?php if ($visual_url): ?>
                 <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
-            <?php endif ?>
+            <?php endif; ?>
           </picture>
           <h3 class="card-title"><span class="badge badge-dark badge-sm">Just finished</span>
             <?php echo esc_html($event->title) ?>
@@ -116,15 +116,15 @@
                 <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;'>
                   <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
                   <?php if ($event->lang == 'fr'): ?>
-                      <?php echo $event->academic_calendar_category->fr_label ?>
+                      <?php echo esc_html($event->academic_calendar_category->fr_label) ?>
                   <?php else: ?>
-                      <?php echo $event->academic_calendar_category->en_label ?>
-                  <?php endif ?>
+                      <?php echo esc_html($event->academic_calendar_category->en_label) ?>
+                  <?php endif; ?>
                 </span>
-              <?php endif ?>
+              <?php endif; ?>
               <?php if ($visual_url): ?>
                 <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
-              <?php endif ?>
+              <?php endif; ?>
             </picture>
           </a>
           <h3 class="card-title">
@@ -150,18 +150,18 @@
         <div class="card-body">
           <picture class="card-img-top">
             <?php if ($event->academic_calendar_category != null): ?>
-              <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:2em'>
+              <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:2em;'>
                 <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
                 <?php if ($event->lang == 'fr'): ?>
-                  <?php echo $event->academic_calendar_category->fr_label ?>
+                  <?php echo esc_html($event->academic_calendar_category->fr_label) ?>
                 <?php else: ?>
-                  <?php echo $event->academic_calendar_category->en_label ?>
-                <?php endif ?>
+                  <?php echo esc_html($event->academic_calendar_category->en_label) ?>
+                <?php endif; ?>
               </span>
-            <?php endif ?>
+            <?php endif; ?>
             <?php if ($visual_url): ?>
               <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
-            <?php endif ?>
+            <?php endif; ?>
           </picture>
           <h3 class="card-title"><?php echo esc_html($event->title) ?></h3>
           <div class="card-info">
@@ -171,8 +171,8 @@
       </a>
     </div>
 
-  <?php endif ?>
-<?php endif ?> 
+  <?php endif; ?>
+<?php endif; ?> 
 
 <?php
 $count++;
@@ -219,13 +219,13 @@ $count++;
     <a href="<?php echo esc_url($event->event_url) ?>" class="card card-gray link-trapeze-horizontal" itemscope itemtype="http://schema.org/Event">
       <div class="card-body">
         <picture class="card-img-top">
-          <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:2em'>
+          <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:2em;'>
             <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
             <?php if ($event->lang == 'fr'): ?>
-                <?php echo $event->academic_calendar_category->fr_label ?>
+                <?php echo esc_html($event->academic_calendar_category->fr_label) ?>
             <?php else: ?>
-                <?php echo $event->academic_calendar_category->en_label ?>
-            <?php endif ?>
+                <?php echo esc_html($event->academic_calendar_category->en_label) ?>
+            <?php endif; ?>
           </span>
           <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" title="<?php echo esc_attr($event->image_description) ?>" alt="<?php echo esc_attr($event->image_description) ?>" />
         </picture>
@@ -247,18 +247,18 @@ $count++;
         <div class="list-group-teaser-thumbnail">
           <picture>
             <?php if ($event->academic_calendar_category != null): ?>
-              <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em'>
+              <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em;'>
                 <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
                 <?php if ($event->lang == 'fr'): ?>
-                    <?php echo $event->academic_calendar_category->fr_label ?>
+                    <?php echo esc_html($event->academic_calendar_category->fr_label) ?>
                 <?php else: ?>
-                    <?php echo $event->academic_calendar_category->en_label ?>
-                <?php endif ?>
+                    <?php echo esc_html($event->academic_calendar_category->en_label) ?>
+                <?php endif; ?>
               </span>
-            <?php endif ?>
+            <?php endif; ?>
             <?php if ($visual_url): ?>
                 <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" alt="<?php echo esc_attr($event->image_description) ?>" title="<?php echo esc_attr($event->image_description) ?>">
-            <?php endif ?>
+            <?php endif; ?>
           </picture>
         </div>
         <div class="list-group-teaser-content">
@@ -270,12 +270,12 @@ $count++;
       </div>
       </a>
 
-  <?php endif ?>  
+  <?php endif; ?>  
 
   <?php if ($count === $nb_events and $display_first_event): ?>
     </div>
   </div>
-  <?php endif ?>  
+  <?php endif; ?>  
  
   <?php
     $count++;
@@ -307,18 +307,18 @@ $count++;
       <div class="list-group-teaser-thumbnail">
         <picture>
           <?php if ($event->academic_calendar_category != null): ?>
-            <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em'>
+            <span style='position: absolute; color: #FFF;padding: 10px 0 0 10px; line-height: 1.35em;font-size:1em;'>
               <meta itemprop="eventStatus" content="https://schema.org/EventCancelled">
               <?php if ($event->lang == 'fr'): ?>
-                  <?php echo $event->academic_calendar_category->fr_label ?>
+                  <?php echo esc_html($event->academic_calendar_category->fr_label) ?>
               <?php else: ?>
-                  <?php echo $event->academic_calendar_category->en_label ?>
-              <?php endif ?>
+                  <?php echo esc_html($event->academic_calendar_category->en_label) ?>
+              <?php endif; ?>
             </span>
-          <?php endif ?>
+          <?php endif; ?>
           <?php if ($visual_url): ?>
             <img src="<?php echo esc_url($visual_url) ?>" class="img-fluid" alt="<?php echo esc_attr($event->image_description) ?>" title="<?php echo esc_attr($event->image_description) ?>">
-          <?php endif ?>
+          <?php endif; ?>
         </picture>
       </div>
       <div class="list-group-teaser-content">
@@ -334,4 +334,4 @@ $count++;
   }
   ?>
 </div>
-<?php endif ?>
+<?php endif; ?>
