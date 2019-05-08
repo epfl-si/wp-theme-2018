@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.4.3* (2019-05-03)
+- Update to styleguide 2.0.3
+- Fix notice msg for enqueue script (#205)
+
 *1.4.2* (2019-05-03)
 - fix people image url
 
