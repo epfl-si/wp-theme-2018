@@ -7,8 +7,17 @@
 
 add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 3);
 
-wp_enqueue_script( 'epfl-labs-search-listjs', get_template_directory_uri() . '/shortcodes/epfl_labs_search/lib/list.min.js', ['jquery'], 1.5, true);
-wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/shortcodes/epfl_labs_search/epfl-labs-search.css',false,'1.1','all');
+
+
+function epfl_labs_search_enqueue()
+{
+    wp_enqueue_script( 'epfl-labs-search-listjs', get_template_directory_uri() . '/shortcodes/epfl_labs_search/lib/list.min.js', ['jquery'], 1.5, true);
+    wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/shortcodes/epfl_labs_search/epfl-labs-search.css',false,'1.1','all');
+}
+add_action( 'wp_enqueue_scripts', 'epfl_labs_search_enqueue' );
+
+
+
 
 /**
  * render the shortcode, mainly a form and his table
