@@ -60,4 +60,27 @@ function is_inscription_required($invitation) {
     return ($invitation === "Registration required");
 }
 
+/** 
+ * Get visual url of event
+ */
+function get_visual_url($event, $memento_name) {
 
+    $visual_url = "";
+
+    if (empty($event->academic_calendar_category)) {
+        if ($event->visual_url) {
+            $visual_url = substr($event->visual_url, 0, -11) . '509x286.jpg';
+        } else {
+            if ($memento_name == 'academic-calendar') {
+                $visual_url = "https://memento.epfl.ch/static/img/Others.jpg";
+            } else {
+                $visual_url = "https://memento.epfl.ch/static/img/default.jpg";
+            }
+        }
+    } else {
+        $visual_url = "https://memento.epfl.ch/static/img/";
+        $visual_url .= $event->academic_calendar_category->en_label;
+        $visual_url .= ".jpg";
+    }
+    return $visual_url;
+}
