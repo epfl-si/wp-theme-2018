@@ -1,6 +1,9 @@
 # CHANGELOG
 
-*1.4.3* (2019-05-03)
+*1.4.4* (2019-05-09)
+- Shortcode Memento: academic calendar (#207)
+
+*1.4.3* (2019-05-08)
 - Update to styleguide 2.0.3
 - Fix notice msg for enqueue script (#205)
 
