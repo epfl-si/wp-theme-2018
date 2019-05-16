@@ -8,8 +8,13 @@
 function epfl_news_get_url_channel($data) {
     $url_channel = "";
     if (count($data) > 0) {
-        $channel = $data[0]->channel->name;
-        $url_channel = "https://actu.epfl.ch/search/" . $channel;
+        $url_channel = "https://actu.epfl.ch/search/";
+        if (get_locale() == 'fr_FR') {
+            $url_channel .= "fr/";
+        } else {
+            $url_channel .= "en/";
+        }
+        $url_channel .= $data[0]->channel->name;
     }
     return $url_channel;
 }
