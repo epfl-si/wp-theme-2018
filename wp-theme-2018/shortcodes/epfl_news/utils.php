@@ -68,7 +68,7 @@ function epfl_news_get_subtitle($news) {
  * $news: news to display
  */
 function epfl_news_get_visual_url($news) {
-    return substr($news->visual_url, 0, -11) . '1296x728.jpg';
+    return $news->visual_url;
 }
 
 /**
