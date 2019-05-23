@@ -4,25 +4,23 @@
  * 3rd argument is the priority, higher means executed first
  * 4rth argument is number of arguments the function can accept
  **/
-
 add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 3);
 
 
-
-function epfl_labs_search_enqueue()
+function epfl_labs_search_register()
 {
-    wp_enqueue_script( 'epfl-labs-search-listjs', get_template_directory_uri() . '/shortcodes/epfl_labs_search/lib/list.min.js', ['jquery'], 1.5, true);
-    wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/shortcodes/epfl_labs_search/epfl-labs-search.css',false,'1.1','all');
+  wp_register_script( 'epfl-labs-search-listjs', get_template_directory_uri() . '/shortcodes/epfl_labs_search/lib/list.min.js', ['jquery'], 1.5, false);
 }
-add_action( 'wp_enqueue_scripts', 'epfl_labs_search_enqueue' );
-
-
+add_action( 'wp_enqueue_scripts', 'epfl_labs_search_register' );
 
 
 /**
  * render the shortcode, mainly a form and his table
  */
 function renderLabsSearch($sites, $faculty, $institute) {
+  wp_enqueue_script( 'epfl-labs-search-listjs' );
+  wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/shortcodes/epfl_labs_search/epfl-labs-search.css',false,'1.1','all');
+
   filter_out_unused_language($sites);
 
   if (is_admin()) {
@@ -37,6 +35,7 @@ function renderLabsSearch($sites, $faculty, $institute) {
     get_template_part('shortcodes/epfl_labs_search/view');
   }
 }
+
 
 /**
  * Simplify the sites data by removing and renaming languages fields
@@ -93,6 +92,7 @@ function separate_tags_by_type($sites) {
       }
     }
   }
+
 
   # sort everything
   foreach ($tags_typped as $key=>$tag_type) {
