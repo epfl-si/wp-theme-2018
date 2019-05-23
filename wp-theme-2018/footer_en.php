@@ -123,7 +123,7 @@
     <div class="collapse collapse-item" id="collapse-footer-4">
       <ul class="footer-links">
                   <li>
-                                    <a href="https://www.epfl.ch/innovation/about/domains/">Innovation domains</a>
+                                    <a href="https://www.epfl.ch/innovation/domains/">Innovation domains</a>
                       </li>
                   <li>
                                     <a href="https://www.epfl.ch/innovation/industry/"> Collaborate with industry</a>
