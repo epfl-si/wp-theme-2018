@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.4.5* (2019-05-23)
+- Shortcode News: visual_url dimension change (#210)
+- Shortcode News: update all news links (#208)
+
 *1.4.4* (2019-05-09)
 - Shortcode Memento: academic calendar (#207)
 
