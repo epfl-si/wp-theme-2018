@@ -1,0 +1,585 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: epfl\n"
+"POT-Creation-Date: 2019-04-15 12:31+0200\n"
+"PO-Revision-Date: 2019-04-16 13:06+0200\n"
+"Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: shortcodes\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops ! Cette page est introuvable."
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. You might try with a "
+"search:"
+msgstr ""
+"On dirait que cette adresse n'existe pas sur le site.  Essayez avec une "
+"recherche :"
+
+#: archive.php:33 index.php:38
+msgid "No article found"
+msgstr "Aucun article trouvé"
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: functions.php:59
+msgid "Primary"
+msgstr "Principal"
+
+#: functions.php:61
+msgid "Top Menu Override"
+msgstr "Surcharger le menu du haut"
+
+#: functions.php:63
+msgid "Footer"
+msgstr "Pied de page"
+
+#: functions.php:212
+msgid "Par défaut"
+msgstr ""
+
+#: header.php:113
+msgid "Skip to content"
+msgstr "Aller directement au contenu"
+
+#: inc/template-tags.php:59
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:62
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Posté dans %1$s"
+
+#: inc/template-tags.php:69
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Taggé %1$s"
+
+#: inc/template-tags.php:79
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+"Laisser un commentaire sur <span class=\"screen-reader-text\"> on %s</span>"
+
+#: inc/template-tags.php:96
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Editer <span class=\"screen-reader-text\">%s</span>"
+
+#: menus/custom-nav-walker.php:55 menus/custom-nav-walker.php:59
+msgid "Back"
+msgstr "Retour"
+
+#: search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Rechercher des résultats pour : %s"
+
+#: searchform.php:4 searchform.php:18
+msgid "Search"
+msgstr "Recherche"
+
+#: searchform.php:5 searchform.php:19
+msgid "Search in the EPFL Web"
+msgstr "Rerchercher sur le Web de l'EPFL"
+
+#: searchform.php:6
+msgid "Validate"
+msgstr "Valider"
+
+#: shortcodes/custom_highlight/shortcake.php:8
+#: shortcodes/custom_teasers/shortcake.php:28
+#: shortcodes/custom_teasers/view.php:44
+#: shortcodes/epfl_labs_search/view.php:58
+#: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
+msgid "Title"
+msgstr "Titre"
+
+#: shortcodes/custom_highlight/shortcake.php:13
+msgid "description"
+msgstr "description"
+
+#: shortcodes/custom_highlight/shortcake.php:18
+msgid "Link"
+msgstr "Lien"
+
+#: shortcodes/custom_highlight/shortcake.php:23
+#: shortcodes/custom_teasers/shortcake.php:43
+msgid "Button label"
+msgstr "Label du bouton"
+
+#: shortcodes/custom_highlight/shortcake.php:28
+#: shortcodes/custom_teasers/shortcake.php:48
+msgid "Image"
+msgstr "Image"
+
+#: shortcodes/custom_highlight/shortcake.php:32
+#: shortcodes/custom_highlight/shortcake.php:33
+#: shortcodes/custom_teasers/shortcake.php:52
+#: shortcodes/custom_teasers/shortcake.php:53 shortcodes/hero/shortcake.php:27
+#: shortcodes/hero/shortcake.php:28 shortcodes/schools/shortcake.php:34
+#: shortcodes/schools/shortcake.php:35
+msgid "Select Image"
+msgstr "Sélectionner une image"
+
+#: shortcodes/custom_highlight/shortcake.php:34
+#: shortcodes/custom_teasers/shortcake.php:54 shortcodes/hero/shortcake.php:29
+#: shortcodes/schools/shortcake.php:36
+msgid "Recommended image size: 1920x1080"
+msgstr "Taille recommandée de l'image: 1920x1080"
+
+#: shortcodes/custom_highlight/shortcake.php:37
+#: shortcodes/page_highlight/shortcake.php:14
+#: shortcodes/post_highlight/shortcake.php:14
+msgid "Layout"
+msgstr "Disposition"
+
+#: shortcodes/custom_highlight/shortcake.php:39
+#: shortcodes/page_highlight/shortcake.php:16
+#: shortcodes/post_highlight/shortcake.php:16
+msgid ""
+"Decides where the text will be aligned, to allow the subject of the picture "
+"to be visible"
+msgstr ""
+"Décider où le texte sera aligné, pour permettre au sujet de l'image d'être "
+"visible"
+
+#: shortcodes/custom_highlight/shortcake.php:42
+#: shortcodes/page_highlight/shortcake.php:19
+#: shortcodes/post_highlight/shortcake.php:19
+msgid "Right"
+msgstr "Droite"
+
+#: shortcodes/custom_highlight/shortcake.php:43
+#: shortcodes/page_highlight/shortcake.php:20
+#: shortcodes/post_highlight/shortcake.php:20
+msgid "Bottom"
+msgstr "Bas"
+
+#: shortcodes/custom_highlight/shortcake.php:44
+#: shortcodes/page_highlight/shortcake.php:21
+#: shortcodes/post_highlight/shortcake.php:21
+msgid "Left"
+msgstr "Gauche"
+
+#: shortcodes/custom_highlight/shortcake.php:54
+msgid "Custom Highlight"
+msgstr ""
+
+#: shortcodes/custom_highlight/view.php:40
+#: shortcodes/custom_highlight/view.php:52
+#: shortcodes/custom_teasers/view.php:49
+msgid "See more"
+msgstr "En savoir plus"
+
+#: shortcodes/custom_teasers/shortcake.php:28
+msgid "Teaser"
+msgstr ""
+
+#: shortcodes/custom_teasers/shortcake.php:33
+msgid "Excerpt"
+msgstr ""
+
+#: shortcodes/custom_teasers/shortcake.php:38
+msgid "Url"
+msgstr "Url"
+
+#: shortcodes/custom_teasers/shortcake.php:65
+msgid "Custom teasers"
+msgstr ""
+
+#: shortcodes/custom_teasers/view.php:17
+msgid "Section title"
+msgstr "Titre de section"
+
+#: shortcodes/definition_list/shortcake.php:9
+msgid "Display as a table"
+msgstr "Afficher comme un tableau"
+
+#: shortcodes/definition_list/shortcake.php:11
+msgid "Display the definition list as a table-like component"
+msgstr "Afficher la liste de définitions comme un composant tableau"
+
+#: shortcodes/definition_list/shortcake.php:16
+msgid "Large display"
+msgstr "Affichage large"
+
+#: shortcodes/definition_list/shortcake.php:18
+msgid "Makes the definition list design wider"
+msgstr "Rendre la liste de définition plus large"
+
+#: shortcodes/definition_list/shortcake.php:24
+msgid "Term"
+msgstr "Terme"
+
+#: shortcodes/definition_list/shortcake.php:26
+msgid "Term to define"
+msgstr "Terme à définir"
+
+#: shortcodes/definition_list/shortcake.php:30
+msgid "Definition"
+msgstr "Définition"
+
+#: shortcodes/definition_list/shortcake.php:32
+msgid "Definition of the term"
+msgstr "Définition du terme"
+
+#: shortcodes/definition_list/shortcake.php:41
+msgid "Definition list"
+msgstr "Liste de définitions"
+
+#: shortcodes/epfl_google_forms/view.php:9
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: shortcodes/epfl_labs_search/view.php:11
+msgid "Search inside"
+msgstr "Rechercher dans"
+
+#: shortcodes/epfl_labs_search/view.php:21
+msgid "All faculties"
+msgstr "Toutes les facultés"
+
+#: shortcodes/epfl_labs_search/view.php:24
+msgid "All institutes"
+msgstr "Tous les instituts"
+
+#: shortcodes/epfl_labs_search/view.php:27
+msgid "All field of research"
+msgstr "Tous les domaines de recherche"
+
+#: shortcodes/epfl_labs_search/view.php:30
+msgid "All"
+msgstr "Tout"
+
+#: shortcodes/epfl_labs_search/view.php:43
+msgid "Search for"
+msgstr "Rechercher"
+
+#: shortcodes/epfl_labs_search/view.php:48
+msgid "Type here a name, an url, a keyword, ..."
+msgstr "Entrer un nom, une url, un mot-clé, ..."
+
+#: shortcodes/epfl_labs_search/view.php:52
+msgid "Laboratories are part of faculties and institutes."
+msgstr "Les laboratoires font partie de facultés et d'instituts."
+
+#: shortcodes/epfl_labs_search/view.php:57
+msgid "Acronym"
+msgstr "Acronyme"
+
+#: shortcodes/epfl_memento/templates/card-info.php:22
+msgid "With"
+msgstr "Avec"
+
+#: shortcodes/epfl_memento/templates/card-info.php:28
+msgid "Place and room"
+msgstr "Lieu et salle"
+
+#: shortcodes/epfl_memento/templates/card-info.php:34
+#: shortcodes/epfl_memento/templates/card-info.php:36
+msgid "Category"
+msgstr "Catégorie"
+
+#: shortcodes/epfl_memento/templates/card-slider-footer.php:16
+msgid "Complete agenda of events"
+msgstr "Voir l’agenda complet des événements"
+
+#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:148
+#: shortcodes/epfl_memento/view.php:216
+msgid "No scheduled events"
+msgstr "Aucun événement programmé"
+
+#: shortcodes/epfl_memento/view.php:96
+msgid "Learn more & apply"
+msgstr "Information & inscription"
+
+#: shortcodes/epfl_memento/view.php:137
+msgid "Next events"
+msgstr "Les prochains événements"
+
+#: shortcodes/epfl_memento/view.php:140
+msgid "See all events"
+msgstr "Voir tous les événements"
+
+#: shortcodes/epfl_news/view.php:48
+msgid "The latest news"
+msgstr "Les dernières actualités"
+
+#: shortcodes/epfl_news/view.php:118 shortcodes/epfl_news/view.php:159
+#: shortcodes/epfl_news/view.php:188
+msgid "News"
+msgstr "Actualités"
+
+#: shortcodes/epfl_news/view.php:123 shortcodes/epfl_news/view.php:132
+#: shortcodes/epfl_news/view.php:164 shortcodes/epfl_news/view.php:173
+#: shortcodes/page_highlight/view.php:36 shortcodes/page_highlight/view.php:48
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: shortcodes/epfl_news/view.php:204 shortcodes/epfl_news/view.php:224
+msgid "All news"
+msgstr "Toutes les actualités"
+
+#: shortcodes/epfl_people/view.php:61
+msgid "Position"
+msgstr "Fonction"
+
+#: shortcodes/epfl_people/view.php:69
+msgid "Office"
+msgstr "Bureau"
+
+#: shortcodes/epfl_publication/renderers/fields.php:112
+msgid "Dir."
+msgstr "Dir."
+
+#: shortcodes/epfl_publication/renderers/fields.php:338
+#: shortcodes/epfl_publication/renderers/fields.php:340
+#: shortcodes/epfl_publication/renderers/fields.php:525
+msgid "p."
+msgstr "p."
+
+#: shortcodes/epfl_publication/renderers/fields.php:355
+msgid "Vol."
+msgstr "Vol."
+
+#: shortcodes/epfl_publication/renderers/fields.php:366
+msgid "num."
+msgstr "num."
+
+#: shortcodes/epfl_publication/renderers/fields.php:479
+msgid "Patent number(s)"
+msgstr "Numéro de brevet"
+
+#: shortcodes/epfl_publication/renderers/publications.php:98
+msgid "Detailed record"
+msgstr "Notice détaillée"
+
+#: shortcodes/epfl_publication/renderers/publications.php:115
+msgid "Full text"
+msgstr "Texte intégral"
+
+#: shortcodes/epfl_publication/renderers/publications.php:123
+msgid "View at publisher"
+msgstr "Consulter chez l'éditeur"
+
+#: shortcodes/epfl_scienceqa/view.php:13
+msgid "Question de science"
+msgstr ""
+
+#: shortcodes/epfl_scienceqa/view.php:33
+msgid "Vote"
+msgstr "Voter"
+
+#: shortcodes/epfl_share/view.php:12
+msgid "Share on"
+msgstr "Partager sur"
+
+#: shortcodes/epfl_share/view.php:16 shortcodes/epfl_share/view.php:20
+#: shortcodes/epfl_share/view.php:42 shortcodes/epfl_share/view.php:46
+msgid "Follow us on"
+msgstr "Nous rejoindre sur Twitter"
+
+#: shortcodes/epfl_social_feed/facebook_view.php:34
+msgid "Like our page on Facebook"
+msgstr "Likez notre page Facebook"
+
+#: shortcodes/epfl_social_feed/instagram_view.php:23
+msgid "View this post on Instagram"
+msgstr "Voir ce post sur Instagram"
+
+#: shortcodes/epfl_social_feed/twitter_view.php:24
+msgid "Follow us on Twitter"
+msgstr "Nous rejoindre sur Twitter"
+
+#: shortcodes/hero/shortcake.php:38
+msgid "Hero"
+msgstr ""
+
+#: shortcodes/introduction/shortcake.php:13
+msgid "Content"
+msgstr "Contenu"
+
+#: shortcodes/introduction/shortcake.php:18
+#: shortcodes/page_teaser/shortcake.php:10
+#: shortcodes/post_teaser/shortcake.php:10
+msgid "Gray background"
+msgstr "Fond gris"
+
+#: shortcodes/introduction/shortcake.php:21
+#: shortcodes/page_teaser/shortcake.php:13
+#: shortcodes/post_teaser/shortcake.php:13
+msgid "Change the background to gray"
+msgstr "Changer le fond en gris"
+
+#: shortcodes/introduction/shortcake.php:29
+msgid "Introduction"
+msgstr "Introduction"
+
+#: shortcodes/page_highlight/shortcake.php:8
+#: shortcodes/page_teaser/shortcake.php:18
+msgid "Select page"
+msgstr "Sélectionnez une page"
+
+#: shortcodes/page_highlight/shortcake.php:31
+msgid "Page Highlight"
+msgstr ""
+
+#: shortcodes/page_teaser/shortcake.php:30
+msgid "Page teaser"
+msgstr ""
+
+#: shortcodes/post_highlight/shortcake.php:8
+#: shortcodes/post_teaser/shortcake.php:18
+msgid "Select post"
+msgstr "Sélectionnez un post"
+
+#: shortcodes/post_highlight/shortcake.php:31
+msgid "Post highlight"
+msgstr ""
+
+#: shortcodes/post_highlight/view.php:28 shortcodes/post_highlight/view.php:43
+msgid "Read the article"
+msgstr "Lire l'article"
+
+#: shortcodes/post_teaser/shortcake.php:30
+msgid "Post teaser"
+msgstr ""
+
+#: shortcodes/schools/shortcake.php:15
+msgid "School"
+msgstr "École"
+
+#: sidebar.php:63
+msgid "In the same section"
+msgstr "Dans la même section"
+
+#: template-parts/archives-list.php:2
+msgid "Archives"
+msgstr "Archives"
+
+#: template-parts/breadcrumb.php:23
+msgid "Browse"
+msgstr "Parcourir"
+
+#: template-parts/categories-list.php:2
+msgid "Categories"
+msgstr "Catégories"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Aucun résultat trouvé"
+
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Prêt à publier votre premier post ? <a href=\"%1$s\">Commencer ici</a>."
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, aucun résultat n'a été trouvé avec votre recherche. Vous pouvez "
+"réessayer avec d'autres mots-clés."
+
+#: template-parts/content-none.php:45
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Nous sommes dans l'incapacité de vous fournir ce que vous êtes venu "
+"chercher. Peut-être qu'une recherche pourrait vous être utile."
+
+#: template-parts/content-post-teaser.php:22
+msgid "Published:"
+msgstr "Publié le :"
+
+#: template-parts/content-post.php:39 template-parts/content.php:39
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content-post.php:50 template-parts/content.php:50
+msgid "Pages:"
+msgstr "Pages :"
+
+#~ msgid "Journal Articles"
+#~ msgstr "Articles de journaux"
+
+#~ msgid "Conference Papers"
+#~ msgstr "Papiers de conférences"
+
+#~ msgid "Reviews"
+#~ msgstr "Reviews"
+
+#~ msgid "Books"
+#~ msgstr "Livres"
+
+#~ msgid "Theses"
+#~ msgstr "Thèses"
+
+#~ msgid "Book Chapters"
+#~ msgstr "Chapitres de livres"
+
+#~ msgid "Conference Proceedings"
+#~ msgstr "Actes de congrès"
+
+#~ msgid "Working Papers"
+#~ msgstr "Documents de travail"
+
+#~ msgid "Reports"
+#~ msgstr "Rapports techniques"
+
+#~ msgid "Posters"
+#~ msgstr "Posters"
+
+#~ msgid "Talks"
+#~ msgstr "Présentations"
+
+#~ msgid "Standards"
+#~ msgstr "Normes"
+
+#~ msgid "Patents"
+#~ msgstr "Brevets"
+
+#~ msgid "Student Projects"
+#~ msgstr "Projets d'étudiants"
+
+#~ msgid "Teaching Resources"
+#~ msgstr "Documents d'enseignement"
+
+#~ msgid "Media"
+#~ msgstr "Média"
+
+#~ msgid "Datasets"
+#~ msgstr "Echantillons de données"
+
+#~ msgid "Social feed"
+#~ msgstr "Réseaux sociaux"
+
+#~ msgid "Faculty"
+#~ msgstr "Template pour les sites de facultés (avec 4 actualités)"

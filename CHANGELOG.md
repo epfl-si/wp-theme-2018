@@ -1,4 +1,65 @@
 # CHANGELOG
+
+*1.4.5* (2019-05-23)
+- Shortcode News: visual_url dimension change (#210)
+- Shortcode News: update all news links (#208)
+
+*1.4.4* (2019-05-09)
+- Shortcode Memento: academic calendar (#207)
+
+*1.4.3* (2019-05-08)
+- Update to styleguide 2.0.3
+- Fix notice msg for enqueue script (#205)
+
+*1.4.2* (2019-05-03)
+- fix people image url
+
+*1.4.1* (2019-05-01)
+- Show infoscience search result in preview mode (#204)
+- Optimize used image size (#203)
+- Update footer links
+- Fix little home icon url for theme light
+
+*1.4.0* (2019-04-24)
+- Add theme light, setting a new folder structure
+- Fix combo box responsivity on search for labs UI
+
+*1.3.7* (2019-04-16)
+- Shortcode people: doctoral program (#198)
+- Search for labs UI (#194)
+
+*1.3.6* (2019-04-11)
+- Add/Update/Complete some translations (#197)
+- Shortcode News Fix (#196)
+
+*1.3.5* (2019-04-03)
+- People Fix (#193)
+- Add Tags to breadcrumb (#183)
+- Fix php notices (#191)
+
+*1.3.4* (2019-03-29)
+- People Fix (#192)
+
+*1.3.3* (2019-03-28)
+- Revert in part Fix PHP notices messages
+
+*1.3.2* (2019-03-28)
+- Fix PHP notice messages
+
+*1.3.1* (2019-03-21)
+- Font are fetched from root www
+
+*1.3.0* (2019-03-19)
+- Update to styleguide 2.0.0
+- Add favicons links
+- Set the "50 years" label in top and hamburger menus
+
+*1.2.34* (2019-03-14)
+- Fix showing link when no page exist in the aimed langage (#186)
+- Fix translation for Retour in hamburger (#184)
+- Update footer texts and links
+- Shorcode memento : Add speaker (#187)
+
 *1.2.33* (2019-03-06)
 - Update fonction_fr or fonction_en after change into people app (#181)
 
