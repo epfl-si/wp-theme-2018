@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2019-04-15 12:31+0200\n"
-"PO-Revision-Date: 2019-04-16 13:06+0200\n"
+"POT-Creation-Date: 2019-05-28 12:31+0200\n"
+"PO-Revision-Date: 2019-05-28 12:32+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -62,6 +62,26 @@ msgstr ""
 msgid "Skip to content"
 msgstr "Aller directement au contenu"
 
+#: header.php:192 header.php:214
+msgid "Search on the site"
+msgstr "Rechercher sur le site"
+
+#: header.php:193 header.php:215 searchform.php:4 searchform.php:18
+msgid "Search"
+msgstr "Recherche"
+
+#: header.php:194 searchform.php:6
+msgid "Validate"
+msgstr "Valider"
+
+#: header.php:204
+msgid "Show / hide the search form"
+msgstr "Afficher / masquer le formulaire de recherche"
+
+#: header.php:221
+msgid "Hide the search form"
+msgstr "Masquer le formulaire de recherche"
+
 #: inc/template-tags.php:59
 msgid ", "
 msgstr ", "
@@ -96,22 +116,14 @@ msgstr "Retour"
 msgid "Search Results for: %s"
 msgstr "Rechercher des résultats pour : %s"
 
-#: searchform.php:4 searchform.php:18
-msgid "Search"
-msgstr "Recherche"
-
 #: searchform.php:5 searchform.php:19
 msgid "Search in the EPFL Web"
 msgstr "Rerchercher sur le Web de l'EPFL"
 
-#: searchform.php:6
-msgid "Validate"
-msgstr "Valider"
-
 #: shortcodes/custom_highlight/shortcake.php:8
 #: shortcodes/custom_teasers/shortcake.php:28
 #: shortcodes/custom_teasers/view.php:44
-#: shortcodes/epfl_labs_search/view.php:58
+#: shortcodes/epfl_labs_search/view.php:56
 #: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
 msgid "Title"
 msgstr "Titre"
@@ -253,41 +265,33 @@ msgstr "Liste de définitions"
 msgid "Loading..."
 msgstr "Chargement..."
 
-#: shortcodes/epfl_labs_search/view.php:11
-msgid "Search inside"
-msgstr "Rechercher dans"
-
-#: shortcodes/epfl_labs_search/view.php:21
-msgid "All faculties"
-msgstr "Toutes les facultés"
-
-#: shortcodes/epfl_labs_search/view.php:24
-msgid "All institutes"
-msgstr "Tous les instituts"
-
-#: shortcodes/epfl_labs_search/view.php:27
-msgid "All field of research"
-msgstr "Tous les domaines de recherche"
-
-#: shortcodes/epfl_labs_search/view.php:30
-msgid "All"
-msgstr "Tout"
-
-#: shortcodes/epfl_labs_search/view.php:43
-msgid "Search for"
-msgstr "Rechercher"
-
-#: shortcodes/epfl_labs_search/view.php:48
+#: shortcodes/epfl_labs_search/view.php:15
 msgid "Type here a name, an url, a keyword, ..."
 msgstr "Entrer un nom, une url, un mot-clé, ..."
 
-#: shortcodes/epfl_labs_search/view.php:52
-msgid "Laboratories are part of faculties and institutes."
-msgstr "Les laboratoires font partie de facultés et d'instituts."
+#: shortcodes/epfl_labs_search/view.php:29
+msgid "All faculties"
+msgstr "Toutes les facultés"
 
-#: shortcodes/epfl_labs_search/view.php:57
+#: shortcodes/epfl_labs_search/view.php:32
+msgid "All institutes"
+msgstr "Tous les instituts"
+
+#: shortcodes/epfl_labs_search/view.php:35
+msgid "All field of research"
+msgstr "Tous les domaines de recherche"
+
+#: shortcodes/epfl_labs_search/view.php:38
+msgid "All"
+msgstr "Tout"
+
+#: shortcodes/epfl_labs_search/view.php:55
 msgid "Acronym"
 msgstr "Acronyme"
+
+#: shortcodes/epfl_labs_search/view.php:57
+msgid "Tags"
+msgstr ""
 
 #: shortcodes/epfl_memento/templates/card-info.php:22
 msgid "With"
@@ -306,20 +310,20 @@ msgstr "Catégorie"
 msgid "Complete agenda of events"
 msgstr "Voir l’agenda complet des événements"
 
-#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:148
-#: shortcodes/epfl_memento/view.php:216
+#: shortcodes/epfl_memento/view.php:25 shortcodes/epfl_memento/view.php:205
+#: shortcodes/epfl_memento/view.php:293
 msgid "No scheduled events"
 msgstr "Aucun événement programmé"
 
-#: shortcodes/epfl_memento/view.php:96
+#: shortcodes/epfl_memento/view.php:139
 msgid "Learn more & apply"
 msgstr "Information & inscription"
 
-#: shortcodes/epfl_memento/view.php:137
+#: shortcodes/epfl_memento/view.php:194
 msgid "Next events"
 msgstr "Les prochains événements"
 
-#: shortcodes/epfl_memento/view.php:140
+#: shortcodes/epfl_memento/view.php:197
 msgid "See all events"
 msgstr "Voir tous les événements"
 
@@ -526,6 +530,15 @@ msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
 #: template-parts/content-post.php:50 template-parts/content.php:50
 msgid "Pages:"
 msgstr "Pages :"
+
+#~ msgid "Search inside"
+#~ msgstr "Rechercher dans"
+
+#~ msgid "Search for"
+#~ msgstr "Rechercher"
+
+#~ msgid "Laboratories are part of faculties and institutes."
+#~ msgstr "Les laboratoires font partie de facultés et d'instituts."
 
 #~ msgid "Journal Articles"
 #~ msgstr "Articles de journaux"
