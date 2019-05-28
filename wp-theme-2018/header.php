@@ -189,29 +189,45 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 		</a>
 		<form action="https://search.epfl.ch/" class="dropdown-menu border-0 p-0">
 			<div class="search-form mt-1 input-group">
-				<label for="search" class="sr-only">Rechercher sur le site</label>
-				<input type="text" class="form-control" name="q" placeholder="Rechercher" >
-				<button type="submit" class="d-none d-xl-block btn btn-primary input-group-append" type="button">Valider</button>
+				<label for="search" class="sr-only"><?php esc_html_e('Search on the site', 'epfl') ?></label>
+				<input type="text" class="form-control" name="q" placeholder="<?php esc_html_e('Search', 'epfl') ?>" >
+				<button type="submit" class="d-none d-xl-block btn btn-primary input-group-append" type="button"><?php esc_html_e('Validate', 'epfl') ?></button>
 			</div>
 		</form>
 	</div>
 
-	<form action="https://search.epfl.ch/" class="d-xl-none">
-		<div class="input-group search-mobile" role="search">
-			<div class="input-group-prepend">
-				<span class="input-group-text">
-					<svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
-				</span>
-			</div>
-				<label for="search" class="sr-only">Rechercher sur le site</label>
-				<input type="text" class="form-control" name="q" placeholder="Rechercher">
-		</div>
-	</form>
+<form action="https://search.epfl.ch/" class="d-xl-none">
+  <a id="search-mobile-toggle" class="search-mobile-toggle searchform-controller" href="#">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+    <span class="toggle-label sr-only"><?php esc_html_e('Show / hide the search form', 'epfl') ?></span>
+  </a>
+  <div class="input-group search-mobile" role="search">
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+      </span>
+    </div>
+    <label for="search" class="sr-only"><?php esc_html_e('Search on the site', 'epfl') ?></label>
+    <input type="text" class="form-control" name="search" placeholder="<?php esc_html_e('Search', 'epfl') ?>">
+    <div class="input-group-append">
+      <a id="search-mobile-close" class="search-mobile-close searchform-controller" href="#">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+        <span class="toggle-label sr-only"><?php esc_html_e('Hide the search form', 'epfl') ?></span>
+      </a>
+    </div>
+  </div>
+</form>  
 
 	<?php get_template_part( 'template-parts/language-switcher' ) ?>
 
   <div class="btn btn-secondary nav-toggle-mobile d-xl-none">
-		Menu
+    <span class="label">Menu</span>
 		<div class="hamburger">
 			<span></span>
 			<span></span>
