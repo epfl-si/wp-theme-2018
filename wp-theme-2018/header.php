@@ -212,7 +212,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
       </span>
     </div>
     <label for="search" class="sr-only"><?php esc_html_e('Search on the site', 'epfl') ?></label>
-    <input type="text" class="form-control" name="search" placeholder="<?php esc_html_e('Search', 'epfl') ?>">
+    <input type="text" class="form-control" name="q" placeholder="<?php esc_html_e('Search', 'epfl') ?>">
     <div class="input-group-append">
       <a id="search-mobile-close" class="search-mobile-close searchform-controller" href="#">
         <svg class="icon" aria-hidden="true">
