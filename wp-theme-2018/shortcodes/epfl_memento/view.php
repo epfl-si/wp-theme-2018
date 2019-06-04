@@ -286,7 +286,7 @@ $count++;
 </div>
 <?php elseif ("4" === $template): // TEMPLATE LISTING WITHOUT HIGHLIGHT ?>
 
-<div class="list-group">
+<div class="container list-group" style="padding-left: 16px">
 <?php
     if (!(bool) $data) {
       echo '<div><h3>';
