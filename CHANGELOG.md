@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*1.4.7* (2019-06-05)
+- Element new version (2.0.6)
+- Memento listing update (#213)
+
+
 *1.4.6* (2019-05-28)
 - Update html for styleguide 2.0.5 (#212)
 - Shortcode epfl_labs_search: Fix epfl_labs_search loading js an css globally (#211)
