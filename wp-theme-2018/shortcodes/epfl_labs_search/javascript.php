@@ -4,6 +4,7 @@
 ?>
 
 <script type='text/javascript'>
+window.onload = function() {  // wait that jQuery is loaded
     jQuery(document).ready(function( $ ) {
         var options = {
             valueNames: [
@@ -43,4 +44,5 @@
         $('#select-institute').change();
         <?php endif;?>
     });
+}
 </script>

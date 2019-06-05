@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.4.6* (2019-05-28)
+- Update html for styleguide 2.0.5 (#212)
+- Shortcode epfl_labs_search: Fix epfl_labs_search loading js an css globally (#211)
+
 *1.4.5* (2019-05-23)
 - Shortcode News: visual_url dimension change (#210)
 - Shortcode News: update all news links (#208)
