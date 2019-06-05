@@ -6,14 +6,15 @@ Epfl theme (Wordpress)
  * Uses shortcodes to display special content served by EPFL APIs.
 
 ## Requirements
-  * production build of [elements](https://github.com/epfl-idevelop/elements) located in `/assets`
+  * production build files of [elements](https://github.com/epfl-idevelop/elements) located in `/assets` (create a new version if needed)
   * composer
 
-## Setup
+## How to install
   1. Copy (or symlink) the theme in the `/wp-content/themes` directory of your project
   2. Nothing more, you're ready to go! 🚀
 
-## Recovering the last version of the styleguide
+## Build a new release
+### Recovering the last version of the styleguide
   - head towards [https://github.com/epfl-idevelop/elements/tree/dist/frontend](https://github.com/epfl-idevelop/elements/tree/dist/frontend)
   - use git clone / download zip to recover the files of this branch
   - put all these recovered files into `wp-theme-2018/assets` 
@@ -22,13 +23,13 @@ Epfl theme (Wordpress)
   - commit the builds
   - here you go, you just updated the styleguide version contained in this theme !
 
-## Create a new release
-  ### Requirements:
+### Create a new release
+#### Requirements:
   - understand the gitflow logic ([gitflow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/))
   - install `git flow` locally [How to install gitflow](https://github.com/nvie/gitflow/wiki/Installation)
   - initialise git flow in your repo by typing `git flow init`
 
-### process
+  ### process
   - make sure your local branches `master` and `dev` are up-to-date
   - start a release: `git flow release start x.x.x`
   - update the following files:
