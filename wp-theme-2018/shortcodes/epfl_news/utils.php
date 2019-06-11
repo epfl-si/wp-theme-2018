@@ -76,22 +76,4 @@ function epfl_news_get_visual_url($news) {
     return $news->visual_url;
 }
 
-/**
- * Get attachment url by slug
- */
-function get_attachment_url_by_slug( $slug ) {
-    
-    $args = array(
-      'post_type'      => 'attachment',
-      'name'           => sanitize_title($slug),
-      'posts_per_page' => 1,
-      'post_status'    => 'inherit',
-    );
-
-    $_header = get_posts( $args );
-    $header  = $_header ? array_pop($_header) : null;
-
-    return $header ? wp_get_attachment_url($header->ID) : '';
-  }
-
 ?>
