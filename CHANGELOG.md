@@ -1,9 +1,12 @@
 # CHANGELOG
 
+*1.4.8* (2019-06-05)
+- Add 'fr/' for French page, remove unused and confusing func (#214)
+- Shortcode News: integration of vimeo short video (#215)
+
 *1.4.7* (2019-06-05)
 - Element new version (2.0.6)
 - Memento listing update (#213)
-
 
 *1.4.6* (2019-05-28)
 - Update html for styleguide 2.0.5 (#212)
