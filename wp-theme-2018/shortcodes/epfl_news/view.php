@@ -25,17 +25,19 @@
       <?php
         foreach($data as $news) {
 
-          $is_first_event    = ($count==1);
-          $image_description = epfl_news_get_image_description($news);
-          $category          = epfl_news_get_label_category($news);
-          $publish_date      = epfl_news_get_publish_date($news);
-          $subtitle          = epfl_news_get_subtitle($news);
-          $visual_url        = epfl_news_get_visual_url($news);
-          $video_name        = "teaser_" . str_replace("https://actu.epfl.ch/news/", "", $news->news_url);
-          $media_url         = get_attachment_url_by_slug($video_name);
+          $is_first_event       = ($count==1);
+          $image_description    = epfl_news_get_image_description($news);
+          $category             = epfl_news_get_label_category($news);
+          $publish_date         = epfl_news_get_publish_date($news);
+          $subtitle             = epfl_news_get_subtitle($news);
+          $visual_url           = epfl_news_get_visual_url($news);
+          $short_vimeo_video_id = $news->short_vimeo_video_id;
+        
+          if ( !empty($short_vimeo_video_id) ) {
+            $media_url = "https://player.vimeo.com/video/" . $short_vimeo_video_id . "?autoplay=1&loop=1&muted=1&background=1&quality=720";
+          }
           
           if (2 == $template and 1 != $count and false == $header) {
-
             $header = true;
               echo '<div class="container pb-5 offset-xl-top pt-5 pt-xl-0">';
               echo '<div class="row">';
@@ -96,15 +98,11 @@
 <?php
   elseif ("3" == $template): // TEMPLATE WWW WITH 1 NEWS
 ?>
-
       <div class="fullwidth-teaser fullwidth-teaser-horizontal">
-        <?php if ($media_url): ?>
-          <div class="embed-responsive embed-responsive-16by9">
-            <video autoplay muted loop>
-              <source class="embed-responsive-item" src="<?php echo $media_url; ?>" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
-          </div>
+        <?php if (!empty($media_url)): ?>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="<?php echo $media_url; ?>" frameborder="1"></iframe>
+            </div>
         <?php else: ?>
           <picture>
             <img src="<?php echo esc_url($visual_url) ?>" aria-labelledby="background-label" alt="<?php echo esc_attr($image_description) ?>"/>
@@ -139,12 +137,9 @@
 <?php if ($is_first_event): ?>
 
         <div class="fullwidth-teaser fullwidth-teaser-horizontal">
-        <?php if ($media_url): ?>
+        <?php if (!empty($media_url)): ?>
           <div class="embed-responsive embed-responsive-16by9">
-            <video autoplay muted loop>
-              <source class="embed-responsive-item" src="<?php echo $media_url; ?>" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
+            <iframe src="<?php echo $media_url; ?>" frameborder="1"></iframe>
           </div>
         <?php else: ?>
           <picture>
