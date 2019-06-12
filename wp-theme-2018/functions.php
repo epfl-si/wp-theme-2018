@@ -352,49 +352,12 @@ function get_epfl_home_url () {
 	$epfl_root = 'https://www.epfl.ch/';
 
 	if ($current_language === 'fr') {
-		return $epfl_root;
+		return $epfl_root . 'fr/';
 	} else {
 		return $epfl_root . 'en/';
 	}
 }
 
-/**
- * get_nav_home_url
- * returns to the home, with the good langage
- * good langage = default value is english, or if possible, french
- * @return string
- */
-function get_nav_home_url() {
-	if (class_exists('EPFL\Pod\Site')) {
-		$site_root = \EPFL\Pod\Site::root()->get_url();
-	} else {
-		$site_root = 'https://www.epfl.ch/';
-    }
-
-    $site_root_fr = $site_root;
-    $site_root_en = $site_root . 'en/';
-
-    /* If Polylang installed */
-	if(function_exists('pll_current_language'))
-	{
-        $current_lang = pll_current_language('slug');
-        // Check if current lang is supported. If not, use default lang
-		if ($current_lang === 'fr')
-		{
-			return $site_root_fr;
-		} else {
-			return $site_root_en;
-		}
-    } else {
-        $lang = get_bloginfo("language");
-
-        if ($lang === 'fr-FR') {
-            return $site_root_fr;
-        } else {
-			return $site_root_en;
-		}
-	}
-}
 
 /**
  * Remove <p></p> tags around <img src="" alt=""> inputed in the wysiwyg
