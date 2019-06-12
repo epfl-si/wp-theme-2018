@@ -1,6 +1,6 @@
 # CHANGELOG
 
-*1.4.8* (2019-06-05)
+*1.4.8* (2019-06-12)
 - Add 'fr/' for French page, remove unused and confusing func (#214)
 - Shortcode News: integration of vimeo short video (#215)
 
