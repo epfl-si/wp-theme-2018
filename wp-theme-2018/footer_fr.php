@@ -1,7 +1,7 @@
 <footer class="footer" role="contentinfo">
 
   <div class="footer-group footer-sitemap">
-      
+
   <div class="footer-sitemap-col">
     <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-1" aria-expanded="false" aria-controls="collapse-footer-1">
             <strong>A propos</strong>
@@ -30,7 +30,7 @@
                         <a href="https://www.epfl.ch/about/news-and-media/fr/accueil/">News & médias</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/about/sustainability/fr/accueil/">Campus durable</a>
+                        <a href="https://www.epfl.ch/about/sustainability/fr/accueil/">Durabilité</a>
                                   </li>
                   <li>
                         <a href="https://equality.epfl.ch/fr/index-fr-html/">Égalité des chances</a>
@@ -182,7 +182,7 @@
   </div>
 
   <div class="footer-group">
-    
+
 <div class="footer-faculties">
   <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-fac" aria-expanded="false" aria-controls="collapse-fac">
         Facultés
@@ -219,11 +219,10 @@
   </div>
 
   <div class="footer-group footer-buttons">
-    
-<p class="footer-title footer-title-no-underline">Pratique</p>
-<a href="https://www.epfl.ch/campus/services/" class="btn btn-secondary btn-sm">Services et ressources</a>
-<a href="tel:+41216933000" class="btn btn-secondary btn-sm">Urgences : +41 21 693 3000</a>
-
+    <p class="footer-title footer-title-no-underline">Pratique</p>
+    <a href="https://www.epfl.ch/campus/services/" class="btn btn-secondary btn-sm">Services et ressources</a>
+    <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Urgences : +41 21 693 3000</a>
+    <a href="https://www.epfl.ch/about/overview/contact/" class="btn btn-secondary btn-sm">Contact</a>
   </div>
 
   <div class="footer-group footer-socials">
@@ -252,11 +251,11 @@
 </div>
   </div>
 
-  
+
 <div class="footer-legal">
   <div class="footer-legal-links">
     <a href="https://epfl-idevelop.github.io/elements/#/doc/accessibility.html">Accessibilité</a>
-    <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/">Mentions légales</a>
+    <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/">Mentions légales</a>
   </div>
   <div>
     <p>&copy; <?php echo date("Y"); ?> EPFL, tous droits réservés</p>
