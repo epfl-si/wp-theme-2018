@@ -254,7 +254,7 @@
 
 <div class="footer-legal">
   <div class="footer-legal-links">
-    <a href="https://epfl-idevelop.github.io/elements/#/doc/accessibility.html">Accessibility</a>
+    <a href="https://www.epfl.ch/about/overview/overview/regulations-and-guidelines/disclaimer/">Accessibility</a>
     <a href="https://www.epfl.ch/about/overview/overview/regulations-and-guidelines/disclaimer/">Disclaimer</a>
   </div>
   <div>
