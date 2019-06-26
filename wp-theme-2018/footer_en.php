@@ -254,8 +254,8 @@
 
 <div class="footer-legal">
   <div class="footer-legal-links">
-    <a href="https://www.epfl.ch/about/overview/overview/regulations-and-guidelines/disclaimer/">Accessibility</a>
-    <a href="https://www.epfl.ch/about/overview/overview/regulations-and-guidelines/disclaimer/">Disclaimer</a>
+    <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/">Accessibility</a>
+    <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/">Disclaimer</a>
   </div>
   <div>
     <p>&copy; <?php echo date("Y"); ?> EPFL, all rights reserved</p>
