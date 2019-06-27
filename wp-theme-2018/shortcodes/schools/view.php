@@ -8,7 +8,7 @@
       <?php for($i = 1; $i <= 10; $i++): ?>
         <?php if ($data['title'.$i]) : ?>
           <?php $image = get_post($data['image'.$i]); ?>
-          <div class="col-sm-4">
+          <div class="col-sm-6 col-xl-4">
             <a href="<?php echo $data['link'.$i]; ?>" class="card card-overlay link-trapeze-horizontal">
               <picture class="card-img">
                 <?php echo wp_get_attachment_image($data['image'.$i], 'thumbnail_16_9_large_40p', '', ['class' => 'img-fluid']) ?>
