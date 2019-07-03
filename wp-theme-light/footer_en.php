@@ -38,11 +38,11 @@
 </a>
           </span>
         </p>
-        
+
 <div class="footer-legal">
   <div class="footer-legal-links">
-    <a href="https://epfl-idevelop.github.io/elements/#/doc/accessibility.html">Accessibility</a>
-    <a href="https://www.epfl.ch/about/overview/overview/regulations-and-guidelines/">Legals</a>
+    <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer">Accessibility</a>
+    <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer">Legals</a>
   </div>
   <div>
     <p>&copy; <?php echo date("Y"); ?> EPFL, all rights reserved</p>

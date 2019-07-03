@@ -1,6 +1,12 @@
 # CHANGELOG
 
-*1.4.8* (2019-06-05)
+*1.5.0* (2019-07-03)
+- Update element to 2.1.0
+- Fix schools padding
+- Improve reviews infromation in publication
+- Fix adminbar bug
+
+*1.4.8* (2019-06-12)
 - Add 'fr/' for French page, remove unused and confusing func (#214)
 - Shortcode News: integration of vimeo short video (#215)
 
@@ -126,22 +132,22 @@
 
 *1.2.20* (2018-11-29)
   - Set version for css and js based on the mtime of VERSION file
-  
+
 *1.2.19* (2018-11-29)
   - Update Styleguide to 1.3.5, including the footer
-  - Add multi language navigation design (#152) 
+  - Add multi language navigation design (#152)
   - Add translation for browse button (#153)
 
 *1.2.18* (2018-11-19)
   - Fix epfl-news: wrong label replace by lastest news (#149)
   - Fix epfl-memento: not display event if even hasn't date (#148)
   - Set a fixed url until we go a better solution (#150)
-  - Add translations for the footer (#147) 
+  - Add translations for the footer (#147)
   - Use the theme's wwp-get_multisite_home_url to calculate home links (#151)
 
 *1.2.17* (2018-11-14)
   - Fix post teaser gray background (#146)
-  - Fix epfl people design (#145) 
+  - Fix epfl people design (#145)
 
 *1.2.16* (2018-11-14)
   - epfl_social_feed: simplify renderer to align the feed in center (#144)
@@ -179,7 +185,7 @@
   - Add a way to render people in list (#126)
   - Fix toggle id to be unique (#121)
   - Add some translations (#118)
-  - Fix richtext render for epfl-card and epfl-contact (#123) 
+  - Fix richtext render for epfl-card and epfl-contact (#123)
 
 *1.2.12* (2018-10-22)
   - Quick menu-related fixes (#122)
@@ -200,7 +206,7 @@
   - epfl-social: render HTML
   - epfl-share: render HTML
   - epfl-people: render HTML
-  - fix custom_hightlight admin label 
+  - fix custom_hightlight admin label
   - epfl-memento: render HTML for listing templates
   - epfl-toggle: render v2
 
@@ -235,7 +241,7 @@
 
 *1.2.4* (2018-08-30)
   - remove top padding on homepage
-  - hotfix overflow hidden events 
+  - hotfix overflow hidden events
 
 *1.2.3* (2018-08-30)
   - epfl-news: fix big image for news shortcode

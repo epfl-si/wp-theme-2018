@@ -1,7 +1,7 @@
 <footer class="footer" role="contentinfo">
 
   <div class="footer-group footer-sitemap">
-      
+
   <div class="footer-sitemap-col">
     <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-1" aria-expanded="false" aria-controls="collapse-footer-1">
                   <strong>About</strong>
@@ -30,7 +30,7 @@
                                     <a href="https://www.epfl.ch/about/news-and-media/">News & media</a>
                       </li>
                   <li>
-                                    <a href="https://www.epfl.ch/about/sustainability/">Sustainable campus</a>
+                                    <a href="https://www.epfl.ch/about/sustainability/">Sustainability</a>
                       </li>
                   <li>
                                     <a href="https://equality.epfl.ch">Equal opportunities</a>
@@ -182,7 +182,7 @@
   </div>
 
   <div class="footer-group">
-    
+
 <div class="footer-faculties">
   <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-fac" aria-expanded="false" aria-controls="collapse-fac">
             Schools
@@ -219,11 +219,10 @@
   </div>
 
   <div class="footer-group footer-buttons">
-    
-
-<p class="footer-title footer-title-no-underline">Practical</p>
-<a href="https://www.epfl.ch/campus/services/en/homepage/" class="btn btn-secondary btn-sm">Services and resources</a>
-<a href="tel:+41216933000" class="btn btn-secondary btn-sm">Emergencies: +41 21 693 3000</a>
+    <p class="footer-title footer-title-no-underline">Practical</p>
+    <a href="https://www.epfl.ch/campus/services/en/homepage/" class="btn btn-secondary btn-sm">Services and resources</a>
+    <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Emergencies: +41 21 693 3000</a>
+    <a href="https://www.epfl.ch/about/overview/contact-en/" class="btn btn-secondary btn-sm">Contact</a>
   </div>
 
   <div class="footer-group footer-socials">
@@ -252,11 +251,11 @@
 </div>
   </div>
 
-  
+
 <div class="footer-legal">
   <div class="footer-legal-links">
-    <a href="https://epfl-idevelop.github.io/elements/#/doc/accessibility.html">Accessibility</a>
-    <a href="https://www.epfl.ch/about/overview/overview/regulations-and-guidelines/">Legals</a>
+    <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/">Accessibility</a>
+    <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer/">Disclaimer</a>
   </div>
   <div>
     <p>&copy; <?php echo date("Y"); ?> EPFL, all rights reserved</p>
