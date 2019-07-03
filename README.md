@@ -46,26 +46,10 @@ Epfl theme (Wordpress)
   - initialise git flow in your repo by typing `git flow init`
   
   Which branch should be used for bringing forth production releases?
-   - dev
-   - feature-epfl-card
-   - feature-epfl-news-homepage
-   - feature-epfl-news-list
-   - feature-epfl-scienceqa
-   - feature-memento
-   - fix-news-container-full
-   - fix-version-number
-   - master
+   
 Branch name for production releases: [master] 
 
 Which branch should be used for integration of the "next release"?
-   - dev
-   - feature-epfl-card
-   - feature-epfl-news-homepage
-   - feature-epfl-news-list
-   - feature-epfl-scienceqa
-   - feature-memento
-   - fix-news-container-full
-   - fix-version-number
 Branch name for "next release" development: [] dev
 
 How to name your supporting branch prefixes?
