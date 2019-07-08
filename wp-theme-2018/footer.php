@@ -9,7 +9,7 @@
  * @package epfl
  */
 ?>
-<div class="bg-gray-100 pt-5 mt-5">
+<div class="bg-gray-100 py-5 mt-5">
 	<div class="container">
 	<?php
 		// TODO: Generate footer based on future webservice?
