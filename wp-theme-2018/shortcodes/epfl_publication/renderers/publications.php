@@ -328,6 +328,8 @@ Class JournalArticlesShortInfosciencePublication2018Render extends ShortInfoscie
             $html_rendered .= '&nbsp;';
         }
 
+        $html_rendered .= JournalDetailsInfoscienceField2018Render::render($publication, self::$format);
+
         $html_rendered .= DOIInfoscienceField2018Render::render($publication, self::$format);
 
         return $html_rendered;
