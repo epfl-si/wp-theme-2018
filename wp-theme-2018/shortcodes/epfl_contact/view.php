@@ -38,4 +38,5 @@
       <?php endif; ?>
     </div>
     <?php if ($gray_wrapper): ?></div><?php endif; ?>
+  </div>
 </div>

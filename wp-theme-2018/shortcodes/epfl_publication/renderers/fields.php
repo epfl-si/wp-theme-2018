@@ -1,7 +1,7 @@
 <?php
-/* 
+/*
 * Fields
-*/ 
+*/
 Class InfoscienceField2018Render {
     /*
     * Check if the filed exist and is not empty, including subfield if provided
@@ -38,7 +38,7 @@ Class InfoscienceField2018Render {
             } else {
                 $html_rendered .= "<span>. </span>";
             }
-        }        
+        }
     }
 }
 
@@ -124,7 +124,7 @@ Class TitleInfoscienceField2018Render extends InfoscienceField2018Render {
     }
 }
 
-# for 
+# for
 # - book chapters
 # - books
 # - theses
@@ -211,7 +211,7 @@ Class BooksPublicationLocationInsitutionDateInfoscienceField2018Render extends I
                     $html_rendered .= '. ';
                 }
             }
-            
+
             if ($publication['publication_institution']) {
                 $html_rendered .= '<span class="text-muted small mb-0 infoscience_publication_institution">' . $publication['publication_institution'][0] . '</span>';
                 if (self::field_exists($publication['publication_date'])) {
@@ -236,7 +236,7 @@ Class PublicationDateInfoscienceField2018Render extends InfoscienceField2018Rend
             if ($format === 'detailed') {
                 $html_rendered .= '<p class="text-muted small mb-0 infoscience_publication_date">' . $publication['publication_date'][0] . '</p>';
             } else {
-                $html_rendered .= '<span class="text-muted small infoscience_publication_date"><i>' . $publication['publication_date'][0] . '</i>.</span>';
+                $html_rendered .= '<span class="text-muted small infoscience_publication_date">' . $publication['publication_date'][0] . '.</span>';
             }
         }
 
@@ -340,7 +340,7 @@ Class JournalPageInfoscienceField2018Render extends InfoscienceField2018Render {
                 $html_rendered .= ' <span class="text-muted small mb-0 infoscience_journal_page">' . __('p.', 'epfl-infoscience-search') . ' ' . $publication['journal'][0]['page'] .'. </span>';
             }
         }
- 
+
         return $html_rendered;
     }
 }
@@ -354,7 +354,7 @@ Class JournalDetailsInfoscienceField2018Render extends InfoscienceField2018Rende
             if (self::field_exists($publication['journal'], 'volume')) {
                 $html_rendered .= '<span class="text-muted small mb-0 infoscience_journal_volume">' . __('Vol.', 'epfl-infoscience-search') . ' ' . $publication['journal'][0]['volume'] .' ';
 
-                if (self::field_exists($publication['journal'], 'number') || 
+                if (self::field_exists($publication['journal'], 'number') ||
                     self::field_exists($publication['journal'], 'page')) {
                     $html_rendered .= '</span>, ';
                 } else {
@@ -373,6 +373,27 @@ Class JournalDetailsInfoscienceField2018Render extends InfoscienceField2018Rende
 
             $html_rendered .= JournalPageInfoscienceField2018Render::render($publication, 'short', $has_next);
         } else {
+            if (self::field_exists($publication['journal'], 'volume')) {
+                $html_rendered .= '<span class="text-muted small mb-0 infoscience_journal_volume">' . __('Vol.', 'epfl-infoscience-search') . ' ' . $publication['journal'][0]['volume'];
+
+                if (self::field_exists($publication['journal'], 'number') ||
+                    self::field_exists($publication['journal'], 'page')) {
+                    $html_rendered .= '</span><span class="text-muted small mb-0">, </span>';
+                } else {
+                    $html_rendered .= '</span><span class="text-muted small mb-0">. </span>';
+                }
+            }
+
+            if (self::field_exists($publication['journal'], 'number')) {
+                $html_rendered .= '<span class="text-muted small mb-0 infoscience_journal_number">' . __('num.', 'epfl-infoscience-search') . ' ' . $publication['journal'][0]['number'];
+                if (self::field_exists($publication['journal'], 'page')) {
+                    $html_rendered .= '</span><span class="text-muted small mb-0">, </span>';
+                } else {
+                    $html_rendered .= '</span><span class="text-muted small mb-0">. </span>';
+                }
+            }
+
+            $html_rendered .= JournalPageInfoscienceField2018Render::render($publication, 'short', $has_next);
         }
         return $html_rendered;
     }
@@ -384,8 +405,8 @@ Class ConferenceDataInfoscienceField2018Render extends InfoscienceField2018Rende
 
         if (self::field_exists($publication['conference'], 'name')) {
             $html_rendered .= '<span class="text-muted small mb-0 infoscience_conference_name">' . $publication['conference'][0]['name'];
-            
-            if (self::field_exists($publication['conference'], 'location') || 
+
+            if (self::field_exists($publication['conference'], 'location') ||
                 self::field_exists($publication['conference'], 'date')) {
                 $html_rendered .= ", </span>";
             } else {
@@ -395,7 +416,7 @@ Class ConferenceDataInfoscienceField2018Render extends InfoscienceField2018Rende
 
         if (self::field_exists($publication['conference'], 'location')) {
             $html_rendered .= '<span class="text-muted small mb-0 infoscience_conference_location">' . $publication['conference'][0]['location'];
-            
+
             if (self::field_exists($publication['conference'], 'location')) {
                 $html_rendered .= ", </span>";
             } else {
@@ -434,14 +455,14 @@ Class CorporateNameInfoscienceField2018Render extends InfoscienceField2018Render
 
         if (self::field_exists($publication['corporate_name'])) {
             $html_rendered .= "<span>" . $publication['corporate_name'][0] . "</span>";
-    
+
             if ($has_next) {
                 $html_rendered .= "<span> / </span>";
             } else {
                 $html_rendered .= "<span>: </span>";
             }
         }
-        
+
         return $html_rendered;
     }
 }
@@ -449,7 +470,7 @@ Class CorporateNameInfoscienceField2018Render extends InfoscienceField2018Render
 Class CompanyNameInfoscienceField2018Render extends InfoscienceField2018Render {
     public static function render($publication, $format, $has_next=false) {
         $html_rendered = "";
-        
+
         if (self::field_exists($publication['corporate_name'])) {
             if ($format === 'detailed') {
                 $html_rendered .= "<span>" . $publication['company_name'][0] . "</span>";
@@ -464,7 +485,7 @@ Class CompanyNameInfoscienceField2018Render extends InfoscienceField2018Render {
                 $html_rendered .= "<span>: </span>";
             }
         }
-        
+
         return $html_rendered;
     }
 }
@@ -481,14 +502,14 @@ Class PatentsInfoscienceField2018Render extends InfoscienceField2018Render {
 
                 foreach ($publication['patent'] as $patent) {
                     $html_rendered .= '<li class="infoscience_patents_number"><span class="">' . $patent['number'] . "</span> ";
-        
+
                     if (array_key_exists('state', $patent) && $patent['state']) {
                         $html_rendered .= '(<span class="infoscience_patent_state">' . $patent['state'] . "</span>)";
                     }
-        
+
                     $html_rendered .= "</li>";
                 }
-        
+
                 $html_rendered .= '</ul></p>';
             } else {
                 $len_patents = count($publication['patent']);
@@ -505,9 +526,9 @@ Class PatentsInfoscienceField2018Render extends InfoscienceField2018Render {
                             $html_rendered .= "; ";
                         }
                     }
-                    
+
                     $html_rendered .= '</p>';
-    
+
                 }
 
             }
@@ -540,7 +561,7 @@ Class ReportUrlInfoscienceField2018Render extends InfoscienceField2018Render {
                 $html_rendered .= "<span>. </span>";
                 $html_rendered .= '<p><a href="' . $publication['report_url'][0] . '" target="_blank">' . $publication['report_url'][0] . '</a>.</p>';
             }
-        } 
+        }
 
         return $html_rendered;
     }
