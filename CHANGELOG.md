@@ -1,5 +1,12 @@
 # CHANGELOG
 
+*1.5.1* (2019-07-10)
+- Add journal information for publications (#223)
+- Move publication date in Article publications (#223)
+- Fix missing div in contact shortcode
+- Add bottom padding to the footer (#220)
+- Add styles to deal with image width inside standard pages (#221)
+
 *1.5.0* (2019-07-03)
 - Update element to 2.1.0
 - Fix schools padding
