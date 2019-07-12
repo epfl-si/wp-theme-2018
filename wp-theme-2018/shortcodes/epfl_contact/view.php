@@ -4,9 +4,7 @@
 ?>
 
 <div class="container <?php echo ($gray_wrapper) ? 'bg-gray-100 py-2 my-5' : 'my-3'; ?>">
-  <?php if ($gray_wrapper): ?>
-  <div class="bg-white p-4 p-md-5">
-  <?php endif; ?>
+  <?php if ($gray_wrapper): ?><div class="bg-white p-4 p-md-5"><?php endif; ?>
     <div class="row">
       <div class="col-md-6">
         <h3>Contact</h3>
@@ -32,11 +30,16 @@
         endfor;
         ?>
       </div>
-      <?php if ($data['map_query']): ?>
+      <?php
+      # bad quickfix that disallow INN011 as a place
+      # because INN011 was a value in shortcake and not a placeholder
+      # meaning some contact shortcode have this value but don't want to show a map
+      if ($data['map_query'] && $data['map_query'] != 'INN011'):
+      ?>
       <div class="col-md-6 d-flex flex-column">
         <?php echo do_shortcode( '[epfl_map lang="' .pll_current_language(). '" query="'. $data['map_query'] .'"]' ); ?>
+      </div>
       <?php endif; ?>
     </div>
-    <?php if ($gray_wrapper): ?></div><?php endif; ?>
-  </div>
+  <?php if ($gray_wrapper): ?></div><?php endif; ?>
 </div>
