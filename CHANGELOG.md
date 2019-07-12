@@ -1,7 +1,7 @@
 # CHANGELOG
 
-*1.5.2* (2019-07-10)
-- Fix missing div
+*1.5.2* (2019-07-12)
+- Fix missing div in contact shortcode
 
 *1.5.1* (2019-07-10)
 - Add journal information for publications (#223)
