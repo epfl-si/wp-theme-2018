@@ -7,7 +7,7 @@
     <div class="hero-content-container">
       <h1 class="hero-title"><?php echo $data['title'] ?></h1>
       <div class="hero-content">
-        <?php echo $data['text'] ?>
+        <p><?php echo $data['text'] ?></p>
       </div>
     </div>
     <div class="hero-img">

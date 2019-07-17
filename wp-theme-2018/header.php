@@ -111,19 +111,20 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'epfl' ); ?></a>
-  
+
   <?php
     // Get the directory name of the active theme
     $themeSlug = get_option('stylesheet');
-  
+    $headerLightClass = '';
+
     if ( $themeSlug == 'wp-theme-light' ) {
       $headerLightClass = ' header-light';
     };
   ?>
 	<header role="banner" class="header<?php echo $headerLightClass; ?>">
-    
+
   <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
-    
+
     <div class="drawer mr-3 mr-xl-0">
     <button class="drawer-toggle">
       <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
@@ -134,9 +135,9 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
       </span>
     </a>
   </div>
-    
+
   <div class="header-light-content">
-    
+
   <?php endif; ?>
 
   <?php
@@ -222,7 +223,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
       </a>
     </div>
   </div>
-</form>  
+</form>
 
 	<?php get_template_part( 'template-parts/language-switcher' ) ?>
 
@@ -234,11 +235,11 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 			<span></span>
 		</div>
 	</div>
-    
+
   <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
   </div>
   <?php endif; ?>
-    
+
 </header>
 
 <div class="main-container">
