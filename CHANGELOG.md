@@ -1,4 +1,6 @@
 # CHANGELOG
+*1.5.3* (2019-07-17)
+- Wrap shortcode text with p tag (#225)
 
 *1.5.2* (2019-07-12)
 - Fix missing div in contact shortcode
