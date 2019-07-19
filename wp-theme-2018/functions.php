@@ -144,10 +144,11 @@ function epfl_scripts() {
 	wp_enqueue_style( 'epfl-base', get_template_directory_uri().'/assets/css/base.css', array(), $vsn );
 	wp_enqueue_style( 'epfl-theme', get_template_directory_uri().'/theme/style.min.css', array(), $vsn );
 
-	wp_enqueue_script( 'epfl-js-jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), $vsn, true );
-	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', array(), $vsn, true );
-	wp_enqueue_script( 'epfl-js-vendors-bundle', get_template_directory_uri() . '/assets/js/vendors.bundle.js', array(), $vsn, true );
-	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/app.bundle.js', array('epfl-js-vendors-bundle'), $vsn, true );
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.3.1.min.js", array(), $vsn );
+	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', ['jquery'], $vsn, true );
+	wp_enqueue_script( 'epfl-js-vendors-bundle', get_template_directory_uri() . '/assets/js/vendors.bundle.js', ['jquery'], $vsn, true );
+	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/app.bundle.js', ['jquery', 'epfl-js-vendors-bundle'], $vsn, true );
 }
 add_action( 'wp_enqueue_scripts', 'epfl_scripts' );
 
