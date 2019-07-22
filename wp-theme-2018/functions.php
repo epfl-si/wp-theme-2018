@@ -358,7 +358,6 @@ function get_epfl_home_url () {
 	}
 }
 
-
 /**
  * Remove <p></p> tags around <img src="" alt=""> inputed in the wysiwyg
  */
@@ -366,3 +365,20 @@ function filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 add_filter('the_content', 'filter_ptags_on_images');
+
+/**
+ * Remove the WP jquery from video shortcode, as we are already using jQuery 3.x
+ * and it create some incompatiblities, like crashing gallery shortcodes in the same page
+ */
+function wp_video_shortcode_without_jquery( $output, $atts, $video, $post_id, $library ) {
+
+	if (!is_admin()) {
+		wp_deregister_script('jquery');
+		# it may be already loaded, but in case it's not :
+		wp_enqueue_script('epfl-js-jquery');
+	}
+
+	return $output;
+}
+
+add_filter( 'wp_video_shortcode', 'wp_video_shortcode_without_jquery', 10, 5);
