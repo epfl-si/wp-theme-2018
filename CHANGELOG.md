@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.5.4* (2019-07-24)
+- Fix gallery and video on the same page (#227)
+
 *1.5.3* (2019-07-17)
 - Wrap shortcode text with p tag (#225)
 
