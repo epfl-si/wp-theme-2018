@@ -19,6 +19,27 @@ function epfl_people_get_phones($person) {
     foreach($person->unites as $current_unit) {
         $phones = array_merge($phones, array_filter($current_unit->phones));
     }
+
+    /* Looping through phone numbers to reformat them to have same format as the one on https://www.local.ch,
+        EX: +41 21 693 22 24 */
+    foreach($phones as $key => $phone){
+        /* If short format (ex: 32224) */
+        if(preg_match('/^([0-9])([0-9]{2,2})([0-9]{2,2})$/', $phone, $matches) === 1)
+        {
+            unset($matches[0]); // remove full phone number (equivalent to $phone)
+            $phones[$key] = "+41 21 69".implode(" ", $matches);
+        }
+        /* if long format without international (ex: 0216932224) */
+        elseif(preg_match('/^([0-9])([0-9]{2,2})([0-9]{3,3})([0-9]{2,2})([0-9]{2,2})$/', $phone, $matches) === 1)
+        {
+            unset($matches[0]); // remove full phone number (equivalent to $phone)
+            unset($matches[1]); // remove first digit (0) before local indentifier
+            $phones[$key] = "+41 ".implode(" ", $matches);
+        }
+        
+        /* There's no other condition to reformat because normally there is no other format in people.epfl.ch */
+    }
+
     return array_unique($phones);
 }
 
