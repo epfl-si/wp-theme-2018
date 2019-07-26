@@ -1,4 +1,5 @@
 <?php
+
   require_once('utils.php');
   $persons = get_query_var('epfl_people_persons');
   $from = get_query_var('epfl_people_from');
@@ -31,7 +32,7 @@
         <a href="<?php echo esc_url($people_url) ?>" class="contact-list-item" itemprop="name"><?php echo esc_attr($person->prenom) ?> <?php echo esc_attr($person->nom) ?></a>
         <p class="contact-list-item m-0 text-muted" itemprop="jobTitle"><?php echo esc_html($function) ?></p>
         <a class="contact-list-item text-muted" href="mailto:<?php echo esc_attr($person->email) ?>" itemprop="email"><?php echo esc_attr($person->email) ?></a>
-        <a class="contact-list-item text-muted" href="tel:<?php echo esc_html($phones[0]) ?>" itemprop="telephone"><?php if ($phones[0]): ?>+41 21 69 <b><?php echo esc_html($phones[0]) ?></b><?php endif ?></a>
+        <a class="contact-list-item text-muted" href="tel:<?php echo esc_html(str_replace(" ", "", $phones[0])) ?>" itemprop="telephone"><?php if ($phones[0]): ?><b><?php echo esc_html($phones[0]) ?></b><?php endif ?></a>
         <a class="contact-list-item text-muted" href="<?php echo esc_url($room_url) ?>" itemprop="workLocation"><?php echo esc_html($room) ?></a>
     </div>
     <?php endforeach; ?>
@@ -42,6 +43,7 @@
     <?php endif; ?>
     <?php
       foreach($persons as $index => $person):
+
         $photo_url  = epfl_people_get_photo($person);
         $phones     = epfl_people_get_phones($person);
         $function   = epfl_people_get_function($person, $from);
@@ -79,7 +81,7 @@
               <a class="btn btn-block btn-primary mb-2" href="mailto:<?php echo esc_attr($person->email) ?>"><?php echo esc_html($person->email) ?></a>
               <?php endif ?>
               <?php if ($phones[0]): ?>
-              <a class="btn btn-block btn-secondary" href="tel:+412169<?php echo esc_html($phones[0]) ?>">+41 21 69 <?php echo esc_html($phones[0]) ?></a>
+              <a class="btn btn-block btn-secondary" href="tel:<?php echo esc_html(str_replace(" ", "", $phones[0])) ?>"><?php echo esc_html($phones[0]) ?></a>
               <?php endif ?>
             </div>
         </div>
