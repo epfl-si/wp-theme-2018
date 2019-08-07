@@ -12,7 +12,7 @@ add_action('epfl_lexes_search_action', 'renderLexSearch', 10, 3);
  */
 function renderLexSearch($lexes, $category, $subcategory) {
   wp_enqueue_script( 'lib-listjs', get_template_directory_uri() . '/shortcodes/lib/list.min.js', ['jquery'], 1.5, false);
-  wp_enqueue_style( 'epfl-polylex-search-css', get_template_directory_uri() . '/shortcodes/epfl_labs_search/epfl-polylex-search.css',false,'1.1','all');
+  wp_enqueue_style( 'epfl-polylex-search-css', get_template_directory_uri() . '/shortcodes/epfl_polylex_search/epfl-polylex-search.css',false,'1.1','all');
 
   polylex_filter_out_unused_language($lexes);
 
@@ -34,27 +34,51 @@ function renderLexSearch($lexes, $category, $subcategory) {
 
 /**
  * Simplify the sites data by removing and renaming languages fields
+ * As the client's browser will draw this results, we keep it the minimal possible
  */
 function polylex_filter_out_unused_language($lexes) {
   $current_language = get_current_language();
 
   foreach ($lexes as $lex) {
-    # todo
-    /*
-    foreach ($lex->tags as $tag) {
+    if ($current_language === 'fr') {
+      $lex->title = $lex->titleFr;
+      unset($lex->titleFr);
+      unset($lex->titleEn);
+      $lex->url = $lex->urlFr;
+      unset($lex->urlFr);
+      unset($lex->urlEn);
+      $lex->description = $lex->descriptionFr;
+      unset($lex->descriptionFr);
+      unset($lex->descriptionEn);
+      $lex->publicationDate = $lex->publicationDateFr;
+      unset($lex->publicationDateFr);
+      unset($lex->publicationDateEn);
+    } else {
+      $lex->title = $lex->titleEn;
+      unset($lex->titleEn);
+      unset($lex->titleFr);
+      $lex->url = $lex->urlEn;
+      unset($lex->urlEn);
+      unset($lex->urlFr);
+      $lex->description = $lex->descriptionEn;
+      unset($lex->descriptionEn);
+      unset($lex->descriptionFr);
+      $lex->publicationDate = $lex->publicationDateEn;
+      unset($lex->publicationDateFr);
+      unset($lex->publicationDateEn);
+    }
+
+    foreach($lex->authors as $author) {
       if ($current_language === 'fr') {
-        $tag->name = $tag->name_fr;
-        $tag->url = $tag->url_fr;
-        unset($tag->name_en);
-        unset($tag->url_en);
+        $author->url = $author->urlFr;
+        unset($author->urlFr);
+        unset($author->urlEn);
       } else {
-        $tag->name = $tag->name_en;
-        $tag->url = $tag->url_en;
-        unset($tag->name_fr);
-        unset($tag->url_fr);
+        $author->url = $author->urlEn;
+        unset($author->urlEn);
+        unset($author->urlFr);
       }
     }
-    */
   }
 }
 

@@ -8,10 +8,10 @@ window.onload = function() {  // wait that jQuery is loaded
     jQuery(document).ready(function( $ ) {
         var options = {
             valueNames: [
+                // maybe this can't sort multiple div, so add it to a attribute of the row div
+                'lex-number',
                 'lex-title',
-                'lex-tagline',
-                {name: 'lex-url', attr: 'href'},
-                {name: 'lex-tags', attr: 'data-tags'}
+                {name: 'lex-category-subcategory', attr: 'data-category-subcategory'},
             ]
         };
 
