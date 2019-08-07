@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.5.5* (2019-08-07)
+- People: Uniformize phones number (#230)
+
 *1.5.4* (2019-07-24)
 - Fix gallery and video on the same page (#227)
 
