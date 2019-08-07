@@ -25,14 +25,11 @@
                         <option <?php echo (empty($predefined_category))?"selected":"";?> value="all">
                         <?php
                             switch ($type) {
-                                case "faculty":
-                                    _e('All faculties', 'epfl');
+                                case "category":
+                                    _e('All categories', 'epfl');
                                     break;
-                                case "institute":
-                                    _e('All institutes', 'epfl');
-                                    break;
-                                case "field-of-research":
-                                    _e('All field of research', 'epfl');
+                                case "subcategory":
+                                    _e('All subcategories', 'epfl');
                                     break;
                                 default:
                                 _e("All", 'epfl');

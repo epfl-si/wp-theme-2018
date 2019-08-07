@@ -24,9 +24,8 @@ function renderLexSearch($lexes, $category, $subcategory) {
     set_query_var('epfl_lexes-list', $lexes);
     set_query_var('epfl_lexes-predefined_category', $category);
     set_query_var('epfl_lexes-predefined_subcategory', $subcategory);
-    # todo:
-    //set_query_var('eplf_lexes-combo_list_content', separate_tags_by_type($sites));
-    set_query_var('eplf_lexes-combo_list_content', []);
+
+    set_query_var('eplf_lexes-combo_list_content', get_categories_and_sub($lexes));
     get_template_part('shortcodes/epfl_polylex_search/view');
   }
 }
@@ -87,6 +86,24 @@ function polylex_filter_out_unused_language($lexes) {
 * as tag have a type, get a list of everytype and everytag
 * as a new dictionary tags['faculty'] => [tag1, tag2]
 */
+
+function get_categories_and_sub($lexes) {
+  $combo_content = [
+    'category' => [],
+    'subcategory' => []
+  ];
+
+  foreach ($lexes as $lex) {
+    if (!in_array($lex->category, $combo_content['category'])) {
+      $combo_content['category'][] = $lex->category;
+    }
+
+    if (!in_array($lex->subcategory, $combo_content['subcategory'])) {
+      $combo_content['subcategory'][] = $lex->subcategory;
+    }
+  }
+  return $combo_content;
+}
 /*
 function separate_tags_by_type($sites) {
   $tags_typped = [
