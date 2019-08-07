@@ -13,7 +13,7 @@
                 id="lexes-search-input"
                 class="form-control search mb-2"
                 placeholder="<?php _e('Type here a a number or a keyword', 'epfl') ?>"
-                aria-describedby="lexes-search-input-help"
+                aria-describedby="lexes-search-input"
             >
             <div id="selects-filter" class="d-flex flex-wrap flex-column flex-md-row">
                 <?php foreach($combo_list_content as $type => $names): ?>
@@ -48,17 +48,17 @@
                 <?php endforeach; ?>
             </div>
         </div>
-        <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom align-items-center mb-2">
-                <div class="sort col-1" data-sort="lex-number"><a href="#" onclick="return false;"><strong><?php _e('Number', 'epfl') ?></strong></a></div>
+        <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom mb-2">
+                <div class="sort col-1 pr-0 pl-1" data-sort="lex-number"><a href="#" onclick="return false;"><strong><?php _e('Number', 'epfl') ?></strong></a></div>
                 <div class="sort col-7" data-sort="lex-title"><a href="#" onclick="return false;"><strong><?php _e('Title', 'epfl') ?></strong></a></div>
                 <div class="sort col-4" data-sort="lex-category-subcategory"><a href="#" onclick="return false;"><strong><?php _e('Category', 'epfl') ?></strong></a></div>
         </div>
 
-        <div class="lex-list">
+        <div class="list">
         <?php if (!(empty($lexes))): ?>
             <?php foreach($lexes as $key => $lex): ?>
             <div class="lex-row mb-0 mt-0 pb-3 pt-3 border-bottom border-top align-items-center">
-                <div class="lex-row-1 flex-row d-md-flex pt-1 pb-1">
+                <div class="lex-row-1 flex-row d-md-flex pt-1 pb-1 lex-numbered" data-lex-numbered="<?php echo esc_html($lex->lex); ?>">
                     <div class="lex-number col-1"><?php echo esc_html($lex->lex); ?></div>
                     <div class="col-7"><a class="lex-url" href="<?php echo esc_html($lex->url); ?>"><span class="lex-title"><strong><?php echo esc_html($lex->title); ?></strong></span></a></div>
                     <?php if (!(empty($lex->category))): ?>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="lex-row-2 flex-row d-md-flex pt-2 pb-2">
                 <div class="col-1"></div>
-                    <div class="col"><em><?php echo esc_html($lex->description); ?></em></div>
+                    <div class="col lex-description"><em><?php echo esc_html($lex->description); ?></em></div>
                 </div>
                 <div class="lex-row-3 flex-row d-md-flex pt-1 pb-1">
                 <div class="col-1"></div>

@@ -8,14 +8,14 @@ window.onload = function() {  // wait that jQuery is loaded
     jQuery(document).ready(function( $ ) {
         var options = {
             valueNames: [
-                // maybe this can't sort multiple div, so add it to a attribute of the row div
                 'lex-number',
                 'lex-title',
                 {name: 'lex-category-subcategory', attr: 'data-category-subcategory'},
+                'lex-description',
             ]
         };
 
-        var lexList = new List('lex-list', options);
+        var lexList = new List('lexes-list', options);
 
         $('.epfl-lexes-select').each(function (index, element) {
             $(element).change(function (e) {
