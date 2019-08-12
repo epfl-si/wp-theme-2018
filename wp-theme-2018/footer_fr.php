@@ -228,23 +228,23 @@
   <div class="footer-group footer-socials">
     <p class="footer-title footer-title-no-underline">Suivez l'EPFL sur les réseaux sociaux</p>
 <div class="footer-social">
-  <a href="https://www.facebook.com/epflcampus" class="social-icon social-icon-facebook social-icon-negative">
+  <a href="https://www.facebook.com/epflcampus" class="social-icon social-icon-facebook social-icon-negative" rel="nofollow">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook"></use></svg>
   <span class="sr-only">Follow us on Facebook.</span>
 </a>
-<a href="https://twitter.com/epfl" class="social-icon social-icon-twitter social-icon-negative">
+<a href="https://twitter.com/epfl" class="social-icon social-icon-twitter social-icon-negative" rel="nofollow">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter"></use></svg>
   <span class="sr-only">Follow us on Twitter.</span>
 </a>
-<a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative">
+<a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative" rel="nofollow">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg>
   <span class="sr-only">Follow us on Instagram.</span>
 </a>
-<a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative">
+<a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative" rel="nofollow">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
   <span class="sr-only">Follow us on Youtube.</span>
 </a>
-<a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative">
+<a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative" rel="nofollow">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkedin"></use></svg>
   <span class="sr-only">Follow us on LinkedIn.</span>
 </a>
