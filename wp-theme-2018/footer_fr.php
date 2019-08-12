@@ -24,7 +24,7 @@
                         <a href="https://www.epfl.ch/about/working/fr/travailler-a-lepfl/">Travailler à l'EPFL</a>
                                   </li>
                   <li>
-                        <a href="https://carriere.epfl.ch/fr/index-fr-html/">Recruter des talents de l'EPFL</a>
+                        <a href="https://www.epfl.ch/about/recruiting/fr/recrutement/">Recruter des talents de l'EPFL</a>
                                   </li>
                   <li>
                         <a href="https://www.epfl.ch/about/news-and-media/fr/accueil/">News & médias</a>
