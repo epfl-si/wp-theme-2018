@@ -6,9 +6,11 @@
   <div class="hero">
     <div class="hero-content-container">
       <h1 class="hero-title"><?php echo $data['title'] ?></h1>
+      <?php if (array_key_exists('text', $data) && !empty($data['text'])): ?>
       <div class="hero-content">
         <p><?php echo $data['text'] ?></p>
       </div>
+      <?php endif; ?>
     </div>
     <div class="hero-img">
       <picture>
