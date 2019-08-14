@@ -1,4 +1,10 @@
 # CHANGELOG
+
+*1.6.0* (2019-08-14)
+- Don't show hero content div if empty (#232)
+- Add nofollow to footer external links (#233)
+- Update footer internal link "Recruiting"
+
 *1.5.5* (2019-08-07)
 - People: Uniformize phones number (#230)
 
