@@ -126,13 +126,10 @@
                                     <a href="https://www.epfl.ch/innovation/domains/">Innovation domains</a>
                       </li>
                   <li>
-                                    <a href="https://www.epfl.ch/innovation/industry/"> Collaborate with industry</a>
+                                    <a href="https://www.epfl.ch/innovation/industry/">Industry Collaborations</a>
                       </li>
                   <li>
                                     <a href="https://www.epfl.ch/innovation/entrepreneurship/start-up/">Entrepreneurship and start-ups</a>
-                      </li>
-                  <li>
-                                    <a href="https://www.epfl.ch/innovation/industry/industry/learn-and-develop/">Learn and develop</a>
                       </li>
               </ul>
     </div>
