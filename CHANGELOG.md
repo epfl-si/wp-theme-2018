@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.6.1* (2019-08-21)
+- Update footer links "Innovation"
+
 *1.6.0* (2019-08-14)
 - Don't show hero content div if empty (#232)
 - Add nofollow to footer external links (#233)
