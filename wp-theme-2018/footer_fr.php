@@ -131,9 +131,6 @@
                   <li>
                         <a href="https://www.epfl.ch/innovation/entrepreneurship/fr/startup/">Entrepreneuriat et start-ups</a>
                                   </li>
-                  <li>
-                        <a href="https://www.epfl.ch/innovation/industry/fr/industries/formation/">Développer son expertise</a>
-                                  </li>
               </ul>
     </div>
   </div>
