@@ -11,30 +11,42 @@ window.onload = function() {  // wait that jQuery is loaded
                 'lex-number',
                 'lex-title',
                 {name: 'lex-category-subcategory', attr: 'data-category-subcategory'},
+                'lex-category',
+                'lex-subcategory',
                 'lex-description',
             ]
         };
 
         var lexList = new List('lexes-list', options);
 
-        $('.epfl-lexes-select').each(function (index, element) {
-            $(element).change(function (e) {
-                let filter_on = $(this).val();
+        $('#select-category').change(function (e) {
+            let filter_on = $(this).val();
+            // reset subcategory
+            $('#select-subcategory').val('all');
 
-                // reset other elements
-                $('.epfl-lexes-select').not(this).each(function (index, element) {
-                    $(element).val('all');
+            if (filter_on === 'all') {
+                lexList.filter();
+            } else {
+                lexList.filter(function(item) {
+                    category = item.values()['lex-category'];
+                    return (category == filter_on);
                 });
+            }
+        });
 
-                if ($(this).val() === 'all') {
-                    lexList.filter();
-                } else {
-                    lexList.filter(function(item) {
-                        tags = item.values()['site-tags'].split(";");
-                        return (tags.includes(filter_on));
-                    });
-                }
-            });
+        $('#select-subcategory').change(function (e) {
+            let filter_on = $(this).val();
+            // reset category
+            $('#select-category').val('all');
+
+            if (filter_on === 'all') {
+                lexList.filter();
+            } else {
+                lexList.filter(function(item) {
+                    category = item.values()['lex-subcategory'];
+                    return (category == filter_on);
+                });
+            }
         });
 
         <?php if (!empty($predefined_category) && empty($predefined_subcategory)): ?>

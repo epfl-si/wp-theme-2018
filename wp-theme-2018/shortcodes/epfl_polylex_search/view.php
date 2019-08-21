@@ -1,8 +1,46 @@
 <?php
     $lexes = get_query_var('epfl_lexes-list');
     $predefined_category = get_query_var('epfl_lexes-predefined_category');
-    $predefined_subcategory = get_query_var('epfl_labs-predefined_subcategory');
-    $combo_list_content = get_query_var('eplf_lexes-combo_list_content');
+    $predefined_subcategory = get_query_var('epfl_lexes-predefined_subcategory');
+    $combo_list_contents = get_query_var('epfl_lexes-combo_list_contents');
+
+    $category_options = "";
+    $category_options .= "<option";
+    if (empty($predefined_category)) {
+        $category_options .= " selected";
+    }
+    $category_options .= ' value="all">' . __('All categories', 'epfl') . '</option>';
+
+    // Build category combo list
+    foreach($combo_list_contents as $categ => $sub) {
+        $category_options .= "<option";
+        if (!empty($predefined_category) && strtoupper($categ) === strtoupper($predefined_category)) {
+            $category_options .= " selected";
+        }
+        $category_options .= ">";
+        $category_options .= $categ;
+        $category_options .= "</option>";
+    }
+
+    // Build subcategory combo list
+    $subcategory_options = "";
+    $subcategory_options .= "<option";
+    if (empty($predefined_category)) {
+        $subcategory_options .= " selected";
+    }
+    $subcategory_options .= ' value="all">' . __('All subcategories', 'epfl') . '</option>';
+
+    foreach($combo_list_contents as $categ => $subcategories) {
+        foreach($subcategories as $sub) {
+            $subcategory_options .= "<option";
+            if (!empty($predefined_subcategory) && strtoupper($sub) === strtoupper($predefined_subcategory)) {
+                $subcategory_options .= " selected";
+            }
+            $subcategory_options .= ">";
+            $subcategory_options .= $sub;
+            $subcategory_options .= "</option>";
+        }
+    }
 ?>
 
 <div class="container my-3">
@@ -16,36 +54,22 @@
                 aria-describedby="lexes-search-input"
             >
             <div id="selects-filter" class="d-flex flex-wrap flex-column flex-md-row">
-                <?php foreach($combo_list_content as $type => $names): ?>
                 <div>
                     <select
-                        id="select-<?php echo esc_html($type); ?>"
+                        id="select-category"
                         class="epfl-lexes-select custom-select mr-2"
                     >
-                        <option <?php echo (empty($predefined_category))?"selected":"";?> value="all">
-                        <?php
-                            switch ($type) {
-                                case "category":
-                                    _e('All categories', 'epfl');
-                                    break;
-                                case "subcategory":
-                                    _e('All subcategories', 'epfl');
-                                    break;
-                                default:
-                                _e("All", 'epfl');
-                            }
-                        ?>
-                        </option>
-                    <?php foreach($names as $name): ?>
-                        <option
-                            <?php echo (!empty($predefined_category) && strtoupper($name) === strtoupper($predefined_category))?"selected":"";?>
-                            <?php echo (!empty($predefined_subcategory) && strtoupper($name) === strtoupper($predefined_subcategory))?"selected":"";?>
-                             value="<?php echo esc_html($name); ?>"><?php echo esc_html($name); ?>
-                        </option>
-                    <?php endforeach; ?>
+                        <?php echo $category_options; ?>
                     </select>
                 </div>
-                <?php endforeach; ?>
+                <div>
+                    <select
+                        id="select-subcategory"
+                        class="epfl-lexes-select custom-select mr-2"
+                    >
+                        <?php echo $subcategory_options; ?>
+                    </select>
+                </div>
             </div>
         </div>
         <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom mb-2">
@@ -62,7 +86,8 @@
                     <div class="lex-number col-1"><?php echo esc_html($lex->lex); ?></div>
                     <div class="col-7"><a class="lex-url" href="<?php echo esc_html($lex->url); ?>"><span class="lex-title"><strong><?php echo esc_html($lex->title); ?></strong></span></a></div>
                     <?php if (!(empty($lex->category))): ?>
-                    <div class="lex-category-subcategory col-4 " data-category-subcategory="<?php echo esc_html($lex->category) . esc_html($lex->subcategory); ?>"><?php echo esc_html($lex->category); ?><?php if (!(empty($lex->subcategory))): ?><?php echo ', ' . esc_html($lex->subcategory); ?><?php endif; ?></div>
+                    <div class="lex-category-subcategory col-4" data-category-subcategory="<?php echo esc_html($lex->category) . esc_html($lex->subcategory); ?>">
+                        <span class="lex-category"><?php echo esc_html($lex->category); ?></span><?php if (!(empty($lex->subcategory))): ?><?php echo ', ' ?><span class="lex-subcategory"><?php echo esc_html($lex->subcategory); ?></span><?php endif; ?></div>
                     <?php endif; ?>
                 </div>
                 <div class="lex-row-2 flex-row d-md-flex pt-2 pb-2">
