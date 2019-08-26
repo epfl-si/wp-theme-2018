@@ -41,6 +41,9 @@
             $subcategory_options .= "</option>";
         }
     }
+    $predefined_subcategory = get_query_var('epfl_labs-predefined_subcategory');
+    $predefined_search = get_query_var('epfl_lexes-predefined_search');
+    $combo_list_content = get_query_var('eplf_lexes-combo_list_content');
 ?>
 
 <div class="container my-3">

@@ -1,6 +1,7 @@
 <?php
     $predefined_category = get_query_var('epfl_labs-predefined_category');
     $predefined_subcategory = get_query_var('epfl_labs-predefined_subcategory');
+    $predefined_search = get_query_var('epfl_lexes-predefined_search');
 ?>
 
 <script type='text/javascript'>
@@ -54,6 +55,10 @@ window.onload = function() {  // wait that jQuery is loaded
         <?php endif;?>
         <?php if (!empty($predefined_subcategory)): ?>
         $('#select-subcategory').change();
+        <?php endif;?>
+        <?php if (!empty($predefined_search)): ?>
+        $('#lexes-search-input').val("<?php echo $predefined_search ?>");
+        lexList.search("<?php echo $predefined_search ?>");
         <?php endif;?>
     });
 }

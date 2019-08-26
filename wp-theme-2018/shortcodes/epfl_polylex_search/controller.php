@@ -3,12 +3,12 @@
  * 3rd argument is the priority, higher means executed first
  * 4rth argument is number of arguments the function can accept
  **/
-add_action('epfl_lexes_search_action', 'renderLexSearch', 10, 3);
+add_action('epfl_lexes_search_action', 'renderLexSearch', 10, 4);
 
 /**
  * render the shortcode, mainly a form and his table
  */
-function renderLexSearch($lexes, $category, $subcategory) {
+function renderLexSearch($lexes, $category, $subcategory, $search) {
   wp_enqueue_script( 'lib-listjs', get_template_directory_uri() . '/shortcodes/lib/list.min.js', ['jquery'], 1.5, false);
   wp_enqueue_style( 'epfl-polylex-search-css', get_template_directory_uri() . '/shortcodes/epfl_polylex_search/epfl-polylex-search.css',false,'1.1','all');
 
@@ -24,6 +24,7 @@ function renderLexSearch($lexes, $category, $subcategory) {
     set_query_var('epfl_lexes-list', $lexes);
     set_query_var('epfl_lexes-predefined_category', $category);
     set_query_var('epfl_lexes-predefined_subcategory', $subcategory);
+    set_query_var('epfl_lexes-predefined_search', $search);
 
     set_query_var('epfl_lexes-combo_list_contents', $cat_with_sub);
     get_template_part('shortcodes/epfl_polylex_search/view');
