@@ -44,7 +44,9 @@ if ($currentTemplate == 'page-homepage.php') {
         }
     }
 
-    $item = $items ? reset(wp_filter_object_list( $items, ['object_id' => $post->ID])) : false;
+    $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $post->ID]);
+
+    $item = $items ? reset($wp_filter_object_list) : false;
 
     $crumbs = array();
 
