@@ -66,9 +66,6 @@ function polylex_filter_out_unused_language($lexes) {
       $lex->description = $lex->descriptionFr;
       unset($lex->descriptionFr);
       unset($lex->descriptionEn);
-      $lex->publicationDate = $lex->publicationDateFr;
-      unset($lex->publicationDateFr);
-      unset($lex->publicationDateEn);
     } else {
       $lex->title = $lex->titleEn;
       unset($lex->titleEn);
@@ -79,9 +76,6 @@ function polylex_filter_out_unused_language($lexes) {
       $lex->description = $lex->descriptionEn;
       unset($lex->descriptionEn);
       unset($lex->descriptionFr);
-      $lex->publicationDate = $lex->publicationDateEn;
-      unset($lex->publicationDateFr);
-      unset($lex->publicationDateEn);
     }
 
     foreach($lex->authors as $author) {

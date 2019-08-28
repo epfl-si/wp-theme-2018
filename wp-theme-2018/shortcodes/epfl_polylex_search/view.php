@@ -9,7 +9,8 @@
     if (empty($predefined_category)) {
         $category_options .= " selected";
     }
-    $category_options .= ' value="all">' . __('All categories', 'epfl') . '</option>';
+    //$category_options .= ' value="all">' . __('All categories', 'epfl') . '</option>';
+    $category_options .= ' value="all">' . 'Toutes les catégories' . '</option>';
 
     // Build category combo list
     foreach($combo_list_contents as $categ => $sub) {
@@ -28,7 +29,8 @@
     if (empty($predefined_category)) {
         $subcategory_options .= " selected";
     }
-    $subcategory_options .= ' value="all">' . __('All subcategories', 'epfl') . '</option>';
+    //$subcategory_options .= ' value="all">' . __('All subcategories', 'epfl') . '</option>';
+    $subcategory_options .= ' value="all">' . 'Toutes les sous-catégories' . '</option>';
 
     foreach($combo_list_contents as $categ => $subcategories) {
         foreach($subcategories as $sub) {
@@ -53,7 +55,8 @@
                 type="text"
                 id="lexes-search-input"
                 class="form-control search mb-2"
-                placeholder="<?php _e('Type here a a number or a keyword', 'epfl') ?>"
+                <?php # _e('Type here a a number or a keyword', 'epfl') ?>
+                placeholder="Numéro, mot-clé, ..."
                 aria-describedby="lexes-search-input"
             >
             <div id="selects-filter" class="d-flex flex-wrap flex-column flex-md-row">
@@ -94,22 +97,22 @@
                     <?php endif; ?>
                 </div>
                 <div class="lex-row-2 flex-row d-md-flex pt-2 pb-2">
-                <div class="col-1"></div>
+                    <div class="col-1"></div>
                     <div class="col lex-description"><em><?php echo esc_html($lex->description); ?></em></div>
                 </div>
                 <div class="lex-row-3 flex-row d-md-flex pt-1 pb-1">
-                <div class="col-1"></div>
-                    <div class="lex-publicationDate col-4"><?php echo esc_html($lex->publicationDate); ?></div>
-                    <?php if (!(empty($lex->authors))): ?>
-                    <div class="lex-authors col d-md-flex flex-row">
-                        <?php foreach($lex->authors as $index => $author): ?>
-                        <div class="mr-2">
-                        <a href="<?php echo esc_html($author->url); ?>" class="author lex-author"><?php echo esc_html($author->firstName) .'&nbsp;'. esc_html($author->lastName) ; ?></a>
-                        </div>
-                        <?php endforeach; ?>
+                    <div class="col-1"></div>
+                    <div class="lex-publicationDate col-4">
+                        <?php if (esc_html($lex->publicationDate)): ?>
+                        Entrée en vigueur au <?php echo esc_html($lex->publicationDate); ?>
+                        <?php endif; ?>
                     </div>
-                    <?php endif; ?>
-
+                    <div class="lex-revisionDate col-4">
+                        <?php if (esc_html($lex->revisionDate)): ?>
+                        Etat au <?php echo esc_html($lex->revisionDate); ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="lex-responsible col d-md-flex flex-row"><?php echo esc_html($lex->responsible); ?></div>
                 </div>
             </div>
             <?php endforeach; ?>
