@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.6.2* (2019-08-28)
+- Update footer links "Cooperation" in french
+
 *1.6.1* (2019-08-21)
 - Update footer links "Innovation"
 
