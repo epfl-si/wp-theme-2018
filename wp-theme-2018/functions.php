@@ -349,7 +349,7 @@ function root_menu_overrides_enabled () {
  */
 function get_epfl_home_url () {
 	$current_language = get_current_language();
-	$epfl_root = 'https://www.epfl.ch/';
+	$epfl_root = get_option('epfl_home_url') ? : 'https://www.epfl.ch/';
 
 	if ($current_language === 'fr') {
 		return $epfl_root . 'fr/';
