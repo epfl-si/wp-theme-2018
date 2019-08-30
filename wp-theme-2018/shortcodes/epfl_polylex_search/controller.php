@@ -35,6 +35,15 @@ function tree_categories_with_subcategories($lexes) {
   // build a parentship relation for javascript comboboxes
   $categ_with_sub = [];
 
+  #TOREMOVE:
+  $order_categ = ['Gouvernance', 'Formation', 'Recherche & Valorisation',
+   'Ressources humaines', 'Finances & Achats', "Systèmes d’information",
+   'Infrastructures', "Autres"];
+
+  foreach ($order_categ as $categ) {
+    $categ_with_sub[$categ] = [];
+  }
+
   foreach ($lexes as $lex) {
     if (!isset($categ_with_sub[$lex->category])) {
       $categ_with_sub[$lex->category] = [];
@@ -44,6 +53,13 @@ function tree_categories_with_subcategories($lexes) {
       $categ_with_sub[$lex->category][] = $lex->subcategory;
     }
   }
+
+  #TOREMOVE:
+  // empty gouvernance data
+  $categ_with_sub['Gouvernance'] = [];
+
+  # Order matter
+  //$categ_with_sub = array_merge(array_flip($order_categ), $categ_with_sub);
 
   return $categ_with_sub;
 }
