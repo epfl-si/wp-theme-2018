@@ -2,7 +2,7 @@
     $lexes = get_query_var('epfl_lexes-list');
     $predefined_category = get_query_var('epfl_lexes-predefined_category');
     $predefined_subcategory = get_query_var('epfl_lexes-predefined_subcategory');
-    $combo_list_contents = get_query_var('epfl_lexes-combo_list_contents');
+    $combo_list_contents = get_query_var('epfl_lexes-cat_with_sub_tree');
 
     $category_options = "";
     $category_options .= "<option";

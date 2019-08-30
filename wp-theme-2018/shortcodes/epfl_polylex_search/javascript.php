@@ -2,6 +2,7 @@
     $predefined_category = get_query_var('epfl_labs-predefined_category');
     $predefined_subcategory = get_query_var('epfl_labs-predefined_subcategory');
     $predefined_search = get_query_var('epfl_lexes-predefined_search');
+    $cat_with_sub_tree = get_query_var('epfl_lexes-cat_with_sub_tree');
 ?>
 
 <script type='text/javascript'>
