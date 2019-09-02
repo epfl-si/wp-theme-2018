@@ -61,6 +61,9 @@ window.onload = function() {  // wait that jQuery is loaded
         $('#lexes-search-input').val("<?php echo $predefined_search ?>");
         lexList.search("<?php echo $predefined_search ?>");
         <?php endif;?>
+
+        // sort at least one time, or it will need to be triggered two times to work
+        lexList.sort('lex-number', { order: "asc" });
     });
 }
 </script>
