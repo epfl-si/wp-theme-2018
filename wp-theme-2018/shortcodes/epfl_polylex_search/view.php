@@ -103,8 +103,8 @@
                 <div class="lex-row-3 flex-row d-md-flex pt-1 pb-1">
                     <div class="col-1"></div>
                     <div class="lex-publicationDate col-4">
-                        <?php if (esc_html($lex->publicationDate)): ?>
-                        Entrée en vigueur au <?php echo esc_html($lex->publicationDate); ?>
+                        <?php if (esc_html($lex->effectiveDate)): ?>
+                        Entrée en vigueur au <?php echo esc_html($lex->effectiveDate); ?>
                         <?php endif; ?>
                     </div>
                     <div class="lex-revisionDate col-4">
@@ -112,7 +112,11 @@
                         Etat au <?php echo esc_html($lex->revisionDate); ?>
                         <?php endif; ?>
                     </div>
-                    <div class="lex-responsible col d-md-flex flex-row"><?php echo esc_html($lex->responsible); ?></div>
+                    <div class="lex-responsible col d-md-flex flex-row">
+                        <a href="<?php echo esc_html($lex->responsible->url); ?>" target="_blank">
+                            <?php echo esc_html($lex->responsible->lastName . ' ' . $lex->responsible->firstName); ?>
+                        </a>
+                    </div>
                 </div>
             </div>
             <?php endforeach; ?>

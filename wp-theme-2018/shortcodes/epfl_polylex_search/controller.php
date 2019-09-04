@@ -66,6 +66,12 @@ function polylex_filter_out_unused_language($lexes) {
       $lex->description = $lex->descriptionFr;
       unset($lex->descriptionFr);
       unset($lex->descriptionEn);
+      $lex->responsible->url = $lex->responsible->urlFr;
+      unset($lex->responsible->urlEn);
+      $lex->category = $lex->category->nameFr;
+      unset($lex->category->nameEn);
+      $lex->subcategory = $lex->subcategory->nameFr;
+      unset($lex->subcategory->nameEn);
     } else {
       $lex->title = $lex->titleEn;
       unset($lex->titleEn);
@@ -76,18 +82,10 @@ function polylex_filter_out_unused_language($lexes) {
       $lex->description = $lex->descriptionEn;
       unset($lex->descriptionEn);
       unset($lex->descriptionFr);
-    }
-
-    foreach($lex->authors as $author) {
-      if ($current_language === 'fr') {
-        $author->url = $author->urlFr;
-        unset($author->urlFr);
-        unset($author->urlEn);
-      } else {
-        $author->url = $author->urlEn;
-        unset($author->urlEn);
-        unset($author->urlFr);
-      }
+      $lex->responsible->url = $lex->responsible->urlEn;
+      unset($lex->responsible->urlFr);
+      $lex->subcategory = $lex->subcategory->nameEn;
+      unset($lex->subcategory->nameFr);
     }
   }
 }
