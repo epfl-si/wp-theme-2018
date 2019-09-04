@@ -26,7 +26,7 @@ function renderLexSearch($lexes, $category, $subcategory, $search) {
     set_query_var('epfl_lexes-predefined_subcategory', $subcategory);
     set_query_var('epfl_lexes-predefined_search', $search);
 
-    set_query_var('epfl_lexes-combo_list_contents', $cat_with_sub);
+    set_query_var('epfl_lexes-cat_with_sub_tree', $cat_with_sub);
     get_template_part('shortcodes/epfl_polylex_search/view');
   }
 }
@@ -34,6 +34,10 @@ function renderLexSearch($lexes, $category, $subcategory, $search) {
 function tree_categories_with_subcategories($lexes) {
   // build a parentship relation for javascript comboboxes
   $categ_with_sub = [];
+
+  foreach ($order_categ as $categ) {
+    $categ_with_sub[$categ] = [];
+  }
 
   foreach ($lexes as $lex) {
     if (!isset($categ_with_sub[$lex->category])) {
