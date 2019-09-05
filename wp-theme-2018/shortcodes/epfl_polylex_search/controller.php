@@ -88,6 +88,8 @@ function polylex_filter_out_unused_language($lexes) {
       unset($lex->descriptionFr);
       $lex->responsible->url = $lex->responsible->urlEn;
       unset($lex->responsible->urlFr);
+      $lex->category = $lex->category->nameEn;
+      unset($lex->category->nameFr);
       $lex->subcategory = $lex->subcategory->nameEn;
       unset($lex->subcategory->nameFr);
     }
