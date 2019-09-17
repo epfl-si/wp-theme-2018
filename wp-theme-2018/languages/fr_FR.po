@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2019-05-28 12:31+0200\n"
-"PO-Revision-Date: 2019-05-28 12:32+0200\n"
+"POT-Creation-Date: 2019-09-02 12:41+0200\n"
+"PO-Revision-Date: 2019-09-02 12:42+0200\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -62,23 +62,23 @@ msgstr ""
 msgid "Skip to content"
 msgstr "Aller directement au contenu"
 
-#: header.php:192 header.php:214
+#: header.php:193 header.php:215
 msgid "Search on the site"
 msgstr "Rechercher sur le site"
 
-#: header.php:193 header.php:215 searchform.php:4 searchform.php:18
+#: header.php:194 header.php:216 searchform.php:4 searchform.php:18
 msgid "Search"
 msgstr "Recherche"
 
-#: header.php:194 searchform.php:6
+#: header.php:195 searchform.php:6
 msgid "Validate"
 msgstr "Valider"
 
-#: header.php:204
+#: header.php:205
 msgid "Show / hide the search form"
 msgstr "Afficher / masquer le formulaire de recherche"
 
-#: header.php:221
+#: header.php:222
 msgid "Hide the search form"
 msgstr "Masquer le formulaire de recherche"
 
@@ -124,6 +124,7 @@ msgstr "Rerchercher sur le Web de l'EPFL"
 #: shortcodes/custom_teasers/shortcake.php:28
 #: shortcodes/custom_teasers/view.php:44
 #: shortcodes/epfl_labs_search/view.php:56
+#: shortcodes/epfl_polylex_search/view.php:82
 #: shortcodes/introduction/shortcake.php:8 shortcodes/schools/shortcake.php:15
 msgid "Title"
 msgstr "Titre"
@@ -303,6 +304,7 @@ msgstr "Lieu et salle"
 
 #: shortcodes/epfl_memento/templates/card-info.php:34
 #: shortcodes/epfl_memento/templates/card-info.php:36
+#: shortcodes/epfl_polylex_search/view.php:83
 msgid "Category"
 msgstr "Catégorie"
 
@@ -327,32 +329,52 @@ msgstr "Les prochains événements"
 msgid "See all events"
 msgstr "Voir tous les événements"
 
-#: shortcodes/epfl_news/view.php:48
+#: shortcodes/epfl_news/view.php:50
 msgid "The latest news"
 msgstr "Les dernières actualités"
 
-#: shortcodes/epfl_news/view.php:118 shortcodes/epfl_news/view.php:159
-#: shortcodes/epfl_news/view.php:188
+#: shortcodes/epfl_news/view.php:116 shortcodes/epfl_news/view.php:154
+#: shortcodes/epfl_news/view.php:183
 msgid "News"
 msgstr "Actualités"
 
-#: shortcodes/epfl_news/view.php:123 shortcodes/epfl_news/view.php:132
-#: shortcodes/epfl_news/view.php:164 shortcodes/epfl_news/view.php:173
+#: shortcodes/epfl_news/view.php:121 shortcodes/epfl_news/view.php:130
+#: shortcodes/epfl_news/view.php:159 shortcodes/epfl_news/view.php:168
 #: shortcodes/page_highlight/view.php:36 shortcodes/page_highlight/view.php:48
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: shortcodes/epfl_news/view.php:204 shortcodes/epfl_news/view.php:224
+#: shortcodes/epfl_news/view.php:199 shortcodes/epfl_news/view.php:219
 msgid "All news"
 msgstr "Toutes les actualités"
 
-#: shortcodes/epfl_people/view.php:61
+#: shortcodes/epfl_people/view.php:63
 msgid "Position"
 msgstr "Fonction"
 
-#: shortcodes/epfl_people/view.php:69
+#: shortcodes/epfl_people/view.php:71
 msgid "Office"
 msgstr "Bureau"
+
+#: shortcodes/epfl_polylex_search/view.php:13
+msgid "All categories"
+msgstr "Toutes les catégories"
+
+#: shortcodes/epfl_polylex_search/view.php:33
+msgid "All subcategories"
+msgstr "Toutes les sous-catégories"
+
+#: shortcodes/epfl_polylex_search/view.php:58
+msgid "Search a number or a keyword"
+msgstr "Chercher un numéro ou un mot-clé"
+
+#: shortcodes/epfl_polylex_search/view.php:106
+msgid "Effective on"
+msgstr "Entrée en vigueur au"
+
+#: shortcodes/epfl_polylex_search/view.php:112
+msgid "Status as of"
+msgstr "Etat au"
 
 #: shortcodes/epfl_publication/renderers/fields.php:112
 msgid "Dir."
@@ -360,31 +382,33 @@ msgstr "Dir."
 
 #: shortcodes/epfl_publication/renderers/fields.php:338
 #: shortcodes/epfl_publication/renderers/fields.php:340
-#: shortcodes/epfl_publication/renderers/fields.php:525
+#: shortcodes/epfl_publication/renderers/fields.php:546
 msgid "p."
 msgstr "p."
 
 #: shortcodes/epfl_publication/renderers/fields.php:355
+#: shortcodes/epfl_publication/renderers/fields.php:377
 msgid "Vol."
 msgstr "Vol."
 
 #: shortcodes/epfl_publication/renderers/fields.php:366
+#: shortcodes/epfl_publication/renderers/fields.php:388
 msgid "num."
 msgstr "num."
 
-#: shortcodes/epfl_publication/renderers/fields.php:479
+#: shortcodes/epfl_publication/renderers/fields.php:500
 msgid "Patent number(s)"
 msgstr "Numéro de brevet"
 
-#: shortcodes/epfl_publication/renderers/publications.php:98
+#: shortcodes/epfl_publication/renderers/publications.php:99
 msgid "Detailed record"
 msgstr "Notice détaillée"
 
-#: shortcodes/epfl_publication/renderers/publications.php:115
+#: shortcodes/epfl_publication/renderers/publications.php:116
 msgid "Full text"
 msgstr "Texte intégral"
 
-#: shortcodes/epfl_publication/renderers/publications.php:123
+#: shortcodes/epfl_publication/renderers/publications.php:124
 msgid "View at publisher"
 msgstr "Consulter chez l'éditeur"
 
