@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.6.3* (2019-09-17)
+- Polylex frontend (#231)
+
 *1.6.2* (2019-08-28)
 - Update footer links "Cooperation" in french
 
