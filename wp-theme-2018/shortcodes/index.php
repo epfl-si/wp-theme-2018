@@ -30,3 +30,4 @@ require_once(get_template_directory().'/shortcodes/epfl_contact/controller.php')
 require_once(get_template_directory().'/shortcodes/epfl_tableau/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_google_forms/controller.php');
 require_once(get_template_directory().'/shortcodes/epfl_labs_search/controller.php');
+require_once(get_template_directory().'/shortcodes/epfl_polylex_search/controller.php');

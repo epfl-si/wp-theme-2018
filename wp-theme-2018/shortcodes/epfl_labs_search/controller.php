@@ -11,7 +11,7 @@ add_action('epfl_labs_search_action', 'renderLabsSearch', 10, 3);
  * render the shortcode, mainly a form and his table
  */
 function renderLabsSearch($sites, $faculty, $institute) {
-  wp_enqueue_script( 'epfl-labs-search-listjs', get_template_directory_uri() . '/shortcodes/epfl_labs_search/lib/list.min.js', ['jquery'], 1.5, false);
+  wp_enqueue_script( 'lib-listjs', get_template_directory_uri() . '/shortcodes/lib/list.min.js', ['jquery'], 1.5, false);
   wp_enqueue_style( 'epfl-labs-search-css', get_template_directory_uri() . '/shortcodes/epfl_labs_search/epfl-labs-search.css',false,'1.1','all');
 
   filter_out_unused_language($sites);
