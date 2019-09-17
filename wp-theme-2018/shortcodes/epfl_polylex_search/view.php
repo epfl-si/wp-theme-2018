@@ -97,7 +97,7 @@
                 </div>
                 <div class="lex-row-2 flex-row d-md-flex pt-2 pb-2">
                     <div class="col-1"></div>
-                    <div class="col lex-description"><em><?php echo esc_html($lex->description); ?></em></div>
+                    <div class="col lex-description"><em><?php echo htmlspecialchars_decode(esc_html($lex->description)); ?></em></div>
                 </div>
                 <div class="lex-row-3 flex-row d-md-flex pt-1 pb-1">
                     <div class="col-1"></div>
