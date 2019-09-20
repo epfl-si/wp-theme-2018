@@ -97,25 +97,25 @@
                 </div>
                 <div class="lex-row-2 flex-row d-md-flex pt-2 pb-2">
                     <div class="col-1"></div>
-                    <div class="col lex-description"><em><?php echo htmlspecialchars_decode(esc_html($lex->description)); ?></em></div>
+                    <div class="col lex-description"><?php echo htmlspecialchars_decode(esc_html($lex->description)); ?></div>
                 </div>
                 <div class="lex-row-3 flex-row d-md-flex pt-1 pb-1">
                     <div class="col-1"></div>
                     <div class="lex-publicationDate col-4">
                         <?php if (esc_html($lex->effectiveDate)): ?>
                           <?php _e('Effective on', 'epfl') . ' ' ?>
-                          <?php echo esc_html($lex->effectiveDate); ?>
+                          <?php echo date("d.m.Y", strtotime(esc_html($lex->effectiveDate))); ?>
                         <?php endif; ?>
                     </div>
                     <div class="lex-revisionDate col-4">
                         <?php if (esc_html($lex->revisionDate)): ?>
                           <?php _e('Status as of', 'epfl') . ' ' ?>
-                          <?php echo esc_html($lex->revisionDate); ?>
+                          <?php echo date("d.m.Y", strtotime(esc_html($lex->revisionDate))); ?>
                         <?php endif; ?>
                     </div>
                     <div class="lex-responsible col d-md-flex flex-row">
                         <a href="<?php echo esc_html($lex->responsible->url); ?>" target="_blank">
-                            <?php echo esc_html($lex->responsible->lastName . ' ' . $lex->responsible->firstName); ?>
+                            <?php echo esc_html($lex->responsible->firstName . ' ' . $lex->responsible->lastName); ?>
                         </a>
                     </div>
                 </div>
