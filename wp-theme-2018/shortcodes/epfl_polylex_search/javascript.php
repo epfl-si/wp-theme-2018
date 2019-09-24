@@ -30,8 +30,14 @@ window.onload = function() {  // wait that jQuery is loaded
                 lexList.filter();
             } else {
                 lexList.filter(function(item) {
-                    category = item.values()['lex-category'];
-                    return (category == filter_on);
+                    let category_value = item.values()['lex-category'];
+                    // fix getting values escaped
+                    category = $.parseHTML(category_value);
+
+                    if (category && category.length) {
+                        category = category[0].textContent;
+                        return (category == filter_on);
+                    }
                 });
             }
         });
@@ -45,8 +51,15 @@ window.onload = function() {  // wait that jQuery is loaded
                 lexList.filter();
             } else {
                 lexList.filter(function(item) {
-                    category = item.values()['lex-subcategory'];
-                    return (category == filter_on);
+                    let subcategory_value = item.values()['lex-subcategory'];
+                    console.log(subcategory_value);
+                    // fix getting values escaped
+                    subcategory = $.parseHTML(subcategory_value);
+
+                    if (subcategory && subcategory.length) {
+                        subcategory = subcategory[0].textContent;
+                        return (subcategory == filter_on);
+                    }
                 });
             }
         });
