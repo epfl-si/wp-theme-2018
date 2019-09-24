@@ -13,6 +13,8 @@
     $category_options .= ' value="all">' . __('All categories', 'epfl') . '</option>';
 
     // Build category combo list
+    ksort($combo_list_contents);
+
     foreach($combo_list_contents as $categ => $sub) {
         $category_options .= "<option";
         if (!empty($predefined_category) && strtoupper($categ) === strtoupper($predefined_category)) {
@@ -31,18 +33,27 @@
     }
 
     $subcategory_options .= ' value="all">' . __('All subcategories', 'epfl') . '</option>';
+    $all_subcategories = [];
 
     foreach($combo_list_contents as $categ => $subcategories) {
         foreach($subcategories as $sub) {
-            $subcategory_options .= "<option";
-            if (!empty($predefined_subcategory) && strtoupper($sub) === strtoupper($predefined_subcategory)) {
-                $subcategory_options .= " selected";
+            if (!in_array($sub, $all_subcategories)) {
+                $all_subcategories[] = $sub;
             }
-            $subcategory_options .= ">";
-            $subcategory_options .= $sub;
-            $subcategory_options .= "</option>";
         }
     }
+
+    sort($all_subcategories);
+    foreach($all_subcategories as $sub) {
+        $subcategory_options .= "<option";
+        if (!empty($predefined_subcategory) && strtoupper($sub) === strtoupper($predefined_subcategory)) {
+            $subcategory_options .= " selected";
+        }
+        $subcategory_options .= ">";
+        $subcategory_options .= $sub;
+        $subcategory_options .= "</option>";
+    }
+
     $predefined_subcategory = get_query_var('epfl_labs-predefined_subcategory');
     $predefined_search = get_query_var('epfl_lexes-predefined_search');
     $combo_list_content = get_query_var('eplf_lexes-combo_list_content');
