@@ -52,7 +52,6 @@ window.onload = function() {  // wait that jQuery is loaded
             } else {
                 lexList.filter(function(item) {
                     let subcategory_value = item.values()['lex-subcategory'];
-                    console.log(subcategory_value);
                     // fix getting values escaped
                     subcategory = $.parseHTML(subcategory_value);
 
