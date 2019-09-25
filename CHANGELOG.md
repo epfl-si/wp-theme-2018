@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.6.5* (2019-09-25)
+- Polylex improve (#241)
+
 *1.6.4* (2019-09-20)
 - Fix Polylex frontend (#240)
 
