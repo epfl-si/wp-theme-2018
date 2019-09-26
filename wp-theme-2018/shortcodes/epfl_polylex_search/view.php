@@ -91,7 +91,7 @@
         <div id="sorting-header" class="flex-row d-md-flex pt-1 pb-1 border-bottom mb-2">
                 <div class="sort col-1 pr-0 pl-1" data-sort="lex-number"><a href="#" onclick="return false;"><strong>Lex</strong></a></div>
                 <div class="sort col-7" data-sort="lex-title"><a href="#" onclick="return false;"><strong><?php _e('Title', 'epfl') ?></strong></a></div>
-                <div class="sort col-4" data-sort="lex-category-subcategory"><a href="#" onclick="return false;"><strong><?php _e('Category', 'epfl') ?></strong></a></div>
+                <div class="sort col-4" data-sort="lex-category-subcategory"><a href="#" onclick="return false;"><strong><?php _e('Category, subcategory', 'epfl') ?></strong></a></div>
         </div>
 
         <div class="list">
