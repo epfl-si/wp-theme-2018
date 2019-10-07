@@ -8,8 +8,10 @@
  */
 
 $content = $post->post_content;
-$regex = '/\[epfl_hero/';
-$has_hero = preg_match($regex, $content) > 0;
+
+$regex1 = '/\[epfl_hero/';
+$regex2 = '/\<!--\swp:epfl\/hero/';
+$has_hero = preg_match($regex1, $content) > 0 || preg_match($regex2, $content) > 0;
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
