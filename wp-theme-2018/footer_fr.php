@@ -173,6 +173,9 @@
                   <li>
                         <a href="https://www.epfl.ch/campus/associations/fr/index-fr-html/">Associations</a>
                                   </li>
+                  <li>
+                        <a href="https://www.epfl.ch/campus/mobility/fr/mobilite/">Mobilité et transport</a>
+                                  </li>
               </ul>
     </div>
   </div>
