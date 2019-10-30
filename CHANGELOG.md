@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.7.0* (2019-10-30)
+- Update to Elements 2.2.0 https://github.com/epfl-idevelop/elements
+
 *1.6.6* (2019-10-07)
 - Fix the display conditions of the Hero block (#243)
 
