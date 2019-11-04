@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2019-09-26 16:39+0200\n"
-"PO-Revision-Date: 2019-09-26 16:39+0200\n"
+"POT-Creation-Date: 2019-11-04 18:08+0100\n"
+"PO-Revision-Date: 2019-11-04 18:09+0100\n"
 "Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -356,11 +356,11 @@ msgid "Office"
 msgstr "Bureau"
 
 #: shortcodes/epfl_polylex_search/view.php:13
-msgid "All categories"
+msgid "All sections"
 msgstr "Toutes les rubriques"
 
 #: shortcodes/epfl_polylex_search/view.php:35
-msgid "All subcategories"
+msgid "All subsections"
 msgstr "Toutes les sous-rubriques"
 
 #: shortcodes/epfl_polylex_search/view.php:69
@@ -368,8 +368,8 @@ msgid "Search a number or a keyword"
 msgstr "Chercher un numéro ou un mot-clé"
 
 #: shortcodes/epfl_polylex_search/view.php:94
-msgid "Category, subcategory"
-msgstr "Rubrique, Sous-rubrique"
+msgid "Section, subsection"
+msgstr "Rubrique, sous-rubrique"
 
 #: shortcodes/epfl_polylex_search/view.php:117
 msgid "Effective on"
@@ -557,6 +557,12 @@ msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
 #: template-parts/content-post.php:50 template-parts/content.php:50
 msgid "Pages:"
 msgstr "Pages :"
+
+#~ msgid "All categories"
+#~ msgstr "Toutes les rubriques"
+
+#~ msgid "Category, subcategory"
+#~ msgstr "Rubrique, Sous-rubrique"
 
 #~ msgid "Search inside"
 #~ msgstr "Rechercher dans"
