@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.6.6* (2019-10-07)
+- Fix the display conditions of the Hero block (#243)
+
 *1.6.5* (2019-09-25)
 - Polylex improve (#241)
 
