@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.7.1* (2019-11-05)
+- Fix polylex categories names (#242)
+
 *1.7.0* (2019-10-30)
 - Update to Elements 2.2.0 https://github.com/epfl-idevelop/elements
 
