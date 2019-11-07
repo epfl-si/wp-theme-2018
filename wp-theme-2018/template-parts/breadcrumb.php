@@ -59,7 +59,29 @@ if ($currentTemplate == 'page-homepage.php') {
         </li>';
 
     // get an array of custom tags that we will show before the real breadcrumb
-    // custom_tags should be like [["_id", "name_en", "url_en", "name_fr", "url_fr"], ...]
+    /* custom_tags should be like
+      array(x) {
+        [0]=>
+        object(stdClass)#1520 (6) {
+          ["_id"]=>
+          string(17) "oxpw3wpg2Pjr6evrB"
+          ["url_fr"]=>
+          string(34) "https://www.epfl.ch/schools/ic/fr/"
+          ["url_en"]=>
+          string(31) "https://www.epfl.ch/schools/ic/"
+          ["name_fr"]=>
+          string(2) "IC"
+          ["name_en"]=>
+          string(2) "IC"
+          ["type"]=>
+          string(7) "faculty"
+        },
+        {
+          ...
+        }
+      }
+    */
+
     $custom_tags = apply_filters('get_site_tags', '');
 
     if (!empty($custom_tags)) {
