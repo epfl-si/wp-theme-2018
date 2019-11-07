@@ -60,7 +60,7 @@ if ($currentTemplate == 'page-homepage.php') {
 
     // get an array of custom tags that we will show before the real breadcrumb
     // custom_tags should be like [["_id", "name_en", "url_en", "name_fr", "url_fr"], ...]
-    $custom_tags = apply_filters('get_site_tags');
+    $custom_tags = apply_filters('get_site_tags', '');
 
     if (!empty($custom_tags)) {
       $ln = get_current_language();
