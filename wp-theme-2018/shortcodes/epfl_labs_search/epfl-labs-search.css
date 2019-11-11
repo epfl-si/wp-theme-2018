@@ -1,6 +1,0 @@
-.site-row:nth-of-type(odd) {
-    background-color: #E6E6E6;
-}
-.site-row:nth-of-type(even) {
-    background-color: #FFFFFF;
-}

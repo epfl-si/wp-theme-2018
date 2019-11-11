@@ -184,11 +184,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * load shortcodes
- */
-require_once 'shortcodes/index.php';
-
-/**
  * disable comments
  */
 require_once 'disable_comments.php';
