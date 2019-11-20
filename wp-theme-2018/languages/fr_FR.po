@@ -176,6 +176,12 @@ msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgid "Pages:"
 msgstr "Pages :"
 
+#~ msgid "All categories"
+#~ msgstr "Toutes les rubriques"
+
+#~ msgid "Category, subcategory"
+#~ msgstr "Rubrique, Sous-rubrique"
+
 #~ msgid "Search inside"
 #~ msgstr "Rechercher dans"
 
