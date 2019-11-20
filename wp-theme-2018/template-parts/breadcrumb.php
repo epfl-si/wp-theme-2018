@@ -58,35 +58,55 @@ if ($currentTemplate == 'page-homepage.php') {
             </a>
         </li>';
 
-    if(function_exists('epfl_fetch_site_tags')) {
-        $custom_tags = [];
-        $custom_tags = epfl_fetch_site_tags();
+    // get an array of custom tags that we will show before the real breadcrumb
+    /* custom_tags should be like
+      array(x) {
+        [0]=>
+        object(stdClass)#1520 (6) {
+          ["_id"]=>
+          string(17) "oxpw3wpg2Pjr6evrB"
+          ["url_fr"]=>
+          string(34) "https://www.epfl.ch/schools/ic/fr/"
+          ["url_en"]=>
+          string(31) "https://www.epfl.ch/schools/ic/"
+          ["name_fr"]=>
+          string(2) "IC"
+          ["name_en"]=>
+          string(2) "IC"
+          ["type"]=>
+          string(7) "faculty"
+        },
+        {
+          ...
+        }
+      }
+    */
 
-      # custom_tags should be like [["_id", "name_en", "url_en", "name_fr", "url_fr", "type"], ...]
-      if (!empty($custom_tags)) {
-        $ln = get_current_language();
-        $crumbs[] = "
-                    <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
+    $custom_tags = apply_filters('get_site_tags', '');
 
-        foreach($custom_tags as $tag_item) {
-          if ($ln === 'fr') {
-            $tag_name = $tag_item->name_fr;
-            if(!empty($tag_item->url_fr)) {
-              $tag_url = $tag_item->url_fr;
-            } else {
-              $tag_url = $tag_item->url_en;
-            }
+    if (!empty($custom_tags)) {
+      $ln = get_current_language();
+      $crumbs[] = "
+                  <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
+
+      foreach($custom_tags as $tag_item) {
+        if ($ln === 'fr') {
+          $tag_name = $tag_item->name_fr;
+          if(!empty($tag_item->url_fr)) {
+            $tag_url = $tag_item->url_fr;
           } else {
-            $tag_name = $tag_item->name_en;
             $tag_url = $tag_item->url_en;
           }
-
-          $crumbs[] = "
-              <a href=\"{$tag_url}\" class=\"tag tag-primary\">". esc_html($tag_name) . "</a>
-          ";
+        } else {
+          $tag_name = $tag_item->name_en;
+          $tag_url = $tag_item->url_en;
         }
-        $crumbs[] = "</li>";
+
+        $crumbs[] = "
+            <a href=\"{$tag_url}\" class=\"tag tag-primary\">". esc_html($tag_name) . "</a>
+        ";
       }
+      $crumbs[] = "</li>";
     }
 
     $crumb_items = array();
