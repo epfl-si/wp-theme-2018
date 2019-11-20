@@ -1,4 +1,6 @@
 # CHANGELOG
+*1.8.0* (2019-11-20)
+- Post gutenberg cleanup (#244)
 
 *1.7.1* (2019-11-05)
 - Fix polylex categories names (#242)
