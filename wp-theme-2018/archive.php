@@ -5,6 +5,7 @@
 init_globals();
 get_header();
 
+get_template_part( 'template-parts/breadcrumb');
 ?>
 
 	<div class="nav-toggle-layout">
