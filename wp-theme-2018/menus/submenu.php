@@ -15,6 +15,7 @@ add_filter( 'wp_nav_menu_objects', 'submenu_limit', 30, 2 );
  */
 function submenu_limit( $items, $args ) {
 
+
     if ( empty( $args->submenu ) ) {
         return $items;
     }
@@ -22,7 +23,16 @@ function submenu_limit( $items, $args ) {
     $submenu_type = $args->submenu_type ?: 'all';
 
     $current_menu_item = reset(wp_filter_object_list( $items, array( 'current' => true ) ));
-    if ($current_menu_item) array_push($current_menu_item->classes, 'active');
+    if ($current_menu_item) {
+      array_push($current_menu_item->classes, 'active');
+      var_dump($current_menu_item->type_label);
+    } else {
+      var_dump("no current menu item");
+    }
+
+
+    var_dump($items);
+    var_dump($args);
 
     $selectedIds = [];
 
@@ -31,12 +41,12 @@ function submenu_limit( $items, $args ) {
       $selectedIds = submenu_get_direct_children_ids( $current_menu_item->ID , $items );
       // allow current menu item to be display with it's children
       array_push($selectedIds, $current_menu_item->ID);
-    } 
+    }
     else if ($submenu_type == 'siblings') {
 
       $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
       $selectedIds = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
-      
+
     } else if ($submenu_type == 'all') {
       $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
       $siblings = submenu_get_direct_children_ids( $parent_menu_item && $parent_menu_item->ID ? $parent_menu_item->ID : 0 , $items );

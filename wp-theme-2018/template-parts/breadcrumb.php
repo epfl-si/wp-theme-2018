@@ -1,4 +1,7 @@
 <?php
+
+require_once(__DIR__.'/../menus/menu_for_posts.php');
+
 $currentTemplate = get_page_template_slug();
 
 if ($currentTemplate == 'page-homepage.php') {
@@ -7,25 +10,6 @@ if ($currentTemplate == 'page-homepage.php') {
   //  - homepage template
     return;
   }
-
-$id = get_queried_object_id();
-$current_post = get_post_type($id); //"page", "post", ...
-//var_dump( $current_post );
-
-function has_static_posts_page_selected() {
-  // Check if the user has set a static page (settings->Reading->Your homepage displays)
-  // Return the id if this is the case, or False
-  $show_on_front = get_option('show_on_front');
-  $front_post_id = get_option('page_for_posts');
-  var_dump($show_on_front);
-  var_dump($front_post_id);
-  if ($show_on_front == 'page' && isset($front_post_id)) {
-    return $front_post_id;
-  }
-}
-
-//var_dump(has_static_posts_page_selected());
-
 ?>
 <div class="breadcrumb-container">
   <!-- Browse  -->
@@ -119,8 +103,8 @@ function has_static_posts_page_selected() {
      * CUSTOM TAGS end
      */
 
-
-    #var_dump(wp_get_nav_menu_items(get_current_menu_slug()));
+    //var_dump(get_current_menu_slug()->name);
+    //var_dump(wp_get_nav_menu_items(get_current_menu_slug()));
 
     ###
     # With items menu, construct a very basic tree (one leaf)
@@ -133,30 +117,66 @@ function has_static_posts_page_selected() {
         }
     }
 
-    //var_dump($items);
-    //var_dump($wp_filter_object_list);
+    $current_id = get_queried_object_id();
+    $current_id = $post->ID;
 
-    $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $post->ID]);
+    $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id] );
     $item = $items ? reset($wp_filter_object_list) : false;
 
-    $crumb_items = array();
-    for($crumb_item = $item;
-        $crumb_item;
-        $crumb_item = $items[(int) $crumb_item->menu_item_parent])
-    {
-        array_unshift($crumb_items, $crumb_item);
+    # when doing posts, check if we are in the menu, user may not have added this post yet
+    $current_post_type = get_post_type(get_queried_object_id()); //"page", "post", ...
+
+    $current_id = get_queried_object_id();
+
+    //var_dump($current_post_type);
+    //var_dump($item);
+    //var_dump(get_queried_object_id());
+    //var_dump($post->ID);
+
+    if (!$item && $current_post_type == "post" ) {
+      # no having element here means the items is not attached to the menu
+      # better print at least the selected element in settings
+
+      # check if we have a static in settings for posts
+      $static_posts_page_selected = has_static_posts_page_selected();
+
+      if ($static_posts_page_selected) {
+        $static_post = get_post($static_posts_page_selected);
+
+        # yep, we have to transform a post to a menu item here
+        $item->db_id = $static_post->post_id;
+        $item->title = $static_post->post_title;
+        $item->url = $static_post->post_url;
+
+        $crumb_items = array();
+        $crumb_items[] = $item;
+      }
+    } else {
+      $crumb_items = array();
+      for($crumb_item = $item;
+          $crumb_item;
+          $crumb_item = $items[(int) $crumb_item->menu_item_parent])
+      {
+          array_unshift($crumb_items, $crumb_item);
+      }
+
     }
 
+    //var_dump($items);
+    //var_dump($wp_filter_object_list);
     //var_dump($crumb_items);
 
     if ($crumb_items) {
       foreach($crumb_items as $crumb_item) {
           if ((int) $item->db_id === (int) $crumb_item->db_id) {
+            //var_dump($crumb_item);
+            //var_dump("parental");
             $crumbs[] = "
                   <li class=\"breadcrumb-item active\" aria-current=\"page\">
                       {$crumb_item->title}
                   </li>";
           } else {
+            //var_dump("not parental");
               $crumbs[] = "
                   <li class=\"breadcrumb-item\">
                       <a class=\"bread-link bread-home\" href=\"{$crumb_item->url}\" title=\"{$crumb_item->title}\">
