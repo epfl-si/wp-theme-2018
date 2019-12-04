@@ -15,8 +15,7 @@ add_filter( 'wp_nav_menu_objects', 'submenu_limit', 30, 2 );
  */
 function submenu_limit( $items, $args ) {
 
-
-    if ( empty( $args->submenu ) ) {
+  if ( empty( $args->submenu ) ) {
         return $items;
     }
 
@@ -30,13 +29,27 @@ function submenu_limit( $items, $args ) {
       var_dump("no current menu item");
     }
 
-
-    var_dump($items);
-    var_dump($args);
-
     $selectedIds = [];
+    if ($submenu_type == 'post') {
+      // show current post with the parent, that can be the "home" page of blogs, or something else
+      $blog_posts_index_id = get_option( 'page_for_posts' );
 
-    if ($submenu_type == 'children'){
+      var_dump($items);
+
+      // filter children
+      $selectedIds = submenu_get_direct_children_ids( $current_menu_item->ID , $items );
+      // allow current menu item to be display with it's children
+      array_push($selectedIds, $current_menu_item->ID);
+
+      if ('page' == get_option( 'show_on_front') && $blog_posts_index_id) {
+        array_push($selectedIds, $blog_posts_index_id);
+      }
+
+      # todo: add a simulated  parentship relation to current blog with the main blog page
+
+      var_dump($selectedIds);
+    }
+    else if ($submenu_type == 'children') {
       // filter children
       $selectedIds = submenu_get_direct_children_ids( $current_menu_item->ID , $items );
       // allow current menu item to be display with it's children

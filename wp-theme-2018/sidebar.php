@@ -52,9 +52,15 @@ if ($item === false || $item->menu_item_parent == 0 ) $classes = 'current-menu-p
 	$aside = true;
 	$asideContent = 'all';
 	$currentTemplate = get_page_template_slug();
-	if ($currentTemplate == 'page-aside-none.php' || $currentTemplate == 'page-homepage.php' || is_home()) $aside = false;
-	if ($currentTemplate == 'page-aside-siblings-only.php') $asideContent = 'siblings';
-	if ($currentTemplate == 'page-aside-children-only.php') $asideContent = 'children';
+	$current_post_type = get_post_type(get_queried_object_id());
+	if ($current_post_type == "post") {
+		$asideContent = 'post';
+	} else {
+		if ($currentTemplate == 'page-aside-none.php' || $currentTemplate == 'page-homepage.php') $aside = false;
+		if ($currentTemplate == 'page-aside-siblings-only.php') $asideContent = 'siblings';
+		if ($currentTemplate == 'page-aside-children-only.php') $asideContent = 'children';
+	}
+
 	if ($aside) :
 ?>
 
