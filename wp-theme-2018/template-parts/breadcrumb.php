@@ -143,12 +143,15 @@ if (!$item && get_post_type(get_queried_object_id()) == "post") {
         $static_post_menu_entry = new stdClass();
         $static_post_menu_entry->db_id = -99; // don't clash with existing entry
         $static_post_menu_entry->type = 'nav_menu_item';
-        $static_post_menu_entry->title = "Blog"; //find a nice name here
 
-        if (function_exists('pll_home_url')) {
-            $static_post_menu_entry->url = pll_home_url()."?post_type=post";
+        $language = get_current_language();
+
+        if ($language === 'fr') {
+            $static_post_menu_entry->title = "Articles";
+            $static_post_menu_entry->url = site_url()."fr/?post_type=post";
         } else {
-            $static_post_menu_entry->url = site_url()."?post_type=post";
+            $static_post_menu_entry->title = "Posts";
+            $static_post_menu_entry->url = site_url()."/?post_type=post";
         }
     }
 
