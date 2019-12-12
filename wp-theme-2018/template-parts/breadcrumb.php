@@ -4,6 +4,23 @@ require_once __DIR__ . '/../menus/blog-posts.php';
 
 $currentTemplate = get_page_template_slug();
 
+function get_rendered_crumb_item($crumb_item, $is_active=False) {
+    if ( $is_active ) {
+        return "
+        <li class=\"breadcrumb-item active\" aria-current=\"page\">
+            {$crumb_item->title}
+        </li>";
+
+    } else {
+        return "
+        <li class=\"breadcrumb-item\">
+            <a class=\"bread-link bread-home\" href=\"{$crumb_item->url}\" title=\"{$crumb_item->title}\">
+                {$crumb_item->title}
+            </a>
+        </li>";
+    }
+}
+
 if ($currentTemplate == 'page-homepage.php') {
     // hide breadcrumbs on:
     //  - homepage
@@ -113,89 +130,88 @@ if (($menu_items = wp_get_nav_menu_items(get_current_menu_slug())) !== false) {
     }
 }
 
+# are we doing posts ?
 $current_id = get_queried_object_id();
 
-$wp_filter_object_list = wp_filter_object_list($items, ['object_id' => $current_id]);
-$item = $items ? reset($wp_filter_object_list) : false;
+if (get_post_type($current_id) == "post") {
+    # only do something if the current post is not already in the menu
+    if( empty( wp_filter_object_list($items, ['object_id' => $current_id]) ) ) {
+        # add manually the entry then
+        $current_object = get_queried_object();
+        $current_item_as_menu_entry = new stdClass();
+        $current_item_as_menu_entry->db_id = max(array_keys($items)) + 1; # find a free id
+        $current_item_as_menu_entry->object_id = $current_id;
+        $current_item_as_menu_entry->type = 'nav_menu_item';
+        $current_item_as_menu_entry->title = $current_object->post_title;
+        $items[$current_item_as_menu_entry->db_id] = $current_item_as_menu_entry;
 
-# when doing posts, check if we are in the menu, user may not have added this post yet
-if (!$item && get_post_type(get_queried_object_id()) == "post") {
-    # no having element here means the items is not attached to the menu
-    # better print at least the selected element in settings
+        # let's find the best parent for this blog post
+        $static_posts_page_selected_id = has_static_posts_page_selected();
+        if ( $static_posts_page_selected_id ) {
+            # check if this static posts page is in the menu, because we need it now
+            $static_post_page = reset(wp_filter_object_list($items, ['object_id' => $static_posts_page_selected_id]));
+            if( empty( $static_post_page ) ) {
+                # static post page is not in the menu, add it manually
+                $static_post = get_post($static_posts_page_selected_id);
+                # yep, we have to transform the post page to a menu item here, as we a
+                # Example found here :
+                # https://github.com/wp-cli/entity-command/blob/95f2a07fdfa107aaa778711a4b5b53e962cd183a/src/Menu_Item_Command.php#L57
+                $static_post_menu_entry = new stdClass();
+                $static_post_menu_entry->db_id = max(array_keys($items)) + 1; # find a free id
+                $static_post_menu_entry->object_id = $static_posts_page_selected_id;
+                $static_post_menu_entry->type = 'nav_menu_item';
+                $static_post_menu_entry->title = $static_post->post_title;
+                $static_post_menu_entry->url = get_post_permalink($static_post);
 
-    # fullfil the crumb_items with some custom posts
-    $crumb_items = array();
+                $items[$static_post_menu_entry->db_id] = $static_post_menu_entry;
 
-    # check if we have a static in settings for posts
-    $static_posts_page_selected_id = has_static_posts_page_selected();
-    if ($static_posts_page_selected_id) {
-        $static_post = get_post($static_posts_page_selected_id);
-        # yep, we have to transform the post page to a menu item here, as we a
-        # Example found here :
-        # https://github.com/wp-cli/entity-command/blob/95f2a07fdfa107aaa778711a4b5b53e962cd183a/src/Menu_Item_Command.php#L57
-        $static_post_menu_entry = new stdClass();
-        $static_post_menu_entry->db_id = $static_post->post_id;
-        $static_post_menu_entry->type = 'nav_menu_item';
-        $static_post_menu_entry->title = $static_post->post_title;
-        $static_post_menu_entry->url = get_post_permalink($static_post);
-    } else {
-        // no static page selected, get one from Wordpress defaults
-        $static_post_menu_entry = new stdClass();
-        $static_post_menu_entry->db_id = -99; // don't clash with existing entry
-        $static_post_menu_entry->type = 'nav_menu_item';
-
-        $language = get_current_language();
-
-        if ($language === 'fr') {
-            $static_post_menu_entry->title = "Articles";
-            $static_post_menu_entry->url = site_url()."fr/?post_type=post";
+                # making it a child of the selected posts page is nice
+                $items[$current_item_as_menu_entry->db_id]->menu_item_parent = $static_post_menu_entry->db_id;
+            } else {
+                # make the current post a child of the selected posts page
+                $items[$current_item_as_menu_entry->db_id]->menu_item_parent = $static_post_page->db_id;
+            }
         } else {
-            $static_post_menu_entry->title = "Posts";
-            $static_post_menu_entry->url = site_url()."/?post_type=post";
+            # we don't have a selected posts page, so do it with a default and make it the first element
+            $default_posts_menu_entry = new stdClass();
+            $default_posts_menu_entry->db_id = max(array_keys($items)) + 1; # find a free id
+            $default_posts_menu_entry->type = 'nav_menu_item';
+            $default_posts_menu_entry->menu_item_parent = 0;
+
+            $language = get_current_language();
+
+            if ($language === 'fr') {
+                $default_posts_menu_entry->title = "Articles";
+                $default_posts_menu_entry->url = site_url()."fr/?post_type=post";
+            } else {
+                $default_posts_menu_entry->title = "Posts";
+                $default_posts_menu_entry->url = site_url()."/?post_type=post";
+            }
+            $items = [];  # empty all we got, the two lines under are enough
+            $crumbs[] = get_rendered_crumb_item($default_posts_menu_entry, False);
+            $crumbs[] = get_rendered_crumb_item($current_item_as_menu_entry, True);
         }
     }
+}
 
-    $crumb_items[] = $static_post_menu_entry;
+# we need to find the current object in the menu
+$current_objects = wp_filter_object_list($items, ['object_id' => $current_id]);
+$item = $items ? reset($current_objects) : false;
 
-    # Then, add the current post as a child
-    $current_object = get_queried_object();
-    $current_item_as_menu_entry = new stdClass();
-    $current_item_as_menu_entry->db_id = $current_object->ID;
-    $current_item_as_menu_entry->type = 'nav_menu_item';
-    $current_item_as_menu_entry->title = $current_object->post_title;
-    $current_item_as_menu_entry->menu_item_parent = $static_posts_page_selected_id;
-
-    $crumb_items[] = $current_item_as_menu_entry;
-
-    //#NotAChoiceUnlessRefeactor
-    //as $item is the current item and will be needed next, make it as awaited
-    $item->db_id = $current_object->ID;
-
-} else {
-    // not in a blog post part
-    $crumb_items = array();
-    for ($crumb_item = $item;
-        $crumb_item;
-        $crumb_item = $items[(int) $crumb_item->menu_item_parent]) {
-        array_unshift($crumb_items, $crumb_item);
-    }
-
+$crumb_items = array();
+# from the current element, go up until the root
+for ($crumb_item = $item;
+    $crumb_item;
+    $crumb_item = $items[(int) $crumb_item->menu_item_parent]) {
+    array_unshift($crumb_items, $crumb_item);
 }
 
 if ($crumb_items) {
     foreach ($crumb_items as $crumb_item) {
         if ((int) $item->db_id === (int) $crumb_item->db_id) {
-            $crumbs[] = "
-                  <li class=\"breadcrumb-item active\" aria-current=\"page\">
-                      {$crumb_item->title}
-                  </li>";
+            $crumbs[] = get_rendered_crumb_item($crumb_item, True);
         } else {
-            $crumbs[] = "
-                <li class=\"breadcrumb-item\">
-                    <a class=\"bread-link bread-home\" href=\"{$crumb_item->url}\" title=\"{$crumb_item->title}\">
-                        {$crumb_item->title}
-                    </a>
-                </li>";
+            $crumbs[] = get_rendered_crumb_item($crumb_item, False);
         }
     }
 }
