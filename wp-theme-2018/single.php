@@ -18,7 +18,7 @@ get_template_part( 'template-parts/breadcrumb');
 
 	<div class="<?php echo $containerClasses ?>">
 		<div class="w-100">
-			<main id="content" role="main" class="content pt-5">
+			<main id="content" role="main" class="container-grid content pt-5">
 				<?php
 			while ( have_posts() ) :
 				the_post();
