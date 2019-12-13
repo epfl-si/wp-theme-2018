@@ -50,6 +50,32 @@ body {
     font-family: "SuisseIntl", Arial, sans-serif !important;
 }
 
+/* Variables */
+
+$gray-100: #e6e6e6;
+$gray-200: #d5d5d5;
+$gray-300: #c1c1c1;
+$gray-600: #707070;
+$black: #212121;
+$red: #f00;
+$dark-red: #b51f1f;
+
+/* Helper classes */
+
+%sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.sr-only,
+.screen-reader-text {
+  @extend %sr-only;
+}
+
 /* Content images */
 
 .wp-caption {
@@ -74,5 +100,49 @@ body {
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+/* Wordpress pagination */
+
+nav.navigation.pagination {
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  a {
+    color: $red;
+    text-decoration: none;
+    transition: all .2s;
+    
+    &:hover {
+      background: $gray-100;
+      border: 1px solid #707070 !important;
+    }
+  }
+  
+  .page-numbers {
+    background-color: #fff;
+    border-top: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
+    font-size: 1em;
+    font-weight: 700;
+    min-width: 2.25rem;
+    padding: .5rem .75rem;
+    text-align: center;
+    
+    &:first-child {
+      border-left: 1px solid $gray-200;
+    }
+    
+    &:last-child {
+      border-right: 1px solid $gray-200;
+    }
+    
+    &.current {
+      background: $gray-100;
+      color: $gray-600;
+    }
   }
 }
