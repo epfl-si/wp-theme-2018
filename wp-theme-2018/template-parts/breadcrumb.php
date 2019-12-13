@@ -130,10 +130,11 @@ if (($menu_items = wp_get_nav_menu_items(get_current_menu_slug())) !== false) {
     }
 }
 
-# are we doing posts ?
+
 $current_id = get_queried_object_id();
 
-if (get_post_type($current_id) == "post") {
+# are we doing posts ?
+if ( is_single() && 'post' == get_post_type() ) {
     # only do something if the current post is not already in the menu
     if( empty( wp_filter_object_list($items, ['object_id' => $current_id]) ) ) {
         # add manually the entry then

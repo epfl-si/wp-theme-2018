@@ -8,11 +8,18 @@
  */
 function has_static_posts_page_selected()
 {
-    $show_on_front = get_option('show_on_front');
-    $front_post_id = get_option('page_for_posts');
-    if ($show_on_front == 'page' && isset($front_post_id)) {
-        return $front_post_id;
+    static $static_posts_page_id = null;  # cache it because the db hit
+
+    if (is_null($static_posts_page_id)){
+        $show_on_front = get_option('show_on_front');
+        $front_post_id = get_option('page_for_posts');
+        if ($show_on_front == 'page' && isset($front_post_id)) {
+            $static_posts_page_id = $front_post_id;
+        } else {
+            $static_posts_page_id = False;
+        }
     }
+    return $static_posts_page_id;
 }
 
 /*************************
@@ -26,7 +33,8 @@ function has_static_posts_page_selected()
 function menu_for_blogs($items, $args)
 {
     # only for blog posts
-    if (get_post_type(get_queried_object_id()) != "post") {
+    if ( is_single() && 'post' == get_post_type() ) {
+
         return $items;
     }
 
@@ -54,7 +62,7 @@ add_filter('wp_nav_menu_objects', 'menu_for_blogs', 29, 2);
 function css_hamburger_menu_for_blogs($classes, $item, $args, $depth)
 {
     # only for blog posts
-    if (get_post_type(get_queried_object_id()) != "post") {
+    if ( is_single() && 'post' == get_post_type() ) {
         return $classes;
     }
 
