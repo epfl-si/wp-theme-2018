@@ -4,6 +4,14 @@ require_once __DIR__ . '/../menus/blog-posts.php';
 
 $currentTemplate = get_page_template_slug();
 
+function get_a_free_id($items) {
+    if (!empty($items)) {
+        return max(array_keys($items)) + 1; # find a free id
+    } else {
+        return 1;
+    }
+}
+
 function get_rendered_crumb_item($crumb_item, $is_active=False) {
     if ( $is_active ) {
         return "
@@ -140,7 +148,7 @@ if ( is_single() && 'post' == get_post_type() ) {
         # add manually the entry then
         $current_object = get_queried_object();
         $current_item_as_menu_entry = new stdClass();
-        $current_item_as_menu_entry->db_id = max(array_keys($items)) + 1; # find a free id
+        $current_item_as_menu_entry->db_id = get_a_free_id($items);
         $current_item_as_menu_entry->object_id = $current_id;
         $current_item_as_menu_entry->type = 'nav_menu_item';
         $current_item_as_menu_entry->title = $current_object->post_title;
@@ -158,7 +166,7 @@ if ( is_single() && 'post' == get_post_type() ) {
                 # Example found here :
                 # https://github.com/wp-cli/entity-command/blob/95f2a07fdfa107aaa778711a4b5b53e962cd183a/src/Menu_Item_Command.php#L57
                 $static_post_menu_entry = new stdClass();
-                $static_post_menu_entry->db_id = max(array_keys($items)) + 1; # find a free id
+                $static_post_menu_entry->db_id = get_a_free_id($items);
                 $static_post_menu_entry->object_id = $static_posts_page_selected_id;
                 $static_post_menu_entry->type = 'nav_menu_item';
                 $static_post_menu_entry->title = $static_post->post_title;
@@ -175,7 +183,7 @@ if ( is_single() && 'post' == get_post_type() ) {
         } else {
             # we don't have a selected posts page, so do it with a default and make it the first element
             $default_posts_menu_entry = new stdClass();
-            $default_posts_menu_entry->db_id = max(array_keys($items)) + 1; # find a free id
+            $default_posts_menu_entry->db_id = get_a_free_id($items);
             $default_posts_menu_entry->type = 'nav_menu_item';
             $default_posts_menu_entry->menu_item_parent = 0;
 
