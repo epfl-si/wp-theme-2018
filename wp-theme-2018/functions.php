@@ -237,8 +237,7 @@ function init_globals() {
 	$actualTemplate = get_page_template_slug();
 	if (
 		$actualTemplate == 'page-aside-none.php'
-		|| $actualTemplate == 'page-homepage.php'
-		|| is_home()) {
+		|| $actualTemplate == 'page-homepage.php') {
 		$containerClasses = 'nav-toggle-layout';
 		$mainClasses = '';
 	}
