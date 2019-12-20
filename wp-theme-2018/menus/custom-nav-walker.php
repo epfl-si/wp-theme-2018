@@ -62,9 +62,10 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		}
 	}
 
-		public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$this->currentItem = $item;
-		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+		
+		if(array_key_exists('item_spacing', $args) && $args['item_spacing'] === 'discard') {
 			$t = '';
 			$n = '';
 		} else {
@@ -166,13 +167,14 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		 */
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		$item_output = property_exists($args, 'before')?$args->before:'';
+		$item_output = array_key_exists('before', $args)? $args['before']:'';
 		$item_output .= '<a'. $attributes .'>';
-		$item_output .= (property_exists($args, 'link_before')?$args->link_before:'') .
-		                $title .
-		                (property_exists($args, 'link_after')?$args->link_after:'');
+		$item_output .= (array_key_exists('link_before', $args)? $args['link_before']:'') . 
+						$title .
+						(array_key_exists('link_after', $args)? $args['link_after']:'');
 		$item_output .= '</a>';
-		$item_output .= property_exists($args, 'after')?$args->after:'';
+		$item_output .= array_key_exists('after', $args)? $args['after']:'';
+		
 		if(is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
 			$item_output .= '
 						<a href="#" role="button" aria-hidden="true" class="nav-arrow">
