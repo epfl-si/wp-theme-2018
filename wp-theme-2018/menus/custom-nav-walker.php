@@ -169,11 +169,11 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 
 		$item_output = array_key_exists('before', $args)? $args['before']:'';
 		$item_output .= '<a'. $attributes .'>';
-		$item_output = (array_key_exists('link_before', $args)? $args['link_before']:'') . 
+		$item_output .= (array_key_exists('link_before', $args)? $args['link_before']:'') . 
 						$title .
 						(array_key_exists('link_after', $args)? $args['link_after']:'');
 		$item_output .= '</a>';
-		$item_output = array_key_exists('after', $args)? $args['after']:'';
+		$item_output .= array_key_exists('after', $args)? $args['after']:'';
 		
 		if(is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
 			$item_output .= '
