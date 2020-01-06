@@ -84,19 +84,6 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 }
 
 ?>
-<?php
-	// celebration link builder
-	// this is a temp hack until we remove it
-	$language = get_current_language();
-
-	if ($language === 'fr') {
-		$celebration_url = 'https://www.epfl.ch/campus/events/fr/celebration/';
-		$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 ans</a></li>';
-	} else {
-		$celebration_url = 'https://www.epfl.ch/campus/events/celebration-en/';
-		$celebration_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $celebration_url .'">50 years</a></li>';
-	}
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
