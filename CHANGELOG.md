@@ -1,4 +1,11 @@
 # CHANGELOG
+*1.9.0* (2020-01-08)
+- New element version 2.0.6
+- Update footer
+- Remove 50 years artefacts (#250)
+- Delete PHP Notice et Warnings (#249)
+- Modification of table paddings (#431)
+
 *1.8.0* (2019-11-20)
 - Post gutenberg cleanup (#244)
 

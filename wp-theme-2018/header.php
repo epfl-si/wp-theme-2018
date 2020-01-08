@@ -66,6 +66,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
             $other_children_count = count(array_filter($elements,
             function($child) use ($self, $element) {
                 return ($child->menu_item_parent == $element->ID &&
+                property_exists($child, 'epfl_soa') &&
                 $child->epfl_soa !== $self->_get_our_soa());
             }));
             if ($other_children_count === 0) return true;
@@ -73,7 +74,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
     }
 
     function _get_our_soa () {
-        if (! $this->_our_soa) {
+        if (! property_exists($this, '_our_soa')) {
             $this->_our_soa = site_url();
             if (! preg_match('#/$#', $this->_our_soa)) {
                 $this->_our_soa .= '/';

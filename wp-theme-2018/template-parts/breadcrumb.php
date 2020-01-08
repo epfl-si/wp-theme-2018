@@ -110,29 +110,33 @@ if ($currentTemplate == 'page-homepage.php') {
     }
 
     $crumb_items = array();
-    for($crumb_item = $item;
-        $crumb_item;
-        $crumb_item = $items[(int) $crumb_item->menu_item_parent])
+
+    $crumb_item = $item;
+
+    while($crumb_item !== false)
     {
-        array_unshift($crumb_items, $crumb_item);
+      array_unshift($crumb_items, $crumb_item);
+
+      $index = (int) $crumb_item->menu_item_parent;
+      $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
     }
-    if ($crumb_items) {
-      foreach($crumb_items as $crumb_item) {
-          if ((int) $item->db_id === (int) $crumb_item->db_id) {
+
+    foreach($crumb_items as $crumb_item) {
+        if ((int) $item->db_id === (int) $crumb_item->db_id) {
+          $crumbs[] = "
+                <li class=\"breadcrumb-item active\" aria-current=\"page\">
+                    {$crumb_item->title}
+                </li>";
+        } else {
             $crumbs[] = "
-                  <li class=\"breadcrumb-item active\" aria-current=\"page\">
-                      {$crumb_item->title}
-                  </li>";
-          } else {
-              $crumbs[] = "
-                  <li class=\"breadcrumb-item\">
-                      <a class=\"bread-link bread-home\" href=\"{$crumb_item->url}\" title=\"{$crumb_item->title}\">
-                          {$crumb_item->title}
-                      </a>
-                  </li>";
-          }
-      }
+                <li class=\"breadcrumb-item\">
+                    <a class=\"bread-link bread-home\" href=\"{$crumb_item->url}\" title=\"{$crumb_item->title}\">
+                        {$crumb_item->title}
+                    </a>
+                </li>";
+        }
     }
+    
     echo implode('', $crumbs);
     echo '</ol></nav>';
   ?>
