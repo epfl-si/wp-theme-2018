@@ -39,7 +39,7 @@
                         <a href="https://www.epfl.ch/about/philanthropy/fr/philanthropie/">Philanthropie</a>
                                   </li>
                   <li>
-                        <a href="https://cooperation.epfl.ch/fr/index-fr-html/">Cooperation</a>
+                        <a href="https://essentialtech.center">Cooperation</a>
                                   </li>
                   <li>
                         <a href="https://www.epflalumni.ch/fr/">Alumni</a>
