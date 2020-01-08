@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.9.1* (2020-01-08)
+- Delete PHP Notice et Warnings (#251)
+
 *1.9.0* (2020-01-08)
 - New element version 2.0.6
 - Update footer
