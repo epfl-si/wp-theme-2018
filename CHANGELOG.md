@@ -1,5 +1,8 @@
 # CHANGELOG
 *1.9.1* (2020-01-08)
+- Remove 50 years label for fallback menu
+
+*1.9.1* (2020-01-08)
 - Delete PHP Notice et Warnings (#251)
 
 *1.9.0* (2020-01-08)
