@@ -62,9 +62,16 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		}
 	}
 
-		public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	/**
+	 * @remark Default value of $args is an empty array but parameter can also be an object (if given)..
+	 * A big thanks to Antistatic who coded like this... #facepalm
+	 */
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$this->currentItem = $item;
-		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+		
+		/* Because $args can be an array or an object, we have to check differently... */
+		if( (is_array($args) && array_key_exists('item_spacing', $args) && $args['item_spacing'] === 'discard') ||
+		    (property_exists($args, 'item_spacing') && $args->item_spacing == 'discard') ) {
 			$t = '';
 			$n = '';
 		} else {
@@ -166,13 +173,27 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		 */
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		$item_output = property_exists($args, 'before')?$args->before:'';
-		$item_output .= '<a'. $attributes .'>';
-		$item_output .= (property_exists($args, 'link_before')?$args->link_before:'') .
-		                $title .
-		                (property_exists($args, 'link_after')?$args->link_after:'');
-		$item_output .= '</a>';
-		$item_output .= property_exists($args, 'after')?$args->after:'';
+		if(is_array($args))
+		{
+			$item_output = array_key_exists('before', $args)? $args['before']:'';
+			$item_output .= '<a'. $attributes .'>';
+			$item_output .= (array_key_exists('link_before', $args)? $args['link_before']:'') . 
+							$title .
+							(array_key_exists('link_after', $args)? $args['link_after']:'');
+			$item_output .= '</a>';
+			$item_output .= array_key_exists('after', $args)? $args['after']:'';
+		}
+		else // $args is an object
+		{
+			$item_output = property_exists($args, 'before')? $args->before:'';
+			$item_output .= '<a'. $attributes .'>';
+			$item_output .= (property_exists($args, 'link_before')? $args->link_before:'') . 
+							$title .
+							(property_exists($args, 'link_after')? $args->link_after:'');
+			$item_output .= '</a>';
+			$item_output .= property_exists($args, 'after')? $args->after:'';
+		}
+			
 		if(is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
 			$item_output .= '
 						<a href="#" role="button" aria-hidden="true" class="nav-arrow">
