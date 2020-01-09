@@ -1,4 +1,8 @@
 # CHANGELOG
+
+*1.9.3* (2020-01-08)
+- Remove 50 years label for fallback menu in french too
+
 *1.9.2* (2020-01-08)
 - Remove 50 years label for fallback menu
 
