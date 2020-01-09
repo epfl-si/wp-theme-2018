@@ -17,7 +17,4 @@
     <li id="menu-item-6">
         <a class="nav-item" href="https://www.epfl.ch/campus/fr/campus/">Campus</a>
     </li>
-    <li id="menu-item-0">
-        <a style="color:#ff0000;" href="https://www.epfl.ch/campus/events/fr/celebration/">50 ans</a>
-    </li>
 </ul>
