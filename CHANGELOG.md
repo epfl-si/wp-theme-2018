@@ -1,5 +1,5 @@
 # CHANGELOG
-*1.9.1* (2020-01-08)
+*1.9.2* (2020-01-08)
 - Remove 50 years label for fallback menu
 
 *1.9.1* (2020-01-08)
