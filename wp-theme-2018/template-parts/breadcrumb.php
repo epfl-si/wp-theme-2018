@@ -132,6 +132,7 @@ if (!empty($custom_tags)) {
 # that will serve to build the breadcrumb
 $items = array();
 
+# TODO: Fix warning, see https://github.com/epfl-idevelop/wp-theme-2018/commit/2a95b93afd8a1fbfdb42160a0a360873d8aac979
 if (($menu_items = wp_get_nav_menu_items(get_current_menu_slug())) !== false) {
     foreach ($menu_items as $item) {
         $items[(int) $item->db_id] = $item;
@@ -207,6 +208,7 @@ if ( is_single() && 'post' == get_post_type() ) {
 $current_objects = wp_filter_object_list($items, ['object_id' => $current_id]);
 $item = $items ? reset($current_objects) : false;
 
+# TODO: Fix warning, see https://github.com/epfl-idevelop/wp-theme-2018/commit/2a95b93afd8a1fbfdb42160a0a360873d8aac979
 $crumb_items = array();
 # from the current element, go up until the root
 for ($crumb_item = $item;

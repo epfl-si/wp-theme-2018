@@ -39,7 +39,7 @@
                                     <a href="https://www.epfl.ch/about/philanthropy/">Philanthropy</a>
                       </li>
                   <li>
-                                    <a href="https://cooperation.epfl.ch">Cooperation</a>
+                                    <a href="https://essentialtech.center">Cooperation</a>
                       </li>
                   <li>
                                     <a href="https://www.epflalumni.ch">Alumni</a>
@@ -190,25 +190,25 @@
   <div class="collapse collapse-item" id="collapse-fac">
     <ul class="footer-links">
           <li>
-                        <a href="https://www.epfl.ch/schools/enac/">School of architecture, civil and environmental engineering <strong>ENAC</strong></a>
+                        <a href="https://www.epfl.ch/schools/enac/">School of Architecture, Civil and Environmental Engineering <strong>ENAC</strong></a>
               </li>
           <li>
-                        <a href="https://www.epfl.ch/schools/sb/">School of basic sciences <strong>SB</strong></a>
+                        <a href="https://www.epfl.ch/schools/sb/">School of Basic Sciences <strong>SB</strong></a>
               </li>
           <li>
                         <a href="https://sti.epfl.ch">School of Engineering <strong>STI</strong></a>
               </li>
           <li>
-                        <a href="https://www.epfl.ch/schools/ic/">School of computer and communication sciences <strong>IC</strong></a>
+                        <a href="https://www.epfl.ch/schools/ic/">School of Computer and Communication Sciences <strong>IC</strong></a>
               </li>
           <li>
-                        <a href="https://www.epfl.ch/schools/sv/">School of life sciences <strong>SV</strong></a>
+                        <a href="https://www.epfl.ch/schools/sv/">School of Life Sciences <strong>SV</strong></a>
               </li>
           <li>
-                        <a href="https://www.epfl.ch/schools/cdm/">College of management of technology <strong>CDM</strong></a>
+                        <a href="https://www.epfl.ch/schools/cdm/">College of Management of Technology <strong>CDM</strong></a>
               </li>
           <li>
-                        <a href="https://www.epfl.ch/schools/cdh/">College of humanities <strong>CDH</strong></a>
+                        <a href="https://www.epfl.ch/schools/cdh/">College of Humanities <strong>CDH</strong></a>
               </li>
           <li>
                         <a href="http://www.epfl.ae">Middle East <strong>ME</strong></a>
