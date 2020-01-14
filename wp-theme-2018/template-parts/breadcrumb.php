@@ -1,19 +1,124 @@
 <?php
-
-require_once __DIR__ . '/../menus/blog-posts.php';
-
+/**
+ * hide breadcrumbs on:
+ *  - homepage
+ *  - homepage template
+ */
 $currentTemplate = get_page_template_slug();
 
-function get_a_free_id($items) {
-    if (!empty($items)) {
-        return max(array_keys($items)) + 1; # find a free id
+if ($currentTemplate == 'page-homepage.php') {
+    return;
+  }
+
+function get_home_icon_markup() {
+    $markup = [];
+
+    // first, the little home url
+    if (get_option('stylesheet') === 'wp-theme-light') {
+        $little_home_url = get_site_url();
     } else {
-        return 1;
+        $little_home_url = get_epfl_home_url();
     }
+
+    $markup[] = '
+            <li class="breadcrumb-item">
+                <a class="bread-link bread-home" href="' . $little_home_url . '" title="home">
+                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
+                </a>
+            </li>';
+
+    return $markup;
 }
 
-function get_rendered_crumb_item($crumb_item, $is_active=False) {
-    if ( $is_active ) {
+/*
+* Get the html of the custom tag
+*/
+function get_custom_tags_markup() {
+    // get an array of custom tags that we will show before the real breadcrumb
+
+    /* custom_tags should be like
+    array(x) {
+    [0]=>
+    object(stdClass)#1520 (5) {
+    ["url_fr"]=>
+    string(34) "https://www.epfl.ch/schools/ic/fr/"
+    ["url_en"]=>
+    string(31) "https://www.epfl.ch/schools/ic/"
+    ["name_fr"]=>
+    string(2) "IC"
+    ["name_en"]=>
+    string(2) "IC"
+    ["type"]=>
+    string(7) "faculty"
+    },
+    {
+    ...
+    }
+    }
+    */
+
+    $markup = [];
+
+    $custom_tags = apply_filters('get_site_tags', '');
+
+    if (!empty($custom_tags)) {
+        $ln = get_current_language();
+        $markup[] = "
+                    <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
+
+        foreach ($custom_tags as $tag_item) {
+            if ($ln === 'fr') {
+                $tag_name = $tag_item->name_fr;
+                if (!empty($tag_item->url_fr)) {
+                    $tag_url = $tag_item->url_fr;
+                } else {
+                    $tag_url = $tag_item->url_en;
+                }
+            } else {
+                $tag_name = $tag_item->name_en;
+                $tag_url = $tag_item->url_en;
+            }
+
+            $markup[] = "
+                <a href=\"{$tag_url}\" class=\"tag tag-primary\">" . esc_html($tag_name) . "</a>
+            ";
+        }
+        $markup[] = "</li>";
+    }
+
+    return $markup;
+}
+
+/**
+ * With items menu, construct a very basic tree (one leaf)
+ * that will serve to build the breadcrumb
+ */
+function get_all_menu_items_flattened() {
+    $items = [];
+
+    if(($menu_items = wp_get_nav_menu_items(get_current_menu_slug()))!==false)
+    {
+        foreach ($menu_items as $item) {
+            $items[(int) $item->db_id] = $item;
+        }
+    }
+
+    return $items;
+}
+
+function get_current_item($items) {
+    $item = null;
+
+    $current_id = get_queried_object_id();
+
+    $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id]);
+    $item = $items ? reset($wp_filter_object_list) : false;
+
+    return $item;
+}
+
+function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
+    if ( $is_current_item ) {
         return "
         <li class=\"breadcrumb-item active\" aria-current=\"page\">
             {$crumb_item->title}
@@ -27,13 +132,6 @@ function get_rendered_crumb_item($crumb_item, $is_active=False) {
             </a>
         </li>";
     }
-}
-
-if ($currentTemplate == 'page-homepage.php') {
-    // hide breadcrumbs on:
-    //  - homepage
-    //  - homepage template
-    return;
 }
 ?>
 <div class="breadcrumb-container">
@@ -52,182 +150,46 @@ if ($currentTemplate == 'page-homepage.php') {
   <!-- end Browse -->
 
   <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">
+    <ol class="breadcrumb">
   <?php
-// Breadcrumb generated strings will be in this var
-$crumbs = array();
+    // Breadcrumb
+    // Final generated strings will be in this var
+    $crumbs = [];
 
-// first, the little home url
-if (get_option('stylesheet') === 'wp-theme-light') {
-    $little_home_url = get_site_url();
-} else {
-    $little_home_url = get_epfl_home_url();
-}
+    // add the little home icon
+    $crumbs = array_merge($crumbs, get_home_icon_markup());
 
-echo '<nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper"><ol class="breadcrumb">';
-$crumbs[] = '
-        <li class="breadcrumb-item">
-            <a class="bread-link bread-home" href="' . $little_home_url . '" title="home">
-                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
-            </a>
-        </li>';
+    // add custom tags if any
+    $crumbs = array_merge($crumbs, get_custom_tags_markup());
 
-/**
- * CUSTOM TAGS start
- */
-// get an array of custom tags that we will show before the real breadcrumb
+    $items = get_all_menu_items_flattened();
 
-/* custom_tags should be like
-array(x) {
-[0]=>
-object(stdClass)#1520 (5) {
-["url_fr"]=>
-string(34) "https://www.epfl.ch/schools/ic/fr/"
-["url_en"]=>
-string(31) "https://www.epfl.ch/schools/ic/"
-["name_fr"]=>
-string(2) "IC"
-["name_en"]=>
-string(2) "IC"
-["type"]=>
-string(7) "faculty"
-},
-{
-...
-}
-}
- */
+    $current_item = get_current_item($items);
 
-$custom_tags = apply_filters('get_site_tags', '');
+    // fullfil crumb_items array, in accordance with the items hierarchy
+    $crumb_items = [];
+    $crumb_item = $current_item;
 
-if (!empty($custom_tags)) {
-    $ln = get_current_language();
-    $crumbs[] = "
-                  <li class=\"breadcrumb-item breadcrumb-tags-wrapper\">";
-
-    foreach ($custom_tags as $tag_item) {
-        if ($ln === 'fr') {
-            $tag_name = $tag_item->name_fr;
-            if (!empty($tag_item->url_fr)) {
-                $tag_url = $tag_item->url_fr;
-            } else {
-                $tag_url = $tag_item->url_en;
-            }
-        } else {
-            $tag_name = $tag_item->name_en;
-            $tag_url = $tag_item->url_en;
-        }
-
-        $crumbs[] = "
-            <a href=\"{$tag_url}\" class=\"tag tag-primary\">" . esc_html($tag_name) . "</a>
-        ";
-    }
-    $crumbs[] = "</li>";
-}
-
-/**
- * CUSTOM TAGS end
- */
-###
-# With items menu, construct a very basic tree (one leaf)
-# that will serve to build the breadcrumb
-$items = array();
-
-# TODO: Fix warning, see https://github.com/epfl-idevelop/wp-theme-2018/commit/2a95b93afd8a1fbfdb42160a0a360873d8aac979
-if (($menu_items = wp_get_nav_menu_items(get_current_menu_slug())) !== false) {
-    foreach ($menu_items as $item) {
-        $items[(int) $item->db_id] = $item;
-    }
-}
-
-
-$current_id = get_queried_object_id();
-
-# are we doing posts ?
-if ( is_single() && 'post' == get_post_type() ) {
-    # only do something if the current post is not already in the menu
-    if( empty( wp_filter_object_list($items, ['object_id' => $current_id]) ) ) {
-        # add manually the entry then
-        $current_object = get_queried_object();
-        $current_item_as_menu_entry = new stdClass();
-        $current_item_as_menu_entry->db_id = get_a_free_id($items);
-        $current_item_as_menu_entry->object_id = $current_id;
-        $current_item_as_menu_entry->type = 'nav_menu_item';
-        $current_item_as_menu_entry->title = $current_object->post_title;
-        $items[$current_item_as_menu_entry->db_id] = $current_item_as_menu_entry;
-
-        # let's find the best parent for this blog post
-        $static_posts_page_selected_id = has_static_posts_page_selected();
-        if ( $static_posts_page_selected_id ) {
-            # check if this static posts page is in the menu, because we need it now
-            $static_post_page = reset(wp_filter_object_list($items, ['object_id' => $static_posts_page_selected_id]));
-            if( empty( $static_post_page ) ) {
-                # static post page is not in the menu, add it manually
-                $static_post = get_post($static_posts_page_selected_id);
-                # yep, we have to transform the post page to a menu item here, as we a
-                # Example found here :
-                # https://github.com/wp-cli/entity-command/blob/95f2a07fdfa107aaa778711a4b5b53e962cd183a/src/Menu_Item_Command.php#L57
-                $static_post_menu_entry = new stdClass();
-                $static_post_menu_entry->db_id = get_a_free_id($items);
-                $static_post_menu_entry->object_id = $static_posts_page_selected_id;
-                $static_post_menu_entry->type = 'nav_menu_item';
-                $static_post_menu_entry->title = $static_post->post_title;
-                $static_post_menu_entry->url = get_post_permalink($static_post);
-
-                $items[$static_post_menu_entry->db_id] = $static_post_menu_entry;
-
-                # making it a child of the selected posts page is nice
-                $items[$current_item_as_menu_entry->db_id]->menu_item_parent = $static_post_menu_entry->db_id;
-            } else {
-                # make the current post a child of the selected posts page
-                $items[$current_item_as_menu_entry->db_id]->menu_item_parent = $static_post_page->db_id;
-            }
-        } else {
-            # we don't have a selected posts page, so do it with a default and make it the first element
-            $default_posts_menu_entry = new stdClass();
-            $default_posts_menu_entry->db_id = get_a_free_id($items);
-            $default_posts_menu_entry->type = 'nav_menu_item';
-            $default_posts_menu_entry->menu_item_parent = 0;
-
-            $language = get_current_language();
-
-            if ($language === 'fr') {
-                $default_posts_menu_entry->title = "Articles";
-                $default_posts_menu_entry->url = site_url()."fr/?post_type=post";
-            } else {
-                $default_posts_menu_entry->title = "Posts";
-                $default_posts_menu_entry->url = site_url()."/?post_type=post";
-            }
-            $items = [];  # empty all we got, the two lines under are enough
-            $crumbs[] = get_rendered_crumb_item($default_posts_menu_entry, False);
-            $crumbs[] = get_rendered_crumb_item($current_item_as_menu_entry, True);
-        }
-    }
-}
-
-# we need to find the current object in the menu
-$current_objects = wp_filter_object_list($items, ['object_id' => $current_id]);
-$item = $items ? reset($current_objects) : false;
-
-# TODO: Fix warning, see https://github.com/epfl-idevelop/wp-theme-2018/commit/2a95b93afd8a1fbfdb42160a0a360873d8aac979
-$crumb_items = array();
-# from the current element, go up until the root
-for ($crumb_item = $item;
-    $crumb_item;
-    $crumb_item = $items[(int) $crumb_item->menu_item_parent]) {
+    while($crumb_item !== false)
+    {
     array_unshift($crumb_items, $crumb_item);
-}
 
-if ($crumb_items) {
-    foreach ($crumb_items as $crumb_item) {
-        if ((int) $item->db_id === (int) $crumb_item->db_id) {
+    $index = (int) $crumb_item->menu_item_parent;
+    $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
+    }
+
+    foreach($crumb_items as $crumb_item) {
+        if ((int) $current_item->db_id === (int) $crumb_item->db_id) { // current item ?
             $crumbs[] = get_rendered_crumb_item($crumb_item, True);
         } else {
             $crumbs[] = get_rendered_crumb_item($crumb_item, False);
         }
     }
-}
-echo implode('', $crumbs);
-echo '</ol></nav>';
-?>
+
+    echo implode('', $crumbs);
+  ?>
+    </ol>
+  </nav>
   <!-- end Breadcrumb -->
 </div>
