@@ -19,9 +19,13 @@
       <div class="card-info">
         <time class="card-info-date" itemprop="datePublished" datetime="<?php the_time('c') ?>"><?php echo get_the_date('Y-m-d'); ?></time>
         <span itemprop="about">
-          <?php foreach((get_the_category()) as $category){
-            echo $category->cat_name . ', ';
-          }	?>
+          <?php
+            $categories = [];
+            foreach((get_the_category()) as $category) {
+              $categories[] = $category->cat_name;
+            }
+            echo implode(', ', $categories);
+          ?>
         </span>
       </div>
       <p itemprop="description"><?php the_excerpt(); ?></p>
