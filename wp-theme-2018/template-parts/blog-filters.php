@@ -1,6 +1,6 @@
 <aside>
   <div class="d-flex justify-content-between px-3 p-md-0 align-baseline">
-    <h3 class="h5 mb-0 font-weight-normal">Filtrer les articles</h3>
+    <h3 class="h5 mb-0 font-weight-normal"><?php _e( 'Filters', 'epfl' ) ?></h3>
     <button
       class="btn btn-sm btn-secondary d-lg-none collapsed collapse-drop-toggle"
       type="button"
@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <div class="form-group">
-          <label>Catégories</label>
+          <label><?php _e( 'Categories', 'epfl' ) ?></label>
           <?php
             $args = array(
               'show_option_none' => __( 'Select a category', 'epfl' ),
@@ -45,7 +45,7 @@
 
       <div class="form-group">
         <div class="form-group">
-          <label>Archives</label>
+          <label><?php _e( 'Archives', 'epfl' ) ?></label>
           <select class="custom-select" id="year">
             <option selected><?php _e( 'Select a year', 'epfl' ); ?></option>
             <?php
