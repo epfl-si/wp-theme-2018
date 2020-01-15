@@ -216,6 +216,17 @@ function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) 
 add_filter('wp_get_nav_menu_items', 'provide_custom_nav_menu_items_for_blog', 29, 2);
 
 /**
+ * Remove tag class for body in pages like /tag/*,
+ * as the styleguide use it already for something else
+ */
+add_filter('body_class', function (array $classes) {
+    if (in_array('tag', $classes)) {
+      unset( $classes[array_search('tag', $classes)] );
+    }
+  return $classes;
+});
+
+/**
  * Add an activated entry menu for blog posts if needed. It is needed
  * when no current menu times are found and when a static post page is
  * selected in "Settings->Reading->Your homepage displays"
