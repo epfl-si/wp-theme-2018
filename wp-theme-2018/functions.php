@@ -203,6 +203,11 @@ require_once get_template_directory() . '/menus/custom-nav-walker.php';
  */
 require_once get_template_directory() . '/menus/submenu.php';
 
+/**
+ * load blogs filter
+ */
+require_once get_template_directory() . '/menus/blog-posts.php';
+
 add_filter('default_page_template_title', function() {
     return __('Par défaut', 'your_text_domain');
 });

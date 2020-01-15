@@ -11,8 +11,20 @@ global $wp_query;
 
 global $EPFL_MENU_LOCATION;
 
+// by default the current post ID should do the trick when looking inside all menu items
+$post_id_to_search = $post->ID;
+
+// for blog list page, we search the static page, not the page id
+if (is_home()) {   // is_home may not be enough, see https://wordpress.stackexchange.com/a/156624
+	$static_posts_page_selected_id = has_static_posts_page_selected();
+
+	if ($static_posts_page_selected_id) {
+		$post_id_to_search = $static_posts_page_selected_id;
+	}
+}
+
 // recover current post and menu item
-$items = wp_filter_object_list( wp_get_nav_menu_items(get_current_menu_slug()), ['object_id' => $post->ID]);
+$items = wp_filter_object_list( wp_get_nav_menu_items(get_current_menu_slug()), ['object_id' => $post_id_to_search]);
 $item = reset($items);
 
 // to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
