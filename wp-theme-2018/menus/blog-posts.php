@@ -169,10 +169,6 @@ function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) 
             $static_post = get_post($static_posts_page_selected_id);
             $static_post_menu_item = build_new_item_menu_from_post($static_post, 0, $items);  // 0 = make it root
 
-            if (!in_array("current-menu-parent", $static_post_menu_item->classes)) {
-                array_push($static_post_menu_item->classes, 'current-menu-parent');
-            }
-
             $items[] = $static_post_menu_item;
         } else {
             if (!in_array("current-menu-parent", $static_post_menu_item->classes)) {
