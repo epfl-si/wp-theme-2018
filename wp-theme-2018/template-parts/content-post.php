@@ -31,7 +31,7 @@
               $categories = get_categories();
               foreach($categories as $category) :
             ?>
-            <a href="<?php echo get_category_link($category->cat_id);?>" class="tag tag-primary"><?php echo $category->name ?></a>
+            <a href="<?php echo get_category_link($category->cat_ID);?>" class="tag tag-primary"><?php echo $category->name ?></a>
             <?php
               endforeach;
             ?>
@@ -64,7 +64,7 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-  
+
   <footer class="post-footer pt-4">
     <h2 class="h5"><?php _e('Tags', 'epfl'); ?></h2>
     <p>
@@ -72,7 +72,7 @@
         $tags = get_the_tags();
         foreach($tags as $tag) :
       ?>
-      <a href="<?php echo get_tag_link($tag->tag_id);?>" class="tag tag-primary"><?php echo $tag->name ?></a>
+      <a href="<?php echo get_tag_link($tag->term_id);?>" class="tag tag-primary"><?php echo $tag->name ?></a>
       <?php
         endforeach;
       ?>
