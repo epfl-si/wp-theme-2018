@@ -31,10 +31,10 @@
             wp_dropdown_categories( $args );
           ?>
           <script type="text/javascript">
-              var dropdownCat = document.getElementById("cat");
+              let dropdownCat = document.getElementById("cat");
 
               function onCatChange() {
-                  if ( dropdownCat.options[dropdownCat.selectedIndex].value > 0 ) {
+                  if ( dropdownCat.selectedIndex > 0 ) {
                       location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat="+dropdownCat.options[dropdownCat.selectedIndex].value;
                   }
               }
@@ -59,12 +59,14 @@
             ?>
           </select>
           <script type="text/javascript">
-              var dropdownYear = document.getElementById("year");
+              let dropdownYear = document.getElementById("year");
+
               function onYearChange() {
-                  if ( dropdownYear.options[dropdownYear.selectedIndex].value ) {
+                  if ( dropdownYear.selectedIndex > 0 ) {
                       location.href = dropdownYear.options[dropdownYear.selectedIndex].value;
                   }
               }
+
               dropdownYear.onchange = onYearChange;
           </script>
         </div>
