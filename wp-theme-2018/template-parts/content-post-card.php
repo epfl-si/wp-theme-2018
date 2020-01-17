@@ -21,7 +21,7 @@
         <span itemprop="about">
           <?php
             $categories = [];
-            foreach((get_the_category()) as $category) {
+            foreach((get_the_category(get_the_ID())) as $category) {
               $categories[] = $category->cat_name;
             }
             echo implode(', ', $categories);

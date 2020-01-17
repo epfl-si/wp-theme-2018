@@ -27,8 +27,8 @@
         <div class="post-categories">
           <p class="sr-only">Catégories:</p>
           <p>
-            <?php
-              $categories = get_categories();
+						<?php
+              $categories = get_the_category(get_the_ID());
               foreach($categories as $category) :
             ?>
             <a href="<?php echo get_category_link($category->cat_ID);?>" class="tag tag-primary"><?php echo $category->name ?></a>
@@ -69,7 +69,7 @@
     <h2 class="h5"><?php _e('Tags', 'epfl'); ?></h2>
     <p>
       <?php
-        $tags = get_the_tags();
+        $tags = get_the_tags(get_the_ID());
         foreach($tags as $tag) :
       ?>
       <a href="<?php echo get_tag_link($tag->term_id);?>" class="tag tag-primary"><?php echo $tag->name ?></a>
