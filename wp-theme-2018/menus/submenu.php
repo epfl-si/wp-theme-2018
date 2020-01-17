@@ -31,12 +31,12 @@ function submenu_limit( $items, $args ) {
       $selectedIds = submenu_get_direct_children_ids( $current_menu_item->ID , $items );
       // allow current menu item to be display with it's children
       array_push($selectedIds, $current_menu_item->ID);
-    } 
+    }
     else if ($submenu_type == 'siblings') {
 
       $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
       $selectedIds = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
-      
+
     } else if ($submenu_type == 'all') {
       $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
       $siblings = submenu_get_direct_children_ids( $parent_menu_item && $parent_menu_item->ID ? $parent_menu_item->ID : 0 , $items );

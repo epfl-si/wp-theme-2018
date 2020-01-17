@@ -199,6 +199,11 @@ require get_template_directory() . '/inc/language.php';
 require_once get_template_directory() . '/menus/custom-nav-walker.php';
 
 /**
+ * load menu utils
+ */
+require_once get_template_directory() . '/menus/utils.php';
+
+/**
  * load submenu filter
  */
 require_once get_template_directory() . '/menus/submenu.php';

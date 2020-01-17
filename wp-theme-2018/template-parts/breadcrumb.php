@@ -109,10 +109,16 @@ function get_all_menu_items_flattened() {
 function get_current_item($items) {
     $item = null;
 
-    $current_id = get_queried_object_id();
-
-    $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id]);
+    // yeah, the one with current set
+    $wp_filter_object_list = wp_filter_object_list( $items, ['current' => True]);
     $item = $items ? reset($wp_filter_object_list) : false;
+
+    if (!$item) {
+        // ok, we may be in a post
+        $current_id = get_post()->ID;
+        $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id]);
+        $item = $items ? reset($wp_filter_object_list) : false;
+    }
 
     return $item;
 }
@@ -123,7 +129,6 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
         <li class=\"breadcrumb-item active\" aria-current=\"page\">
             {$crumb_item->title}
         </li>";
-
     } else {
         return "
         <li class=\"breadcrumb-item\">
@@ -173,10 +178,10 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
 
     while($crumb_item !== false)
     {
-    array_unshift($crumb_items, $crumb_item);
+        array_unshift($crumb_items, $crumb_item);
 
-    $index = (int) $crumb_item->menu_item_parent;
-    $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
+        $index = (int) $crumb_item->menu_item_parent;
+        $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
     }
 
     foreach($crumb_items as $crumb_item) {
