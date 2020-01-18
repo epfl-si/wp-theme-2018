@@ -95,5 +95,3 @@ function error_log_useful_debugging_information() {
     //var_dump(array_map(create_function('$o', 'return $o->title;'), $items));  // deprecated
     //var_dump(array_map(function($o) {return $o->title;}, $items));
 }
-
-error_log_useful_debugging_information();

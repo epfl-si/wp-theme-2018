@@ -43,13 +43,21 @@ function build_a_root_posts_menu_item_from_scratch($items) {
     $default_posts_menu_entry->target = '';
 
     $language = get_current_language();
+    $particule = '';
+
+    if (function_exists('pll_default_language')) {
+        // check if we need the particule or the default page
+        if ($language != pll_default_language($value)) {
+            $particule = '/' . $language;
+        }
+    }
 
     if ( $language === 'fr' ) {
         $default_posts_menu_entry->title = "Articles";
-        $default_posts_menu_entry->url = site_url()."/fr/?post_type=post";
+        $default_posts_menu_entry->url = site_url() . $particule . "/?post_type=post";
     } else {
         $default_posts_menu_entry->title = "Posts";
-        $default_posts_menu_entry->url = site_url()."/?post_type=post";
+        $default_posts_menu_entry->url = site_url(). $particule . "/?post_type=post";
     }
 
     return $default_posts_menu_entry;
