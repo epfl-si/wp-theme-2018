@@ -175,13 +175,17 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
     // fullfil crumb_items array, in accordance with the items hierarchy
     $crumb_items = [];
     $crumb_item = $current_item;
+    if (count($items) > 1) {
+        while($crumb_item !== false)
+        {
+            array_unshift($crumb_items, $crumb_item);
 
-    while($crumb_item !== false)
-    {
-        array_unshift($crumb_items, $crumb_item);
-
-        $index = (int) $crumb_item->menu_item_parent;
-        $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
+            $index = (int) $crumb_item->menu_item_parent;
+            $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
+        }
+    } else {
+        // make at least the only element printed
+        $crumb_items = [$crumb_item];
     }
 
     foreach($crumb_items as $crumb_item) {

@@ -1,13 +1,17 @@
 <?php
+
+/**
+ * From a post, build an "not in db" menu entry
+ */
 function build_new_item_menu_from_post( $item, $parent_menu_entry_id, $items ) {
 	$menu_entry = new stdClass();
+    $menu_entry->ID = get_a_free_id($items);
+    $menu_entry->db_id = $menu_entry->ID;
 
     $menu_entry->object_id = $item->ID;
     $menu_entry->title = ! empty( $item->post_title ) ? $item->post_title : '';
     $menu_entry->url = ! empty( get_post_permalink($item) ) ? get_post_permalink($item) : '';
     $menu_entry->menu_item_parent = $parent_menu_entry_id;
-    $menu_entry->db_id = get_a_free_id($items);
-    $menu_entry->ID = $menu_entry->db_id;
 
     $menu_entry->classes = [];
     $menu_entry->type = 'post_type';  // don't set nav_menu_item -> problems
@@ -20,10 +24,13 @@ function build_new_item_menu_from_post( $item, $parent_menu_entry_id, $items ) {
     return $menu_entry;
 }
 
-function build_a_root_posts_menu_item_from_scratch($items, $target_object_id) {
+/**
+ * From a target object id (can be a post, a term, ...), build an "not in db" menu entry
+ */
+function build_a_root_posts_menu_item_from_scratch($items) {
     $default_posts_menu_entry = new stdClass();
-    $default_posts_menu_entry->db_id = get_a_free_id($items);
-    $default_posts_menu_entry->ID = $default_posts_menu_entry->db_id;
+    $default_posts_menu_entry->ID = get_a_free_id($items);
+    $default_posts_menu_entry->db_id = $default_posts_menu_entry->ID;
     $default_posts_menu_entry->menu_item_parent = 0;
 
     $default_posts_menu_entry->object_id = null;
@@ -37,7 +44,7 @@ function build_a_root_posts_menu_item_from_scratch($items, $target_object_id) {
 
     $language = get_current_language();
 
-    if ($language === 'fr') {
+    if ( $language === 'fr' ) {
         $default_posts_menu_entry->title = "Articles";
         $default_posts_menu_entry->url = site_url()."/fr/?post_type=post";
     } else {
@@ -49,11 +56,31 @@ function build_a_root_posts_menu_item_from_scratch($items, $target_object_id) {
 }
 
 function get_a_free_id($items) {
-    if (!empty($items)) {
-        return max(array_keys($items)) + 1; # find a free id
-    } else {
-        return 1;
+    // get a free id in all database, not only $items
+
+    //return 1;
+
+    global $wpdb;
+
+    $querystr = "
+        SELECT * FROM $wpdb->posts ORDER BY id DESC LIMIT 0, 1
+    ";
+    $hightest_id = 1;
+    $hightest_id_array = $wpdb->get_results($querystr, OBJECT);
+    if (!empty($hightest_id_array)) {
+        $hightest_id = (int)$hightest_id_array[0]->ID;
+        $hightest_id += 1;
     }
+
+    // take on that is not already in $items
+    $wp_filter_object_list = [$hightest_id];
+
+    while (!empty($wp_filter_object_list)) {
+        $hightest_id += 1;
+        $wp_filter_object_list = wp_filter_object_list($items, ['ID' => $hightest_id]);
+    }
+
+    return (int) $hightest_id;
 }
 
 /**
@@ -67,13 +94,26 @@ function get_a_free_id($items) {
  */
 function set_best_parent_for_blog_entry(&$items) {
     $static_posts_page_selected_id = has_static_posts_page_selected();
+    $translated_static_posts_page_selected_id = null;
 
-    if ( $static_posts_page_selected_id ) {  // a selected posts page, how nice !
+    if ( $static_posts_page_selected_id ) {
+        # get the good translated version, if any
+        $translated_static_posts_page_selected_id;
+
+        /* If Polylang installed */
+	    if( function_exists('pll_get_post') ) {
+            $translated_static_posts_page_selected_id = pll_get_post($static_posts_page_selected_id);
+        }
+
+        $static_posts_page_selected_id = $translated_static_posts_page_selected_id;
+    }
+
+    if ( $static_posts_page_selected_id && !empty($items) ) {  // a selected posts page and a menu, how nice !
         # check if this static posts page is in the menu, because we need it now
         $static_post_page_filtered = wp_filter_object_list($items, ['object_id' => $static_posts_page_selected_id]);
         $static_post_menu_item = reset($static_post_page_filtered);
 
-        if( empty( $static_post_menu_item ) ) {
+        if ( empty( $static_post_menu_item ) ) {
             # static post page is not in the menu, add it manually at root
             $static_post = get_post($static_posts_page_selected_id);
             $static_post_menu_item = build_new_item_menu_from_post($static_post, 0, $items);  // 0 = make it root
@@ -81,7 +121,7 @@ function set_best_parent_for_blog_entry(&$items) {
         }
     } else {
         # we don't have a selected posts page, so do it with a default
-        $static_post_menu_item = build_a_root_posts_menu_item_from_scratch($items, null);//$get_currently_viewed_element_id);
+        $static_post_menu_item = build_a_root_posts_menu_item_from_scratch($items);//$get_currently_viewed_element_id);
         array_unshift($items, $static_post_menu_item);  // add it at top
     }
 
@@ -146,6 +186,7 @@ function set_menu_items_classes_for_hamburger(&$items) {
  *
  */
 function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) {
+
     // is the current viewed element already in the menu ?
     $current_menu_entry = get_menu_entry_from_element_id($items, get_currently_viewed_element_id());
     if ($current_menu_entry) {
@@ -211,11 +252,6 @@ add_filter('body_class', function (array $classes) {
  */
 function menu_for_blogs($items, $args)
 {
-    # only for blog posts or blog list
-    #if ( 'post' != get_post_type() ) {
-    #    return $items;
-    #}
-
     # force activation of the main blog page when we are in the blog view and the entry is not already in the menu
     $static_posts_page_id = has_static_posts_page_selected();
     $current_menu_item = reset(wp_filter_object_list($items, array('current' => true)));
