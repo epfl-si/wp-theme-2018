@@ -21,7 +21,8 @@ function submenu_limit( $items, $args ) {
 
     $submenu_type = $args->submenu_type ?: 'all';
 
-    $current_menu_item = reset(wp_filter_object_list( $items, array( 'current' => true ) ));
+    $wp_filter_object_list = wp_filter_object_list( $items, array( 'current' => true ) );
+    $current_menu_item = reset($wp_filter_object_list);
     if ($current_menu_item) array_push($current_menu_item->classes, 'active');
 
     $selectedIds = [];
@@ -33,12 +34,13 @@ function submenu_limit( $items, $args ) {
       array_push($selectedIds, $current_menu_item->ID);
     }
     else if ($submenu_type == 'siblings') {
-
-      $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
+      $wp_filter_object_list = wp_filter_object_list( $items, array( 'current_item_parent' => true ) );
+      $parent_menu_item = reset($wp_filter_object_list);
       $selectedIds = submenu_get_direct_children_ids( $parent_menu_item->ID ?: 0 , $items );
 
     } else if ($submenu_type == 'all') {
-      $parent_menu_item = reset(wp_filter_object_list( $items, array( 'current_item_parent' => true ) ));
+      $wp_filter_object_list = wp_filter_object_list( $items, array( 'current_item_parent' => true ) );
+      $parent_menu_item = reset($wp_filter_object_list);
       $siblings = submenu_get_direct_children_ids( $parent_menu_item && $parent_menu_item->ID ? $parent_menu_item->ID : 0 , $items );
       $children = submenu_get_direct_children_ids( $current_menu_item && $current_menu_item->ID ? $current_menu_item->ID : 0 , $items );
       $selectedIds = array_merge($siblings, $children);
