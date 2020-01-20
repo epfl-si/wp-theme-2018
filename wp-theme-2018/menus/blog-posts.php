@@ -47,7 +47,8 @@ function build_a_root_posts_menu_item_from_scratch($items) {
 
     if (function_exists('pll_default_language')) {
         // check if we need the particule or the default page
-        if ($language != pll_default_language($value)) {
+        if ($language != pll_default_language()) {
+            var_dump(pll_default_language());
             $particule = '/' . $language;
         }
     }
