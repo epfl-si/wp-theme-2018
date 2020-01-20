@@ -11,20 +11,20 @@ if (!function_exists('pll_the_languages')) {
 }
 
 // on the homepage, pll_the_languages want the good id
-if (is_home()) {
-	$current_page_id = has_static_posts_page_selected();
+$current_page_id = has_static_posts_page_selected();
 
-	if ($current_page_id) {
-		$translations = pll_the_languages(array('raw'=>1, 'post_id'=>$current_page_id));
-	}
+if ( is_home() && $current_page_id ) {
+	$translations = pll_the_languages(array('raw'=>1, 'post_id'=>$current_page_id));
 } else {
 	$translations = pll_the_languages(array('raw'=>1));
 }
 
-# filter out langages without this page translated
-$translations = array_filter($translations, function($value) {
-	return (!$value['no_translation']);
-});
+# filter out langages without this page translated, only for singular and home
+if (is_singular() || is_home()) {
+	$translations = array_filter($translations, function($value) {
+		return (!$value['no_translation']);
+	});
+}
 
 $translations_count = sizeof($translations);
 

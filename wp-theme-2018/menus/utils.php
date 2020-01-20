@@ -74,6 +74,7 @@ function error_log_useful_debugging_information() {
     error_log("is_home: " . var_export(is_home(), True));
     error_log("is_archive: " . var_export(is_archive(), True));
     error_log("is_single: " . var_export(is_single(), True));
+    error_log("is_singular: " . var_export(is_singular(), True));
     error_log("is_page: " . var_export(is_page(), True));
     error_log("get_post: " . var_export(get_post() ? "true" : "false", True));
     error_log("get_post->post_title: " . var_export(get_post()->post_title, True));
