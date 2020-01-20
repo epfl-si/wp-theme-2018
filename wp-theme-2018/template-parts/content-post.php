@@ -23,19 +23,20 @@
 			<div class="entry-meta my-4">
 				<p class="text-muted">
           <?php printf( __('Posted on <time class="entry-date published" datetime="%s">%s</time>', 'epfl'),  get_the_date( DATE_W3C ), get_the_date() ); ?>
-        </p>
+		</p>
+		<?php $categories = get_the_category(get_the_ID());
+		if ( $categories && !empty($categories) ) :
+		?>
         <div class="post-categories">
           <p class="sr-only">Catégories:</p>
           <p>
-						<?php
-              $categories = get_the_category(get_the_ID());
-              foreach($categories as $category) :
-            ?>
+			<?php foreach($categories as $category) : ?>
             <a href="<?php echo get_category_link($category->cat_ID);?>" class="tag tag-primary"><?php echo $category->name ?></a>
             <?php
               endforeach;
             ?>
-          </p>
+		  </p>
+			<?php endif; ?>
         </div>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -66,16 +67,18 @@
 	</div><!-- .entry-content -->
 
   <footer class="post-footer pt-4">
+	<?php $tags = get_the_tags(get_the_ID());
+	if ( $tags && !empty($tags) ) :
+	?>
     <h2 class="h5"><?php _e('Tags', 'epfl'); ?></h2>
     <p>
       <?php
         $tags = get_the_tags(get_the_ID());
         foreach($tags as $tag) :
       ?>
-      <a href="<?php echo get_tag_link($tag->term_id);?>" class="tag tag-primary"><?php echo $tag->name ?></a>
-      <?php
-        endforeach;
-      ?>
-    </p>
+      <a href="<?php echo get_tag_link($tag->term_id); ?>" class="tag tag-primary"><?php echo $tag->name; ?></a>
+	  <?php endforeach; ?>
+	</p>
+	<?php endif; ?>
   </footer>
 </article><!-- #post-<?php the_ID(); ?> -->
