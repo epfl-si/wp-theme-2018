@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
 	language switcher
@@ -10,11 +10,21 @@ if (!function_exists('pll_the_languages')) {
 	return;
 }
 
-$translations = pll_the_languages(array('raw'=>1));
-# filter out langages without this page translated
-$translations = array_filter($translations, function($value) {
-	return (!$value['no_translation']);
-});
+// on the homepage, pll_the_languages want the good id
+$current_page_id = has_static_posts_page_selected();
+
+if ( is_home() && $current_page_id ) {
+	$translations = pll_the_languages(array('raw'=>1, 'post_id'=>$current_page_id));
+} else {
+	$translations = pll_the_languages(array('raw'=>1));
+}
+
+# filter out langages without this page translated, only for singular and home
+if (is_singular() || is_home()) {
+	$translations = array_filter($translations, function($value) {
+		return (!$value['no_translation']);
+	});
+}
 
 $translations_count = sizeof($translations);
 
@@ -67,7 +77,7 @@ if ($translations_count < 3) {
         <svg class="icon" aria-hidden="true"><use xlink:href="#icon-planet"></use></svg>
         <span><?php echo strtoupper($lang['slug']) ?></span>
       </a>
-    </li>		
+    </li>
 	<?php else: ?>
     <li>
       <a href="<?php echo $lang['url'] ?>" aria-label="<?php echo strtoupper($lang['name']) ?>" class="dropdown-item">
@@ -93,7 +103,7 @@ if ($translations_count < 3) {
 	<?php endif; // current lang ?>
 <?php endforeach; ?>
 </select>
-	
+
 <?php
 }
 
@@ -103,7 +113,7 @@ if ($translations_count < 3) {
  * Orders given translation according to the lang sequence.
  * Traductions out of the language sequence will be put at the end
  * of the list in arrival order
- * 
+ *
  * @param [array] $trads
  * @return array
  */

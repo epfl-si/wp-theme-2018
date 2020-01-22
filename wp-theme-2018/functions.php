@@ -199,9 +199,19 @@ require get_template_directory() . '/inc/language.php';
 require_once get_template_directory() . '/menus/custom-nav-walker.php';
 
 /**
+ * load menu utils
+ */
+require_once get_template_directory() . '/menus/utils.php';
+
+/**
  * load submenu filter
  */
 require_once get_template_directory() . '/menus/submenu.php';
+
+/**
+ * load blogs filter
+ */
+require_once get_template_directory() . '/menus/blog-posts.php';
 
 add_filter('default_page_template_title', function() {
     return __('Par défaut', 'your_text_domain');
@@ -232,8 +242,7 @@ function init_globals() {
 	$actualTemplate = get_page_template_slug();
 	if (
 		$actualTemplate == 'page-aside-none.php'
-		|| $actualTemplate == 'page-homepage.php'
-		|| is_home()) {
+		|| $actualTemplate == 'page-homepage.php') {
 		$containerClasses = 'nav-toggle-layout';
 		$mainClasses = '';
 	}

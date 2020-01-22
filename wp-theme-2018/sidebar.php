@@ -11,13 +11,18 @@ global $wp_query;
 
 global $EPFL_MENU_LOCATION;
 
-// recover current post and menu item
-$items = wp_filter_object_list( wp_get_nav_menu_items(get_current_menu_slug()), ['object_id' => $post->ID]);
-$item = reset($items);
 
-// to display correctly the menu on level 1 pages, we need to add '.current-menu-parent' to the wrapper
+// to display correctly the menu on level 1 pages, on missing menu, or for the blog home,
+// we need to add '.current-menu-parent' to the wrapper
 $classes = '';
-if ($item === false || $item->menu_item_parent == 0 ) $classes = 'current-menu-parent';
+
+$items = wp_get_nav_menu_items(get_current_menu_slug());
+$current_menu_entry = get_menu_entry_from_element_id($items, get_currently_viewed_element_id());
+
+if ($current_menu_entry === false || $current_menu_entry->menu_item_parent == 0 || is_home()) {
+	$classes = 'current-menu-parent';
+}
+
 ?>
 <div class="overlay"></div>
 <nav class="nav-main">
@@ -39,7 +44,7 @@ if ($item === false || $item->menu_item_parent == 0 ) $classes = 'current-menu-p
 	$aside = true;
 	$asideContent = 'all';
 	$currentTemplate = get_page_template_slug();
-	if ($currentTemplate == 'page-aside-none.php' || $currentTemplate == 'page-homepage.php' || is_home()) $aside = false;
+	if ($currentTemplate == 'page-aside-none.php' || $currentTemplate == 'page-homepage.php') $aside = false;
 	if ($currentTemplate == 'page-aside-siblings-only.php') $asideContent = 'siblings';
 	if ($currentTemplate == 'page-aside-children-only.php') $asideContent = 'children';
 	if ($aside) :

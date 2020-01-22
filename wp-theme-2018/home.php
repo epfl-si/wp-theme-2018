@@ -14,11 +14,11 @@ get_template_part( 'template-parts/breadcrumb');
 <div class="<?php echo $containerClasses ?>">
 	<div class="w-100">
 		<main id="content" role="main" class="content <?php echo $mainClasses ?>">
-
+      
       <div class="container-full px-5 px-xxl-6 mt-5">
-		<?php the_archive_title( '<h1 class="page-title entry-title">', '</h1>' ); ?>
+        <?php single_post_title( '<h1 class="page-title entry-title">', '</h1>' ); ?>
       </div>
-
+      
       <div class="container-full px-5 px-xxl-6 mt-5">
         <div class="row" style="flex-direction: row-reverse;">
           <div class="col-lg-3">
@@ -32,7 +32,7 @@ get_template_part( 'template-parts/breadcrumb');
           </div>
         </div>
       </div>
-
+      
 		</main><!-- #main -->
 	</div> <!-- w-100 -->
 	<?php get_sidebar(); ?>
