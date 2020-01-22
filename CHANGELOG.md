@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.10.0* (2020-01-22)
+- Add blog support (#248)
+- New element version 2.4.1
+
 *1.9.3* (2020-01-08)
 - Remove 50 years label for fallback menu in french too
 
