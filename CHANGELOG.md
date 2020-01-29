@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.10.1* (2020-01-29)
+- Set map.epfl.ch link in footer
+
 *1.10.0* (2020-01-22)
 - Add blog support (#248)
 - New element version 2.4.1
