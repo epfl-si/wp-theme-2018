@@ -223,6 +223,7 @@
     <a href="https://www.epfl.ch/campus/services/en/homepage/" class="btn btn-secondary btn-sm">Services and resources</a>
     <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Emergencies: +41 21 693 3000</a>
     <a href="https://www.epfl.ch/about/overview/contact-en/" class="btn btn-secondary btn-sm">Contact</a>
+    <a href="https://map.epfl.ch/" class="btn btn-secondary btn-sm">Map</a>
   </div>
 
   <div class="footer-group footer-socials">
