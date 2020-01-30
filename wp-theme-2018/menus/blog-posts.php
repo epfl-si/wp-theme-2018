@@ -27,11 +27,11 @@ function build_new_item_menu_from_post( $item, $parent_menu_entry_id, $items ) {
 /**
  * From a target object id (can be a post, a term, ...), build an "not in db" menu entry
  */
-function build_a_root_posts_menu_item_from_scratch($items) {
+function build_a_root_posts_menu_item_from_scratch($items, $menu_item_parent = 0) {
     $default_posts_menu_entry = new stdClass();
     $default_posts_menu_entry->ID = get_a_free_id($items);
     $default_posts_menu_entry->db_id = $default_posts_menu_entry->ID;
-    $default_posts_menu_entry->menu_item_parent = 0;
+    $default_posts_menu_entry->menu_item_parent = $menu_item_parent;
 
     $default_posts_menu_entry->object_id = null;
     $default_posts_menu_entry->classes = [];
@@ -66,8 +66,6 @@ function build_a_root_posts_menu_item_from_scratch($items) {
 function get_a_free_id($items) {
     // get a free id in all database, not only $items
 
-    //return 1;
-
     global $wpdb;
 
     $querystr = "
@@ -101,36 +99,63 @@ function get_a_free_id($items) {
  * or already existing.
  */
 function set_best_parent_for_blog_entry(&$items) {
-    $static_posts_page_selected_id = has_static_posts_page_selected();
+    $best_parent_id = has_static_posts_page_selected();
     $translated_static_posts_page_selected_id = null;
 
-    if ( $static_posts_page_selected_id ) {
-        # get the good translated version, if any
-        $translated_static_posts_page_selected_id;
-
-        /* If Polylang installed */
+    if ( $best_parent_id ) {
+        # get the good translated version, if any, and if Polylang installed
 	    if( function_exists('pll_get_post') ) {
-            $translated_static_posts_page_selected_id = pll_get_post($static_posts_page_selected_id);
+            $translated_static_posts_page_selected_id = pll_get_post($best_parent_id);
         }
 
-        $static_posts_page_selected_id = $translated_static_posts_page_selected_id;
+        $best_parent_id = $translated_static_posts_page_selected_id;
     }
 
-    if ( $static_posts_page_selected_id && !empty($items) ) {  // a selected posts page and a menu, how nice !
+    if ( $best_parent_id && !empty($items) ) {  // a selected posts page and a menu, how nice !
         # check if this static posts page is in the menu, because we need it now
-        $static_post_page_filtered = wp_filter_object_list($items, ['object_id' => $static_posts_page_selected_id]);
+        $static_post_page_filtered = wp_filter_object_list($items, ['object_id' => $best_parent_id]);
         $static_post_menu_item = reset($static_post_page_filtered);
 
         if ( empty( $static_post_menu_item ) ) {
             # static post page is not in the menu, add it manually at root
-            $static_post = get_post($static_posts_page_selected_id);
+            $static_post = get_post($best_parent_id);
             $static_post_menu_item = build_new_item_menu_from_post($static_post, 0, $items);  // 0 = make it root
             array_unshift($items, $static_post_menu_item);  // add it at top
         }
     } else {
-        # we don't have a selected posts page, so do it with a default
-        $static_post_menu_item = build_a_root_posts_menu_item_from_scratch($items);//$get_currently_viewed_element_id);
-        array_unshift($items, $static_post_menu_item);  // add it at top
+        # we don't have a selected posts page, look if we can be the homepage's child
+        $best_parent_id = has_home_page_selected();
+        $translated_static_home_page_selected_id = null;
+
+        if ( $best_parent_id ) {
+            # get the good translated version, if any, and if Polylang installed
+            if( function_exists('pll_get_post') ) {
+                $translated_static_home_page_selected_id = pll_get_post($best_parent_id);
+            }
+
+            $best_parent_id = $translated_static_home_page_selected_id;
+
+            if ( $best_parent_id && !empty($items) ) {  // a selected homepage and a menu, how nice !
+                # check if this static posts page is in the menu, because we need it now
+                $static_home_page_filtered = wp_filter_object_list($items, ['object_id' => $best_parent_id]);
+                $static_post_menu_item = reset($static_home_page_filtered);
+
+                if ( empty( $static_post_menu_item ) ) {
+                    # home page is not in the menu, add it manually at root
+                    $home_page = get_post($best_parent_id);
+                    $static_post_menu_item = build_new_item_menu_from_post($home_page, 0, $items);  // 0 = make it root
+                    array_unshift($items, $static_post_menu_item);  // add it at top
+                }
+
+                // add it as a child of a new menu entry, "Posts" or "Articles
+                $static_post_menu_item = build_a_root_posts_menu_item_from_scratch($items, $best_parent_id);
+                array_unshift($items, $static_post_menu_item);  // add it at top
+            }
+        } else {
+            // no selected posts page, no homepage, so do it with a newly created entry, called "Posts" or "Articles"
+            $static_post_menu_item = build_a_root_posts_menu_item_from_scratch($items);
+            array_unshift($items, $static_post_menu_item);  // add it at top
+        }
     }
 
     return $static_post_menu_item;
