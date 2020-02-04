@@ -25,22 +25,25 @@ function build_new_item_menu_from_post( $item, $parent_menu_entry_id, $items ) {
 }
 
 /**
- * From a target object id (can be a post, a term, ...), build an "not in db" menu entry
+ * Build an "not in db" menu entry
+ * This menu entry will be labeled as "Posts" or "Articles" in french, and
+ * serve as a fallback if we don't any satisfaying menu entry for posts
  */
-function build_a_root_posts_menu_item_from_scratch($items) {
-    $default_posts_menu_entry = new stdClass();
-    $default_posts_menu_entry->ID = get_a_free_id($items);
-    $default_posts_menu_entry->db_id = $default_posts_menu_entry->ID;
-    $default_posts_menu_entry->menu_item_parent = 0;
+function build_a_fallback_posts_menu_item($items) {
+    $fallback_posts_menu_entry = new stdClass();
+    $fallback_posts_menu_entry->ID = get_a_free_id($items);
+    $fallback_posts_menu_entry->db_id = $fallback_posts_menu_entry->ID;
 
-    $default_posts_menu_entry->object_id = null;
-    $default_posts_menu_entry->classes = [];
-    $default_posts_menu_entry->type = 'post_type';
-    $default_posts_menu_entry->post_parent = 'post_type';
-    $default_posts_menu_entry->xfn = '';
-    $default_posts_menu_entry->menu_order = null;  // menu_order set to something = break
-    $default_posts_menu_entry->object = 'post';
-    $default_posts_menu_entry->target = '';
+    $fallback_posts_menu_entry->menu_item_parent = 0;
+
+    $fallback_posts_menu_entry->object_id = null;
+    $fallback_posts_menu_entry->classes = [];
+    $fallback_posts_menu_entry->type = 'post_type';
+    $fallback_posts_menu_entry->post_parent = 'post_type';
+    $fallback_posts_menu_entry->xfn = '';
+    $fallback_posts_menu_entry->menu_order = null;  // menu_order set to something = break
+    $fallback_posts_menu_entry->object = 'post';
+    $fallback_posts_menu_entry->target = '';
 
     $language = get_current_language();
     $particule = '';
@@ -53,21 +56,19 @@ function build_a_root_posts_menu_item_from_scratch($items) {
     }
 
     if ( $language === 'fr' ) {
-        $default_posts_menu_entry->title = "Articles";
-        $default_posts_menu_entry->url = site_url() . $particule . "/?post_type=post";
+        $fallback_posts_menu_entry->title = "Articles";
+        $fallback_posts_menu_entry->url = site_url() . $particule . "/?post_type=post";
     } else {
-        $default_posts_menu_entry->title = "Posts";
-        $default_posts_menu_entry->url = site_url(). $particule . "/?post_type=post";
+        $fallback_posts_menu_entry->title = "Posts";
+        $fallback_posts_menu_entry->url = site_url(). $particule . "/?post_type=post";
     }
 
-    return $default_posts_menu_entry;
+    return $fallback_posts_menu_entry;
 }
 
 function get_a_free_id($items) {
     // get a free id in all database, not only $items
-
-    //return 1;
-
+    // as we don't want to clash with other db entries
     global $wpdb;
 
     $querystr = "
@@ -92,13 +93,70 @@ function get_a_free_id($items) {
 }
 
 /**
- * Getting the parent of a blog menu item can be tricky,
- * as the user may have already chosen the place in the menu,
- * or selected a front blog page without putting it in the menu.
- * Here we select or add to $items the parent entry.
  *
- * Return the correct parent menu entry, created from scratch
- * or already existing.
+ * From a menu_entry, set the parent to the current homepage if we aim to be root
+ * Add the homepage if it is missing as menu entry
+ * if no current homepage is set, then leave it at root
+ * @return the modified menu entry
+ *
+ */
+function set_homepage_or_root($menu_entry, &$items) {
+
+    $home_page_id = has_home_page_selected();
+    $translated_static_home_page_selected_id = null;
+
+    if ( $home_page_id ) {
+        # get the good translated version, if any, and if Polylang installed
+        if( function_exists('pll_get_post') ) {
+            $translated_static_home_page_selected_id = pll_get_post($home_page_id);
+            $home_page_id = $translated_static_home_page_selected_id;
+        }
+
+        if ( $home_page_id && !empty($items) ) {  // a selected homepage and a menu, how nice !
+            # check if this homepage menu entry page is in the menu, because we need it now
+            $selected_home_page_filtered = wp_filter_object_list($items, ['object_id' => $home_page_id]);
+            $selected_homepage_menu_entry = reset($selected_home_page_filtered);
+
+            # create the homepage entry menu if it is missing in the menu
+            if ( empty( $selected_homepage_menu_entry ) ) {
+                # homepage not in the menu, add it manually at root
+                $home_page_post = get_post($home_page_id);
+
+                if ( is_null( $home_page_post ) ) { // no page for homepage, we can not do anything
+                    return;
+                }
+
+                // create the homepage menu entry at root, like the user should at least have done
+                $selected_homepage_menu_entry = build_new_item_menu_from_post($home_page_post, 0, $items);  // 0 = make it root
+                $items[] = $selected_homepage_menu_entry;
+            }
+
+            // attach the provided menu_entry, as the homepage is in the menu now
+            $menu_entry->menu_item_parent = $selected_homepage_menu_entry->ID;
+            return $menu_entry;
+        }
+    }
+
+    // for all other case, return as is
+    return $menu_entry;
+}
+
+
+ /**
+ * Getting the parent of a blog menu item can be tricky,
+ * as the site may have different states:
+ * - the post is already in the menu
+ * - a selected homepage (that we want at the the parent if we can)
+ *   - in the menu
+ *   - not in the menu
+ * - a front blog page is selected
+ *   - in the menu,
+ *   - not in the menu
+ *
+ * In this function we select and, if necessery, add to $items the parent entry.
+ *
+ * @return the correct parent menu entry, created from scratch
+ * or already existing, and setted at the good position in the menu hierarchy
  */
 function set_best_parent_for_blog_entry(&$items) {
     $static_posts_page_selected_id = has_static_posts_page_selected();
@@ -106,14 +164,11 @@ function set_best_parent_for_blog_entry(&$items) {
 
     if ( $static_posts_page_selected_id ) {
         # get the good translated version, if any
-        $translated_static_posts_page_selected_id;
-
-        /* If Polylang installed */
+        # and if Polylang is installed
 	    if( function_exists('pll_get_post') ) {
             $translated_static_posts_page_selected_id = pll_get_post($static_posts_page_selected_id);
+            $static_posts_page_selected_id = $translated_static_posts_page_selected_id;
         }
-
-        $static_posts_page_selected_id = $translated_static_posts_page_selected_id;
     }
 
     if ( $static_posts_page_selected_id && !empty($items) ) {  // a selected posts page and a menu, how nice !
@@ -126,16 +181,29 @@ function set_best_parent_for_blog_entry(&$items) {
             $static_post = get_post($static_posts_page_selected_id);
             $static_post_menu_item = build_new_item_menu_from_post($static_post, 0, $items);  // 0 = make it root
             array_unshift($items, $static_post_menu_item);  // add it at top
+            set_homepage_or_root($static_post_menu_item, $items);
         }
     } else {
         # we don't have a selected posts page, so do it with a default
-        $static_post_menu_item = build_a_root_posts_menu_item_from_scratch($items);//$get_currently_viewed_element_id);
+        $static_post_menu_item = build_a_fallback_posts_menu_item($items);//$get_currently_viewed_element_id);
         array_unshift($items, $static_post_menu_item);  // add it at top
+        set_homepage_or_root($static_post_menu_item, $items);
     }
 
     return $static_post_menu_item;
 }
 
+/**
+ * The hamburger menu need to have a structure like this:
+ * current-menu-ancestor (x times)
+ * |
+ * - current-menu-parent (only one)
+ *   |
+ *   - current-menu-item (only one)
+ *
+ * if you fail to get this right, you may say some artefacts and strange behavior
+ * Dont forget to look into the div nav-container, as it follows the rules too, but is out of scope
+ */
 function set_menu_items_classes_for_hamburger(&$items) {
     # get current
     $wp_filter_object_list = wp_filter_object_list( $items, ['current' => True]);
@@ -181,7 +249,6 @@ function set_menu_items_classes_for_hamburger(&$items) {
     }
 }
 
-
 /*************************
  * Hooks
  **************************/
@@ -212,7 +279,7 @@ function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) 
 
         return $items;
     }
-    elseif (is_archive()) {
+    elseif (is_archive() || get_queried_object()) {
 
         $parent_menu_item = set_best_parent_for_blog_entry($items);
         $current_post_menu_item = build_new_item_menu_from_post(get_post(), $parent_menu_item->ID, $items);
@@ -238,7 +305,6 @@ function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) 
 
 add_filter('wp_get_nav_menu_items', 'provide_custom_nav_menu_items_for_blog', 29, 2);
 
-
 /**
  * Remove tag class for body in pages like /tag/*.
  * As the styleguide use it already for something else,
@@ -250,33 +316,3 @@ add_filter('body_class', function (array $classes) {
     }
   return $classes;
 });
-
-
-/**
- * Non-test and non-functionnal, keeping for later
- * Add an activated entry menu for blog posts if needed. It is needed
- * when no current menu times are found and when a static post page is
- * selected in "Settings->Reading->Your homepage displays"
- */
-function menu_for_blogs($items, $args)
-{
-    # force activation of the main blog page when we are in the blog view and the entry is not already in the menu
-    $static_posts_page_id = has_static_posts_page_selected();
-    $current_menu_item = reset(wp_filter_object_list($items, array('current' => true)));
-
-    if ($current_menu_item) {
-        array_push($current_menu_item->classes, 'active');
-    }
-
-    if (!$current_menu_item && $static_posts_page_id) {
-        $static_posts_page = reset(wp_filter_object_list($items, array('object_id' => $static_posts_page_id)));
-        if ($static_posts_page) {
-            array_push($static_posts_page->classes, 'active');
-        }
-    }
-
-    return $items;
-}
-
-# Deactivated, but keep it as sample in case want it later
-#add_filter('wp_nav_menu_objects', 'menu_for_blogs', 31, 2);

@@ -69,6 +69,26 @@ function has_static_posts_page_selected()
     return $static_posts_page_id;
 }
 
+/**
+ * Check if the user has set a homepage (settings->Reading->Your homepage displays)
+ * Return the id if this is the case, or False
+ */
+function has_home_page_selected()
+{
+    static $static_home_page_id = null;  # cache it because the db hit
+
+    if (is_null($static_home_page_id)){
+        $show_on_front = get_option('show_on_front');
+        $front_page_id = get_option('page_on_front');
+        if ($show_on_front == 'page' && isset($front_page_id)) {
+            $static_home_page_id = $front_page_id;
+        } else {
+            $static_home_page_id = False;
+        }
+    }
+    return $static_home_page_id;
+}
+
 function error_log_useful_debugging_information() {
     error_log("has_the_blog_post_selected: " . var_export(has_static_posts_page_selected(), True));
     error_log("is_home: " . var_export(is_home(), True));
@@ -93,6 +113,5 @@ function error_log_useful_debugging_information() {
     //error_log("filters: " . var_export( $wp_filter['wp_get_nav_menu_items'], True));
 
     // Useful little line
-    //var_dump(array_map(create_function('$o', 'return $o->title;'), $items));  // deprecated
     //var_dump(array_map(function($o) {return $o->title;}, $items));
 }
