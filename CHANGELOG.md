@@ -1,5 +1,5 @@
 # CHANGELOG
-*1.10.1* (2020-02-04)
+*1.10.2* (2020-02-04)
 - Fix not using selected homepage as parent page in blogs
 
 *1.10.1* (2020-01-29)
