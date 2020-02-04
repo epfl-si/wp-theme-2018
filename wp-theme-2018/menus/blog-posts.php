@@ -109,9 +109,8 @@ function set_homepage_or_root($menu_entry, &$items) {
         # get the good translated version, if any, and if Polylang installed
         if( function_exists('pll_get_post') ) {
             $translated_static_home_page_selected_id = pll_get_post($home_page_id);
+            $home_page_id = $translated_static_home_page_selected_id;
         }
-
-        $home_page_id = $translated_static_home_page_selected_id;
 
         if ( $home_page_id && !empty($items) ) {  // a selected homepage and a menu, how nice !
             # check if this homepage menu entry page is in the menu, because we need it now
@@ -168,9 +167,8 @@ function set_best_parent_for_blog_entry(&$items) {
         # and if Polylang is installed
 	    if( function_exists('pll_get_post') ) {
             $translated_static_posts_page_selected_id = pll_get_post($static_posts_page_selected_id);
+            $static_posts_page_selected_id = $translated_static_posts_page_selected_id;
         }
-
-        $static_posts_page_selected_id = $translated_static_posts_page_selected_id;
     }
 
     if ( $static_posts_page_selected_id && !empty($items) ) {  // a selected posts page and a menu, how nice !
@@ -281,7 +279,7 @@ function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) 
 
         return $items;
     }
-    elseif (is_archive()) {
+    elseif (is_archive() || get_queried_object()) {
 
         $parent_menu_item = set_best_parent_for_blog_entry($items);
         $current_post_menu_item = build_new_item_menu_from_post(get_post(), $parent_menu_item->ID, $items);
