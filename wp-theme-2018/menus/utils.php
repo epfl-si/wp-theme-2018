@@ -69,6 +69,10 @@ function has_static_posts_page_selected()
     return $static_posts_page_id;
 }
 
+/**
+ * Check if the user has set a homepage (settings->Reading->Your homepage displays)
+ * Return the id if this is the case, or False
+ */
 function has_home_page_selected()
 {
     static $static_home_page_id = null;  # cache it because the db hit
@@ -109,6 +113,5 @@ function error_log_useful_debugging_information() {
     //error_log("filters: " . var_export( $wp_filter['wp_get_nav_menu_items'], True));
 
     // Useful little line
-    //var_dump(array_map(create_function('$o', 'return $o->title;'), $items));  // deprecated
     //var_dump(array_map(function($o) {return $o->title;}, $items));
 }
