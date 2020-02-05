@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.10.3* (2020-02-04)
+- Fix menu problem on page because of blog hook
+
 *1.10.2* (2020-02-04)
 - Fix not using selected homepage as parent page in blogs
 
