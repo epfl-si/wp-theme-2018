@@ -262,6 +262,10 @@ function set_menu_items_classes_for_hamburger(&$items) {
  */
 function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) {
 
+    if ( is_page() ) {  // leave the page "as is"
+        return $items;
+    }
+
     // is the current viewed element already in the menu ?
     $current_menu_entry = get_menu_entry_from_element_id($items, get_currently_viewed_element_id());
     if ($current_menu_entry) {
@@ -298,7 +302,7 @@ function provide_custom_nav_menu_items_for_blog($items, $menu, $args = array()) 
 
         return $items;
     } else {
-        // for all other cases, like page or menu editor...
+        // for all other cases, menu editor...
         return $items;
     }
 }
