@@ -19,7 +19,7 @@ $classes = '';
 $items = wp_get_nav_menu_items(get_current_menu_slug());
 $current_menu_entry = get_menu_entry_from_element_id($items, get_currently_viewed_element_id());
 
-if (get_queried_object() && !is_archive()) {  // only when we are looking at an object
+if (get_queried_object() && !is_archive()) {  // only when we are looking at an object or in the category/tag view
 	if ($current_menu_entry === false || $current_menu_entry->menu_item_parent == 0 || is_home()) {
 		$classes = 'current-menu-parent';
 	}
