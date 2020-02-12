@@ -1,4 +1,10 @@
 # CHANGELOG
+*1.11.0* (2020-02-12)
+- Add a "back to top" button
+- Update to Elements 2.5.1
+- Change repository from epfl-idevelop to epfl-si
+- Fix broken menu in category views
+
 *1.10.3* (2020-02-04)
 - Fix menu problem on page because of blog hook
 
