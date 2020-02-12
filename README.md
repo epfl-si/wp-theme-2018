@@ -2,11 +2,11 @@
 Epfl theme (Wordpress)
 ===
  * Based on [*_s* theme (underscores)](https://underscores.me/)
- * Implements the [elements](https://github.com/epfl-idevelop/elements) styleguide
+ * Implements the [elements](https://github.com/epfl-si/elements) styleguide
  * Uses shortcodes to display special content served by EPFL APIs.
 
 ## Requirements
-  * production build files of [elements](https://github.com/epfl-idevelop/elements) located in `/assets` (create a new version if needed)
+  * production build files of [elements](https://github.com/epfl-si/elements) located in `/assets` (create a new version if needed)
   * composer
 
 ## How to install
@@ -15,7 +15,7 @@ Epfl theme (Wordpress)
 
 ## Build a new release
 ### Recovering the last version of the styleguide
-  - Clone element repository `git clone git@github.com:epfl-idevelop/elements.git`
+  - Clone element repository `git clone git@github.com:epfl-si/elements.git`
   - `git checkout `
   - Go on master branch `git checkout master`
   - update `git pull`
@@ -73,7 +73,7 @@ Hooks and filters directory? [/home/greg/workspace-idevelop/epfl-theme/.git/hook
   - commit them in a "Bump version" commit `git commit -am "Bump version"`
   - finish the release: `git flow release finish x.x.x -p -m "x.x.x"`
   - Push all the changes `git push`, `git checkout master && git push` and `git push --tags`
-  - head over this repo on github, on the **release** tab (or go directly using https://github.com/epfl-idevelop/wp-theme-2018/releases/edit/x.x.x)
+  - head over this repo on github, on the **release** tab (or go directly using https://github.com/epfl-si/wp-theme-2018/releases/edit/x.x.x)
   - go to **Draft a new release**
   - choose the release number you just created, insert the changelog informations into the release description
   - Publish the release
