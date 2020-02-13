@@ -264,10 +264,3 @@
 </div>
 
 </footer>
-
-<button id="back-to-top" class="btn btn-primary btn-back-to-top">
-  <span class="sr-only">Back to top</span>
-  <svg class="icon" aria-hidden="true">
-    <use xlink:href="#icon-chevron-top"></use>
-  </svg>
-</button>
