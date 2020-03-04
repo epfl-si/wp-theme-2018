@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.12.0* (2020-03-04)
+- Set corona virus info links
+
 *1.11.0* (2020-02-12)
 - Add a "back to top" button
 - Update to Elements 2.5.1
