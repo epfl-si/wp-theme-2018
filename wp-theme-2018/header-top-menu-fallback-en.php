@@ -17,4 +17,7 @@
     <li id="menu-item-6">
         <a class="nav-item" href="https://www.epfl.ch/campus/">Campus</a>
     </li>
+    <li id="menu-item-0">
+        <a style="color:#ff0000;" href="https://www.epfl.ch/campus/security-safety/en/health/coronavirus-covid19/">Coronavirus Info</a>
+    </li>
 </ul>
