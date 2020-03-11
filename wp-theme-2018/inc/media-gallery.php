@@ -17,7 +17,7 @@ function epfl_gallery_block($attr) {
     /* We recover posts info but... not in the same order as the one given in parameters ($attr['ids'])*/
     $posts = get_posts(array('include' => $attr['ids'],'post_type' => 'attachment'));
 
-    $output = '<div id="my-gallery-' . $instance . '" class="gallery gallery-main mt-4">';
+    $output = '<div class="gallery-container"><div id="my-gallery-' . $instance . '" class="gallery gallery-main mt-4">';
 
     /* We go through given image order */
     foreach($attr['ids'] as $post_id)
@@ -34,7 +34,9 @@ function epfl_gallery_block($attr) {
 
                 $output .= '<figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">';
                 $output .= '<div class="gallery-item-inner">';
+                $output .= '<div class="img-wrapper">';
                 $output .= '<img src="'.$image_src.'" alt="'.$image_alt.'" class="img-fluid">';
+                $output .= '</div>';
 
                 if ($image_caption)
                 {
@@ -81,7 +83,7 @@ function epfl_gallery_block($attr) {
         }
     }
 
-    $output .= "</div>";
+    $output .= "</div></div>";
 
     return $output;
 }
