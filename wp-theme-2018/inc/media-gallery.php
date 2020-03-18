@@ -5,17 +5,22 @@
  * @package epfl
  */
 
-add_filter( 'post_gallery', 'epflGallery', 10, 3 );
+function epfl_gallery_block($attr) {
 
-function epflGallery($output = '', $attr, $instance){
+    /* If a gallery block is added but never configured, this function will be called with $attr equal to an empty array...
+        so there are PHP Warnings in the logs because we are trying to access 'ids' key. */
+    if(!array_key_exists('ids', $attr)) return '';
+
+    $output = '';
+    $instance=md5(implode(',', $attr) . rand());
 
     /* We recover posts info but... not in the same order as the one given in parameters ($attr['ids'])*/
     $posts = get_posts(array('include' => $attr['ids'],'post_type' => 'attachment'));
 
-    $output = '<div id="my-gallery-'.$instance.'" class="gallery gallery-main mt-4">';
+    $output = '<div class="gallery-container"><div id="my-gallery-' . $instance . '" class="gallery gallery-main mt-4">';
 
     /* We go through given image order */
-    foreach(explode(',', $attr['ids']) as $post_id)
+    foreach($attr['ids'] as $post_id)
     {
         /* We now look for returned matching image and add it to display */
         foreach($posts as $imagePost)
@@ -29,7 +34,9 @@ function epflGallery($output = '', $attr, $instance){
 
                 $output .= '<figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">';
                 $output .= '<div class="gallery-item-inner">';
+                $output .= '<div class="img-wrapper">';
                 $output .= '<img src="'.$image_src.'" alt="'.$image_alt.'" class="img-fluid">';
+                $output .= '</div>';
 
                 if ($image_caption)
                 {
@@ -45,14 +52,12 @@ function epflGallery($output = '', $attr, $instance){
         }
     }
 
-
-
     $output .= "</div>";
 
     $output .= '<div class="gallery-nav mb-3" data-gallery="my-gallery-'.$instance.'" aria-hidden="true">';
 
     /* We go through given image order */
-    foreach(explode(',', $attr['ids']) as $post_id)
+    foreach($attr['ids'] as $post_id)
     {
         /* We now look for returned matching image and add it to display */
         foreach($posts as $imagePost)
@@ -78,9 +83,16 @@ function epflGallery($output = '', $attr, $instance){
         }
     }
 
-    $output .= "</div>";
+    $output .= "</div></div>";
 
     return $output;
 }
 
+function register_epfl_gallery() {
+    register_block_type( 'core/gallery', array(
+        'render_callback' => 'epfl_gallery_block',
+    ));
+}
+
+add_action( 'init', 'register_epfl_gallery' );
 ?>
