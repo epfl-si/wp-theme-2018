@@ -1,4 +1,9 @@
 # CHANGELOG
+*1.13.0* (2020-03-18)
+- Update to Elements 2.7.0
+- Update gallery for Elements 2.7.0 #261
+- Set gallery drawer for gutenberg compatiblities; drop shortcode gallery support #260
+
 *1.12.0* (2020-03-04)
 - Set corona virus info links
 
