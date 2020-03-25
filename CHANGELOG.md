@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.13.1* (2020-03-25)
+- Update to Elements 2.7.1
+
 *1.13.0* (2020-03-18)
 - Update to Elements 2.7.0
 - Update gallery for Elements 2.7.0 #261
