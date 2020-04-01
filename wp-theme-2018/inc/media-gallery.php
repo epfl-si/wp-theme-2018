@@ -17,7 +17,7 @@ function epfl_gallery_block($attr) {
     /* We recover posts info but... not in the same order as the one given in parameters ($attr['ids'])*/
     $posts = get_posts(array('include' => $attr['ids'],'post_type' => 'attachment'));
 
-    $output = '<div class="gallery-container"><div id="my-gallery-' . $instance . '" class="gallery gallery-main mt-4">';
+    $output = '<div id="my-gallery-' . $instance . '" class="gallery gallery-main mt-4">';
 
     /* We go through given image order */
     foreach($attr['ids'] as $post_id)
@@ -82,7 +82,7 @@ function epfl_gallery_block($attr) {
         }
     }
 
-    $output .= "</div></div>";
+    $output .= "</div>";
 
     return $output;
 }
