@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.13.2* (2020-04-01)
+- Fix missing feather sprite link #262
+
 *1.13.1* (2020-03-25)
 - Update to Elements 2.7.1
 
