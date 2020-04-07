@@ -1,4 +1,8 @@
 # CHANGELOG
+*1.13.3* (2020-04-07)
+- Update to Elements 2.7.2
+- Remove unavailable Open font #264
+
 *1.13.2* (2020-04-01)
 - Fix missing feather sprite link #262
 
