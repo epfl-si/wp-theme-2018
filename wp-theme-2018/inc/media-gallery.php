@@ -33,17 +33,16 @@ function epfl_gallery_block($attr) {
                 $image_alt = get_post_meta($imagePost->ID , '_wp_attachment_image_alt', true);
 
                 $output .= '<figure class="gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">';
-                $output .= '<div class="gallery-item-inner">';
-                $output .= '<div class="img-wrapper">';
-                $output .= '<img src="'.$image_src.'" alt="'.$image_alt.'" class="img-fluid">';
-                $output .= '</div>';
+                    $output .= '<div class="gallery-item-inner">';
+                        $output .= '<div class="img-wrapper">';
+                            $output .= '<img src="'.$image_src.'" alt="'.$image_alt.'" class="img-fluid">';
+                        $output .= '</div>';
+                    $output .= '</div>';
 
                 if ($image_caption)
                 {
                     $output .= '<figcaption><span>'.$image_caption.'</span></figcaption>';
                 }
-
-                $output .= '</div>';
                 $output .= '</figure>';
 
                 /* To avoid looping through remaining images for nothing */
