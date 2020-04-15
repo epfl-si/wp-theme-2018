@@ -1,4 +1,10 @@
 # CHANGELOG
+
+*1.14.0* (2020-04-15)
+- Update Elements to 2.8.0
+- Migrate gallery wrapper to wp gutenberg #263
+- Fix gallery markup for legend
+
 *1.13.3* (2020-04-07)
 - Update to Elements 2.7.2
 - Remove unavailable Open font #264
