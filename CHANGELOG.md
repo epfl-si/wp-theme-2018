@@ -1,4 +1,6 @@
 # CHANGELOG
+*1.14.1* (2020-04-28)
+- Update footer link
 
 *1.14.0* (2020-04-15)
 - Update Elements to 2.8.0
