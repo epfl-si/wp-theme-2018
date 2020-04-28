@@ -78,7 +78,7 @@
                         <a href="https://www.epfl.ch/education/studies/">Gestion des études</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/education/education-and-science-outreach/fr/index-fr-html/">Promotion de l'éducation et des sciences</a>
+                        <a href="https://www.epfl.ch/education/education-and-science-outreach/fr/">Promotion de l'éducation et des sciences</a>
                                   </li>
               </ul>
     </div>
