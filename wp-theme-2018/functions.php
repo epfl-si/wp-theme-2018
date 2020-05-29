@@ -262,10 +262,14 @@ add_image_size( 'thumbnail_square_crop', 300, 300, ['center', 'center'] );
 /**
  * update CSS within admin
  */
-add_action( 'admin_init', 'epfl_add_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'epfl_add_editor_styles' );
 function epfl_add_editor_styles() {
-	add_theme_support( 'editor-style' );
-	add_editor_style('editor-styles.css');
+    wp_enqueue_style(
+        'editor-styles.css',
+        get_stylesheet_directory_uri() . '/editor-styles.css',
+        array( 'wp-edit-blocks' ),
+        filemtime( dirname( __FILE__ ) . '/editor-styles.css' )
+    );
 }
 
 /**
