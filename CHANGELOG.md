@@ -1,4 +1,9 @@
 # CHANGELOG
+
+*1.15.1* (2020-06-03)
+- Hide password visibility settings in editor and Clean up unused editor-styles.css #267
+- Improve spacing after '.container-full' element #266
+
 *1.15.0* (2020-05-06)
 - Update Elements to 2.9.0
 

@@ -76,6 +76,27 @@ $dark-red: #b51f1f;
   @extend %sr-only;
 }
 
+/* Content */
+
+.entry-content .container-full {
+  
+  & + p,
+  & + ul,
+  & + ol,
+  & + table,
+  & + *[class*="wp-block"] {
+    margin-top: 2rem;
+  }
+  
+  & + h2,
+  & + h3,
+  & + h4,
+  & + h5,
+  & + h6 {
+    margin-top: 1.5em;
+  }
+}
+
 /* Content images */
 
 .wp-caption {

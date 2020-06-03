@@ -1,31 +1,4 @@
-body {
-  background: white;
-  color: #212121;
-  font-size: 18px;
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
-}
-
-body > p {
-  padding: 0 15px;
-}
-
-.placeholder {
-  background: #fafafa;
-  border: 2px dotted #ccc;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
-}
-
-.placeholder .content h5 {
-  margin-bottom: 0;
-}
-
-.placeholder .content h3 {
-  margin-top: 0;
-}
-
-.wpview.wpview-wrap {
-  box-sizing: border-box;
+/* Hide the password visibility post option */
+#editor-post-password-0, label[for=editor-post-password-0], #editor-post-password-0-description {
+    display: none;
 }
