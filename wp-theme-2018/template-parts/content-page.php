@@ -33,6 +33,5 @@ $has_hero = preg_match($regex1, $content) > 0 || preg_match($regex2, $content) >
 			?>
 
 		</div> <!-- .entry-content -->
-		</footer> <!-- .entry-footer -->
 	</article>
 	<!-- #post-<?php the_ID(); ?> -->
