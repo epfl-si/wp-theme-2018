@@ -1,5 +1,11 @@
 # CHANGELOG
 
+*1.17.0* (2020-06-25)
+- Improve font size of blog posts (blog list) #268
+- Remove unused footer tag #269
+- Improve 404 page template #270
+- Update to Element 2.11.0
+
 *1.16.0* (2020-06-17)
 - Update to Element 2.10.0
 
