@@ -15,7 +15,7 @@
       </picture>
     <?php endif; ?>
     <div class="card-body">
-      <h2 class="card-title" itemprop="name"><?php the_title(); ?></h2>
+      <h2 class="card-title h3" itemprop="name"><?php the_title(); ?></h2>
       <div class="card-info">
         <time class="card-info-date" itemprop="datePublished" datetime="<?php the_time('c') ?>"><?php echo get_the_date('Y-m-d'); ?></time>
         <span itemprop="about">
