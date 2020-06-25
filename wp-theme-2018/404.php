@@ -14,11 +14,11 @@ get_header();
 
 			<section class="error-404 not-found">
 				<div class="page-content container">
+          <p class="h1 mt-4 error-title">404</p>
 					<h1 class="h3 text-center"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'epfl' ); ?></h1>
-					<div class="page-content mt-5">
-						<p><?php esc_html_e( 'It looks like nothing was found at this location. You might try with a search:', 'epfl' ); ?></p>
+					<div class="page-content mt-5 pt-2">
 						<?php
-						get_search_form();
+						  get_search_form();
 						?>
 					</div>
 				</div><!-- .page-content -->
