@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.17.1* (2020-07-02)
+- Fix search form placeholder translation #271
+
 *1.17.0* (2020-06-25)
 - Improve font size of blog posts (blog list) #268
 - Remove unused footer tag #269
