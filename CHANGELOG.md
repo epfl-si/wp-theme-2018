@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.17.2* (2020-07-08)
+- Update footer link "Durabilité"
+
 *1.17.1* (2020-07-02)
 - Fix search form placeholder translation #271
 
