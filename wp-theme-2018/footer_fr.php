@@ -30,7 +30,7 @@
                         <a href="https://www.epfl.ch/about/news-and-media/fr/accueil/">News & médias</a>
                                   </li>
                   <li>
-                        <a href="https://www.epfl.ch/about/sustainability/fr/accueil/">Durabilité</a>
+                        <a href="https://www.epfl.ch/about/sustainability/fr/durabilite/">Durabilité</a>
                                   </li>
                   <li>
                         <a href="https://equality.epfl.ch/fr/index-fr-html/">Égalité des chances</a>
