@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.18.0* (2020-07-15)
+- Refactor titles construction #272
+
 *1.17.2* (2020-07-08)
 - Update footer link "Durabilité"
 
