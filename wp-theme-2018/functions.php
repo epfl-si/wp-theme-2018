@@ -370,3 +370,56 @@ function wp_video_shortcode_without_jquery( $output, $atts, $video, $post_id, $l
 }
 
 add_filter( 'wp_video_shortcode', 'wp_video_shortcode_without_jquery', 10, 5);
+
+/**
+ * Set a different title separator, because Chrome want to transform my '-' character to '‒'.
+ * So let's hardcode it in html
+ */
+add_filter( 'document_title_separator', function() {
+    return '&#8208;';  # = '-'
+}, 1, 10);
+
+/**
+ * Set some custom title, SEO friendly, following this rule :
+ * homepage -> tagline +" - EPFL"
+ * not homepage ->  page name + " – " + site title + "- EPFL"
+ */
+function set_epfl_title($title) {
+    # see function wp_get_document_title() in WordPress/wp-includes/general-template.php#L1028 for details
+    $new_title = [];
+
+    if (is_front_page()) {
+        /**
+         * $title has:
+         * Acronym: $title['title'] (My Site Title (aka acronym))
+         * Tagline: $title['tagline'] (My custom Tagline (aka School of Computer and Communication Sciences))
+         */
+
+        # We only want the tagline on the front page
+        if (!empty($title['tagline'])) {
+            $new_title = ['tagline' => $title['tagline']];
+        } else {
+            # tagline is not set, add the default page name with the EPFL ref
+            $new_title = ['title' => single_post_title( '', false )];
+        }
+    } else {
+        /**
+         * A page (blog, post, archive or whatever)
+         * $title has:
+         * Page title: $title['title'] (La page de tests à Adrián)
+         * Acronym (or Site title):  $title['site'] (My Site Title (aka acronym))
+         */
+        if (!empty($title['title']) && !empty($title['site'])) {
+            # &#8210; = '‒'
+            $new_title = ['title' => $title['title'] . " &#8210; " . $title['site']];
+        } elseif (!empty($title['title'])) {
+            $new_title = ['title' => $title['title']];
+        }
+    }
+
+    $new_title['epfl'] = "EPFL";  # at least, add it to the end
+
+    return $new_title;
+}
+
+add_filter( 'document_title_parts', 'set_epfl_title', 10, 1);
