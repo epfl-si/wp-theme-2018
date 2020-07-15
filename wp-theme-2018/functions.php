@@ -262,7 +262,9 @@ add_image_size( 'thumbnail_square_crop', 300, 300, ['center', 'center'] );
 /**
  * update CSS within admin
  */
-add_action( 'enqueue_block_editor_assets', 'epfl_add_editor_styles' );
+# Commented until we fullfil something in editor-styles.css
+/*
+ add_action( 'enqueue_block_editor_assets', 'epfl_add_editor_styles' );
 function epfl_add_editor_styles() {
     wp_enqueue_style(
         'editor-styles.css',
@@ -271,6 +273,7 @@ function epfl_add_editor_styles() {
         filemtime( dirname( __FILE__ ) . '/editor-styles.css' )
     );
 }
+*/
 
 /**
  * change excerpt length

@@ -1,4 +1,0 @@
-/* Hide the password visibility post option */
-#editor-post-password-0, label[for=editor-post-password-0], #editor-post-password-0-description {
-    display: none;
-}
