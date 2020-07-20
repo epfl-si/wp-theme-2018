@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.18.1* (2020-07-20)
+- Remove hiding password settings in css, move it into the wp-gutenberg plugin #273
+
 *1.18.0* (2020-07-15)
 - Refactor titles construction #272
 
