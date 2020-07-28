@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.19.0* (2020-07-28)
+- Update to Element 2.12.0
+
 *1.18.1* (2020-07-20)
 - Remove hiding password settings in css, move it into the wp-gutenberg plugin #273
 
