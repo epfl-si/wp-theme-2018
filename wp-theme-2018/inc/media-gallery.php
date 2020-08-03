@@ -43,8 +43,6 @@ function merge_info_from_attr_and_content($attr, $content) {
         # image_caption, get the custom from gallery if any, or the default from media gallery
         if (array_key_exists($post_id, $data_from_content) && isset($data_from_content[$post_id]['image_caption'])) {
             $image_info['image_caption'] = $data_from_content[$post_id]['image_caption'];
-        } else {
-            $image_info['image_caption'] = wp_get_attachment_caption($post_id);
         }
 
         $images_info[] = $image_info;
