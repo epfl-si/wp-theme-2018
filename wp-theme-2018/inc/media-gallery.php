@@ -74,12 +74,10 @@ function epfl_gallery_block($attr, $content) {
         $output .= '</div>';
         $output .= '</div>';
 
-        if ($image_info['image_caption']) {
-            $output .= '<figcaption><span>' . $image_info['image_caption'] . '</span></figcaption>';
-        } else {
-            $output .= '<figcaption><span></span></figcaption>';  // empty, though needed for the gallery counter
+        if (!isset($image_info['image_caption'])) {
+            $image_info['image_caption'] = '';  // should exist, as it is needed by the gallery counter
         }
-
+        $output .= '<figcaption><span>' . $image_info['image_caption'] . '</span></figcaption>';
         $output .= '</figure>';
     }
 
@@ -94,13 +92,10 @@ function epfl_gallery_block($attr, $content) {
         $output .= '<figure class="gallery-nav-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">';
         $output .= '<img src="'.$image_info['image_thumbnail'].'" alt="'.$image_info['image_alt'].'" class="img-fluid">';
 
-        if ($image_info['image_caption'])
-        {
-            $output .= '<figcaption><span>'.$image_info['image_caption'].'</span></figcaption>';
-        } else {
-            $output .= '<figcaption><span></span></figcaption>'; // empty, though needed for the gallery counter
+        if (!isset($image_info['image_caption'])) {
+            $image_info['image_caption'] = '';  // should exist, as it is needed by the gallery counter
         }
-
+        $output .= '<figcaption><span>' . $image_info['image_caption'] . '</span></figcaption>';
         $output .= '</figure>';
     }
 
