@@ -1,7 +1,14 @@
 # CHANGELOG
 
-*1.19.0* (2020-xx-xx)
-- Update some important libs, like Bootstrap 4.0 -> 4.5 and jQuery 3.3.1 -> 3.5.1
+*Soon* (2020-xx-xx)
+- Update some important libs, like Bootstrap 4.0 -> 4.5.2 and jQuery 3.3.1 -> 3.5.1
+
+*1.20.0* (2020-08-05)
+- Update to Element 2.13.0
+- Fix captions for gallery #275
+
+*1.19.0* (2020-07-28)
+- Update to Element 2.12.0
 
 *1.18.1* (2020-07-20)
 - Remove hiding password settings in css, move it into the wp-gutenberg plugin #273
