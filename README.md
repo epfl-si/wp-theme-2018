@@ -71,8 +71,7 @@ Hooks and filters directory? [/home/greg/workspace-idevelop/epfl-theme/.git/hook
     - `wp-theme-2018/style.css` with the version number
     - `CHANGELOG.md` with a description of **all the changes since last release**
   - commit them in a "Bump version" commit `git commit -am "Bump version"`
-  - finish the release: `git flow release finish x.x.x -p -m "x.x.x"`
-  - Push all the changes `git push`, `git checkout master && git push` and `git push --tags`
+  - finish the release: `git flow release finish -p 'x.x.x'`
   - head over this repo on github, on the **release** tab (or go directly using https://github.com/epfl-si/wp-theme-2018/releases/edit/x.x.x)
   - go to **Draft a new release**
   - choose the release number you just created, insert the changelog informations into the release description
