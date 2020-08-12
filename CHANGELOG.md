@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.21.1* (2020-08-12)
+- Update Elements to 2.14.1
+
 *1.21.0* (2020-08-11)
 - Update some important libs, like Bootstrap 4.0 -> 4.5.2 and jQuery 3.3.1 -> 3.5.1
 
