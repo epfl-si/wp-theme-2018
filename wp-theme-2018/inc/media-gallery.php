@@ -18,6 +18,10 @@ function merge_info_from_attr_and_content($attr, $content) {
     $dom->preserveWhiteSpace = false;
     $dom->loadHtml(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
 
+    $errors = libxml_get_errors();  // in case for the #oneday we may need to manage $error, so here it is
+    # close the errors, or it will spread on other libxml components
+    libxml_clear_errors();
+
     # build a keyed dict, so we can easily find values next
     $data_from_content = [];
 
