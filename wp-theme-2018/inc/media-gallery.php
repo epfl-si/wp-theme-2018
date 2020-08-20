@@ -24,8 +24,15 @@ function merge_info_from_attr_and_content($attr, $content) {
     foreach ($dom->getElementsByTagName('li') as $li_gallery_item) {
         $id = $li_gallery_item->getElementsByTagName('img')[0]->getAttribute('data-id');
         if(!empty($id)) {  # get the id as key, or nothing
+            $figcaption_element = $li_gallery_item->getElementsByTagName('figcaption')[0];
+
+            $image_caption = "";
+            foreach($figcaption_element->childNodes as $childNode) {
+                $image_caption .= $dom->saveHTML($childNode);
+            }
+
             $data_from_content[$id] = array (
-                'image_caption' => $li_gallery_item->getElementsByTagName('figcaption')[0]->nodeValue
+                'image_caption' => $image_caption
             );
         }
     }
