@@ -50,13 +50,13 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
     * by the EPFL plug-in setting a ->epfl_external_menu_children_count
     * annotation for us).
     */
-    public function walk( $elements, $max_depth ) {
+    public function walk( $elements, $max_depth, ...$args ) {
         $self = $this;
         $filtered_elements = array_filter($elements,
         function($element) use ($self, $elements) {
             return ! $this->_is_phantom_node($elements, $element);
         });
-        return parent::walk($filtered_elements, $max_depth);
+        return parent::walk($filtered_elements, $max_depth, ...$args);
     }
 
     function _is_phantom_node ($elements, $element) {
