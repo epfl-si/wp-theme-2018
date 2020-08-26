@@ -129,7 +129,7 @@
                                     <a href="https://www.epfl.ch/innovation/industry/">Industry Collaborations</a>
                       </li>
                   <li>
-                                    <a href="https://www.epfl.ch/innovation/entrepreneurship/start-up/">Entrepreneurship and start-ups</a>
+                                    <a href="https://www.epfl.ch/innovation/startup/">Startup</a>
                       </li>
               </ul>
     </div>
