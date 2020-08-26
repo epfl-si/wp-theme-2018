@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.21.3* (2020-08-26)
+- Fix walker definition #277
+- Fix gallery not using the captions'style #278
+
 *1.21.2* (2020-08-19)
 - Update Elements to 2.14.2 (Bootstrap fixes)
 - Fix libxml errors being spread to all components #276
