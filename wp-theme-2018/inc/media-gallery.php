@@ -114,7 +114,11 @@ function epfl_gallery_block($attr, $content) {
 }
 
 function register_epfl_gallery() {
-    register_block_type( 'core/gallery', array(
+    $block_type_registry = WP_Block_Type_Registry::get_instance();
+    if ($block_type_registry->is_registered('core/gallery')) {
+        $block_type_registry->unregister('core/gallery');
+    }
+    register_block_type('core/gallery', array(
         'render_callback' => 'epfl_gallery_block',
     ));
 }
