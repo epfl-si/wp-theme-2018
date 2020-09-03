@@ -1,8 +1,14 @@
 # CHANGELOG
 
+*1.22.0* (2020-09-03)
+- Update to Elements 2.15.0
+    - Add project-list css
+
 *1.21.3* (2020-08-26)
 - Fix walker definition #277
 - Fix gallery not using the captions'style #278
+- Update Elements to 2.14.3
+- Update footer links
 
 *1.21.2* (2020-08-19)
 - Update Elements to 2.14.2 (Bootstrap fixes)
