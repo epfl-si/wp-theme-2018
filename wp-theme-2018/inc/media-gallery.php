@@ -30,14 +30,16 @@ function merge_info_from_attr_and_content($attr, $content) {
         if(!empty($id)) {  # get the id as key, or nothing
             $figcaption_element = $li_gallery_item->getElementsByTagName('figcaption')[0];
 
-            $image_caption = "";
-            foreach($figcaption_element->childNodes as $childNode) {
-                $image_caption .= $dom->saveHTML($childNode);
-            }
+            if (isset($figcaption_element)) {
+                $image_caption = "";
+                foreach ($figcaption_element->childNodes as $childNode) {
+                    $image_caption .= $dom->saveHTML($childNode);
+                }
 
-            $data_from_content[$id] = array (
-                'image_caption' => $image_caption
-            );
+                $data_from_content[$id] = array(
+                    'image_caption' => $image_caption
+                );
+            }
         }
     }
 
@@ -69,7 +71,13 @@ function epfl_gallery_block($attr, $content) {
 
     $images_info = merge_info_from_attr_and_content($attr, $content);
 
-    $instance=md5(implode(',', $attr) . rand());  // make it uniq for attribute id
+    // make it uniq for attribute id
+    if (array_key_exists('ids', $attr)) {
+        $instance=md5(implode(',', $attr['ids']) . rand());
+    } else {
+        $instance=md5(rand());
+    }
+
 
     $output = '<div id="my-gallery-' . $instance . '" class="gallery gallery-main mt-4">';
 
@@ -114,7 +122,11 @@ function epfl_gallery_block($attr, $content) {
 }
 
 function register_epfl_gallery() {
-    register_block_type( 'core/gallery', array(
+    $block_type_registry = WP_Block_Type_Registry::get_instance();
+    if ($block_type_registry->is_registered('core/gallery')) {
+        $block_type_registry->unregister('core/gallery');
+    }
+    register_block_type('core/gallery', array(
         'render_callback' => 'epfl_gallery_block',
     ));
 }
