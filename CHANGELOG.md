@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.22.1* (2020-09-16)
+- Fix gallery warnings #279
+
 *1.22.0* (2020-09-03)
 - Update to Elements 2.15.0
     - Add project-list css
