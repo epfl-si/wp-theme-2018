@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.23.0* (2020-10-07)
+- Update to Elements 2.16.0
+- Move jquery loading from the slow code.jquery.com to googleapis.com #280
+
 *1.22.1* (2020-09-16)
 - Fix gallery warnings #279
 
