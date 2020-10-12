@@ -79,7 +79,7 @@ $dark-red: #b51f1f;
 /* Content */
 
 .entry-content .container-full {
-  
+
   & + p,
   & + ul,
   & + ol,
@@ -87,7 +87,7 @@ $dark-red: #b51f1f;
   & + *[class*="wp-block"] {
     margin-top: 2rem;
   }
-  
+
   & + h2,
   & + h3,
   & + h4,
@@ -97,24 +97,32 @@ $dark-red: #b51f1f;
   }
 }
 
+/* Images
+   since 5.5 use async loading of image, meaning
+   the height and width is a declared attribute now
+*/
+img[class^="wp-image-"] {
+  height: auto;
+}
+
 /* Content images */
 
 .wp-caption {
   max-width: 100%;
-  
+
   img {
     display: block;
-    height: auto; 
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
   }
-  
+
   .wp-caption-text {
     margin: 10px auto 0;
     max-width: 1140px;
   }
-  
+
   .container-grid &.alignnone {
     grid-column: full;
     margin-left: auto;
@@ -141,22 +149,22 @@ $dark-red: #b51f1f;
 /* Wordpress pagination */
 
 nav.navigation.pagination {
-  
+
   .nav-links {
     display: flex;
   }
-  
+
   a {
     color: $red;
     text-decoration: none;
     transition: all .2s;
-    
+
     &:hover {
       background: $gray-100;
       border: 1px solid #707070 !important;
     }
   }
-  
+
   .page-numbers {
     background-color: #fff;
     border-top: 1px solid $gray-200;
@@ -166,15 +174,15 @@ nav.navigation.pagination {
     min-width: 2.25rem;
     padding: .5rem .75rem;
     text-align: center;
-    
+
     &:first-child {
       border-left: 1px solid $gray-200;
     }
-    
+
     &:last-child {
       border-right: 1px solid $gray-200;
     }
-    
+
     &.current {
       background: $gray-100;
       color: $gray-600;
