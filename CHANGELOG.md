@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.23.1* (2020-10-12)
+- Fix image ratio when WP has set the size as attribute #281
+
 *1.23.0* (2020-10-07)
 - Update to Elements 2.16.0
 - Move jquery loading from the slow code.jquery.com to googleapis.com #280
