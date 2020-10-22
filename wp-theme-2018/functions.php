@@ -95,6 +95,10 @@ if ( ! function_exists( 'epfl_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		// Add support for editor styles.
+        add_theme_support( 'editor-styles' );
+        add_theme_support( 'align-wide' );
 	}
 endif;
 add_action( 'after_setup_theme', 'epfl_setup' );
