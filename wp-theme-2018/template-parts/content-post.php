@@ -67,18 +67,60 @@
 	</div><!-- .entry-content -->
 
   <footer class="post-footer pt-4">
+      
+    <?php
+
+      $prev_post = get_previous_post();
+      $next_post = get_next_post();
+
+      $prev_post_link = get_permalink( $prev_post );
+      $next_post_link = get_permalink( $next_post );
+    
+      if (!empty( $next_post ) || !empty( $prev_post ) ) : ?>
+    
+    <div class="post-nav py-md-1">
+      
+      <?php if (!empty( $next_post )): ?>
+      <div class="nav-next">
+        <a class="btn btn-secondary post-link" href="<?php echo $next_post_link; ?>">
+          <span class="label muted">
+            <svg class="icon feather" aria-hidden="true"><use xlink:href="#arrow-left"></use></svg>
+            <?php _e( 'Next post', 'epfl' ) ?><span class="colon">:</span>
+          </span>
+          <span class="post-title"><strong><?php echo $next_post->post_title ?></strong></span>
+        </a>
+      </div>
+      <?php endif ?>
+      
+      <?php if (!empty( $prev_post )): ?>
+      <div class="nav-prev">
+        <a class="btn btn-secondary post-link" href="<?php echo $prev_post_link; ?>">
+          <span class="label muted">
+            <?php _e( 'Previous post', 'epfl' ) ?><span class="colon">:</span>
+            <svg class="icon feather" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+          </span>
+          <span class="post-title"><strong><?php echo $prev_post->post_title ?></strong></span>
+        </a>
+      </div>
+      <?php endif ?>
+      
+    </div>
+  <?php endif ?>
+    
 	<?php $tags = get_the_tags(get_the_ID());
 	if ( $tags && !empty($tags) ) :
 	?>
-    <h2 class="h5"><?php _e('Tags', 'epfl'); ?></h2>
-    <p>
-      <?php
-        $tags = get_the_tags(get_the_ID());
-        foreach($tags as $tag) :
-      ?>
-      <a href="<?php echo get_tag_link($tag->term_id); ?>" class="tag tag-primary"><?php echo $tag->name; ?></a>
-	  <?php endforeach; ?>
-	</p>
+    <div class="post-meta mt-4">
+      <h2 class="h5"><?php _e('Tags', 'epfl'); ?></h2>
+      <p>
+        <?php
+          $tags = get_the_tags(get_the_ID());
+          foreach($tags as $tag) :
+        ?>
+        <a href="<?php echo get_tag_link($tag->term_id); ?>" class="tag tag-primary"><?php echo $tag->name; ?></a>
+      <?php endforeach; ?>
+    </p>
+  </div>
 	<?php endif; ?>
   </footer>
 </article><!-- #post-<?php the_ID(); ?> -->

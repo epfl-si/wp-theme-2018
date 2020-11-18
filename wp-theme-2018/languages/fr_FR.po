@@ -1,37 +1,45 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2019-09-02 12:41+0200\n"
-"PO-Revision-Date: 2020-06-25 10:48+0200\n"
-"Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
+"POT-Creation-Date: 2020-11-18 09:59+0100\n"
+"PO-Revision-Date: 2020-11-18 10:04+0100\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e\n"
+"X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e;esc_html_x\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: \n"
 "X-Poedit-SearchPath-0: shortcodes\n"
 "X-Poedit-SearchPath-1: .\n"
 
-#: 404.php:17
+#: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops ! Cette page est introuvable."
 
-#: 404.php:19
-msgid ""
-"It looks like nothing was found at this location. You might try with a "
-"search:"
+#: assets/js/vendors.min.js:1
+msgid "label[for=\""
 msgstr ""
-"On dirait que cette adresse n'existe pas sur le site.  Essayez avec une "
-"recherche :"
 
-#: archive.php:33 index.php:38
-msgid "No article found"
-msgstr "Aucun article trouvé"
+#: assets/js/vendors.min.js:1
+msgid ""
+"\n"
+"      <div class=\"ms-parent "
+msgstr ""
+
+#: assets/js/vendors.min.js:1
+msgid ""
+"\n"
+"      <button type=\"button\" class=\"ms-choice\""
+msgstr ""
+
+#: assets/js/vendors.min.js:1
+msgid "<div class=\"ms-drop "
+msgstr ""
 
 #: comments.php:35
 #, php-format
@@ -54,35 +62,45 @@ msgstr "Surcharger le menu du haut"
 msgid "Footer"
 msgstr "Pied de page"
 
-#: functions.php:212
+#: functions.php:217
 msgid "Par défaut"
 msgstr ""
 
-#: header.php:113
+#: header.php:115
 msgid "Skip to content"
 msgstr "Aller directement au contenu"
 
-#: header.php:193 header.php:215
+#: header.php:195 header.php:217
 msgid "Search on the site"
 msgstr "Rechercher sur le site"
 
-#: header.php:194 header.php:216 searchform.php:4 searchform.php:18
+#: header.php:196 header.php:218 searchform.php:4 searchform.php:18
 msgid "Search"
 msgstr "Recherche"
 
-#: header.php:195 searchform.php:6
+#: header.php:197 searchform.php:6
 msgid "Validate"
 msgstr "Valider"
 
-#: header.php:205
+#: header.php:207
 msgid "Show / hide the search form"
 msgstr "Afficher / masquer le formulaire de recherche"
 
-#: header.php:222
+#: header.php:224
 msgid "Hide the search form"
 msgstr "Masquer le formulaire de recherche"
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:26
+#, php-format
+msgid "Posted on %s"
+msgstr "Posté le %s"
+
+#: inc/template-tags.php:42
+#, php-format
+msgid "by %s"
+msgstr "par %s"
+
+#: inc/template-tags.php:59 inc/template-tags.php:66
 msgid ", "
 msgstr ", "
 
@@ -120,34 +138,71 @@ msgstr "Rechercher des résultats pour : %s"
 msgid "Search in the EPFL Web"
 msgstr "Rechercher sur le Web de l'EPFL"
 
-#: sidebar.php:63
+#: shortcodes/epfl_polylex_search/view.php:13
+#, fuzzy
+#| msgid "All categories"
+msgid "All sections"
+msgstr "Toutes les rubriques"
+
+#: shortcodes/epfl_polylex_search/view.php:35
+msgid "All subsections"
+msgstr ""
+
+#: shortcodes/epfl_polylex_search/view.php:69
+msgid "Search a number or a keyword"
+msgstr ""
+
+#: shortcodes/epfl_polylex_search/view.php:93
+msgid "Title"
+msgstr ""
+
+#: shortcodes/epfl_polylex_search/view.php:94
+msgid "Section, subsection"
+msgstr ""
+
+#: shortcodes/epfl_polylex_search/view.php:117
+msgid "Effective on"
+msgstr ""
+
+#: shortcodes/epfl_polylex_search/view.php:123
+msgid "Status as of"
+msgstr ""
+
+#: sidebar.php:71
 msgid "In the same section"
 msgstr "Dans la même section"
 
-#: template-parts/archives-list.php:2
+#: template-parts/archives-list.php:2 template-parts/blog-filters.php:48
 msgid "Archives"
 msgstr "Archives"
 
-#: template-parts/breadcrumb.php:23
-msgid "Browse"
-msgstr "Parcourir"
+#: template-parts/blog-filters.php:3
+msgid "Filters"
+msgstr "Filtrer les articles"
 
-#: template-parts/categories-list.php:2
+#: template-parts/blog-filters.php:23 template-parts/categories-list.php:2
 msgid "Categories"
 msgstr "Catégories"
+
+#: template-parts/blog-filters.php:26
+msgid "Select a category"
+msgstr "Sélectionner une catégorie"
+
+#: template-parts/blog-filters.php:50
+msgid "Select a year"
+msgstr "Sélectionner une année"
+
+#: template-parts/blog-list.php:25
+msgid "No article found"
+msgstr "Aucun article trouvé"
+
+#: template-parts/breadcrumb.php:152
+msgid "Browse"
+msgstr "Parcourir"
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr "Aucun résultat trouvé"
-
-msgid "Select a category"
-msgstr "Sélectionner une catégorie"
-
-msgid "Select a year"
-msgstr "Sélectionner une année"
-
-msgid "Filters"
-msgstr "Filtrer les articles"
 
 #: template-parts/content-none.php:25
 #, php-format
@@ -176,17 +231,40 @@ msgstr ""
 msgid "Published:"
 msgstr "Publié le :"
 
-#: template-parts/content-post.php:39 template-parts/content.php:39
+#: template-parts/content-post.php:25
+#, php-format
+msgid ""
+"Posted on <time class=\"entry-date published\" datetime=\"%s\">%s</time>"
+msgstr ""
+"Posté le <time class=\"entry-date published\" datetime=\"%s\">%s</time>"
+
+#: template-parts/content-post.php:52 template-parts/content.php:39
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
 
-#: template-parts/content-post.php:50 template-parts/content.php:50
+#: template-parts/content-post.php:63 template-parts/content.php:50
 msgid "Pages:"
 msgstr "Pages :"
 
-#~ msgid "All categories"
-#~ msgstr "Toutes les rubriques"
+#: template-parts/content-post.php:88
+msgid "Next post"
+msgstr "Article suivant"
+
+#: template-parts/content-post.php:99
+msgid "Previous post"
+msgstr "Article précédent"
+
+#: template-parts/content-post.php:114
+msgid "Tags"
+msgstr "Mots-clés"
+
+#~ msgid ""
+#~ "It looks like nothing was found at this location. You might try with a "
+#~ "search:"
+#~ msgstr ""
+#~ "On dirait que cette adresse n'existe pas sur le site.  Essayez avec une "
+#~ "recherche :"
 
 #~ msgid "Category, subcategory"
 #~ msgstr "Rubrique, Sous-rubrique"
