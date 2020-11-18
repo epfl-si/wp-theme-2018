@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*1.24.0* (2020-11-18)
+- Update to Elements 2.17.0
+- Remove migrated Polylex shortcode #284
+- Add posts navigation on post detail #283
+
 *1.23.1* (2020-10-12)
 - Fix image ratio when WP has set the size as attribute #281
 
