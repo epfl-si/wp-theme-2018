@@ -1,8 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2020-11-18 09:59+0100\n"
-"PO-Revision-Date: 2020-11-18 10:04+0100\n"
+"POT-Creation-Date: 2020-11-18 10:29+0100\n"
+"PO-Revision-Date: 2020-11-18 10:29+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -13,9 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e;esc_html_x\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Last-Translator: \n"
-"X-Poedit-SearchPath-0: shortcodes\n"
-"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
@@ -138,36 +137,6 @@ msgstr "Rechercher des résultats pour : %s"
 msgid "Search in the EPFL Web"
 msgstr "Rechercher sur le Web de l'EPFL"
 
-#: shortcodes/epfl_polylex_search/view.php:13
-#, fuzzy
-#| msgid "All categories"
-msgid "All sections"
-msgstr "Toutes les rubriques"
-
-#: shortcodes/epfl_polylex_search/view.php:35
-msgid "All subsections"
-msgstr ""
-
-#: shortcodes/epfl_polylex_search/view.php:69
-msgid "Search a number or a keyword"
-msgstr ""
-
-#: shortcodes/epfl_polylex_search/view.php:93
-msgid "Title"
-msgstr ""
-
-#: shortcodes/epfl_polylex_search/view.php:94
-msgid "Section, subsection"
-msgstr ""
-
-#: shortcodes/epfl_polylex_search/view.php:117
-msgid "Effective on"
-msgstr ""
-
-#: shortcodes/epfl_polylex_search/view.php:123
-msgid "Status as of"
-msgstr ""
-
 #: sidebar.php:71
 msgid "In the same section"
 msgstr "Dans la même section"
@@ -258,79 +227,3 @@ msgstr "Article précédent"
 #: template-parts/content-post.php:114
 msgid "Tags"
 msgstr "Mots-clés"
-
-#~ msgid ""
-#~ "It looks like nothing was found at this location. You might try with a "
-#~ "search:"
-#~ msgstr ""
-#~ "On dirait que cette adresse n'existe pas sur le site.  Essayez avec une "
-#~ "recherche :"
-
-#~ msgid "Category, subcategory"
-#~ msgstr "Rubrique, Sous-rubrique"
-
-#~ msgid "Search inside"
-#~ msgstr "Rechercher dans"
-
-#~ msgid "Search for"
-#~ msgstr "Rechercher"
-
-#~ msgid "Laboratories are part of faculties and institutes."
-#~ msgstr "Les laboratoires font partie de facultés et d'instituts."
-
-#~ msgid "Journal Articles"
-#~ msgstr "Articles de journaux"
-
-#~ msgid "Conference Papers"
-#~ msgstr "Papiers de conférences"
-
-#~ msgid "Reviews"
-#~ msgstr "Reviews"
-
-#~ msgid "Books"
-#~ msgstr "Livres"
-
-#~ msgid "Theses"
-#~ msgstr "Thèses"
-
-#~ msgid "Book Chapters"
-#~ msgstr "Chapitres de livres"
-
-#~ msgid "Conference Proceedings"
-#~ msgstr "Actes de congrès"
-
-#~ msgid "Working Papers"
-#~ msgstr "Documents de travail"
-
-#~ msgid "Reports"
-#~ msgstr "Rapports techniques"
-
-#~ msgid "Posters"
-#~ msgstr "Posters"
-
-#~ msgid "Talks"
-#~ msgstr "Présentations"
-
-#~ msgid "Standards"
-#~ msgstr "Normes"
-
-#~ msgid "Patents"
-#~ msgstr "Brevets"
-
-#~ msgid "Student Projects"
-#~ msgstr "Projets d'étudiants"
-
-#~ msgid "Teaching Resources"
-#~ msgstr "Documents d'enseignement"
-
-#~ msgid "Media"
-#~ msgstr "Média"
-
-#~ msgid "Datasets"
-#~ msgstr "Echantillons de données"
-
-#~ msgid "Social feed"
-#~ msgstr "Réseaux sociaux"
-
-#~ msgid "Faculty"
-#~ msgstr "Template pour les sites de facultés (avec 4 actualités)"
