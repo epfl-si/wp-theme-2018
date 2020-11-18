@@ -1,19 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epfl\n"
-"POT-Creation-Date: 2020-11-17 17:29+0100\n"
-"PO-Revision-Date: 2020-11-17 17:30+0100\n"
-"Last-Translator: Charmier Grégory <gregory.charmier@epfl.ch>\n"
+"POT-Creation-Date: 2020-11-18 09:59+0100\n"
+"PO-Revision-Date: 2020-11-18 10:04+0100\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e\n"
+"X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e;esc_html_x\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: \n"
 "X-Poedit-SearchPath-0: shortcodes\n"
 "X-Poedit-SearchPath-1: .\n"
 
@@ -90,7 +90,17 @@ msgstr "Afficher / masquer le formulaire de recherche"
 msgid "Hide the search form"
 msgstr "Masquer le formulaire de recherche"
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:26
+#, php-format
+msgid "Posted on %s"
+msgstr "Posté le %s"
+
+#: inc/template-tags.php:42
+#, php-format
+msgid "by %s"
+msgstr "par %s"
+
+#: inc/template-tags.php:59 inc/template-tags.php:66
 msgid ", "
 msgstr ", "
 
@@ -226,6 +236,7 @@ msgstr "Publié le :"
 msgid ""
 "Posted on <time class=\"entry-date published\" datetime=\"%s\">%s</time>"
 msgstr ""
+"Posté le <time class=\"entry-date published\" datetime=\"%s\">%s</time>"
 
 #: template-parts/content-post.php:52 template-parts/content.php:39
 #, php-format
