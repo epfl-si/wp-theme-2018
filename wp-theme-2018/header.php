@@ -105,6 +105,12 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php require_once(__DIR__.'/favicons.php'); ?>
+  <?php
+  $base_url = get_site_url();
+  if (!empty($base_url)):
+  ?>
+  <base href="<?= trailingslashit($base_url) ?>">
+  <?php endif ?>
 	<script type="text/javascript">window.svgPath = "<?php bloginfo('template_url'); ?>/assets/icons/icons.svg"</script>
 	<script type="text/javascript">window.featherSvgPath = "<?php bloginfo('template_url'); ?>/assets/icons/feather-sprite.svg"</script>
 	<?php wp_head(); ?>
