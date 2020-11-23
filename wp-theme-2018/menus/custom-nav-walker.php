@@ -81,7 +81,11 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 		$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'menu-item-' . $item->ID;
+
+		# remove some useless classes, mainly for some bandwidth optimization and reactivity when
+		# a long list of elements is rendered
+		$to_hide_classes = ["menu-item", "menu-item-object-page", "menu-item-type-post_type"];
+		$classes = array_diff($classes, $to_hide_classes);
 
 		/**
 		 * Filters the arguments for a single nav menu item.
