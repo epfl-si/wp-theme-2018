@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.25.0* (2020-11-25)
+- Fix icons position (Elements 2.17.1)
+- Remove useless classes in menu elements (#286)
+
 *1.24.0* (2020-11-18)
 - Update to Elements 2.17.0
 - Remove migrated Polylex shortcode #284
