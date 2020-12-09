@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.25.1* (2020-12-09)
+- Set new link in footer
+
 *1.25.0* (2020-11-25)
 - Fix icons position (Elements 2.17.1)
 - Remove useless classes in menu elements (#286)
