@@ -43,6 +43,7 @@
   <div class="footer-legal-links">
     <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer">Accessibility</a>
     <a href="https://www.epfl.ch/about/overview/regulations-and-guidelines/disclaimer">Legals</a>
+    <a href="https://go.epfl.ch/privacy-policy/">Privacy policy</a>
   </div>
   <div>
     <p>&copy; <?php echo date("Y"); ?> EPFL, all rights reserved</p>
