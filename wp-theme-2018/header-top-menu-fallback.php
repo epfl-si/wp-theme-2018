@@ -13,6 +13,8 @@ $language = get_current_language();
 
 if ($language === 'fr') {
     require_once(__DIR__.'/header-top-menu-fallback-fr.php');
+} elseif ($language === 'de') {
+    require_once(__DIR__.'/header-top-menu-fallback-de.php');
 } else {
     require_once(__DIR__.'/header-top-menu-fallback-en.php');
 }

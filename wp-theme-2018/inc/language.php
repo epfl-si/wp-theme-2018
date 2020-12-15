@@ -4,7 +4,7 @@
  */
 function get_current_language ($default_lang='en') {
 	# fetch language
-	$allowed_langs = array('en', 'fr');
+	$allowed_langs = array('en', 'fr', 'de');
 	$language = $default_lang;
 
 	/* If Polylang installed */
