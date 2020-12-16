@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.26.0* (2020-12-16)
+- Set new link in footer
+
 *1.25.1* (2020-12-09)
 - Set new link in footer
 

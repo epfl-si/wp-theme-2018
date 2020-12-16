@@ -17,7 +17,10 @@
 		$language = get_current_language();
 
 		if ($language === 'fr') {
-			require_once(__DIR__.'/footer_fr.php');
+			require_once(__DIR__ . '/footer_fr.php');
+		}
+		elseif ($language === 'de') {
+			require_once(__DIR__.'/footer_de.php');
 		} else {
 			require_once(__DIR__.'/footer_en.php');
 		}

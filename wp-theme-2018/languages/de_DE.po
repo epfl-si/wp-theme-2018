@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: epfl\n"
+"POT-Creation-Date: 2020-11-18 10:29+0100\n"
+"PO-Revision-Date: 2020-12-16 14:33+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;esc_html__;esc_html_e;_e;esc_html_x\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: assets/js/vendors.min.js:1
+msgid "label[for=\""
+msgstr ""
+
+#: assets/js/vendors.min.js:1
+msgid ""
+"\n"
+"      <div class=\"ms-parent "
+msgstr ""
+
+#: assets/js/vendors.min.js:1
+msgid ""
+"\n"
+"      <button type=\"button\" class=\"ms-choice\""
+msgstr ""
+
+#: assets/js/vendors.min.js:1
+msgid "<div class=\"ms-drop "
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:59
+msgid "Primary"
+msgstr ""
+
+#: functions.php:61
+msgid "Top Menu Override"
+msgstr ""
+
+#: functions.php:63
+msgid "Footer"
+msgstr ""
+
+#: functions.php:217
+msgid "Par défaut"
+msgstr ""
+
+#: header.php:115
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:195 header.php:217
+msgid "Search on the site"
+msgstr ""
+
+#: header.php:196 header.php:218 searchform.php:4 searchform.php:18
+msgid "Search"
+msgstr "Forschen"
+
+#: header.php:197 searchform.php:6
+msgid "Validate"
+msgstr "Bestätigen"
+
+#: header.php:207
+msgid "Show / hide the search form"
+msgstr ""
+
+#: header.php:224
+msgid "Hide the search form"
+msgstr ""
+
+#: inc/template-tags.php:26
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:42
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:59 inc/template-tags.php:66
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:62
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:69
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:79
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/template-tags.php:96
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: menus/custom-nav-walker.php:55 menus/custom-nav-walker.php:59
+msgid "Back"
+msgstr ""
+
+#: search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:5 searchform.php:19
+msgid "Search in the EPFL Web"
+msgstr ""
+
+#: sidebar.php:71
+msgid "In the same section"
+msgstr ""
+
+#: template-parts/archives-list.php:2 template-parts/blog-filters.php:48
+msgid "Archives"
+msgstr ""
+
+#: template-parts/blog-filters.php:3
+msgid "Filters"
+msgstr ""
+
+#: template-parts/blog-filters.php:23 template-parts/categories-list.php:2
+msgid "Categories"
+msgstr ""
+
+#: template-parts/blog-filters.php:26
+msgid "Select a category"
+msgstr ""
+
+#: template-parts/blog-filters.php:50
+msgid "Select a year"
+msgstr ""
+
+#: template-parts/blog-list.php:25
+msgid "No article found"
+msgstr ""
+
+#: template-parts/breadcrumb.php:152
+msgid "Browse"
+msgstr "Durchsuchen"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:45
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-post-teaser.php:22
+msgid "Published:"
+msgstr ""
+
+#: template-parts/content-post.php:25
+#, php-format
+msgid ""
+"Posted on <time class=\"entry-date published\" datetime=\"%s\">%s</time>"
+msgstr ""
+
+#: template-parts/content-post.php:52 template-parts/content.php:39
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-post.php:63 template-parts/content.php:50
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-post.php:88
+msgid "Next post"
+msgstr ""
+
+#: template-parts/content-post.php:99
+msgid "Previous post"
+msgstr ""
+
+#: template-parts/content-post.php:114
+msgid "Tags"
+msgstr ""
+
+msgid "Menu"
+msgstr "Menü"
