@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.26.1* (2021-01-13)
+- Fix 404 search on mobile (#288)
+
 *1.26.0* (2020-12-16)
 - Update Elements to 2.18.2
 - Add german language for header and footer
