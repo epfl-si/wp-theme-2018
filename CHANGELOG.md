@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.26.2* (2021-01-20)
+- Update Elements to 2.18.4
+
 *1.26.1* (2021-01-13)
 - Fix 404 search on mobile (#288)
 
