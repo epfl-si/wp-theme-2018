@@ -90,13 +90,17 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 	// this is a temp hack until we remove it
 	$language = get_current_language();
 
-	if ($language === 'fr') {
-		$new_entry_url = 'https://www.epfl.ch/campus/security-safety/sante/coronavirus-covid-19/';
-		$new_entry_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $new_entry_url .'">Info coronavirus</a></li>';
-	} else {
-		$new_entry_url = 'https://www.epfl.ch/campus/security-safety/en/health/coronavirus-covid19/';
-		$new_entry_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $new_entry_url .'">Coronavirus Info</a></li>';
-	}
+  if (get_option( 'epfl_hide_coronavirus_info_header', false ) == "1") {
+    $new_entry_item = '';
+  } else {
+    if ($language === 'fr') {
+      $new_entry_url = 'https://www.epfl.ch/campus/security-safety/sante/coronavirus-covid-19/';
+      $new_entry_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $new_entry_url .'">Info coronavirus</a></li>';
+    } else {
+      $new_entry_url = 'https://www.epfl.ch/campus/security-safety/en/health/coronavirus-covid19/';
+      $new_entry_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $new_entry_url .'">Coronavirus Info</a></li>';
+    }
+  }
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
