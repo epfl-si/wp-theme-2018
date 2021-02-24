@@ -1,5 +1,10 @@
 # CHANGELOG
 
+*1.27.0* (2021-02-24)
+- Update Elements to 2.19.0
+- Check for option to hide the corona info links #289
+- Update campus names in footer 7e8136f
+
 *1.26.2* (2021-01-20)
 - Update Elements to 2.18.4
 
