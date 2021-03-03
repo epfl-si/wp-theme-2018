@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.28.0* (2021-03-03)
+- Update Elements to 2.19.1
+- Away from gitflow (good bye old friend)
+
 *1.27.0* (2021-02-24)
 - Update Elements to 2.19.0
 - Check for option to hide the corona info links #289
