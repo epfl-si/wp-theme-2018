@@ -124,16 +124,19 @@ function get_current_item($items) {
 }
 
 function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
+    $title = $crumb_item->title ?? '';
+    $url = $crumb_item->url ?? '';
+
     if ( $is_current_item ) {
         return "
         <li class=\"breadcrumb-item active\" aria-current=\"page\">
-            {$crumb_item->title}
+            {$title}
         </li>";
     } else {
         return "
         <li class=\"breadcrumb-item\">
-            <a class=\"bread-link bread-home\" href=\"{$crumb_item->url}\" title=\"{$crumb_item->title}\">
-                {$crumb_item->title}
+            <a class=\"bread-link bread-home\" href=\"{$url}\" title=\"{$title}\">
+                {$title}
             </a>
         </li>";
     }
@@ -189,7 +192,9 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
     }
 
     foreach($crumb_items as $crumb_item) {
-        if ((int) $current_item->db_id === (int) $crumb_item->db_id) { // current item ?
+        $current_item_db_id = $current_item->db_id ?? null;
+        $crumb_item_db_id = $crumb_item->db_id ?? null;
+        if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
             $crumbs[] = get_rendered_crumb_item($crumb_item, True);
         } else {
             $crumbs[] = get_rendered_crumb_item($crumb_item, False);
