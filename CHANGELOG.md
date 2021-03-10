@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.28.1* (2021-03-10)
+- Update Elements to 2.20.0
+- Fix for testing inexistant attribute on breadcrumb object
+
 *1.28.0* (2021-03-03)
 - Update Elements to 2.19.1
 - Away from gitflow (good bye old friend)
