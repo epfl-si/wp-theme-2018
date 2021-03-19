@@ -95,28 +95,28 @@
       <div class="collapse collapse-item" id="collapse-footer-3">
         <ul class="footer-links">
           <li>
-            <a href="https://www.epfl.ch/research/domains/">Forschungsbereiche</a>
+            <a href="https://www.epfl.ch/research/domains/de/">Forschungsbereiche</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/faculty-members/">Unsere Lehrkräfte</a>
+            <a href="https://www.epfl.ch/research/faculty-members/de/">Unsere Lehrkräfte</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/collaborate/">Mit unseren Forschenden zusammenarbeiten</a>
+            <a href="https://www.epfl.ch/research/collaborate/de/">Mit unseren Forschenden zusammenarbeiten</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/facilities/">Verfügbare Infrastruktur</a>
+            <a href="https://www.epfl.ch/research/facilities/de/">Unsere Infrastruktur nutzen</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/access-technology/">Zugang zu unseren Technologien</a>
+            <a href="https://www.epfl.ch/research/access-technology/de/">Auf unsere Technologien zugreifen</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/services/">Dienstleistungen für Forschende</a>
+            <a href="https://www.epfl.ch/research/services/de/">Dienste für EPFL-Labore</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/ethic-statement/">Ethikerklärung</a>
+            <a href="https://www.epfl.ch/research/ethic-statement/de/">Forschungsethik</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/awards/">Preise und Auszeichnungen</a>
+            <a href="https://www.epfl.ch/research/awards/de/">Preise und Auszeichnungen</a>
           </li>
         </ul>
       </div>
