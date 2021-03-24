@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.29.0* (2021-03-24)
+- Update header + footer #290
+
 *1.28.1* (2021-03-10)
 - Update Elements to 2.20.0
 - Fix for testing inexistant attribute on breadcrumb object
