@@ -10,10 +10,10 @@
       <div class="collapse collapse-item" id="collapse-footer-1">
         <ul class="footer-links">
           <li>
-            <a href="https://www.epfl.ch/about/overview/">Overview</a>
+            <a href="https://www.epfl.ch/about/overview/">Presentation</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/about/presidency/">President</a>
+            <a href="https://www.epfl.ch/about/presidency/">Presidency</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/about/vice-presidencies/">Vice-presidencies</a>
@@ -34,16 +34,16 @@
             <a href="https://www.epfl.ch/about/sustainability/">Sustainability</a>
           </li>
           <li>
-            <a href="https://equality.epfl.ch">Equal opportunities</a>
+            <a href="https://www.epfl.ch/about/equality/">Equality</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/about/philanthropy/">Philanthropy</a>
           </li>
           <li>
-            <a href="https://essentialtech.center">Cooperation</a>
+            <a href="https://essentialtech.center" target="_blank" rel="noopener">Cooperation</a>
           </li>
           <li>
-            <a href="https://www.epflalumni.ch">Alumni</a>
+            <a href="https://www.epflalumni.ch" target="_blank" rel="noopener">Alumni</a>
           </li>
         </ul>
       </div>
@@ -56,28 +56,28 @@
       <div class="collapse collapse-item" id="collapse-footer-2">
         <ul class="footer-links">
           <li>
-            <a href="https://www.epfl.ch/education/educational-initiatives/">Educational initiatives</a>
-          </li>
-          <li>
             <a href="https://www.epfl.ch/education/bachelor/">Bachelor</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/education/master/">Master</a>
           </li>
           <li>
-            <a href="https://phd.epfl.ch">PhD</a>
+            <a href="https://www.epfl.ch/education/phd/">Doctorate</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/education/continuing-education/">Continuing education</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/education/international/en/mobility/">International</a>
+            <a href="https://www.epfl.ch/education/international/en/">International</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/education/admission/">Admission</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/education/studies/en/epfl-studies/">Study management</a>
+            <a href="https://www.epfl.ch/education/studies/en/">Study management</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/education/educational-initiatives/">Educational initiatives</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/education/education-and-science-outreach/">Sciences and education outreach</a>
@@ -102,19 +102,19 @@
             <a href="https://www.epfl.ch/research/collaborate/">Collaborate with our researchers</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/facilities/">Research facilities</a>
+            <a href="https://www.epfl.ch/research/facilities/">Use our infrastructure</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/research/access-technology/">Access our technologies</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/services/">Services for researchers</a>
+            <a href="https://www.epfl.ch/research/services/">Services to laboratories</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/ethic-statement/">Ethical statement</a>
+            <a href="https://www.epfl.ch/research/ethic-statement/">Research ethics</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/awards/">Research awards</a>
+            <a href="https://www.epfl.ch/research/awards/">Awards and prizes</a>
           </li>
         </ul>
       </div>
@@ -127,13 +127,13 @@
       <div class="collapse collapse-item" id="collapse-footer-4">
         <ul class="footer-links">
           <li>
-            <a href="https://www.epfl.ch/innovation/domains/">Innovation domains</a>
+            <a href="https://www.epfl.ch/innovation/domains/">Domains of innovation</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/innovation/industry/">Industry Collaborations</a>
+            <a href="https://www.epfl.ch/innovation/industry/">Industry collaborations</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/innovation/startup/">Startup</a>
+            <a href="https://www.epfl.ch/innovation/startup/">Startup launchpad</a>
           </li>
         </ul>
       </div>
@@ -146,34 +146,31 @@
       <div class="collapse collapse-item" id="collapse-footer-5">
         <ul class="footer-links">
           <li>
-            <a href="https://www.epfl.ch/campus/visitors/">Visitors information</a>
+            <a href="https://www.epfl.ch/campus/visitors/">Visit EPFL</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/campus/services/en/homepage/">Services and resources</a>
+            <a href="https://www.epfl.ch/campus/services/en/">Services and resources</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/campus/library/">Library</a>
           </li>
           <li>
-            <a href="https://restauration.epfl.ch">Restaurants, shops and hotels</a>
+            <a href="https://www.epfl.ch/campus/restaurants-shops-hotels/">Restaurants, shops and hotels</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/campus/events/">Events</a>
           </li>
           <li>
-            <a href="https://equality.epfl.ch/family_worklife/daycare/">Childcare</a>
+            <a href="https://www.epfl.ch/campus/sports/en/">Sports</a>
           </li>
           <li>
-            <a href="https://sport.unil.ch">Sport</a>
+            <a href="https://www.epfl.ch/campus/art-culture/">Arts and culture</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/campus/art-culture/">Art and culture</a>
+            <a href="https://www.epfl.ch/campus/security-safety/en/">Health, security and safety</a>
           </li>
           <li>
-            <a href="https://securite.epfl.ch">Health, security and safety</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/spiritual-care/">Chaplaincy</a>
+            <a href="https://www.epfl.ch/campus/spiritual-care/en/">Chaplaincy</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/campus/associations/">Associations</a>
@@ -218,7 +215,7 @@
             <a href="https://www.epfl.ch/schools/cdh/">College of Humanities <strong>CDH</strong></a>
           </li>
           <li>
-            <a href="http://www.epfl.ae">Middle East <strong>ME</strong></a>
+            <a href="http://www.epfl.ae" target="_blank" rel="noopener">Middle East <strong>ME</strong></a>
           </li>
         </ul>
       </div>
@@ -227,7 +224,7 @@
 
   <div class="footer-group footer-buttons">
     <p class="footer-title footer-title-no-underline">Practical</p>
-    <a href="https://www.epfl.ch/campus/services/en/homepage/" class="btn btn-secondary btn-sm">Services and
+    <a href="https://www.epfl.ch/campus/services/en/" class="btn btn-secondary btn-sm">Services and
       resources</a>
     <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Emergencies: +41 21 693 3000</a>
     <a href="https://www.epfl.ch/about/overview/contact-en/" class="btn btn-secondary btn-sm">Contact</a>
@@ -237,35 +234,31 @@
   <div class="footer-group footer-socials">
     <p class="footer-title footer-title-no-underline">Follow EPFL on social media</p>
     <div class="footer-social">
-      <a href="https://www.facebook.com/epflcampus" class="social-icon social-icon-facebook social-icon-negative"
-         rel="nofollow">
+      <a href="https://www.facebook.com/epflcampus" class="social-icon social-icon-facebook social-icon-negative" target="_blank" rel="nofollow noopener">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-facebook"></use>
         </svg>
         <span class="sr-only">Follow us on Facebook.</span>
       </a>
-      <a href="https://twitter.com/epfl" class="social-icon social-icon-twitter social-icon-negative" rel="nofollow">
+      <a href="https://twitter.com/epfl_en" class="social-icon social-icon-twitter social-icon-negative" target="_blank" rel="nofollow noopener">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-twitter"></use>
         </svg>
         <span class="sr-only">Follow us on Twitter.</span>
       </a>
-      <a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative"
-         rel="nofollow">
+      <a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative" target="_blank" rel="nofollow noopener">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-instagram"></use>
         </svg>
         <span class="sr-only">Follow us on Instagram.</span>
       </a>
-      <a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative"
-         rel="nofollow">
+      <a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative" target="_blank" rel="nofollow noopener">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-youtube"></use>
         </svg>
         <span class="sr-only">Follow us on Youtube.</span>
       </a>
-      <a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative"
-         rel="nofollow">
+      <a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative" target="_blank" rel="nofollow noopener">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-linkedin"></use>
         </svg>
