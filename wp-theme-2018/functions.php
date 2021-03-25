@@ -342,11 +342,7 @@ function get_epfl_home_url () {
 	$current_language = get_current_language();
 	$epfl_root = get_option('epfl_home_url') ? : 'https://www.epfl.ch/';
 
-	if ($current_language === 'fr') {
-		return $epfl_root . 'fr/';
-	} else {
-		return $epfl_root . 'en/';
-	}
+	return $epfl_root . $current_language . '/';
 }
 
 /**
