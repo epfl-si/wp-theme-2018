@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.29.1* (2021-03-25)
+- Fix home url for DE 426efb2
+
 *1.29.0* (2021-03-24)
 - Update header + footer #290
 
