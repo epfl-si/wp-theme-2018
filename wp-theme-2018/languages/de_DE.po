@@ -75,7 +75,7 @@ msgstr ""
 
 #: header.php:196 header.php:218 searchform.php:4 searchform.php:18
 msgid "Search"
-msgstr "Forschen"
+msgstr "Suchen"
 
 #: header.php:197 searchform.php:6
 msgid "Validate"

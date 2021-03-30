@@ -119,6 +119,9 @@
           <li>
             <a href="https://www.epfl.ch/research/awards/fr/">Prix et distinctions</a>
           </li>
+          <li>
+            <a href="https://www.epfl.ch/research/open-science/fr/">Open Science</a>
+          </li>
         </ul>
       </div>
     </div>
