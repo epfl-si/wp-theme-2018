@@ -19,13 +19,13 @@
             <a href="https://www.epfl.ch/about/vice-presidencies/de/">Vizepräsidium</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/about/campus/de/">Assoziierte Campusse</a>
+            <a href="https://www.epfl.ch/about/campus/de/">Assoziierte Campus</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/about/working/">Bei der EPFL arbeiten</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/about/recruiting/">Rekrutierung von Talenten durch die EPFL</a>
+            <a href="https://www.epfl.ch/about/recruiting/">EPFL Talente</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/about/news-and-media/de/">News & Medien</a>
@@ -34,7 +34,7 @@
             <a href="https://www.epfl.ch/about/sustainability/">Nachhaltigkeit</a>
           </li>
           <li>
-            <a href="https://equality.epfl.ch">Chancengleichheit</a>
+            <a href="https://www.epfl.ch/about/equality/">Chancengleichheit</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/about/philanthropy/">Philanthropie
@@ -117,6 +117,9 @@
           </li>
           <li>
             <a href="https://www.epfl.ch/research/awards/de/">Preise und Auszeichnungen</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/research/open-science/de/">Open Science</a>
           </li>
         </ul>
       </div>
