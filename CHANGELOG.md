@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.30.0* (2021-04-08)
+- Update Elements to 2.22.0
+- Update some DE entries; Add "Open Science" to footer #291
+
 *1.29.1* (2021-03-25)
 - Fix home url for DE 426efb2
 
