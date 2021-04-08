@@ -45,6 +45,7 @@ Epfl theme (Wordpress)
     - `wp-theme-2018/style.css` with the version number
     - `CHANGELOG.md` with a description of **all the changes since last release**
   - commit them in a "Bump version" commit `git commit -am "Bump version"`
+  - Push `git push`
   - head over this repo on github, on the **release** tab (or go directly using https://github.com/epfl-si/wp-theme-2018/releases/edit/x.x.x)
   - go to **Draft a new release**
   - choose the release number you just changed, insert the changelog informations into the release description
