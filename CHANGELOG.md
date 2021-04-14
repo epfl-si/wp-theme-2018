@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.31.0* (2021-04-14)
+- Update Elements to 2.23.0
+
 *1.30.0* (2021-04-08)
 - Update Elements to 2.22.0
 - Update some DE entries; Add "Open Science" to footer #291
