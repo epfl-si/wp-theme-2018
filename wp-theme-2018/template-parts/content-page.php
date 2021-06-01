@@ -25,7 +25,7 @@ $has_hero = preg_match($regex1, $content) > 0 || preg_match($regex2, $content) >
 		<?php endif ?>
 
 		<?php
-		$content_spacing_classes = $has_hero || $currentTemplate == 'page-homepage.php' ? 'pb-5 mb-4 ' : 'py-5 mb-4 '; ?>
+		$content_spacing_classes = $has_hero || $currentTemplate == 'page-homepage.php' ? 'pb-5 mb-4 ' : 'pb-5 pt-3 mb-4 '; ?>
 
 		<div class="entry-content container-grid <?php echo $content_spacing_classes; ?>">
 			<?php
