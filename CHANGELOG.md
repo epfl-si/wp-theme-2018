@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.33.0* (2021-06-30)
+- Update Elements to 2.26.1
+
 *1.32.0* (2021-06-09)
 - Update Elements to 2.24.0
 - Reduce space between page title and content #292
