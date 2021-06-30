@@ -378,7 +378,7 @@ add_filter( 'document_title_separator', function() {
     return '&#8208;';  # = '-'
 }, 1, 10);
 
-function is_homepage($current_url) {
+function is_epfl_homepage($current_url) {
     $homepage_urls = array(
         'https://www.epfl.ch/',
         'https://www.epfl.ch/fr/',
@@ -397,7 +397,7 @@ function set_epfl_title($title) {
     # see function wp_get_document_title() in WordPress/wp-includes/general-template.php#L1028 for details
     $new_title = [];
     $current_url = home_url($_SERVER['REQUEST_URI']);
-    if (is_homepage($current_url)){
+    if (is_epfl_homepage($current_url)){
       // Do nothing because www title must be like this <title>EPFL</title>
     } else if (is_front_page()) {
         /**
