@@ -378,6 +378,16 @@ add_filter( 'document_title_separator', function() {
     return '&#8208;';  # = '-'
 }, 1, 10);
 
+function is_homepage($current_url) {
+    $homepage_urls = array(
+        'https://www.epfl.ch/',
+        'https://www.epfl.ch/fr/',
+        'https://www.epfl.ch/en/',
+        'https://www.epfl.ch/de/',
+    );
+    return in_array($current_url, $homepage_urls);
+}
+
 /**
  * Set some custom title, SEO friendly, following this rule :
  * homepage -> tagline +" - EPFL"
@@ -386,8 +396,10 @@ add_filter( 'document_title_separator', function() {
 function set_epfl_title($title) {
     # see function wp_get_document_title() in WordPress/wp-includes/general-template.php#L1028 for details
     $new_title = [];
-
-    if (is_front_page()) {
+    $current_url = home_url($_SERVER['REQUEST_URI']);
+    if (is_homepage($current_url)){
+      // Do nothing because www title must be like this <title>EPFL</title>
+    } else if (is_front_page()) {
         /**
          * $title has:
          * Acronym: $title['title'] (My Site Title (aka acronym))
