@@ -136,7 +136,9 @@ add_action( 'widgets_init', 'epfl_widgets_init' );
  * Enqueue scripts and styles.
  */
 function epfl_scripts() {
-	$vsn = filemtime(get_theme_file_path('VERSION'));
+	# TODO: read a file set by a oc configmap
+    # by not doing this, we risk some strange behavior (cache pollution) during upgrades
+    $vsn = filemtime(get_theme_file_path('VERSION'));
 
 	wp_enqueue_style( 'epfl-style', get_stylesheet_uri(), array(), $vsn );
 
