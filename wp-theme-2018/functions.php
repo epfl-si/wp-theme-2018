@@ -322,7 +322,9 @@ function get_current_menu_slug ($slug = NULL) {
     $slug = $EPFL_MENU_LOCATION;
   }
   $menu_locations = get_nav_menu_locations();
-  return get_term($menu_locations[$slug], 'nav_menu');
+  if (isset($menu_locations[$slug])) {
+      return get_term($menu_locations[$slug], 'nav_menu');
+  }
 }
 
 /**
