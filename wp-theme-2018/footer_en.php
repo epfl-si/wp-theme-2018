@@ -220,9 +220,6 @@
           <li>
             <a href="https://www.epfl.ch/schools/cdh/">College of Humanities <strong>CDH</strong></a>
           </li>
-          <li>
-            <a href="http://www.epfl.ae" target="_blank" rel="noopener">Middle East <strong>ME</strong></a>
-          </li>
         </ul>
       </div>
     </div>

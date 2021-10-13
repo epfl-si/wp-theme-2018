@@ -226,9 +226,6 @@
           <li>
             <a href="https://www.epfl.ch/schools/cdh/fr/">Collège des humanités <strong>CDH</strong></a>
           </li>
-          <li>
-            <a href="http://www.epfl.ae" target="_blank" rel="noopener">Middle East <strong>ME</strong></a>
-          </li>
         </ul>
       </div>
     </div>
