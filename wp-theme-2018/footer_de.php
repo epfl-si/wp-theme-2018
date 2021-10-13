@@ -116,6 +116,9 @@
             <a href="https://www.epfl.ch/research/ethic-statement/de/">Forschungsethik</a>
           </li>
           <li>
+            <a href="https://www.epfl.ch/research/de/forschung-mit-tieren-tierversuche/">Forschung mit Tieren</a>
+          </li>
+          <li>
             <a href="https://www.epfl.ch/research/awards/de/">Preise und Auszeichnungen</a>
           </li>
           <li>
@@ -193,7 +196,7 @@
     <div class="footer-faculties">
       <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse"
               data-target="#collapse-fac" aria-expanded="false" aria-controls="collapse-fac">
-        Fakultäten
+        Fakultäten und Colleges
       </button>
       <div class="collapse collapse-item" id="collapse-fac">
         <ul class="footer-links">

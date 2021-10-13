@@ -117,6 +117,9 @@
             <a href="https://www.epfl.ch/research/ethic-statement/fr/">Déontologie et éthique</a>
           </li>
           <li>
+            <a href="https://www.epfl.ch/research/fr/recherche-avec-les-animaux-experimentation-animale/">La recherche avec les animaux</a>
+          </li>
+          <li>
             <a href="https://www.epfl.ch/research/awards/fr/">Prix et distinctions</a>
           </li>
           <li>
@@ -139,7 +142,7 @@
             <a href="https://www.epfl.ch/innovation/industry/fr/">Collaboration avec l'industrie</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/innovation/startup/fr/">Unité Start-up</a>
+            <a href="https://www.epfl.ch/innovation/startup/fr/">Startup launchpad</a>
           </li>
         </ul>
       </div>
@@ -194,7 +197,7 @@
     <div class="footer-faculties">
       <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse"
               data-target="#collapse-fac" aria-expanded="false" aria-controls="collapse-fac">
-        Facultés
+        Facultés & Collèges
       </button>
       <div class="collapse collapse-item" id="collapse-fac">
         <ul class="footer-links">
