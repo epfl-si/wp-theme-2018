@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.35.0* (2021-10-13)
+- Update Elements to 3.0.1 #294
+
 *1.34.0* (2021-09-08)
 - Update Elements to 3.0.0 #294
 - Set homepage title to EPFL #293
