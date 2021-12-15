@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.36.0* (2021-12-15)
+- Update Elements to 3.0.2
+
 *1.35.0* (2021-10-13)
 - Update Elements to 3.0.1 #294
 
