@@ -101,6 +101,9 @@
             <a href="https://www.epfl.ch/research/faculty-members/de/">Unsere Lehrkräfte</a>
           </li>
           <li>
+            <a href="https://www.epfl.ch/research/awards/de/">Preise und Auszeichnungen</a>
+          </li>
+          <li>
             <a href="https://www.epfl.ch/research/collaborate/de/">Mit unseren Forschenden zusammenarbeiten</a>
           </li>
           <li>
@@ -110,19 +113,19 @@
             <a href="https://www.epfl.ch/research/access-technology/de/">Auf unsere Technologien zugreifen</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/services/de/">Dienste für EPFL-Labore</a>
-          </li>
-          <li>
             <a href="https://www.epfl.ch/research/ethic-statement/de/">Forschungsethik</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/research/de/forschung-mit-tieren-tierversuche/">Forschung mit Tieren</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/awards/de/">Preise und Auszeichnungen</a>
+            <a href="https://www.epfl.ch/research/de/unterstutzungsstellen-fur-forschung-treffen/">Unterstützungsstellen für Forschung treffen</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/open-science/de/">Open Science</a>
+            <a href="https://www.epfl.ch/research/services/de/">Dienste für EPFL-Labore</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/research/open-science/de/">Open Science Initiative</a>
           </li>
         </ul>
       </div>
@@ -166,6 +169,9 @@
             <a href="https://www.epfl.ch/campus/restaurants-shops-hotels/">Restaurants, Geschäfte und Hotels</a>
           </li>
           <li>
+            <a href="https://www.epfl.ch/campus/mobility/">Mobilität und Reise</a>
+          </li>
+          <li>
             <a href="https://www.epfl.ch/campus/events/">Veranstaltungen</a>
           </li>
           <li>
@@ -182,9 +188,6 @@
           </li>
           <li>
             <a href="https://www.epfl.ch/campus/associations/">Vereinigungen</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/mobility/">Mobilität und Transport</a>
           </li>
         </ul>
       </div>
