@@ -89,21 +89,6 @@ if ($translations_count < 3) {
   </ul>
 </nav>
 
-<select name="nav-lang" class="nav-lang-mobile form-control">
-<?php foreach($translations as $lang): ?>
-	<?php if ($lang['current_lang']): ?>
-	<option value="/<?php echo $lang['slug'] ?>" selected data-url="<?php echo $lang['url'] ?>">
-    	<svg class="icon" aria-hidden="true"><use xlink:href="#icon-planet"></use></svg>
-    	<?php echo strtoupper($lang['slug']) ?>
-  	</option>
-	<?php else: ?>
-	<option value="/<?php echo $lang['slug'] ?>" data-url="<?php echo $lang['url'] ?>">
-    <?php echo strtoupper($lang['slug']) ?>
-  	</option>
-	<?php endif; // current lang ?>
-<?php endforeach; ?>
-</select>
-
 <?php
 }
 
