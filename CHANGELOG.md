@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.37.0* (2021-12-15)
+- Remove unused nav-lang for mobile
+
 *1.36.0* (2021-12-15)
 - Update Elements to 3.0.2
 
