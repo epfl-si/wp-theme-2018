@@ -200,7 +200,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 				<input type="text" class="form-control" name="q" placeholder="<?php esc_html_e('Search', 'epfl') ?>" >
 				<button type="submit" class="d-none d-xl-block btn btn-primary input-group-append" type="button"><?php esc_html_e('Validate', 'epfl') ?></button>
 			</div>
-			<div class="alert alert-warning alert-dismissible fade show mt-1" role="alert">
+			<div class="alert alert-warning alert-dismissible fade show mt-1 mb-0" role="alert">
 				<strong>For the time being,</strong> this feature is only available inside EPFL. Sorry for any inconvenience.
 			</div>
 		</form>
