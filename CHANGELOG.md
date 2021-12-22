@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.38.0* (2021-12-22)
+- Alert to search within EPFL for the time being
+
 *1.37.0* (2021-12-15)
 - Remove unused nav-lang for mobile
 
