@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.38.2* (2021-12-22)
+- Add a top margin to the alert box to search within EPFL, again
+- Change text of the alert box for mobile version
+
 *1.38.1* (2021-12-22)
 - Add a top margin to the alert box to search within EPFL
 
