@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.38.1* (2021-12-22)
+- Add a top margin to the alert box to search within EPFL
+
 *1.38.0* (2021-12-22)
 - Alert to search within EPFL for the time being
 

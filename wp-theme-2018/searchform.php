@@ -1,6 +1,6 @@
 <div class="dropdown dropright search">
     <form action="https://search.epfl.ch/" class="border-0 p-0">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div class="alert alert-warning alert-dismissible fade show mt-1" role="alert">
             <strong>For the time being,</strong> this feature is only available inside EPFL. Sorry for any inconvenience.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
