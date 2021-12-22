@@ -194,7 +194,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 		<a class="dropdown-toggle" href="#" data-toggle="dropdown">
 			<svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
 		</a>
-		<form action="https://search.epfl.ch/" class="dropdown-menu border-0 p-0">
+		<form action="https://sorryserver.epfl.ch/" class="dropdown-menu border-0 p-0">
 			<div class="search-form mt-1 input-group">
 				<label for="search" class="sr-only"><?php esc_html_e('Search on the site', 'epfl') ?></label>
 				<input type="text" class="form-control" name="q" placeholder="<?php esc_html_e('Search', 'epfl') ?>" >
