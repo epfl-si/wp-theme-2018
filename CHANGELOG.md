@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.39.0* (2022-01-12)
+- Revert the search-related alerts (from 1.38.0 onwards)
+
 *1.38.3* (2021-12-22)
 - Fix margin for the alert box to search within EPFL
 
