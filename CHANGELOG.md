@@ -1,5 +1,9 @@
 # CHANGELOG
 
+*1.40.0* (2022-04-05)
+- Update Elements to 3.4.1
+- Some footers update (theme + light)
+
 *1.39.0* (2022-01-12)
 - Revert the search-related alerts (from 1.38.0 onwards)
 
