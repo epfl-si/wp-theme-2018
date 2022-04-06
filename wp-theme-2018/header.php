@@ -85,23 +85,6 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 }
 
 ?>
-<?php
-	// corona link builder
-	// this is a temp hack until we remove it
-	$language = get_current_language();
-
-  if (get_option( 'epfl_hide_coronavirus_info_header', false ) == "1") {
-    $new_entry_item = '';
-  } else {
-    if ($language === 'fr') {
-      $new_entry_url = 'https://www.epfl.ch/campus/security-safety/sante/coronavirus-covid-19/';
-      $new_entry_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $new_entry_url .'">Info coronavirus</a></li>';
-    } else {
-      $new_entry_url = 'https://www.epfl.ch/campus/security-safety/en/health/coronavirus-covid19/';
-      $new_entry_item = '<li id="menu-item--0" class="menu-item--0"><a style="color:#ff0000;" href="'. $new_entry_url .'">Coronavirus Info</a></li>';
-    }
-  }
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -182,7 +165,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 					'menu_class'=> 'nav-header d-none d-xl-flex',
 					'container' => 'ul',
 					'depth' => 1,
-					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $new_entry_item . '</ul>',  // this is a temp hack until we remove it
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',  // this is a temp hack until we remove it
 					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
 			} else {

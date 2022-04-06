@@ -17,9 +17,7 @@
     <li id="menu-item-6">
         <a class="nav-item" href="https://www.epfl.ch/campus/de/">Campus</a>
     </li>
-    <?php if (!get_option( 'epfl_hide_coronavirus_info_header', false ) == "1"): ?>
     <li id="menu-item-0">
         <a style="color:#ff0000;" href="https://www.epfl.ch/campus/security-safety/en/health/coronavirus-covid19/">Coronavirus Info</a>
     </li>
-    <?php endif; ?>
 </ul>
