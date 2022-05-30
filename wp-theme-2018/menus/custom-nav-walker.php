@@ -198,7 +198,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 			$item_output .= property_exists($args, 'after')? $args->after:'';
 		}
 
-		if(is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
+        if(isset($item->classes) && is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
 			$item_output .= '
 						<a href="#" role="button" aria-hidden="true" class="nav-arrow">
               <div class="icon-container">
