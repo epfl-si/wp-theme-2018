@@ -32,7 +32,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 
 		$parent = $this->currentItem;
 
-			if ($depth == 0) {
+        if ($depth == 0) {
 			/**
 			 * we keep this code commented, if it can come in handy later
 			 * it allows you to hide first-level menu on desktop.
@@ -56,7 +56,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
                 </a>
 						</li>'."{$n}";
 		} else if ($depth >= 1) {
-			$output .= "{$n}{$indent}<ul$class_names>".'<li class="nav-back"><a href="#"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>' . __('Back', 'epfl') .': '.$parent->title.'</a></li>'."{$n}";
+			$output .= "{$n}{$indent}<ul$class_names>".'<li class="nav-back"><a href="#"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>' . __('Back', 'epfl') .': '.$parent->title ?? ''.'</a></li>'."{$n}";
 		} else {
 			$output .= "{$n}{$indent}<ul$class_names>{$n}";
 		}
@@ -198,7 +198,8 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 			$item_output .= property_exists($args, 'after')? $args->after:'';
 		}
 
-        if(isset($item->classes) && is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
+        //│[30-May-2022 12:59:51 UTC] PHP Notice:  Undefined property: stdClass::$classes in /wp/6.0/wp-content/themes/wp-theme-2018.git/wp-theme-2018/menus/custom-nav-walker.php on line 201
+		if(isset($item->classes) && is_array($item->classes) && in_array('menu-item-has-children', $item->classes)) {
 			$item_output .= '
 						<a href="#" role="button" aria-hidden="true" class="nav-arrow">
               <div class="icon-container">
