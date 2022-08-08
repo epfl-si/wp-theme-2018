@@ -28,14 +28,12 @@ Epfl theme (Wordpress)
   - Update branch `git pull`
     - Copy elements files from elements:dist/frontend to wp-theme-2018 cloned repository (in parent theme folder). 
       - Assuming you have both repositories cloned in the same parent directory, you can use following
-        commands (be sure to be in dist/frontend branch in elements repository!):
-        `cp -r ../elements/* wp-theme-2018/assets/`
-      - Delete unwanted files `rm wp-theme-2018/package.json wp-theme-2018/assets/js/vendors.js wp-theme-2018/assets/js/elements.js`
-      ```
-      rsync -av --progress ./elements/ wp-theme-2018/assets/ 
-        --exclude node_modules --exclude .git 
-        --exclude 'js/vendors.js' --exclude 'js/elements.js'  --exclude 'package.json' --exclude '.nojekyll'
-      ```
+        commands:
+        ```
+        rsync -av --progress ./elements/ wp-theme-2018/assets/ 
+          --exclude node_modules --exclude .git 
+          --exclude 'js/vendors.js' --exclude 'js/elements.js'  --exclude 'package.json' --exclude '.nojekyll'
+        ```
       - Go back to element repository `cd ../elements`
       - Go on dev branch `git checkout dev`
       - elementversion=`cat VERSION`
