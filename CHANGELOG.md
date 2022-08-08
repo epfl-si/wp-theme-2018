@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.42.0* (2022-08-08)
+- Update and fix the installation of Elements, to 3.4.2
+
 *1.41.0* (2022-04-06)
 - Remove coronavirus info links from header and sidebar
 
