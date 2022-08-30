@@ -71,7 +71,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
 
 		/* Because $args can be an array or an object, we have to check differently... */
 		if( (is_array($args) && array_key_exists('item_spacing', $args) && $args['item_spacing'] === 'discard') ||
-		    (property_exists($args, 'item_spacing') && $args->item_spacing == 'discard') ) {
+		    (!is_array($args) && property_exists($args, 'item_spacing') && $args->item_spacing == 'discard') ) {
 			$t = '';
 			$n = '';
 		} else {
