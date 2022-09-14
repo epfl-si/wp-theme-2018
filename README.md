@@ -25,7 +25,7 @@ Epfl theme (Wordpress)
         ```
         rsync -av --progress ./elements/ wp-theme-2018/assets/ 
           --exclude node_modules --exclude .git 
-          --exclude 'js/vendors.js' --exclude 'js/elements.js'  --exclude 'package.json' --exclude '.nojekyll'
+          --exclude 'package.json' --exclude '.nojekyll'
         ```
   - Find the elements version in ./elements/package.json
   - Commit the builds `git commit -am "New element version $elementversion"`
