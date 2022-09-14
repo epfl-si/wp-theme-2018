@@ -27,10 +27,7 @@ Epfl theme (Wordpress)
           --exclude node_modules --exclude .git 
           --exclude 'js/vendors.js' --exclude 'js/elements.js'  --exclude 'package.json' --exclude '.nojekyll'
         ```
-      - Go back to element repository `cd ../elements`
-      - Go on dev branch `git checkout dev`
-      - elementversion=`cat VERSION`
-      - Check the number version `echo $elementversion`
+  - Find the elements version in ./elements/package.json
   - Commit the builds `git commit -am "New element version $elementversion"`
   - Push `git push`
   - Here you go, you just updated the styleguide version contained in this theme !
