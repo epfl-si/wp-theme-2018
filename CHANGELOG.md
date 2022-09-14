@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.43.0* (2022-09-14)
+- Update Elements to 3.4.3
+
 *1.42.1* (2022-08-30)
 - Fix warning about testing an array for a property on menu printing
 

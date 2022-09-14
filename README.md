@@ -16,16 +16,9 @@ Epfl theme (Wordpress)
 ## Build a new release
 ### Recovering the last version of the styleguide
   - Clone element repository `git clone git@github.com:epfl-si/elements.git`
-  - `git checkout `
-  - Go on master branch `git checkout master`
-  - update `git pull`
-  - Delete branch to ensure to have the updated files of elements `git branch -D dist/frontend`
-  - Update branch again `git pull; git fetch`
-  - Go on `git checkout dist/frontend`
-
+  - Checkout the dist: `git checkout dist/frontend && git pull` 
   - Go on wp-theme-2018 repository 
-  - Go on dev branch `git checkout dev`
-  - Update branch `git pull`
+  - Update the theme with: `git pull`
     - Copy elements files from elements:dist/frontend to wp-theme-2018 cloned repository (in parent theme folder). 
       - Assuming you have both repositories cloned in the same parent directory, you can use following
         commands:
