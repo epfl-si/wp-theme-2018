@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.43.1* (2022-09-14)
+- Hyphenate long german titles
+
 *1.43.0* (2022-09-14)
 - Update Elements to 3.4.3
 
@@ -86,7 +89,7 @@
 *1.26.0* (2020-12-16)
 - Update Elements to 2.18.2
 - Add german language for header and footer
-- Set a new url for the cookie consent disclaimer 
+- Set a new url for the cookie consent disclaimer
 
 *1.25.1* (2020-12-09)
 - Set new link in footer
