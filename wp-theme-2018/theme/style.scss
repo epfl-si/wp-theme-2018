@@ -97,6 +97,12 @@ $dark-red: #b51f1f;
   }
 }
 
+// Hyphenate long german titles
+
+:lang(de) .entry-title {
+  hyphens: auto;
+}
+
 /* Images
    since 5.5 use async loading of image, meaning
    the height and width is a declared attribute now
