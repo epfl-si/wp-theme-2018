@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.44.0* (2022-11-1)
+- Update Elements to 3.5.0
+
 *1.43.1* (2022-09-14)
 - Hyphenate long german titles
 
