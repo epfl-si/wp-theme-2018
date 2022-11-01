@@ -45,7 +45,7 @@
                         <a href="https://essentialtech.center" target="_blank" rel="noopener">Cooperation</a>
                     </li>
                     <li>
-                        <a href="https://www.epflalumni.ch/fr/" target="_blank" rel="noopener">Alumni</a>
+                        <a href="https://www.epflalumni.ch/fr/" target="_blank" rel="noopener">EPFL Alumni</a>
                     </li>
                 </ul>
             </div>
@@ -72,6 +72,9 @@
                         <a href="https://www.epfl.ch/education/international/fr/">International</a>
                     </li>
                     <li>
+                        <a href="https://www.epfl.ch/education/teaching/fr/">Enseignement</a>
+                    </li>
+                    <li>
                         <a href="https://www.epfl.ch/education/admission/fr/">Admission</a>
                     </li>
                     <li>
@@ -96,13 +99,13 @@
                         <a href="https://www.epfl.ch/research/domains/fr/">Domaines de recherche</a>
                     </li>
                     <li>
-                        <a href="https://www.epfl.ch/research/faculty-members/fr/">Professeur·e·s de l’EPFL</a>
+                        <a href="https://www.epfl.ch/research/faculty-members/fr/">Professeur·es de l’EPFL</a>
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/research/awards/fr/">Prix et distinctions</a>
                     </li>
                     <li>
-                        <a href="https://www.epfl.ch/research/collaborate/fr/">Collaborer avec nos chercheurs</a>
+                        <a href="https://www.epfl.ch/research/collaborate/fr/">Collaborer avec nos chercheuses et chercheurs</a>
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/research/facilities/fr/">Utiliser nos infrastructures</a>
@@ -153,9 +156,6 @@
             <div class="collapse collapse-item" id="collapse-footer-5">
                 <ul class="footer-links">
                     <li>
-                        <a href="https://www.epfl.ch/campus/visitors/fr/">Visiter l'EPFL</a>
-                    </li>
-                    <li>
                         <a href="https://www.epfl.ch/campus/services/">Services et ressources</a>
                     </li>
                     <li>
@@ -165,25 +165,31 @@
                         <a href="https://www.epfl.ch/campus/restaurants-shops-hotels/fr/">Restaurants, shops et hôtels</a>
                     </li>
                     <li>
-                        <a href="https://www.epfl.ch/campus/mobility/fr/">Mobilité et voyages</a>
-                    </li>
-                    <li>
-                        <a href="https://www.epfl.ch/campus/events/fr/">Événements</a>
+                        <a href="https://www.epfl.ch/campus/security-safety/">Sécurité, prévention et santé</a>
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/campus/sports/">Sport</a>
                     </li>
                     <li>
-                        <a href="https://www.epfl.ch/campus/art-culture/fr/">Arts et culture</a>
-                    </li>
-                    <li>
-                        <a href="https://www.epfl.ch/campus/security-safety/">Sécurité, prévention et santé</a>
+                        <a href="https://www.epfl.ch/campus/community/fr/">Communauté et soutien</a>
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/campus/spiritual-care/">Aumônerie</a>
                     </li>
                     <li>
+                        <a href="https://www.epfl.ch/campus/events/fr/">Événements</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/art-culture/fr/">Arts et culture</a>
+                    </li>
+                    <li>
                         <a href="https://www.epfl.ch/campus/associations/fr/">Associations</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/visitors/fr/">Visiter l'EPFL</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/mobility/fr/">Mobilité et voyages</a>
                     </li>
                 </ul>
             </div>

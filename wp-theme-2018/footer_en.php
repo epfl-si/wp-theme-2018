@@ -45,7 +45,7 @@
                         <a href="https://essentialtech.center" target="_blank" rel="noopener">Cooperation</a>
                     </li>
                     <li>
-                        <a href="https://www.epflalumni.ch" target="_blank" rel="noopener">Alumni</a>
+                        <a href="https://www.epflalumni.ch" target="_blank" rel="noopener">EPFL Alumni</a>
                     </li>
                 </ul>
             </div>
@@ -70,6 +70,9 @@
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/education/international/en/">International</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/teaching/">Teaching</a>
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/education/admission/">Admission</a>
@@ -153,9 +156,6 @@
             <div class="collapse collapse-item" id="collapse-footer-5">
                 <ul class="footer-links">
                     <li>
-                        <a href="https://www.epfl.ch/campus/visitors/">Visit EPFL</a>
-                    </li>
-                    <li>
                         <a href="https://www.epfl.ch/campus/services/en/">Services & Resources</a>
                     </li>
                     <li>
@@ -165,25 +165,31 @@
                         <a href="https://www.epfl.ch/campus/restaurants-shops-hotels/">Restaurants, Shops & Hotels</a>
                     </li>
                     <li>
-                        <a href="https://www.epfl.ch/campus/mobility/">Mobility & Travel</a>
-                    </li>
-                    <li>
-                        <a href="https://www.epfl.ch/campus/events/">Events</a>
+                        <a href="https://www.epfl.ch/campus/security-safety/en/">Security, Prevention & Health</a>
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/campus/sports/en/">Sports</a>
                     </li>
                     <li>
-                        <a href="https://www.epfl.ch/campus/art-culture/">Arts & Culture</a>
-                    </li>
-                    <li>
-                        <a href="https://www.epfl.ch/campus/security-safety/en/">Security, Prevention & Health</a>
+                        <a href="https://www.epfl.ch/campus/community/">Community & Support</a>
                     </li>
                     <li>
                         <a href="https://www.epfl.ch/campus/spiritual-care/en/">Chaplaincy</a>
                     </li>
                     <li>
+                        <a href="https://www.epfl.ch/campus/events/">Events</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/art-culture/">Arts & Culture</a>
+                    </li>
+                    <li>
                         <a href="https://www.epfl.ch/campus/associations/">Associations</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/visitors/">Visit EPFL</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/mobility/">Mobility & Travel</a>
                     </li>
                 </ul>
             </div>
