@@ -298,7 +298,7 @@
             <a href="https://go.epfl.ch/protection-des-donnees/">Protection des données</a>
         </div>
         <div>
-            <p>&copy; 2022 EPFL, tous droits réservés</p>
+            <p>&copy; 2023 EPFL, tous droits réservés</p>
         </div>
     </div>
 
