@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.46.0* (2023-02-01)
+- Update footer
+
 *1.45.0* (2023-01-1)
 - Update timestamp for the new year
 
