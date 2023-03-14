@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.46.3* (2023-03-14)
+- Fix table having a border
+
 *1.46.2* (2023-03-14)
 - Fix not getting the caption for new galleries
 

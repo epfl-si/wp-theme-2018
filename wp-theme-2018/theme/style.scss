@@ -195,3 +195,9 @@ nav.navigation.pagination {
     }
   }
 }
+
+/* Wordpress table */
+
+.wp-block-table td, .wp-block-table th {
+  border: inherit;
+}
