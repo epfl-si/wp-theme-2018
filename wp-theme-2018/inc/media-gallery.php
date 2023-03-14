@@ -158,7 +158,9 @@ function epfl_gallery_block_gte_5_9($block_content, $block, $instance) {
     if (version_compare($wp_version, '5.9', '>=')) {
         $images_info = [];  // take all image infos needed
 
-
+        // do we have innerBlocks or some IDS in the attribute ?
+        // innerBlocks -> new way of show galleries
+        // IDS in the attribute -> old way, that need a conversion (aka "edit the page", click on "Attempt to fix the block"
         if (!empty($block["innerBlocks"])) {
             foreach ($block["innerBlocks"] as $core_image) {
                 $id = $core_image["attrs"]["data-id"] ?? null;
@@ -171,6 +173,8 @@ function epfl_gallery_block_gte_5_9($block_content, $block, $instance) {
                     $images_info[] = build_images_info($id, $caption[1] ?? null, $alt_text[1] ?? null );
                 }
             }
+        } else if (!empty($instance->parsed_block['attrs'])) {
+            $images_info = merge_info_from_attr_and_content($instance->parsed_block['attrs'], $block["innerContent"]);
         }
 
         $ids = array_column($images_info, 'id');

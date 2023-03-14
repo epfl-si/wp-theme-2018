@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.46.0* (2023-03-14)
+- Fix the old gallery not being shown anymore on sites with WP 5.9+ 
+
 *1.46.0* (2023-02-01)
 - Update footer
 
