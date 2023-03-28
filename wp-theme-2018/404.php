@@ -10,13 +10,13 @@
 get_header();
 ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="content">
 
 			<section class="error-404 not-found">
 				<div class="page-content container">
           <p class="h1 mt-4 error-title">404</p>
 					<h1 class="h3 text-center"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'epfl' ); ?></h1>
-					<div class="page-content mt-5 pt-2">
+					<div class="mt-5 pt-2">
 						<?php
 						  get_search_form();
 						?>
