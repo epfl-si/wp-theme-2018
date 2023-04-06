@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.47.0* (2023-04-06)
+- Update to Elements 4.2.0
+
 *1.46.3* (2023-03-14)
 - Fix table having a border
 
