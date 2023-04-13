@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.47.2* (2023-04-13)
+- Fix not using the image caption if there is no gallery caption set
+
 *1.47.1* (2023-04-13)
 - Fix gallery using the non-cropped thumbnails
 

@@ -24,6 +24,9 @@ function build_images_info($id, $caption, $alt_text) {
 
     if (!empty($caption)) {
         $image_info['image_caption'] = $caption;
+    } else {
+        // look if the image as a caption directly linked to it, as a fallback
+        $image_info['image_caption'] = get_post($id)->post_excerpt ?? '';
     }
 
     return $image_info;
