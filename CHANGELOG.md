@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.47.1* (2023-04-13)
+- Fix gallery using the non-cropped thumbnails
+
 *1.47.0* (2023-04-06)
 - Update to Elements 4.2.0
 

@@ -18,7 +18,7 @@ function build_images_info($id, $caption, $alt_text) {
     $image_info= [
         'id' => $id,
         'image_src' => wp_get_attachment_image_src($id, 'large')[0] ?? '',
-        'image_thumbnail' => wp_get_attachment_image_src($id, 'thumbnail')[0] ?? '',
+        'image_thumbnail' => wp_get_attachment_image_src($id, 'thumbnail_square_crop')[0] ?? '',
         'image_alt' => $alt_text ?? get_post_meta($id, '_wp_attachment_image_alt', TRUE ) ?? '',
     ];
 
