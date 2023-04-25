@@ -170,7 +170,7 @@ function epfl_gallery_block_gte_5_9($block_content, $block, $instance) {
                 if (!empty($id)) {
                     $caption = null;
                     $alt_text = null;
-                    preg_match('/<figcaption.*>(.*?)<\/figcaption>/', $core_image['innerHTML'], $caption);
+                    preg_match('/<figcaption[^>]*>(.*)<\/figcaption>/', $core_image['innerHTML'], $caption);
                     preg_match('/<img .*? alt="([^"]*)".*?\>/', $core_image['innerHTML'], $alt_text);
 
                     $images_info[] = build_images_info($id, $caption[1] ?? null, $alt_text[1] ?? null );

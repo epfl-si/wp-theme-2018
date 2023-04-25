@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*1.47.3* (2023-04-25)
+- Fix gallery caption regex not be able to capture when there is a dot
+
 *1.47.2* (2023-04-13)
 - Fix not using the image caption if there is no gallery caption set
 
