@@ -39,6 +39,10 @@ function build_images_info($id, $caption, $alt_text) {
  * Trick found on https://wordpress.stackexchange.com/questions/317576/gutenberg-get-all-attributes-from-core-image-block
  */
 function merge_info_from_attr_and_content($attr, $content) {
+    if (is_array($content)) {  // fix that the same methods is used for the old gallery definition and the new one
+        $content = implode('', $content); // convert array to string
+    }
+
     // fetch dom's $content
     libxml_use_internal_errors(true);
     $dom = new DOMDocument();
