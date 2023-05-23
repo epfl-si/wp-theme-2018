@@ -238,7 +238,7 @@
     <p class="footer-title footer-title-no-underline">Praktische Hinweise</p>
     <a href="https://www.epfl.ch/campus/services/en/" class="btn btn-secondary btn-sm">Services und Ressourcen</a>
     <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Notfälle : +41 21 693 3000</a>
-    <a href="https://www.epfl.ch/about/overview/de/kontakt/" class="btn btn-secondary btn-sm">Kontakt</a>
+    <a href="https://www.epfl.ch/about/de/kontakt/" class="btn btn-secondary btn-sm">Kontakt</a>
     <a href="https://map.epfl.ch/" class="btn btn-secondary btn-sm">Plan</a>
   </div>
 

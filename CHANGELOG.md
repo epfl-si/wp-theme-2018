@@ -1,4 +1,6 @@
 # CHANGELOG
+*1.47.3* (2023-05-23)
+- Update footer
 
 *1.47.3* (2023-04-25)
 - Fix gallery caption regex not be able to capture when there is a dot

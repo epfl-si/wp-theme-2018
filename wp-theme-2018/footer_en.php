@@ -236,7 +236,7 @@
     <p class="footer-title footer-title-no-underline">Practical</p>
     <a href="https://www.epfl.ch/campus/services/en/" class="btn btn-secondary btn-sm">Services & Resources</a>
     <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Emergencies: +41 21 693 3000</a>
-    <a href="https://www.epfl.ch/about/overview/contact-en/" class="btn btn-secondary btn-sm">Contact</a>
+    <a href="https://www.epfl.ch/about/contact-en/" class="btn btn-secondary btn-sm">Contact</a>
     <a href="https://map.epfl.ch/?lang=en" class="btn btn-secondary btn-sm">Map</a>
 
   </div>
