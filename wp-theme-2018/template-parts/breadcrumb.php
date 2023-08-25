@@ -191,6 +191,11 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
         $crumb_items = [$crumb_item];
     }
 
+    $current_lang = get_current_language();
+    $res = file_get_contents('http://menu-api:8080/breadcrumb?lang=' . $current_lang . '&url=' . trailingslashit( get_site_url() ));
+    $parent_items = json_decode($res, false)->breadcrumb ?? [];
+    $crumb_items = [...$parent_items, ...$crumb_items];
+
     foreach($crumb_items as $crumb_item) {
         $current_item_db_id = $current_item->db_id ?? null;
         $crumb_item_db_id = $crumb_item->db_id ?? null;
