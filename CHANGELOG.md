@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.49.0* (2023-09-25)
+- Fix menu DE (remove coronaa  link)
+
 *1.47.3* (2023-05-23)
 - Update footer
 
