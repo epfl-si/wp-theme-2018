@@ -1,4 +1,9 @@
 # CHANGELOG
+*1.50.0* (2023-10-31)
+- Update to Elements 4.5.1
+- Change hamburger div to button
+- Update Twitter logo
+
 *1.49.0* (2023-09-25)
 - Fix menu DE (remove coronaa  link)
 

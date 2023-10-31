@@ -216,14 +216,14 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 
 	<?php get_template_part( 'template-parts/language-switcher' ) ?>
 
-  <div class="btn btn-secondary nav-toggle-mobile d-xl-none">
+  <button class="btn btn-secondary nav-toggle-mobile d-xl-none">
     <span class="label"><?php esc_html_e('Menu', 'epfl') ?></span>
 		<div class="hamburger">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
-	</div>
+	</button>
 
   <?php if ( $themeSlug == 'wp-theme-light' ) : ?>
   </div>

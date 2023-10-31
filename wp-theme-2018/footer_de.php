@@ -256,14 +256,6 @@
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/epfl_en" class="social-icon social-icon-twitter social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-twitter"></use>
-            </svg>
-            <span class="sr-only">Follow us on Twitter</span>
-          </a>
-        </li>
-        <li>
           <a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative" target="_blank" rel="nofollow noopener">
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-instagram"></use>
@@ -272,19 +264,27 @@
           </a>
         </li>
         <li>
-          <a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-youtube"></use>
-            </svg>
-            <span class="sr-only">Follow us on Youtube</span>
-          </a>
-        </li>
-        <li>
           <a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative" target="_blank" rel="nofollow noopener">
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-linkedin"></use>
             </svg>
             <span class="sr-only">Follow us on LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/epfl_en" class="social-icon social-icon-x social-icon-negative" target="_blank" rel="nofollow noopener">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-x"></use>
+            </svg>
+            <span class="sr-only">Follow us on X</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative" target="_blank" rel="nofollow noopener">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-youtube"></use>
+            </svg>
+            <span class="sr-only">Follow us on Youtube</span>
           </a>
         </li>
       </ul>

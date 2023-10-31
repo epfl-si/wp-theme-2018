@@ -61,10 +61,10 @@ if ($translations_count < 3) {
 <nav class="nav-lang ml-auto dropdown" aria-label="Change language">
 <?php foreach($translations as $lang): ?>
 	<?php if ($lang['current_lang']): ?>
-  <a href="#" class="dropdown-toggle btn btn-secondary" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+  <button class="dropdown-toggle btn btn-secondary" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
     <svg class="icon" aria-hidden="true"><use xlink:href="#icon-planet"></use></svg>
     <span><?php echo strtoupper($lang['slug']) ?></span>
-  </a>
+  </button>
 	<?php endif; // current lang ?>
 <?php endforeach; ?>
 
