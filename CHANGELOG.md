@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.50.1* (2023-11-02)
+- Update footer for light theme
+
 *1.50.0* (2023-10-31)
 - Update to Elements 4.5.1
 - Change hamburger div to button
