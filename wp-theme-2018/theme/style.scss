@@ -58,7 +58,9 @@ $gray-300: #c1c1c1;
 $gray-600: #707070;
 $black: #212121;
 $red: #f00;
-$dark-red: #b51f1f;
+$red-dark: #b51f1f;
+$leman: #00A79F;
+$canard: #007480;
 
 /* Helper classes */
 
@@ -186,4 +188,26 @@ nav.navigation.pagination {
 
 .wp-block-table td, .wp-block-table th {
   border: inherit;
+}
+
+/* WP Blocks */
+
+.wp-block-file .wp-block-file__button {
+  background: $black;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  
+  &:hover,
+  &:active,
+  &:focus {
+    background: $red-dark;
+    color: #fff;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid $red-dark;
+    outline-offset: 2px;
+  }
 }
