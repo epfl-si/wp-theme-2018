@@ -154,6 +154,7 @@ function render_siblings($siblings_items) {
         return "
             <div class=\"dropdown\">
                 <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    <span class=\"icon feather icon-arrow-down-circle\" aria-hidden=\"true\"></span>
                     <span class=\"sr-only\">Affiche les pages de même niveau</span>
                 </button>
                 <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
@@ -166,7 +167,7 @@ function render_siblings($siblings_items) {
 
 function call_service($urlSite, $lang,$callType): array
 {
-    $urlApi = 'http://menu-api:3000/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite );
+    $urlApi = 'http://menu-api:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite );
     $longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
     $shortCacheRefreshInterval = 60 * MINUTE_IN_SECONDS;  //1 hour
     $shortCacheParameters = [
@@ -190,7 +191,7 @@ function call_service($urlSite, $lang,$callType): array
     $res = get_transient($shortTransientName);
 
     if (false === $res) {  //if the given short transient is empty we call the API
-        //print ($url);
+        //print ($urlApi);
         $curl = curl_init($urlApi);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -224,8 +225,50 @@ function call_service($urlSite, $lang,$callType): array
 }
 ?>
 <style>
+
+    @font-face {
+        font-family:"feather-icons";
+        src:url("feather-icons/feather-icons.eot?e0a20d6edb74f52c006bb300686580b0");
+        src:url("feather-icons/feather-icons.eot?e0a20d6edb74f52c006bb300686580b0#iefix") format("embedded-opentype"),
+        url("feather-icons/feather-icons.woff?e0a20d6edb74f52c006bb300686580b0") format("woff"),
+        url("feather-icons/feather-icons.ttf?e0a20d6edb74f52c006bb300686580b0") format("truetype");
+        font-weight:normal;
+        font-style:normal;
+    }
+
+    .feather {
+        font-family:"feather-icons";
+        display:inline-block;
+        line-height:1;
+        font-weight:normal;
+        font-style:normal;
+        speak:none;
+        text-decoration:inherit;
+        text-transform:none;
+        text-rendering:auto;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+    }
+
+    .icon-arrow-down-circle:before {
+        content:"\f10d";
+    }
     .breadcrumb-wrapper {
-        overflow: revert;
+        overflow: visible;
+    }
+    .breadcrumb .breadcrumb-item {
+        display: inline-block !important;
+    }
+    .breadcrumb .breadcrumb-item.active {
+        font-weight: bold;
+    }
+    .breadcrumb-item:after {
+        content: "/";
+        color: #8e8e8e;
+        padding-inline: 0.25rem;
+    }
+    .breadcrumb li:last-child {
+        padding-right: 4rem;
     }
     .breadcrumb .dropdown {
         display: inline;
@@ -233,23 +276,47 @@ function call_service($urlSite, $lang,$callType): array
     }
     .breadcrumb .dropdown-toggle {
         border: 0;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         padding: 0;
-        height: 1.5rem;
-        margin-left: 0.25rem;
-        width: 1rem;
+        height: 1.25rem;
+        margin-left: 0;
+        width: 1.25rem;
+        top: -0.08em;
+    }
+    .breadcrumb .dropdown-toggle .icon {
+        color: currentColor;
+        top: 0;
+    }
+    .breadcrumb .dropdown-toggle:hover {
+        background: #ff0000;
+        color: #fff;
     }
     .breadcrumb .dropdown-toggle::after {
+        border: 0;
         margin: 0;
     }
     .breadcrumb .dropdown-menu.show {
-        left: -10px !important;
-        top: 20px !important;
+        left: unset !important;
+        top: 2rem !important;
         transform: none !important;
-        min-width: 100%;
+        min-width: 60vw;
     }
     .breadcrumb .dropdown-item {
         font-size: 0.83rem;
         padding: 0.125em 0.625rem;
+    }
+    @media ( hover: none ) and ( max-width: 1024px ) {
+        .breadcrumb-wrapper {
+            overflow: auto;
+            white-space: nowrap;
+        }
+        .breadcrumb .breadcrumb-item {
+            display: inline-block !important;
+            position: unset;
+        }
     }
 </style>
 
