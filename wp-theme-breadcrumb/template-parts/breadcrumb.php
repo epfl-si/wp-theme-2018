@@ -127,7 +127,7 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False, $siblings_
     $title = $crumb_item['title'] ?? '';
     $url = $crumb_item['url'] ?? '';
 
-    $siblings = render_siblings($siblings_items);
+    $siblings = render_siblings($siblings_items, $crumb_item);
     if ( $is_current_item ) {
         return "
         <li class=\"breadcrumb-item active\" aria-current=\"page\">
@@ -137,7 +137,7 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False, $siblings_
     } else {
         return "
         <li class=\"breadcrumb-item\">
-            <a class=\"bread-link bread-home\" href=\"{$url}\" title=\"{$title}\">
+            <a class=\"bread-link\" href=\"{$url}\" title=\"{$title}\">
                 {$title}
             </a>
             {$siblings}     
@@ -145,16 +145,22 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False, $siblings_
     }
 }
 
-function render_siblings($siblings_items) {
+function render_siblings($siblings_items, $crumb_item) {
     $siblings = '';
     foreach ($siblings_items as $sibling) {
-        $siblings = $siblings. "<li class=\"dropdown-item\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
+        if ($crumb_item['title'] == $sibling['title'])
+            $siblings = $siblings. "<li class=\"dropdown-item current-menu-item-parent\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
+        else
+            $siblings = $siblings. "<li class=\"dropdown-item\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
     }
     if ($siblings !== '') {
         return "
             <div class=\"dropdown\">
                 <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                    <span class=\"icon feather icon-arrow-down-circle\" aria-hidden=\"true\"></span>
+                    <!--<span class=\"icon feather icon-arrow-down-circle\" aria-hidden=\"true\"></span>-->
+                    <svg class=\"icon feather\" aria-hidden=\"true\">
+                      <use xlink:href=\"#arrow-down-circle\"></use>
+                    </svg>
                     <span class=\"sr-only\">Affiche les pages de même niveau</span>
                 </button>
                 <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
@@ -224,107 +230,18 @@ function call_service($urlSite, $lang,$callType): array
     }
 }
 ?>
-<style>
-
-    @font-face {
-        font-family:"feather-icons";
-        src:url("feather-icons/feather-icons.eot?e0a20d6edb74f52c006bb300686580b0");
-        src:url("feather-icons/feather-icons.eot?e0a20d6edb74f52c006bb300686580b0#iefix") format("embedded-opentype"),
-        url("feather-icons/feather-icons.woff?e0a20d6edb74f52c006bb300686580b0") format("woff"),
-        url("feather-icons/feather-icons.ttf?e0a20d6edb74f52c006bb300686580b0") format("truetype");
-        font-weight:normal;
-        font-style:normal;
-    }
-
-    .feather {
-        font-family:"feather-icons";
-        display:inline-block;
-        line-height:1;
-        font-weight:normal;
-        font-style:normal;
-        speak:none;
-        text-decoration:inherit;
-        text-transform:none;
-        text-rendering:auto;
-        -webkit-font-smoothing:antialiased;
-        -moz-osx-font-smoothing:grayscale;
-    }
-
-    .icon-arrow-down-circle:before {
-        content:"\f10d";
-    }
-    .breadcrumb-wrapper {
-        overflow: visible;
-    }
-    .breadcrumb .breadcrumb-item {
-        display: inline-block !important;
-    }
-    .breadcrumb .breadcrumb-item.active {
-        font-weight: bold;
-    }
-    .breadcrumb-item:after {
-        content: "/";
-        color: #8e8e8e;
-        padding-inline: 0.25rem;
-    }
-    .breadcrumb li:last-child {
-        padding-right: 4rem;
-    }
-    .breadcrumb .dropdown {
-        display: inline;
-        position: static;
-    }
-    .breadcrumb .dropdown-toggle {
-        border: 0;
-        border-radius: 50%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        height: 1.25rem;
-        margin-left: 0;
-        width: 1.25rem;
-        top: -0.08em;
-    }
-    .breadcrumb .dropdown-toggle .icon {
-        color: currentColor;
-        top: 0;
-    }
-    .breadcrumb .dropdown-toggle:hover {
-        background: #ff0000;
-        color: #fff;
-    }
-    .breadcrumb .dropdown-toggle::after {
-        border: 0;
-        margin: 0;
-    }
-    .breadcrumb .dropdown-menu.show {
-        left: unset !important;
-        top: 2rem !important;
-        transform: none !important;
-        min-width: 60vw;
-    }
-    .breadcrumb .dropdown-item {
-        font-size: 0.83rem;
-        padding: 0.125em 0.625rem;
-    }
-    @media ( hover: none ) and ( max-width: 1024px ) {
-        .breadcrumb-wrapper {
-            overflow: auto;
-            white-space: nowrap;
-        }
-        .breadcrumb .breadcrumb-item {
-            display: inline-block !important;
-            position: unset;
-        }
-    }
-</style>
 
 <div class="breadcrumb-container">
 
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">
         <ol class="breadcrumb">
+            <li class="breadcrumb-item expand-links">
+                <button class="btn btn-expand-links" aria-expanded="false" title="Afficher l'intégralité du fil d'Ariane">
+                    <span class="dots" aria-hidden="true">…</span>
+                    <span class="sr-only">Afficher l'intégralité du fil d'Ariane</span>
+                </button>
+            </li>
             <?php
             // Breadcrumb
             // Final generated strings will be in this var
