@@ -174,7 +174,7 @@ function render_siblings($siblings_items, $crumb_item) {
 function call_service($urlSite, $lang,$callType): array
 {
     $urlApi = 'http://menu-api:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite );
-    $longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
+    /*$longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
     $shortCacheRefreshInterval = 60 * MINUTE_IN_SECONDS;  //1 hour
     $shortCacheParameters = [
         "siteUrl" => $urlSite,
@@ -196,38 +196,38 @@ function call_service($urlSite, $lang,$callType): array
 
     $res = get_transient($shortTransientName);
 
-    if (false === $res) {  //if the given short transient is empty we call the API
-        //print ($urlApi);
-        $curl = curl_init($urlApi);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-        $response = curl_exec($curl);
-        if (curl_errno($curl)) {
-            //TODO write logs somewhere ---- echo 'cURL error: ' . curl_error($curl). ': '. $urlApi;
-        }
-        curl_close($curl);
-
-        if ($response === false) {
-            //TODO write logs somewhere ---- echo 'Failed to retrieve data from the API.';
-        } else {
-            $data = json_decode($response, true)['result'];
-            if ($data !== null) {  //With the API response we set both transients
-                set_transient($shortTransientName, $data, $shortCacheRefreshInterval);
-                set_transient($longTransientName, $data, $longCacheRefreshInterval);
-                return $data;
-            } else {
-                //TODO write logs somewhere ---- echo 'Failed to parse JSON response.';
-            }
-        }
-        //if we have an API error, we get the long transient response, if we have one
-        $res = get_transient($longTransientName);
-        if (false !== $res) {
-            return $res;
-        }
-        return [];
-    } else {
+    if (false !== $res) {
         return $res;
     }
+    //if the given short transient is not empty we call the API*/
+    //print ($urlApi);
+    $curl = curl_init($urlApi);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($curl);
+    if (curl_errno($curl)) {
+        //TODO write logs somewhere ---- echo 'cURL error: ' . curl_error($curl). ': '. $urlApi;
+    }
+    curl_close($curl);
+
+    if ($response === false) {
+        //TODO write logs somewhere ---- echo 'Failed to retrieve data from the API.';
+    } else {
+        $data = json_decode($response, true)['result'];
+        if ($data !== null) {  //With the API response we set both transients
+            /*set_transient($shortTransientName, $data, $shortCacheRefreshInterval);
+            set_transient($longTransientName, $data, $longCacheRefreshInterval);*/
+            return $data;
+        } else {
+            //TODO write logs somewhere ---- echo 'Failed to parse JSON response.';
+        }
+    }
+    /*//if we have an API error, we get the long transient response, if we have one
+    $res = get_transient($longTransientName);
+    if (false !== $res) {
+        return $res;
+    }*/
+    return [];
 }
 ?>
 
