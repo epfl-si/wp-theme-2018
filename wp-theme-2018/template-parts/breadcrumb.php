@@ -30,6 +30,18 @@ function get_home_icon_markup() {
     return $markup;
 }
 
+function get_mobile_breadcrumb_markup() {
+    $markup[] = '
+            <li class="breadcrumb-item expand-links">
+                <button class="btn btn-expand-links" aria-expanded="false" title="Afficher l\'intégralité du fil d\'Ariane">
+                    <span class="dots" aria-hidden="true">…</span>
+                    <span class="sr-only">Afficher l\'intégralité du fil d\'Ariane</span>
+                </button>
+            </li>';
+
+    return $markup;
+}
+
 /*
 * Get the html of the custom tag
 */
@@ -236,12 +248,6 @@ function call_service($urlSite, $lang,$callType): array
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item expand-links">
-                <button class="btn btn-expand-links" aria-expanded="false" title="Afficher l'intégralité du fil d'Ariane">
-                    <span class="dots" aria-hidden="true">…</span>
-                    <span class="sr-only">Afficher l'intégralité du fil d'Ariane</span>
-                </button>
-            </li>
             <?php
             // Breadcrumb
             // Final generated strings will be in this var
@@ -249,6 +255,9 @@ function call_service($urlSite, $lang,$callType): array
 
             // add the little home icon
             $crumbs = array_merge($crumbs, get_home_icon_markup());
+
+            // add the "..." icon
+            $crumbs = array_merge($crumbs, get_mobile_breadcrumb_markup());
 
             // add custom tags if any
             $crumbs = array_merge($crumbs, get_custom_tags_markup());
