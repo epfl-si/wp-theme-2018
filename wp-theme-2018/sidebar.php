@@ -28,7 +28,7 @@ if (get_queried_object() && !is_archive()) {  // only when we are looking at an 
 ?>
 <div class="overlay"></div>
 <div class="nav-container">
-    <nav class="nav-main-mobile">
+    <nav class="nav-main nav-main-mobile" role="navigation">
         <div class="nav-wrapper">
             <div class="nav-container <?php echo $classes ?>">
                 <ul id="menu-main" class="nav-menu">
