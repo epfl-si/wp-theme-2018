@@ -169,7 +169,13 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 					'walker' => new EPFL_Theme2018_Root_Menu_Walker()
 				) );
 			} else {
-				require_once(__DIR__ . "/header-top-menu-fallback.php");
+                ?>
+                  <ul aria-hidden="true" class="nav-header d-none d-xl-flex">
+                      <?php
+                      require(__DIR__ . "/header-top-menu-fallback.php");
+                      ?>
+                  </ul>
+                <?php
 			}
 	?>
 

@@ -1,4 +1,3 @@
-<ul aria-hidden="true" class="nav-header d-none d-xl-flex">
     <li id="menu-item-1">
         <a class="nav-item" href="https://www.epfl.ch/about/de/">Über uns</a>
     </li>
@@ -17,4 +16,3 @@
     <li id="menu-item-6">
         <a class="nav-item" href="https://www.epfl.ch/campus/de/">Campus</a>
     </li>
-</ul>
