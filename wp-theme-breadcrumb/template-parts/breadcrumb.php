@@ -173,7 +173,7 @@ function render_siblings($siblings_items, $crumb_item) {
 
 function call_service($urlSite, $lang,$callType): array
 {
-    $urlApi = 'http://menu-api:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite );
+    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite );
     /*$longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
     $shortCacheRefreshInterval = 60 * MINUTE_IN_SECONDS;  //1 hour
     $shortCacheParameters = [
@@ -275,9 +275,12 @@ function call_service($urlSite, $lang,$callType): array
 
             $current_lang = get_current_language();
             //get_site_url() return the site url and not the current page url
-            $protocol = is_ssl() ? 'http://' : 'http://';
+            $protocol = is_ssl() ? 'https://' : 'http://';
             $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             if (!str_ends_with($url, $post->post_name . '/')) {
+                if (!str_ends_with($url, '/' . $current_lang)) {
+                    $url = $url . $current_lang . '/';
+                }
                 $url = $url . $post->post_name . '/';
             }
             $parent_items = call_service($url, $current_lang, 'breadcrumb');
