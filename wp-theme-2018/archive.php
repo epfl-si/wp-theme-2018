@@ -12,6 +12,7 @@ get_template_part( 'template-parts/breadcrumb');
 ?>
 
 <div class="<?php echo $containerClasses ?>">
+    <?php get_sidebar(); ?>
 	<div class="w-100">
 		<main id="content" role="main" class="content <?php echo $mainClasses ?>">
 
@@ -35,7 +36,6 @@ get_template_part( 'template-parts/breadcrumb');
 
 		</main><!-- #main -->
 	</div> <!-- w-100 -->
-	<?php get_sidebar(); ?>
 </div> <!-- nav-toggle-layout -->
 
 </div> <!-- main-container -->
