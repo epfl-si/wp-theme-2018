@@ -288,7 +288,7 @@ function call_service($urlSite, $lang,$callType): array
             $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             if (!str_ends_with($url, $post->post_name . '/')) {
                 if (!str_ends_with($url, '/' . $current_lang)) {
-                    $url = $url . $current_lang . '/';
+                    $url = $url . pll_current_language() . '/';
                 }
                 $url = $url . $post->post_name . '/';
             }
