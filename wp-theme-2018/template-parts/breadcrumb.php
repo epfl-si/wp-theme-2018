@@ -256,11 +256,11 @@ function call_service($urlSite, $lang,$callType): array
             // add the little home icon
             $crumbs = array_merge($crumbs, get_home_icon_markup());
 
-            // add the "..." icon
-            $crumbs = array_merge($crumbs, get_mobile_breadcrumb_markup());
-
             // add custom tags if any
             $crumbs = array_merge($crumbs, get_custom_tags_markup());
+
+            // add the "..." icon
+            $crumbs = array_merge($crumbs, get_mobile_breadcrumb_markup());
 
             $items = get_all_menu_items_flattened();
 
