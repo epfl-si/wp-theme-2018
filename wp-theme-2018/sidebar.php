@@ -30,7 +30,7 @@ if (get_queried_object() && !is_archive()) {  // only when we are looking at an 
 <div class="nav-container">
     <nav class="nav-main nav-main-mobile" role="navigation">
         <div class="nav-wrapper">
-            <div class="nav-container <?php echo $classes ?>">
+            <div class="nav-container current-menu-parent">
                 <ul id="menu-main" class="nav-menu">
                     <?php
                     require(__DIR__.'/header-top-menu-fallback.php');
