@@ -183,9 +183,14 @@ function render_siblings($siblings_items, $crumb_item) {
     return $siblings;
 }
 
-function call_service($urlSite, $lang,$callType): array
+function call_service($homePageUrl, $urlSite, $lang,$callType): array
 {
-    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite );
+    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
+        '&pageType=' . get_post_type() .
+        '&mainPostPageName=' . urlencode(get_the_title(get_option('page_for_posts'))) .
+        '&mainPostPageUrl=' . _get_page_link(get_option( 'page_for_posts' )) .
+        '&homePageUrl=' . $homePageUrl .
+        '&currentPostName=' . urlencode(get_the_title());
     /*$longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
     $shortCacheRefreshInterval = 60 * MINUTE_IN_SECONDS;  //1 hour
     $shortCacheParameters = [
@@ -286,16 +291,20 @@ function call_service($urlSite, $lang,$callType): array
             //get_site_url() return the site url and not the current page url
             $protocol = is_ssl() ? 'https://' : 'http://';
             $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            if (!str_ends_with($url, $post->post_name . '/')) {
-                if (!str_ends_with($url, '/' . $current_lang)) {
+            if (!str_ends_with($url, $post->post_name . '/') && !is_category()) {
+                if (!str_ends_with($url, '/' . pll_current_language())) {
                     $url = $url . pll_current_language() . '/';
                 }
                 $url = $url . $post->post_name . '/';
             }
-            $parent_items = call_service($url, $current_lang, 'breadcrumb');
+
+            $languageInformation = '/' . pll_current_language() . '/';
+            $homePageUrl = substr($url, 0, strpos($url, $languageInformation) + strlen($languageInformation));
+
+            $parent_items = call_service($homePageUrl, $url, $current_lang, 'breadcrumb');
 
             foreach($parent_items as $crumb_item) {
-                $siblings_items = call_service($crumb_item['url'], $current_lang, 'siblings');
+                $siblings_items = call_service($homePageUrl, $crumb_item['url'], $current_lang, 'siblings');
                 $current_item_db_id = $current_item->db_id ?? null;
                 $crumb_item_db_id = $crumb_item['db_id'] ?? null;
                 if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
