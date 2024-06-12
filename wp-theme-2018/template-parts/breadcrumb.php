@@ -189,8 +189,8 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
         '&pageType=' . get_post_type() .
         '&mainPostPageName=' . urlencode(get_the_title(get_option('page_for_posts'))) .
         '&mainPostPageUrl=' . _get_page_link(get_option( 'page_for_posts' )) .
-        '&homePageUrl=' . $homePageUrl .
-        '&currentPostName=' . urlencode(get_the_title());
+        '&postName=' . urlencode(get_the_title()) .
+        '&homePageUrl=' . $homePageUrl;
     /*$longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
     $shortCacheRefreshInterval = 60 * MINUTE_IN_SECONDS;  //1 hour
     $shortCacheParameters = [
