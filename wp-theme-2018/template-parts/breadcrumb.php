@@ -292,8 +292,8 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
             //get_site_url() return the site url and not the current page url
             $protocol = is_ssl() ? 'https://' : 'http://';
             $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            if (!str_ends_with($url, $post->post_name . '/') && !is_category()) {
-                if (!str_ends_with($url, '/' . pll_current_language())) {
+            if ((!str_ends_with($url, $post->post_name . '/') || !str_contains($url, '/' . pll_current_language())) && !is_category()) {
+                if (!str_contains($url, '/' . pll_current_language())) {
                     $url = $url . pll_current_language() . '/';
                 }
                 $url = $url . $post->post_name . '/';
