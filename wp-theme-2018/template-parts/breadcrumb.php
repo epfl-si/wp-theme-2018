@@ -185,10 +185,11 @@ function render_siblings($siblings_items, $crumb_item) {
 
 function call_service($homePageUrl, $urlSite, $lang,$callType): array
 {
+    $page_for_posts = get_option('page_for_posts');
     $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
         '&pageType=' . get_post_type() .
-        '&mainPostPageName=' . urlencode(get_the_title(get_option('page_for_posts'))) .
-        '&mainPostPageUrl=' . _get_page_link(get_option( 'page_for_posts' )) .
+        ($page_for_posts == 0 ? '' : '&mainPostPageName=' . urlencode(get_the_title($page_for_posts))) .
+        ($page_for_posts == 0 ? '' : '&mainPostPageUrl=' . _get_page_link($page_for_posts)).
         '&postName=' . urlencode(get_the_title()) .
         '&homePageUrl=' . $homePageUrl;
     /*$longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
