@@ -187,7 +187,6 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
 {
     $page_for_posts = get_option('page_for_posts');
     $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
-    $page_for_posts = get_option('page_for_posts');
         '&pageType=' . get_post_type() .
         ($page_for_posts == 0 ? '' : '&mainPostPageName=' . urlencode(get_the_title($page_for_posts))) .
         ($page_for_posts == 0 ? '' : '&mainPostPageUrl=' . _get_page_link($page_for_posts)).
