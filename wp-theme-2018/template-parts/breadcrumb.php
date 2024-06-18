@@ -185,11 +185,15 @@ function render_siblings($siblings_items, $crumb_item) {
 
 function call_service($homePageUrl, $urlSite, $lang,$callType): array
 {
-    $page_for_posts = get_option('page_for_posts');
+    $main_post_page = get_option('page_for_posts');
+    $current_language_page_id = pll_get_post($main_post_page, $lang);
+    $mainPostPageName = urlencode(get_the_title($current_language_page_id));
+    $mainPostPageUrl = get_permalink($current_language_page_id);
+
     $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
         '&pageType=' . get_post_type() .
-        ($page_for_posts == 0 ? '' : '&mainPostPageName=' . urlencode(get_the_title($page_for_posts))) .
-        ($page_for_posts == 0 ? '' : '&mainPostPageUrl=' . _get_page_link($page_for_posts)).
+        ($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
+        ($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
         '&postName=' . urlencode(get_the_title()) .
         '&homePageUrl=' . $homePageUrl;
     /*$longCacheRefreshInterval = 7 * DAY_IN_SECONDS;  //1 week
@@ -289,20 +293,27 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
             }
 
             $current_lang = get_current_language();
-            //get_site_url() return the site url and not the current page url
-            $protocol = is_ssl() ? 'https://' : 'http://';
-            $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            if ((!str_ends_with($url, $post->post_name . '/') || !str_contains($url, '/' . pll_current_language())) && !is_category()) {
-                if (!str_contains($url, '/' . pll_current_language())) {
-                    $url = $url . pll_current_language() . '/';
-                }
-                $url = $url . $post->post_name . '/';
+            $homePageUrl = home_url();
+            if (!str_ends_with($homePageUrl, '/')) {
+                $homePageUrl = $homePageUrl . '/';
             }
-
-            $languageInformation = '/' . pll_current_language() . '/';
-            $homePageUrl = substr($url, 0, strpos($url, $languageInformation) + strlen($languageInformation));
-
-            $parent_items = call_service($homePageUrl, $url, $current_lang, 'breadcrumb');
+            $protocol = is_ssl() ? 'https://' : 'http://';
+            $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            if ((($homePageUrl == $currentUrl) || ($homePageUrl . pll_current_language() . '/') == $currentUrl) && !is_category()) {
+                if (!str_contains($currentUrl, '/' . pll_current_language() . '/')) {
+                    $currentUrl = $currentUrl . pll_current_language() . '/';
+                }
+                if (!str_ends_with($currentUrl, $post->post_name . '/')) {
+                    $currentUrl = $currentUrl . $post->post_name . '/';
+                }
+            }
+            if (!str_contains($homePageUrl, '/' . pll_current_language() . '/')) {
+                $homePageUrl = $homePageUrl . pll_current_language() . '/';
+            } else {
+                $languageInformation = '/' . pll_current_language() . '/';
+                $homePageUrl = substr($homePageUrl, 0, strpos($homePageUrl, $languageInformation) + strlen($languageInformation));
+            }
+            $parent_items = call_service($homePageUrl, $currentUrl, $current_lang, 'breadcrumb');
 
             foreach($parent_items as $crumb_item) {
                 $siblings_items = call_service($homePageUrl, $crumb_item['url'], $current_lang, 'siblings');
