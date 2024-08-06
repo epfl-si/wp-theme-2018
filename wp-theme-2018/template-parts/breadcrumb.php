@@ -190,7 +190,12 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
     $mainPostPageName = urlencode(get_the_title($current_language_page_id));
     $mainPostPageUrl = get_permalink($current_language_page_id);
 
-    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
+    $urlSiteVerified = $urlSite;
+    $indexOfQueryString = strpos($urlSite, '?');
+    if ($indexOfQueryString) {
+        $urlSiteVerified = substr($urlSite, 0, $indexOfQueryString);
+    }
+    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSiteVerified ) .
         '&pageType=' . get_post_type() .
         ($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
         ($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
