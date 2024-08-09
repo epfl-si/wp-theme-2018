@@ -8,7 +8,7 @@ $currentTemplate = get_page_template_slug();
 
 if ($currentTemplate == 'page-homepage.php') {
     return;
-  }
+}
 
 function get_home_icon_markup() {
     $markup = [];
@@ -25,6 +25,18 @@ function get_home_icon_markup() {
                 <a class="bread-link bread-home" href="' . $little_home_url . '" title="home">
                     <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
                 </a>
+            </li>';
+
+    return $markup;
+}
+
+function get_mobile_breadcrumb_markup() {
+    $markup[] = '
+            <li class="breadcrumb-item expand-links">
+                <button class="btn btn-expand-links" aria-expanded="false" title="Afficher l\'intégralité du fil d\'Ariane">
+                    <span class="dots" aria-hidden="true">…</span>
+                    <span class="sr-only">Afficher l\'intégralité du fil d\'Ariane</span>
+                </button>
             </li>';
 
     return $markup;
@@ -123,92 +135,172 @@ function get_current_item($items) {
     return $item;
 }
 
-function get_rendered_crumb_item($crumb_item, $is_current_item=False) {
-    $title = $crumb_item->title ?? '';
-    $url = $crumb_item->url ?? '';
+function get_rendered_crumb_item($crumb_item, $is_current_item=False, $siblings_items) {
+    $title = $crumb_item['title'] ?? '';
+    $url = $crumb_item['url'] ?? '';
 
+    $siblings = render_siblings($siblings_items, $crumb_item);
     if ( $is_current_item ) {
         return "
         <li class=\"breadcrumb-item active\" aria-current=\"page\">
             {$title}
+            {$siblings}
         </li>";
     } else {
         return "
         <li class=\"breadcrumb-item\">
-            <a class=\"bread-link bread-home\" href=\"{$url}\" title=\"{$title}\">
+            <a class=\"bread-link\" href=\"{$url}\" title=\"{$title}\">
                 {$title}
             </a>
+            {$siblings}     
         </li>";
     }
 }
-?>
-<div class="breadcrumb-container">
-  <!-- Browse  -->
-  <div>
-    <button id="nav-toggle" class="nav-toggle btn btn-secondary">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-browse"></use>
-      </svg>
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-close"></use>
-      </svg>
-      <?php echo __("Browse", 'epfl') ?>
-    </button>
-  </div>
-  <!-- end Browse -->
 
-  <!-- Breadcrumb -->
-  <nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">
-    <ol class="breadcrumb">
-  <?php
-    // Breadcrumb
-    // Final generated strings will be in this var
-    $crumbs = [];
-
-    // add the little home icon
-    $crumbs = array_merge($crumbs, get_home_icon_markup());
-
-    // add custom tags if any
-    $crumbs = array_merge($crumbs, get_custom_tags_markup());
-
-    $items = get_all_menu_items_flattened();
-
-    $current_item = get_current_item($items);
-
-    // fullfil crumb_items array, in accordance with the items hierarchy
-    $crumb_items = [];
-    $crumb_item = $current_item;
-    if (count($items) > 1) {
-        while($crumb_item !== false)
-        {
-            array_unshift($crumb_items, $crumb_item);
-
-            $index = (int) $crumb_item->menu_item_parent;
-            $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
+function render_siblings($siblings_items, $crumb_item) {
+    $siblings = '';
+    foreach ($siblings_items as $sibling) {
+        if ($crumb_item['title'] == $sibling['title']) {
+			$siblings = $siblings . "<li class=\"dropdown-item current-menu-item-parent\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
+		} else {
+            $siblings = $siblings. "<li class=\"dropdown-item\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
         }
+    }
+    if ($siblings !== '') {
+        return "
+            <div class=\"dropdown\">
+                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    <!--<span class=\"icon feather icon-arrow-down-circle\" aria-hidden=\"true\"></span>-->
+                    <svg class=\"icon feather\" aria-hidden=\"true\">
+                      <use xlink:href=\"#arrow-down-circle\"></use>
+                    </svg>
+                    <span class=\"sr-only\">Affiche les pages de même niveau</span>
+                </button>
+                <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                    {$siblings}
+                </ul>
+            </div>";
+    }
+    return $siblings;
+}
+
+function call_service($homePageUrl, $urlSite, $lang,$callType): array
+{
+    $main_post_page = get_option('page_for_posts');
+    $current_language_page_id = pll_get_post($main_post_page, $lang);
+    $mainPostPageName = urlencode(get_the_title($current_language_page_id));
+    $mainPostPageUrl = get_permalink($current_language_page_id);
+
+    $urlSiteVerified = $urlSite;
+    $indexOfQueryString = strpos($urlSite, '?');
+    if ($indexOfQueryString) {
+        $urlSiteVerified = substr($urlSite, 0, $indexOfQueryString);
+    }
+    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSiteVerified ) .
+        '&pageType=' . get_post_type() .
+        ($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
+        ($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
+        '&postName=' . urlencode(get_the_title()) .
+        '&homePageUrl=' . $homePageUrl;
+    $curl = curl_init($urlApi);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($curl);
+    if (curl_errno($curl)) {
+		error_log( curl_error($curl). ': '. $urlApi );
+    }
+    curl_close($curl);
+
+    if ($response === false) {
+		error_log( 'Failed to retrieve data from the API.' );
     } else {
-        // make at least the only element printed
-        $crumb_items = [$crumb_item];
-    }
-
-    $current_lang = get_current_language();
-    $res = file_get_contents('http://menu-api:8080/breadcrumb?lang=' . $current_lang . '&url=' . trailingslashit( get_site_url() ));
-    $parent_items = json_decode($res, false)->breadcrumb ?? [];
-    $crumb_items = [...$parent_items, ...$crumb_items];
-
-    foreach($crumb_items as $crumb_item) {
-        $current_item_db_id = $current_item->db_id ?? null;
-        $crumb_item_db_id = $crumb_item->db_id ?? null;
-        if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
-            $crumbs[] = get_rendered_crumb_item($crumb_item, True);
+        $data = json_decode($response, true)['result'];
+        if ($data !== null) {
+            return $data;
         } else {
-            $crumbs[] = get_rendered_crumb_item($crumb_item, False);
+			error_log( 'Failed to parse JSON response.' );
         }
     }
+    return [];
+}
+?>
 
-    echo implode('', $crumbs);
-  ?>
-    </ol>
-  </nav>
-  <!-- end Breadcrumb -->
+<div class="breadcrumb-container">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb-wrapper" id="breadcrumb-wrapper">
+        <ol class="breadcrumb">
+            <?php
+            // Breadcrumb
+            // Final generated strings will be in this var
+            $crumbs = [];
+
+            // add the little home icon
+            $crumbs = array_merge($crumbs, get_home_icon_markup());
+
+            // add custom tags if any
+            $crumbs = array_merge($crumbs, get_custom_tags_markup());
+
+            // add the "..." icon
+            $crumbs = array_merge($crumbs, get_mobile_breadcrumb_markup());
+
+            $items = get_all_menu_items_flattened();
+
+            $current_item = get_current_item($items);
+
+            // fullfil crumb_items array, in accordance with the items hierarchy
+            $crumb_items = [];
+            $crumb_item = $current_item;
+            if (count($items) > 1) {
+                while($crumb_item !== false)
+                {
+                    array_unshift($crumb_items, $crumb_item);
+
+                    $index = (int) $crumb_item->menu_item_parent;
+                    $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
+                }
+            } else {
+                // make at least the only element printed
+                $crumb_items = [$crumb_item];
+            }
+
+            $current_lang = get_current_language();
+            $homePageUrl = home_url();
+            if (!str_ends_with($homePageUrl, '/')) {
+                $homePageUrl = $homePageUrl . '/';
+            }
+            $protocol = is_ssl() ? 'https://' : 'http://';
+            $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            if ((($homePageUrl == $currentUrl) || ($homePageUrl . pll_current_language() . '/') == $currentUrl) && !is_category()) {
+                if (!str_contains($currentUrl, '/' . pll_current_language() . '/')) {
+                    $currentUrl = $currentUrl . pll_current_language() . '/';
+                }
+                if (!str_ends_with($currentUrl, $post->post_name . '/')) {
+                    $currentUrl = $currentUrl . $post->post_name . '/';
+                }
+            }
+            if (!str_contains($homePageUrl, '/' . pll_current_language() . '/')) {
+                $homePageUrl = $homePageUrl . pll_current_language() . '/';
+            } else {
+                $languageInformation = '/' . pll_current_language() . '/';
+                $homePageUrl = substr($homePageUrl, 0, strpos($homePageUrl, $languageInformation) + strlen($languageInformation));
+            }
+            $parent_items = call_service($homePageUrl, $currentUrl, $current_lang, 'breadcrumb');
+
+            foreach($parent_items as $crumb_item) {
+                $siblings_items = call_service($homePageUrl, $crumb_item['url'], $current_lang, 'siblings');
+                $current_item_db_id = $current_item->db_id ?? null;
+                $crumb_item_db_id = $crumb_item['db_id'] ?? null;
+                if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
+                    $crumbs[] = get_rendered_crumb_item($crumb_item, True, $siblings_items);
+                } else {
+                    $crumbs[] = get_rendered_crumb_item($crumb_item, False, $siblings_items);
+                }
+            }
+
+            echo implode('', $crumbs);
+            ?>
+        </ol>
+    </nav>
+    <!-- end Breadcrumb -->
 </div>
