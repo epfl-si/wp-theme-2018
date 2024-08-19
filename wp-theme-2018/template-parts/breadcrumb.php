@@ -184,9 +184,13 @@ function render_siblings($siblings_items, $crumb_item) {
     return $siblings;
 }
 
-function call_service($homePageUrl, $urlSite, $lang,$callType): array
+function _call_menu_api_microservice($homePageUrl, $urlSite, $lang,$callType): array
 {
     $main_post_page = get_option('page_for_posts');
+    if (! function_exists("pll_get_post")) {
+        # Menus and siblings require Polylang.
+        return [];
+    }
     $current_language_page_id = pll_get_post($main_post_page, $lang);
     $mainPostPageName = urlencode(get_the_title($current_language_page_id));
     $mainPostPageUrl = get_permalink($current_language_page_id);
@@ -223,6 +227,17 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
     }
     return [];
 }
+
+function get_siblings ($homePageUrl, $urlSite, $lang)
+{
+    return _call_menu_api_microservice($homePageUrl, $urlSite, $lang, 'siblings');
+}
+
+function get_breadcrumb ($homePageUrl, $urlSite, $lang)
+{
+    return _call_menu_api_microservice($homePageUrl, $urlSite, $lang, 'breadcrumb');
+}
+
 ?>
 
 <div class="breadcrumb-container">
@@ -271,24 +286,24 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
             }
             $protocol = is_ssl() ? 'https://' : 'http://';
             $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            if ((($homePageUrl == $currentUrl) || ($homePageUrl . pll_current_language() . '/') == $currentUrl) && !is_category()) {
-                if (!str_contains($currentUrl, '/' . pll_current_language() . '/')) {
-                    $currentUrl = $currentUrl . pll_current_language() . '/';
+            if ((($homePageUrl == $currentUrl) || ($homePageUrl . $current_lang . '/') == $currentUrl) && !is_category()) {
+                if (!str_contains($currentUrl, '/' . $current_lang . '/')) {
+                    $currentUrl = $currentUrl . $current_lang . '/';
                 }
                 if (!str_ends_with($currentUrl, $post->post_name . '/')) {
                     $currentUrl = $currentUrl . $post->post_name . '/';
                 }
             }
-            if (!str_contains($homePageUrl, '/' . pll_current_language() . '/')) {
-                $homePageUrl = $homePageUrl . pll_current_language() . '/';
+            if (!str_contains($homePageUrl, '/' . $current_lang . '/')) {
+                $homePageUrl = $homePageUrl . $current_lang . '/';
             } else {
-                $languageInformation = '/' . pll_current_language() . '/';
+                $languageInformation = '/' . $current_lang . '/';
                 $homePageUrl = substr($homePageUrl, 0, strpos($homePageUrl, $languageInformation) + strlen($languageInformation));
             }
-            $parent_items = call_service($homePageUrl, $currentUrl, $current_lang, 'breadcrumb');
+            $parent_items = get_breadcrumb($homePageUrl, $currentUrl, $current_lang);
 
             foreach($parent_items as $crumb_item) {
-                $siblings_items = call_service($homePageUrl, $crumb_item['url'], $current_lang, 'siblings');
+                $siblings_items = get_siblings($homePageUrl, $crumb_item['url'], $current_lang);
                 $current_item_db_id = $current_item->db_id ?? null;
                 $crumb_item_db_id = $crumb_item['db_id'] ?? null;
                 if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
