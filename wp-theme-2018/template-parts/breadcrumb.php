@@ -271,18 +271,18 @@ function call_service($homePageUrl, $urlSite, $lang,$callType): array
             }
             $protocol = is_ssl() ? 'https://' : 'http://';
             $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            if ((($homePageUrl == $currentUrl) || ($homePageUrl . pll_current_language() . '/') == $currentUrl) && !is_category()) {
-                if (!str_contains($currentUrl, '/' . pll_current_language() . '/')) {
-                    $currentUrl = $currentUrl . pll_current_language() . '/';
+            if ((($homePageUrl == $currentUrl) || ($homePageUrl . $current_lang . '/') == $currentUrl) && !is_category()) {
+                if (!str_contains($currentUrl, '/' . $current_lang . '/')) {
+                    $currentUrl = $currentUrl . $current_lang . '/';
                 }
                 if (!str_ends_with($currentUrl, $post->post_name . '/')) {
                     $currentUrl = $currentUrl . $post->post_name . '/';
                 }
             }
-            if (!str_contains($homePageUrl, '/' . pll_current_language() . '/')) {
-                $homePageUrl = $homePageUrl . pll_current_language() . '/';
+            if (!str_contains($homePageUrl, '/' . $current_lang . '/')) {
+                $homePageUrl = $homePageUrl . $current_lang . '/';
             } else {
-                $languageInformation = '/' . pll_current_language() . '/';
+                $languageInformation = '/' . $current_lang . '/';
                 $homePageUrl = substr($homePageUrl, 0, strpos($homePageUrl, $languageInformation) + strlen($languageInformation));
             }
             $parent_items = call_service($homePageUrl, $currentUrl, $current_lang, 'breadcrumb');
