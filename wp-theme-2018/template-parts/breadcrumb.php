@@ -228,11 +228,13 @@ function _call_menu_api_microservice($homePageUrl, $urlSite, $lang,$callType): a
     return [];
 }
 
-function get_siblings ($homePageUrl, $urlSite, $lang) {
+function get_siblings ($homePageUrl, $urlSite, $lang)
+{
     return _call_menu_api_microservice($homePageUrl, $urlSite, $lang, 'siblings');
 }
 
-function get_breadcrumb ($homePageUrl, $urlSite, $lang) {
+function get_breadcrumb ($homePageUrl, $urlSite, $lang)
+{
     return _call_menu_api_microservice($homePageUrl, $urlSite, $lang, 'breadcrumb');
 }
 
