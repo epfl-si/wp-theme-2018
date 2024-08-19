@@ -187,6 +187,10 @@ function render_siblings($siblings_items, $crumb_item) {
 function call_service($homePageUrl, $urlSite, $lang,$callType): array
 {
     $main_post_page = get_option('page_for_posts');
+    if (! function_exists("pll_get_post")) {
+        # Menus and siblings require Polylang.
+        return [];
+    }
     $current_language_page_id = pll_get_post($main_post_page, $lang);
     $mainPostPageName = urlencode(get_the_title($current_language_page_id));
     $mainPostPageUrl = get_permalink($current_language_page_id);
