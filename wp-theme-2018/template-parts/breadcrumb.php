@@ -167,7 +167,7 @@ function render_siblings($siblings_items, $crumb_item) {
                 $siblings = $siblings . "<li class=\"dropdown-item\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
             }
         }
-	}
+    }
     if ($siblings !== '') {
         return "
             <div class=\"dropdown\">
