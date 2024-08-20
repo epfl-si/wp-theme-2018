@@ -160,13 +160,13 @@ function get_rendered_crumb_item($crumb_item, $is_current_item=False, $siblings_
 function render_siblings($siblings_items, $crumb_item) {
     $siblings = '';
     if (sizeof($siblings_items) > 1) {
-		foreach ($siblings_items as $sibling) {
-			if ($crumb_item['title'] == $sibling['title']) {
-				$siblings = $siblings . "<li class=\"dropdown-item current-menu-item-parent\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
-			} else {
-				$siblings = $siblings . "<li class=\"dropdown-item\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
-			}
-		}
+        foreach ($siblings_items as $sibling) {
+            if ($crumb_item['title'] == $sibling['title']) {
+                $siblings = $siblings . "<li class=\"dropdown-item current-menu-item-parent\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
+            } else {
+                $siblings = $siblings . "<li class=\"dropdown-item\"><a href=\"{$sibling['url']}\">{$sibling['title']}</a></li>";
+            }
+        }
 	}
     if ($siblings !== '') {
         return "
