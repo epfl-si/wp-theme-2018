@@ -197,12 +197,7 @@ function _call_menu_api_microservice($homePageUrl, $urlSite, $lang,$callType): a
     $mainPostPageName = urlencode(get_the_title($current_language_page_id));
     $mainPostPageUrl = get_permalink($current_language_page_id);
 
-    $urlSiteVerified = $urlSite;
-    $indexOfQueryString = strpos($urlSite, '?');
-    if ($indexOfQueryString) {
-        $urlSiteVerified = substr($urlSite, 0, $indexOfQueryString);
-    }
-    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSiteVerified ) .
+    $urlApi = 'http://menu-api-siblings:3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
         '&pageType=' . get_post_type() .
         ($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
         ($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
@@ -288,6 +283,11 @@ function get_breadcrumb ($homePageUrl, $urlSite, $lang)
             }
             $protocol = is_ssl() ? 'https://' : 'http://';
             $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+            $indexOfQueryString = strpos($currentUrl, '?');
+            if ($indexOfQueryString) {
+                $currentUrl = substr($currentUrl, 0, $indexOfQueryString);
+            }
             if ((($homePageUrl == $currentUrl) || ($homePageUrl . $current_lang . '/') == $currentUrl) && !is_category()) {
                 if (!str_contains($currentUrl, '/' . $current_lang . '/')) {
                     $currentUrl = $currentUrl . $current_lang . '/';
