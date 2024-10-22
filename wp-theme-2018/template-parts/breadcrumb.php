@@ -276,9 +276,9 @@ function get_breadcrumb ($homePageUrl, $urlSite, $lang)
                 $crumb_items = [$crumb_item];
             }
 
-            try {
+            if (function_exists('pll_current_language')) {
                 $current_lang = pll_current_language();
-            } catch (Exception $e) {
+            } else {
                 $current_lang = get_current_language();
             }
             $homePageUrl = home_url();
