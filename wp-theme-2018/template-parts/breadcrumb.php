@@ -135,7 +135,7 @@ function get_current_item($items) {
     return $item;
 }
 
-function get_rendered_crumb_item($crumb_item, $is_current_item=False, $siblings_items) {
+function get_rendered_crumb_item($crumb_item, $is_current_item, $siblings_items) {
     $title = $crumb_item['title'] ?? '';
     $url = $crumb_item['url'] ?? '';
 
