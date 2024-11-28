@@ -127,9 +127,11 @@ function get_current_item($items) {
 
     if (!$item) {
         // ok, we may be in a post
-        $current_id = get_post()->ID;
-        $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id]);
-        $item = $items ? reset($wp_filter_object_list) : false;
+        if (get_post() != null) {
+            $current_id = get_post()->ID;
+            $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id]);
+            $item = $items ? reset($wp_filter_object_list) : false;
+        }
     }
 
     return $item;
