@@ -298,7 +298,7 @@ function get_breadcrumb ($homePageUrl, $urlSite, $lang)
                 if (!str_contains($currentUrl, '/' . $current_lang . '/')) {
                     $currentUrl = $currentUrl . $current_lang . '/';
                 }
-                if (array_key_exists("post_name", $post) && $post->post_name !== null && !str_ends_with($currentUrl, $post->post_name . '/')) {
+                if (isset($post) && $post->post_name !== null && !str_ends_with($currentUrl, $post->post_name . '/')) {
                     $currentUrl = $currentUrl . $post->post_name . '/';
                 }
             }
