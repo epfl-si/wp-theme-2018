@@ -16,25 +16,25 @@ function get_rendered_sider_item($crumb_item, $currentPage, $children) {
 	$url = $crumb_item['url'] ?? '';
 
     if ($crumb_item['title'] == $currentPage->title) {
-			$subMenus = '<ul class=\"sub-menu\">';
-			foreach ($children as $child) {
-				$subMenus = $subMenus . "<li class=\"menu-item\"><a href=\"{$child['url']}\">{$child['title']}</a></li>";
-			}
-            $subMenus = $subMenus . '</ul>';
-			return "
-                <li class=\"menu-item active\">
-                    <a href=\"{$url}\" title=\"{$title}\">
-                        {$title}
-                    </a>
-                    {$subMenus}
-                </li>";
-		} else {
-			return "
-                <li class=\"menu-item\">
-                    <a href=\"{$url}\" title=\"{$title}\">
-                        {$title}
-                    </a>
-                </li>";
+        $subMenus = '<ul class=\"sub-menu\">';
+        foreach ($children as $child) {
+            $subMenus = $subMenus . "<li class=\"menu-item\"><a href=\"{$child['url']}\">{$child['title']}</a></li>";
+        }
+        $subMenus = $subMenus . '</ul>';
+        return "
+            <li class=\"menu-item active\">
+                <a href=\"{$url}\" title=\"{$title}\">
+                    {$title}
+                </a>
+                {$subMenus}
+            </li>";
+    } else {
+        return "
+            <li class=\"menu-item\">
+                <a href=\"{$url}\" title=\"{$title}\">
+                    {$title}
+                </a>
+            </li>";
     }
 }
 
