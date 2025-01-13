@@ -55,7 +55,6 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
 		($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
 		'&postName=' . urlencode(get_the_title()) .
 		'&homePageUrl=' . $homePageUrl;
-    //echo $urlApi;
 	$curl = curl_init($urlApi);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
