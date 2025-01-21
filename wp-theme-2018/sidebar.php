@@ -49,7 +49,7 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
 	$mainPostPageName = urlencode(get_the_title($current_language_page_id));
 	$mainPostPageUrl = get_permalink($current_language_page_id);
 
-	$urlApi = 'http://menu-api:3001/menus/getStitchedMenus/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
+	$urlApi = 'http://' . getenv('MENU_API_HOST') . ':3001/menus/getStitchedMenus/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
 		'&pageType=' . get_post_type() .
 		($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
 		($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
