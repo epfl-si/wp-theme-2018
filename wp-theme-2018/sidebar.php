@@ -12,8 +12,8 @@ global $wp_query;
 global $EPFL_MENU_LOCATION;
 
 function get_rendered_sider_item($crumb_item, $currentPage, $children) {
-	$title = $crumb_item['title'] ?? '';
-	$url = $crumb_item['url'] ?? '';
+    $title = $crumb_item['title'] ?? '';
+    $url = $crumb_item['url'] ?? '';
 
     if ($crumb_item['title'] == $currentPage->title) {
         $subMenus = '<ul class=\"sub-menu\">';
@@ -40,33 +40,33 @@ function get_rendered_sider_item($crumb_item, $currentPage, $children) {
 
 function getStitchedMenus($homePageUrl, $urlSite, $lang): array
 {
-	$main_post_page = get_option('page_for_posts');
-	if (! function_exists("pll_get_post")) {
-		# Menus and siblings require Polylang.
-		return [];
-	}
-	$current_language_page_id = pll_get_post($main_post_page, $lang);
-	$mainPostPageName = urlencode(get_the_title($current_language_page_id));
-	$mainPostPageUrl = get_permalink($current_language_page_id);
+    $main_post_page = get_option('page_for_posts');
+    if (! function_exists("pll_get_post")) {
+        # Menus and siblings require Polylang.
+        return [];
+    }
+    $current_language_page_id = pll_get_post($main_post_page, $lang);
+    $mainPostPageName = urlencode(get_the_title($current_language_page_id));
+    $mainPostPageUrl = get_permalink($current_language_page_id);
 
-	$urlApi = 'http://' . getenv('MENU_API_HOST') . ':3001/menus/getStitchedMenus/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
-		'&pageType=' . get_post_type() .
-		($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
-		($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
-		'&postName=' . urlencode(get_the_title()) .
-		'&homePageUrl=' . $homePageUrl;
-	$curl = curl_init($urlApi);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $urlApi = 'http://' . getenv('MENU_API_HOST') . ':3001/menus/getStitchedMenus/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
+        '&pageType=' . get_post_type() .
+        ($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
+        ($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
+        '&postName=' . urlencode(get_the_title()) .
+        '&homePageUrl=' . $homePageUrl;
+    $curl = curl_init($urlApi);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-	$response = curl_exec($curl);
-	if (curl_errno($curl)) {
-		error_log( curl_error($curl). ': '. $urlApi );
-	}
-	curl_close($curl);
+    $response = curl_exec($curl);
+    if (curl_errno($curl)) {
+        error_log( curl_error($curl). ': '. $urlApi );
+    }
+    curl_close($curl);
 
-	if ($response === false) {
-		error_log( 'Failed to retrieve data from the API.' );
-	} else {
+    if ($response === false) {
+        error_log( 'Failed to retrieve data from the API.' );
+    } else {
         $siblings = json_decode($response, true)['siblings'];
         $children = json_decode($response, true)['children'];
         $data = array(
@@ -74,8 +74,8 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
             "children" => $children ?? [],
         );
         return $data;
-	}
-	return [];
+    }
+    return [];
 }
 
 
