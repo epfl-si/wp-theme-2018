@@ -110,9 +110,6 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
                 <h2 class="h5 sr-only-xl"><?php esc_html_e("In the same section", 'epfl') ?></h2>
                 <ul id="menu-main" class="nav-menu">
                     <?php
-                        // Final generated strings will be in this var
-                        $crumbs = [];
-
                         $items = get_all_menu_items_flattened();
 
                         $current_item = get_current_item($items);
@@ -166,11 +163,15 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
                         $parent_items = getStitchedMenus($homePageUrl, $currentUrl, $current_lang);
 
 
-                        foreach($parent_items['siblings'] as $crumb_item) {
-                            $crumbs[] = get_rendered_sider_item($crumb_item, $current_item, $parent_items['children']);
+                        if (array_key_exists('siblings', $parent_items)) {
+                            $crumbs = [];
+
+                            foreach($parent_items['siblings'] as $crumb_item) {
+                                $crumbs[] = get_rendered_sider_item($crumb_item, $current_item, $parent_items['children']);
+                            }
+                            echo implode('', $crumbs);
                         }
 
-                        echo implode('', $crumbs);
                     ?>
                 </ul>
             </nav>
