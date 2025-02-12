@@ -21,7 +21,7 @@
                 <svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-facebook"></use>
                 </svg>
-                <span class="sr-only">Follow us on Facebook</span>
+                <span class="sr-only">Suivez-nous sur Facebook</span>
               </a>
             </li>
             <li>
@@ -29,7 +29,7 @@
                 <svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-instagram"></use>
                 </svg>
-                <span class="sr-only">Follow us on Instagram</span>
+                <span class="sr-only">Suivez-nous sur Instagram</span>
               </a>
             </li>
             <li>
@@ -37,7 +37,15 @@
                 <svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-linkedin"></use>
                 </svg>
-                <span class="sr-only">Follow us on LinkedIn</span>
+                <span class="sr-only">Suivez-nous sur LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://social.epfl.ch/@epfl/" class="social-icon social-icon-mastodon social-icon-negative" target="_blank" rel="nofollow noopener">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-mastodon"></use>
+                </svg>
+                <span class="sr-only">Suivez-nous sur Mastodon</span>
               </a>
             </li>
             <li>
@@ -45,7 +53,7 @@
                 <svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-x"></use>
                 </svg>
-                <span class="sr-only">Follow us on X</span>
+                <span class="sr-only">Suivez-nous sur X</span>
               </a>
             </li>
             <li>
@@ -53,7 +61,7 @@
                 <svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-youtube"></use>
                 </svg>
-                <span class="sr-only">Follow us on Youtube</span>
+                <span class="sr-only">Suivez-nous sur Youtube</span>
               </a>
             </li>
           </ul>
@@ -66,7 +74,7 @@
             <a href="https://go.epfl.ch/protection-des-donnees/">Protection des données</a>
           </div>
           <div>
-            <p>&copy; 2023 EPFL, tous droits réservés</p>
+            <p>&copy; 2025 EPFL, tous droits réservés</p>
           </div>
         </div>
       </div>

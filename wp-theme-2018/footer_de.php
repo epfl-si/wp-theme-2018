@@ -252,7 +252,7 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-facebook"></use>
             </svg>
-            <span class="sr-only">Follow us on Facebook</span>
+            <span class="sr-only">Folgen Sie uns auf Facebook</span>
           </a>
         </li>
         <li>
@@ -260,7 +260,7 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-instagram"></use>
             </svg>
-            <span class="sr-only">Follow us on Instagram</span>
+            <span class="sr-only">Folgen Sie uns auf Instagram</span>
           </a>
         </li>
         <li>
@@ -268,7 +268,15 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-linkedin"></use>
             </svg>
-            <span class="sr-only">Follow us on LinkedIn</span>
+            <span class="sr-only">Folgen Sie uns auf LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://social.epfl.ch/@epfl/" class="social-icon social-icon-mastodon social-icon-negative" target="_blank" rel="nofollow noopener">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-mastodon"></use>
+            </svg>
+            <span class="sr-only">Folgen Sie uns auf Mastodon</span>
           </a>
         </li>
         <li>
@@ -276,7 +284,7 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-x"></use>
             </svg>
-            <span class="sr-only">Follow us on X</span>
+            <span class="sr-only">Folgen Sie uns auf X</span>
           </a>
         </li>
         <li>
@@ -284,7 +292,7 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-youtube"></use>
             </svg>
-            <span class="sr-only">Follow us on Youtube</span>
+            <span class="sr-only">Folgen Sie uns auf Youtube</span>
           </a>
         </li>
       </ul>
@@ -299,7 +307,7 @@
       <a href="https://go.epfl.ch/privacy-policy/">Datenschutzerklärung</a>
     </div>
     <div>
-      <p>&copy; 2023 EPFL, alle Rechte vorbehalten</p>
+      <p>&copy; 2025 EPFL, alle Rechte vorbehalten</p>
     </div>
   </div>
 
