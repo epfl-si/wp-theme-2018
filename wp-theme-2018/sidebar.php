@@ -163,13 +163,22 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
                         $parent_items = getStitchedMenus($homePageUrl, $currentUrl, $current_lang);
 
 
-                        if (array_key_exists('siblings', $parent_items)) {
+                        if (array_key_exists('siblings', $parent_items) && len($parent_items['siblings']) > 0) {
                             $crumbs = [];
 
                             foreach($parent_items['siblings'] as $crumb_item) {
                                 $crumbs[] = get_rendered_sider_item($crumb_item, $current_item, $parent_items['children']);
                             }
                             echo implode('', $crumbs);
+                        } else {
+                            wp_nav_menu( array(
+                                'theme_location' => $EPFL_MENU_LOCATION,
+                                'menu_class'=> 'nav-menu',
+                                'container' => 'ul',
+                                'submenu' => get_the_ID(),
+                                'submenu_type' => $asideContent
+                            ) );
+
                         }
 
                     ?>
