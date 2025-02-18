@@ -60,12 +60,16 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
 
     $response = curl_exec($curl);
     if (curl_errno($curl)) {
-        error_log( curl_error($curl). ': '. $urlApi );
+        $error_text = curl_eror($curl);
     }
     curl_close($curl);
 
-    if ($response === false) {
+    if (isset($error_text)) {
+        error_log( "curl error: {$error_text} at {$urlApi}" );
+        return [];
+    } elseif ($response === false) {
         error_log( 'Failed to retrieve data from the API.' );
+        return [];
     } else {
         $siblings = json_decode($response, true)['siblings'];
         $children = json_decode($response, true)['children'];
@@ -75,7 +79,6 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
         );
         return $data;
     }
-    return [];
 }
 
 
