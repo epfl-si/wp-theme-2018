@@ -16,17 +16,17 @@ function get_rendered_sider_item($crumb_item, $currentPage, $children) {
     $url = $crumb_item['url'] ?? '';
 
     if ($crumb_item['title'] == $currentPage->title) {
-        $subMenus = '<ul class=\"sub-menu\">';
+        $submenus = '<ul class=\"sub-menu\">';
         foreach ($children as $child) {
-            $subMenus = $subMenus . "<li class=\"menu-item\"><a href=\"{$child['url']}\">{$child['title']}</a></li>";
+            $submenus = $submenus . "<li class=\"menu-item\"><a href=\"{$child['url']}\">{$child['title']}</a></li>";
         }
-        $subMenus = $subMenus . '</ul>';
+        $submenus = $submenus . '</ul>';
         return "
             <li class=\"menu-item active\">
                 <a href=\"{$url}\" title=\"{$title}\">
                     {$title}
                 </a>
-                {$subMenus}
+                {$submenus}
             </li>";
     } else {
         return "
@@ -38,7 +38,7 @@ function get_rendered_sider_item($crumb_item, $currentPage, $children) {
     }
 }
 
-function getStitchedMenus($homePageUrl, $urlSite, $lang): array
+function get_stitched_menus($home_page_url, $urlSite, $lang): array
 {
     $main_post_page = get_option('page_for_posts');
     if (! function_exists("pll_get_post")) {
@@ -46,15 +46,15 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
         return [];
     }
     $current_language_page_id = pll_get_post($main_post_page, $lang);
-    $mainPostPageName = urlencode(get_the_title($current_language_page_id));
-    $mainPostPageUrl = get_permalink($current_language_page_id);
+    $main_post_page_name = urlencode(get_the_title($current_language_page_id));
+    $main_post_page_url = get_permalink($current_language_page_id);
 
     $urlApi = 'http://' . getenv('MENU_API_HOST') . ':3001/menus/getStitchedMenus/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
         '&pageType=' . get_post_type() .
-        ($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
-        ($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
+        ($main_post_page == 0 ? '' : ($main_post_page_name == '' ? '' : '&mainPostPageName=' . $main_post_page_name)) .
+        ($main_post_page == 0 ? '' : ($main_post_page_url == '' ? '' : '&mainPostPageUrl=' . $main_post_page_url)).
         '&postName=' . urlencode(get_the_title()) .
-        '&homePageUrl=' . $homePageUrl;
+        '&homePageUrl=' . $home_page_url;
     $curl = curl_init($urlApi);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -138,32 +138,32 @@ function getStitchedMenus($homePageUrl, $urlSite, $lang): array
                         } else {
                             $current_lang = get_current_language();
                         }
-                        $homePageUrl = home_url();
-                        if (!str_ends_with($homePageUrl, '/')) {
-                            $homePageUrl = $homePageUrl . '/';
+                        $home_page_url = home_url();
+                        if (!str_ends_with($home_page_url, '/')) {
+                            $home_page_url = $home_page_url . '/';
                         }
                         $protocol = is_ssl() ? 'https://' : 'http://';
-                        $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                        $current_url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-                        $indexOfQueryString = strpos($currentUrl, '?');
-                        if ($indexOfQueryString) {
-                            $currentUrl = substr($currentUrl, 0, $indexOfQueryString);
+                        $index_of_query_string = strpos($current_url, '?');
+                        if ($index_of_query_string) {
+                            $current_url = substr($current_url, 0, $index_of_query_string);
                         }
-                        if ((($homePageUrl == $currentUrl) || ($homePageUrl . $current_lang . '/') == $currentUrl) && !is_category()) {
-                            if (!str_contains($currentUrl, '/' . $current_lang . '/')) {
-                                $currentUrl = $currentUrl . $current_lang . '/';
+                        if ((($home_page_url == $current_url) || ($home_page_url . $current_lang . '/') == $current_url) && !is_category()) {
+                            if (!str_contains($current_url, '/' . $current_lang . '/')) {
+                                $current_url = $current_url . $current_lang . '/';
                             }
-                            if (isset($post) && $post->post_name !== null && !str_ends_with($currentUrl, $post->post_name . '/')) {
-                                $currentUrl = $currentUrl . $post->post_name . '/';
+                            if (isset($post) && $post->post_name !== null && !str_ends_with($current_url, $post->post_name . '/')) {
+                                $current_url = $current_url . $post->post_name . '/';
                             }
                         }
-                        if (!str_contains($homePageUrl, '/' . $current_lang . '/')) {
-                            $homePageUrl = $homePageUrl . $current_lang . '/';
+                        if (!str_contains($home_page_url, '/' . $current_lang . '/')) {
+                            $home_page_url = $home_page_url . $current_lang . '/';
                         } else {
-                            $languageInformation = '/' . $current_lang . '/';
-                            $homePageUrl = substr($homePageUrl, 0, strpos($homePageUrl, $languageInformation) + strlen($languageInformation));
+                            $language_information = '/' . $current_lang . '/';
+                            $home_page_url = substr($home_page_url, 0, strpos($home_page_url, $language_information) + strlen($language_information));
                         }
-                        $parent_items = getStitchedMenus($homePageUrl, $currentUrl, $current_lang);
+                        $parent_items = get_stitched_menus($home_page_url, $current_url, $current_lang);
 
 
                         if (array_key_exists('siblings', $parent_items) && len($parent_items['siblings']) > 0) {
