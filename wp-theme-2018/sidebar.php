@@ -11,30 +11,33 @@ global $wp_query;
 
 global $EPFL_MENU_LOCATION;
 
-function get_rendered_sider_item($crumb_item, $currentPage, $children) {
+function render_sider_item($crumb_item, $currentPage, $children) {
     $title = $crumb_item['title'] ?? '';
     $url = $crumb_item['url'] ?? '';
 
     if ($crumb_item['title'] == $currentPage->title) {
-        $submenus = '<ul class=\"sub-menu\">';
-        foreach ($children as $child) {
-            $submenus = $submenus . "<li class=\"menu-item\"><a href=\"{$child['url']}\">{$child['title']}</a></li>";
-        }
-        $submenus = $submenus . '</ul>';
-        return "
-            <li class=\"menu-item active\">
-                <a href=\"{$url}\" title=\"{$title}\">
-                    {$title}
-                </a>
-                {$submenus}
-            </li>";
+        ?>
+      <li class="menu-item active">
+          <a href="<?= $url; ?>" title="<?= $title; ?>">
+                        <?= $title; ?>
+          </a>
+          <ul class="sub-menu">
+                        <?php foreach ($children as $child) { ?>
+                <li class="menu-item">
+                    <a href="<?= $child['url']; ?>"><?= $child['title']; ?></a>
+                </li>
+                        <?php } ?>
+          </ul>
+      </li>
+        <?php
     } else {
-        return "
-            <li class=\"menu-item\">
-                <a href=\"{$url}\" title=\"{$title}\">
-                    {$title}
-                </a>
-            </li>";
+        ?>
+      <li class="menu-item">
+          <a href="<?= $url; ?>" title="<?= $title; ?>">
+                        <?= $title; ?>
+          </a>
+      </li>
+        <?php
     }
 }
 
@@ -165,14 +168,10 @@ function get_stitched_menus($home_page_url, $urlSite, $lang): array
                         }
                         $parent_items = get_stitched_menus($home_page_url, $current_url, $current_lang);
 
-
-                        if (array_key_exists('siblings', $parent_items) && len($parent_items['siblings']) > 0) {
-                            $crumbs = [];
-
+                        if (array_key_exists('siblings', $parent_items) && count($parent_items['siblings']) > 0) {
                             foreach($parent_items['siblings'] as $crumb_item) {
-                                $crumbs[] = get_rendered_sider_item($crumb_item, $current_item, $parent_items['children']);
+                                render_sider_item($crumb_item, $current_item, $parent_items['children']);
                             }
-                            echo implode('', $crumbs);
                         } else {
                             wp_nav_menu( array(
                                 'theme_location' => $EPFL_MENU_LOCATION,
