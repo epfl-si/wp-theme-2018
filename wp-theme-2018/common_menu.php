@@ -11,14 +11,14 @@ function call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type
     $main_post_page_name = urlencode(get_the_title($current_language_page_id));
     $main_post_page_url = get_permalink($current_language_page_id);
 
-    $urlApi = 'http://' . (getenv('MENU_API_HOST') ?? "menu-api") . ':3001/menus/' . $call_type . '/?lang=' . $lang
+    $url_api = 'http://' . (getenv('MENU_API_HOST') ?? "menu-api") . ':3001/menus/' . $call_type . '/?lang=' . $lang
     . '&url=' . trailingslashit( $url_site ) . '&pageType=' . get_post_type() .
     ($main_post_page == 0 ? '' : ($main_post_page_name == '' ? '' : '&mainPostPageName=' . $main_post_page_name)) .
     ($main_post_page == 0 ? '' : ($main_post_page_url == '' ? '' : '&mainPostPageUrl=' . $main_post_page_url)) .
     '&postName=' . urlencode(get_the_title()) .
     '&homePageUrl=' . $home_page_url;
 
-    $curl = curl_init($urlApi);
+    $curl = curl_init($url_api);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($curl);
     if (curl_errno($curl)) {
@@ -27,7 +27,7 @@ function call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type
     curl_close($curl);
 
     if (isset($error_text)) {
-        error_log( "curl error: {$error_text} at {$urlApi}" );
+        error_log( "curl error: {$error_text} at {$url_api}" );
         return '';
     } elseif ($response === false) {
         error_log( 'Failed to retrieve data from the API.' );
