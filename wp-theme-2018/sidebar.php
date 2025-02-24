@@ -11,7 +11,7 @@ global $wp_query;
 
 global $EPFL_MENU_LOCATION;
 
-function render_sider_item($crumb_item, $currentPage, $children) {
+function render_sidebar_item($crumb_item, $currentPage, $children) {
     $title = $crumb_item['title'] ?? '';
     $url = $crumb_item['url'] ?? '';
 
@@ -170,7 +170,7 @@ function get_stitched_menus($home_page_url, $urlSite, $lang): array
 
                         if (array_key_exists('siblings', $parent_items) && count($parent_items['siblings']) > 0) {
                             foreach($parent_items['siblings'] as $crumb_item) {
-                                render_sider_item($crumb_item, $current_item, $parent_items['children']);
+                                render_sidebar_item($crumb_item, $current_item, $parent_items['children']);
                             }
                         } else {
                             wp_nav_menu( array(
