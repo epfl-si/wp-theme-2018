@@ -248,11 +248,11 @@ function get_breadcrumb ($homePageUrl, $urlSite, $lang)
                 $crumb_items = [$crumb_item];
             }
 
-            $urls = get_current_url_and_homepage();
-            $parent_items = get_breadcrumb($urls['home_page_url'], $urls['current_url'], $urls['current_lang']);
+            $urls = new CurrentSite();
+            $parent_items = get_breadcrumb($urls->home_page_url, $urls->current_url, $urls->current_lang);
 
             foreach($parent_items as $crumb_item) {
-                $siblings_items = get_siblings($urls['home_page_url'], $crumb_item['url'], $urls['current_lang']);
+                $siblings_items = get_siblings($urls->home_page_url, $crumb_item['url'], $urls->current_lang);
                 $current_item_db_id = $current_item->db_id ?? null;
                 $crumb_item_db_id = $crumb_item['db_id'] ?? null;
                 if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?

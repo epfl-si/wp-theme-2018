@@ -37,40 +37,62 @@ function call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type
     }
 }
 
-function get_current_url_and_homepage() {
-    if (function_exists('pll_current_language')) {
-        $current_lang = pll_current_language();
-    } else {
-        $current_lang = get_current_language();
-    }
-    $home_page_url = home_url();
-    if (!str_ends_with($home_page_url, '/')) {
-        $home_page_url = $home_page_url . '/';
-    }
-    $protocol = is_ssl() ? 'https://' : 'http://';
-    $current_url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+class CurrentSite {
+    public $current_lang;
+    public $home_page_url;
+    public $current_url;
 
-    $index_of_query_string = strpos($current_url, '?');
-    if ($index_of_query_string) {
-        $current_url = substr($current_url, 0, $index_of_query_string);
+    public function __construct() {
+        $this->current_lang = $this->_get_current_language();
+        $this->current_url = $this->_get_current_url();
+        $this->home_page_url = $this->_get_homepage();
     }
-    if ((($home_page_url == $current_url) || ($home_page_url . $current_lang . '/') == $current_url) && !is_category()) {
-        if (!str_contains($current_url, '/' . $current_lang . '/')) {
-            $current_url = $current_url . $current_lang . '/';
+
+    private function _get_base_homepage() {
+        $home_page_url = home_url();
+        if (!str_ends_with($home_page_url, '/')) {
+            $home_page_url = $home_page_url . '/';
         }
-        if (isset($post) && $post->post_name !== null && !str_ends_with($current_url, $post->post_name . '/')) {
-            $current_url = $current_url . $post->post_name . '/';
+        return $home_page_url;
+    }
+
+    private function _get_current_language() {
+        if (function_exists('pll_current_language')) {
+            return pll_current_language();
+        } else {
+            return get_current_language();
         }
     }
-    if (!str_contains($home_page_url, '/' . $current_lang . '/')) {
-        $home_page_url = $home_page_url . $current_lang . '/';
-    } else {
-        $language_information = '/' . $current_lang . '/';
-        $home_page_url = substr($home_page_url, 0, strpos($home_page_url, $language_information) + strlen($language_information));
+
+    private function _get_current_url() {
+        $home_page_url = $this->_get_base_homepage();
+        $protocol = is_ssl() ? 'https://' : 'http://';
+        $current_url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+        $index_of_query_string = strpos($current_url, '?');
+        if ($index_of_query_string) {
+            $current_url = substr($current_url, 0, $index_of_query_string);
+        }
+        if ((($home_page_url == $current_url) || ($home_page_url . $this->current_lang . '/') == $current_url) && !is_category()) {
+            if (!str_contains($current_url, '/' . $this->current_lang . '/')) {
+                $current_url = $current_url . $this->current_lang . '/';
+            }
+            if (isset($post) && $post->post_name !== null && !str_ends_with($current_url, $post->post_name . '/')) {
+                $current_url = $current_url . $post->post_name . '/';
+            }
+        }
+        return $current_url;
     }
-    return array(
-        "home_page_url" => $home_page_url,
-        "current_url" => $current_url,
-        "current_lang" => $current_lang
-    );
+
+    private function _get_homepage() {
+        $home_page_url = $this->_get_base_homepage();
+        if (!str_contains($home_page_url, '/' . $this->current_lang . '/')) {
+            $home_page_url = $home_page_url . $this->current_lang . '/';
+        } else {
+            $language_information = '/' . $this->current_lang . '/';
+            $home_page_url = substr($home_page_url, 0, strpos($home_page_url, $language_information) + strlen($language_information));
+        }
+        return $home_page_url;
+    }
+
 }
