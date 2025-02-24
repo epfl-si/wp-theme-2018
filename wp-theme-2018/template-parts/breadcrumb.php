@@ -4,6 +4,8 @@
  *  - homepage
  *  - homepage template
  */
+require_once __DIR__ . '/../common_menu.php';
+
 $currentTemplate = get_page_template_slug();
 
 if ($currentTemplate == 'page-homepage.php') {
@@ -188,43 +190,11 @@ function render_siblings($siblings_items, $crumb_item) {
     return $siblings;
 }
 
-function _call_menu_api_microservice($homePageUrl, $urlSite, $lang,$callType): array
+function _call_menu_api_microservice($home_page_url, $url_site, $lang,$call_type): array
 {
-    $main_post_page = get_option('page_for_posts');
-    if (! function_exists("pll_get_post")) {
-        # Menus and siblings require Polylang.
-        return [];
-    }
-    $current_language_page_id = pll_get_post($main_post_page, $lang);
-    $mainPostPageName = urlencode(get_the_title($current_language_page_id));
-    $mainPostPageUrl = get_permalink($current_language_page_id);
-
-    $urlApi = 'http://' . getenv('MENU_API_HOST') ?? "menu-api" . ':3001/menus/'.$callType.'/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
-        '&pageType=' . get_post_type() .
-        ($main_post_page == 0 ? '' : ($mainPostPageName == '' ? '' : '&mainPostPageName=' . $mainPostPageName)) .
-        ($main_post_page == 0 ? '' : ($mainPostPageUrl == '' ? '' : '&mainPostPageUrl=' . $mainPostPageUrl)).
-        '&postName=' . urlencode(get_the_title()) .
-        '&homePageUrl=' . $homePageUrl;
-    $curl = curl_init($urlApi);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-    $response = curl_exec($curl);
-    if (curl_errno($curl)) {
-		error_log( curl_error($curl). ': '. $urlApi );
-    }
-    curl_close($curl);
-
-    if ($response === false) {
-		error_log( 'Failed to retrieve data from the API.' );
-    } else {
-        $data = json_decode($response, true)['result'];
-        if ($data !== null) {
-            return $data;
-        } else {
-			error_log( 'Failed to parse JSON response.' );
-        }
-    }
-    return [];
+    $response = call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type);
+    $data = json_decode($response, true)['result'];
+    return $data ?? [];
 }
 
 function get_siblings ($homePageUrl, $urlSite, $lang)
@@ -278,40 +248,11 @@ function get_breadcrumb ($homePageUrl, $urlSite, $lang)
                 $crumb_items = [$crumb_item];
             }
 
-            if (function_exists('pll_current_language')) {
-                $current_lang = pll_current_language();
-            } else {
-                $current_lang = get_current_language();
-            }
-            $homePageUrl = home_url();
-            if (!str_ends_with($homePageUrl, '/')) {
-                $homePageUrl = $homePageUrl . '/';
-            }
-            $protocol = is_ssl() ? 'https://' : 'http://';
-            $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
-            $indexOfQueryString = strpos($currentUrl, '?');
-            if ($indexOfQueryString) {
-                $currentUrl = substr($currentUrl, 0, $indexOfQueryString);
-            }
-            if ((($homePageUrl == $currentUrl) || ($homePageUrl . $current_lang . '/') == $currentUrl) && !is_category()) {
-                if (!str_contains($currentUrl, '/' . $current_lang . '/')) {
-                    $currentUrl = $currentUrl . $current_lang . '/';
-                }
-                if (isset($post) && $post->post_name !== null && !str_ends_with($currentUrl, $post->post_name . '/')) {
-                    $currentUrl = $currentUrl . $post->post_name . '/';
-                }
-            }
-            if (!str_contains($homePageUrl, '/' . $current_lang . '/')) {
-                $homePageUrl = $homePageUrl . $current_lang . '/';
-            } else {
-                $languageInformation = '/' . $current_lang . '/';
-                $homePageUrl = substr($homePageUrl, 0, strpos($homePageUrl, $languageInformation) + strlen($languageInformation));
-            }
-            $parent_items = get_breadcrumb($homePageUrl, $currentUrl, $current_lang);
+            $urls = get_current_url_and_homepage();
+            $parent_items = get_breadcrumb($urls['home_page_url'], $urls['current_url'], $urls['current_lang']);
 
             foreach($parent_items as $crumb_item) {
-                $siblings_items = get_siblings($homePageUrl, $crumb_item['url'], $current_lang);
+                $siblings_items = get_siblings($urls['home_page_url'], $crumb_item['url'], $urls['current_lang']);
                 $current_item_db_id = $current_item->db_id ?? null;
                 $crumb_item_db_id = $crumb_item['db_id'] ?? null;
                 if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
