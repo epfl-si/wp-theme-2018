@@ -22,16 +22,16 @@ function call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type
 
     $response = curl_exec($curl);
     if (curl_errno($curl)) {
-        $error_text = curl_eror($curl);
+        $error_text = curl_error($curl);
     }
     curl_close($curl);
 
     if (isset($error_text)) {
         error_log( "curl error: {$error_text} at {$urlApi}" );
-        return [];
+        return '';
     } elseif ($response === false) {
         error_log( 'Failed to retrieve data from the API.' );
-        return [];
+        return '';
     } else {
         return $response;
     }
