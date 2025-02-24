@@ -52,7 +52,7 @@ function get_stitched_menus($home_page_url, $urlSite, $lang): array
     $main_post_page_name = urlencode(get_the_title($current_language_page_id));
     $main_post_page_url = get_permalink($current_language_page_id);
 
-    $urlApi = 'http://' . getenv('MENU_API_HOST') . ':3001/menus/getStitchedMenus/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
+    $urlApi = 'http://' . getenv('MENU_API_HOST') ?? "menu-api" . ':3001/menus/getStitchedMenus/?lang=' . $lang . '&url=' . trailingslashit( $urlSite ) .
         '&pageType=' . get_post_type() .
         ($main_post_page == 0 ? '' : ($main_post_page_name == '' ? '' : '&mainPostPageName=' . $main_post_page_name)) .
         ($main_post_page == 0 ? '' : ($main_post_page_url == '' ? '' : '&mainPostPageUrl=' . $main_post_page_url)).
