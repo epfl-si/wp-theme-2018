@@ -45,15 +45,7 @@ function render_sidebar_item($crumb_item, $currentPage, $children) {
 
 function get_stitched_menus($home_page_url, $url_site, $lang): array
 {
-    $response = call_menu_api_microservice($home_page_url, $url_site, $lang, 'getStitchedMenus');
-
-    $siblings = json_decode($response, true)['siblings'];
-    $children = json_decode($response, true)['children'];
-    $data = array(
-        "siblings" => $siblings ?? [],
-        "children" => $children ?? [],
-    );
-    return $data;
+    return call_menu_api_microservice($home_page_url, $url_site, $lang, 'getStitchedMenus');
 }
 
 
@@ -109,7 +101,13 @@ function get_stitched_menus($home_page_url, $url_site, $lang): array
                         }
 
                         $urls = get_current_url_and_homepage();
-                        $parent_items = get_stitched_menus($urls['home_page_url'], $urls['current_url'], $urls['current_lang']);
+                        $response = get_stitched_menus($urls['home_page_url'], $urls['current_url'], $urls['current_lang']);
+                        $siblings = json_decode($response, true)['siblings'];
+                        $children = json_decode($response, true)['children'];
+                        $parent_items = array(
+                            "siblings" => $siblings ?? [],
+                            "children" => $children ?? [],
+                        );
 
                         if (array_key_exists('siblings', $parent_items) && count($parent_items['siblings']) > 0) {
                             foreach($parent_items['siblings'] as $crumb_item) {
