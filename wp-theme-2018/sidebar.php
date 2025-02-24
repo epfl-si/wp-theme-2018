@@ -43,9 +43,10 @@ function render_sidebar_item($crumb_item, $currentPage, $children) {
     }
 }
 
-function get_stitched_menus($home_page_url, $url_site, $lang)
+function get_stitched_menus()
 {
-    return call_menu_api_microservice($home_page_url, $url_site, $lang, 'getStitchedMenus');
+	$urls = get_current_url_and_homepage();
+    return call_menu_api_microservice($urls['home_page_url'], $urls['current_url'], $urls['current_lang'], 'getStitchedMenus');
 }
 
 
@@ -84,8 +85,7 @@ function get_stitched_menus($home_page_url, $url_site, $lang)
 
                         $current_item = get_current_item($items);
 
-                        $urls = get_current_url_and_homepage();
-                        $response = get_stitched_menus($urls['home_page_url'], $urls['current_url'], $urls['current_lang']);
+                        $response = get_stitched_menus();
                         $siblings = json_decode($response, true)['siblings'];
                         $children = json_decode($response, true)['children'];
                         $parent_items = array(

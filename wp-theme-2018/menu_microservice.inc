@@ -68,9 +68,9 @@ function get_current_url_and_homepage() {
         $language_information = '/' . $current_lang . '/';
         $home_page_url = substr($home_page_url, 0, strpos($home_page_url, $language_information) + strlen($language_information));
     }
-		return array(
-			"home_page_url" => $home_page_url,
-			"current_url" => $current_url,
-			"current_lang" => $current_lang
-		);
+    return array(
+        "home_page_url" => $home_page_url,
+        "current_url" => $current_url,
+        "current_lang" => $current_lang
+    );
 }
