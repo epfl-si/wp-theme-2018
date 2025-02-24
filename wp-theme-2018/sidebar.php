@@ -7,7 +7,7 @@
  * @package epfl
  */
 
-require_once 'common_menu.php';
+require_once 'menu_microservice.inc';
 
 global $wp_query;
 
@@ -43,7 +43,7 @@ function render_sidebar_item($crumb_item, $currentPage, $children) {
     }
 }
 
-function get_stitched_menus($home_page_url, $url_site, $lang): array
+function get_stitched_menus($home_page_url, $url_site, $lang)
 {
     return call_menu_api_microservice($home_page_url, $url_site, $lang, 'getStitchedMenus');
 }

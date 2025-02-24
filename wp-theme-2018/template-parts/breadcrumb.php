@@ -4,7 +4,7 @@
  *  - homepage
  *  - homepage template
  */
-require_once __DIR__ . '/../common_menu.php';
+require_once __DIR__ . '/../menu_microservice.inc';
 
 $currentTemplate = get_page_template_slug();
 
