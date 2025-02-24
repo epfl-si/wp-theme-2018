@@ -84,22 +84,6 @@ function get_stitched_menus($home_page_url, $url_site, $lang)
 
                         $current_item = get_current_item($items);
 
-                        // fullfil crumb_items array, in accordance with the items hierarchy
-                        $crumb_items = [];
-                        $crumb_item = $current_item;
-                        if (count($items) > 1) {
-                            while($crumb_item !== false)
-                            {
-                                array_unshift($crumb_items, $crumb_item);
-
-                                $index = (int) $crumb_item->menu_item_parent;
-                                $crumb_item = array_key_exists($index, $items)? $items[$index]: false;
-                            }
-                        } else {
-                            // make at least the only element printed
-                            $crumb_items = [$crumb_item];
-                        }
-
                         $urls = get_current_url_and_homepage();
                         $response = get_stitched_menus($urls['home_page_url'], $urls['current_url'], $urls['current_lang']);
                         $siblings = json_decode($response, true)['siblings'];
