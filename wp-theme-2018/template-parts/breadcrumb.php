@@ -192,6 +192,9 @@ function render_siblings($siblings_items, $crumb_item) {
 
 function _extract_result($response): array
 {
+    if (!$response) {
+        return [];
+    }
     $data = $response['result'];
     return $data ?? [];
 }
