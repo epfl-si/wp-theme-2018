@@ -86,8 +86,8 @@ function get_stitched_menus($post)
                         $current_item = get_current_item($items);
 
                         $response = get_stitched_menus($post);
-                        $siblings = json_decode($response, true)['siblings'];
-                        $children = json_decode($response, true)['children'];
+                        $siblings = $response['siblings'];
+                        $children = $response['children'];
                         $parent_items = array(
                             "siblings" => $siblings ?? [],
                             "children" => $children ?? [],

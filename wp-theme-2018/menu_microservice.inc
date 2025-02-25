@@ -28,12 +28,12 @@ function call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type
 
     if (isset($error_text)) {
         error_log( "curl error: {$error_text} at {$url_api}" );
-        return '';
+        return [];
     } elseif ($response === false) {
         error_log( 'Failed to retrieve data from the API.' );
-        return '';
+        return [];
     } else {
-        return $response;
+        return json_decode($response, true);
     }
 }
 

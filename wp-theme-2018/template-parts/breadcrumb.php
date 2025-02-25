@@ -193,7 +193,7 @@ function render_siblings($siblings_items, $crumb_item) {
 function _call_menu_api_microservice($home_page_url, $url_site, $lang,$call_type): array
 {
     $response = call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type);
-    $data = json_decode($response, true)['result'];
+    $data = $response['result'];
     return $data ?? [];
 }
 
