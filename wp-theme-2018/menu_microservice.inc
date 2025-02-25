@@ -8,7 +8,7 @@ function call_menu_api_microservice($site, $call_type, $post, $item_url = NULL)
     $main_post_page = get_option('page_for_posts');
     if (! function_exists("pll_get_post")) {
         # Menus and siblings require Polylang.
-        return [];
+        return NULL;
     }
     $current_language_page_id = pll_get_post($main_post_page, $lang);
     $main_post_page_name = urlencode(get_the_title($current_language_page_id));
@@ -36,10 +36,10 @@ function call_menu_api_microservice($site, $call_type, $post, $item_url = NULL)
 
     if (isset($error_text)) {
         error_log( "curl error: {$error_text} at {$url_api}" );
-        return [];
+        return NULL;
     } elseif ($response === false) {
         error_log( 'Failed to retrieve data from the API.' );
-        return [];
+        return NULL;
     } else {
         return json_decode($response, true);
     }
