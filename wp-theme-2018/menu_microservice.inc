@@ -11,7 +11,12 @@ function call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type
     $main_post_page_name = urlencode(get_the_title($current_language_page_id));
     $main_post_page_url = get_permalink($current_language_page_id);
 
-    $url_api = 'http://' . (getenv('MENU_API_HOST') ?? "menu-api") . ':3001/menus/' . $call_type . '/?lang=' . $lang
+		$menu_api_host = "menu-api";
+		$menu_api_host_from_env = getenv('MENU_API_HOST');
+		if ($menu_api_host_from_env !== false && $menu_api_host_from_env !== '') {
+			$menu_api_host = $menu_api_host_from_env;
+		}
+    $url_api = 'http://' . $menu_api_host . ':3001/menus/' . $call_type . '/?lang=' . $lang
     . '&url=' . trailingslashit( $url_site ) . '&pageType=' . get_post_type() .
     ($main_post_page == 0 ? '' : ($main_post_page_name == '' ? '' : '&mainPostPageName=' . $main_post_page_name)) .
     ($main_post_page == 0 ? '' : ($main_post_page_url == '' ? '' : '&mainPostPageUrl=' . $main_post_page_url)) .
