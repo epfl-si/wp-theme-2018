@@ -43,9 +43,9 @@ function render_sidebar_item($crumb_item, $currentPage, $children) {
     }
 }
 
-function get_stitched_menus()
+function get_stitched_menus($post)
 {
-    $urls = new CurrentSite();
+    $urls = new CurrentSite($post);
     return call_menu_api_microservice($urls->home_page_url, $urls->current_url, $urls->current_lang, 'getStitchedMenus');
 }
 
@@ -85,7 +85,7 @@ function get_stitched_menus()
 
                         $current_item = get_current_item($items);
 
-                        $response = get_stitched_menus();
+                        $response = get_stitched_menus($post);
                         $siblings = json_decode($response, true)['siblings'];
                         $children = json_decode($response, true)['children'];
                         $parent_items = array(

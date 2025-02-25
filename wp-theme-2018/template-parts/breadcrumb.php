@@ -248,7 +248,7 @@ function get_breadcrumb ($homePageUrl, $urlSite, $lang)
                 $crumb_items = [$crumb_item];
             }
 
-            $urls = new CurrentSite();
+            $urls = new CurrentSite($post);
             $parent_items = get_breadcrumb($urls->home_page_url, $urls->current_url, $urls->current_lang);
 
             foreach($parent_items as $crumb_item) {
