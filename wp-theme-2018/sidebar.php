@@ -45,8 +45,8 @@ function render_sidebar_item($crumb_item, $currentPage, $children) {
 
 function get_stitched_menus($post)
 {
-    $urls = new CurrentSite($post);
-    return call_menu_api_microservice($urls->home_page_url, $urls->current_url, $urls->current_lang, 'getStitchedMenus');
+    $site = new CurrentSite();
+    return call_menu_api_microservice($site, 'getStitchedMenus', $post);
 }
 
 

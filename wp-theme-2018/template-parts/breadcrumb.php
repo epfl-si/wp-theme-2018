@@ -190,21 +190,20 @@ function render_siblings($siblings_items, $crumb_item) {
     return $siblings;
 }
 
-function _call_menu_api_microservice($home_page_url, $url_site, $lang,$call_type): array
+function _extract_result($response): array
 {
-    $response = call_menu_api_microservice($home_page_url, $url_site, $lang, $call_type);
     $data = $response['result'];
     return $data ?? [];
 }
 
-function get_siblings ($homePageUrl, $urlSite, $lang)
+function get_siblings ($site, $post, $item_url)
 {
-    return _call_menu_api_microservice($homePageUrl, $urlSite, $lang, 'siblings');
+    return _extract_result(call_menu_api_microservice($site, 'siblings', $post, $item_url));
 }
 
-function get_breadcrumb ($homePageUrl, $urlSite, $lang)
+function get_breadcrumb ($site, $post)
 {
-    return _call_menu_api_microservice($homePageUrl, $urlSite, $lang, 'breadcrumb');
+	return _extract_result(call_menu_api_microservice($site, 'breadcrumb', $post));
 }
 
 ?>
@@ -248,11 +247,11 @@ function get_breadcrumb ($homePageUrl, $urlSite, $lang)
                 $crumb_items = [$crumb_item];
             }
 
-            $urls = new CurrentSite($post);
-            $parent_items = get_breadcrumb($urls->home_page_url, $urls->current_url, $urls->current_lang);
+            $site = new CurrentSite();
+            $parent_items = get_breadcrumb($site, $post);
 
             foreach($parent_items as $crumb_item) {
-                $siblings_items = get_siblings($urls->home_page_url, $crumb_item['url'], $urls->current_lang);
+                $siblings_items = get_siblings($site, $post, $crumb_item['url']);
                 $current_item_db_id = $current_item->db_id ?? null;
                 $crumb_item_db_id = $crumb_item['db_id'] ?? null;
                 if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
