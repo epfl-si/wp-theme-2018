@@ -86,16 +86,11 @@ function get_stitched_menus($post)
                         $current_item = get_current_item($items);
 
                         $response = get_stitched_menus($post);
-                        $siblings = $response['siblings'];
-                        $children = $response['children'];
-                        $parent_items = array(
-                            "siblings" => $siblings ?? [],
-                            "children" => $children ?? [],
-                        );
-
-                        if (array_key_exists('siblings', $parent_items) && count($parent_items['siblings']) > 0) {
-                            foreach($parent_items['siblings'] as $crumb_item) {
-                                render_sidebar_item($crumb_item, $current_item, $parent_items['children']);
+                        if ($response) {
+                            $siblings = $response['siblings'] ?? [];
+                            $children = $response['children'] ?? [];
+                            foreach($siblings as $crumb_item) {
+                                render_sidebar_item($crumb_item, $current_item, $children);
                             }
                         } else {
                             wp_nav_menu( array(
