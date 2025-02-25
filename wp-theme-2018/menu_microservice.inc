@@ -42,9 +42,9 @@ class CurrentSite {
     public $home_page_url;
     public $current_url;
 
-    public function __construct() {
+    public function __construct($post) {
         $this->current_lang = $this->_get_current_language();
-        $this->current_url = $this->_get_current_url();
+        $this->current_url = $this->_get_current_url($post);
         $this->home_page_url = $this->_get_homepage();
     }
 
@@ -64,7 +64,7 @@ class CurrentSite {
         }
     }
 
-    private function _get_current_url() {
+    private function _get_current_url($post) {
         $home_page_url = $this->_get_base_homepage();
         $protocol = is_ssl() ? 'https://' : 'http://';
         $current_url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
