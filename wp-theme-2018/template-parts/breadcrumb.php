@@ -254,7 +254,7 @@ function get_breadcrumb ($site, $post)
             $parent_items = get_breadcrumb($site, $post);
 
             foreach($parent_items as $crumb_item) {
-                $siblings_items = get_siblings($site, $post, $crumb_item['url']);
+                $siblings_items = $crumb_item['siblings'];
                 $current_item_db_id = $current_item->db_id ?? null;
                 $crumb_item_db_id = $crumb_item['db_id'] ?? null;
                 if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
