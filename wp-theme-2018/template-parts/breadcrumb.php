@@ -190,23 +190,14 @@ function render_siblings($siblings_items, $crumb_item) {
     return $siblings;
 }
 
-function _extract_result($response): array
-{
-    if (!$response) {
-        return [];
-    }
-    $data = $response['result'];
-    return $data ?? [];
-}
-
-function get_siblings ($site, $post, $item_url)
-{
-    return _extract_result(call_menu_api_microservice($site, 'siblings', $post, $item_url));
-}
-
 function get_breadcrumb ($site, $post)
 {
-	return _extract_result(call_menu_api_microservice($site, 'breadcrumb', $post));
+    $response = call_menu_api_microservice($site, 'breadcrumb', $post);
+    if ($response && $response['result']) {
+        return $response['result'];
+    } else {
+        return [];
+    }
 }
 
 ?>
