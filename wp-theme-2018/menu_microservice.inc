@@ -28,8 +28,8 @@ function call_menu_api_microservice($site, $call_type, $post, $item_url = NULL)
 
     $curl = curl_init($url_api);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, getenv('MENU_API_CURLOPT_CONNECTTIMEOUT') ?? 0.5);
-    curl_setopt($curl, CURLOPT_TIMEOUT, getenv('MENU_API_CURLOPT_TIMEOUT') ?? 1);
+    curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, getenv('MENU_API_CURLOPT_CONNECTTIMEOUT') ?: 0.5);
+    curl_setopt($curl, CURLOPT_TIMEOUT, getenv('MENU_API_CURLOPT_TIMEOUT') ?: 1);
     $response = curl_exec($curl);
     if (curl_errno($curl)) {
         $error_text = curl_error($curl);
