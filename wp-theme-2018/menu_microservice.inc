@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * True iff this WordPress consumes the menu microservice.
+ */
+function has_menu_api() {
+    $site_url = get_site_url();
+    foreach (["www.epfl.ch", "wpn-test.epfl.ch", "wordpress.localhost"] as $stitchable_domain) {
+        if (str_contains($site_url, $stitchable_domain)) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 function call_menu_api_microservice($site, $call_type, $post, $item_url = NULL)
 {
     $lang = $site->get_language();

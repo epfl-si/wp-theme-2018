@@ -156,7 +156,7 @@ function get_rendered_crumb_item($crumb_item, $is_current_item, $siblings_items)
             <a class=\"bread-link\" href=\"{$url}\" title=\"{$title}\">
                 {$title}
             </a>
-            {$siblings}     
+            {$siblings}
         </li>";
     }
 }
@@ -241,21 +241,26 @@ function get_breadcrumb ($site, $post)
                 $crumb_items = [$crumb_item];
             }
 
-            $site = new CurrentSite();
-            $parent_items = get_breadcrumb($site, $post);
+            if (has_menu_api()) {
+                $site = new CurrentSite();
+                $parent_items = get_breadcrumb($site, $post);
 
-            foreach($parent_items as $crumb_item) {
-                $siblings_items = $crumb_item['siblings'] ?? [];
-                $current_item_db_id = $current_item->db_id ?? null;
-                $crumb_item_db_id = $crumb_item['db_id'] ?? null;
-                if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
-                    $crumbs[] = get_rendered_crumb_item($crumb_item, True, $siblings_items);
-                } else {
-                    $crumbs[] = get_rendered_crumb_item($crumb_item, False, $siblings_items);
+                foreach($parent_items as $crumb_item) {
+                    $siblings_items = $crumb_item['siblings'] ?? [];
+                    $current_item_db_id = $current_item->db_id ?? null;
+                    $crumb_item_db_id = $crumb_item['db_id'] ?? null;
+                    if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
+                        $crumbs[] = get_rendered_crumb_item($crumb_item, True, $siblings_items);
+                    } else {
+                        $crumbs[] = get_rendered_crumb_item($crumb_item, False, $siblings_items);
+                    }
                 }
-            }
 
-            echo implode('', $crumbs);
+                echo implode('', $crumbs);
+            } else {
+                // TODO: we should give some kind of breadcrumb fallback
+                // for “subdomains-light” theme users.
+            }
             ?>
         </ol>
     </nav>
