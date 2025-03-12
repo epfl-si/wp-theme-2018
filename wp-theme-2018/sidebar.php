@@ -85,8 +85,7 @@ function get_stitched_menus($post)
 
                         $current_item = get_current_item($items);
 
-                        $response = get_stitched_menus($post);
-                        if ($response) {
+                        if ( has_menu_api() && ($response = get_stitched_menus($post)) ) {
                             $siblings = $response['siblings'] ?? [];
                             $children = $response['children'] ?? [];
                             foreach($siblings as $crumb_item) {
