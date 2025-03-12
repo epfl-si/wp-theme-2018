@@ -258,9 +258,21 @@ function get_breadcrumb ($site, $post)
 
                 echo implode('', $crumbs);
             } else {
-                // TODO: we should give some kind of breadcrumb fallback
-                // for “subdomains-light” theme users.
-            }
+                # There is no place like 🏠...
+?>
+            <li class="breadcrumb-item">
+                <a class="bread-link bread-home" href="https://50ans.epfl.ch" title="home">
+                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
+                </a>
+            </li>
+            <li class="breadcrumb-item expand-links">
+                <button class="btn btn-expand-links" aria-expanded="false" title="Afficher l'intégralité du fil d'Ariane">
+                    <span class="dots" aria-hidden="true">…</span>
+                    <span class="sr-only">Afficher l'intégralité du fil d'Ariane</span>
+                </button>
+            </li>
+<?php
+             }
             ?>
         </ol>
     </nav>
