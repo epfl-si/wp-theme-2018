@@ -85,24 +85,21 @@ function get_stitched_menus($post)
 
                         $current_item = get_current_item($items);
 
-                        if (has_menu_api()) {
-                            $response = get_stitched_menus($post);
-                            if ($response) {
-                                $siblings = $response['siblings'] ?? [];
-                                $children = $response['children'] ?? [];
-                                foreach($siblings as $crumb_item) {
-                                    render_sidebar_item($crumb_item, $current_item, $children);
-                                }
-                            } else {
-                                wp_nav_menu( array(
-                                    'theme_location' => $EPFL_MENU_LOCATION,
-                                    'menu_class'=> 'nav-menu',
-                                    'container' => 'ul',
-                                    'submenu' => get_the_ID(),
-                                    'submenu_type' => $asideContent
-                                ) );
-
+                        if ( has_menu_api() && ($response = get_stitched_menus($post)) ) {
+                            $siblings = $response['siblings'] ?? [];
+                            $children = $response['children'] ?? [];
+                            foreach($siblings as $crumb_item) {
+                                render_sidebar_item($crumb_item, $current_item, $children);
                             }
+                        } else {
+                            wp_nav_menu( array(
+                                'theme_location' => $EPFL_MENU_LOCATION,
+                                'menu_class'=> 'nav-menu',
+                                'container' => 'ul',
+                                'submenu' => get_the_ID(),
+                                'submenu_type' => $asideContent
+                            ) );
+
                         }
 
                     ?>
