@@ -261,7 +261,7 @@ function get_breadcrumb ($site, $post)
                 # There is no place like 🏠...
 ?>
             <li class="breadcrumb-item">
-                <a class="bread-link bread-home" href="https://50ans.epfl.ch" title="home">
+                <a class="bread-link bread-home" href="/" title="home">
                     <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
                 </a>
             </li>
