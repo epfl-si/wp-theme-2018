@@ -4,12 +4,8 @@
  * True iff this WordPress consumes the menu microservice.
  */
 function has_menu_api() {
-    $site_url = get_site_url();
-    foreach (["www.epfl.ch", "wpn-test.epfl.ch", "wordpress.localhost", "wp-httpd"] as $stitchable_domain) {
-        if (str_contains($site_url, $stitchable_domain)) {
-            return TRUE;
-        }
-    }
+    if (is_plugin_active('epfl-menus/epfl-menus.php'))
+        return TRUE;
     return FALSE;
 }
 

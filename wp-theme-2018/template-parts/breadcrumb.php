@@ -200,6 +200,16 @@ function get_breadcrumb ($site, $post)
     }
 }
 
+function render_menu_item ($crumb_item, $current_item) {
+    $siblings_items = $crumb_item['siblings'] ?? [];
+    $current_item_db_id = $current_item->db_id ?? null;
+    $crumb_item_db_id = $crumb_item['db_id'] ?? null;
+    if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
+        return get_rendered_crumb_item($crumb_item, True, $siblings_items);
+    } else {
+        return get_rendered_crumb_item($crumb_item, False, $siblings_items);
+    }
+}
 ?>
 
 <div class="breadcrumb-container">
@@ -246,33 +256,16 @@ function get_breadcrumb ($site, $post)
                 $parent_items = get_breadcrumb($site, $post);
 
                 foreach($parent_items as $crumb_item) {
-                    $siblings_items = $crumb_item['siblings'] ?? [];
-                    $current_item_db_id = $current_item->db_id ?? null;
-                    $crumb_item_db_id = $crumb_item['db_id'] ?? null;
-                    if ($current_item_db_id && $crumb_item_db_id && (int) $current_item_db_id === (int) $crumb_item_db_id) { // current item ?
-                        $crumbs[] = get_rendered_crumb_item($crumb_item, True, $siblings_items);
-                    } else {
-                        $crumbs[] = get_rendered_crumb_item($crumb_item, False, $siblings_items);
-                    }
+                    $crumbs[] = render_menu_item($crumb_item, $current_item);
                 }
 
-                echo implode('', $crumbs);
             } else {
-                # There is no place like 🏠...
-?>
-            <li class="breadcrumb-item">
-                <a class="bread-link bread-home" href="/" title="home">
-                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
-                </a>
-            </li>
-            <li class="breadcrumb-item expand-links">
-                <button class="btn btn-expand-links" aria-expanded="false" title="Afficher l'intégralité du fil d'Ariane">
-                    <span class="dots" aria-hidden="true">…</span>
-                    <span class="sr-only">Afficher l'intégralité du fil d'Ariane</span>
-                </button>
-            </li>
-<?php
+                foreach($crumb_items as $crumb_item) {
+                    $crumb_item = (array) $crumb_item;
+                    $crumbs[] = render_menu_item($crumb_item, $current_item);
+                }
              }
+            echo implode('', $crumbs);
             ?>
         </ol>
     </nav>
