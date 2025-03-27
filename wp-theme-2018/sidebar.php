@@ -43,10 +43,10 @@ function render_sidebar_item($crumb_item, $currentPage, $children) {
     }
 }
 
-function get_stitched_menus($post)
+function get_stitched_menus($post, $asideContent)
 {
     $site = new CurrentSite();
-    return call_menu_api_microservice($site, 'getStitchedMenus', $post);
+    return call_menu_api_microservice($site, 'getStitchedMenus', $post, $asideContent);
 }
 
 
@@ -85,7 +85,7 @@ function get_stitched_menus($post)
 
                         $current_item = get_current_item($items);
 
-                        if ( has_menu_api() && ($response = get_stitched_menus($post)) ) {
+                        if ( has_menu_api() && ($response = get_stitched_menus($post, $asideContent)) ) {
                             $siblings = $response['siblings'] ?? [];
                             $children = $response['children'] ?? [];
                             foreach($siblings as $crumb_item) {

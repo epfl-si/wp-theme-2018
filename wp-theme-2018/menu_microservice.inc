@@ -9,7 +9,7 @@ function has_menu_api() {
     return FALSE;
 }
 
-function call_menu_api_microservice($site, $call_type, $post, $item_url = NULL)
+function call_menu_api_microservice($site, $call_type, $post, $asideContent, $item_url = NULL)
 {
     $lang = $site->get_language();
     $url_site = $item_url ?? $site->get_post_url($post);
@@ -32,7 +32,7 @@ function call_menu_api_microservice($site, $call_type, $post, $item_url = NULL)
     . '&url=' . trailingslashit( $url_site ) . '&pageType=' . get_post_type($post) .
     ($main_post_page == 0 ? '' : ($main_post_page_name == '' ? '' : '&mainPostPageName=' . $main_post_page_name)) .
     ($main_post_page == 0 ? '' : ($main_post_page_url == '' ? '' : '&mainPostPageUrl=' . $main_post_page_url)) .
-    '&postName=' . urlencode(get_the_title($post)) .
+    '&postName=' . urlencode(get_the_title($post)) . '&template=' . $asideContent .
     '&homePageUrl=' . $home_page_url;
 
     $curl = curl_init($url_api);
