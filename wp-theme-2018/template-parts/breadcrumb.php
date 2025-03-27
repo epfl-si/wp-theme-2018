@@ -192,7 +192,7 @@ function render_siblings($siblings_items, $crumb_item) {
 
 function get_breadcrumb ($site, $post)
 {
-    $response = call_menu_api_microservice($site, 'breadcrumb', $post);
+    $response = call_menu_api_microservice($site, 'breadcrumb', $post, 'all');
     if ($response && $response['result']) {
         return $response['result'];
     } else {
