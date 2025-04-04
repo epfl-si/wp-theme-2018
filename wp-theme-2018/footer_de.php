@@ -307,7 +307,7 @@
       <a href="https://go.epfl.ch/privacy-policy/">Datenschutzerklärung</a>
     </div>
     <div>
-      <p>&copy; 2025 EPFL, alle Rechte vorbehalten</p>
+      <p>&copy; 2023 EPFL, alle Rechte vorbehalten</p>
     </div>
   </div>
 

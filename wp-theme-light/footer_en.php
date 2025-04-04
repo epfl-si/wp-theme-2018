@@ -74,7 +74,7 @@
             <a href="https://go.epfl.ch/privacy-policy/">Privacy policy</a>
           </div>
           <div>
-            <p>&copy; 2025 EPFL, all rights reserved</p>
+            <p>&copy; 2023 EPFL, all rights reserved</p>
           </div>
         </div>
       </div>
