@@ -4,9 +4,13 @@
  * True iff this WordPress consumes the menu microservice.
  */
 function has_menu_api() {
-    if (is_plugin_active('epfl-menus/epfl-menus.php'))
-        return TRUE;
-    return FALSE;
+    // We can't rely on WordPress' `is_plugin_active()`, because it is defined
+    // as part of wp_admin/includes/plugin.php
+	$plugins = array_merge(
+        get_site_option( 'active_sitewide_plugins', array()),
+        get_site_option( 'active_plugins', array()));
+
+    return FALSE !== array_search('epfl-menus/epfl-menus.php', $plugins);
 }
 
 function call_menu_api_microservice($site, $call_type, $post, $asideContent, $item_url = NULL)
