@@ -36,7 +36,9 @@ if ($translations_count == 0) {
 
 $translations = reorderTranslations($translations);
 
-if ($translations_count < 3) {
+// EPFL_theme_2018_max_inline_languages_count: Filter to ensure the languages
+// chooser is a drop down.
+if ($translations_count < apply_filters( 'EPFL_theme_2018_max_inline_languages_count', 3 )) {
 ?>
 <!-- language switcher, two elements -->
 <nav class="nav-lang nav-lang-short ml-auto">
@@ -52,6 +54,7 @@ if ($translations_count < 3) {
 			</li>
 		<?php endif; // current lang ?>
 	<?php endforeach; ?>
+	<?php do_action( 'EPFL_theme_after_language_switcher', $translations ); ?>	
 	</ul>
 </nav>
 <?php
@@ -86,6 +89,7 @@ if ($translations_count < 3) {
     </li>
 	<?php endif; // current lang ?>
 <?php endforeach; ?>
+<?php do_action( 'EPFL_theme_after_language_switcher', $translations ); ?>
   </ul>
 </nav>
 
