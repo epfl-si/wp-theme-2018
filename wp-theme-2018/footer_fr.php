@@ -271,6 +271,14 @@
           </a>
         </li>
         <li>
+          <a href="https://social.epfl.ch/@epfl/" class="social-icon social-icon-mastodon social-icon-negative" target="_blank" rel="nofollow noopener">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-mastodon"></use>
+            </svg>
+            <span class="sr-only">Follow us on Mastodon</span>
+          </a>
+        </li>
+        <li>
           <a href="https://x.com/epfl_en" class="social-icon social-icon-x social-icon-negative" target="_blank" rel="nofollow noopener">
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-x"></use>
@@ -296,9 +304,10 @@
       <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/">Accessibilité</a>
       <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/">Mentions légales</a>
       <a href="https://go.epfl.ch/protection-des-donnees/">Protection des données</a>
+      <a href="https://go.epfl.ch/charte">Charte</a>
     </div>
     <div>
-      <p>&copy; 2023 EPFL, tous droits réservés</p>
+      <p>&copy; 2025 EPFL, tous droits réservés</p>
     </div>
   </div>
 
