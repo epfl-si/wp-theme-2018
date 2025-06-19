@@ -72,6 +72,36 @@
         </div>
       </div>
 
+      <?php
+      $tags = get_tags(); 
+      if ($tags) : 
+      ?>
+        <!-- Dropdown des tags -->
+        <div class="form-group">
+          <label><?php _e( 'Tags', 'epfl' ); ?></label>
+          <select class="custom-select" id="tag">
+            <option value=""><?php _e( 'Select a tag', 'epfl' ) ?></option>
+            <?php
+              foreach ($tags as $tag) {
+                echo '<option value="' . esc_attr($tag->slug) . '">' . esc_html($tag->name) . '</option>';
+              }
+            ?>
+          </select>
+          <script type="text/javascript">
+              let dropdownTag = document.getElementById("tag");
+
+              function onTagChange() {
+                  if (dropdownTag.selectedIndex > 0) {
+                      let tagSlug = dropdownTag.options[dropdownTag.selectedIndex].value;
+                      location.href = "<?php echo esc_url( home_url( '/tag/' ) ); ?>" + tagSlug + '/'; 
+                  }
+              }
+
+              dropdownTag.onchange = onTagChange;
+          </script>
+        </div>
+      <?php endif; ?>
+
     </form>
   </div>
 </aside>
