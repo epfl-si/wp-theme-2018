@@ -237,4 +237,6 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 
 </header>
 
+<?php wp_body_open(); ?>
+
 <div class="main-container">
