@@ -61,7 +61,7 @@ if ($translations_count < apply_filters( 'EPFL_theme_2018_max_inline_languages_c
 } else {
 ?>
 <!-- language switcher, 3 or more elements -->
-<nav class="nav-lang ml-auto dropdown" aria-label="Change language">
+<nav class="nav-lang ml-auto dropdown notranslate" aria-label="Change language">
 <?php foreach($translations as $lang): ?>
 	<?php if ($lang['current_lang']): ?>
   <button class="dropdown-toggle btn btn-secondary" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
