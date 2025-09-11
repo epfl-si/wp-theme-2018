@@ -184,6 +184,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
 			<svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
 		</a>
 		<form action="https://search.epfl.ch/" class="dropdown-menu border-0 p-0">
+      <?php if (is_plugin_active('epfl-intranet/epfl-intranet.php')) : ?><input type="hidden" name="filter" value="inside"><?php endif; ?>
 			<div class="search-form mt-1 input-group">
 				<label for="search" class="sr-only"><?php esc_html_e('Search on the site', 'epfl') ?></label>
 				<input type="text" class="form-control" name="q" placeholder="<?php esc_html_e('Search', 'epfl') ?>" >
@@ -208,6 +209,7 @@ class EPFL_Theme2018_Root_Menu_Walker extends Walker_Nav_Menu {
       </span>
     </div>
     <label for="search" class="sr-only"><?php esc_html_e('Search on the site', 'epfl') ?></label>
+    <?php if (is_plugin_active('epfl-intranet/epfl-intranet.php')) : ?><input type="hidden" name="filter" value="inside"><?php endif; ?>
     <input type="text" class="form-control" name="q" placeholder="<?php esc_html_e('Search', 'epfl') ?>">
     <div class="input-group-append">
       <a id="search-mobile-close" class="search-mobile-close searchform-controller" href="#">

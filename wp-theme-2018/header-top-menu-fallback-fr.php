@@ -1,3 +1,12 @@
+    <?php
+    if (is_plugin_active('epfl-intranet/epfl-intranet.php')) {
+    ?>
+    <li id="menu-item-1">
+        <a class="nav-item" href="https://inside.epfl.ch/fr/">Inside</a>
+    </li>
+    <?php
+    } else {
+	?>
     <li id="menu-item-1">
         <a class="nav-item" href="https://www.epfl.ch/about/fr/">À propos</a>
     </li>
@@ -16,3 +25,6 @@
     <li id="menu-item-6">
         <a class="nav-item" href="https://www.epfl.ch/campus/fr/">Campus</a>
     </li>
+    <?php
+    }
+	?>
