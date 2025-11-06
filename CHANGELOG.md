@@ -1,4 +1,7 @@
 # CHANGELOG
+*1.58.0* (2025-11-06)
+- Update with the last version of elements
+
 *1.50.1* (2023-11-02)
 - Update footer for light theme
 
