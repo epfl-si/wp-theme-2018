@@ -2,6 +2,7 @@
 
   <div class="footer-group footer-sitemap">
 
+
     <div class="footer-sitemap-col">
       <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-1" aria-expanded="false" aria-controls="collapse-footer-1">
         <strong>About</strong>
