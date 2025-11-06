@@ -15,7 +15,7 @@
             <a href="https://www.epfl.ch/about/campus/de/">Assoziierte Campus</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/about/facts/">Facts</a>
+            <a href="https://www.epfl.ch/about/facts/">Data</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/about/presidency/de/">Präsidium</a>
@@ -58,6 +58,15 @@
       <div class="collapse collapse-item" id="collapse-footer-2">
         <ul class="footer-links">
           <li>
+            <a href="https://www.epfl.ch/education/admission/de/">Zulassungsvoraussetzungen</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/education/studies/en/rules-and-procedures/academic-calendar/">Akademischer Kalender</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/education/cms-preparatory-year/">Vorbereitungsjahr (CMS)</a>
+          </li>
+          <li>
             <a href="https://www.epfl.ch/education/bachelor/de/">Bachelor</a>
           </li>
           <li>
@@ -67,7 +76,10 @@
             <a href="https://www.epfl.ch/education/phd/de/">Doktorat</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/education/continuing-education/">Weiterbildung</a>
+            <a href="https://www.epfl.ch/education/continuing-education/">Weiterbildung - Extension School</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/education/studies/de/">Studienverwaltung</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/education/international/de/">International</a>
@@ -76,16 +88,16 @@
             <a href="https://www.epfl.ch/education/teaching/">Lehre</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/education/admission/de/">Zulassung</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/studies/de/">Studienverwaltung</a>
-          </li>
-          <li>
             <a href="https://www.epfl.ch/education/educational-initiatives/de/">Bildungsinitiativen</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/education/education-and-science-outreach/de/">Bildungs- und Wissenschaftsförderung</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/education/infrastructures-under-development/">Infrastrukturen in Entwicklung</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/education/engagement-with-society/">Engagement mit der Gesellschaft</a>
           </li>
         </ul>
       </div>
@@ -97,22 +109,31 @@
       <div class="collapse collapse-item" id="collapse-footer-3">
         <ul class="footer-links">
           <li>
-            <a href="https://www.epfl.ch/research/domains/de/">Forschungsbereiche</a>
+            <a href="https://www.epfl.ch/research/mission-and-policy/">Forschungsbereiche</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/faculty-members/de/">Lehrkörper</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/awards/de/">Auszeichnungen und Preise</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/collaborate/de/">Mit unseren Forscher*innen zusammenarbeiten</a>
+            <a href="https://www.epfl.ch/research/domains/">Forschungsbereiche</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/research/facilities/de/">EPFL-Forschungsplattformen</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/access-technology/de/">Auf unsere Technologien zugreifen</a>
+            <a href="https://www.epfl.ch/research/faculty-members/de/">Lehrkörper</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/research/solutions-for-sustainability-initiative-s4s/">Lösungen für Nachhaltigkeit - S4S</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/research/awards/de/">Auszeichnungen und Preise</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/research/funding/">Fördermöglichkeiten</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/research/management-support/">Unterstützung im Forschungsmanagement</a>
+          </li>
+          <li>
+            <a href="https://www.epfl.ch/research/technology-transfer/">Vom Labor zum Markt</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/research/ethic-statement/de/">Forschungsethik</a>
@@ -121,13 +142,7 @@
             <a href="https://www.epfl.ch/research/de/forschung-mit-tieren-tierversuche/">Forschung mit Tieren</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/de/unterstutzungsstellen-fur-forschung-treffen/">Unterstützungsstellen für Forschung treffen</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/services/de/">Dienste für EPFL-Labore</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/open-science/de/">Open Science</a>
+            <a href="https://www.epfl.ch/research/open-science/">Open Science</a>
           </li>
         </ul>
       </div>
@@ -139,10 +154,10 @@
       <div class="collapse collapse-item" id="collapse-footer-4">
         <ul class="footer-links">
           <li>
-            <a href="https://www.epfl.ch/innovation/domains/de/">Innovationsbereiche</a>
+            <a href="https://www.epfl.ch/innovation/industry/de/">Zusammenarbeit mit der Industrie</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/innovation/industry/de/">Zusammenarbeit mit der Industrie</a>
+            <a href="https://www.epfl.ch/innovation/domains/de/">Innovationsbereiche</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/innovation/startup/de/">Startup Launchpad</a>
