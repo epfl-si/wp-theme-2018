@@ -13,6 +13,23 @@ function has_menu_api() {
     return FALSE !== array_search('epfl-menus/epfl-menus.php', $plugins);
 }
 
+/**
+ * With items menu, construct a very basic tree (one leaf)
+ * that will serve to build the breadcrumb
+ */
+function get_all_menu_items_flattened() {
+	$items = [];
+
+	if(($menu_items = wp_get_nav_menu_items(get_current_menu_slug()))!==false)
+	{
+		foreach ($menu_items as $item) {
+			$items[(int) $item->db_id] = $item;
+		}
+	}
+
+	return $items;
+}
+
 function call_menu_api_microservice($site, $call_type, $post, $asideContent, $item_url = NULL)
 {
     $lang = $site->get_language();

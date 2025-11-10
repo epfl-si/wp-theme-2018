@@ -103,23 +103,6 @@ function get_custom_tags_markup() {
     return $markup;
 }
 
-/**
- * With items menu, construct a very basic tree (one leaf)
- * that will serve to build the breadcrumb
- */
-function get_all_menu_items_flattened() {
-    $items = [];
-
-    if(($menu_items = wp_get_nav_menu_items(get_current_menu_slug()))!==false)
-    {
-        foreach ($menu_items as $item) {
-            $items[(int) $item->db_id] = $item;
-        }
-    }
-
-    return $items;
-}
-
 function get_current_item($items) {
     $item = null;
 
