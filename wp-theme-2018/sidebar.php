@@ -83,7 +83,7 @@ function get_stitched_menus($post, $asideContent)
                     <?php
                         $items = get_all_menu_items_flattened();
 
-                        $current_item = get_current_item($items);
+                        $current_item = get_current_item_for_this_page($items);
 
                         if ( has_menu_api() && ($response = get_stitched_menus($post, $asideContent)) ) {
                             $siblings = $response['siblings'] ?? [];

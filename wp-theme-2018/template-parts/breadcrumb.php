@@ -103,25 +103,6 @@ function get_custom_tags_markup() {
     return $markup;
 }
 
-function get_current_item($items) {
-    $item = null;
-
-    // yeah, the one with current set
-    $wp_filter_object_list = wp_filter_object_list( $items, ['current' => True]);
-    $item = $items ? reset($wp_filter_object_list) : false;
-
-    if (!$item) {
-        // ok, we may be in a post
-        if (get_post() != null) {
-            $current_id = get_post()->ID;
-            $wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id]);
-            $item = $items ? reset($wp_filter_object_list) : false;
-        }
-    }
-
-    return $item;
-}
-
 function get_rendered_crumb_item($crumb_item, $is_current_item, $siblings_items) {
     $title = $crumb_item['title'] ?? '';
     $url = $crumb_item['url'] ?? '';
@@ -216,7 +197,7 @@ function render_menu_item ($crumb_item, $current_item) {
 
             $items = get_all_menu_items_flattened();
 
-            $current_item = get_current_item($items);
+            $current_item = get_current_item_for_this_page($items);
 
             // fullfil crumb_items array, in accordance with the items hierarchy
             $crumb_items = [];
