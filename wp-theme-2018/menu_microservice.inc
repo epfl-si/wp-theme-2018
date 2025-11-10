@@ -30,6 +30,23 @@ function get_all_menu_items_flattened() {
 	return $items;
 }
 
+function get_current_item_for_this_page($items) {
+	// yeah, the one with current set
+	$wp_filter_object_list = wp_filter_object_list( $items, ['current' => True]);
+	$item = $items ? reset($wp_filter_object_list) : false;
+
+	if (!$item) {
+		// ok, we may be in a post
+		if (get_post() != null) {
+			$current_id = get_post()->ID;
+			$wp_filter_object_list = wp_filter_object_list( $items, ['object_id' => $current_id]);
+			$item = $items ? reset($wp_filter_object_list) : false;
+		}
+	}
+
+	return $item;
+}
+
 function call_menu_api_microservice($site, $call_type, $post, $asideContent, $item_url = NULL)
 {
     $lang = $site->get_language();
