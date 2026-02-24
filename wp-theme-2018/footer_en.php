@@ -121,7 +121,7 @@
             <a href="https://www.epfl.ch/research/faculty-members/">Faculty Members</a>
           </li>
           <li>
-            <a href="https://www.epfl.ch/research/solutions-for-sustainability-initiative-s4s/">Solutions 5 Sustainability - S4S</a>
+            <a href="https://www.epfl.ch/research/solutions-for-sustainability-initiative-s4s/">Solutions 4 Sustainability - S4S</a>
           </li>
           <li>
             <a href="https://www.epfl.ch/research/awards/">Awards and Prizes</a>
