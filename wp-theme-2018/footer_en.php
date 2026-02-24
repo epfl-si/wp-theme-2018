@@ -238,9 +238,6 @@
           <li>
             <a href="https://www.epfl.ch/schools/cdm/">College of Management of Technology <strong>CDM</strong></a>
           </li>
-          <li>
-            <a href="https://www.epfl.ch/schools/cdh/">College of Humanities <strong>CDH</strong></a>
-          </li>
         </ul>
       </div>
     </div>
