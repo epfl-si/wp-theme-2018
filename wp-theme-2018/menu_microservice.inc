@@ -81,7 +81,6 @@ function call_menu_api_microservice($site, $call_type, $post, $asideContent, $it
     if (curl_errno($curl)) {
         $error_text = curl_error($curl);
     }
-    curl_close($curl);
 
     if (isset($error_text)) {
         error_log( "curl error: {$error_text} at {$url_api}" );
