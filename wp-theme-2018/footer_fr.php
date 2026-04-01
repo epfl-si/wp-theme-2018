@@ -1,333 +1,336 @@
 <footer class="footer" role="contentinfo">
 
-  <div class="footer-group footer-sitemap">
+    <div class="footer-group footer-sitemap">
 
-    <div class="footer-sitemap-col">
-      <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-1" aria-expanded="false" aria-controls="collapse-footer-1">
-        <strong>À propos</strong>
-      </button>
-      <div class="collapse collapse-item" id="collapse-footer-1">
-        <ul class="footer-links">
-          <li>
-            <a href="https://www.epfl.ch/about/overview/fr/">Qui sommes-nous</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/campus/fr/">Campus associés</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/facts/fr/">Data</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/presidency/fr/">Présidence</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/vice-presidencies/fr/">Vice-Présidences</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/working/fr/">Travailler à l'EPFL</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/recruiting/fr/">Recruter des talents de l'EPFL</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/news-and-media/fr/">News & médias</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/sustainability/fr/">Durabilité</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/equality/fr/">Égalité et Diversité</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/respect/fr/">Respect</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/about/philanthropy/fr/">Philanthropie</a>
-          </li>
-          <li>
-            <a href="https://www.epflalumni.ch/fr/" target="_blank" rel="noopener">EPFL Alumni</a>
-          </li>
-        </ul>
-      </div>
+        <div class="footer-sitemap-col">
+            <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-1" aria-expanded="false" aria-controls="collapse-footer-1">
+                <strong>À propos</strong>
+            </button>
+            <div class="collapse collapse-item" id="collapse-footer-1">
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.epfl.ch/about/overview/fr/">Organisation et identité</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/campus/fr/">Campus associés</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/facts/fr/">Data</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/presidency/fr/">Présidence</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/vice-presidencies/fr/">Vice-Présidences</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/working/fr/">Travailler à l'EPFL</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/recruiting/fr/">Recruter des talents de l'EPFL</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/equality/fr/">Égalité, Diversité, Inclusion</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/respect/fr/">Respect</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/sustainability/fr/">Durabilité</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/news-and-media/fr/">News & médias</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/about/philanthropy/fr/">Philanthropie</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epflalumni.ch/fr/" target="_blank" rel="noopener">EPFL Alumni</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-sitemap-col">
+            <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-2" aria-expanded="false" aria-controls="collapse-footer-2">
+                <strong>Éducation</strong>
+            </button>
+            <div class="collapse collapse-item" id="collapse-footer-2">
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.epfl.ch/education/admission/fr/">Admission</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/studies/reglement-et-procedure/calendrier-academique/">Calendrier académique</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/fr/cms/">Cours de mathématiques spéciales CMS</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/bachelor/fr/">Bachelor</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/master/fr/">Master</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/phd/fr/">Doctorat</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/programme-shs/fr/">Programme SHS</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/continuing-education/fr/">Formation continue - Extension School</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/studies/">Gestion des études</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/international/fr/">International</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/teaching/fr/">Enseignement</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/educational-initiatives/fr/">Initiatives pédagogiques</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/education-and-science-outreach/fr/">Promotion de l'éducation et des sciences</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/fr/infrastructures-en-developpement/">Infrastructures en développement</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/education/fr/engagement-envers-la-societe/">Engagement envers la société</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-sitemap-col">
+            <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-3" aria-expanded="false" aria-controls="collapse-footer-3">
+                <strong>Recherche</strong>
+            </button>
+            <div class="collapse collapse-item" id="collapse-footer-3">
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.epfl.ch/research/fr/mission-et-strategie/">Mission et stratégie</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/domains/fr/">Domaines de recherche</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/facilities/fr/">Les plateformes de recherche</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/faculty-members/fr/">Professeur·es EPFL</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/fr/solutions-pour-la-durabilite/">Solutions pour la durabilité - S4S</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/awards/fr/">Prix et distinctions</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/funding/fr/">Sources de financement</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/management-support/fr/">Soutien en gestion de recherche</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/technology-transfer/fr/">Du labo au marché</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/ethic-statement/fr/">Ethique de la recherche</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/fr/recherche-avec-les-animaux-experimentation-animale/">La recherche avec les animaux</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/research/open-science/fr/">La science ouverte</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-sitemap-col">
+            <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-4" aria-expanded="false" aria-controls="collapse-footer-4">
+                <strong>Innovation</strong>
+            </button>
+            <div class="collapse collapse-item" id="collapse-footer-4">
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.epfl.ch/innovation/industry/fr/">Collaboration avec l'industrie</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/innovation/domains/fr/">Domaines d'innovation</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/innovation/startup/fr/">Startup launchpad</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-sitemap-col">
+            <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-5" aria-expanded="false" aria-controls="collapse-footer-5">
+                <strong>Campus</strong>
+            </button>
+            <div class="collapse collapse-item" id="collapse-footer-5">
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.epfl.ch/campus/services/">Services et ressources</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/library/fr/">Bibliothèque</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/restaurants-shops-hotels/fr/">Restaurants, shops et hôtels</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/security-safety/">Sécurité, prévention et santé</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/sports/">Sport</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/community/fr/">Communauté et soutien</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/spiritual-care/">Aumônerie</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/events/fr/">Événements</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/art-culture/fr/">Arts et culture</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/associations/fr/">Associations</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/visitors/fr/">Visiter l'EPFL</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/campus/mobility/fr/">Mobilité et voyages</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="footer-sitemap-col">
-      <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-2" aria-expanded="false" aria-controls="collapse-footer-2">
-        <strong>Éducation</strong>
-      </button>
-      <div class="collapse collapse-item" id="collapse-footer-2">
-        <ul class="footer-links">
-          <li>
-            <a href="https://www.epfl.ch/education/admission/fr/">Admission</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/studies/reglement-et-procedure/calendrier-academique/">Calendrier académique</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/fr/cms/">Cours de mathématiques spéciales CMS</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/bachelor/fr/">Bachelor</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/master/fr/">Master</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/phd/fr/">Doctorat</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/continuing-education/fr/">Formation continue - Extension School</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/studies/">Gestion des études</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/international/fr/">International</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/teaching/fr/">Enseignement</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/educational-initiatives/fr/">Initiatives pédagogiques</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/education-and-science-outreach/fr/">Promotion de l'éducation et des sciences</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/fr/infrastructures-en-developpement/">Infrastructures en développement</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/education/fr/engagement-envers-la-societe/">Engagement envers la société</a>
-          </li>
-        </ul>
-      </div>
+
+    <div class="footer-group">
+
+        <div class="footer-faculties">
+            <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-fac" aria-expanded="false" aria-controls="collapse-fac">
+                Facultés et Collèges
+            </button>
+            <div class="collapse collapse-item" id="collapse-fac">
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.epfl.ch/schools/enac/fr/">Faculté de l'environnement naturel, architectural et construit <strong>ENAC</strong></a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/schools/sb/fr/">Faculté des sciences de base <strong>SB</strong></a>
+                    </li>
+                    <li>
+                        <a href="https://sti.epfl.ch/fr/">Faculté des sciences et techniques de l'ingénieur <strong>STI</strong></a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/schools/ic/fr/">Faculté informatique et communications <strong>IC</strong></a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/schools/sv/fr/">Faculté des sciences de la vie <strong>SV</strong></a>
+                    </li>
+                    <li>
+                        <a href="https://www.epfl.ch/schools/cdm/fr/">Collège du management de la technologie <strong>CDM</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="footer-sitemap-col">
-      <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-3" aria-expanded="false" aria-controls="collapse-footer-3">
-        <strong>Recherche</strong>
-      </button>
-      <div class="collapse collapse-item" id="collapse-footer-3">
-        <ul class="footer-links">
-          <li>
-            <a href="https://www.epfl.ch/research/fr/mission-et-strategie/">Mission et stratégie</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/domains/fr/">Domaines de recherche</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/facilities/fr/">Les plateformes de recherche</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/faculty-members/fr/">Professeur·es EPFL</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/fr/solutions-pour-la-durabilite/">Solutions pour la durabilité - S4S</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/awards/fr/">Prix et distinctions</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/funding/fr/">Sources de financement</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/management-support/fr/">Soutien en gestion de recherche</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/technology-transfer/fr/">Du labo au marché</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/ethic-statement/fr/">Ethique de la recherche</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/fr/recherche-avec-les-animaux-experimentation-animale/">La recherche avec les animaux</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/research/open-science/fr/">La science ouverte</a>
-          </li>
-        </ul>
-      </div>
+
+    <div class="footer-group footer-buttons">
+
+        <p class="footer-title footer-title-no-underline">Pratique</p>
+        <a href="https://www.epfl.ch/campus/services/" class="btn btn-secondary btn-sm">Services et ressources</a>
+        <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Urgences : +41 21 693 3000</a>
+        <a href="https://www.epfl.ch/about/fr/contact/" class="btn btn-secondary btn-sm">Contact</a>
+        <a href="https://map.epfl.ch/?lang=fr" class="btn btn-secondary btn-sm">Plan</a>
+
+
     </div>
-    <div class="footer-sitemap-col">
-      <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-4" aria-expanded="false" aria-controls="collapse-footer-4">
-        <strong>Innovation</strong>
-      </button>
-      <div class="collapse collapse-item" id="collapse-footer-4">
-        <ul class="footer-links">
-          <li>
-            <a href="https://www.epfl.ch/innovation/industry/fr/">Collaboration avec l'industrie</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/innovation/domains/fr/">Domaines d'innovation</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/innovation/startup/fr/">Startup launchpad</a>
-          </li>
-        </ul>
-      </div>
+
+    <div class="footer-group footer-socials">
+        <p class="footer-title footer-title-no-underline">Suivez l'EPFL sur les réseaux sociaux</p>
+        <div class="footer-social">
+
+            <ul class="social-icon-list list-inline">
+                <li>
+                    <a href="https://www.facebook.com/epflcampus" class="social-icon social-icon-facebook social-icon-negative" target="_blank" rel="nofollow noopener">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-facebook"></use>
+                        </svg>
+                        <span class="sr-only">Follow us on Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative" target="_blank" rel="nofollow noopener">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-instagram"></use>
+                        </svg>
+                        <span class="sr-only">Follow us on Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative" target="_blank" rel="nofollow noopener">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-linkedin"></use>
+                        </svg>
+                        <span class="sr-only">Follow us on LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://social.epfl.ch/@epfl/" class="social-icon social-icon-mastodon social-icon-negative" target="_blank" rel="nofollow noopener">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-mastodon"></use>
+                        </svg>
+                        <span class="sr-only">Follow us on Mastodon</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/epfl_en" class="social-icon social-icon-x social-icon-negative" target="_blank" rel="nofollow noopener">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-x"></use>
+                        </svg>
+                        <span class="sr-only">Follow us on X</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative" target="_blank" rel="nofollow noopener">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-youtube"></use>
+                        </svg>
+                        <span class="sr-only">Follow us on Youtube</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="footer-sitemap-col">
-      <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-footer-5" aria-expanded="false" aria-controls="collapse-footer-5">
-        <strong>Campus</strong>
-      </button>
-      <div class="collapse collapse-item" id="collapse-footer-5">
-        <ul class="footer-links">
-          <li>
-            <a href="https://www.epfl.ch/campus/services/">Services et ressources</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/library/fr/">Bibliothèque</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/restaurants-shops-hotels/fr/">Restaurants, shops et hôtels</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/security-safety/">Sécurité, prévention et santé</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/sports/">Sport</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/community/fr/">Communauté et soutien</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/spiritual-care/">Aumônerie</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/events/fr/">Événements</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/art-culture/fr/">Arts et culture</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/associations/fr/">Associations</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/visitors/fr/">Visiter l'EPFL</a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/campus/mobility/fr/">Mobilité et voyages</a>
-          </li>
-        </ul>
-      </div>
+
+
+    <div class="footer-legal">
+        <div class="footer-legal-links">
+            <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/">Accessibilité</a>
+            <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/">Mentions légales</a>
+            <a href="https://go.epfl.ch/protection-des-donnees/">Protection des données</a>
+            <a href="https://go.epfl.ch/charte">Charte</a>
+        </div>
+        <div>
+            <p>&copy; 2025 EPFL, tous droits réservés</p>
+        </div>
     </div>
-  </div>
-
-  <div class="footer-group">
-
-    <div class="footer-faculties">
-      <button class="footer-title collapse-title collapsed" type="button" data-toggle="collapse" data-target="#collapse-fac" aria-expanded="false" aria-controls="collapse-fac">
-        Facultés et Collèges
-      </button>
-      <div class="collapse collapse-item" id="collapse-fac">
-        <ul class="footer-links">
-          <li>
-            <a href="https://www.epfl.ch/schools/enac/fr/">Faculté de l'environnement naturel, architectural et construit <strong>ENAC</strong></a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/schools/sb/fr/">Faculté des sciences de base <strong>SB</strong></a>
-          </li>
-          <li>
-            <a href="https://sti.epfl.ch/fr/">Faculté des sciences et techniques de l'ingénieur <strong>STI</strong></a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/schools/ic/fr/">Faculté informatique et communications <strong>IC</strong></a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/schools/sv/fr/">Faculté des sciences de la vie <strong>SV</strong></a>
-          </li>
-          <li>
-            <a href="https://www.epfl.ch/schools/cdm/fr/">Collège du management de la technologie <strong>CDM</strong></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-group footer-buttons">
-
-    <p class="footer-title footer-title-no-underline">Pratique</p>
-    <a href="https://www.epfl.ch/campus/services/" class="btn btn-secondary btn-sm">Services et ressources</a>
-    <a href="tel:+41216933000" class="btn btn-secondary btn-sm">Urgences : +41 21 693 3000</a>
-    <a href="https://www.epfl.ch/about/fr/contact/" class="btn btn-secondary btn-sm">Contact</a>
-    <a href="https://map.epfl.ch/?lang=fr" class="btn btn-secondary btn-sm">Plan</a>
-
-
-  </div>
-
-  <div class="footer-group footer-socials">
-    <p class="footer-title footer-title-no-underline">Suivez l'EPFL sur les réseaux sociaux</p>
-    <div class="footer-social">
-
-      <ul class="social-icon-list list-inline">
-        <li>
-          <a href="https://www.facebook.com/epflcampus" class="social-icon social-icon-facebook social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-facebook"></use>
-            </svg>
-            <span class="sr-only">Follow us on Facebook</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://instagram.com/epflcampus" class="social-icon social-icon-instagram social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-instagram"></use>
-            </svg>
-            <span class="sr-only">Follow us on Instagram</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/school/epfl/" class="social-icon social-icon-linkedin social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-linkedin"></use>
-            </svg>
-            <span class="sr-only">Follow us on LinkedIn</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://social.epfl.ch/@epfl/" class="social-icon social-icon-mastodon social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-mastodon"></use>
-            </svg>
-            <span class="sr-only">Follow us on Mastodon</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/epfl_en" class="social-icon social-icon-x social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-x"></use>
-            </svg>
-            <span class="sr-only">Follow us on X</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/user/epflnews" class="social-icon social-icon-youtube social-icon-negative" target="_blank" rel="nofollow noopener">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-youtube"></use>
-            </svg>
-            <span class="sr-only">Follow us on Youtube</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="footer-legal">
-    <div class="footer-legal-links">
-      <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/">Accessibilité</a>
-      <a href="https://www.epfl.ch/about/overview/fr/reglements-et-directives/mentions-legales/">Mentions légales</a>
-      <a href="https://go.epfl.ch/protection-des-donnees/">Protection des données</a>
-      <a href="https://go.epfl.ch/charte">Charte</a>
-    </div>
-    <div>
-      <p>&copy; 2025 EPFL, tous droits réservés</p>
-    </div>
-  </div>
 
 </footer>
 
 <button id="back-to-top" class="btn btn-primary btn-back-to-top">
-  <span class="sr-only">Back to top</span>
-  <svg class="icon" aria-hidden="true">
-    <use xlink:href="#icon-chevron-top"></use>
-  </svg>
+    <span class="sr-only">Back to top</span>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chevron-top"></use>
+    </svg>
 </button>
