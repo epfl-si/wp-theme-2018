@@ -144,6 +144,8 @@ function epfl_scripts() {
 	wp_register_script( 'epfl-js-jquery', "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js", array(), $vsn );
 	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', ['epfl-js-jquery'], $vsn, true );
 	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/elements.min.js', ['epfl-js-jquery'], $vsn, true );
+
+	wp_enqueue_script( 'epfl-umami', 'https://umami.fsd.epfl.ch/script.js', [], null, [ 'strategy' => 'defer' ]);
 }
 add_action( 'wp_enqueue_scripts', 'epfl_scripts' );
 
@@ -151,10 +153,29 @@ add_action( 'wp_enqueue_scripts', 'epfl_scripts' );
 // Posted by meteorlxy, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-04-01, License - CC BY-SA 4.0
 add_filter( 'wp_script_attributes', function ( $attributes ) {
+	// Add the SRI for jQuery
 	if ( $attributes['id'] === 'epfl-js-jquery-js' ) {
-		$attributes['integrity'] = 'sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==';
+		$attributes['integrity'] = 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==';
 		$attributes['crossorigin'] = 'anonymous';
 	}
+
+	/**
+	 * Self-hosted Umami instance
+	 *
+	 * Note: Every time we update our self-hosted Umami to a new version,
+	 * the contents of script.js may change. We must remember to regenerate 
+	 * and deploy the new SRI hash, otherwise the browser will block the script
+	 * and tracking will silently stop.
+	 * To generate the hash:
+	 * curl -s https://umami.fsd.epfl.ch/script.js | openssl dgst -sha256 -binary | openssl base64 -A
+	 *
+	 */
+	if ( $attributes['id'] === 'epfl-umami-js' ) {
+		 $attributes['integrity'] = 'sha256-oUcUh+s+jrk7Gp4FY4YBn/Xu2t6im7tyW1SU+y6a2Qo=';
+		 $attributes['crossorigin'] = 'anonymous';
+		 $attributes['data-website-id'] = '9edcb314-c3e3-4d38-a69e-6cd6fbae68ca';
+	 }
+
 	return $attributes;
 } );
 
