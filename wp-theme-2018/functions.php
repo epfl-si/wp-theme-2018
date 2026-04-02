@@ -155,7 +155,7 @@ add_action( 'wp_enqueue_scripts', 'epfl_scripts' );
 add_filter( 'wp_script_attributes', function ( $attributes ) {
 	// Add the SRI for jQuery
 	if ( $attributes['id'] === 'epfl-js-jquery-js' ) {
-		$attributes['integrity'] = 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==';
+		$attributes['integrity'] = 'sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==';
 		$attributes['crossorigin'] = 'anonymous';
 	}
 
