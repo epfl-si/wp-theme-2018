@@ -130,6 +130,23 @@ add_action( 'widgets_init', 'epfl_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+// Upgrade the default Wordpress jQuery version, the one called with the dependency handle: 'jquery'.
+add_action('wp_default_scripts', function ($scripts) {
+
+	if (is_admin()) {
+		// only for the front pages, not the /wp-admin ones
+		return;
+	}
+
+	$scripts->registered['jquery-core']->src =
+		'https://code.jquery.com/jquery-4.0.0.min.js';
+	$scripts->registered['jquery-core']->ver = '4.0.0';
+
+	$scripts->registered['jquery-migrate']->src =
+		'https://code.jquery.com/jquery-migrate-4.0.2.js';
+	$scripts->registered['jquery-migrate']->ver = '4.0.2';
+});
+
 function epfl_scripts() {
 	# TODO: read a file set by a oc configmap
     # by not doing this, we risk some strange behavior (cache pollution) during upgrades
@@ -141,9 +158,8 @@ function epfl_scripts() {
 	wp_enqueue_style( 'epfl-elements', get_template_directory_uri().'/assets/css/elements.min.css', array(), $vsn );
 	wp_enqueue_style( 'epfl-theme', get_template_directory_uri().'/theme/style.min.css', array(), $vsn );
 
-	wp_register_script( 'epfl-js-jquery', "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js", array(), $vsn );
-	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', ['epfl-js-jquery'], $vsn, true );
-	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/elements.min.js', ['epfl-js-jquery'], $vsn, true );
+	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', ['jquery'], $vsn, true );
+	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/elements.min.js', ['jquery'], $vsn, true );
 
 	wp_enqueue_script( 'epfl-umami', 'https://umami.fsd.epfl.ch/script.js', [], null, [ 'strategy' => 'defer' ]);
 }
@@ -154,8 +170,13 @@ add_action( 'wp_enqueue_scripts', 'epfl_scripts' );
 // Retrieved 2026-04-01, License - CC BY-SA 4.0
 add_filter( 'wp_script_attributes', function ( $attributes ) {
 	// Add the SRI for jQuery
-	if ( $attributes['id'] === 'epfl-js-jquery-js' ) {
-		$attributes['integrity'] = 'sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==';
+	if ( $attributes['id'] === 'jquery-core-js' && !is_admin() ) {
+		$attributes['integrity'] = 'sha384-fgGyf7Mo7DURSOMnOy7ed+dkq5Job205Gnzu6QIg0BOHKaqt4D76Dt8VlDCzcMHV';
+		$attributes['crossorigin'] = 'anonymous';
+	}
+
+	if ( $attributes['id'] === 'jquery-migrate-js' && !is_admin() ) {
+		$attributes['integrity'] = 'sha384-ycK8o2HE5bXCpkKEz9YrXl9W6m04GKCXHuStRaAZBoy/Ld24e/a5gQ4gujZ7ifS8%';
 		$attributes['crossorigin'] = 'anonymous';
 	}
 
