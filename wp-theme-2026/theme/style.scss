@@ -1,0 +1,213 @@
+/* Override font from styleguide, as only the theme has the legal right to get it (same domain policy) */
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 400;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-Regular-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 400;
+    font-style: italic;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-RegularItalic-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 700;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBold-WebS.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'SuisseIntl';
+    font-weight: 700;
+    font-style: italic;
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.eot');
+    src:  url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.eot?#iefix') format('embedded-opentype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.woff2') format('woff2'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.woff') format('woff'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.ttf') format('truetype'),
+            url('https://www.epfl.ch/fonts/SuisseIntl-SemiBoldItalic-WebS.svg#svgFontName') format('svg');
+}
+
+body {
+    font-family: "SuisseIntl", Arial, sans-serif !important;
+}
+
+/* Variables */
+
+$gray-100: #e6e6e6;
+$gray-200: #d5d5d5;
+$gray-300: #c1c1c1;
+$gray-600: #707070;
+$black: #212121;
+$red: #f00;
+$red-dark: #b51f1f;
+$leman: #00A79F;
+$canard: #007480;
+
+/* Helper classes */
+
+%sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.sr-only,
+.screen-reader-text {
+  @extend %sr-only;
+}
+
+/* Content */
+
+.entry-content .container-full {
+
+  & + p,
+  & + ul,
+  & + ol,
+  & + table,
+  & + *[class*="wp-block"] {
+    margin-top: 2rem;
+  }
+
+  & + h2,
+  & + h3,
+  & + h4,
+  & + h5,
+  & + h6 {
+    margin-top: 1.5em;
+  }
+}
+
+// Hyphenate long german titles
+
+:lang(de) .entry-title {
+  hyphens: auto;
+}
+
+/* Images
+   since 5.5 use async loading of image, meaning
+   the height and width is a declared attribute now
+*/
+img[class^="wp-image-"] {
+  height: auto;
+}
+
+/* Content images */
+
+.wp-caption {
+  max-width: 100%;
+
+  img {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  .wp-caption-text {
+    margin: 10px auto 0;
+    max-width: 1140px;
+  }
+
+  .container-grid &.alignnone {
+    grid-column: full;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Wordpress pagination */
+
+nav.navigation.pagination {
+
+  .nav-links {
+    display: flex;
+  }
+
+  a {
+    color: $red;
+    text-decoration: none;
+    transition: all .2s;
+
+    &:hover {
+      background: $gray-100;
+      border: 1px solid #707070 !important;
+    }
+  }
+
+  .page-numbers {
+    background-color: #fff;
+    border-top: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
+    font-size: 1em;
+    font-weight: 700;
+    min-width: 2.25rem;
+    padding: .5rem .75rem;
+    text-align: center;
+
+    &:first-child {
+      border-left: 1px solid $gray-200;
+    }
+
+    &:last-child {
+      border-right: 1px solid $gray-200;
+    }
+
+    &.current {
+      background: $gray-100;
+      color: $gray-600;
+    }
+  }
+}
+
+/* Wordpress table */
+
+.wp-block-table td, .wp-block-table th {
+  border: inherit;
+}
+
+/* WP Blocks */
+
+.wp-block-file .wp-block-file__button {
+  background: $black;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  
+  &:hover,
+  &:active,
+  &:focus {
+    background: $red-dark;
+    color: #fff;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid $red-dark;
+    outline-offset: 2px;
+  }
+}
