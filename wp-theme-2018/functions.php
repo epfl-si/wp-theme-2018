@@ -145,7 +145,8 @@ function epfl_scripts() {
 	wp_enqueue_script( 'epfl-js-vendors', get_template_directory_uri() . '/assets/js/vendors.min.js', ['epfl-js-jquery'], $vsn, true );
 	wp_enqueue_script( 'epfl-js', get_template_directory_uri() . '/assets/js/elements.min.js', ['epfl-js-jquery'], $vsn, true );
 
-	wp_enqueue_script( 'epfl-umami', 'https://umami.fsd.epfl.ch/script.js', [], null, [ 'strategy' => 'defer' ]);
+	wp_enqueue_script( 'epfl-analytics', 'https://webanalytics.epfl.ch/script.js', [], null, [ 'strategy' => 'defer' ]);
+	wp_enqueue_script( 'epfl-analytics-rec', 'https://webanalytics.epfl.ch/recorder.js', [], null, [ 'strategy' => 'defer' ]);
 }
 add_action( 'wp_enqueue_scripts', 'epfl_scripts' );
 
@@ -170,11 +171,15 @@ add_filter( 'wp_script_attributes', function ( $attributes ) {
 	 * curl -s https://umami.fsd.epfl.ch/script.js | openssl dgst -sha256 -binary | openssl base64 -A
 	 *
 	 */
-	if ( $attributes['id'] === 'epfl-umami-js' ) {
-		 $attributes['integrity'] = 'sha256-oUcUh+s+jrk7Gp4FY4YBn/Xu2t6im7tyW1SU+y6a2Qo=';
-		 $attributes['crossorigin'] = 'anonymous';
-		 $attributes['data-website-id'] = '9edcb314-c3e3-4d38-a69e-6cd6fbae68ca';
-	 }
+	$analytics_integrity = [
+		'epfl-analytics-js'     => 'sha256-ZU8Sx1SL5ybrpbcdXvi//CpBo5oAU+KkmoR4aczXrD8=',
+		'epfl-analytics-rec-js' => 'sha256-IeYxKGbbAacYQbdyyYgjMyMb4bw/2+6sHtUZN5StgMY=',
+	];
+	if ( isset( $analytics_integrity[ $attributes['id'] ] ) ) {
+		$attributes['integrity'] = $analytics_integrity[ $attributes['id'] ];
+		$attributes['crossorigin'] = 'anonymous';
+		$attributes['data-website-id'] = '9edcb314-c3e3-4d38-a69e-6cd6fbae68ca';
+	}
 
 	return $attributes;
 } );
